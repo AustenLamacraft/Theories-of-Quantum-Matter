@@ -1,3 +1,3 @@
-begin_enumerate_item_Many_particle__.tex
+Outline of lectures.tex
 untitled.tex
 section_Detailed_content_subsection_Many__.tex
