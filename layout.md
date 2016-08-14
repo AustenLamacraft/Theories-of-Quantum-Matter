@@ -1,3 +1,3 @@
-section_About_this_course_subsection__.tex
+About this course.tex
 Outline of lectures.tex
 Many body wavefunctions.tex
