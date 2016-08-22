@@ -4,8 +4,8 @@
 title:               Ed.
 tagline:             'A Jekyll theme for minimal editions'
 description:         'Ed is a Jekyll theme designed for textual editors based on minimal computing principles, and focused on legibility and flexibility.'
-url:                 'http://elotroalex.github.io'
-baseurl:             '/docs'
+url:                 'https://austenlamacraft.github.io'
+baseurl:             '/Theories-of-Quantum-Matter'
 
 # About/contact
 author:
