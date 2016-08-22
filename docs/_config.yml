@@ -1,17 +1,17 @@
 # Built with Jekyll 3.2.0
 
 # Setup
-title:               Ed.
-tagline:             'A Jekyll theme for minimal editions'
-description:         'Ed is a Jekyll theme designed for textual editors based on minimal computing principles, and focused on legibility and flexibility.'
+title:               Theories of Quantum Matter
+tagline:             'Quantum Mechanics of Many Body Systems'
+description:         'Materials for a Part III Physics Course at the University of Cambridge'
 url:                 'https://austenlamacraft.github.io'
 baseurl:             '/Theories-of-Quantum-Matter'
 
 # About/contact
 author:
-  name:              Alex Gil
-  url:               https://twitter.com/elotroalex
-  email:             colibri.alex@gmail.com
+  name:              Austen Lamacraft
+  url:               http://www.tcm.phy.cam.ac.uk/profiles/al200/
+  email:             al200@cam.ac.uk
 
 # Permalinks
 
@@ -43,5 +43,3 @@ version:             0.0.6
 
 # Exclusions from the final site
 exclude: [optional, vendor]
-
-
