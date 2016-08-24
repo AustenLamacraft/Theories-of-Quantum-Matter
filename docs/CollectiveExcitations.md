@@ -15,4 +15,8 @@ chapter: 2
 
 ## Quantizing an elastic chain
 
-Here we introduce..
+## Ground state wavefunction and fluctuations
+
+## Excited states: Feynman--Bijl formula
+
+## Nonlinearity and interactions
