@@ -13,6 +13,13 @@ chapter: 1
 
 ---
 
+
 ## Bosons and Fermions
 
-Here we introduce..
+Here we introduce..  $$\br,\bk,\bv,\adop \tr(ABC)$$ $$\cA$$
+
+\begin{equation}
+\Psi(\br_1,\br_2)
+\end{equation}
+
+\eqref{2body}

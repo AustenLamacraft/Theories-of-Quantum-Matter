@@ -22,18 +22,18 @@ Bethe's wave function. Excited states and the classical limit. Inpenetrable limi
 
 ## Spin chains
 
-Simple models of magnetism: Heisenberg model. \verb|Exact diagonalization of spin chains.| Magnons. Mention Bethe ansatz solution. Relation to SEP. \verb|Spin waves and solitons.|
+Simple models of magnetism: Heisenberg model. `Exact diagonalization of spin chains.` Magnons. Mention Bethe ansatz solution. Relation to SEP. `Spin waves and solitons.`
 Antiferromagnetic order. Symmetry breaking. Anderson tower. Other examples: polar condensate.
 
 ## Second quantization
 
-Fock states and occupation numbers. Creation and annihilation operators. The case of fermions. Representation of operators. \textit{Possible pedagogical approach: state conditions for CCR and CAR algebras and let students figure out correspondence}
+Fock states and occupation numbers. Creation and annihilation operators. The case of fermions. Representation of operators. _Possible pedagogical approach: state conditions for CCR and CAR algebras and let students figure out correspondence_.
 
 Examples of Schwinger bosons. Their classical version
 
 ## More second quantization
 
-Density matrix. Density correlations. Second quantized Hamiltonians. Momentum space form. Hartree--Fock theory. \emph{When perturbations attack I}. Application: Matveev--Yue--Glazman, Coulomb Blockade.
+Density matrix. Density correlations. Second quantized Hamiltonians. Momentum space form. Hartree--Fock theory. _When perturbations attack I_. Application: Matveev--Yue--Glazman, Coulomb Blockade.
 
 ## Response and correlation
 
@@ -49,15 +49,15 @@ Trial wavefunction describing quasiparticles. Quasiparticle residue. Landau Ferm
 
 ## Superconductivity
 
-Heisenberg's problem as a first encounter with the idea of renormalization. \emph{When perturbations attack II}. Cooper divergences. BCS theory. Anderson spin picture.
+Heisenberg's problem as a first encounter with the idea of renormalization. _When perturbations attack II_. Cooper divergences. BCS theory. Anderson spin picture.
 
 ## The Kondo effect
 
-Log singular renormalization of scattering at second order. Poor man's scaling by Schrieffer--Wolf. \verb|Numerical renormalization group| See \href{https://github.com/LucasNogueiraMartins/NRG-Didactic}{this GitHub repository}
+Log singular renormalization of scattering at second order. Poor man's scaling by Schrieffer--Wolf. `Numerical renormalization group` See \href{https://github.com/LucasNogueiraMartins/NRG-Didactic}{this GitHub repository}
 
 ## Bose gas
 
-Gross--Pitaevskii. \emph{When perturbations attack III}. Bogoliubov theory and superfluidity. \verb|Gross--Pitaevskii in traps. Vortex lattices.|
+Gross--Pitaevskii._When perturbations attack III_. Bogoliubov theory and superfluidity. `Gross--Pitaevskii in traps. Vortex lattices.`
 
 
 ## Dissipation in Quantum Mechanics
@@ -75,7 +75,7 @@ Jordan--Wigner treatment of the XY model. Lieb--Schultz--Mattis theorem.
 
 ## The Ising Model and Quantum Phase Transitions
 
-1D classical Ising doesn't order. Transverse Ising as quantum phase transition. Transfer matrix and relation to 2d classical Ising. \verb|Classical Ising simulation.| Majorana edge modes.
+1D classical Ising doesn't order. Transverse Ising as quantum phase transition. Transfer matrix and relation to 2d classical Ising. `Classical Ising simulation.` Majorana edge modes.
 
 
 % \section{Lent minor option}

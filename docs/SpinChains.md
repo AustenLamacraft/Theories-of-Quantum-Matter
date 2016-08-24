@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Lieb-Liniger Model
+title: Spin Chains
 author: Austen Lamacraft
-chapter: 3
+chapter: 4
 ---
 
 ## Contents
@@ -13,8 +13,6 @@ chapter: 3
 
 ---
 
-## Scattering of two particles in 1D
+## The Heisenberg Model
 
 Here we introduce..
-
-$$\br_1$$

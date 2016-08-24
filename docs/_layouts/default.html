@@ -34,6 +34,8 @@
 
     <script>
 
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+
     // Highlight search Query
     var url = window.location.href;
       if (url.lastIndexOf("?q=") > 0) {
@@ -48,7 +50,7 @@
         document.getElementById("main").innerHTML = content.replace(regex, "<mark>$1</mark>");
       }
 
-    // Toggle sidebar  
+    // Toggle sidebar
       (function(document) {
         var toggle = document.querySelector('.sidebar-toggle');
         var sidebar = document.querySelector('#sidebar');

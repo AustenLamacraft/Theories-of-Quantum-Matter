@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Lieb-Liniger Model
+title: Second Quantization
 author: Austen Lamacraft
-chapter: 3
+chapter: 5
 ---
 
 ## Contents
@@ -16,5 +16,3 @@ chapter: 3
 ## Scattering of two particles in 1D
 
 Here we introduce..
-
-$$\br_1$$

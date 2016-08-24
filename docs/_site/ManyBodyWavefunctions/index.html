@@ -12,14 +12,14 @@
   <!-- Enable responsiveness on mobile devices-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
 
-  <!--   Dublin Core metadata for Zotero -->  
+  <!--   Dublin Core metadata for Zotero -->
   <meta name="DC.title" content="Many Body Wavefunctions" />
   <meta name="DC.creator" content="Austen Lamacraft" />
   <meta name="DC.contributor" content="" />
   <meta name="DC.date" content="" />
   <meta name="DC.rights" content="" />
   <meta name="DC.source" content="Theories of Quantum Matter" />
-  
+
     <!-- Open Graph metadata -->
 
     
@@ -34,7 +34,7 @@
     <meta property="og:image:height" content="200" />
 
     
-   
+
   <title>
     
       Many Body Wavefunctions
@@ -44,7 +44,7 @@
   <!-- CSS links -->
   <link rel="stylesheet" href="/Theories-of-Quantum-Matter/public/css/syntax.css"/>
   <link rel="stylesheet" href="/Theories-of-Quantum-Matter/public/css/ed.css"/>
- 
+
 
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/Theories-of-Quantum-Matter/public/apple-touch-icon-precomposed.png"/>
@@ -77,6 +77,8 @@
     
     
       
+        
+      
     
       
     
@@ -90,8 +92,6 @@
         
       
     
-      
-        
       
     
       
@@ -114,7 +114,19 @@
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/LiebLinigerModel/">Lieb--Liniger Model</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/LiebLinigerModel/">Lieb-Liniger Model</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/SpinChains/">Spin Chains</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/SecondQuantization/">Second Quantization</a>
         
       
     
@@ -146,7 +158,48 @@
 
       <div class="container content" id="main">
         <div class="page">
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   <h1 class="page-title">Many Body Wavefunctions</h1>
+  $$
+  \newcommand{\br}{\mathbf{r}}
+  \newcommand{\bp}{\mathbf{p}}
+  \newcommand{\bk}{\mathbf{k}}
+  \newcommand{\bq}{\mathbf{q}}
+  \newcommand{\bv}{\mathbf{v}}
+  \newcommand{\cA}{\mathcal{A}}
+
+  \newcommand{\pop}{\psi^{\vphantom{\dagger}}}
+  \newcommand{\pdop}{\psi^\dagger}
+  \newcommand{\Phop}{\Phi^{\vphantom{\dagger}}}
+  \newcommand{\Phdop}{\Phi^\dagger}
+  \newcommand{\phop}{\phi^{\vphantom{\dagger}}}
+  \newcommand{\phdop}{\phi^\dagger}
+  \newcommand{\aop}{a^{\vphantom{\dagger}}}
+  \newcommand{\adop}{a^\dagger}
+  \newcommand{\bop}{b^{\vphantom{\dagger}}}
+  \newcommand{\bdop}{b^\dagger}
+  \newcommand{\cop}{c^{\vphantom{\dagger}}}
+  \newcommand{\cdop}{c^\dagger}
+  \newcommand{\sgn}{\mathrm{sgn}}
+
+  \DeclareMathOperator{\tr}{tr}
+  \newcommand{\vect}[1]{\mathbf{#1}}
+
+  \DeclareMathOperator{\E}{\mathbb{E}}
+  \DeclareMathOperator{\Cov}{Cov}
+  \DeclareMathOperator{\Var}{Var}
+
+  \DeclareMathOperator{\erfc}{erfc}
+  \DeclareMathOperator{\erfi}{erfi}
+
+  \renewcommand{\Re}{\operatorname{Re}}
+  \renewcommand{\Im}{\operatorname{Im}}
+  $$
   <h2 class="no_toc" id="contents">Contents</h2>
 
 <ul id="markdown-toc">
@@ -157,7 +210,13 @@
 
 <h2 id="bosons-and-fermions">Bosons and Fermions</h2>
 
-<p>Here we introduce..</p>
+<p>Here we introduce..  <script type="math/tex">\br,\bk,\bv,\adop \tr(ABC)</script> <script type="math/tex">\cA</script></p>
+
+<p>\begin{equation}
+\Psi(\br_1,\br_2)
+\end{equation}</p>
+
+<p>\eqref{2body}</p>
 
 </div>
 
@@ -167,6 +226,8 @@
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
     <script>
+
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
 
     // Highlight search Query
     var url = window.location.href;
@@ -182,7 +243,7 @@
         document.getElementById("main").innerHTML = content.replace(regex, "<mark>$1</mark>");
       }
 
-    // Toggle sidebar  
+    // Toggle sidebar
       (function(document) {
         var toggle = document.querySelector('.sidebar-toggle');
         var sidebar = document.querySelector('#sidebar');

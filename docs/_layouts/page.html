@@ -3,6 +3,47 @@ layout: default
 ---
 
 <div class="page">
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   <h1 class="page-title">{{ page.title }}</h1>
+  $$
+  \newcommand{\br}{\mathbf{r}}
+  \newcommand{\bp}{\mathbf{p}}
+  \newcommand{\bk}{\mathbf{k}}
+  \newcommand{\bq}{\mathbf{q}}
+  \newcommand{\bv}{\mathbf{v}}
+  \newcommand{\cA}{\mathcal{A}}
+
+  \newcommand{\pop}{\psi^{\vphantom{\dagger}}}
+  \newcommand{\pdop}{\psi^\dagger}
+  \newcommand{\Phop}{\Phi^{\vphantom{\dagger}}}
+  \newcommand{\Phdop}{\Phi^\dagger}
+  \newcommand{\phop}{\phi^{\vphantom{\dagger}}}
+  \newcommand{\phdop}{\phi^\dagger}
+  \newcommand{\aop}{a^{\vphantom{\dagger}}}
+  \newcommand{\adop}{a^\dagger}
+  \newcommand{\bop}{b^{\vphantom{\dagger}}}
+  \newcommand{\bdop}{b^\dagger}
+  \newcommand{\cop}{c^{\vphantom{\dagger}}}
+  \newcommand{\cdop}{c^\dagger}
+  \newcommand{\sgn}{\mathrm{sgn}}
+
+  \DeclareMathOperator{\tr}{tr}
+  \newcommand{\vect}[1]{\mathbf{#1}}
+
+  \DeclareMathOperator{\E}{\mathbb{E}}
+  \DeclareMathOperator{\Cov}{Cov}
+  \DeclareMathOperator{\Var}{Var}
+
+  \DeclareMathOperator{\erfc}{erfc}
+  \DeclareMathOperator{\erfi}{erfi}
+
+  \renewcommand{\Re}{\operatorname{Re}}
+  \renewcommand{\Im}{\operatorname{Im}}
+  $$
   {{ content }}
 </div>
