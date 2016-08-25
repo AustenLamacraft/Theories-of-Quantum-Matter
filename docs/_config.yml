@@ -23,7 +23,7 @@ encoding: utf-8
 
 # Collections for texts
 collections:
-  texts:
+  lectures:
     output: true
 
 # Markdown specs

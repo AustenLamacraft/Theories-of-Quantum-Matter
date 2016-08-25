@@ -3,7 +3,7 @@
 
   <head>
   <!-- Canonical link to help search engines -->
-  <link rel="canonical" href="/Theories-of-Quantum-Matter/404.html"/>
+  <link rel="canonical" href="/Theories-of-Quantum-Matter/lectures/ManyBodyWavefunctions/"/>
 
   <!-- Basic meta elements -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -13,8 +13,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
 
   <!--   Dublin Core metadata for Zotero -->
-  <meta name="DC.title" content="404: Page not found" />
-  <meta name="DC.creator" content="" />
+  <meta name="DC.title" content="Many Body Wavefunctions" />
+  <meta name="DC.creator" content="Austen Lamacraft" />
   <meta name="DC.contributor" content="" />
   <meta name="DC.date" content="" />
   <meta name="DC.rights" content="" />
@@ -23,21 +23,20 @@
     <!-- Open Graph metadata -->
 
     
-    <meta property="og:title" content="404: Page not found"/>
-    <meta property="og:description" content="A Part III Physics Course at the University of Cambridge">
+    <meta property="og:title" content="Many Body Wavefunctions"/>
+    <meta property="og:description" content="An Ed edition">
     <meta property="fb:admins" content="elotroalex"/>
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://austenlamacraft.github.io/Theories-of-Quantum-Matter/404.html"/>
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://austenlamacraft.github.io/Theories-of-Quantum-Matter/lectures/ManyBodyWavefunctions/"/>
     <meta property="fb:app_id" content="589495744558280"/>
     <meta property="og:image" content="https://austenlamacraft.github.io/Theories-of-Quantum-Matter/public/open-graph-logo.png"/>
     <meta property="og:image:width" content="200" />
     <meta property="og:image:height" content="200" />
-
     
 
   <title>
     
-      404: Page not found
+      Many Body Wavefunctions
     
   </title>
 
@@ -78,7 +77,7 @@
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/ManyBodyWavefunctions/">Many Body Wavefunctions</a>
+          <a class="sidebar-nav-item active" href="/Theories-of-Quantum-Matter/lectures/ManyBodyWavefunctions/">Many Body Wavefunctions</a>
         
       
     
@@ -175,7 +174,7 @@
 
     <!-- The code below is used for manually entered links  -->
 
-    <a class="sidebar-nav-item" href="https://via.hypothes.is/https://austenlamacraft.github.io/Theories-of-Quantum-Matter/404.html">Annotate me</a>
+    <a class="sidebar-nav-item" href="https://via.hypothes.is/https://austenlamacraft.github.io/Theories-of-Quantum-Matter/lectures/ManyBodyWavefunctions/">Annotate me</a>
   </nav>
 
   <div class="sidebar-item">
@@ -200,8 +199,104 @@
 
       <div class="container content" id="main">
         <div class="page">
-  <h1 class="page-title">404: Page not found</h1>
-  <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="/Theories-of-Quantum-Matter/">Head back home</a> to try finding it again.</p>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  $$
+  \newcommand{\br}{\mathbf{r}}
+  \newcommand{\bp}{\mathbf{p}}
+  \newcommand{\bk}{\mathbf{k}}
+  \newcommand{\bq}{\mathbf{q}}
+  \newcommand{\bv}{\mathbf{v}}
+  \newcommand{\cA}{\mathcal{A}}
+
+  \newcommand{\pop}{\psi^{\vphantom{\dagger}}}
+  \newcommand{\pdop}{\psi^\dagger}
+  \newcommand{\Phop}{\Phi^{\vphantom{\dagger}}}
+  \newcommand{\Phdop}{\Phi^\dagger}
+  \newcommand{\phop}{\phi^{\vphantom{\dagger}}}
+  \newcommand{\phdop}{\phi^\dagger}
+  \newcommand{\aop}{a^{\vphantom{\dagger}}}
+  \newcommand{\adop}{a^\dagger}
+  \newcommand{\bop}{b^{\vphantom{\dagger}}}
+  \newcommand{\bdop}{b^\dagger}
+  \newcommand{\cop}{c^{\vphantom{\dagger}}}
+  \newcommand{\cdop}{c^\dagger}
+  \newcommand{\sgn}{\mathrm{sgn}}
+
+  \DeclareMathOperator{\tr}{tr}
+  \newcommand{\vect}[1]{\mathbf{#1}}
+
+  \DeclareMathOperator{\E}{\mathbb{E}}
+  \DeclareMathOperator{\Cov}{Cov}
+  \DeclareMathOperator{\Var}{Var}
+
+  \DeclareMathOperator{\erfc}{erfc}
+  \DeclareMathOperator{\erfi}{erfi}
+
+  \renewcommand{\Re}{\operatorname{Re}}
+  \renewcommand{\Im}{\operatorname{Im}}
+  $$
+  <h1 class="page-title">Many Body Wavefunctions</h1>
+  <blockquote>
+  <p>We begin our study of many body quantum mechanics by examining a number of systems where eigenstates and eigenvalues may be found explicitly for any number of particles. Be warned that these situations are <strong>highly atypical</strong> – but are nevertheless very informative.</p>
+</blockquote>
+
+<h2 class="no_toc" id="contents">Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#bosons-and-fermions" id="markdown-toc-bosons-and-fermions">Bosons and Fermions</a>    <ul>
+      <li><a href="#physical-quantities" id="markdown-toc-physical-quantities">Physical Quantities</a></li>
+    </ul>
+  </li>
+  <li><a href="#d-fermi-gas" id="markdown-toc-d-fermi-gas">1D Fermi gas</a></li>
+  <li><a href="#the-impenetrable-bose-gas" id="markdown-toc-the-impenetrable-bose-gas">The Impenetrable Bose Gas</a></li>
+  <li><a href="#calogero--sutherland-model" id="markdown-toc-calogero--sutherland-model">Calogero–Sutherland model</a></li>
+  <li><a href="#fermions-in-the-lowest-landau-level" id="markdown-toc-fermions-in-the-lowest-landau-level">Fermions in the lowest Landau level</a>    <ul>
+      <li><a href="#monte-carlo-simulation-of-laughlin-states" id="markdown-toc-monte-carlo-simulation-of-laughlin-states">Monte Carlo simulation of Laughlin states</a></li>
+    </ul>
+  </li>
+  <li><a href="#bose-and-fermi-partition-functions" id="markdown-toc-bose-and-fermi-partition-functions">Bose and Fermi partition functions</a>    <ul>
+      <li><a href="#statistics-of-bose-condensation" id="markdown-toc-statistics-of-bose-condensation">Statistics of Bose condensation</a></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="bosons-and-fermions">Bosons and Fermions</h2>
+
+<p>Here we introduce..  <script type="math/tex">\br,\bk,\bv,\adop \tr(ABC)</script> <script type="math/tex">\cA</script></p>
+
+<p>\begin{equation}
+\Psi(\br_1,\br_2) =
+\end{equation}</p>
+
+<h3 id="physical-quantities">Physical Quantities</h3>
+
+<p>Knowing the wavefunction <script type="math/tex">\Psi(x_1,\ldots x_N)</script> of a many body system is one thing, but what to <em>do</em> with it?</p>
+
+<h2 id="d-fermi-gas">1D Fermi gas</h2>
+
+<h2 id="the-impenetrable-bose-gas">The Impenetrable Bose Gas</h2>
+
+<p>Although the Fermi gas is a noninteracting system, the above discussion allows us to say something about an interacting system, albeit a rather special one.</p>
+
+<p>We consider 1D system described by the Hamiltonian</p>
+
+<h2 id="calogero--sutherland-model">Calogero–Sutherland model</h2>
+
+<h2 id="fermions-in-the-lowest-landau-level">Fermions in the lowest Landau level</h2>
+
+<h3 id="monte-carlo-simulation-of-laughlin-states">Monte Carlo simulation of Laughlin states</h3>
+
+<h2 id="bose-and-fermi-partition-functions">Bose and Fermi partition functions</h2>
+
+<h3 id="statistics-of-bose-condensation">Statistics of Bose condensation</h3>
+
 </div>
 
       </div>

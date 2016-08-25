@@ -1,6 +1,5 @@
 ---
 layout: default
-title: "Theories of Quantum Matter"
 ---
 
 <div class="introduction">
@@ -10,16 +9,26 @@ title: "Theories of Quantum Matter"
   <strong> Theories of Quantum Matter</strong>, running in Michaelmas 2016.
 </p>
 
-<p>Here you will find all course materials, including lecture notes and problem sets. </p>
 </div>
 
 <hr>
 
-<div class="preface">
 
-<p>
-  This course is concerned with the application of quantum mechanics to
-  systems of many particles.
-</p>
-
+<div class="toc">
+  <h1>Outline of Lectures</h1>
+  <ul class="post">
+  {% assign pages_list = site.lectures | sort:"chapter" %}
+  {% for node in pages_list %}
+    {% if node.title != null %}
+      {% if node.layout == "page" %}
+        <h2>
+          <a href="{{ site.baseurl }}{{ node.url }}">
+            {{ node.title }}
+          </a>
+        </h2>
+        {{ node.summary }}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
 </div>
