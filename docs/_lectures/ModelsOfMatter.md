@@ -1,10 +1,21 @@
 ---
 layout: page
-title: Models of Matter
+title: About This Course
 author: Austen Lamacraft
 chapter: 0
 summary: Models as Minimal Working Examples
 ---
+> The general approach of this course is to study __simple models__ of phenomena in condensed matter physics.
+
+## Contents
+{:.no_toc}
+
+* ToC
+{:toc}
+
+---
+
+## Models of Matter
 
 It's important to realise that in general simple models are neither tractable, nor display simple behaviour! To take an example: all students of physics are familiar with the Ising model of magnetism, which caricatures a lattice of magnetic ions, together with their complex interactions. Now, I want to make two points about this model, which are common to the approach I'm talking about:
 First, there are certain quantitative aspects of the transition (e.g. the critical exponents) that are universal, meaning that they coincide with those of real magnetic phase transitions. Stranger still, the same features are present at the critical points of all liquid gas transitions, even though boiling and magnetising seem to have little in common at first glance.
