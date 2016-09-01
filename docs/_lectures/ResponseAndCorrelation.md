@@ -14,6 +14,8 @@ summary: Response functions. Structure factor. Lindhard and dielectric function.
 
 ---
 
-## Scattering of two particles in 1D
+## Review of Green's Functions
+
+## Linear Response in Quantum Mechanics
 
 Here we introduce..

@@ -15,6 +15,6 @@ summary: Hubbard--Stratonovich treatment of RPA. Recover dielectric function. Ho
 
 ---
 
-## Scattering of two particles in 1D
+## The Hubbard--Stratonovich Transformation
 
 Here we introduce..

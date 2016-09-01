@@ -16,6 +16,8 @@ summary: Phonons. Quantizing a chain. Ground state wavefunction and displacement
 
 ## Quantizing an elastic chain
 
+### Fourier review
+
 ## Ground state wavefunction and fluctuations
 
 ## Excited states: Feynman--Bijl formula
