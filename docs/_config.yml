@@ -25,6 +25,10 @@ encoding: utf-8
 collections:
   lectures:
     output: true
+    permalink: /lectures/:path/
+  problems:
+    output: true
+    permalink: /problems/:path/
 
 # Markdown specs
 markdown: kramdown

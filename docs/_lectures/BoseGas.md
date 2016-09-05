@@ -16,4 +16,6 @@ summary: Gross--Pitaevskii. Bogoliubov theory and superfluidity. `Gross--Pitaevs
 
 ## The Gross--Pitaevskii Approximation
 
+Changes
+
 ## _When perturbations attack III_
