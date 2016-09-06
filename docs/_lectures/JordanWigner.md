@@ -2,7 +2,7 @@
 layout: page
 title: Jordan-Wigner transformation
 author: Austen Lamacraft
-chapter: 14
+chapter: 15
 summary: Jordan--Wigner treatment of the XY model. Lieb--Schultz--Mattis theorem.
 ---
 
@@ -14,6 +14,6 @@ summary: Jordan--Wigner treatment of the XY model. Lieb--Schultz--Mattis theorem
 
 ---
 
-## Scattering of two particles in 1D
+## Spins _vs._ Fermions
 
 Here we introduce..

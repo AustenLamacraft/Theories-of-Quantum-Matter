@@ -14,6 +14,13 @@ summary: Many body wavefunctions, collective excitations, spin chains, Lieb-Lini
 
 ---
 
-## First problem
 
-First problem goes here
+
+## Ground state of the attractive Lieb--Liniger model
+
+Show the explicit form of the ground state and demonstrate that this is of Bethe form, identifying the Bethe momenta in this case.
+
+
+## The Simple Symmetric Exclusion Process (SEP)
+
+Show the relationship between generator and Heisenberg

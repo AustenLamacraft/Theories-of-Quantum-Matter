@@ -3,7 +3,7 @@ layout: page
 title: Collective Excitations
 author: Austen Lamacraft
 chapter: 2
-summary: Phonons. Quantizing a chain. Ground state wavefunction and displacement. Feynman–Bijl formula as variational wavefunction.
+summary: Quantizing a chain; Ground state wavefunction and displacement fluctuations; Feynman–Bijl formula as variational wavefunction.
 ---
 
 ## Contents

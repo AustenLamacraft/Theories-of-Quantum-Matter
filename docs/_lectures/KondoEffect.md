@@ -3,7 +3,7 @@ layout: page
 title: The Kondo Effect
 author: Austen Lamacraft
 chapter: 11
-summary: Log singular renormalization of scattering at second order. Poor man's scaling by Schrieffer--Wolf. `Numerical renormalization group` See \href{https://github.com/LucasNogueiraMartins/NRG-Didactic}{this GitHub repository}
+summary: A localized spin in a Fermi sea; Divergences at second order; Poor man's scaling
 ---
 
 ## Contents
@@ -14,6 +14,9 @@ summary: Log singular renormalization of scattering at second order. Poor man's 
 
 ---
 
-## Scattering of two particles in 1D
+## A Localized Spin in a Fermi Sea
 
 Here we introduce..
+
+
+`Numerical renormalization group` See \href{https://github.com/LucasNogueiraMartins/NRG-Didactic}{this GitHub repository}

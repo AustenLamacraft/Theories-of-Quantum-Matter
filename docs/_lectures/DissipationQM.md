@@ -2,9 +2,11 @@
 layout: page
 title: Dissipation in Quantum Mechanics
 author: Austen Lamacraft
-chapter: 13
+chapter: 14
 summary: Orthogonality catastrophe. Caldeira--Leggett environment.
 ---
+
+> I think this chapter should be more like an introduction to bosonization
 
 ## Contents
 {:.no_toc}
@@ -14,6 +16,6 @@ summary: Orthogonality catastrophe. Caldeira--Leggett environment.
 
 ---
 
-## Scattering of two particles in 1D
+## Bosonization of Bosons
 
-Here we introduce..
+This can be similar to my Obergurgl lectures
