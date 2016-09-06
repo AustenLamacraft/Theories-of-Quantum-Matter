@@ -9,7 +9,7 @@ summary: Bosonized representation of spin chains; Jordan--Wigner treatment of th
 ## Contents
 {:.no_toc}
 
-* ToC
+* Toc
 {:toc}
 
 ---

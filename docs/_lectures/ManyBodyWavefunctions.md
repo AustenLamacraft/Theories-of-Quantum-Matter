@@ -10,7 +10,7 @@ summary: Examples of the 1D Fermi gas, Calogero--Sutherland model, and Quantum H
 ## Contents
 {:.no_toc}
 
-* ToC
+* Toc
 {:toc}
 
 ---

@@ -10,7 +10,7 @@ summary: Bethe's wave function; Impenetrable limit; Excited states and the class
 ## Contents
 {:.no_toc}
 
-* ToC
+* Toc
 {:toc}
 
 ---

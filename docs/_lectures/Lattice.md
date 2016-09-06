@@ -9,7 +9,7 @@ summary: Tight binding. Hubbard model and Mott transition. Bose--Hubbard. Supere
 ## Contents
 {:.no_toc}
 
-* ToC
+* Toc
 {:toc}
 
 ---

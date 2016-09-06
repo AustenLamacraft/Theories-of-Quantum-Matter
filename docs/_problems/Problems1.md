@@ -9,7 +9,7 @@ summary: Many body wavefunctions, collective excitations, spin chains, Lieb-Lini
 ## Contents
 {:.no_toc}
 
-* ToC
+1. Toc
 {:toc}
 
 ---

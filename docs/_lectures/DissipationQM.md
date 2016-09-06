@@ -11,7 +11,7 @@ summary: Orthogonality catastrophe. Caldeira--Leggett environment.
 ## Contents
 {:.no_toc}
 
-* ToC
+* Toc
 {:toc}
 
 ---

@@ -2,7 +2,6 @@
 layout: page
 title: About This Course
 author: Austen Lamacraft
-chapter: 0
 summary: Models as Minimal Working Examples
 ---
 > The general approach of this course is to study __simple models__ of phenomena in condensed matter physics.
@@ -10,7 +9,7 @@ summary: Models as Minimal Working Examples
 ## Contents
 {:.no_toc}
 
-* ToC
+* Toc
 {:toc}
 
 ---

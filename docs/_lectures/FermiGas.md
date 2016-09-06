@@ -9,7 +9,7 @@ summary: Trial wavefunction describing quasiparticles. Quasiparticle residue. La
 ## Contents
 {:.no_toc}
 
-* ToC
+* Toc
 {:toc}
 
 ---

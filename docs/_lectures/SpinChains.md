@@ -11,7 +11,7 @@ summary: Simple models of magnetism; Heisenberg model;  Ferromagnets and Antifer
 ## Contents
 {:.no_toc}
 
-* ToC
+* Toc
 {:toc}
 
 ---

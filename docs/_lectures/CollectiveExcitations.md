@@ -9,7 +9,7 @@ summary: Quantizing a chain; Ground state wavefunction and displacement fluctuat
 ## Contents
 {:.no_toc}
 
-* ToC
+* Toc
 {:toc}
 
 ---

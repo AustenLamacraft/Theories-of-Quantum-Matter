@@ -9,7 +9,7 @@ summary: Response functions. Structure factor. Lindhard and dielectric function.
 ## Contents
 {:.no_toc}
 
-* ToC
+* Toc
 {:toc}
 
 ---

@@ -10,7 +10,7 @@ summary: Hubbard--Stratonovich treatment of RPA. Recover dielectric function. Ho
 ## Contents
 {:.no_toc}
 
-* ToC
+* Toc
 {:toc}
 
 ---

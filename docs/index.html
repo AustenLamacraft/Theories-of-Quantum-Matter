@@ -7,31 +7,13 @@ title: "Theories of Quantum Matter"
 
 <p>
   Welcome to the Part III Physics course
-  <strong> Theories of Quantum Matter</strong>, running in Michaelmas 2016. You can read more about the goals and structure of this course
-  <a href="{{ site.baseurl }}/about/">here</a>
+  <strong> Theories of Quantum Matter</strong>, running in Michaelmas 2016. The goals and structure of this course
+  are described <a href="{{ site.baseurl }}/about/">here</a>.
 </p>
 
 <p>
-  There will be four supervisions, each with their own set of problems
+  There will be four supervisions, each with their own set of <a href="{{ site.baseurl }}/problems/">problems</a>.
 </p>
-
-<div class="toc">
-  <ul class="post">
-  {% assign pages_list = site.problems | sort:"chapter" %}
-  {% for node in pages_list %}
-    {% if node.title != null %}
-      {% if node.layout == "page" %}
-        <h3>
-          <a href="{{ site.baseurl }}{{ node.url }}">
-            {{ node.title }}
-          </a>
-        </h3>
-        {{ node.summary }}
-      {% endif %}
-    {% endif %}
-  {% endfor %}
-  </ul>
-</div>
 
 </div>
 

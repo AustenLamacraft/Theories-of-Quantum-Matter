@@ -9,7 +9,7 @@ summary: 1D classical Ising doesn't order. Transverse Ising as quantum phase tra
 ## Contents
 {:.no_toc}
 
-* ToC
+* Toc
 {:toc}
 
 ---

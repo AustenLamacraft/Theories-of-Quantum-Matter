@@ -8,7 +8,7 @@ chapter: 12
 ## Contents
 {:.no_toc}
 
-* ToC
+* Toc
 {:toc}
 
 ---

@@ -4,12 +4,13 @@ title: Bose Gas
 author: Austen Lamacraft
 chapter: 12
 summary: Gross--Pitaevskii. Bogoliubov theory and superfluidity. `Gross--Pitaevskii in traps. Vortex lattices.`
+numbersections: true
 ---
 
 ## Contents
 {:.no_toc}
 
-* ToC
+* Toc
 {:toc}
 
 ---
