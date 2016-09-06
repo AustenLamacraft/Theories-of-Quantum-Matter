@@ -2,7 +2,7 @@
 layout: page
 title: Lattice Models and Strong Correlation
 author: Austen Lamacraft
-chapter: 14
+chapter: 13
 summary: Tight binding. Hubbard model and Mott transition. Bose--Hubbard. Superexchange via Schrieffer--Wolf.
 ---
 

@@ -14,6 +14,6 @@ summary: Trial wavefunction describing quasiparticles. Quasiparticle residue. La
 
 ---
 
-## Scattering of two particles in 1D
+## Perturbation theory
 
-Here we introduce..
+1D case as special (no residue)

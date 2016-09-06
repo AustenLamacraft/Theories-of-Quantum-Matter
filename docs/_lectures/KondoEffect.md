@@ -3,7 +3,7 @@ layout: page
 title: The Kondo Effect
 author: Austen Lamacraft
 chapter: 11
-summary: A localized spin in a Fermi sea; Divergences at second order; Poor man's scaling
+summary: A localized spin in a Fermi sea; Divergences at second order; Poor man's scaling.
 ---
 
 ## Contents
