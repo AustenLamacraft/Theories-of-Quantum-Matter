@@ -16,7 +16,7 @@ summary: Examples of the 1D Fermi gas, Calogero--Sutherland model, and Quantum H
 ---
 
 
-## Bosons and Fermions
+# Bosons and Fermions
 
 Here we introduce..  $$\br,\bk,\bv,\adop \tr(ABC)$$ $$\cA$$
 
@@ -24,24 +24,34 @@ Here we introduce..  $$\br,\bk,\bv,\adop \tr(ABC)$$ $$\cA$$
 \Psi(\br_1,\br_2) =
 \end{equation}
 
-### Physical Quantities
+In this first section leave a note setting $$\hbar = 1$$ for the rest of the course...
+
+## Physical Quantities
 
 Knowing the wavefunction $$\Psi(x_1,\ldots x_N)$$ of a many body system is one thing, but what to _do_ with it?
 
-## 1D Fermi gas
+# 1D Fermi Gas
 
-## The Impenetrable Bose Gas
+## Ground State
+
+## Excited States
+
+Particle and hole excitations
+
+Map out spectrum at fixed momentum
+
+# the Impenetrable Bose Gas
 
 Although the Fermi gas is a noninteracting system, the above discussion allows us to say something about an interacting system, albeit a rather special one.
 
 We consider 1D system described by the Hamiltonian
 
-## Calogero--Sutherland model
+# Calogero--Sutherland Model
 
-## Fermions in the lowest Landau level
+# Fermions in the Lowest Landau Level
 
-### Monte Carlo simulation of Laughlin states
+## Monte Carlo Simulation of Laughlin States
 
-## Bose and Fermi partition functions
+# Bose and Fermi Partition Functions
 
-### Statistics of Bose condensation
+## Statistics of Bose Condensation

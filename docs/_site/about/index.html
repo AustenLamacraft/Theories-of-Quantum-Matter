@@ -52,6 +52,29 @@
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/Theories-of-Quantum-Matter/atom.xml"/>
+
+  <!-- MathJax -->
+
+  <script type="text/javascript"
+   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>
+
+ <script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+   TeX: { equationNumbers: { autoNumber: "AMS" } },
+   extensions: ["tex2jax.js"],
+   jax: ["input/TeX","output/HTML-CSS"],
+   tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+ });
+ </script>
+
+ <!-- MathJax offline -->
+
+ <!--<script type="text/javascript"
+   src="/Theories-of-Quantum-Matter/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>-->
+
+
 </head>
 
 
@@ -84,13 +107,13 @@
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/CollectiveExcitations/">Collective Excitations</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/LiebLinigerModel/">The Lieb-Liniger Model</a>
         
       
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/LiebLinigerModel/">The Lieb-Liniger Model</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/CollectiveExcitations/">Collective Excitations</a>
         
       
     
@@ -114,13 +137,13 @@
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/ResponseAndCorrelation/">Response and Correlation</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Lattice/">Lattice Models and Strong Correlation</a>
         
       
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Jellium/">Jellium</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/BoseGas/">Bose Gas</a>
         
       
     
@@ -138,19 +161,19 @@
     
       
         
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/ResponseAndCorrelation/">Response and Correlation</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Jellium/">Jellium</a>
+        
+      
+    
+      
+        
           <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/KondoEffect/">The Kondo Effect</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/BoseGas/">Bose Gas</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Lattice/">Lattice Models and Strong Correlation</a>
         
       
     
@@ -200,12 +223,6 @@
 
       <div class="container content" id="main">
         <div class="page">
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    TeX: { equationNumbers: { autoNumber: "AMS" } }
-  });
-  </script>
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   $$
   \newcommand{\br}{\mathbf{r}}
   \newcommand{\bp}{\mathbf{p}}
@@ -250,6 +267,7 @@
 
 <ul id="markdown-toc">
   <li><a href="#models-of-matter" id="markdown-toc-models-of-matter">Models of Matter</a></li>
+  <li><a href="#writing-math" id="markdown-toc-writing-math">Writing Math</a></li>
 </ul>
 
 <hr />
@@ -262,6 +280,10 @@ Second, while we can calculate the transition temperature of the Ising model ana
 This illustrates that the Ising model captures both the phenomenology of magnetic ordering (and phase transitions more generally) and its complexity. You should think of models of this kind – statistical physics and many body physics are full of them – as minimal working examples that show us the essential ingredients needed for a phenomenon to occur. In the case of the Ising model these ingredients boil down to (1) a local variable that be positive or negative (2) a coupling between variables on different sites of a regular lattice. Immediately generalisations present themselves: What if the variables have more components? What if we change the lattice? Make it disordered?
 What is phenomenology?</p>
 
+<h2 id="writing-math">Writing Math</h2>
+
+<p>Advice from Mermin</p>
+
 </div>
 
       </div>
@@ -269,9 +291,8 @@ What is phenomenology?</p>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
-    <script>
 
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+    <script>
 
     // Highlight search Query
     var url = window.location.href;

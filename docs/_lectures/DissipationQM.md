@@ -26,6 +26,6 @@ You are familiar with the idea that that an infinite string can be described in 
 
 Modeling an LC line
 
-## Vertex operators: displacing the string
+## Vertex Operators: Displacing the String
 
 ## Coulomb Blockade

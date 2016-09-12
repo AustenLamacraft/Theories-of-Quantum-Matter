@@ -51,6 +51,29 @@
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/Theories-of-Quantum-Matter/atom.xml"/>
+
+  <!-- MathJax -->
+
+  <script type="text/javascript"
+   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>
+
+ <script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+   TeX: { equationNumbers: { autoNumber: "AMS" } },
+   extensions: ["tex2jax.js"],
+   jax: ["input/TeX","output/HTML-CSS"],
+   tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+ });
+ </script>
+
+ <!-- MathJax offline -->
+
+ <!--<script type="text/javascript"
+   src="/Theories-of-Quantum-Matter/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>-->
+
+
 </head>
 
 
@@ -83,13 +106,13 @@
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/CollectiveExcitations/">Collective Excitations</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/LiebLinigerModel/">The Lieb-Liniger Model</a>
         
       
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/LiebLinigerModel/">The Lieb-Liniger Model</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/CollectiveExcitations/">Collective Excitations</a>
         
       
     
@@ -113,13 +136,13 @@
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/ResponseAndCorrelation/">Response and Correlation</a>
+          <a class="sidebar-nav-item active" href="/Theories-of-Quantum-Matter/lectures/Lattice/">Lattice Models and Strong Correlation</a>
         
       
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Jellium/">Jellium</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/BoseGas/">Bose Gas</a>
         
       
     
@@ -137,19 +160,19 @@
     
       
         
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/ResponseAndCorrelation/">Response and Correlation</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Jellium/">Jellium</a>
+        
+      
+    
+      
+        
           <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/KondoEffect/">The Kondo Effect</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/BoseGas/">Bose Gas</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item active" href="/Theories-of-Quantum-Matter/lectures/Lattice/">Lattice Models and Strong Correlation</a>
         
       
     
@@ -199,12 +222,6 @@
 
       <div class="container content" id="main">
         <div class="page">
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    TeX: { equationNumbers: { autoNumber: "AMS" } }
-  });
-  </script>
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   $$
   \newcommand{\br}{\mathbf{r}}
   \newcommand{\bp}{\mathbf{p}}
@@ -245,16 +262,16 @@
 
 <ul id="markdown-toc">
   <li><a href="#tight-binding-models" id="markdown-toc-tight-binding-models">Tight Binding Models</a></li>
-  <li><a href="#bose--hubbard-model" id="markdown-toc-bose--hubbard-model">Bose–Hubbard model</a>    <ul>
-      <li><a href="#the-mott-state" id="markdown-toc-the-mott-state">The Mott state</a></li>
-      <li><a href="#the-superfluid-state" id="markdown-toc-the-superfluid-state">The superfluid state</a></li>
-      <li><a href="#the-phase-diagram" id="markdown-toc-the-phase-diagram">The phase diagram</a></li>
+  <li><a href="#bose--hubbard-model" id="markdown-toc-bose--hubbard-model">Bose–Hubbard Model</a>    <ul>
+      <li><a href="#the-mott-state" id="markdown-toc-the-mott-state">the Mott State</a></li>
+      <li><a href="#the-superfluid-state" id="markdown-toc-the-superfluid-state">the Superfluid State</a></li>
+      <li><a href="#the-phase-diagram" id="markdown-toc-the-phase-diagram">the Phase Diagram</a></li>
     </ul>
   </li>
-  <li><a href="#fermi--hubbard-model" id="markdown-toc-fermi--hubbard-model">(Fermi–)Hubbard model</a>    <ul>
+  <li><a href="#fermi--hubbard-model" id="markdown-toc-fermi--hubbard-model">(Fermi–)Hubbard Model</a>    <ul>
       <li><a href="#utoinfty-and-superexchange" id="markdown-toc-utoinfty-and-superexchange"><script type="math/tex">U\to\infty</script> and Superexchange</a>        <ul>
-          <li><a href="#two-sites" id="markdown-toc-two-sites">Two sites</a></li>
-          <li><a href="#schrieffer--wolf-transformation" id="markdown-toc-schrieffer--wolf-transformation">Schrieffer–Wolf transformation</a></li>
+          <li><a href="#two-sites" id="markdown-toc-two-sites">Two Sites</a></li>
+          <li><a href="#schrieffer--wolf-transformation" id="markdown-toc-schrieffer--wolf-transformation">Schrieffer–Wolf Transformation</a></li>
         </ul>
       </li>
     </ul>
@@ -267,17 +284,17 @@
 
 <p>Matrix form. Solution by Fourier transformation. <em>circulant matrix</em></p>
 
-<h1 id="bose--hubbard-model">Bose–Hubbard model</h1>
+<h1 id="bose--hubbard-model">Bose–Hubbard Model</h1>
 
-<h2 id="the-mott-state">The Mott state</h2>
+<h2 id="the-mott-state">the Mott State</h2>
 
 <p>Getting at the phase boundaries for large <script type="math/tex">U</script> by adding or removing a particle on top of the Mott state.</p>
 
-<h2 id="the-superfluid-state">The superfluid state</h2>
+<h2 id="the-superfluid-state">the Superfluid State</h2>
 
-<h2 id="the-phase-diagram">The phase diagram</h2>
+<h2 id="the-phase-diagram">the Phase Diagram</h2>
 
-<h1 id="fermi--hubbard-model">(Fermi–)Hubbard model</h1>
+<h1 id="fermi--hubbard-model">(Fermi–)Hubbard Model</h1>
 
 <h2 id="utoinfty-and-superexchange"><script type="math/tex">U\to\infty</script> and Superexchange</h2>
 
@@ -285,9 +302,9 @@
 
 <p>Should be cautious, as in a large system the energy spectrum of the Heisenberg model will exceed the separation from doubly occupied sites.</p>
 
-<h3 id="two-sites">Two sites</h3>
+<h3 id="two-sites">Two Sites</h3>
 
-<h3 id="schrieffer--wolf-transformation">Schrieffer–Wolf transformation</h3>
+<h3 id="schrieffer--wolf-transformation">Schrieffer–Wolf Transformation</h3>
 
 </div>
 
@@ -296,9 +313,8 @@
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
-    <script>
 
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+    <script>
 
     // Highlight search Query
     var url = window.location.href;

@@ -51,6 +51,29 @@
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/Theories-of-Quantum-Matter/atom.xml"/>
+
+  <!-- MathJax -->
+
+  <script type="text/javascript"
+   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>
+
+ <script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+   TeX: { equationNumbers: { autoNumber: "AMS" } },
+   extensions: ["tex2jax.js"],
+   jax: ["input/TeX","output/HTML-CSS"],
+   tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+ });
+ </script>
+
+ <!-- MathJax offline -->
+
+ <!--<script type="text/javascript"
+   src="/Theories-of-Quantum-Matter/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>-->
+
+
 </head>
 
 
@@ -83,13 +106,13 @@
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/CollectiveExcitations/">Collective Excitations</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/LiebLinigerModel/">The Lieb-Liniger Model</a>
         
       
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/LiebLinigerModel/">The Lieb-Liniger Model</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/CollectiveExcitations/">Collective Excitations</a>
         
       
     
@@ -113,13 +136,13 @@
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/ResponseAndCorrelation/">Response and Correlation</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Lattice/">Lattice Models and Strong Correlation</a>
         
       
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Jellium/">Jellium</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/BoseGas/">Bose Gas</a>
         
       
     
@@ -137,19 +160,19 @@
     
       
         
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/ResponseAndCorrelation/">Response and Correlation</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Jellium/">Jellium</a>
+        
+      
+    
+      
+        
           <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/KondoEffect/">The Kondo Effect</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/BoseGas/">Bose Gas</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Lattice/">Lattice Models and Strong Correlation</a>
         
       
     
@@ -199,12 +222,6 @@
 
       <div class="container content" id="main">
         <div class="page">
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    TeX: { equationNumbers: { autoNumber: "AMS" } }
-  });
-  </script>
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   $$
   \newcommand{\br}{\mathbf{r}}
   \newcommand{\bp}{\mathbf{p}}
@@ -245,9 +262,7 @@
 
 <ol id="markdown-toc">
   <li><a href="#the-fermi-polaron" id="markdown-toc-the-fermi-polaron">The Fermi Polaron</a></li>
-  <li><a href="#condensate-fluctuations" id="markdown-toc-condensate-fluctuations">Condensate Fluctuations</a></li>
-  <li><a href="#from-the-anderson-model-to-the-kondo-model" id="markdown-toc-from-the-anderson-model-to-the-kondo-model">From the Anderson Model to the Kondo Model</a></li>
-  <li><a href="#spin-flip-mediated-inelastic-scattering" id="markdown-toc-spin-flip-mediated-inelastic-scattering">Spin-flip mediated inelastic scattering</a></li>
+  <li><a href="#prices-inequality" id="markdown-toc-prices-inequality">Price’s Inequality</a></li>
 </ol>
 
 <hr />
@@ -256,11 +271,7 @@
 
 <p>Chevy’s wavefunction. Polaron residue</p>
 
-<h2 id="condensate-fluctuations">Condensate Fluctuations</h2>
-
-<h2 id="from-the-anderson-model-to-the-kondo-model">From the Anderson Model to the Kondo Model</h2>
-
-<h2 id="spin-flip-mediated-inelastic-scattering">Spin-flip mediated inelastic scattering</h2>
+<h2 id="prices-inequality">Price’s Inequality</h2>
 
 </div>
 
@@ -269,9 +280,8 @@
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
-    <script>
 
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+    <script>
 
     // Highlight search Query
     var url = window.location.href;

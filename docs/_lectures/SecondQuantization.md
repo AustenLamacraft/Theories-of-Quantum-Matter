@@ -16,4 +16,6 @@ summary: Fock states and occupation numbers. Creation and annihilation operators
 
 ## Fock States and Occupation Numbers
 
+Hark back to quantization of the elastic chain. We identify those with bosons
+
 _Possible pedagogical approach -- state conditions for CCR and CAR algebras and let students figure out correspondence_.

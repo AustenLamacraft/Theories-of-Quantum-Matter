@@ -51,6 +51,29 @@
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/Theories-of-Quantum-Matter/atom.xml"/>
+
+  <!-- MathJax -->
+
+  <script type="text/javascript"
+   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>
+
+ <script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+   TeX: { equationNumbers: { autoNumber: "AMS" } },
+   extensions: ["tex2jax.js"],
+   jax: ["input/TeX","output/HTML-CSS"],
+   tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+ });
+ </script>
+
+ <!-- MathJax offline -->
+
+ <!--<script type="text/javascript"
+   src="/Theories-of-Quantum-Matter/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>-->
+
+
 </head>
 
 
@@ -83,13 +106,13 @@
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/CollectiveExcitations/">Collective Excitations</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/LiebLinigerModel/">The Lieb-Liniger Model</a>
         
       
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/LiebLinigerModel/">The Lieb-Liniger Model</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/CollectiveExcitations/">Collective Excitations</a>
         
       
     
@@ -113,13 +136,13 @@
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/ResponseAndCorrelation/">Response and Correlation</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Lattice/">Lattice Models and Strong Correlation</a>
         
       
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Jellium/">Jellium</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/BoseGas/">Bose Gas</a>
         
       
     
@@ -137,19 +160,19 @@
     
       
         
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/ResponseAndCorrelation/">Response and Correlation</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Jellium/">Jellium</a>
+        
+      
+    
+      
+        
           <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/KondoEffect/">The Kondo Effect</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/BoseGas/">Bose Gas</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Lattice/">Lattice Models and Strong Correlation</a>
         
       
     
@@ -199,12 +222,6 @@
 
       <div class="container content" id="main">
         <div class="page">
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    TeX: { equationNumbers: { autoNumber: "AMS" } }
-  });
-  </script>
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   $$
   \newcommand{\br}{\mathbf{r}}
   \newcommand{\bp}{\mathbf{p}}
@@ -245,6 +262,10 @@
 
 <ol id="markdown-toc">
   <li><a href="#ground-state-of-the-attractive-lieb--liniger-model" id="markdown-toc-ground-state-of-the-attractive-lieb--liniger-model">Ground state of the attractive Lieb–Liniger model</a></li>
+  <li><a href="#quantize-the-2d-oscillator-problem" id="markdown-toc-quantize-the-2d-oscillator-problem">Quantize the 2D oscillator problem</a></li>
+  <li><a href="#optical-phonons" id="markdown-toc-optical-phonons">Optical phonons?</a></li>
+  <li><a href="#thermal-displacement-in-2d" id="markdown-toc-thermal-displacement-in-2d">Thermal displacement in 2D</a></li>
+  <li><a href="#from-schwinger-bosons-to-holstein--primakoff" id="markdown-toc-from-schwinger-bosons-to-holstein--primakoff">From Schwinger Bosons to Holstein–Primakoff</a></li>
   <li><a href="#the-simple-symmetric-exclusion-process-sep" id="markdown-toc-the-simple-symmetric-exclusion-process-sep">The Simple Symmetric Exclusion Process (SEP)</a></li>
 </ol>
 
@@ -253,6 +274,22 @@
 <h2 id="ground-state-of-the-attractive-lieb--liniger-model">Ground state of the attractive Lieb–Liniger model</h2>
 
 <p>Show the explicit form of the ground state and demonstrate that this is of Bethe form, identifying the Bethe momenta in this case.</p>
+
+<p>Relate to bright soliton – captures leading order ground state energy (and mass, but that’s easy)</p>
+
+<h2 id="quantize-the-2d-oscillator-problem">Quantize the 2D oscillator problem</h2>
+
+<h2 id="optical-phonons">Optical phonons?</h2>
+
+<p>Double the size of the unit cell?</p>
+
+<p>Model of a displacive phase transition</p>
+
+<h2 id="thermal-displacement-in-2d">Thermal displacement in 2D</h2>
+
+<p>Show that we get divergence of displacement in thermal equilibrium</p>
+
+<h2 id="from-schwinger-bosons-to-holstein--primakoff">From Schwinger Bosons to Holstein–Primakoff</h2>
 
 <h2 id="the-simple-symmetric-exclusion-process-sep">The Simple Symmetric Exclusion Process (SEP)</h2>
 
@@ -265,9 +302,8 @@
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
-    <script>
 
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+    <script>
 
     // Highlight search Query
     var url = window.location.href;

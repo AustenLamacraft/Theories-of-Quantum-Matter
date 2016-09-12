@@ -51,6 +51,29 @@
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/Theories-of-Quantum-Matter/atom.xml"/>
+
+  <!-- MathJax -->
+
+  <script type="text/javascript"
+   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>
+
+ <script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+   TeX: { equationNumbers: { autoNumber: "AMS" } },
+   extensions: ["tex2jax.js"],
+   jax: ["input/TeX","output/HTML-CSS"],
+   tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+ });
+ </script>
+
+ <!-- MathJax offline -->
+
+ <!--<script type="text/javascript"
+   src="/Theories-of-Quantum-Matter/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>-->
+
+
 </head>
 
 
@@ -83,13 +106,13 @@
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/CollectiveExcitations/">Collective Excitations</a>
+          <a class="sidebar-nav-item active" href="/Theories-of-Quantum-Matter/lectures/LiebLinigerModel/">The Lieb-Liniger Model</a>
         
       
     
       
         
-          <a class="sidebar-nav-item active" href="/Theories-of-Quantum-Matter/lectures/LiebLinigerModel/">The Lieb-Liniger Model</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/CollectiveExcitations/">Collective Excitations</a>
         
       
     
@@ -113,13 +136,13 @@
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/ResponseAndCorrelation/">Response and Correlation</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Lattice/">Lattice Models and Strong Correlation</a>
         
       
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Jellium/">Jellium</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/BoseGas/">Bose Gas</a>
         
       
     
@@ -137,19 +160,19 @@
     
       
         
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/ResponseAndCorrelation/">Response and Correlation</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Jellium/">Jellium</a>
+        
+      
+    
+      
+        
           <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/KondoEffect/">The Kondo Effect</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/BoseGas/">Bose Gas</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Lattice/">Lattice Models and Strong Correlation</a>
         
       
     
@@ -199,12 +222,6 @@
 
       <div class="container content" id="main">
         <div class="page">
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    TeX: { equationNumbers: { autoNumber: "AMS" } }
-  });
-  </script>
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   $$
   \newcommand{\br}{\mathbf{r}}
   \newcommand{\bp}{\mathbf{p}}
@@ -248,22 +265,38 @@
 <h2 class="no_toc" id="contents">Contents</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#the-model" id="markdown-toc-the-model">The Model</a></li>
+  <li><a href="#the-model" id="markdown-toc-the-model">the Model</a></li>
   <li><a href="#two-particles" id="markdown-toc-two-particles">Two Particles</a></li>
   <li><a href="#three-particles" id="markdown-toc-three-particles">Three Particles</a></li>
+  <li><a href="#bethes-ansatz" id="markdown-toc-bethes-ansatz">Bethe’s Ansatz</a>    <ul>
+      <li><a href="#bethe-equations" id="markdown-toc-bethe-equations">Bethe Equations</a></li>
+      <li><a href="#thermodynamic-limit" id="markdown-toc-thermodynamic-limit"> Thermodynamic Limit</a></li>
+      <li><a href="#excited-states" id="markdown-toc-excited-states"> Excited States</a></li>
+    </ul>
+  </li>
 </ul>
 
 <hr />
 
-<h2 id="the-model">The Model</h2>
+<h1 id="the-model">the Model</h1>
 
-<h2 id="two-particles">Two Particles</h2>
+<h1 id="two-particles">Two Particles</h1>
 
 <p>Here we introduce..</p>
 
 <p>Problem: attractive ground state (analytical form) Solving the Bethe equations</p>
 
-<h2 id="three-particles">Three Particles</h2>
+<h1 id="three-particles">Three Particles</h1>
+
+<h1 id="bethes-ansatz">Bethe’s Ansatz</h1>
+
+<h2 id="bethe-equations">Bethe Equations</h2>
+
+<h2 id="thermodynamic-limit"> Thermodynamic Limit</h2>
+
+<h2 id="excited-states"> Excited States</h2>
+
+<p>Make correspondence with excited states of Fermi gas.</p>
 
 </div>
 
@@ -272,9 +305,8 @@
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
-    <script>
 
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+    <script>
 
     // Highlight search Query
     var url = window.location.href;

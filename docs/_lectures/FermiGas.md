@@ -14,6 +14,6 @@ summary: Trial wavefunction describing quasiparticles. Quasiparticle residue. La
 
 ---
 
-## Perturbation theory
+## Perturbation Theory
 
 1D case as special (no residue)

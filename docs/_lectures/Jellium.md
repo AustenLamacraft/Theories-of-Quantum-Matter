@@ -2,8 +2,8 @@
 layout: page
 title: Jellium
 author: Austen Lamacraft
-chapter: 8
-summary: Hubbard--Stratonovich treatment of RPA. Recover dielectric function. How do we get at the functional determinant in the simplest way? Perhaps just be expanding the density in terms of the Coulomb field -- this makes the closest connection to a response function.
+chapter: 11
+summary: Feynman diagrams for the ground state energy; Gell Man -- Brueckner theory.
 
 ---
 
@@ -19,6 +19,6 @@ summary: Hubbard--Stratonovich treatment of RPA. Recover dielectric function. Ho
 
 Structure of the perturbation expansion
 
-## The Hubbard--Stratonovich Transformation
+## the Hubbard--Stratonovich Transformation
 
 Here we introduce..

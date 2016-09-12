@@ -14,11 +14,11 @@ summary: 1D classical Ising doesn't order. Transverse Ising as quantum phase tra
 
 ---
 
-## The Classical Ising Model
+## the Classical Ising Model
 
 ### No Transition in 1D
 
-## The Transverse Field Ising Model
+## the Transverse Field Ising Model
 
 
 `Classical Ising simulation.`

@@ -51,6 +51,29 @@
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/Theories-of-Quantum-Matter/atom.xml"/>
+
+  <!-- MathJax -->
+
+  <script type="text/javascript"
+   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>
+
+ <script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+   TeX: { equationNumbers: { autoNumber: "AMS" } },
+   extensions: ["tex2jax.js"],
+   jax: ["input/TeX","output/HTML-CSS"],
+   tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+ });
+ </script>
+
+ <!-- MathJax offline -->
+
+ <!--<script type="text/javascript"
+   src="/Theories-of-Quantum-Matter/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>-->
+
+
 </head>
 
 
@@ -83,13 +106,13 @@
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/CollectiveExcitations/">Collective Excitations</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/LiebLinigerModel/">The Lieb-Liniger Model</a>
         
       
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/LiebLinigerModel/">The Lieb-Liniger Model</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/CollectiveExcitations/">Collective Excitations</a>
         
       
     
@@ -113,13 +136,13 @@
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/ResponseAndCorrelation/">Response and Correlation</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Lattice/">Lattice Models and Strong Correlation</a>
         
       
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Jellium/">Jellium</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/BoseGas/">Bose Gas</a>
         
       
     
@@ -137,19 +160,19 @@
     
       
         
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/ResponseAndCorrelation/">Response and Correlation</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Jellium/">Jellium</a>
+        
+      
+    
+      
+        
           <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/KondoEffect/">The Kondo Effect</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/BoseGas/">Bose Gas</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Lattice/">Lattice Models and Strong Correlation</a>
         
       
     
@@ -199,12 +222,6 @@
 
       <div class="container content" id="main">
         <div class="page">
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    TeX: { equationNumbers: { autoNumber: "AMS" } }
-  });
-  </script>
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   $$
   \newcommand{\br}{\mathbf{r}}
   \newcommand{\bp}{\mathbf{p}}
@@ -244,8 +261,8 @@
   <h2 class="no_toc" id="contents">Contents</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#superfluid-density-of-bose-hubbard" id="markdown-toc-superfluid-density-of-bose-hubbard">Superfluid density of Bose Hubbard</a></li>
-  <li><a href="#repulsively-bound-states" id="markdown-toc-repulsively-bound-states">Repulsively bound states</a></li>
+  <li><a href="#from-the-anderson-model-to-the-kondo-model" id="markdown-toc-from-the-anderson-model-to-the-kondo-model">From the Anderson Model to the Kondo Model</a></li>
+  <li><a href="#spin-flip-mediated-inelastic-scattering" id="markdown-toc-spin-flip-mediated-inelastic-scattering">Spin-flip mediated inelastic scattering</a></li>
   <li><a href="#anderson-yuval-hamam-representation-of-the-kondo-problem" id="markdown-toc-anderson-yuval-hamam-representation-of-the-kondo-problem">Anderson, Yuval, Hamam representation of the Kondo Problem</a></li>
   <li><a href="#spin-boson-model" id="markdown-toc-spin-boson-model">Spin-boson Model</a></li>
   <li><a href="#coulomb--blockade-and-kondo" id="markdown-toc-coulomb--blockade-and-kondo">Coulomb–Blockade and Kondo</a></li>
@@ -253,11 +270,9 @@
 
 <hr />
 
-<h2 id="superfluid-density-of-bose-hubbard">Superfluid density of Bose Hubbard</h2>
+<h2 id="from-the-anderson-model-to-the-kondo-model">From the Anderson Model to the Kondo Model</h2>
 
-<p>Leggett variational argument</p>
-
-<h2 id="repulsively-bound-states">Repulsively bound states</h2>
+<h2 id="spin-flip-mediated-inelastic-scattering">Spin-flip mediated inelastic scattering</h2>
 
 <h2 id="anderson-yuval-hamam-representation-of-the-kondo-problem">Anderson, Yuval, Hamam representation of the Kondo Problem</h2>
 
@@ -274,9 +289,8 @@
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
-    <script>
 
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+    <script>
 
     // Highlight search Query
     var url = window.location.href;

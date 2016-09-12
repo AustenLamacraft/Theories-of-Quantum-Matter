@@ -9,15 +9,22 @@ summary: Heisenberg's problem as a first encounter with the idea of renormalizat
 ## Contents
 {:.no_toc}
 
-* ToC
+* Toc
 {:toc}
 
 ---
 
 ## Heisenberg's Problem
 
-How does the momentum space version differ from real space variational calculation?
+How does the momentum space version differ from real space variational calculation? Is it a kind of tail in real space?
 
-## _When perturbations attack II_
+## _When Perturbations Attack II_
 
 Here we introduce..
+
+
+## Anderson's Domain Wall Picture
+
+## the BCS-BEC Crossover
+
+Real space form of the wavefunction

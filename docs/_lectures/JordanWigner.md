@@ -14,11 +14,11 @@ summary: Bosonized representation of spin chains; Jordan--Wigner treatment of th
 
 ---
 
-## Spins _vs._ Fermions
+## Spins _Vs._ Fermions
 
 Here we introduce..
 
-## Bosonized representation of spins
+## Bosonized Representation of Spins
 
 Use bosonic operators to show how we can represent spin operators in a chain.
 

@@ -16,15 +16,15 @@ summary: Simple models of magnetism; Heisenberg model;  Ferromagnets and Antifer
 
 ---
 
-## The Heisenberg Model
+## the Heisenberg Model
 
 Mention Bethe ansatz solution. Relation to SEP. Spin waves and solitons. Antiferromagnetic order. Symmetry breaking. Anderson tower. Other examples- polar condensate.
 
 
-## A Numerical Experiment
+## a Numerical Experiment
 
 Exact diagonalization of spin chains;
 
-## Symmetry breaking
+## Symmetry Breaking
 
-### The Anderson Tower
+### the Anderson Tower

@@ -3,7 +3,7 @@ layout: page
 title: Problem Set 4
 author: Austen Lamacraft
 chapter: 3
-summary: Lattice Models; Quantum Dissipation; Jordan--Wigner; Ising Model.
+summary: Kondo Model; Quantum Dissipation; Jordan--Wigner; Ising Model.
 ---
 
 ## Contents
@@ -14,11 +14,9 @@ summary: Lattice Models; Quantum Dissipation; Jordan--Wigner; Ising Model.
 
 ---
 
-## Superfluid density of Bose Hubbard
+## From the Anderson Model to the Kondo Model
 
-Leggett variational argument
-
-## Repulsively bound states
+## Spin-flip mediated inelastic scattering
 
 ## Anderson, Yuval, Hamam representation of the Kondo Problem
 

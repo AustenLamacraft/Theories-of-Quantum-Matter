@@ -21,3 +21,7 @@ First, there are certain quantitative aspects of the transition (e.g. the critic
 Second, while we can calculate the transition temperature of the Ising model analytically in 2D, only numerical estimates are available in 3D. In fact, there are good reasons to believe an analytical calculation in 3D is impossible!
 This illustrates that the Ising model captures both the phenomenology of magnetic ordering (and phase transitions more generally) and its complexity. You should think of models of this kind -- statistical physics and many body physics are full of them -- as minimal working examples that show us the essential ingredients needed for a phenomenon to occur. In the case of the Ising model these ingredients boil down to (1) a local variable that be positive or negative (2) a coupling between variables on different sites of a regular lattice. Immediately generalisations present themselves: What if the variables have more components? What if we change the lattice? Make it disordered?
 What is phenomenology?
+
+## Writing Math
+
+Advice from Mermin 

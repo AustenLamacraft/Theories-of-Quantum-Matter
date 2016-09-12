@@ -51,6 +51,29 @@
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/Theories-of-Quantum-Matter/atom.xml"/>
+
+  <!-- MathJax -->
+
+  <script type="text/javascript"
+   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>
+
+ <script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+   TeX: { equationNumbers: { autoNumber: "AMS" } },
+   extensions: ["tex2jax.js"],
+   jax: ["input/TeX","output/HTML-CSS"],
+   tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+ });
+ </script>
+
+ <!-- MathJax offline -->
+
+ <!--<script type="text/javascript"
+   src="/Theories-of-Quantum-Matter/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>-->
+
+
 </head>
 
 
@@ -83,13 +106,13 @@
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/CollectiveExcitations/">Collective Excitations</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/LiebLinigerModel/">The Lieb-Liniger Model</a>
         
       
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/LiebLinigerModel/">The Lieb-Liniger Model</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/CollectiveExcitations/">Collective Excitations</a>
         
       
     
@@ -113,13 +136,13 @@
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/ResponseAndCorrelation/">Response and Correlation</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Lattice/">Lattice Models and Strong Correlation</a>
         
       
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Jellium/">Jellium</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/BoseGas/">Bose Gas</a>
         
       
     
@@ -137,19 +160,19 @@
     
       
         
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/ResponseAndCorrelation/">Response and Correlation</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Jellium/">Jellium</a>
+        
+      
+    
+      
+        
           <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/KondoEffect/">The Kondo Effect</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/BoseGas/">Bose Gas</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Lattice/">Lattice Models and Strong Correlation</a>
         
       
     
@@ -199,12 +222,6 @@
 
       <div class="container content" id="main">
         <div class="page">
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    TeX: { equationNumbers: { autoNumber: "AMS" } }
-  });
-  </script>
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   $$
   \newcommand{\br}{\mathbf{r}}
   \newcommand{\bp}{\mathbf{p}}
@@ -252,22 +269,26 @@
       <li><a href="#physical-quantities" id="markdown-toc-physical-quantities">Physical Quantities</a></li>
     </ul>
   </li>
-  <li><a href="#d-fermi-gas" id="markdown-toc-d-fermi-gas">1D Fermi gas</a></li>
-  <li><a href="#the-impenetrable-bose-gas" id="markdown-toc-the-impenetrable-bose-gas">The Impenetrable Bose Gas</a></li>
-  <li><a href="#calogero--sutherland-model" id="markdown-toc-calogero--sutherland-model">Calogero–Sutherland model</a></li>
-  <li><a href="#fermions-in-the-lowest-landau-level" id="markdown-toc-fermions-in-the-lowest-landau-level">Fermions in the lowest Landau level</a>    <ul>
-      <li><a href="#monte-carlo-simulation-of-laughlin-states" id="markdown-toc-monte-carlo-simulation-of-laughlin-states">Monte Carlo simulation of Laughlin states</a></li>
+  <li><a href="#d-fermi-gas" id="markdown-toc-d-fermi-gas">1D Fermi Gas</a>    <ul>
+      <li><a href="#ground-state" id="markdown-toc-ground-state">Ground State</a></li>
+      <li><a href="#excited-states" id="markdown-toc-excited-states">Excited States</a></li>
     </ul>
   </li>
-  <li><a href="#bose-and-fermi-partition-functions" id="markdown-toc-bose-and-fermi-partition-functions">Bose and Fermi partition functions</a>    <ul>
-      <li><a href="#statistics-of-bose-condensation" id="markdown-toc-statistics-of-bose-condensation">Statistics of Bose condensation</a></li>
+  <li><a href="#the-impenetrable-bose-gas" id="markdown-toc-the-impenetrable-bose-gas">the Impenetrable Bose Gas</a></li>
+  <li><a href="#calogero--sutherland-model" id="markdown-toc-calogero--sutherland-model">Calogero–Sutherland Model</a></li>
+  <li><a href="#fermions-in-the-lowest-landau-level" id="markdown-toc-fermions-in-the-lowest-landau-level">Fermions in the Lowest Landau Level</a>    <ul>
+      <li><a href="#monte-carlo-simulation-of-laughlin-states" id="markdown-toc-monte-carlo-simulation-of-laughlin-states">Monte Carlo Simulation of Laughlin States</a></li>
+    </ul>
+  </li>
+  <li><a href="#bose-and-fermi-partition-functions" id="markdown-toc-bose-and-fermi-partition-functions">Bose and Fermi Partition Functions</a>    <ul>
+      <li><a href="#statistics-of-bose-condensation" id="markdown-toc-statistics-of-bose-condensation">Statistics of Bose Condensation</a></li>
     </ul>
   </li>
 </ul>
 
 <hr />
 
-<h2 id="bosons-and-fermions">Bosons and Fermions</h2>
+<h1 id="bosons-and-fermions">Bosons and Fermions</h1>
 
 <p>Here we introduce..  <script type="math/tex">\br,\bk,\bv,\adop \tr(ABC)</script> <script type="math/tex">\cA</script></p>
 
@@ -275,27 +296,37 @@
 \Psi(\br_1,\br_2) =
 \end{equation}</p>
 
-<h3 id="physical-quantities">Physical Quantities</h3>
+<p>In this first section leave a note setting <script type="math/tex">\hbar = 1</script> for the rest of the course…</p>
+
+<h2 id="physical-quantities">Physical Quantities</h2>
 
 <p>Knowing the wavefunction <script type="math/tex">\Psi(x_1,\ldots x_N)</script> of a many body system is one thing, but what to <em>do</em> with it?</p>
 
-<h2 id="d-fermi-gas">1D Fermi gas</h2>
+<h1 id="d-fermi-gas">1D Fermi Gas</h1>
 
-<h2 id="the-impenetrable-bose-gas">The Impenetrable Bose Gas</h2>
+<h2 id="ground-state">Ground State</h2>
+
+<h2 id="excited-states">Excited States</h2>
+
+<p>Particle and hole excitations</p>
+
+<p>Map out spectrum at fixed momentum</p>
+
+<h1 id="the-impenetrable-bose-gas">the Impenetrable Bose Gas</h1>
 
 <p>Although the Fermi gas is a noninteracting system, the above discussion allows us to say something about an interacting system, albeit a rather special one.</p>
 
 <p>We consider 1D system described by the Hamiltonian</p>
 
-<h2 id="calogero--sutherland-model">Calogero–Sutherland model</h2>
+<h1 id="calogero--sutherland-model">Calogero–Sutherland Model</h1>
 
-<h2 id="fermions-in-the-lowest-landau-level">Fermions in the lowest Landau level</h2>
+<h1 id="fermions-in-the-lowest-landau-level">Fermions in the Lowest Landau Level</h1>
 
-<h3 id="monte-carlo-simulation-of-laughlin-states">Monte Carlo simulation of Laughlin states</h3>
+<h2 id="monte-carlo-simulation-of-laughlin-states">Monte Carlo Simulation of Laughlin States</h2>
 
-<h2 id="bose-and-fermi-partition-functions">Bose and Fermi partition functions</h2>
+<h1 id="bose-and-fermi-partition-functions">Bose and Fermi Partition Functions</h1>
 
-<h3 id="statistics-of-bose-condensation">Statistics of Bose condensation</h3>
+<h2 id="statistics-of-bose-condensation">Statistics of Bose Condensation</h2>
 
 </div>
 
@@ -304,9 +335,8 @@
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
-    <script>
 
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+    <script>
 
     // Highlight search Query
     var url = window.location.href;

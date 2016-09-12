@@ -3,7 +3,7 @@ layout: page
 title: Problem Set 3
 author: Austen Lamacraft
 chapter: 2
-summary: Fermi and Bose gases; Superconductivity; Kondo Effect.
+summary: Fermi gas; Superconductivity; Response and Correlation; Jellium.
 ---
 
 ## Contents
@@ -18,8 +18,4 @@ summary: Fermi and Bose gases; Superconductivity; Kondo Effect.
 
 Chevy's wavefunction. Polaron residue
 
-## Condensate Fluctuations
-
-## From the Anderson Model to the Kondo Model
-
-## Spin-flip mediated inelastic scattering
+## Price's Inequality

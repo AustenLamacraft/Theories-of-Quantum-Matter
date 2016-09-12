@@ -2,8 +2,8 @@
 layout: page
 title: Lattice Models and Strong Correlation
 author: Austen Lamacraft
-chapter: 13
-summary: Tight binding. Hubbard model and Mott transition. Bose--Hubbard. Superexchange via Schrieffer--Wolf.
+chapter: 7
+summary: Tight binding models; Hubbard models and the Mott transition; Superexchange.
 ---
 
 ## Contents
@@ -18,17 +18,17 @@ summary: Tight binding. Hubbard model and Mott transition. Bose--Hubbard. Supere
 
 Matrix form. Solution by Fourier transformation. _circulant matrix_
 
-# Bose--Hubbard model
+# Bose--Hubbard Model
 
-## The Mott state
+## the Mott State
 
 Getting at the phase boundaries for large $$U$$ by adding or removing a particle on top of the Mott state.
 
-## The superfluid state
+## the Superfluid State
 
-## The phase diagram
+## the Phase Diagram
 
-# (Fermi--)Hubbard model
+# (Fermi--)Hubbard Model
 
 ## $$U\to\infty$$ and Superexchange
 
@@ -36,6 +36,6 @@ On account of their being more than one species of particle, the $$U\to\infty$$ 
 
 Should be cautious, as in a large system the energy spectrum of the Heisenberg model will exceed the separation from doubly occupied sites.
 
-### Two sites
+### Two Sites
 
-### Schrieffer--Wolf transformation
+### Schrieffer--Wolf Transformation

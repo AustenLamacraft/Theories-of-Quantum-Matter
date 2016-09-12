@@ -52,6 +52,29 @@
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/Theories-of-Quantum-Matter/atom.xml"/>
+
+  <!-- MathJax -->
+
+  <script type="text/javascript"
+   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>
+
+ <script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+   TeX: { equationNumbers: { autoNumber: "AMS" } },
+   extensions: ["tex2jax.js"],
+   jax: ["input/TeX","output/HTML-CSS"],
+   tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+ });
+ </script>
+
+ <!-- MathJax offline -->
+
+ <!--<script type="text/javascript"
+   src="/Theories-of-Quantum-Matter/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>-->
+
+
 </head>
 
 
@@ -84,13 +107,13 @@
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/CollectiveExcitations/">Collective Excitations</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/LiebLinigerModel/">The Lieb-Liniger Model</a>
         
       
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/LiebLinigerModel/">The Lieb-Liniger Model</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/CollectiveExcitations/">Collective Excitations</a>
         
       
     
@@ -114,13 +137,13 @@
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/ResponseAndCorrelation/">Response and Correlation</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Lattice/">Lattice Models and Strong Correlation</a>
         
       
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Jellium/">Jellium</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/BoseGas/">Bose Gas</a>
         
       
     
@@ -138,19 +161,19 @@
     
       
         
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/ResponseAndCorrelation/">Response and Correlation</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Jellium/">Jellium</a>
+        
+      
+    
+      
+        
           <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/KondoEffect/">The Kondo Effect</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/BoseGas/">Bose Gas</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Lattice/">Lattice Models and Strong Correlation</a>
         
       
     
@@ -235,22 +258,22 @@
     
       
         <h3>
-          <a href="/Theories-of-Quantum-Matter/lectures/CollectiveExcitations/">
-            Collective Excitations
+          <a href="/Theories-of-Quantum-Matter/lectures/LiebLinigerModel/">
+            The Lieb-Liniger Model
           </a>
         </h3>
-        Quantizing a chain; Ground state wavefunction and displacement fluctuations; Feynman–Bijl formula as variational wavefunction.
+        Bethe's wave function; Impenetrable limit; Excited states and the classical limit.
       
     
   
     
       
         <h3>
-          <a href="/Theories-of-Quantum-Matter/lectures/LiebLinigerModel/">
-            The Lieb-Liniger Model
+          <a href="/Theories-of-Quantum-Matter/lectures/CollectiveExcitations/">
+            Collective Excitations
           </a>
         </h3>
-        Bethe's wave function; Impenetrable limit; Excited states and the classical limit.
+        Quantizing a chain; Ground state wavefunction and displacement fluctuations; Feynman–Bijl formula as variational wavefunction.
       
     
   
@@ -290,22 +313,22 @@
     
       
         <h3>
-          <a href="/Theories-of-Quantum-Matter/lectures/ResponseAndCorrelation/">
-            Response and Correlation
+          <a href="/Theories-of-Quantum-Matter/lectures/Lattice/">
+            Lattice Models and Strong Correlation
           </a>
         </h3>
-        Response functions. Structure factor. Lindhard and dielectric function. Sum rules.
+        Tight binding models; Hubbard models and the Mott transition; Superexchange.
       
     
   
     
       
         <h3>
-          <a href="/Theories-of-Quantum-Matter/lectures/Jellium/">
-            Jellium
+          <a href="/Theories-of-Quantum-Matter/lectures/BoseGas/">
+            Bose Gas
           </a>
         </h3>
-        Hubbard--Stratonovich treatment of RPA. Recover dielectric function. How do we get at the functional determinant in the simplest way? Perhaps just be expanding the density in terms of the Coulomb field -- this makes the closest connection to a response function.
+        Gross--Pitaevskii. Bogoliubov theory and superfluidity.
       
     
   
@@ -334,33 +357,33 @@
     
       
         <h3>
+          <a href="/Theories-of-Quantum-Matter/lectures/ResponseAndCorrelation/">
+            Response and Correlation
+          </a>
+        </h3>
+        Response functions. Structure factor. Lindhard and dielectric function. Sum rules.
+      
+    
+  
+    
+      
+        <h3>
+          <a href="/Theories-of-Quantum-Matter/lectures/Jellium/">
+            Jellium
+          </a>
+        </h3>
+        Feynman diagrams for the ground state energy; Gell Man -- Brueckner theory.
+      
+    
+  
+    
+      
+        <h3>
           <a href="/Theories-of-Quantum-Matter/lectures/KondoEffect/">
             The Kondo Effect
           </a>
         </h3>
         A localized spin in a Fermi sea; Divergences at second order; Poor man's scaling; Quantum Dots
-      
-    
-  
-    
-      
-        <h3>
-          <a href="/Theories-of-Quantum-Matter/lectures/BoseGas/">
-            Bose Gas
-          </a>
-        </h3>
-        Gross--Pitaevskii. Bogoliubov theory and superfluidity. `Gross--Pitaevskii in traps. Vortex lattices.`
-      
-    
-  
-    
-      
-        <h3>
-          <a href="/Theories-of-Quantum-Matter/lectures/Lattice/">
-            Lattice Models and Strong Correlation
-          </a>
-        </h3>
-        Tight binding. Hubbard model and Mott transition. Bose--Hubbard. Superexchange via Schrieffer--Wolf.
       
     
   
@@ -405,9 +428,8 @@
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
-    <script>
 
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+    <script>
 
     // Highlight search Query
     var url = window.location.href;

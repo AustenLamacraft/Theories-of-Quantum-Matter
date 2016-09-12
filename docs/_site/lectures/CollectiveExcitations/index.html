@@ -51,6 +51,29 @@
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/Theories-of-Quantum-Matter/atom.xml"/>
+
+  <!-- MathJax -->
+
+  <script type="text/javascript"
+   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>
+
+ <script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+   TeX: { equationNumbers: { autoNumber: "AMS" } },
+   extensions: ["tex2jax.js"],
+   jax: ["input/TeX","output/HTML-CSS"],
+   tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+ });
+ </script>
+
+ <!-- MathJax offline -->
+
+ <!--<script type="text/javascript"
+   src="/Theories-of-Quantum-Matter/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>-->
+
+
 </head>
 
 
@@ -83,13 +106,13 @@
     
       
         
-          <a class="sidebar-nav-item active" href="/Theories-of-Quantum-Matter/lectures/CollectiveExcitations/">Collective Excitations</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/LiebLinigerModel/">The Lieb-Liniger Model</a>
         
       
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/LiebLinigerModel/">The Lieb-Liniger Model</a>
+          <a class="sidebar-nav-item active" href="/Theories-of-Quantum-Matter/lectures/CollectiveExcitations/">Collective Excitations</a>
         
       
     
@@ -113,13 +136,13 @@
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/ResponseAndCorrelation/">Response and Correlation</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Lattice/">Lattice Models and Strong Correlation</a>
         
       
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Jellium/">Jellium</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/BoseGas/">Bose Gas</a>
         
       
     
@@ -137,19 +160,19 @@
     
       
         
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/ResponseAndCorrelation/">Response and Correlation</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Jellium/">Jellium</a>
+        
+      
+    
+      
+        
           <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/KondoEffect/">The Kondo Effect</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/BoseGas/">Bose Gas</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Lattice/">Lattice Models and Strong Correlation</a>
         
       
     
@@ -199,12 +222,6 @@
 
       <div class="container content" id="main">
         <div class="page">
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    TeX: { equationNumbers: { autoNumber: "AMS" } }
-  });
-  </script>
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   $$
   \newcommand{\br}{\mathbf{r}}
   \newcommand{\bp}{\mathbf{p}}
@@ -241,29 +258,119 @@
   \renewcommand{\Im}{\operatorname{Im}}
   $$
   <h1 class="page-title">Collective Excitations</h1>
-  <h2 class="no_toc" id="contents">Contents</h2>
+  <blockquote>
+  <p>In this lecture we discuss a very simple many body system in which particles are coupled by Hooke’s Law springs. Nevertheless, the quantization of this system has a lot to teach us about the appearance of <strong>collective excitations</strong>. Introducing anharmonicity causes these excitations to interact.</p>
+</blockquote>
+
+<h2 class="no_toc" id="contents">Contents</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#quantizing-an-elastic-chain" id="markdown-toc-quantizing-an-elastic-chain">Quantizing an elastic chain</a>    <ul>
-      <li><a href="#fourier-review" id="markdown-toc-fourier-review">Fourier review</a></li>
+  <li><a href="#quantizing-an-elastic-chain" id="markdown-toc-quantizing-an-elastic-chain">Quantizing an Elastic Chain</a>    <ul>
+      <li><a href="#the-classical-system" id="markdown-toc-the-classical-system">The Classical System</a></li>
+      <li><a href="#complex-amplitudes" id="markdown-toc-complex-amplitudes">Complex Amplitudes</a></li>
+      <li><a href="#fourier-review" id="markdown-toc-fourier-review">Fourier Review</a></li>
     </ul>
   </li>
-  <li><a href="#ground-state-wavefunction-and-fluctuations" id="markdown-toc-ground-state-wavefunction-and-fluctuations">Ground state wavefunction and fluctuations</a></li>
-  <li><a href="#excited-states-feynman--bijl-formula" id="markdown-toc-excited-states-feynman--bijl-formula">Excited states: Feynman–Bijl formula</a></li>
-  <li><a href="#nonlinearity-and-interactions" id="markdown-toc-nonlinearity-and-interactions">Nonlinearity and interactions</a></li>
+  <li><a href="#ground-state-wavefunction-and-fluctuations" id="markdown-toc-ground-state-wavefunction-and-fluctuations">Ground State Wavefunction and Fluctuations</a>    <ul>
+      <li><a href="#a-reminder-about-the-quantum-harmonic-oscillator" id="markdown-toc-a-reminder-about-the-quantum-harmonic-oscillator">A Reminder about the Quantum Harmonic Oscillator</a></li>
+    </ul>
+  </li>
+  <li><a href="#excited-states-feynman--bijl-formula" id="markdown-toc-excited-states-feynman--bijl-formula">Excited States: Feynman–Bijl Formula</a></li>
+  <li><a href="#nonlinearity-and-interactions" id="markdown-toc-nonlinearity-and-interactions">Nonlinearity and Interactions</a></li>
 </ul>
 
 <hr />
 
-<h2 id="quantizing-an-elastic-chain">Quantizing an elastic chain</h2>
+<h1 id="quantizing-an-elastic-chain">Quantizing an Elastic Chain</h1>
 
-<h3 id="fourier-review">Fourier review</h3>
+<p>We study a chain of equal masses connected by springs, moving only in one dimension, along the chain. The Hamiltonian is</p>
 
-<h2 id="ground-state-wavefunction-and-fluctuations">Ground state wavefunction and fluctuations</h2>
+<p>\begin{equation}
+H = \sum_{j=1}^N \left[\frac{p_j^2}{2m} + \frac{k}{2} (x_j-x_{j+1})^2 \right].
+\end{equation}</p>
 
-<h2 id="excited-states-feynman--bijl-formula">Excited states: Feynman–Bijl formula</h2>
+<p>We identify $x_j=x_{N+j}$, corresponding to periodic boundary conditions. As usual $[x_i,p_j]=i\delta_{ij}$. To orient ourselves, we solve the classical version of the problem.</p>
 
-<h2 id="nonlinearity-and-interactions">Nonlinearity and interactions</h2>
+<h2 id="the-classical-system">The Classical System</h2>
+
+<p>You’ve seen this before. The equations of motion are</p>
+
+<p>\begin{equation}
+m \ddot x_j = k(x_{j-1} + x_{j+1} - 2x_j).
+\end{equation}</p>
+
+<p>We look for oscillatory solutions with time dependence $x_j(t) = x_j e^{-i\omega t}$, arriving at the matrix eigenvalue problem</p>
+
+<p>\begin{equation}
+-\omega^2 \begin{pmatrix}
+x_1 <br />
+x_2 <br />
+\cdots <br />
+x_N
+\end{pmatrix} =
+\end{equation}</p>
+
+<p>Matrices of this type are called <a href="https://en.wikipedia.org/wiki/Circulant_matrix"><em>circulant</em> matrices</a>, and arise here because of the translational invariance of the system (including the periodic boundary conditions). Their eigenvectors are given by plane waves $x_j = z_n^j$, where $z_n$ is one of the $N^\text{th}$ roots of unity i.e. $z^N = 1$ or</p>
+
+<p>\begin{equation}
+z_n = \exp\left(\frac{2\pi i n}{N}\right),\qquad n = 0,\ldots, N-1.
+\end{equation}</p>
+
+<p>In fact, to make things a bit more symmetrical, let’s take $N$ to be odd and index the $z_n$ using both positive and negative values of $n$</p>
+
+<p>\begin{equation}
+z_n = \exp\left(\frac{2\pi i n}{N}\right),\qquad n = -(N-1)/2,\ldots, (N-1)/2.
+\end{equation}</p>
+
+<p>We’ll write $k_n\equiv \frac{2\pi n}{N}$, so that the eigenstates have the form $x_j=\exp(ik_n j)$. Substitution into the equation of motion yields the dispersion relation</p>
+
+<p>\begin{equation}
+\omega_n^2 = \frac{2k}{m}\left(1-\cos k_n\right),
+\end{equation}</p>
+
+<p>which is plotted in Figure… Notice that:</p>
+
+<ol>
+  <li>The frequency vanishes at $k\to 0$. This mode corresponds to translation of the system, for which there is no restoring force.</li>
+  <li>At small $k$ the dispersion is linear, as we would expect for sound waves.</li>
+</ol>
+
+<p>A general motion of the system can be represented as a superposition of the normal modes</p>
+
+<p>\begin{equation}\label{superposition}
+x_j(t) = X + Vt +  \sum_{\substack{n\neq 0\ |n|\leq (N-1)/2}} \left[q_n \exp\left(ik_n j - i\omega_n t\right) +\text{c.c.} \right]
+\end{equation}</p>
+
+<p>where $X$ and $V$ describe the motion of the centre of mass.</p>
+
+<p>To make contact with quantum physics, let’s look at this problem from the Hamiltonian perspective. Writing the Hamiltonian</p>
+
+<p>rebuild</p>
+
+<h2 id="complex-amplitudes">Complex Amplitudes</h2>
+
+<p>Sticking with the classical problem, let’s introduce complex coordinates to describe our two dimensional phase space.</p>
+
+<h2 id="fourier-review">Fourier Review</h2>
+
+<h1 id="ground-state-wavefunction-and-fluctuations">Ground State Wavefunction and Fluctuations</h1>
+
+<h2 id="a-reminder-about-the-quantum-harmonic-oscillator">A Reminder about the Quantum Harmonic Oscillator</h2>
+
+<p>First hint of special nature of 1D – divergence of displacement.</p>
+
+<h1 id="excited-states-feynman--bijl-formula">Excited States: Feynman–Bijl Formula</h1>
+
+<p>For the harmonic chain can show that acting with $\rho_q$ on the ground state gives an excited state</p>
+
+<p>Is it useful to do this in lectures. Other non-trivial example is Fermi gas</p>
+
+<h1 id="nonlinearity-and-interactions">Nonlinearity and Interactions</h1>
+
+<p>This is a good excercise in writing things in Fourier modes
+Could compute phonon lifetime using Golden Rule</p>
+
+<p>Background on FPU</p>
 
 </div>
 
@@ -272,9 +379,8 @@
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
-    <script>
 
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+    <script>
 
     // Highlight search Query
     var url = window.location.href;

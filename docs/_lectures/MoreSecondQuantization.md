@@ -20,4 +20,4 @@ summary: Density matrix. Density correlations. Second quantized Hamiltonians. Mo
 
 Example of Lieb--Liniger Hamiltonian that we have met before.
 
-## _When perturbations attack I_
+## _When Perturbations Attack I_
