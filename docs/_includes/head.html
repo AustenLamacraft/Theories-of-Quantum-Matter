@@ -70,14 +70,47 @@
 
  <script type="text/x-mathjax-config">
  MathJax.Hub.Config({
-   TeX: { equationNumbers: { autoNumber: "AMS" } },
+   TeX: { equationNumbers: { autoNumber: "all" },
+          Macros: {
+          RR: '{\\bf R}',                // a simple string replacement
+          br: '\\mathbf{r}',
+          bp: '\\mathbf{p}',
+          bq: '\\mathbf{q}',
+          bv: '\\mathbf{v}',
+          bA: '\\mathbf{A}',
+          pop: '\\psi^{\vphantom{\dagger}}',
+          pdop: '\\psi^\\dagger',
+          Phop: '\\Phi^{\\vphantom{\\dagger}}',
+          Phdop: '\\Phi^\\dagger',
+          phop: '\\phi^{\\vphantom{\\dagger}}',
+          phdop: '\\phi^\\dagger',
+          aop: 'a^{\\vphantom{\\dagger}}',
+          adop: 'a^\\dagger',
+          bop: 'b^{\\vphantom{\\dagger}}',
+          bdop: 'b^\\dagger',
+          cop: 'c^{\\vphantom{\\dagger}}',
+          cdop: 'c^\\dagger',
+          tr: '\\operatorname{tr}\\nolimits',
+          sgn: '\\operatorname{sgn}',
+          E: '\\operatorname{\\mathbb{E}}',
+          Var: '\\operatorname{\\mathbb{Var}}',
+          Cov: '\\operatorname{\\mathbb{Cov}}',
+          Re: '\\operatorname{Re}}',
+          ket: ['\\left\|{#1}\\right\\rangle',1],
+          bra: ['\\left\\langle{#1}\\right\|',1]
+    }
+  },
    extensions: ["tex2jax.js"],
    jax: ["input/TeX","output/HTML-CSS"],
    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
  });
  </script>
 
- <!-- MathJax offline -->
+$$
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\nonumber
+$$
 
  <!--<script type="text/javascript"
    src="{{site.baseurl}}/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">

@@ -61,14 +61,47 @@
 
  <script type="text/x-mathjax-config">
  MathJax.Hub.Config({
-   TeX: { equationNumbers: { autoNumber: "AMS" } },
+   TeX: { equationNumbers: { autoNumber: "all" },
+          Macros: {
+          RR: '{\\bf R}',                // a simple string replacement
+          br: '\\mathbf{r}',
+          bp: '\\mathbf{p}',
+          bq: '\\mathbf{q}',
+          bv: '\\mathbf{v}',
+          bA: '\\mathbf{A}',
+          pop: '\\psi^{\vphantom{\dagger}}',
+          pdop: '\\psi^\\dagger',
+          Phop: '\\Phi^{\\vphantom{\\dagger}}',
+          Phdop: '\\Phi^\\dagger',
+          phop: '\\phi^{\\vphantom{\\dagger}}',
+          phdop: '\\phi^\\dagger',
+          aop: 'a^{\\vphantom{\\dagger}}',
+          adop: 'a^\\dagger',
+          bop: 'b^{\\vphantom{\\dagger}}',
+          bdop: 'b^\\dagger',
+          cop: 'c^{\\vphantom{\\dagger}}',
+          cdop: 'c^\\dagger',
+          tr: '\\operatorname{tr}\\nolimits',
+          sgn: '\\operatorname{sgn}',
+          E: '\\operatorname{\\mathbb{E}}',
+          Var: '\\operatorname{\\mathbb{Var}}',
+          Cov: '\\operatorname{\\mathbb{Cov}}',
+          Re: '\\operatorname{Re}}',
+          ket: ['\\left\|{#1}\\right\\rangle',1],
+          bra: ['\\left\\langle{#1}\\right\|',1]
+    }
+  },
    extensions: ["tex2jax.js"],
    jax: ["input/TeX","output/HTML-CSS"],
    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
  });
  </script>
 
- <!-- MathJax offline -->
+$$
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\nonumber
+$$
 
  <!--<script type="text/javascript"
    src="/Theories-of-Quantum-Matter/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -223,41 +256,6 @@
 
       <div class="container content" id="main">
         <div class="page">
-  $$
-  \newcommand{\br}{\mathbf{r}}
-  \newcommand{\bp}{\mathbf{p}}
-  \newcommand{\bk}{\mathbf{k}}
-  \newcommand{\bq}{\mathbf{q}}
-  \newcommand{\bv}{\mathbf{v}}
-  \newcommand{\cA}{\mathcal{A}}
-
-  \newcommand{\pop}{\psi^{\vphantom{\dagger}}}
-  \newcommand{\pdop}{\psi^\dagger}
-  \newcommand{\Phop}{\Phi^{\vphantom{\dagger}}}
-  \newcommand{\Phdop}{\Phi^\dagger}
-  \newcommand{\phop}{\phi^{\vphantom{\dagger}}}
-  \newcommand{\phdop}{\phi^\dagger}
-  \newcommand{\aop}{a^{\vphantom{\dagger}}}
-  \newcommand{\adop}{a^\dagger}
-  \newcommand{\bop}{b^{\vphantom{\dagger}}}
-  \newcommand{\bdop}{b^\dagger}
-  \newcommand{\cop}{c^{\vphantom{\dagger}}}
-  \newcommand{\cdop}{c^\dagger}
-  \newcommand{\sgn}{\mathrm{sgn}}
-
-  \DeclareMathOperator{\tr}{tr}
-  \newcommand{\vect}[1]{\mathbf{#1}}
-
-  \DeclareMathOperator{\E}{\mathbb{E}}
-  \DeclareMathOperator{\Cov}{Cov}
-  \DeclareMathOperator{\Var}{Var}
-
-  \DeclareMathOperator{\erfc}{erfc}
-  \DeclareMathOperator{\erfi}{erfi}
-
-  \renewcommand{\Re}{\operatorname{Re}}
-  \renewcommand{\Im}{\operatorname{Im}}
-  $$
   <h1 class="page-title">About This Course</h1>
   <blockquote>
   <p>The general approach of this course is to study <strong>simple models</strong> of phenomena in condensed matter physics.</p>

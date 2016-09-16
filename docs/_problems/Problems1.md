@@ -20,6 +20,7 @@ Show the explicit form of the ground state and demonstrate that this is of Bethe
 
 Relate to bright soliton -- captures leading order ground state energy (and mass, but that's easy)
 
+## Diagonalize quadratic Hamiltonian for general two particle potential
 
 ## Quantize the 2D oscillator problem
 

@@ -60,14 +60,47 @@
 
  <script type="text/x-mathjax-config">
  MathJax.Hub.Config({
-   TeX: { equationNumbers: { autoNumber: "AMS" } },
+   TeX: { equationNumbers: { autoNumber: "all" },
+          Macros: {
+          RR: '{\\bf R}',                // a simple string replacement
+          br: '\\mathbf{r}',
+          bp: '\\mathbf{p}',
+          bq: '\\mathbf{q}',
+          bv: '\\mathbf{v}',
+          bA: '\\mathbf{A}',
+          pop: '\\psi^{\vphantom{\dagger}}',
+          pdop: '\\psi^\\dagger',
+          Phop: '\\Phi^{\\vphantom{\\dagger}}',
+          Phdop: '\\Phi^\\dagger',
+          phop: '\\phi^{\\vphantom{\\dagger}}',
+          phdop: '\\phi^\\dagger',
+          aop: 'a^{\\vphantom{\\dagger}}',
+          adop: 'a^\\dagger',
+          bop: 'b^{\\vphantom{\\dagger}}',
+          bdop: 'b^\\dagger',
+          cop: 'c^{\\vphantom{\\dagger}}',
+          cdop: 'c^\\dagger',
+          tr: '\\operatorname{tr}\\nolimits',
+          sgn: '\\operatorname{sgn}',
+          E: '\\operatorname{\\mathbb{E}}',
+          Var: '\\operatorname{\\mathbb{Var}}',
+          Cov: '\\operatorname{\\mathbb{Cov}}',
+          Re: '\\operatorname{Re}}',
+          ket: ['\\left\|{#1}\\right\\rangle',1],
+          bra: ['\\left\\langle{#1}\\right\|',1]
+    }
+  },
    extensions: ["tex2jax.js"],
    jax: ["input/TeX","output/HTML-CSS"],
    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
  });
  </script>
 
- <!-- MathJax offline -->
+$$
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\nonumber
+$$
 
  <!--<script type="text/javascript"
    src="/Theories-of-Quantum-Matter/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -222,46 +255,12 @@
 
       <div class="container content" id="main">
         <div class="page">
-  $$
-  \newcommand{\br}{\mathbf{r}}
-  \newcommand{\bp}{\mathbf{p}}
-  \newcommand{\bk}{\mathbf{k}}
-  \newcommand{\bq}{\mathbf{q}}
-  \newcommand{\bv}{\mathbf{v}}
-  \newcommand{\cA}{\mathcal{A}}
-
-  \newcommand{\pop}{\psi^{\vphantom{\dagger}}}
-  \newcommand{\pdop}{\psi^\dagger}
-  \newcommand{\Phop}{\Phi^{\vphantom{\dagger}}}
-  \newcommand{\Phdop}{\Phi^\dagger}
-  \newcommand{\phop}{\phi^{\vphantom{\dagger}}}
-  \newcommand{\phdop}{\phi^\dagger}
-  \newcommand{\aop}{a^{\vphantom{\dagger}}}
-  \newcommand{\adop}{a^\dagger}
-  \newcommand{\bop}{b^{\vphantom{\dagger}}}
-  \newcommand{\bdop}{b^\dagger}
-  \newcommand{\cop}{c^{\vphantom{\dagger}}}
-  \newcommand{\cdop}{c^\dagger}
-  \newcommand{\sgn}{\mathrm{sgn}}
-
-  \DeclareMathOperator{\tr}{tr}
-  \newcommand{\vect}[1]{\mathbf{#1}}
-
-  \DeclareMathOperator{\E}{\mathbb{E}}
-  \DeclareMathOperator{\Cov}{Cov}
-  \DeclareMathOperator{\Var}{Var}
-
-  \DeclareMathOperator{\erfc}{erfc}
-  \DeclareMathOperator{\erfi}{erfi}
-
-  \renewcommand{\Re}{\operatorname{Re}}
-  \renewcommand{\Im}{\operatorname{Im}}
-  $$
   <h1 class="page-title">Problem Set 1</h1>
   <h2 class="no_toc" id="contents">Contents</h2>
 
 <ol id="markdown-toc">
   <li><a href="#ground-state-of-the-attractive-lieb--liniger-model" id="markdown-toc-ground-state-of-the-attractive-lieb--liniger-model">Ground state of the attractive Lieb–Liniger model</a></li>
+  <li><a href="#diagonalize-quadratic-hamiltonian-for-general-two-particle-potential" id="markdown-toc-diagonalize-quadratic-hamiltonian-for-general-two-particle-potential">Diagonalize quadratic Hamiltonian for general two particle potential</a></li>
   <li><a href="#quantize-the-2d-oscillator-problem" id="markdown-toc-quantize-the-2d-oscillator-problem">Quantize the 2D oscillator problem</a></li>
   <li><a href="#optical-phonons" id="markdown-toc-optical-phonons">Optical phonons?</a></li>
   <li><a href="#thermal-displacement-in-2d" id="markdown-toc-thermal-displacement-in-2d">Thermal displacement in 2D</a></li>
@@ -276,6 +275,8 @@
 <p>Show the explicit form of the ground state and demonstrate that this is of Bethe form, identifying the Bethe momenta in this case.</p>
 
 <p>Relate to bright soliton – captures leading order ground state energy (and mass, but that’s easy)</p>
+
+<h2 id="diagonalize-quadratic-hamiltonian-for-general-two-particle-potential">Diagonalize quadratic Hamiltonian for general two particle potential</h2>
 
 <h2 id="quantize-the-2d-oscillator-problem">Quantize the 2D oscillator problem</h2>
 
