@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="/Theories-of-Quantum-Matter/lectures/SpinModels/"/>
+
+  <!-- Basic meta elements -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+
+  <!--   Dublin Core metadata for Zotero -->
+  <meta name="DC.title" content="Spin Models" />
+  <meta name="DC.creator" content="Austen Lamacraft" />
+  <meta name="DC.contributor" content="" />
+  <meta name="DC.date" content="" />
+  <meta name="DC.rights" content="" />
+  <meta name="DC.source" content="Theories of Quantum Matter" />
+
+    <!-- Open Graph metadata -->
+
+    
+    <meta property="og:title" content="Spin Models"/>
+    <meta property="og:description" content="An Ed edition">
+    <meta property="fb:admins" content="elotroalex"/>
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://austenlamacraft.github.io/Theories-of-Quantum-Matter/lectures/SpinModels/"/>
+    <meta property="fb:app_id" content="589495744558280"/>
+    <meta property="og:image" content="https://austenlamacraft.github.io/Theories-of-Quantum-Matter/public/open-graph-logo.png"/>
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+
+  <title>
+    
+      Spin Models
+    
+  </title>
+
+  <!-- CSS links -->
+  <link rel="stylesheet" href="/Theories-of-Quantum-Matter/public/css/syntax.css"/>
+  <link rel="stylesheet" href="/Theories-of-Quantum-Matter/public/css/ed.css"/>
+
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/Theories-of-Quantum-Matter/public/apple-touch-icon-precomposed.png"/>
+  <link rel="shortcut icon" href="/Theories-of-Quantum-Matter/public/favicon.ico"/>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/Theories-of-Quantum-Matter/atom.xml"/>
+
+  <!-- MathJax -->
+
+  <script type="text/javascript"
+   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>
+
+ <script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+   TeX: { equationNumbers: { autoNumber: "all" },
+          Macros: {
+          RR: '{\\bf R}',                // a simple string replacement
+          br: '\\mathbf{r}',
+          bp: '\\mathbf{p}',
+          bq: '\\mathbf{q}',
+          bv: '\\mathbf{v}',
+          bA: '\\mathbf{A}',
+          pop: '\\psi^{\vphantom{\dagger}}',
+          pdop: '\\psi^\\dagger',
+          Phop: '\\Phi^{\\vphantom{\\dagger}}',
+          Phdop: '\\Phi^\\dagger',
+          phop: '\\phi^{\\vphantom{\\dagger}}',
+          phdop: '\\phi^\\dagger',
+          aop: 'a^{\\vphantom{\\dagger}}',
+          adop: 'a^\\dagger',
+          bop: 'b^{\\vphantom{\\dagger}}',
+          bdop: 'b^\\dagger',
+          cop: 'c^{\\vphantom{\\dagger}}',
+          cdop: 'c^\\dagger',
+          tr: '\\operatorname{tr}\\nolimits',
+          sgn: '\\operatorname{sgn}',
+          E: '\\operatorname{\\mathbb{E}}',
+          Var: '\\operatorname{\\mathbb{Var}}',
+          Cov: '\\operatorname{\\mathbb{Cov}}',
+          Re: '\\operatorname{Re}}',
+          ket: ['\\left\|{#1}\\right\\rangle',1],
+          bra: ['\\left\\langle{#1}\\right\|',1]
+    }
+  },
+   extensions: ["tex2jax.js"],
+   jax: ["input/TeX","output/HTML-CSS"],
+   tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+ });
+ </script>
+
+$$
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\nonumber
+$$
+
+ <!--<script type="text/javascript"
+   src="/Theories-of-Quantum-Matter/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>-->
+
+
+</head>
+
+
+  <body>
+
+    <!-- This if statement decides which sidebar to use -->
+    
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>A Part III Physics Course at the University of Cambridge</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/">Home</a>
+
+    
+
+    
+    
+      
+        
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/ManyBodyWavefunctions/">Many Body Wavefunctions</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/LiebLinigerModel/">The Lieb-Liniger Model</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/ElasticChain/">The Elastic Chain</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item active" href="/Theories-of-Quantum-Matter/lectures/SpinModels/">Spin Models</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/SecondQuantization/">A is for Annihilation</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/MoreSecondQuantization/">More Second Quantization</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Lattice/">Lattice Models and Strong Correlation</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/BoseGas/">Bose Gas</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/FermiGas/">Fermi Gas</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Superconductivity/">Superconductivity</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/ResponseAndCorrelation/">Response and Correlation</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/Jellium/">Jellium</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/KondoEffect/">The Kondo Effect</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/DissipationQM/">Quantum Dissipation and Orthogonality Catastrophe</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/JordanWigner/">Bosonization and Jordan-Wigner transformation</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/IsingModel/">The Ising Model and Quantum Phase Transitions</a>
+        
+      
+    
+
+    <!-- The code below is used for manually entered links  -->
+
+    <a class="sidebar-nav-item" href="https://via.hypothes.is/https://austenlamacraft.github.io/Theories-of-Quantum-Matter/lectures/SpinModels/">Annotate me</a>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>Distributed with an MIT license.</p>
+  </div>
+</div>
+
+    
+
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/Theories-of-Quantum-Matter/" title="Home">Theories of Quantum Matter</a>
+            <br><small>Quantum Mechanics of Many Body Systems</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content" id="main">
+        <div class="page">
+  <h1 class="page-title">Spin Models</h1>
+  <blockquote>
+  <p>In this lecture we introduce a simple quantum mechanical model of magnetism consisting of a lattice of coupled spins. As in the elastic chain, we identify the elementary excitations and their interaction.</p>
+</blockquote>
+
+<h2 class="no_toc" id="contents">Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#the-heisenberg-model" id="markdown-toc-the-heisenberg-model">The Heisenberg Model</a></li>
+  <li><a href="#the-heisenberg-ferromagnetic-chain" id="markdown-toc-the-heisenberg-ferromagnetic-chain">The Heisenberg Ferromagnetic Chain</a>    <ul>
+      <li><a href="#ground-state" id="markdown-toc-ground-state">Ground State</a></li>
+      <li><a href="#first-excited-states" id="markdown-toc-first-excited-states">First Excited States</a></li>
+      <li><a href="#two-magnon-states" id="markdown-toc-two-magnon-states">Two-Magnon states</a></li>
+      <li><a href="#n-magnon-states" id="markdown-toc-n-magnon-states">$N$-Magnon States</a></li>
+    </ul>
+  </li>
+  <li><a href="#antiferromagnets-are-different" id="markdown-toc-antiferromagnets-are-different">Antiferromagnets Are Different!</a>    <ul>
+      <li><a href="#the-anderson-tower" id="markdown-toc-the-anderson-tower">The Anderson Tower</a></li>
+      <li><a href="#translational-invariance" id="markdown-toc-translational-invariance">Translational invariance</a></li>
+    </ul>
+  </li>
+  <li><a href="#large-s-expansion" id="markdown-toc-large-s-expansion">Large $S$ expansion</a></li>
+  <li><a href="#a-numerical-experiment" id="markdown-toc-a-numerical-experiment">A Numerical Experiment</a></li>
+</ul>
+
+<hr />
+<p>Nagaosa, Anderson</p>
+
+<hr />
+
+<h2 id="the-heisenberg-model">The Heisenberg Model</h2>
+
+<p>You have probably encountered the <a href="https://en.wikipedia.org/wiki/Ising_model">Ising model</a> of magnetism, defined by the Hamiltonian</p>
+
+<script type="math/tex; mode=display">H = J\sum_{\langle j\,k\rangle} \sigma_j \sigma_k,
+\label{spin_ising}</script>
+
+<p>where the ‘spin’ variables $\sigma_j$ take the values $\pm 1$. The notation ${\langle j\,k\rangle}$ indicates that the sum is over all nearest neighbour pairs on some (e.g. cubic) lattice. A coupling $J&lt;0$ between spins means that aligned spins have a lower energy than anti-aligned spins, favouring <em>ferromagnetism</em>.</p>
+
+<p>While there’s a lot of mileage in the Ising model as a statistical mechanical model – it can describe the ferromagnetic phase transition – it has some shortcomings as a quantum Hamiltonian. Identifying the variable $\sigma_j$ with a component of a spin-1/2 along some axis $\sigma_j = \sigma^z_j$, we see that there are no non-commuting variables in the Hamiltonian, and therefore no dynamics to the system of spins. The eigenstates are simply product states of $\sigma_j^z$ eigenstates.</p>
+
+<p>A more realistic model from this point of view is the <strong>Heisenberg model</strong></p>
+
+<script type="math/tex; mode=display">H = J \sum_{\langle j\,k\rangle} \boldsymbol{\sigma}_j \cdot \boldsymbol{\sigma}_k.
+\label{spin_Hberg}</script>
+
+<p>Although it is not possible to solve this model in general, we will see that it captures many of the dynamical features (e.g. spin waves) of real magnetic materials.</p>
+
+<h2 id="the-heisenberg-ferromagnetic-chain">The Heisenberg Ferromagnetic Chain</h2>
+
+<h3 id="ground-state">Ground State</h3>
+
+<p>Let’s try and guess some eigenstates. For simplicity we’ll begin with the 1D case, where the spins are arranged in a chain</p>
+
+<script type="math/tex; mode=display">H = J \sum_{j=1}^N \boldsymbol{\sigma}_j \cdot \boldsymbol{\sigma}_{j+1},</script>
+
+<p>and as usual we take $\boldsymbol{\sigma}_j=\boldsymbol{\sigma}_{j+N}$ (periodic boundary conditions). Such a system is called a <strong>spin chain</strong>. Surprisingly enough, crystals do exist in which magnetic atoms are arranged in this way, with only weak coupling between neighbouring chains. So models of this type are a useful description, at least in some energy window, of real materials.</p>
+
+<p>Since \eqref{spin_Hberg} is supposed to be a model for a magnet, we might try the state with all spins aligned</p>
+
+<script type="math/tex; mode=display">\ket{\text{FM}} \equiv \prod_{j=1}^N \ket{+}_j,</script>
+
+<p>where for brevity we write $\ket{+}_j = \ket{\sigma^z=+1}_j$. It’s not hard to check that this is an eigenstate with energy $E_0\equiv JN$. Furthermore it’s an eigenstate of $S^z$ and $\mathbf{S}^2$, where $\mathbf{S}$ is the total spin</p>
+
+<script type="math/tex; mode=display">\mathbf{S} = \frac{1}{2}\sum_{j=1}^N \boldsymbol{\sigma}_j.</script>
+
+<p>The eigenvalues are $S^z = N/2$ and $\mathbf{S}^2 = \frac{N}{2}\left(\frac{N}{2}+1\right)$. The rotational invariance of the Hamiltonian implies that the state $\ket{\text{FM}}$ should be a member of a multiplet of $N+1$ degenerate eigenstates related by rotations. These states can be generated by acting on $\ket{\text{FM}}$ with $S^-=S^x-iS^y$. The first is</p>
+
+<script type="math/tex; mode=display">S^-\ket{\text{FM}} = \frac{1}{2}\sum_{j=1}^N \sigma^-_j\ket{\text{FM}} = \frac{1}{2}\sum_{j=1}^N \ket{+}_1\ket{+}_2\cdots \ket{+}_{j-1} \ket{-}_j\ket{+}_{j+1}\cdots \ket{+}_N.
+\label{spin_Lowered}</script>
+
+<p>You should be able to verify that $S^z = N/2-1$, but that $\mathbf{S}^2$ and $H$ are unchanged. While all eigenstates can be labelled by these eigenvalues, this doesn’t fix the state uniquely (compare the numbers involved).</p>
+
+<p>\eqref{spin_Lowered} is a superposition of terms with one spin flipped. If we continue the process to explore the whole multiplet, we will at each state end up with a constant amplitude superposition of all states with two spins flipped (for $S^z=N/2-2$), three flipped (for $S^z=N/2-3$) and so on.</p>
+
+<p>Are these the ground states for $J&lt;0$? One way to convince ourselves is to write the Hamiltonian as</p>
+
+<script type="math/tex; mode=display">\begin{multline}
+H = J \sum_{j=1}^N \boldsymbol{\sigma}_j \cdot \boldsymbol{\sigma}_{j+1} = J \sum_{j=1}^N \left[(\boldsymbol{\sigma}_j+\boldsymbol{\sigma}_{j+1})^2-\boldsymbol{\sigma}_j^2 - \boldsymbol{\sigma}_{j+1}^2\right]\\
+= -6JN + J \sum_{j=1}^N (\boldsymbol{\sigma}_j+\boldsymbol{\sigma}_{j+1})^2.
+\end{multline}</script>
+
+<p>It’s then clear that the last term is minimized if every neighbouring pair of spins has total spin $1$, as they do for $\ket{\text{FM}}$. Are there other states that satisfy this condition?</p>
+
+<h3 id="first-excited-states">First Excited States</h3>
+
+<p>What about just one of the states in the superposition \eqref{spin_Lowered}?</p>
+
+<script type="math/tex; mode=display">\ket{j} = \ket{+}_1\ket{+}_2\cdots \ket{+}_{j-1} \ket{-}_j\ket{+}_{j+1}\cdots \ket{+}_N.</script>
+
+<p>Is this an eigenstate? Let’s try acting on this state with the Hamiltonian. It’s convenient to write the terms in the Heisenberg Hamiltonian in terms of raising and lowering operators</p>
+
+<script type="math/tex; mode=display">\boldsymbol{\sigma}_j \cdot \boldsymbol{\sigma}_{j+1} = \sigma^z_j\sigma^z_{j+1} + 2\left(\sigma^+_j\sigma^-_{j+1} +\sigma^-_j\sigma^+_{j+1}\right),</script>
+
+<p>where</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\sigma^+ = \begin{pmatrix}
+0 & 1 \\
+0 & 0
+\end{pmatrix},\qquad \sigma^- = \begin{pmatrix}
+0 & 0 \\
+1 & 0
+\end{pmatrix} %]]></script>
+
+<p>Now note that</p>
+
+<script type="math/tex; mode=display">P_{j,j+1}\equiv\sigma^+_j\sigma^-_{j+1} +\sigma^-_j\sigma^+_{j+1}</script>
+
+<p>has the effect of <em>exchanging</em> the labels on neigbouring spins, for examples</p>
+
+<script type="math/tex; mode=display">P_{j,j+1}\ket{+}_j\ket{-}_{j+1} = \ket{-}_j\ket{+}_{j+1}.</script>
+
+<p>It then follows that the action of $H$ on the state $\ket{j}$ is</p>
+
+<script type="math/tex; mode=display">H\ket{j} = (4-N) \ket{j} - 2\left(\ket{j-1}+\ket{j+1}\right).</script>
+
+<p>(I’ve set $J=-1$ as it’s the only scale in the problem, so no harm done.) Acting with $H$ therefore leaves us within the subspace spanned by the states $\ket{j}$. It had to, of course: this is the subspace with $S_z=N/2-1$. We can think of down spins as being like particles, with the Hamiltonian conserving their number.</p>
+
+<p>We can easily diagonalize $H$ in this space by noting that it corresponds to a circulant matrix. As we saw in <a href="/Theories-of-Quantum-Matter/lectures/ElasticChain/">Lecture 4</a>, the eigenstates are plane waves</p>
+
+<script type="math/tex; mode=display">\ket{\eta} = \frac{1}{\sqrt{N}}\sum_{j=1}^N e^{i\eta j}\ket{j},
+\label{spin_wave}</script>
+
+<p>with $\eta = \frac{2\pi n}{N}$, $n = -(N-1)/2,\ldots, (N-1)/2$. The eigenvalues are $E = E_0 + \omega(\eta)$, with</p>
+
+<script type="math/tex; mode=display">\omega(\eta) = 4(1-\cos\eta).</script>
+
+<p>Note that the dispersion relation is periodic, as in the case of the elastic chain, but is now quadratic, rather than linear, at small $\eta$. $\eta=0$ corresponds to the state \eqref{spin_Lowered}, and indeed the energy $\omega(0)=0$ in that case.</p>
+
+<blockquote>
+  <p>There is a general principle at work here: excitations that correspond at long wavelengths to symmetry operations have to have <strong>gapless</strong> dispersion relations. In field theory this follows from a general result called <strong>Goldstone’s theorem</strong>.</p>
+</blockquote>
+
+<p>If we are thinking of the down spin as a particle, then the eigenstates \eqref{spin_wave} are like plane wave states. These excitations are known as <strong>magnons</strong>.</p>
+
+<h3 id="two-magnon-states">Two-Magnon states</h3>
+
+<p>Any system at finite temperature has a finite energy density, or a total energy proportional to the system size. Since a magnon has a microscopic energy set by $J$, such a system will presumably have <em>many</em> magnons (many flipped spins). As we increase the number of flipped spins, we increase the size of the subspace in which $H$ acts – it has dimension $\binom{N}{n}$ for $n$ flipped spins i.e. $S^z = N/2-n$. Things are obviously going to get difficult quickly!</p>
+
+<p>In any case, let’s look at the $n=2$ case. The most general state with two magnons can be written</p>
+
+<script type="math/tex; mode=display">\sum_{j>k} c_{j,k}\sigma_j^-\sigma_k^-\ket{\text{FS}},
+\label{spin_2Mag}</script>
+
+<p>with some set of coefficients $c_{jk}$. Note that $j=k$ doesn’t contribute: we can’t lower the spin twice, so two magnons can’t be on the same site. Also, we don’t need to include $c_{j,k}=c_{k,j}$ – magnons are <em>bosons</em> – so we only include $j&gt;k$.</p>
+
+<p>Using our particle picture, we might suppose that if the magnons are separated from each other they can be described by plane waves. Thus we might expect something like</p>
+
+<script type="math/tex; mode=display">c_{j,k}\sim \exp(i\eta_1 j + i\eta_2 k)
+\label{spin_2Plane}</script>
+
+<p>to work. Acting on \eqref{spin_2Mag} with the Hamiltonian gives the eigenvalue equation for the energy $E = E_0 +\epsilon$</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+8c_{j,k} - 2\left(c_{j+1,k}+c_{j-1,k}+c_{j,k+1}+c_{j,k-1}\right) &= \epsilon c_{j,k},\quad j>k+1 \nonumber\\
+4c_{j,j-1} - 2\left(c_{j+1,j-1}+c_{j,j-2}\right) &= \epsilon c_{j,j-1}
+\label{spin_2Part}
+\end{align} %]]></script>
+
+<p>We can think of this as a lattice analog of the two particle Schrödinger equation discussed in <a href="/Theories-of-Quantum-Matter/lectures/LiebLinigerModel/">Lecture 2</a>. The modification when $j=k+1$ occurs because</p>
+
+<ol>
+  <li>
+    <p>There are only two bonds where the spin changes, instead of 4 when $j&gt;k+1$. Thus the ‘on-site’ term is -4 not -8. This plays the role of a nearest neighbour attractive interaction between magnons.</p>
+  </li>
+  <li>
+    <p>Magnons can’t hop on top of each other.</p>
+  </li>
+</ol>
+
+<p>The first of \eqref{spin_2Part} is solved by</p>
+
+<script type="math/tex; mode=display">c_{j,k} = c_1  \exp(i\eta_1 j + i\eta_2 k) + c_2  \exp(i\eta_1 k + i\eta_2 j),\quad \text{ for } j>k+1
+\label{spin_2Wave}</script>
+
+<p>with</p>
+
+<script type="math/tex; mode=display">\epsilon = \omega(\eta_1)+\omega(\eta_2).</script>
+
+<p>The eigenvalue is thus fixed by $\eta_1$ and $\eta_2$. In turn, their possible values are determined by some quantization condition, as in the Lieb–Liniger model, but we leave this aside for the moment. First, we must use the $j=k+1$ equation to determine the relationship between $c_1$ and $c_2$.</p>
+
+<p>There’s a clever way to do this. First, even though we know $c_{j,j}=0$ is really zero, we extend the first of \eqref{spin_2Part} to $j=k+1$, and this equation then involves a ‘fake’ $c_{j,j}$. The advantage of this is that we can then extend the form \eqref{spin_2Wave} to $j=k+1$ and $j=k$. For this to work, the correct equation for $j=k+1$ – the second of \eqref{spin_2Part} – must be consistent with the first. This gives the condition</p>
+
+<script type="math/tex; mode=display">-c_{k+1,k} + \frac{1}{2}\left(c_{k,k} + c_{k+1,k+1}\right) = 0.</script>
+
+<p>Using the form \eqref{spin_2Wave} gives a relationship between $c_1$ and $c_2$</p>
+
+<script type="math/tex; mode=display">-2\left(c_1 e^{i\eta_1}+c_2 e^{i\eta_2}\right) + (c_1+c_2)(1+e^{i(\eta_1+\eta_2)})</script>
+
+<script type="math/tex; mode=display">\frac{c_1}{c_2} = -\frac{e^{i(\eta_2-\eta_1)/2}-\cos[(\eta_1+\eta_2)/2]}{e^{i(\eta_1-\eta_2)/2}-\cos[(\eta_1+\eta_2)/2]}\equiv e^{i\phi},
+\label{spin_cratio}</script>
+
+<p>where we have defined the scattering phase shift, just as in the Lieb–Liniger model. The physical picture is therefore that a pair of magnons scatter elastically off each other, their wavefunction acquiring a phase shift as they do.</p>
+
+<p>Returning to our particle analogy, the existence of an attractive potential for magnons suggests we should allow for the possibility of bound states. Doing so requires <em>complex</em> $\eta_{1,2}$</p>
+
+<script type="math/tex; mode=display">\begin{array}
+\eta_1 = u + i v
+\eta_2 = u - i v,\quad v>0.
+\end{array}</script>
+
+<p>We also require that $c_2=0$ in \eqref{spin_2Wave}, otherwise the eigenstate doesn’t decay. From \eqref{spin_cratio} we see that</p>
+
+<script type="math/tex; mode=display">e^{-v} = \cos u.</script>
+
+<p>The total momentum of the state is $K=2u$, and evaluating the energy gives</p>
+
+<script type="math/tex; mode=display">\epsilon_\text{bound}(K) = \omega(\eta_1) + \omega(\eta_2) = 2(1-\cos K),</script>
+
+<p>which should be compared with the energy of two free magnons.</p>
+
+<h3 id="n-magnon-states">$N$-Magnon States</h3>
+
+<p>We could continue to consider states with more magnons. It turns out that for the Heisenberg model we are lucky: Bethe’s ansatz for a general energy eigenstate works in this model too! In fact, the Heisenberg model was the subject of Bethe’s 1931 paper – so soon after the birth of quantum mechanics!</p>
+
+<p>We started our discussion with the ground state of the ferromagnetic $J&lt;0$ Heisenberg model. What about $J&gt;0$? Can we guess the ground state in this case (of course, that’s equivalent to finding the <em>highest</em> excited state of the ferromagnet). Bethe would tell us that it must be some complicated gas of magnons, all scattering off each other. Why are things so complicated?</p>
+
+<h2 id="antiferromagnets-are-different">Antiferromagnets Are Different!</h2>
+
+<p>Let’s try and <em>guess</em> the ground state of the antiferromagnet. Since anti-aligning spins should be favoured, we might try</p>
+
+<script type="math/tex; mode=display">\ket{\text{AFM}} = \equiv \ket{+}_1\ket{-}_{2}\cdots \ket{+}_{N-1}\ket{-}_{N},
+\label{spin_AFM}</script>
+
+<p>assuming $N$ is odd. Acting with the $H$ reveals that we are out of luck, however. The reason is simple: regarding the down spins as particles arranged on every other site, the spin flip terms of the Hamiltonian cause them to move about. This is Bethe’s dense gas of interacting magnons.</p>
+
+<p>But antiferromagnets, with the kind of alternating order described by \eqref{spin_AFM} do exist! In fact, their existence was predicted  by <a href="https://en.wikipedia.org/wiki/Louis_Néel">Louis Néel</a> in 1936 <em>before</em> their experimental discovery.</p>
+
+<p>The Heisenberg antiferromagnetic spin chain does not have an antiferromagnetic ground state. The reason, as we’ll see, is similar to that behind the absence of Bragg peaks in the elastic chain: quantum fluctuations are too strong. On the square and cubic lattices, the Heisenberg model <em>does</em> display antiferromagnetism in the ground state. The above considerations show us, however, that these states are a bit more complicated than \eqref{spin_AFM}.</p>
+
+<h3 id="the-anderson-tower">The Anderson Tower</h3>
+
+<p>We consider a simple model due to Philip Anderson. The couplings of the nearest neighbour Heisenberg model on the chain, square and cubic lattices define a <a href="https://en.wikipedia.org/wiki/Bipartite_graph">bipartite graph</a>. This means that the sites (or vertices of the graph) can be grouped into two sets, with couplings only between the two sets (not within). Thus in the chain, the two sets are the even and odd sites.</p>
+
+<p>Since it seems to be hard to solve the Heisenberg model, consider the following toy problem</p>
+
+<script type="math/tex; mode=display">H = \frac{J}{N} \mathbf{S}_A\cdot \mathbf{S}_B,
+\label{spin_Anderson}</script>
+
+<p>where</p>
+
+<script type="math/tex; mode=display">\mathbf{S}_A = \frac{1}{2}\sum_{j\in A\text{ sublattice}} \boldsymbol{\sigma}_j</script>
+
+<p>is the total spin of sublattice A, and similarly for sublattice B. The factor of $1/N$ in \eqref{spin_Anderson} is there to make the energies extensive ($\propto N$).</p>
+
+<p>What is the ground state of $H$, assuming $J&gt;0$? This is easily answered by writing the Hamiltonian as</p>
+
+<script type="math/tex; mode=display">H = \frac{J}{2N} \left[\left() \mathbf{S}_A + \mathbf{S}_B\right)^2 - \mathbf{S}_A^2 - \mathbf{S}_B^2\right]</script>
+
+<h3 id="translational-invariance">Translational invariance</h3>
+
+<p>Mention Bethe ansatz solution. Relation to SEP. Spin waves and solitons. Antiferromagnetic order. Symmetry breaking. Anderson tower. Other examples- polar condensate.</p>
+
+<h2 id="large-s-expansion">Large $S$ expansion</h2>
+
+<h2 id="a-numerical-experiment">A Numerical Experiment</h2>
+
+<p>Exact diagonalization of spin chains;</p>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+    <script>
+
+    // Highlight search Query
+    var url = window.location.href;
+      if (url.lastIndexOf("?q=") > 0) {
+        // get the index of the parameter, add three (to account for length)
+        var stringloc = url.lastIndexOf("?q=") + 3;
+        // get the substring (query) and decode
+        var searchquery = decodeURIComponent(url.substr(stringloc));
+        // regex matches at beginning of line, end of line or word boundary, useful for poetry
+        var regex = new RegExp("(?:^|\\b)(" + searchquery + ")(?:$|\\b)", "gim");
+        // get, add mark and then set content
+        var content = document.getElementById("main").innerHTML;
+        document.getElementById("main").innerHTML = content.replace(regex, "<mark>$1</mark>");
+      }
+
+    // Toggle sidebar
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+    <!-- Facebook SDK for JavaScript -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '589495744558280',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+  </body>
+</html>

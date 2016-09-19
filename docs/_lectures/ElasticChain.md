@@ -76,7 +76,7 @@ $$
 We'll write $\eta_n\equiv \frac{2\pi n}{N}$, so that the eigenstates have the form $u_j=\exp(i\eta_n j)$. Substitution into the equation of motion yields the dispersion relation
 
 $$
-\omega_n^2 = \frac{2k}{m}\left(1-\cos \eta_n\right),
+\omega(\eta) = \sqrt{\frac{4k}{m}}\left|\sin\eta\right|,
 \label{coll_Dispersion}
 $$
 
@@ -95,7 +95,7 @@ $$
 together with the condition $q_{-n}=q^*_n$ on the complex amplitudes to ensure that $u_j$ is real. The amplitudes $q_n(t)$ have time dependence
 
 $$
-q_n(t) = \alpha_n e^{-i\omega_n t} + \beta_n e^{i\omega_n t}
+q_n(t) = \alpha_n e^{-i\omega(\eta_n) t} + \beta_n e^{i\omega(\eta_n) t}
 $$
 
 for $n\neq 0$, while for $n=0$
@@ -176,13 +176,13 @@ In the same way, we can introduce the coordinates
 
 $$
 \begin{align}
-a_n &= \sqrt{\frac{m\omega_n}{2}}\left(q_n + \frac{i}{m\omega_n}\pi_{-n}\right)\nonumber\\
-a^*_n &= \sqrt{\frac{m\omega_n}{2}}\left(q_{-n} - \frac{i}{m\omega_n}\pi_{n}\right),\qquad n\neq 0.
+a_n &= \sqrt{\frac{m\omega(\eta_n)}{2}}\left(q_n + \frac{i}{m\omega(\eta_n)}\pi_{-n}\right)\nonumber\\
+a^*_n &= \sqrt{\frac{m\omega(\eta_n)}{2}}\left(q_{-n} - \frac{i}{m\omega(\eta_n)}\pi_{n}\right),\qquad n\neq 0.
 \label{coll_adef}
 \end{align}
 $$
 
-Remember that $q_n = q_{-n}^\*$ and $\pi_n = \pi_{-n}^\*$ in order that $u_j$ and $p_j$ are real. Note that $n=0$ is excluded because $\omega_0=0$. These coordinates satisfy
+Remember that $q_n = q_{-n}^\*$ and $\pi_n = \pi_{-n}^\*$ in order that $u_j$ and $p_j$ are real. Note that $n=0$ is excluded because $\omega(0)=0$. These coordinates satisfy
 
 $$
 \{a_m,a^{*}_n\}=\delta_{mn}.
@@ -192,15 +192,15 @@ Inverting the definition \eqref{coll_adef} gives
 
 $$
 \begin{align}
-q_n &= \sqrt{\frac{1}{2m\omega_n}}\left(a_n + a_{-n}^*\right)\nonumber\\
-\pi_n &= -i\sqrt{\frac{m\omega_n}{2}}\left(a_{-n} - a_{n}^*\right),
+q_n &= \sqrt{\frac{1}{2m\omega(\eta_n)}}\left(a_n + a_{-n}^*\right)\nonumber\\
+\pi_n &= -i\sqrt{\frac{m\omega(\eta_n)}{2}}\left(a_{-n} - a_{n}^*\right),
 \end{align}
 $$
 
 and inserting into the Hamiltonian \eqref{coll_HDiag} gives
 
 $$
-H = \frac{\pi_0^2}{2m}+\sum_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \omega_n \left|a_n\right|^2,
+H = \frac{\pi_0^2}{2m}+\sum_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \omega(\eta_n) \left|a_n\right|^2,
 $$
 
 with the first term accounting for the (free) centre of mass.
@@ -247,7 +247,7 @@ The factor of $\frac{1}{\sqrt{n!}}$ normalizes the state. The ground state has e
 The quantization of the chain is then a piece of cake. We have a system of oscillator variables satisfying $[\aop_m,\adop_n]=\delta_{mn}$, and writing the Hamiltonian \eqref{coll_HDiag} in terms of these variables, paying attention to the order, gives
 
 $$
-H = \frac{\pi_0^2}{2m}+\sum_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \frac{\omega_n}{2}\left(\adop_n\aop_n+\aop_n\adop_n\right).
+H = \frac{\pi_0^2}{2m}+\sum_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \frac{\omega(\eta_n)}{2}\left(\adop_n\aop_n+\aop_n\adop_n\right).
 $$
 
 From now on we will ignore the centre of mass motion. Exactly the same logic as before tells us that a general energy eigenstate may be written
@@ -259,13 +259,13 @@ $$
 The non-negative integers $\mathbf{N}=\left(N_{(1-N)/2},\ldots, N_{-1}, N_{1}, \ldots N_{(N-1)/2}\right)$ describe the _occupation numbers_ of the oscillators. This eigenstate has energy
 
 $$
-E(\mathbf{N}) = E_0 + \sum_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \omega_n N_n,
+E(\mathbf{N}) = E_0 + \sum_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \omega(\eta_n) N_n,
 $$
 
 where the ground state energy is
 
 $$
-E_0 = \frac{1}{2}\sum_{|n| \leq (N-1)/2} \omega_n.
+E_0 = \frac{1}{2}\sum_{|n| \leq (N-1)/2} \omega(\eta_n).
 \label{coll_H0}
 $$
 
@@ -279,7 +279,7 @@ $$
 
 where $\mathcal{S}=\frac{1}{N!}\sum_{P} P$ is the operation of _symmetrization_, and $N_\alpha$ denotes the number of occurrences of $\varphi_\alpha(\br)$ in the product, so that $M=\sum_\alpha N_\alpha$. It turns out that the Hilbert space spanned by these states is the same as that spanned by the states $\ket{\mathbf{N}}$, if the labels $\alpha$ are identified with the momentum labels $n$.
 
-It's important to note that these bosons are totally distinct from the original particles making up the chain. In fact, our original Hamiltonian \eqref{coll_Hchain} doesn't in fact describe indistinguishable particles as written, as each particle is labelled by its position in the chain, with a particle only interacting with its two neighbours. Since the particles are assumed not to change places, there is no way of assigning statistics to their wavefunction.
+It's important to note that these bosons are totally distinct from the original particles making up the chain. In fact, our original Hamiltonian \eqref{coll_Hchain} doesn't describe indistinguishable particles as written, as each particle is labelled by its position in the chain, with a particle only interacting with its two neighbours. Since the particles are assumed not to change places, there is no way of assigning statistics to their wavefunction.
 
 ## Thermodynamic ($N\to \infty$) limit
 
@@ -302,27 +302,27 @@ e_0 = \int_{-\pi}^\pi\frac{d\eta}{2\pi} \frac{\omega(\eta)}{2} = \sqrt{\frac{k}{
 \eta}=\frac{2}{\pi}\sqrt{\frac{k}{m}}.
 $$
 
-Alternatively, we may treat the $N\to \infty$ limit of the chain as a model of an elastic _continuum_ of length $L$. Take $m = \frac{\rho_1 L}{N}$, where $\rho_1$ is the mass per unit length (1D density). The 1D elastic modulus is
+Alternatively, we may treat the $N\to \infty$ limit of the chain as a model of an elastic _continuum_ of length $L=aN$. Take $m = \rho a$, where $\rho$ is the mass per unit length (1D density). The 1D elastic modulus is
 
 $$
-\kappa \equiv \frac{\text{tension}}{\text{strain}} = \frac{kL}{N}
+\kappa \equiv \frac{\text{tension}}{\text{strain}} = ka
 $$
 
-Then $k/m = \kappa/\rho_1$ and
+Then $k/m = \kappa/\rho$ and
 
 $$
-\frac{E_0}{L} = \frac{2N}{\pi}\sqrt{\frac{\kappa}{\rho_1}}.
+\frac{E_0}{L} = \frac{2N}{\pi}\sqrt{\frac{\kappa}{\rho}}.
 $$
 
 The energy per unit length diverges as $N\to\infty$. Thus the ground state energy of a continuous medium is infinite, on account of the infinite number of degrees of freedom it contains. This is only a problem if one insists on such a description: in practice (at least in condensed matter) there is always discreteness on the smallest scales.
 
-Apart from the infinite ground state energy, the continuum limit of our harmonic system is perfectly well defined. Introducing a continuum displacement by $u(x=jL/N)=u_j$, the potential energy can be written
+Apart from the infinite ground state energy, the continuum limit of our harmonic system is perfectly well defined. Introducing a continuum displacement by $u(x=ja)=u_j$, the potential energy can be written
 
 $$
 V = \frac{k}{2} \sum_j^N (u_j-u_{j+1})^2 \xrightarrow{N\to\infty} \frac{\kappa}{2} \int_0^L dx\, \left[u'(x)\right]^2.
 $$
 
-If we define the _momentum density_ at each point by $\pi(x=jL/N) = p_j N/L$, then we find the continuum limit of the canonical commutation relations
+If we define the _momentum density_ at each point by $\pi(x=ja) = p_j N/L$, then we find the continuum limit of the canonical commutation relations
 
 $$
 \left[u(x),\pi(x')\right]=i\delta(x-x'),
@@ -331,7 +331,7 @@ $$
 together with the kinetic energy
 
 $$
-T = \sum_{j=1}^N \frac{p_j^2}{2m} = \frac{1}{2\rho_1}\int_0^L dx\,\left[\pi(x)\right]^2.
+T = \sum_{j=1}^N \frac{p_j^2}{2m} = \frac{1}{2\rho}\int_0^L dx\,\left[\pi(x)\right]^2.
 $$
 
 Since we are taking the $N\to\infty$ limit it's convenient to define the Fourier modes slightly differently
@@ -353,7 +353,7 @@ $$
 Our continuum Hamiltonian $H= T+V$ is then written in Fourier components as
 
 $$
-\frac{H}{L} = \sum_{n=-\infty}^\infty \left[\frac{1}{2\rho_1} \pi_n\pi_{-n} + \frac{\kappa k_n^2}{2}  u_nu_{-n} \right].
+\frac{H}{L} = \sum_{n=-\infty}^\infty \left[\frac{1}{2\rho} \pi_n\pi_{-n} + \frac{\kappa k_n^2}{2}  u_nu_{-n} \right].
 $$
 
 We can now read off the dispersion relation
@@ -362,7 +362,7 @@ $$
 \omega(k) = c|k|,
 $$
 
-where $c=\sqrt{\frac{\kappa}{\rho_1}}$ is the speed of sound. Note that the continuum limit has lead to a linear dispersion relation. This is reasonable: the lattice was the origin of the periodic dispersion relation \eqref{coll_Dispersion}, and it has now disappeared.
+where $c=\sqrt{\frac{\kappa}{\rho}}$ is the speed of sound. Note that the continuum limit has lead to a linear dispersion relation. This is reasonable: the lattice was the origin of the periodic dispersion relation \eqref{coll_Dispersion}, and it has now disappeared.
 
 Transcribing the definition of the oscillator variables \eqref{coll_adef} gives
 
@@ -373,7 +373,7 @@ a^*_n &= \frac{1}{\sqrt{2}}\left[\sqrt{ZkL} u_{-n} - \frac{i}{\sqrt{ZkL}}\pi_{n}
 \end{align}
 $$
 
-where $Z\equiv\sqrt{\kappa\rho_1}$ is the impedance. After quantization, the Hamiltonian takes the form
+where $Z\equiv\sqrt{\kappa\rho}$ is the impedance. After quantization, the Hamiltonian takes the form
 
 $$
 H - E_0 = \sum_{n=-\infty}^\infty c\left|k_n\right|\adop_n\aop_n.
@@ -387,14 +387,14 @@ This expresses the energy above the ground state in terms of the occupancy of th
 At finite temperature $T$ the occupancies of the modes have thermal averages given by the Bose occupation function
 
 $$
-\langle N_n \rangle = \mathcal{B}(\omega_n)\equiv \frac{1}{\exp\left(\beta\omega_n\right)-1},
+\langle N_n \rangle = \mathcal{B}(\omega(\eta_n))\equiv \frac{1}{\exp\left(\beta\omega(\eta_n)\right)-1},
 \label{coll_Bose}
 $$
 
 where $\beta=\frac{1}{k_\text{B}T}$. The thermal average of the energy of excited states is then
 
 $$
-\langle H - E_0 \rangle =\sum_{|n|\leq (N-1)/2} \omega_n\mathcal{B}(\omega_n).
+\langle H - E_0 \rangle =\sum_{|n|\leq (N-1)/2} \omega(\eta_n)\mathcal{B}(\omega(\eta_n)).
 $$
 
 This is finite, even in the $N\to\infty$ limit, on account of the exponential tail of \eqref{coll_Bose}. Remember that this was the problem that the quantum theory was introduced to solve. At low energies $\mathcal{B}(\omega) = \frac{1}{\beta\omega}$ and the contribution of each mode is
@@ -406,7 +406,7 @@ $$
 in agreement with the classical equipartition theorem. Were this result to apply at all energies the thermal energy density of a continuum at finite temperature would be infinite (the [Ultraviolet Catastrophe](https://en.wikipedia.org/wiki/Ultraviolet_catastrophe)). It is the existence of Planck's constant, which appears in the dimensionless combination $\hbar\beta\omega$ in the Bose occupation function, that allows this conclusion to be avoided.
 
 
-## Ground State Wavefunction and Fluctuations
+## Ground State Wavefunction
 
 Classically, we understand the motion of the chain very well. What can we say about the quantum states of the system? The differences from the classical picture are most evident in the ground state.
 
@@ -421,38 +421,159 @@ A quick way to get this is to regard the condition $a\|0\rangle = 0$ as a first 
 Since our Hamiltonian \eqref{coll_HDiag} is just a sum of single oscillator Hamiltonians, we can write the ground state wavefunction as a function of the oscillator coordinates $q_n$
 
 $$
-\Psi_0(\mathbf{q}) = \prod_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \left(\frac{m\omega_n}{\pi}\right)^{1/4} \exp\left(-m\omega_n |q_n|^2 /2\right).
+\Psi_0(\mathbf{q}) = \prod_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \left(\frac{m\omega(\eta_n)}{\pi}\right)^{1/4} \exp\left(-m\omega(\eta_n) \left|q_n\right|^2 /2\right).
 $$
 
-Since the $\mathbf{q}$ are related by \eqrel{coll_modes} to the real space displacements $\mathbf{u}$, this allows us to find the ground state as a function of the displacements. First, we invert \eqref{coll_modes} to give
+Since the $\mathbf{q}$ are related by \eqref{coll_modes} to the real space displacements $\mathbf{u}$, this allows us to find the ground state as a function of the displacements. First, we invert \eqref{coll_modes} to give
 
 $$
-q_n = \frac{1}{\sqrt{N}}\sum_{j=1}^N x_j e^{-i\eta_n j},
+q_n = \frac{1}{\sqrt{N}}\sum_{j=1}^N u_j e^{-i\eta_n j},
 $$
 
 and then insert this into $\Psi_0(\mathbf{q})$
 
 $$
-\Psi_0(\mathbf{u}) \propto \exp\left(-\frac{m}{2N}\sum_{\substack{|n| \leq (N-1)/2\\ j,k =1,\ldots N}} x_j x_k \exp\left(i\eta_n[j-k]\right) \omega_n\right)
+\Psi_0(\mathbf{u}) \propto \exp\left(-\frac{m}{2N}\sum_{\substack{|n| \leq (N-1)/2\\ j,k =1,\ldots N}} u_j u_k \exp\left(i\eta_n[j-k]\right) \omega(\eta_n)\right),
 $$
 
-First hint of special nature of 1D -- divergence of displacement.
+where we drop the overall normalization constant.
+
+## Position and Density Fluctuations
+
+Classically, the ground state configuration of our elastic chain corresponds to a regular 'crystalline' arrangement of masses at separation $a$, with all $u_j=0$. Mass $j$ and mass $k$ are then separated by $(j-k)a + u_j-u_k = (j-k)a$. Quantum mechanically, $u_j-u_k$ fluctuates, even in the ground state. For the notion of a crystal to make sense, these fluctuations should not be too large. Let's evaluate them for the elastic chain.
+
+We want to evaluate
+
+$$
+\bra{0}\left(u_j-u_k\right)^2\ket{0}.
+\label{coll_gsfluct}
+$$
+
+To do this, we write the displacements in terms of the oscillator variables, and then evaluate the expectation values in the ground state using the oscillator algebra. Recall that
+
+$$
+u_j = \frac{1}{\sqrt{N}}\sum_{|n| \leq (N-1)/2} q_n e^{i\eta_n j},
+\label{coll_ModeExp}
+$$
+
+and
+
+$$
+q_n = \sqrt{\frac{1}{2m\omega(\eta_n)}}\left(a_n + a_{-n}^*\right).
+$$
+
+To evaluate \eqref{coll_gsfluct}, we write the two factors $(u_j-u_k)(u_j-u_k)$ in terms of the $\aop_n$ and $\adop_n$. Contributions to the ground state expectation value arise from terms with $\aop_n$ in the left factor and $\adop_n$ in the right for some $n$. All other terms vanish. This gives
+
+$$
+\bra{0}\left(u_j-u_k\right)^2\ket{0} = \frac{1}{2mN} \sum_{|n| \leq (N-1)/2} \frac{1}{\omega(\eta_n)} \left[e^{i\eta_n j}- e^{i\eta_n k}\right]\left[e^{-i\eta_n j}- e^{-i\eta_n k}\right].
+$$
+
+Taking the $N\to\infty$ limit in the sum gives
+
+$$
+\begin{multline}
+\bra{0}\left(u_j-u_k\right)^2\ket{0} = \frac{1}{mN}\sum_{|n| \leq (N-1)/2} \frac{1-\cos\left(\eta[j-k]\right)}{\omega(\eta_n)}\\ = \frac{1}{m}\int_{-\pi}^\pi \frac{d\eta}{2\pi} \frac{1-\cos\left(\eta[j-k]\right)}{\omega(\eta)}.
+\label{coll_uvar}
+\end{multline}
+$$
+
+The dispersion relation \eqref{coll_Dispersion} makes this integral a little difficult. However, if $\left\|j-k\right\|\gg 1$, the integral is determined by small values of $\eta$ (why?), where we can use the approximation
+
+$$
+\omega(\eta) \sim \sqrt{\frac{k}{m}}|\eta|.
+$$
+
+In this case we have
+
+$$
+\bra{0}\left(u_j-u_k\right)^2\ket{0} \sim  \frac{\ell_\text{osc}^2}{4\pi} \log \left|j-k\right|,\qquad \text{ as } \left|j-k\right|\to\infty
+\label{coll_LogFluct}
+$$
+
+where we have introduced $\ell_\text{osc}=\left(km\right)^{-1/4}$, the natural length scale of an oscillator.
+
+The result \eqref{coll_LogFluct} shows that the uncertainty in the separation of two masses in the chain increases with their separation. This implies that the ground state of the chain is _not_ a crystal, but more closely resembles a fluid. It turns out that this conclusion depends strongly on the dimensionality of the system. In higher dimensions, crystalline ground states _do_ exist (thankfully).
+
+An alternative way of quantifying crystalline order is to consider the fluctuations of the density of particles, defined by
+
+$$
+\rho(x) = \sum_{j=1}^N \delta_L(x-x_j),
+$$
+
+where $x_j = ja + u_j$, and $\delta_L(x)$ is an $L$-periodic version of the $\delta$-function, if we want to stick with a finite size system. Alternatively, we may consider the Fourier components
+
+$$
+\rho_k = \sum_{j=1}^N\exp(-i k x_j).
+$$
+
+Rather than introducing separate notation for the Fourier components of $f(x)$, it's convenient to denote them by $f_q$, so that
+
+$$
+f(x) = \sum_{n=-\infty}^\infty f_k \exp(ik_n x), \qquad k_n = \frac{2\pi n}{L}
+$$
+
+In an ordered configuration $x_j = ja$, we would have
+
+$$
+\rho_{k_n} = \begin{cases}
+N & n = 0 \mod N \\
+0 & \text{ otherwise.}
+\end{cases}
+$$
+
+These peaks at values of $k$ corresponding to multiples of $\frac{2\pi}{a}$ are nothing but the _Bragg peaks_ observed in a diffraction experiment, which translates the real space crystal arrangement into Fourier space. Note that an overall translation of lattice will just change the phase of the $
+rho_k$, leaving $\left|\rho_k\right|^2$ (proportional to the intensity measured in a diffraction experiment) unchanged.
+
+How is this picture altered in the quantum mechanical ground state? Given the above comment, we should evaluate
+
+$$
+\bra{0} \rho_k \rho_{-k} \ket{0} = \sum_{j,k=1}^N \bra{0} \exp(ik[x_j-x_k])\ket{0}.
+\label{coll_Struct}
+$$
+
+Upon substituting the mode expansion \eqref{coll_ModeExp} for the displacements, we are left to evaluate expressions of the form
+
+$$
+\bra{0} \exp(\lambda \aop + \mu \adop)\ket{0}.
+$$
+
+We do this by expressing the exponent in a form with all occurrences of $\adop$ to the left of all $\aop$ (this operation is called _normal ordering_; we will meet it again).
+
+$$
+\exp(\lambda \aop + \mu \adop) = \exp(\lambda \mu /2) \exp(\mu\adop)\exp(\lambda\aop).
+$$
+
+Calculating the expectation value is now simple
+
+$$
+\bra{0} \exp(\lambda \aop + \mu \adop)\ket{0} = \exp(\lambda \mu /2).
+$$
+
+Deploying this strategy for \eqref{coll_Struct} gives
+
+$$
+\bra{0} \rho_k \rho_{-k} \ket{0} = \sum_{j,k=1}^N \exp(ika[j-k])\exp\left(-\frac{k^2}{2mN}\sum_{|n| \leq (N-1)/2} \frac{1-\cos\left(\eta[j-k]\right)}{\omega(\eta_n)}\right).
+$$
+
+The second exponent modifies the classical prediction of Bragg peaks. We have encountered the expression in exponent before in \eqref{coll_uvar}. Taking the $N\to\infty$ limit with $\left\|j-k\right\|\gg 1$ as before, we find that in the vicinity of the first Bragg peak at $k=2\pi/a$ the summand has the form
+
+$$
+\exp(i\Delta k a[j-k])\, \left|j-k\right|^{-\pi\ell_\text{osc}^2/2a^2},
+$$
+
+where $\Delta k$ denotes the deviation of $k$ from $2\pi/a$. This leads to the conclusion
+
+$$
+\bra{0} \rho_k \rho_{-k} \ket{0} \sim \left(\Delta k\right)^{-1+\pi\ell_\text{osc}^2/2a^2}.
+$$
+
+Thus quantum fluctuations replace the Bragg peaks, an indicator of crystalline order, with power law divergences. These remnants of order diminish as $\ell_\text{osc}/a$ increases, indicating larger quantum fluctuations. Again, things are different in higher dimensions: the Bragg peaks survive, albeit reduced in strength, at least for small fluctuations. It is possible, however, for quantum fluctuations to prevent crystallization in the ground state (i.e. at zero temperature). Such systems are called _quantum liquids_. Helium is the prototypical example: the low atomic mass and relatively weak interactions between atoms mean that quantum fluctuations are large.
 
 
 
-# Excited States: Feynman--Bijl Formula
-
-For the harmonic chain can show that acting with $\rho_q$ on the ground state gives an excited state
-
-Is it useful to do this in lectures. Other non-trivial example is Fermi gas
-
-# Nonlinearity and Interactions
-
-## Fourier review
+# Fourier review
 
 Discrete FT to Fourier series to Fourier transform.
 
 This is a good excercise in writing things in Fourier modes
 Could compute phonon lifetime using Golden Rule
-
-Background on FPU

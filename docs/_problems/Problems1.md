@@ -30,9 +30,19 @@ Double the size of the unit cell?
 
 Model of a displacive phase transition
 
+## Fluctuations of a mass in a finite chain
+
+Investigate the behaviour of $\bra{0} u_j^2\ket{0}$ in a chain of length $N$. What happens as $N\to\infty$?
+
 ## Thermal displacement in 2D
 
 Show that we get divergence of displacement in thermal equilibrium
+
+## Excited States: Feynman--Bijl Formula
+
+## Nonlinearity and Interactions
+
+Introduce terminology of _free theory_
 
 ## From Schwinger Bosons to Holstein--Primakoff
 

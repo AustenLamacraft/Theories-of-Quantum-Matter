@@ -22,6 +22,11 @@ summary: Bethe's wave function; Impenetrable limit; Excited states and the class
 
 Here we introduce..
 
+$$
+=E\Psi(x_1,x_2)
+\label{lieb_2part}
+$$
+
 Problem: attractive ground state (analytical form) Solving the Bethe equations
 
 # Three Particles

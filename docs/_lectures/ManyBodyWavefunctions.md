@@ -4,6 +4,7 @@ title: Many Body Wavefunctions
 author: Austen Lamacraft
 chapter: 1
 summary: Examples of the 1D Fermi gas, Calogero--Sutherland model, and Quantum Hall Effect.
+published: true
 ---
 >We begin our study of many body quantum mechanics by examining a number of systems where eigenstates and eigenvalues may be found explicitly for any number of particles. Be warned that these situations are __highly atypical__ -- but are nevertheless very informative.
 
