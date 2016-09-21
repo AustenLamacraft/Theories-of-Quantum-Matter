@@ -76,7 +76,7 @@ $$
 We'll write $\eta_n\equiv \frac{2\pi n}{N}$, so that the eigenstates have the form $u_j=\exp(i\eta_n j)$. Substitution into the equation of motion yields the dispersion relation
 
 $$
-\omega(\eta) = \sqrt{\frac{4k}{m}}\left|\sin\eta\right|,
+\omega(\eta) = \sqrt{\frac{4k}{m}}\left|\sin\eta/2\right|,
 \label{coll_Dispersion}
 $$
 
@@ -126,8 +126,8 @@ This _almost_ looks like a system of harmonic oscillators. Bear in mind that the
 
 $$
 \begin{align}
-q_n &= q_n' + i q_n'',\qquad q_{-n} = q_n' - i q_n''\\
-\pi_n &= \pi_n' + i \pi_n'',\qquad \pi_{-n} = \pi_n' - i \pi_n'',\qquad n\geq 0.
+q_n &= \frac{1}{\sqrt{2}}\left(q_n' + i q_n''\right),\quad q_{-n} = \frac{1}{\sqrt{2}}\left(q_n' - i q_n''\right)\\
+\pi_n &= \frac{1}{\sqrt{2}}\left(\pi_n' + i \pi_n''\right),\quad \pi_{-n} = \frac{1}{\sqrt{2}}\left(\pi_n' - i \pi_n''\right),\quad n\geq 0.
 \label{coll_RandI}
 \end{align}
 $$

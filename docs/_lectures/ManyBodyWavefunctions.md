@@ -3,7 +3,7 @@ layout: page
 title: Many Body Wavefunctions
 author: Austen Lamacraft
 chapter: 1
-summary: Examples of the 1D Fermi gas, Calogero--Sutherland model, and Quantum Hall Effect.
+summary: Product States; Fermi gas; Quantum Hall Effect.
 published: true
 ---
 >We begin our study of many body quantum mechanics by examining a number of systems where eigenstates and eigenvalues may be found explicitly for any number of particles. Be warned that these situations are __highly atypical__ -- but are nevertheless very informative.
@@ -17,7 +17,7 @@ published: true
 ---
 
 
-# Bosons and Fermions
+## Bosons and Fermions
 
 Here we introduce..  $$\br,\bk,\bv,\adop \tr(ABC)$$ $$\cA$$
 
@@ -27,29 +27,45 @@ Here we introduce..  $$\br,\bk,\bv,\adop \tr(ABC)$$ $$\cA$$
 
 In this first section leave a note setting $$\hbar = 1$$ for the rest of the course...
 
-## Physical Quantities
+### Product States
 
-Knowing the wavefunction $$\Psi(x_1,\ldots x_N)$$ of a many body system is one thing, but what to _do_ with it?
+## The 1D Fermi Gas
 
-# 1D Fermi Gas
+### Ground State
 
-## Ground State
+### Excitation spectrum
 
-## Excited States
 
 Particle and hole excitations
 
 Map out spectrum at fixed momentum
 
-# the Impenetrable Bose Gas
+
+### Density Correlations
+
+### Impenetrable Bose Gas
 
 Although the Fermi gas is a noninteracting system, the above discussion allows us to say something about an interacting system, albeit a rather special one.
 
 We consider 1D system described by the Hamiltonian
 
-# Calogero--Sutherland Model
 
-# Fermions in the Lowest Landau Level
+
+## Quantum Hall Effect
+
+### Landau Levels
+
+### The Laughlin wavefunction
+
+### Fractional Charge
+
+### Fractional Statistics
+
+## Physical Quantities
+
+Knowing the wavefunction $$\Psi(x_1,\ldots x_N)$$ of a many body system is one thing, but what to _do_ with it?
+
+
 
 ## Monte Carlo Simulation of Laughlin States
 

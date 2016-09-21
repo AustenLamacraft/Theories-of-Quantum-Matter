@@ -12,6 +12,8 @@ summary: Response functions. Structure factor. Lindhard and dielectric function.
 * Toc
 {:toc}
 
+> Calculating eigenstates and eigenenergies is one thing, but what do experimentalists actually measure?
+
 ---
 
 ## Review of Green's Functions

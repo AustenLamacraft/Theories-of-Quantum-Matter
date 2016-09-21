@@ -276,8 +276,15 @@ $$
       <li><a href="#translational-invariance" id="markdown-toc-translational-invariance">Translational invariance</a></li>
     </ul>
   </li>
-  <li><a href="#large-s-expansion" id="markdown-toc-large-s-expansion">Large $S$ expansion</a></li>
+  <li><a href="#large-s-expansion" id="markdown-toc-large-s-expansion">Large $s$ Expansion</a>    <ul>
+      <li><a href="#holstein--primakoff-representation-of-spin" id="markdown-toc-holstein--primakoff-representation-of-spin">Holstein–Primakoff Representation of Spin</a></li>
+      <li><a href="#harmonic-spin-waves" id="markdown-toc-harmonic-spin-waves">Harmonic Spin Waves</a></li>
+      <li><a href="#quantum-fluctuations-degrade-antiferromagnetic-order" id="markdown-toc-quantum-fluctuations-degrade-antiferromagnetic-order">Quantum Fluctuations Degrade Antiferromagnetic Order</a></li>
+    </ul>
+  </li>
   <li><a href="#a-numerical-experiment" id="markdown-toc-a-numerical-experiment">A Numerical Experiment</a></li>
+  <li><a href="#some-facts-about-ground-states-of-heisenberg-models" id="markdown-toc-some-facts-about-ground-states-of-heisenberg-models">Some facts about ground states of Heisenberg Models</a></li>
+  <li><a href="#outlook" id="markdown-toc-outlook">Outlook</a></li>
 </ul>
 
 <hr />
@@ -294,11 +301,11 @@ $$
 
 <p>where the ‘spin’ variables $\sigma_j$ take the values $\pm 1$. The notation ${\langle j\,k\rangle}$ indicates that the sum is over all nearest neighbour pairs on some (e.g. cubic) lattice. A coupling $J&lt;0$ between spins means that aligned spins have a lower energy than anti-aligned spins, favouring <em>ferromagnetism</em>.</p>
 
-<p>While there’s a lot of mileage in the Ising model as a statistical mechanical model – it can describe the ferromagnetic phase transition – it has some shortcomings as a quantum Hamiltonian. Identifying the variable $\sigma_j$ with a component of a spin-1/2 along some axis $\sigma_j = \sigma^z_j$, we see that there are no non-commuting variables in the Hamiltonian, and therefore no dynamics to the system of spins. The eigenstates are simply product states of $\sigma_j^z$ eigenstates.</p>
+<p>While there’s a lot of mileage in the Ising model as a statistical mechanical model – it can describe the ferromagnetic phase transition – it has some shortcomings as a quantum Hamiltonian. Identifying the variable $\sigma_j$ with a component of a spin-1/2 along some axis $\sigma_j = 2s^z_j$, we see that there are no non-commuting variables in the Hamiltonian, and therefore no dynamics to the system of spins. The eigenstates are simply product states of $s_j^z$ eigenstates.</p>
 
-<p>A more realistic model from this point of view is the <strong>Heisenberg model</strong></p>
+<p>A more realistic model from this point of view is the <strong>Heisenberg model</strong> describing a system of spin-1/2s</p>
 
-<script type="math/tex; mode=display">H = J \sum_{\langle j\,k\rangle} \boldsymbol{\sigma}_j \cdot \boldsymbol{\sigma}_k.
+<script type="math/tex; mode=display">H = J \sum_{\langle j\,k\rangle} \mathbf{s}_j \cdot \mathbf{s}_k.
 \label{spin_Hberg}</script>
 
 <p>Although it is not possible to solve this model in general, we will see that it captures many of the dynamical features (e.g. spin waves) of real magnetic materials.</p>
@@ -309,21 +316,21 @@ $$
 
 <p>Let’s try and guess some eigenstates. For simplicity we’ll begin with the 1D case, where the spins are arranged in a chain</p>
 
-<script type="math/tex; mode=display">H = J \sum_{j=1}^N \boldsymbol{\sigma}_j \cdot \boldsymbol{\sigma}_{j+1},</script>
+<script type="math/tex; mode=display">H = J \sum_{j=1}^N \mathbf{s}_j \cdot \mathbf{s}_{j+1},</script>
 
-<p>and as usual we take $\boldsymbol{\sigma}_j=\boldsymbol{\sigma}_{j+N}$ (periodic boundary conditions). Such a system is called a <strong>spin chain</strong>. Surprisingly enough, crystals do exist in which magnetic atoms are arranged in this way, with only weak coupling between neighbouring chains. So models of this type are a useful description, at least in some energy window, of real materials.</p>
+<p>and as usual we take $\mathbf{s}_j=\mathbf{s}_{j+N}$ (periodic boundary conditions). Such a system is called a <strong>spin chain</strong>. Surprisingly enough, crystals do exist in which magnetic atoms are arranged in this way, with only weak coupling between neighbouring chains. So models of this type are a useful description, at least in some energy window, of real materials.</p>
 
 <p>Since \eqref{spin_Hberg} is supposed to be a model for a magnet, we might try the state with all spins aligned</p>
 
 <script type="math/tex; mode=display">\ket{\text{FM}} \equiv \prod_{j=1}^N \ket{+}_j,</script>
 
-<p>where for brevity we write $\ket{+}_j = \ket{\sigma^z=+1}_j$. It’s not hard to check that this is an eigenstate with energy $E_0\equiv JN$. Furthermore it’s an eigenstate of $S^z$ and $\mathbf{S}^2$, where $\mathbf{S}$ is the total spin</p>
+<p>where for brevity we write $\ket{+}_j = \ket{s^z=+1/2}_j$. It’s not hard to check that this is an eigenstate with energy $E_0\equiv JN/4$. Furthermore it’s an eigenstate of $S^z$ and $\mathbf{S}^2$, where $\mathbf{S}$ is the total spin</p>
 
-<script type="math/tex; mode=display">\mathbf{S} = \frac{1}{2}\sum_{j=1}^N \boldsymbol{\sigma}_j.</script>
+<script type="math/tex; mode=display">\mathbf{S} = \sum_{j=1}^N \mathbf{s}_j.</script>
 
 <p>The eigenvalues are $S^z = N/2$ and $\mathbf{S}^2 = \frac{N}{2}\left(\frac{N}{2}+1\right)$. The rotational invariance of the Hamiltonian implies that the state $\ket{\text{FM}}$ should be a member of a multiplet of $N+1$ degenerate eigenstates related by rotations. These states can be generated by acting on $\ket{\text{FM}}$ with $S^-=S^x-iS^y$. The first is</p>
 
-<script type="math/tex; mode=display">S^-\ket{\text{FM}} = \frac{1}{2}\sum_{j=1}^N \sigma^-_j\ket{\text{FM}} = \frac{1}{2}\sum_{j=1}^N \ket{+}_1\ket{+}_2\cdots \ket{+}_{j-1} \ket{-}_j\ket{+}_{j+1}\cdots \ket{+}_N.
+<script type="math/tex; mode=display">S^-\ket{\text{FM}} = \sum_{j=1}^N s^-_j\ket{\text{FM}} = \frac{1}{2}\sum_{j=1}^N \ket{+}_1\ket{+}_2\cdots \ket{+}_{j-1} \ket{-}_j\ket{+}_{j+1}\cdots \ket{+}_N.
 \label{spin_Lowered}</script>
 
 <p>You should be able to verify that $S^z = N/2-1$, but that $\mathbf{S}^2$ and $H$ are unchanged. While all eigenstates can be labelled by these eigenvalues, this doesn’t fix the state uniquely (compare the numbers involved).</p>
@@ -333,8 +340,8 @@ $$
 <p>Are these the ground states for $J&lt;0$? One way to convince ourselves is to write the Hamiltonian as</p>
 
 <script type="math/tex; mode=display">\begin{multline}
-H = J \sum_{j=1}^N \boldsymbol{\sigma}_j \cdot \boldsymbol{\sigma}_{j+1} = J \sum_{j=1}^N \left[(\boldsymbol{\sigma}_j+\boldsymbol{\sigma}_{j+1})^2-\boldsymbol{\sigma}_j^2 - \boldsymbol{\sigma}_{j+1}^2\right]\\
-= -6JN + J \sum_{j=1}^N (\boldsymbol{\sigma}_j+\boldsymbol{\sigma}_{j+1})^2.
+H = J \sum_{j=1}^N \mathbf{s}_j \cdot\mathbf{s}_{j+1} = J \sum_{j=1}^N \left[(\mathbf{s}_j+\mathbf{s}_{j+1})^2-\mathbf{s}_j^2 - \mathbf{s}_{j+1}^2\right]\\
+= -\frac{3JN}{2} + J \sum_{j=1}^N (\mathbf{s}_j+\mathbf{s}_{j+1})^2.
 \end{multline}</script>
 
 <p>It’s then clear that the last term is minimized if every neighbouring pair of spins has total spin $1$, as they do for $\ket{\text{FM}}$. Are there other states that satisfy this condition?</p>
@@ -347,22 +354,22 @@ H = J \sum_{j=1}^N \boldsymbol{\sigma}_j \cdot \boldsymbol{\sigma}_{j+1} = J \su
 
 <p>Is this an eigenstate? Let’s try acting on this state with the Hamiltonian. It’s convenient to write the terms in the Heisenberg Hamiltonian in terms of raising and lowering operators</p>
 
-<script type="math/tex; mode=display">\boldsymbol{\sigma}_j \cdot \boldsymbol{\sigma}_{j+1} = \sigma^z_j\sigma^z_{j+1} + 2\left(\sigma^+_j\sigma^-_{j+1} +\sigma^-_j\sigma^+_{j+1}\right),</script>
+<script type="math/tex; mode=display">\mathbf{s}_j \cdot \mathbf{s}_{j+1} = s^z_js^z_{j+1} + \frac{1}{2}\left(s^+_js^-_{j+1} +s^-_js^+_{j+1}\right),</script>
 
 <p>where</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
-\sigma^+ = \begin{pmatrix}
+s^+ = \begin{pmatrix}
 0 & 1 \\
 0 & 0
-\end{pmatrix},\qquad \sigma^- = \begin{pmatrix}
+\end{pmatrix},\qquad s^- = \begin{pmatrix}
 0 & 0 \\
 1 & 0
 \end{pmatrix} %]]></script>
 
 <p>Now note that</p>
 
-<script type="math/tex; mode=display">P_{j,j+1}\equiv\sigma^+_j\sigma^-_{j+1} +\sigma^-_j\sigma^+_{j+1}</script>
+<script type="math/tex; mode=display">P_{j,j+1}\equiv s^+_j s^-_{j+1} +s^-_js^+_{j+1}</script>
 
 <p>has the effect of <em>exchanging</em> the labels on neigbouring spins, for examples</p>
 
@@ -370,18 +377,19 @@ H = J \sum_{j=1}^N \boldsymbol{\sigma}_j \cdot \boldsymbol{\sigma}_{j+1} = J \su
 
 <p>It then follows that the action of $H$ on the state $\ket{j}$ is</p>
 
-<script type="math/tex; mode=display">H\ket{j} = (4-N) \ket{j} - 2\left(\ket{j-1}+\ket{j+1}\right).</script>
+<script type="math/tex; mode=display">H\ket{j} = (1-N/4) \ket{j} - \frac{1}{2}\left(\ket{j-1}+\ket{j+1}\right).</script>
 
 <p>(I’ve set $J=-1$ as it’s the only scale in the problem, so no harm done.) Acting with $H$ therefore leaves us within the subspace spanned by the states $\ket{j}$. It had to, of course: this is the subspace with $S_z=N/2-1$. We can think of down spins as being like particles, with the Hamiltonian conserving their number.</p>
 
-<p>We can easily diagonalize $H$ in this space by noting that it corresponds to a circulant matrix. As we saw in <a href="/Theories-of-Quantum-Matter/lectures/ElasticChain/">Lecture 4</a>, the eigenstates are plane waves</p>
+<p>We can easily diagonalize $H$ in this space by noting that it corresponds to a circulant matrix. As we saw in <a href="/Theories-of-Quantum-Matter/lectures/ElasticChain/">Lecture 3</a>, the eigenstates are plane waves</p>
 
 <script type="math/tex; mode=display">\ket{\eta} = \frac{1}{\sqrt{N}}\sum_{j=1}^N e^{i\eta j}\ket{j},
 \label{spin_wave}</script>
 
 <p>with $\eta = \frac{2\pi n}{N}$, $n = -(N-1)/2,\ldots, (N-1)/2$. The eigenvalues are $E = E_0 + \omega(\eta)$, with</p>
 
-<script type="math/tex; mode=display">\omega(\eta) = 4(1-\cos\eta).</script>
+<script type="math/tex; mode=display">\omega(\eta) = 2\sin^2\eta/2.
+\label{spin_dispersion}</script>
 
 <p>Note that the dispersion relation is periodic, as in the case of the elastic chain, but is now quadratic, rather than linear, at small $\eta$. $\eta=0$ corresponds to the state \eqref{spin_Lowered}, and indeed the energy $\omega(0)=0$ in that case.</p>
 
@@ -397,7 +405,7 @@ H = J \sum_{j=1}^N \boldsymbol{\sigma}_j \cdot \boldsymbol{\sigma}_{j+1} = J \su
 
 <p>In any case, let’s look at the $n=2$ case. The most general state with two magnons can be written</p>
 
-<script type="math/tex; mode=display">\sum_{j>k} c_{j,k}\sigma_j^-\sigma_k^-\ket{\text{FS}},
+<script type="math/tex; mode=display">\sum_{j>k} c_{j,k}s_j^-s_k^-\ket{\text{FS}},
 \label{spin_2Mag}</script>
 
 <p>with some set of coefficients $c_{jk}$. Note that $j=k$ doesn’t contribute: we can’t lower the spin twice, so two magnons can’t be on the same site. Also, we don’t need to include $c_{j,k}=c_{k,j}$ – magnons are <em>bosons</em> – so we only include $j&gt;k$.</p>
@@ -444,7 +452,9 @@ H = J \sum_{j=1}^N \boldsymbol{\sigma}_j \cdot \boldsymbol{\sigma}_{j+1} = J \su
 
 <p>Using the form \eqref{spin_2Wave} gives a relationship between $c_1$ and $c_2$</p>
 
-<script type="math/tex; mode=display">-2\left(c_1 e^{i\eta_1}+c_2 e^{i\eta_2}\right) + (c_1+c_2)(1+e^{i(\eta_1+\eta_2)})</script>
+<script type="math/tex; mode=display">-2\left(c_1 e^{i\eta_1}+c_2 e^{i\eta_2}\right) + (c_1+c_2)(1+e^{i(\eta_1+\eta_2)}),</script>
+
+<p>with solution</p>
 
 <script type="math/tex; mode=display">\frac{c_1}{c_2} = -\frac{e^{i(\eta_2-\eta_1)/2}-\cos[(\eta_1+\eta_2)/2]}{e^{i(\eta_1-\eta_2)/2}-\cos[(\eta_1+\eta_2)/2]}\equiv e^{i\phi},
 \label{spin_cratio}</script>
@@ -453,10 +463,10 @@ H = J \sum_{j=1}^N \boldsymbol{\sigma}_j \cdot \boldsymbol{\sigma}_{j+1} = J \su
 
 <p>Returning to our particle analogy, the existence of an attractive potential for magnons suggests we should allow for the possibility of bound states. Doing so requires <em>complex</em> $\eta_{1,2}$</p>
 
-<script type="math/tex; mode=display">\begin{array}
+<script type="math/tex; mode=display">\begin{align}
 \eta_1 = u + i v
 \eta_2 = u - i v,\quad v>0.
-\end{array}</script>
+\end{align}</script>
 
 <p>We also require that $c_2=0$ in \eqref{spin_2Wave}, otherwise the eigenstate doesn’t decay. From \eqref{spin_cratio} we see that</p>
 
@@ -483,7 +493,7 @@ H = J \sum_{j=1}^N \boldsymbol{\sigma}_j \cdot \boldsymbol{\sigma}_{j+1} = J \su
 
 <p>assuming $N$ is odd. Acting with the $H$ reveals that we are out of luck, however. The reason is simple: regarding the down spins as particles arranged on every other site, the spin flip terms of the Hamiltonian cause them to move about. This is Bethe’s dense gas of interacting magnons.</p>
 
-<p>But antiferromagnets, with the kind of alternating order described by \eqref{spin_AFM} do exist! In fact, their existence was predicted  by <a href="https://en.wikipedia.org/wiki/Louis_Néel">Louis Néel</a> in 1936 <em>before</em> their experimental discovery.</p>
+<p>But antiferromagnets, with the kind of alternating order described by \eqref{spin_AFM} do exist! In fact, their existence was predicted  by <a href="https://en.wikipedia.org/wiki/Louis_Néel">Louis Néel</a> in 1936 <em>before</em> their experimental discovery. (\eqref{spin_AFM}) is sometimes called a <strong>Néel state</strong> for this reason.</p>
 
 <p>The Heisenberg antiferromagnetic spin chain does not have an antiferromagnetic ground state. The reason, as we’ll see, is similar to that behind the absence of Bragg peaks in the elastic chain: quantum fluctuations are too strong. On the square and cubic lattices, the Heisenberg model <em>does</em> display antiferromagnetism in the ground state. The above considerations show us, however, that these states are a bit more complicated than \eqref{spin_AFM}.</p>
 
@@ -491,30 +501,189 @@ H = J \sum_{j=1}^N \boldsymbol{\sigma}_j \cdot \boldsymbol{\sigma}_{j+1} = J \su
 
 <p>We consider a simple model due to Philip Anderson. The couplings of the nearest neighbour Heisenberg model on the chain, square and cubic lattices define a <a href="https://en.wikipedia.org/wiki/Bipartite_graph">bipartite graph</a>. This means that the sites (or vertices of the graph) can be grouped into two sets, with couplings only between the two sets (not within). Thus in the chain, the two sets are the even and odd sites.</p>
 
-<p>Since it seems to be hard to solve the Heisenberg model, consider the following toy problem</p>
+<p>Since it seems to be hard to solve the Heisenberg model, we simplify it in the following way. Introduce the Fourier components of the spin</p>
+
+<script type="math/tex; mode=display">\mathbf{S}_\mathbf{j} = \frac{1}{N^{d/2}} \sum_{\boldsymbol{\eta}} \mathbf{S}_\boldsymbol{\eta} e^{i \boldsymbol{\eta}\cdot \mathbf{j}}.</script>
+
+<p>Here $\mathbf{j}$ denotes a $d$-dimensional vector of integers $\mathbf{j}=(j_1,\ldots j_d)$, $j=1,\ldots N$ giving the position of the spin in an $\overbrace{N\times N \times \cdots N}^{d\text{ times}}$ cubic lattice, and likewise</p>
+
+<script type="math/tex; mode=display">\boldsymbol{\eta} = (\eta_1,\ldots \eta_d) = \frac{2\pi}{N}(n_1,\ldots n_d),\quad n_a = -(N-1)/2,\ldots (N-1)/2</script>
 
 <script type="math/tex; mode=display">H = \frac{J}{N} \mathbf{S}_A\cdot \mathbf{S}_B,
 \label{spin_Anderson}</script>
 
 <p>where</p>
 
-<script type="math/tex; mode=display">\mathbf{S}_A = \frac{1}{2}\sum_{j\in A\text{ sublattice}} \boldsymbol{\sigma}_j</script>
+<script type="math/tex; mode=display">\mathbf{S}_A = \sum_{j\in A\text{ sublattice}} \mathbf{s}_j</script>
 
 <p>is the total spin of sublattice A, and similarly for sublattice B. The factor of $1/N$ in \eqref{spin_Anderson} is there to make the energies extensive ($\propto N$).</p>
 
 <p>What is the ground state of $H$, assuming $J&gt;0$? This is easily answered by writing the Hamiltonian as</p>
 
-<script type="math/tex; mode=display">H = \frac{J}{2N} \left[\left() \mathbf{S}_A + \mathbf{S}_B\right)^2 - \mathbf{S}_A^2 - \mathbf{S}_B^2\right]</script>
+<script type="math/tex; mode=display">H = \frac{J}{2N} \left[\left(\mathbf{S}_A + \mathbf{S}_B\right)^2 - \mathbf{S}_A^2 - \mathbf{S}_B^2\right] = \frac{J}{2N} \left[\left(\mathbf{S}_A + \mathbf{S}_B\right)^2 - \mathbf{S}_A^2 - \mathbf{S}_B^2\right].</script>
+
+<p>It’s clear that we should form two spins of maximal size $N/4$ from each of the two sublattices, and then combine them to make an overall spin singlet. Obviously this singlet is a spherically symmetric state with no preferred direction, and hence no antiferromagnetic order.</p>
+
+<p>Now let’s add an external field that acts with opposite sign on the two sublattices</p>
+
+<script type="math/tex; mode=display">H = \frac{J}{N} \mathbf{S}_A\cdot \mathbf{S}_B - h\left(S^z_A - S^z_B\right).</script>
+
+<p>Obviously this is not really feasible in a magnetic material, but this is a thought experiment! Now the Hamiltonian conserves $S^z_{A}+S^z_B$, but not the total spin.</p>
+
+<p>If we work with the set of states of fixed $S^z_\text{tot}$</p>
 
 <h3 id="translational-invariance">Translational invariance</h3>
 
 <p>Mention Bethe ansatz solution. Relation to SEP. Spin waves and solitons. Antiferromagnetic order. Symmetry breaking. Anderson tower. Other examples- polar condensate.</p>
 
-<h2 id="large-s-expansion">Large $S$ expansion</h2>
+<h2 id="large-s-expansion">Large $s$ Expansion</h2>
+
+<p>A common strategy when faced with an intractable model is to generalize it to a family of models indexed by a parameter that may be used as an expansion parameter in some approximation scheme. In this section we’ll see an example of this approach by generalizing the Heisenberg model to arbitrary spin.</p>
+
+<h3 id="holstein--primakoff-representation-of-spin">Holstein–Primakoff Representation of Spin</h3>
+
+<p>This is a way of representing spins in terms of oscillator variables so that a problem of coupled spins becomes a problem of coupled oscillators, of the kind we studied in <a href="/Theories-of-Quantum-Matter/lectures/ElasticChain/">Lecture 3</a>. Since the map is nonlinear, the problem is not harmonic, although a harmonic approximation is a useful first step that turns out to be justified when the spins are large.</p>
+
+<p>The representation is</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+S^+ &=\sqrt{2s}\sqrt{1-\frac{\adop\aop}{2s}}\aop \\
+S^- &= \sqrt{2s}\adop\sqrt{1-\frac{\adop\aop}{2s}} \\
+S_z &= \left(s - \adop \aop\right).
+\end{align} %]]></script>
+
+<p>I’m going to leave it up to you to confirm that $[\aop,\adop]=1$ reproduces the spin commutation relations, and <a href="/Theories-of-Quantum-Matter/problems/Problems1/">Problem Set 1</a> should demystify why this works to some extent. A rough understanding is as follows. $S^{\pm}$ and $\aop$, $\adop$ evidently have somethig in common in that they shift us up and down a ladder of states. That’s why the relation between $S^z$ and the number of quanta in the oscillator is so simple. The oscillator ground state corresponds to $\ket{s,s}$.</p>
+
+<p>The difference is that in the spin case the ladder is finite, while in the oscillator it is (semi-)infinte. Thus we can’t just have $S^+\propto \aop$. We must have something that stops us lowering beyond $S^z=-s$. That’s the function of the factor in the square root in $S^-$.</p>
+
+<h3 id="harmonic-spin-waves">Harmonic Spin Waves</h3>
+
+<p>A large $s$ approximation already presents itself</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+S^+ &\sim \sqrt{2s}\aop \nonumber\\
+S^- &\sim  \sqrt{2s}\adop\nonumber\\
+S_z &= \left(s - \adop \aop\right).
+\label{spin_HPapprox}
+\end{align} %]]></script>
+
+<p>We are neglecting terms of order $s^{-1/2}$. The point about this approximation is that it is just what is needed to turn our Heisenberg Hamiltonian into a quadratic oscillator Hamiltonian. Before doing this, it’s convenient to write \eqref{spin_HPapprox} as</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+S^x &\sim \sqrt{s}x \nonumber\\
+S^y &\sim  \sqrt{s}p\nonumber\\
+S_z &= \left(s - \frac{1}{2}[x^2 + p^2 - 1] \right),
+\end{align} %]]></script>
+
+<p>where $x = \frac{1}{\sqrt{2}}(\aop+\adop)$ and $p = \frac{i}{\sqrt{2}}(\adop-\aop)$ are canonical position and momentum coordinates.</p>
+
+<p>Doing this for each spin in our chain gives the Hamiltonian</p>
+
+<script type="math/tex; mode=display">H\sim NJ s^2 - sJ- \overbrace{sJ \sum_{j=1}^N \left[x_j x_{j+1} + p_j p_{j+1}-x_j^2 - p_j^2\right]}^{\equiv H^{(2)}} + \ldots,
+\label{spin_Harmonic}</script>
+
+<p>where we are dropping terms that are lower order in $s$. \eqref{spin_Harmonic} has the form of an harmonic chain, albeit one with a rather strange looking mass term. We can diagonalize it by using the Fourier expansion of the position and momentum as before</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+x_j(t) &= \frac{1}{\sqrt{N}}\sum_{|n| \leq (N-1)/2} q_n(t) e^{i\eta_n j},\nonumber\\
+p_j(t) &= \frac{1}{\sqrt{N}}\sum_{|n| \leq (N-1)/2} \pi_n(t) e^{-i\eta_n j}.
+\label{spin_Fourier}
+\end{align} %]]></script>
+
+<p>In terms of these modes $H^{(2)}$ takes the form</p>
+
+<script type="math/tex; mode=display">H^{(2)} = -2sJ \sum_{|n| \leq (N-1)/2} \sin^2(\eta_n/2)\left[q_n q_{-n} + \pi_n\pi_{-n}\right].
+\label{spin_H2FM}</script>
+
+<p>Comparing with our treatment of the elastic chain, we can read of the dispersion relation</p>
+
+<script type="math/tex; mode=display">\omega_{\text{FM}}(\eta) = 4s\left|J\right|\sin^2(\eta/2)</script>
+
+<p>in agreement with \eqref{spin_dispersion} for $s=1/2$. Incidentally, in order that the ground state energy is $NJ s^2$ with no correction at order $s$, the ground state energy of the oscillators must cancel the second term of \eqref{spin_Harmonic}.</p>
+
+<p>This approximation applies close to the ferromagnetic state, where there are few oscillator quanta and the effect of the anharmonic terms in the Hamiltonian is small. What about the case of antiferromagnetic coupling? There is a handy trick for modifying the above calculation to apply to this case. We rotate every other spin through $\pi$ about the $y$ axis, so that</p>
+
+<script type="math/tex; mode=display">(s^x_j,s^y_j,s^z_j)\longrightarrow (-s^x_j,s^y_j,-s^z_j),\quad j\text{ odd}.</script>
+
+<p>The Heisenberg chain Hamiltonian then becomes</p>
+
+<script type="math/tex; mode=display">H = -J \sum_{j=1}^N \left[s^x_j s^x_{j+1} z- s^y_j s^y_{j+1} + s^z_j s^z_{j+1}\right].</script>
+
+<p>Now we proceed exactly as before. In approximating this Hamiltonian by a harmonic description close to the ferromagnetic state $\ket{\text{FM}}$, we are in fact working close to the <em>antiferromagnetic</em> state $\ket{\text{AFM}}$ in the original variables. The oscillator Hamiltonian is now</p>
+
+<script type="math/tex; mode=display">H^{(2)} = 2sJ \sum_{|n| \leq (N-1)/2} \left[\sin^2(\eta/2)q_n q_{-n} + \cos^2(\eta/2)\pi_n\pi_{-n}\right],
+\label{spin_H2AFM}</script>
+
+<p>corresponding to a dispersion relation</p>
+
+<script type="math/tex; mode=display">\omega_{\text{AFM}}(\eta) = 2sJ\left|\sin(\eta)\right|.
+\label{spin_AFMDispersion}</script>
+
+<p>This is rather different to the ferromagnetic case. Note that it vanishes both $\eta=0$ and at the Brillouin zone boundary $\eta=\pi$, and is linear in the vicinity of both points, compared with the quadratic behaviour of the ferromagnet. The reason for the difference is clear on comparing \eqref{spin_H2FM} and \eqref{spin_H2AFM}. In the first case both the position and momentum terms vanish at $\eta=0$, while in the second only the position term vanishes here, with the momentum term vanishing at $\eta=\pi$. See if you can figure out why.</p>
+
+<p>Incidentally, the Bethe ansatz solution of the spin-1/2 Heisenberg chain yields dispersion relation for the lowest excited state of momentum $\eta$ (<strong>des Cloiseaux–Pearson</strong> dispersion)</p>
+
+<script type="math/tex; mode=display">\omega_{\text{dCP}}(\eta) = \frac{\pi J}{2}\left|\sin(\eta)\right|,
+\label{spin_dCP}</script>
+
+<p>which has the same functional form, but with a different overall scale. You shouldn’t read too much into this, as our calculation is valid at large $s$.</p>
+
+<p>The halving of the period of the dispersion \eqref{spin_AFMDispersion} is due to the antiferromagnetic order doubling the size of the unit cell. Although the exact result \eqref{spin_dCP} has the same feature, there is in fact no antiferromagnetic order in the chain, as we’ll see next.</p>
+
+<h3 id="quantum-fluctuations-degrade-antiferromagnetic-order">Quantum Fluctuations Degrade Antiferromagnetic Order</h3>
+
+<p>In the crudest approximation $s^z_j \sim  s$ in the ferromagnet and $s^z_j \sim s(-1)^j$ in the antiferromagnet. This corresponds to perfect order. However, the Holstein–Primakoff representation has</p>
+
+<script type="math/tex; mode=display">s^z_j = s - \adop_j\aop_j.</script>
+
+<p>How does the second term effect $\bra{0}s^z_j \ket{0}$ in the ground state of $H^{(2)}$? In the case of the ferromagnet, it doesn’t. We know the ground state has $s^z = s$ exactly. One way to see why the second term doesn’t contribute is to note that by translational invariance</p>
+
+<script type="math/tex; mode=display">\bra{0}\adop_j \aop_j\ket{0} = \bra{0}\frac{1}{N}\sum_{j=1}^N \adop_j \aop_j\ket{0}.
+\label{spin_deplete}</script>
+
+<p>The operator on the right hand side commutes with the harmonic Hamiltonian \eqref{spin_H2FM}. This is an exact statement not restricted to the harmonic approximation: the total number of Holstein–Primakoff bosons is conserved. The same is not true for the antiferromagnetic case \eqref{spin_H2FM}. If we had written it in terms of the bosons, we would have found terms involving $\adop_j\adop_{j+1}$ and $\aop_j\aop_{j+1}$ that create pairs of bosons (see <a href="/Theories-of-Quantum-Matter/problems/Problems1/">Problem Set 1</a>).</p>
+
+<p>Let’s evaluate \eqref{spin_deplete}</p>
+
+<script type="math/tex; mode=display">\sum_{j=1}^N \adop_j \aop_j = \frac{1}{2} \sum_{j=1}^N \left(x_j^2 + p_j^2 - 1\right) = -\frac{N}{2} + \frac{1}{2}\sum_n \left(q_n q_{-n} + \pi_n\pi_{-n}\right).
+\label{spin_DepEval}</script>
+
+<p>Next we use the oscillator coordinates from <a href="/Theories-of-Quantum-Matter/lectures/ElasticChain/">Lecture 3</a>, adapted to \eqref{spin_H2AFM}</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\aop_n &= \sqrt{\frac{\cot(\eta_n /2)}{2}}\left(q_n + \frac{i}{\cot(\eta_n /2)}\pi_{-n}\right)\nonumber\\
+\adop_n &= \sqrt{\frac{\cot(\eta_n /2)}{2}}\left(q_{-n} - \frac{i}{\cot(\eta_n /2)}\pi_{n}\right),\qquad n\neq 0.
+\label{spin_adef}
+\end{align} %]]></script>
+
+<p>Writing \eqref{spin_deplete} in terms of these gives</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\Delta s = - \bra{0}\frac{1}{N}\sum_{j=1}^N \adop_j \aop_j\ket{0} &= \frac{1}{2}-\frac{1}{4N}\sum_n \left[\tan(\eta_n/2) + \cot(\eta_n/2)\right].\\
+ &= \frac{1}{2}- \frac{1}{4}\int_{-\pi}^\pi \frac{d\eta}{2\pi} \left[\tan(\eta_n/2) + \cot(\eta_n/2)\right].
+\end{align} %]]></script>
+
+<p>This represents an $O(s^0)$ correction to $\langle s^z_j\rangle = (-1)^j\left(s - \Delta s\right)$. However, the integral diverges logarithmically at $\eta=0$ and $\eta=\pi$. This indicates that our approach breaks down in the $N\to\infty$ limit: at finite $N$ the sums are all finite if $n=0$ is excluded (Why can we do this? Compare with the elastic chain.). In higher dimensions – repeating the analysis yields the same integrand but with an integral over the $d$-dimensional Brillouin zone – the integrals are finite, however. This indicates that our expansion is well behaved.</p>
+
+<p>The breakdown of the spin wave treatment in 1D has a physical meaning: there is no long range antiferromagnetic order, even at zero temperature. The situation is closely analogous to the elastic chain, where we saw that quantum fluctuations destroyed the Bragg peaks.</p>
 
 <h2 id="a-numerical-experiment">A Numerical Experiment</h2>
 
 <p>Exact diagonalization of spin chains;</p>
+
+<h2 id="some-facts-about-ground-states-of-heisenberg-models">Some facts about ground states of Heisenberg Models</h2>
+
+<p>Marshall sign rule. Lieb Mattis theorem. Lack of order theorems</p>
+
+<h2 id="outlook">Outlook</h2>
+
+<p>Anisotropy, frustration…</p>
 
 </div>
 

@@ -20,6 +20,8 @@ Show the explicit form of the ground state and demonstrate that this is of Bethe
 
 Relate to bright soliton -- captures leading order ground state energy (and mass, but that's easy)
 
+## Peirels instability
+
 ## Diagonalize quadratic Hamiltonian for general two particle potential
 
 ## Quantize the 2D oscillator problem
@@ -45,6 +47,27 @@ Show that we get divergence of displacement in thermal equilibrium
 Introduce terminology of _free theory_
 
 ## From Schwinger Bosons to Holstein--Primakoff
+
+
+Where does the Holstein--Primakoff representation come from?
+
+[Jordan--Schwinger representation](https://en.wikipedia.org/wiki/Jordan_map)
+
+## Hartree-Fock Energy of Magnons
+
+## Spin Waves from Bogoliubov Transformation
+
+Write the Heisenberg model in terms of $\aop_j$ $\adop_j$ operators...
+
+## Classical Spin Waves
+
+Following Faddeev
+
+## Spin wave calculation with anisotropy
+
+## Proof of no LRO based on sum rules
+
+
 
 ## The Simple Symmetric Exclusion Process (SEP)
 
