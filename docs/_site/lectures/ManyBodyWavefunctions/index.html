@@ -42,7 +42,7 @@
 
   <!-- CSS links -->
   <link rel="stylesheet" href="/Theories-of-Quantum-Matter/public/css/syntax.css"/>
-  <link rel="stylesheet" href="/Theories-of-Quantum-Matter/public/css/ed.css"/>
+  <link rel="stylesheet" href="/Theories-of-Quantum-Matter/public/css/tqm.css"/>
 
 
   <!-- Icons -->
@@ -66,6 +66,7 @@
           br: '\\mathbf{r}',
           bp: '\\mathbf{p}',
           bq: '\\mathbf{q}',
+          bk: '\\mathbf{k}',
           bv: '\\mathbf{v}',
           bA: '\\mathbf{A}',
           pop: '\\psi^{\vphantom{\dagger}}',
@@ -256,21 +257,21 @@ $$
       <div class="container content" id="main">
         <div class="page">
   <h1 class="page-title">Many Body Wavefunctions</h1>
-  <blockquote>
-  <p>We begin our study of many body quantum mechanics by examining a number of systems where eigenstates and eigenvalues may be found explicitly for any number of particles. Be warned that these situations are <strong>highly atypical</strong> – but are nevertheless very informative.</p>
-</blockquote>
+  <p class="message">
+We begin our study of many body quantum mechanics by examining a number of systems where eigenstates and eigenvalues may be found explicitly for any number of particles. Be warned that these situations are <strong>highly atypical</strong> -- but are nevertheless very informative.
+</p>
 
 <h2 class="no_toc" id="contents">Contents</h2>
 
 <ul id="markdown-toc">
   <li><a href="#bosons-and-fermions" id="markdown-toc-bosons-and-fermions">Bosons and Fermions</a>    <ul>
+      <li><a href="#two-particles" id="markdown-toc-two-particles">Two Particles</a></li>
       <li><a href="#product-states" id="markdown-toc-product-states">Product States</a></li>
     </ul>
   </li>
   <li><a href="#the-1d-fermi-gas" id="markdown-toc-the-1d-fermi-gas">The 1D Fermi Gas</a>    <ul>
       <li><a href="#ground-state" id="markdown-toc-ground-state">Ground State</a></li>
-      <li><a href="#excitation-spectrum" id="markdown-toc-excitation-spectrum">Excitation spectrum</a></li>
-      <li><a href="#density-correlations" id="markdown-toc-density-correlations">Density Correlations</a></li>
+      <li><a href="#density-density-matrix-pair-distribution" id="markdown-toc-density-density-matrix-pair-distribution">Density; Density Matrix; Pair Distribution</a></li>
       <li><a href="#impenetrable-bose-gas" id="markdown-toc-impenetrable-bose-gas">Impenetrable Bose Gas</a></li>
     </ul>
   </li>
@@ -289,39 +290,332 @@ $$
   </li>
 </ul>
 
+<p>Reading: <a href="#Baym:1969">(Baym, 1969)</a>, <a href="#Girvin:1999">(Girvin, 1999)</a>, <a href="#Stone:1992">(Stone, 1992)</a>.</p>
+
 <hr />
 
 <h2 id="bosons-and-fermions">Bosons and Fermions</h2>
 
-<p>Here we introduce..  <script type="math/tex">\br,\bk,\bv,\adop \tr(ABC)</script> <script type="math/tex">\cA</script></p>
+<p>An $N$ particle quantum system is described by a wavefunction of $N$ arguments $\Psi(\br_1,\ldots, \br_N)$. The starting point of many body quantum mechanics is that:</p>
 
-<p>\begin{equation}
-\Psi(\br_1,\br_2) =
-\end{equation}</p>
+<blockquote>
+  <p>Systems of indistinguishable particles are described by <strong>totally symmetric</strong> or <strong>totally antisymmetric</strong> wavefunctions.</p>
+</blockquote>
 
-<p>In this first section leave a note setting <script type="math/tex">\hbar = 1</script> for the rest of the course…</p>
+<p>Just to be clear, <em>totally symmetric</em> means the wavefunction is unchanged by exchanging any two coordinates, whereas <em>totally antisymmetric</em> means that it changes sign.</p>
+
+<p>A good fraction of this course is devoted to exploring the ramifications of this fact. Perhaps we should therefore give a <em>very</em> quick summary of why it appears to be true.</p>
+
+<p>The first question is: what <em>are</em> indistinguishable particles? I’ll give a theorist’s answer. Indistinguishable particles are those described by Hamiltonians that are invariant under permuting the particle’s labels. Thus the sum of single particle Hamiltonians</p>
+
+<script type="math/tex; mode=display">H = \sum_{i=1}^{N} \left[-\frac{\hbar^{2}}{2m}\nabla_{i}^{2}+V(\mathbf{r_{i}})\right]</script>
+
+<p>describes indistinguishable partiles while</p>
+
+<script type="math/tex; mode=display">H = \sum_{i=1}^{N} \left[-\frac{\hbar^{2}}{2m_i}\nabla_{i}^{2}+V(\mathbf{r_{i}})\right]</script>
+
+<p>does not, on account of the masses being all different. Any time we have a symmetry operation that commutes with the Hamiltonian, the eigenstates of that symmetry are preserved by time evolution with that Hamiltonian. Thus a symmetric potential $V(x)=V(-x)$ commutes with the parity operation $x\to -x$, so the eigenstates of this operation – the even and odd wavefunctions – are preserved by time evolution.</p>
+
+<p>The Hamiltonian of indistinguishable particles commutes with every operation of particle exchange. The only simultaneous eigenstates of all particle exchange operations (note that different exchanges don’t commute if they involve the same particle) are the totally symmetric and antisymmetric wavefunctions. Thus these properties are preserved by time evolution. It’s always been this way.</p>
+
+<p>Thus we classify particles into symmetric <strong>bosons</strong> and antisymmetric <strong>fermions</strong>, named for Bose and Fermi respectively (the whimsical terminology is Dirac’s). The distinction works equally well for composite particles, provide we ignore the internal degrees of freedom and discuss only the center of mass coordinate.
+ <!---
+ Easy for us to say. Here's Dirac again: `The solution with antisymmetrical eigenfunctions, though, is probably the correct one for gas molecules, since it is known to be the correct one for electrons in an atom, and one would expect molecules to resemble electrons more closely than light-quanta.'~\citep{dirac1926}}
+ and here
+ --></p>
+
+<p>All matter in the universe is made up of fermions: electrons, quarks, etc., but you can easily convince yourself that an even number of fermions make a composite boson (e.g. a $^4$He atom with two electrons, two neutrons and two protons) and an odd number make a composite fermion ($^3$He has one fewer neutron, which in turn is made up of 3 quarks).</p>
+
+<h3 id="two-particles">Two Particles</h3>
+
+<p>A pair of particles is described by a wavefunction $\Psi(\mathbf{x},\mathbf{y})$. If we are dealing with <em>distinguishable</em> particles, the wavefunction of a pair of particles in states $\ket{\varphi_1}$ and $\ket{\varphi_2}$ would be</p>
+
+<script type="math/tex; mode=display">\label{quantum_statistics_ProductWavefunction}
+ \Psi(\br_1,\br_2)=\varphi_1(\br_1)\varphi_2(\br_2).</script>
+
+<p>Accounting for indistinguishability, we have either</p>
+
+<script type="math/tex; mode=display">\label{quantum_statistics_sym}
+ \Psi(\br_1,\br_2)=\frac{1}{\sqrt{2}}[\varphi_1(\br_1)\varphi_2(\br_2)\pm \varphi_2(\br_1)\varphi_1(\br_2)].</script>
+
+<p>with the upper sign for bosons and the lower for fermions (The $1/\sqrt{2}$ yields a normalized wavefunction if $\varphi_{1,2}(\br)$ are orthonormal.). Note in particular that when $\varphi_1=\varphi_2$ the fermion wavefunction <em>vanishes</em>. This illustrates the <strong>Pauli exclusion principle</strong>, that no two identical fermions can be in the same quantum state. There is no such restriction for bosons.</p>
+
+<p>Classically, if you had a function $P_{1}(\br_1)$ describing the probability density of finding particle $1$ at position $\br_1$, and the corresponding quantity for an independent particle $2$, you would have no hesitation in concluding that the joint distribution is</p>
+
+<script type="math/tex; mode=display">P_{12}(\br_1,\br_2)=P_1(\br_1)P_2(\br_2).
+\label{eq:classicaljoint}</script>
+
+<p>This also follows from taking the square modulus of \eqref{quantum_statistics_ProductWavefunction}. The results implied by the wavefunction \eqref{quantum_statistics_sym} is</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+P_{12}(\br_1,\br_2) &= P_1(\br_1)P_2(\br_2) \\ &\pm \left[\varphi^{}_1(\br_1)\varphi^*_2(\br_1)\varphi^{}_2(\br_2)\varphi^*_1(\br_2)+\varphi^{}_1(\br_2)\varphi^*_2(\br_1)\varphi^{}_2(\br_1)\varphi^*_1(\br_1)\right].
+\end{align} %]]></script>
+
+<p>In particular, $P_{12}(\br,\br) = 0$ for fermions, and $P_{12}(\br,\br) = 2P_1(\br)P_2(\br)$ for bosons. The first result is natural from the  standpoint of the exclusion principle, while the second is perhaps more surprising. This shows that, because probabilities arise from the squares of amplitudes, identical particles in quantum mechanics are never truly independent.</p>
+
+<p><a name="HOM"></a>
+<img src="/Theories-of-Quantum-Matter/assets/HOM.png" alt="" />
+<em>Four possible outcomes after the passage of two bosons through a beam splitter.</em></p>
+
+<p>One dramatic illustration of this deviation from our classical intuition is provided by the <a href="https://en.wikipedia.org/wiki/Hong–Ou–Mandel_effect">Hong–Ou–Mandel effect</a> in quantum optics. In simplified terms, we imagine wavepackets describing two photons (bosons) approaching a 50:50 beam splitter from either side.  Because of the unitarity of scattering, the two photons end up in orthogonal states. For example,</p>
+
+<script type="math/tex; mode=display">\frac{1}{\sqrt{2}}\left(\ket{\text{Left}}\pm \ket{\text{Right}}\right).</script>
+
+<p>Applying the above reasoning leads to the surprising conclusion that there is <em>zero</em> probability to have one photon at each output: they both go to the left or both to the right.</p>
 
 <h3 id="product-states">Product States</h3>
 
+<p>The Hamiltonian of a system of $N$ identical noninteracting particles is a sum of $N$ identical <strong>single particle</strong> Hamiltonians, that is, with each term acting on a different particle coordinate</p>
+
+<script type="math/tex; mode=display">\label{quantum_statistics_SPHamiltonian}
+ H = \sum_{i=1}^{N} \left[-\frac{\hbar^{2}}{2m}\nabla_{i}^{2}+V(\mathbf{r_{i}})\right]</script>
+
+<p>where $m$ is the particle mass, and $V(\mathbf{r_{i}})$ is a potential experienced by the particles. Let’s denote the eigenstates of the single particle Hamiltonian by ${\varphi_{\alpha}(\mathbf{r})}$, and the corresponding eigenenergies by ${E_{\alpha}}$, where $\alpha$ is a shorthand for whatever quantum numbers are used to label the states. A set of labels ${\alpha_{i}}$ $i=1,2,\ldots N$ tells us the state of each of the particles. Thus we can write an eigenstate of $N$ <em>distinguishable</em> particles with energy $E=\sum_{i=1}^{N}E_{\alpha_{i}}$ as</p>
+
+<script type="math/tex; mode=display">\label{quantum_statistics_disting}
+ \ket{\Psi_{\alpha_{1}\alpha_{2}\cdots \alpha_{N}}}=\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{1}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{1}})</script>
+
+<p>(We will frequently switch between the wavefunction $\varphi(\mathbf{x})$ and bra-ket notation $\ket{\varphi}$. In the latter notation the product wavefunction in \eqref{quantum_statistics_ProductWavefunction} is written $\ket{\varphi_{1}}\ket{\varphi_{2}}$)</p>
+
+<p>A general state will be expressed as a superposition of such states, of course. As we’ve just discussed, however, we should really be dealing with a totally symmetric or totally antisymmetric wavefunction, depending on whether our identical particles are bosons or fermions. To write these down we introduce the operators of <em>symmetrization</em> and <em>antisymmetrization</em></p>
+
+<script type="math/tex; mode=display">\label{quantum_statistics_SymAntisym}
+   \mathcal{S}=\frac{1}{N!}\sum_{P} P, \qquad \mathcal{A}=\frac{1}{N!}\sum_{P} \sgn(P)P</script>
+
+<p>The sums are over all $N!$ permutations of $N$ objects, $P$ denotes the corresponding permutation operator, and $\sgn(P)$ is the <strong>signature</strong> of the permutation, equal to $+1$ for permutations involving an even number of exchanges, and $-1$ for an odd number. This allows us to write the totally symmetric and totally antisymmetric versions of \eqref{quantum_statistics_disting} as</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+ \ket{\Psi^{S}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}&=\sqrt{\frac{N!}{\prod_{\alpha}N_{\alpha}!}}\mathcal{S}\,\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}}) \nonumber \\
+ \ket{\Psi^{A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}&=\sqrt{N!}\mathcal{A}\,\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}})
+ \label{quantum_statistics_norm}
+\end{align} %]]></script>
+
+<p>The normalization factors yield normalized wavefunctions <em>if</em> the single particle state $\ket{\varphi_\alpha}$ are orthonormal (as the eigenstates of the single particle Hamiltonian are).</p>
+
+<p>Such states are called <strong>product states</strong>. The normalization factor in the boson case involves the <strong>occupation numbers</strong> ${N_{\alpha}}$ giving the number of particles in state $\alpha$. In the fermion case each $N_{\alpha}$ is either $0$ or $1$ so the prefactor simplifies. Since the order of the $\alpha$ indices is irrelevant in the boson case, and amounts only to a sign in the fermion case, states based on a given set of single particle states are more efficiently labeled by the occupation numbers. In terms of these numbers the total energy is</p>
+
+<script type="math/tex; mode=display">\label{quantum_statistics_TotalEnergy}
+ E=\sum_{i=1}^{N}E_{\alpha_{i}}=\sum_{\alpha}N_{\alpha} E_{\alpha}</script>
+
+<p class="message"> Verify that the normalization factors in \eqref{quantum_statistics_norm} are correct. </p>
+
+<p>A more formal way of putting things is as follows. We first consider the space spanned by states of the form \eqref{quantum_statistics_disting}. Then we introduce the operators $\mathcal{S}$ and $\mathcal{A}$, noting that $\mathcal{S}^{2}=\mathcal{S}$ and $\mathcal{A}^{2}=\mathcal{A}$. In other words, there’s no point symmetrizing or antisymmetrizing more than once (we say that the operators are <strong>idempotent</strong>). Any eigenvalue of one of these operators is therefore either one or zero. The states with $\mathcal{S}=1$ are the symmetric states, and those with $\mathcal{A}=1$ are antisymmetric. You can easily convince yourself that if a state has one of $\mathcal{S}$ or $\mathcal{A}$ equal to one, the other is zero. This defines symmetric and antisymmetric subspaces, consisting of the admissible boson and fermion wavefunctions.</p>
+
+<p>Note that the fermion wavefunction takes the form of a <strong>Slater determinant</strong> (though it appears first in <a href="#dirac1926">(Dirac, 1926)</a>).</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\label{quantum_statistics_slater}
+   \ket{\Psi^{A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}=\frac{1}{\sqrt{N!}}\begin{vmatrix}
+   \varphi_{\alpha_{1}}(\mathbf{r_{1}}) & 	\varphi_{\alpha_{1}}(\mathbf{r_{2}}) & \cdots & \varphi_{\alpha_{1}}(\mathbf{r_{N}}) \\
+   \varphi_{\alpha_{2}}(\mathbf{r_{1}}) &  \cdots & \cdots & \cdots  \\
+   \cdots & \cdots & \cdots & \cdots  \\
+   \varphi_{\alpha_{N}}(\mathbf{r_{1}}) &  \cdots & \cdots & \varphi_{\alpha_{N}}(\mathbf{r_{N}})
+ \end{vmatrix} %]]></script>
+
+<p>The vanishing of a determinant when two rows or two columns are identical means that the wavefunction is zero if two particle coordinates coincide ($\br_{i}=\br_{j}$), or if two particles occupy the same state ($\alpha_{i}=\alpha_{j}$).</p>
+
 <h2 id="the-1d-fermi-gas">The 1D Fermi Gas</h2>
+
+<p>Let’s consider perhaps the simplest many particle system one can think of: non-interacting particles on a ring. If the ring has circumference $L$, the single particle eigenstates are</p>
+
+<script type="math/tex; mode=display">\label{quantum_statistics_spstates}
+	\varphi_{n}(x)=\frac{1}{\sqrt{L}}\exp\left(k_n x\right),</script>
+
+<p>with $k_n=\frac{2\pi n}{L}$, $n\in\mathbb{Z}$. The corresponding energies are $E_{n}=\frac{k_n^2}{2m}$.</p>
 
 <h3 id="ground-state">Ground State</h3>
 
-<h3 id="excitation-spectrum">Excitation spectrum</h3>
+<p>Let’s find the $N$ particle ground state. For bosons every particle is in the state $\ket{\varphi_{0}}$ with zero energy: $N_{0}=N$. Thus</p>
 
-<p>Particle and hole excitations</p>
+<script type="math/tex; mode=display">\Psi^{S}(x_{1},x_{2},\ldots x_{N})=\frac{1}{L^{N/2}}</script>
 
-<p>Map out spectrum at fixed momentum</p>
+<p>That was easy! The fermion case is harder.</p>
 
-<h3 id="density-correlations">Density Correlations</h3>
+<p>Since the occupation of each level is at most one, the lowest energy is obtained by filling each level with one particle, starting at the bottom. If we have an odd number of particles, this means filling the levels with $n=-(N-1)/2, -(N-3)/2,\ldots, -1, 0, 1 \ldots (N-1)/2$ (for an even number of particles we have to decide whether to put the last particle at $n=\pm N/2$). Introducing the complex variables</p>
+
+<script type="math/tex; mode=display">z_{i}=\exp(2 \pi i x_{i}/L),</script>
+
+<p>the Slater determinant \eqref{quantum_statistics_slater} becomes</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\label{quantum_statistics_1ddet}
+	\Psi_0(x_1,\ldots, x_N)=\begin{vmatrix}
+	z_{1}^{-(N-1)/2} & 	z_{2}^{-(N-1)/2} & \cdots & z_{N}^{-(N-1)/2} \\
+	z_{1}^{-(N-3)/2} &  \cdots & \cdots & \cdots  \\
+	\cdots & \cdots & \cdots & \cdots  \\
+	z_{1}^{(N-1)/2} &  \cdots & \cdots & z_{N}^{(N-1)/2}
+\end{vmatrix}. %]]></script>
+
+<p>Let’s evaluate this complicated looking expression in a simple case. With three particles we have</p>
+
+<p><a name="Nodal"></a>
+<img src="/Theories-of-Quantum-Matter/assets/NodalSurfaces.pdf" alt="" />
+<em>Nodal surfaces $x_i=x_j$ for three fermions. Because of the periodic boundary conditions, the three dimensional space of particle coordinates is divided into two regions, corresponding to the even and odd permutations.</em></p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+	\Psi_0(x_1,x_2,x_3)=\begin{vmatrix}
+		z_{1}^{-1} & z_{2}^{-1} & z_{3}^{-1} \\
+		1 & 1 & 1 \\
+		z_{1} & z_{2} & z_{3}
+	\end{vmatrix} &= \frac{z_{1}}{z_{2}}-\frac{z_{2}}{z_{1}}+\frac{z_{3}}{z_{1}}-\frac{z_{1}}{z_{3}}+\frac{z_{2}}{z_{3}}-\frac{z_{3}}{z_{2}}\nonumber\\
+	&=\left(\sqrt{\frac{z_{3}}{z_{1}}}-\sqrt{\frac{z_{1}}{z_{3}}}\right)\left(\sqrt{\frac{z_{1}}{z_{2}}}-\sqrt{\frac{z_{2}}{z_{1}}}\right)\left(\sqrt{\frac{z_{2}}{z_{3}}}-\sqrt{\frac{z_{3}}{z_{2}}}\right)  \nonumber\\
+	&\propto \sin\left(\frac{ \pi[x_{1}-x_{2}]}{L}\right)\sin\left(\frac{ \pi[x_{3}-x_{1}]}{L}\right)\sin\left(\frac{ \pi[x_{2}-x_{3}]}{L}\right)
+  \label{3particle}
+\end{align} %]]></script>
+
+<p>The vanishing of the wavefunction when $x_{i}=x_{j}$ is consistent with the Pauli principle. You should check that additionally it is periodic and totally antisymmetric.</p>
+
+<p>\eqref{3particle} generalizes for any (odd) $N$ so that the ground state Slater determinant \eqref{quantum_statistics_1ddet} is proportional to</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\Psi_0(x_1,\ldots, x_N)\prod_{i<j}^{N} \sin\left(\frac{\pi[x_{i}-x_{j}]}{L}\right). 	
+    \label{quantum_statistics_1dFermiGS} %]]></script>
+
+<div class="message">
+	To show this you will need the <strong>Vandermonde determinant</strong>
+
+  $$
+			\begin{vmatrix}
+			1 &amp; 1 &amp; \cdots &amp; 1 \\
+			z_{1} &amp;  z_{2} &amp; \cdots &amp; \cdots  \\
+			z_{1}^{2} &amp; z_{2}^{2} &amp; \cdots &amp; \cdots  \\
+			 \cdots
+			z_{1}^{N-1} &amp;  z_{2}^{N-1} &amp; \cdots &amp; z_{N}^{N-1}
+		\end{vmatrix}=\prod_{i&lt;j}^{N}(z_{i}-z_{j})
+  $$
+
+	which can be proved in a variety of ways. Proving directly that \eqref{quantum_statistics_1dFermiGS} is an eigenstate of the Hamiltonian is not easy, but can be accomplished using the identity
+
+	$$
+		\label{2nd_quant_cotident}
+	\cot(x-y)\cot(y-z)+\cot(y-z)\cot(x-z)+\cot(z-x)\cot(x-y)=1.	\nonumber
+	$$
+
+  Check carefully that \eqref{quantum_statistics_1dFermiGS} is periodic and totally antisymmetric.
+
+</div>
+
+<p>Let’s take the opportunity to introduce some terminology. The wavevector of the last fermion added is called the <strong>Fermi wavevector</strong> and denoted $k_{F}$. In this case $k_{F}=\frac{(N-1)\pi}{L}$. Its energy $E_{F}=\frac{k_{F}^{2}}{2m}$ is the <strong>Fermi energy</strong>.</p>
+
+<h3 id="density-density-matrix-pair-distribution">Density; Density Matrix; Pair Distribution</h3>
+
+<p>Having a many particle wave function is one thing, but what to <em>do</em> with it? Bear in mind that \eqref{quantum_statistics_1dFermiGS} is just about the simplest fermion state you can imagine, but it’s not immediately clear what it is telling us.</p>
+
+<p>Since $\left|\Psi(x_1,\ldots,x_N)\right|^2$ is the probability distribution of the positions of the particles, we can use it to find the marginal probability distributions for any subset of the particles. Of course, since the particles are identical, it doesn’t matter which ones we choose, just the number.</p>
+
+<p>The one particle distribution is related to the average density of particles, given by</p>
+
+<script type="math/tex; mode=display">\rho_1(x_1) = N \int dx_2\ldots dx_N \,\left|\Psi(x_1,x_2,\ldots,x_N)\right|^2.
+\label{ave_density}</script>
+
+<p>Note that although I use the symbol $\rho$, density is always going to be <em>number</em> density.</p>
+
+<div class="message">
+(Definitely feel free to ignore this!) For some joint distribution of points $P(\mathbf{x})$ with $\mathbf{x}=(x_1,\ldots x_N)$ (let the labels be discrete for now), denote the number of points with $x_j=X$ by $\left|\{y \in \mathbf{x}: y=X\}\right|$. then the expectation value of this number is
+
+$$
+\E\left[\left|\{y \in \mathbf{x}: y=X\}\right|\right] = \sum_{j} \sum_{x_1,\ldots,x_{j-1},x_{j+1},\ldots x_N}  P(x_1,\ldots,x_{j-1},X,x_{j+1},\ldots x_N)
+$$
+
+</div>
+
+<p>Normalization of the wavefunction then implies</p>
+
+<script type="math/tex; mode=display">\int dx\, \rho_1(x) = N.</script>
+
+<p>In a translationally invariant system like the fermion gas on a ring we expect the average density to be constant.</p>
+
+<p>We can regard \eqref{ave_density} as an expectation of a density operator</p>
+
+<script type="math/tex; mode=display">\rho(x) = \sum_j \delta(x-x_j),
+\label{many_densityop}</script>
+
+<p>so that $\rho_1 = \bra{\Psi}\rho\ket{\Psi}$.</p>
+
+<p>We can also consider the <strong>density matrix</strong> of a single particle. Recall that the density matrix $\varrho$ describes a <strong>mixed state</strong> of a quantum system, and is the appropriate description when the quantum state is not known. $\varrho$ is a positive definite hermitian operator satisfying $\tr \varrho =1$. Its spectral resolution</p>
+
+<script type="math/tex; mode=display">\varrho = \sum_\alpha p_\alpha \ket{\varphi_\alpha}\bra{\varphi_\alpha},</script>
+
+<p>can be thought of as a statistical mixture of different quantum states $\ket{\varphi_\alpha}$ with probabilities $p_\alpha$.</p>
+
+<p>One natural way in which density matrices arise from pure states is as follows. The Hilbert space of a composite system consists of a tensor product of two or more components $\mathcal{H}_{AB} = \mathcal{H}_A \otimes \mathcal{H}_B$. Starting from the density matrix corresponding to a pure state, we can obtain a density matrix for the component $A$ alone by ‘tracing out’ the $B$ subsystem.</p>
+
+<script type="math/tex; mode=display">\varrho_A = \tr_B \ket{\Psi}\bra{\Psi},\quad \ket{\Psi}\in \mathcal{H}_{AB}.</script>
+
+<p>The probability for system $A$ to be in state $\ket{\psi}\in \mathcal{H}_A$ is</p>
+
+<script type="math/tex; mode=display">P_\psi = \bra{\psi}\varrho\ket{\psi}.</script>
+
+<p>Applied to our many body states, the same logic leads to the <strong>single particle density matrix</strong></p>
+
+<script type="math/tex; mode=display">g(x,y) \equiv N\int dx_2\ldots dx_N \,\Psi^{}(x,x_2,\ldots,x_N)\Psi^{*}(y,x_2,\ldots,x_N).</script>
+
+<p>Note that $g(x,x) = \rho_1(x)$. The average number of particles a single particle state $\ket{\psi}$ is then</p>
+
+<script type="math/tex; mode=display">\bar N_\psi = \int dx dy\, \psi^*(x)g(x,y)\psi(y).
+\label{many_Nbar}</script>
+
+<p>Let’s find $g(x,y)$ for the ground state of the Fermi gas</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+g(x,y) = \frac{L}\sum_{|k|<k_F} e^{ik(x-y)} = \int_{-k_F}^{k_F} \frac{dk}{2\pi} e^{ik(x-y)} = \bar\rho \frac{\sin [k_F(x-y)]}{k_F(x-y)} %]]></script>
+
+<p>where $\bar\rho \equiv \frac{k_F}{\pi}$ is the average density. Evaluating the average number of particles in a momentum state $\ket{k}$ using \eqref{many_Nbar} then gives</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\bar N_k = \begin{cases}
+1 & |k|\leq k_F \\
+0 & |k|>k_F
+\end{cases}
+\label{many_Nk} %]]></script>
+
+<p>We can also consider marginal probability distribution of a pair of particles, the <strong>pair distribution function</strong></p>
+
+<script type="math/tex; mode=display">\rho_2(x_1,x_2) = \frac{1}{2}N(N-1) \int dx_3\ldots dx_N \,\left|\Psi(x_1,x_2,\ldots,x_N)\right|^2.</script>
+
+<p>The prefactor is to account for all pairs of particles.</p>
+
+<p>Starting from the Slater determinant \eqref{quantum_statistics_1ddet}, you should be able to derive</p>
+
+<script type="math/tex; mode=display">\rho_2(x_1,x_2) = \bar n^2\left[1 - \left(\frac{\sin[k_F(x-y)]}{k_F(x-y)}\right)^2\right].</script>
+
+<p>This vanishes at $x_1=x_2$, consistent with the Pauli principle.</p>
+
+<p>A natural question:</p>
+
+<script type="math/tex; mode=display">\rho_2(x_1,x_2) \overset{?}{=} \bra{\Psi}\rho(x_1)\rho(x_2)\ket{\Psi}.</script>
+
+<p><em>Almost</em>. Looking back at \eqref{many_densityop}, we see that the product of two density operators will contain terms involving the same particle, which are absent from $\rho_2(x_1,x_2)$. In fact, the correct relationship is</p>
+
+<script type="math/tex; mode=display">\rho_2(x_1,x_2) = \bra{\Psi}\rho(x_1)\rho(x_2)\ket{\Psi} - \rho_1(x_1)\delta(x_1-x_2).</script>
 
 <h3 id="impenetrable-bose-gas">Impenetrable Bose Gas</h3>
 
-<p>Although the Fermi gas is a noninteracting system, the above discussion allows us to say something about an interacting system, albeit a rather special one.</p>
+<p>There’s a bit more mileage in the 1D Fermi gas yet. Consider the following Hamiltonian, which we’ll study in more detail in the next lecture</p>
 
-<p>We consider 1D system described by the Hamiltonian</p>
+<script type="math/tex; mode=display">% <![CDATA[
+H = \frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + g\sum_{j<k}\delta(x_j-x_k).
+\label{many_LL} %]]></script>
+
+<p>The second term represents an interaction between pairs of particles. Of course, this model is rather special, as (1) it’s 1D and (2) the interaction potential is a $\delta$-function. Nevertheless, it represents a huge step up in difficulty from the noninteracting examples we’ve discussed so far. At least, it does for bosons. For fermions, the wavefunctions vanish at coincident points, and so the interaction has no effect at all!</p>
+
+<p>For bosons, it happens that the Hamiltonian can still be solved exactly. For now, however, we’ll concern ourselves only with the limit of infinite interaction: $g\to \infty$, sometimes called the impenetrable limit. In this case, <em>the eigenenergies coincide with those of the free fermion problem, and the eigenstates are just the modulus of the corresponding fermion eigenstate</em> Just like that, we’ve solved our first interacting many body system (and with infinite coupling, no less)!</p>
+
+<p>Thus the ground state on the ring has the form</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\Psi_0(x_1,\ldots, x_N) = \prod_{i<j}^{N} \left|\sin\left(\frac{\pi[x_{i}-x_{j}]}{L}\right)\right|. %]]></script>
+
+<p>It’s not hard to see why this works. For a state to have a finite energy, the wavefunction must vanish whenever two coordinates coincide. But we already have a complete set of eigenstates that obey this condition, namely the free fermion Slater determinants. It remains to make them symmetric functions by taking the modulus.</p>
+
+<p>This mapping is quite powerful, and allows us to calculate any observable of the impenetrable Bose gas in terms of free fermions <em>as long</em> as that observable is insensitive to taking the modulus of the wavefunction. Thus the average density $\rho_1(x)$ and pair distribution $\rho_2(x_1,x_2)$ of the previous section can be found in this way, but the single particle density matrix $g(x,y)$ cannot. This means that the momentum distribution is <em>not</em> given by \eqref{many_Nk}. Finding $g(x,y)$ for the impenetrable Bose gas is in fact really hard. We’ll see in a later lecture how to obtain some of its important features.</p>
 
 <h2 id="quantum-hall-effect">Quantum Hall Effect</h2>
+
+<p>Next we turn to arguably the most remarkable phenomenon in condensed matter physics.</p>
 
 <h3 id="landau-levels">Landau Levels</h3>
 
@@ -340,6 +634,11 @@ $$
 <h1 id="bose-and-fermi-partition-functions">Bose and Fermi Partition Functions</h1>
 
 <h2 id="statistics-of-bose-condensation">Statistics of Bose Condensation</h2>
+
+<ol class="bibliography"><li><span id="Baym:1969">Baym, G. (1969). <i>Lectures on quantum mechanics</i>. WA Benjamin New York.</span></li>
+<li><span id="Girvin:1999">Girvin, S. M. (1999). The quantum Hall effect: novel excitations and broken symmetries. In <i>Aspects topologiques de la physique en basse dimension. Topological aspects of low dimensional systems</i> (pp. 53–175). Springer.</span></li>
+<li><span id="Stone:1992">Stone, M. (1992). <i>Quantum Hall Effect</i>. World Scientific.</span></li>
+<li><span id="dirac1926">Dirac, P. A. M. (1926). On the theory of quantum mechanics. <i>Proceedings of the Royal Society of London. Series A, Containing Papers of a Mathematical and Physical Character</i>, 661–677.</span></li></ol>
 
 </div>
 

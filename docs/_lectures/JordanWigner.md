@@ -23,4 +23,6 @@ Here we introduce..
 Use bosonic operators to show how we can represent spin operators in a chain.
 
 
+No long range order in the XY model.
+
 Lieb--Schults--Mattis

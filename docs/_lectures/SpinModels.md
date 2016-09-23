@@ -4,10 +4,12 @@ title: Spin Models
 author: Austen Lamacraft
 chapter: 4
 summary: Heisenberg model; Heisenberg chain; Magnons; Antiferromagnets; Symmetry breaking; Spin wave theory.
-references: Nagaosa, Anderson
+
 ---
 
-> In this lecture we introduce a simple quantum mechanical model of magnetism consisting of a lattice of coupled spins. As in the elastic chain, we identify the elementary excitations and their interaction.
+<p class="message">
+In this lecture we introduce a simple quantum mechanical model of magnetism consisting of a lattice of coupled spins. As in the elastic chain, we identify the elementary excitations and their interaction.
+</p>
 
 ## Contents
 {:.no_toc}
@@ -15,8 +17,7 @@ references: Nagaosa, Anderson
 * Toc
 {:toc}
 
----
-{{ page.references }}
+Reading: {% cite Auerbach:2012 %}.
 
 ---
 
@@ -500,3 +501,5 @@ Marshall sign rule. Lieb Mattis theorem. Lack of order theorems
 ## Outlook
 
 Anisotropy, frustration...
+
+{% bibliography --cited %}

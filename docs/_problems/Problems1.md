@@ -14,6 +14,10 @@ summary: Many body wavefunctions; Lieb-Liniger; Collective excitations; Spin cha
 
 ---
 
+## Calogero-Sutherland Model
+
+Ground state wavefunction
+
 ## Ground state of the attractive Lieb--Liniger model
 
 Show the explicit form of the ground state and demonstrate that this is of Bethe form, identifying the Bethe momenta in this case.

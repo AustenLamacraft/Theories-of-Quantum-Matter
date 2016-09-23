@@ -1,3 +1,4 @@
+
 /* Ed: the minimal edition theme.
  * ___________________
  * \_   _____/\______ \
@@ -10,6 +11,7 @@
  * https://github.com/elotroalex/ed.
  */
 
+/* Small changes made for Theories of Quantum Matter
 
  /*
  * General
@@ -236,6 +238,21 @@ img {
   border-radius: 5px;
 }
 
+/* Image with caption */
+
+img + em {
+
+  display: block;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+
+  text-align: center;
+  font-style: italic;
+}
+
+
 /* Tables */
 table {
   margin-bottom: 1rem;
@@ -275,7 +292,10 @@ tbody tr:nth-child(odd) th {
 .message {
   margin-bottom: 1rem;
   padding: 1rem;
-  color: #717171;
+  /*color: #717171;*/
+  font-style: italic;
+  border: 1px solid #e5e5e5;
+  border-collapse: collapse;
   background-color: #f9f9f9;
 }
 
@@ -478,6 +498,12 @@ a.sidebar-nav-item:focus {
 
 @media print {
   .sidebar-toggle {
+    display: none;
+  }
+  .masthead-title {
+    display: none;
+  }
+  .masthead-title small {
     display: none;
   }
 }

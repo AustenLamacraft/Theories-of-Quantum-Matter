@@ -6,7 +6,9 @@ chapter: 3
 summary: Quantizing a chain; Ground state wavefunction and displacement fluctuations; Anharmonicity as interaction
 ---
 
-> In this lecture we discuss a very simple many body system in which particles are coupled by Hooke's Law springs. Nevertheless, the quantization of this system has a lot to teach us about the appearance of __collective excitations__. Introducing anharmonicity causes these excitations to interact.
+<p class="message">
+In this lecture we discuss a very simple many body system in which particles are coupled by Hooke's Law springs. Nevertheless, the quantization of this system has a lot to teach us about the appearance of <strong>collective excitations</strong>. Introducing anharmonicity causes these excitations to interact.
+</p>
 
 ## Contents
 {:.no_toc}
@@ -16,7 +18,7 @@ summary: Quantizing a chain; Ground state wavefunction and displacement fluctuat
 
 ---
 
-## The Model
+## The Classical System
 
 We study a chain of equal masses connected by springs, moving only in one dimension, along the chain. The Hamiltonian is
 
@@ -26,7 +28,7 @@ $$
 
 We identify $u_j=u_{N+j}$, corresponding to periodic boundary conditions. As usual $[u_i,p_j]=i\delta_{ij}$. To orient ourselves, we solve the classical version of the problem.
 
-## The Classical System
+### Equations of Motion
 
 You've seen this before. The equations of motion are
 
@@ -106,6 +108,8 @@ $$
 
 describes the motion of the centre of mass.
 
+### Hamiltonian Formulation
+
 To make contact with quantum physics, let's look at this problem from the Hamiltonian perspective. If the $q_n$ are to be our canonical coordinates, then we should likewise write the momenta in terms of Fourier modes
 
 $$
@@ -147,7 +151,7 @@ $$
 
 we can read off the dispersion relation \eqref{coll_Dispersion}. The decomposition \eqref{coll_RandI} amounts to working with the _real_ amplitudes of sine and cosine waves. Other options are possible.
 
-## Complex Amplitudes
+### Complex Coordinates
 
 Sticking with the classical problem, let's introduce complex coordinates to describe the two dimensional phase space of a single oscillator
 
@@ -205,7 +209,7 @@ $$
 
 with the first term accounting for the (free) centre of mass.
 
-## The Quantized Chain
+## Quantum Oscillators
 
 In the quantum theory, the variables $\aop$, $\adop$ satisfy $\[\aop,\adop]=1$ and the Hamiltonian \eqref{coll_SHO} takes the form
 
@@ -244,6 +248,8 @@ $$
 
 The factor of $\frac{1}{\sqrt{n!}}$ normalizes the state. The ground state has energy $E_0=\omega/2$.
 
+### The Quantum Chain
+
 The quantization of the chain is then a piece of cake. We have a system of oscillator variables satisfying $[\aop_m,\adop_n]=\delta_{mn}$, and writing the Hamiltonian \eqref{coll_HDiag} in terms of these variables, paying attention to the order, gives
 
 $$
@@ -269,7 +275,7 @@ E_0 = \frac{1}{2}\sum_{|n| \leq (N-1)/2} \omega(\eta_n).
 \label{coll_H0}
 $$
 
-## Oscillator Quanta are Bosons!
+### Oscillator Quanta are Bosons!
 
 A key moment in the birth of Quantum Field Theory was the realization that _oscillator quanta are bosons_, meaning that they can be identified with quantum particles having symmetric wavefunctions. We'll see this in much more detail in later lectures. For the moment, let's just note that both have a basis of states described in terms of the occupation numbers, which are non-negative integers. In the case of $M$ bosons, those states were written in terms of the single particle wavefunctions $\varphi_\alpha(\br)$ of the bosons as
 
@@ -281,7 +287,7 @@ where $\mathcal{S}=\frac{1}{N!}\sum_{P} P$ is the operation of _symmetrization_,
 
 It's important to note that these bosons are totally distinct from the original particles making up the chain. In fact, our original Hamiltonian \eqref{coll_Hchain} doesn't describe indistinguishable particles as written, as each particle is labelled by its position in the chain, with a particle only interacting with its two neighbours. Since the particles are assumed not to change places, there is no way of assigning statistics to their wavefunction.
 
-## Thermodynamic ($N\to \infty$) limit
+### Thermodynamic ($N\to \infty$) limit
 
 In studying the properties of matter, we are usually interested in taking the limit of an infinite system, otherwise known as the $N\to\infty$ or _thermodynamic_ limit. At the very least, we expect the internal energy (as well as other thermodynamic potentials) to be an _extensive_ quantity, meaning that it is proportional to the `size' of the system, here measured by the number of sites. Thus we expect the limit
 
@@ -382,7 +388,7 @@ $$
 
 This expresses the energy above the ground state in terms of the occupancy of the oscillator modes.
 
-## Finite Temperature
+### Finite Temperature
 
 At finite temperature $T$ the occupancies of the modes have thermal averages given by the Bose occupation function
 
@@ -406,7 +412,7 @@ $$
 in agreement with the classical equipartition theorem. Were this result to apply at all energies the thermal energy density of a continuum at finite temperature would be infinite (the [Ultraviolet Catastrophe](https://en.wikipedia.org/wiki/Ultraviolet_catastrophe)). It is the existence of Planck's constant, which appears in the dimensionless combination $\hbar\beta\omega$ in the Bose occupation function, that allows this conclusion to be avoided.
 
 
-## Ground State Wavefunction
+### Ground State Wavefunction
 
 Classically, we understand the motion of the chain very well. What can we say about the quantum states of the system? The differences from the classical picture are most evident in the ground state.
 
@@ -438,7 +444,7 @@ $$
 
 where we drop the overall normalization constant.
 
-## Position and Density Fluctuations
+### Position and Density Fluctuations
 
 Classically, the ground state configuration of our elastic chain corresponds to a regular 'crystalline' arrangement of masses at separation $a$, with all $u_j=0$. Mass $j$ and mass $k$ are then separated by $(j-k)a + u_j-u_k = (j-k)a$. Quantum mechanically, $u_j-u_k$ fluctuates, even in the ground state. For the notion of a crystal to make sense, these fluctuations should not be too large. Let's evaluate them for the elastic chain.
 
@@ -571,7 +577,7 @@ Thus quantum fluctuations replace the Bragg peaks, an indicator of crystalline o
 
 
 
-# Fourier review
+## Fourier review
 
 Discrete FT to Fourier series to Fourier transform.
 
