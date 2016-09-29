@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Quantum Dissipation and Orthogonality Catastrophe
+title: Quantum Dissipation
 author: Austen Lamacraft
 chapter: 14
-summary: Orthogonality catastrophe. Caldeira--Leggett environment.
+summary: Modelling dissipation by a bath. Orthogonality catastrophe.
 ---
 
 > There are many situations in condensed matter where one distinguished degree of freedom is coupled to many others. We have met one already -- the Kondo model -- in which one spin is coupled to an infinite Fermi sea. You are familiar with the idea of a (semi-) infinite string being used to model a real impedance, with energy being dissipated to infinity. The examples below can be regarded as quantum mechanical analogues of this situation.

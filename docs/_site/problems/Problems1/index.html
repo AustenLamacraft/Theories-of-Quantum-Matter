@@ -27,9 +27,9 @@
     <meta property="og:description" content="An Ed edition">
     <meta property="fb:admins" content="elotroalex"/>
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://austenlamacraft.github.io/Theories-of-Quantum-Matter/problems/Problems1/"/>
+    <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/Theories-of-Quantum-Matter/problems/Problems1/"/>
     <meta property="fb:app_id" content="589495744558280"/>
-    <meta property="og:image" content="https://austenlamacraft.github.io/Theories-of-Quantum-Matter/public/open-graph-logo.png"/>
+    <meta property="og:image" content="http://tqm.usertest.mws3.csx.cam.ac.uk/Theories-of-Quantum-Matter/public/open-graph-logo.png"/>
     <meta property="og:image:width" content="200" />
     <meta property="og:image:height" content="200" />
     
@@ -54,9 +54,13 @@
 
   <!-- MathJax -->
 
-  <script type="text/javascript"
+ <script type="text/javascript"
    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
  </script>
+
+ <!---<script type="text/javascript"
+   src="/Theories-of-Quantum-Matter/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>--->
 
  <script type="text/x-mathjax-config">
  MathJax.Hub.Config({
@@ -64,11 +68,14 @@
           Macros: {
           RR: '{\\bf R}',                // a simple string replacement
           br: '\\mathbf{r}',
+          bx: '\\mathbf{x}',
           bp: '\\mathbf{p}',
           bq: '\\mathbf{q}',
           bk: '\\mathbf{k}',
           bv: '\\mathbf{v}',
           bA: '\\mathbf{A}',
+          brN: `\\br_1, \\ldots, \\br_N`,
+          bxN: `x_1, \\ldots, x_N`,
           pop: '\\psi^{\vphantom{\dagger}}',
           pdop: '\\psi^\\dagger',
           Phop: '\\Phi^{\\vphantom{\\dagger}}',
@@ -87,8 +94,9 @@
           Var: '\\operatorname{\\mathbb{Var}}',
           Cov: '\\operatorname{\\mathbb{Cov}}',
           Re: '\\operatorname{Re}}',
-          ket: ['\\left\|{#1}\\right\\rangle',1],
-          bra: ['\\left\\langle{#1}\\right\|',1]
+          ket: ['\\lvert{#1}\\rangle',1],
+          bra: ['\\langle{#1}\\rvert',1],
+          abs: ['\\lvert{#1}\\rvert',1]
     }
   },
    extensions: ["tex2jax.js"],
@@ -102,10 +110,6 @@ $$
 \renewcommand{\Im}{\operatorname{Im}}
 \nonumber
 $$
-
- <!--<script type="text/javascript"
-   src="/Theories-of-Quantum-Matter/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
- </script>-->
 
 
 </head>
@@ -212,13 +216,13 @@ $$
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/DissipationQM/">Quantum Dissipation and Orthogonality Catastrophe</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/DissipationQM/">Quantum Dissipation</a>
         
       
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/JordanWigner/">Bosonization and Jordan-Wigner transformation</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/JordanWigner/">The Jordan-Wigner Transformation</a>
         
       
     
@@ -231,7 +235,7 @@ $$
 
     <!-- The code below is used for manually entered links  -->
 
-    <a class="sidebar-nav-item" href="https://via.hypothes.is/https://austenlamacraft.github.io/Theories-of-Quantum-Matter/problems/Problems1/">Annotate me</a>
+    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://tqm.usertest.mws3.csx.cam.ac.uk/Theories-of-Quantum-Matter/problems/Problems1/">Annotate me</a>
   </nav>
 
   <div class="sidebar-item">
@@ -261,6 +265,13 @@ $$
 
 <ol id="markdown-toc">
   <li><a href="#calogero-sutherland-model" id="markdown-toc-calogero-sutherland-model">Calogero-Sutherland Model</a></li>
+  <li><a href="#impurity-in-impenetrable-gas" id="markdown-toc-impurity-in-impenetrable-gas">Impurity in Impenetrable Gas</a></li>
+  <li><a href="#yrast-states-of-rotating-gas" id="markdown-toc-yrast-states-of-rotating-gas">Yrast States of Rotating Gas</a></li>
+  <li><a href="#oddity-of-the-plasma-analogy" id="markdown-toc-oddity-of-the-plasma-analogy">Oddity of the Plasma analogy</a></li>
+  <li><a href="#evolution-of-the-laughlin-state-under-harmonic-confinement" id="markdown-toc-evolution-of-the-laughlin-state-under-harmonic-confinement">Evolution of the Laughlin state under harmonic confinement</a></li>
+  <li><a href="#density-matrix-of-the-nu1-state" id="markdown-toc-density-matrix-of-the-nu1-state">Density matrix of the $\nu=1$ state</a></li>
+  <li><a href="#holes-in-the-nu1-state" id="markdown-toc-holes-in-the-nu1-state">Holes in the $\nu=1$ state</a></li>
+  <li><a href="#improving-the-plasma-picture" id="markdown-toc-improving-the-plasma-picture">Improving the plasma picture</a></li>
   <li><a href="#ground-state-of-the-attractive-lieb--liniger-model" id="markdown-toc-ground-state-of-the-attractive-lieb--liniger-model">Ground state of the attractive Lieb–Liniger model</a></li>
   <li><a href="#peirels-instability" id="markdown-toc-peirels-instability">Peirels instability</a></li>
   <li><a href="#diagonalize-quadratic-hamiltonian-for-general-two-particle-potential" id="markdown-toc-diagonalize-quadratic-hamiltonian-for-general-two-particle-potential">Diagonalize quadratic Hamiltonian for general two particle potential</a></li>
@@ -284,6 +295,32 @@ $$
 <h2 id="calogero-sutherland-model">Calogero-Sutherland Model</h2>
 
 <p>Ground state wavefunction</p>
+
+<h2 id="impurity-in-impenetrable-gas">Impurity in Impenetrable Gas</h2>
+
+<h2 id="yrast-states-of-rotating-gas">Yrast States of Rotating Gas</h2>
+
+<h2 id="oddity-of-the-plasma-analogy">Oddity of the Plasma analogy</h2>
+
+<p>We could define the potential of the background charge</p>
+
+<h2 id="evolution-of-the-laughlin-state-under-harmonic-confinement">Evolution of the Laughlin state under harmonic confinement</h2>
+
+<h2 id="density-matrix-of-the-nu1-state">Density matrix of the $\nu=1$ state</h2>
+
+<p>Behaviour at the edge</p>
+
+<h2 id="holes-in-the-nu1-state">Holes in the $\nu=1$ state</h2>
+
+<p>Confirm that</p>
+
+<script type="math/tex; mode=display">\Psi_\text{hole}(z_1,\ldots, z_N|Z) = \prod_j (Z-z_j)\Psi_{m=1}(z_1,\ldots, z_N).</script>
+
+<p>can be formed from a superposition of single hole states in the Fermi sea</p>
+
+<h2 id="improving-the-plasma-picture">Improving the plasma picture</h2>
+
+<p>Adding finite screening length by allowing for entropy…</p>
 
 <h2 id="ground-state-of-the-attractive-lieb--liniger-model">Ground state of the attractive Lieb–Liniger model</h2>
 

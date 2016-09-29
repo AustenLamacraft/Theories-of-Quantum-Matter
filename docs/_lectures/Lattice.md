@@ -3,7 +3,7 @@ layout: page
 title: Lattice Models and Strong Correlation
 author: Austen Lamacraft
 chapter: 7
-summary: Tight binding models; Hubbard models and the Mott transition; Superexchange.
+summary: Tight binding models. Hubbard models and the Mott transition. Superexchange.
 ---
 
 ## Contents

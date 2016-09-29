@@ -3,7 +3,7 @@ layout: page
 title: The Kondo Effect
 author: Austen Lamacraft
 chapter: 13
-summary: A localized spin in a Fermi sea; Divergences at second order; Poor man's scaling; Quantum Dots
+summary: The Kondo model. Divergences at second order. Scaling theory.
 ---
 
 ## Contents

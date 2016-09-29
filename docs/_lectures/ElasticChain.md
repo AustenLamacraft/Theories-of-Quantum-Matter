@@ -3,7 +3,7 @@ layout: page
 title: The Elastic Chain
 author: Austen Lamacraft
 chapter: 3
-summary: Quantizing a chain; Ground state wavefunction and displacement fluctuations; Anharmonicity as interaction
+summary: Quantizing a chain. Ground state displacement fluctuations.
 ---
 
 <p class="message">
@@ -583,3 +583,6 @@ Discrete FT to Fourier series to Fourier transform.
 
 This is a good excercise in writing things in Fourier modes
 Could compute phonon lifetime using Golden Rule
+
+References
+----------

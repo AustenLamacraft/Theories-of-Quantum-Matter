@@ -27,9 +27,9 @@
     <meta property="og:description" content="A Part III Physics Course at the University of Cambridge">
     <meta property="fb:admins" content="elotroalex"/>
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://austenlamacraft.github.io/Theories-of-Quantum-Matter/"/>
+    <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/Theories-of-Quantum-Matter/"/>
     <meta property="fb:app_id" content="589495744558280"/>
-    <meta property="og:image" content="https://austenlamacraft.github.io/Theories-of-Quantum-Matter/public/open-graph-logo.png"/>
+    <meta property="og:image" content="http://tqm.usertest.mws3.csx.cam.ac.uk/Theories-of-Quantum-Matter/public/open-graph-logo.png"/>
     <meta property="og:image:width" content="200" />
     <meta property="og:image:height" content="200" />
 
@@ -55,9 +55,13 @@
 
   <!-- MathJax -->
 
-  <script type="text/javascript"
+ <script type="text/javascript"
    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
  </script>
+
+ <!---<script type="text/javascript"
+   src="/Theories-of-Quantum-Matter/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>--->
 
  <script type="text/x-mathjax-config">
  MathJax.Hub.Config({
@@ -65,11 +69,14 @@
           Macros: {
           RR: '{\\bf R}',                // a simple string replacement
           br: '\\mathbf{r}',
+          bx: '\\mathbf{x}',
           bp: '\\mathbf{p}',
           bq: '\\mathbf{q}',
           bk: '\\mathbf{k}',
           bv: '\\mathbf{v}',
           bA: '\\mathbf{A}',
+          brN: `\\br_1, \\ldots, \\br_N`,
+          bxN: `x_1, \\ldots, x_N`,
           pop: '\\psi^{\vphantom{\dagger}}',
           pdop: '\\psi^\\dagger',
           Phop: '\\Phi^{\\vphantom{\\dagger}}',
@@ -88,8 +95,9 @@
           Var: '\\operatorname{\\mathbb{Var}}',
           Cov: '\\operatorname{\\mathbb{Cov}}',
           Re: '\\operatorname{Re}}',
-          ket: ['\\left\|{#1}\\right\\rangle',1],
-          bra: ['\\left\\langle{#1}\\right\|',1]
+          ket: ['\\lvert{#1}\\rangle',1],
+          bra: ['\\langle{#1}\\rvert',1],
+          abs: ['\\lvert{#1}\\rvert',1]
     }
   },
    extensions: ["tex2jax.js"],
@@ -103,10 +111,6 @@ $$
 \renewcommand{\Im}{\operatorname{Im}}
 \nonumber
 $$
-
- <!--<script type="text/javascript"
-   src="/Theories-of-Quantum-Matter/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
- </script>-->
 
 
 </head>
@@ -213,13 +217,13 @@ $$
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/DissipationQM/">Quantum Dissipation and Orthogonality Catastrophe</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/DissipationQM/">Quantum Dissipation</a>
         
       
     
       
         
-          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/JordanWigner/">Bosonization and Jordan-Wigner transformation</a>
+          <a class="sidebar-nav-item" href="/Theories-of-Quantum-Matter/lectures/JordanWigner/">The Jordan-Wigner Transformation</a>
         
       
     
@@ -232,7 +236,7 @@ $$
 
     <!-- The code below is used for manually entered links  -->
 
-    <a class="sidebar-nav-item" href="https://via.hypothes.is/https://austenlamacraft.github.io/Theories-of-Quantum-Matter/">Annotate me</a>
+    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://tqm.usertest.mws3.csx.cam.ac.uk/Theories-of-Quantum-Matter/">Annotate me</a>
   </nav>
 
   <div class="sidebar-item">
@@ -292,7 +296,7 @@ $$
             Many Body Wavefunctions
           </a>
         </h3>
-        Product States; Fermi gas; Quantum Hall Effect.
+        Product States. Fermi gas. Density, density matrix, and pair distribution. Quantum Hall Effect.
       
     
   
@@ -303,7 +307,7 @@ $$
             The Lieb-Liniger Model
           </a>
         </h3>
-        Bethe's wave function; Impenetrable limit; Excited states and the classical limit.
+        Bethe's wave function. The Bethe equations. Excited states.
       
     
   
@@ -314,7 +318,7 @@ $$
             The Elastic Chain
           </a>
         </h3>
-        Quantizing a chain; Ground state wavefunction and displacement fluctuations; Anharmonicity as interaction
+        Quantizing a chain. Ground state displacement fluctuations.
       
     
   
@@ -325,7 +329,7 @@ $$
             Spin Models
           </a>
         </h3>
-        Heisenberg model; Heisenberg chain; Magnons; Antiferromagnets; Symmetry breaking; Spin wave theory.
+        Heisenberg model. Heisenberg chain. Magnons. Antiferromagnets. Symmetry breaking. Spin wave theory.
       
     
   
@@ -347,7 +351,7 @@ $$
             More Second Quantization
           </a>
         </h3>
-        Density matrix. Density correlations. Second quantized Hamiltonians. Momentum space form. Hartree--Fock theory. Application Matveev--Yue--Glazman, Coulomb Blockade.
+        Density matrix and density correlations. Second quantized Hamiltonians. Hartree--Fock theory. Hanbury Brown and Twiss effect.
       
     
   
@@ -358,7 +362,7 @@ $$
             Lattice Models and Strong Correlation
           </a>
         </h3>
-        Tight binding models; Hubbard models and the Mott transition; Superexchange.
+        Tight binding models. Hubbard models and the Mott transition. Superexchange.
       
     
   
@@ -369,7 +373,7 @@ $$
             Bose Gas
           </a>
         </h3>
-        Gross--Pitaevskii. Bogoliubov theory and superfluidity.
+        Gross--Pitaevskii approximation. Bogoliubov theory. Superfluidity.
       
     
   
@@ -380,7 +384,7 @@ $$
             Fermi Gas
           </a>
         </h3>
-        Trial wavefunction describing quasiparticles. Quasiparticle residue. Landau Fermi liquid via perturbation theory.
+        Interactions described by perturbation theory. Quasiparticles. Landau Fermi liquid.
       
     
   
@@ -391,7 +395,7 @@ $$
             Superconductivity
           </a>
         </h3>
-        Heisenberg's problem as a first encounter with the idea of renormalization. Cooper divergences. BCS theory. Anderson spin picture.
+        Cooper's problem. BCS theory. The BCS-BEC crossover.
       
     
   
@@ -402,7 +406,7 @@ $$
             Response and Correlation
           </a>
         </h3>
-        Response functions. Structure factor. Lindhard and dielectric function. Sum rules.
+        Response functions. Structure factor. Dielectric function. Sum rules.
       
     
   
@@ -413,7 +417,7 @@ $$
             Jellium
           </a>
         </h3>
-        Feynman diagrams for the ground state energy; Gell Man -- Brueckner theory.
+        Ground state energy. Hubbard--Stratonovich transformation
       
     
   
@@ -424,7 +428,7 @@ $$
             The Kondo Effect
           </a>
         </h3>
-        A localized spin in a Fermi sea; Divergences at second order; Poor man's scaling; Quantum Dots
+        The Kondo model. Divergences at second order. Scaling theory.
       
     
   
@@ -432,10 +436,10 @@ $$
       
         <h3>
           <a href="/Theories-of-Quantum-Matter/lectures/DissipationQM/">
-            Quantum Dissipation and Orthogonality Catastrophe
+            Quantum Dissipation
           </a>
         </h3>
-        Orthogonality catastrophe. Caldeira--Leggett environment.
+        Modelling dissipation by a bath. Orthogonality catastrophe.
       
     
   
@@ -443,10 +447,10 @@ $$
       
         <h3>
           <a href="/Theories-of-Quantum-Matter/lectures/JordanWigner/">
-            Bosonization and Jordan-Wigner transformation
+            The Jordan-Wigner Transformation
           </a>
         </h3>
-        Bosonized representation of spin chains; Jordan--Wigner treatment of the XY model.
+        Spin-1/2 XY model as a system of free fermions. Bosonization
       
     
   
@@ -457,7 +461,7 @@ $$
             The Ising Model and Quantum Phase Transitions
           </a>
         </h3>
-        1D classical Ising doesn't order. Transverse Ising as quantum phase transition. Transfer matrix and relation to 2d classical Ising. Majorana edge modes.
+        Quantum phase transition in the transverse field Ising model. Relation to 2d classical model. Majorana edge modes.
       
     
   

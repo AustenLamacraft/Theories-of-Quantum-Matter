@@ -3,7 +3,7 @@ layout: page
 title: Jellium
 author: Austen Lamacraft
 chapter: 11
-summary: Feynman diagrams for the ground state energy; Gell Man -- Brueckner theory.
+summary: Ground state energy. Hubbard--Stratonovich transformation
 
 ---
 

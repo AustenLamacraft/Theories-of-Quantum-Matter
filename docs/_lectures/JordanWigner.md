@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Bosonization and Jordan-Wigner transformation
+title: The Jordan-Wigner Transformation
 author: Austen Lamacraft
 chapter: 15
-summary: Bosonized representation of spin chains; Jordan--Wigner treatment of the XY model.
+summary: Spin-1/2 XY model as a system of free fermions. Bosonization
 ---
 
 ## Contents

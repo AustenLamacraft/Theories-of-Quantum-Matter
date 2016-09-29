@@ -3,7 +3,7 @@ layout: page
 title: Bose Gas
 author: Austen Lamacraft
 chapter: 8
-summary: Gross--Pitaevskii. Bogoliubov theory and superfluidity.
+summary: Gross--Pitaevskii approximation. Bogoliubov theory. Superfluidity.
 ---
 
 ## Contents

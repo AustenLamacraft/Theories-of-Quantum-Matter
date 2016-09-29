@@ -64,9 +64,13 @@
 
   <!-- MathJax -->
 
-  <script type="text/javascript"
+ <script type="text/javascript"
    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
  </script>
+
+ <!---<script type="text/javascript"
+   src="{{site.baseurl}}/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>--->
 
  <script type="text/x-mathjax-config">
  MathJax.Hub.Config({
@@ -74,11 +78,14 @@
           Macros: {
           RR: '{\\bf R}',                // a simple string replacement
           br: '\\mathbf{r}',
+          bx: '\\mathbf{x}',
           bp: '\\mathbf{p}',
           bq: '\\mathbf{q}',
           bk: '\\mathbf{k}',
           bv: '\\mathbf{v}',
           bA: '\\mathbf{A}',
+          brN: `\\br_1, \\ldots, \\br_N`,
+          bxN: `x_1, \\ldots, x_N`,
           pop: '\\psi^{\vphantom{\dagger}}',
           pdop: '\\psi^\\dagger',
           Phop: '\\Phi^{\\vphantom{\\dagger}}',
@@ -97,8 +104,9 @@
           Var: '\\operatorname{\\mathbb{Var}}',
           Cov: '\\operatorname{\\mathbb{Cov}}',
           Re: '\\operatorname{Re}}',
-          ket: ['\\left\|{#1}\\right\\rangle',1],
-          bra: ['\\left\\langle{#1}\\right\|',1]
+          ket: ['\\lvert{#1}\\rangle',1],
+          bra: ['\\langle{#1}\\rvert',1],
+          abs: ['\\lvert{#1}\\rvert',1]
     }
   },
    extensions: ["tex2jax.js"],
@@ -112,10 +120,6 @@ $$
 \renewcommand{\Im}{\operatorname{Im}}
 \nonumber
 $$
-
- <!--<script type="text/javascript"
-   src="{{site.baseurl}}/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
- </script>-->
 
 
 </head>

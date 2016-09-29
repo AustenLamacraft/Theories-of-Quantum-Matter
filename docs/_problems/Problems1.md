@@ -18,6 +18,34 @@ summary: Many body wavefunctions; Lieb-Liniger; Collective excitations; Spin cha
 
 Ground state wavefunction
 
+## Impurity in Impenetrable Gas
+
+## Yrast States of Rotating Gas
+
+## Oddity of the Plasma analogy
+
+We could define the potential of the background charge
+
+## Evolution of the Laughlin state under harmonic confinement
+
+## Density matrix of the $\nu=1$ state
+
+Behaviour at the edge
+
+## Holes in the $\nu=1$ state
+
+Confirm that
+
+$$
+\Psi_\text{hole}(z_1,\ldots, z_N|Z) = \prod_j (Z-z_j)\Psi_{m=1}(z_1,\ldots, z_N).
+$$
+
+can be formed from a superposition of single hole states in the Fermi sea
+
+## Improving the plasma picture
+
+Adding finite screening length by allowing for entropy...
+
 ## Ground state of the attractive Lieb--Liniger model
 
 Show the explicit form of the ground state and demonstrate that this is of Bethe form, identifying the Bethe momenta in this case.

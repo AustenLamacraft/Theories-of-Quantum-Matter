@@ -3,7 +3,7 @@ layout: page
 title: Fermi Gas
 author: Austen Lamacraft
 chapter: 9
-summary: Trial wavefunction describing quasiparticles. Quasiparticle residue. Landau Fermi liquid via perturbation theory.
+summary: Interactions described by perturbation theory. Quasiparticles. Landau Fermi liquid.
 ---
 
 ## Contents

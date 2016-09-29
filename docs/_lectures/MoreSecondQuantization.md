@@ -3,7 +3,7 @@ layout: page
 title: More Second Quantization
 author: Austen Lamacraft
 chapter: 6
-summary: Density matrix. Density correlations. Second quantized Hamiltonians. Momentum space form. Hartree--Fock theory. Application Matveev--Yue--Glazman, Coulomb Blockade.
+summary: Density matrix and density correlations. Second quantized Hamiltonians. Hartree--Fock theory. Hanbury Brown and Twiss effect.
 ---
 
 ## Contents

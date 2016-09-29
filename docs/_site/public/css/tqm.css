@@ -233,9 +233,9 @@ blockquote p:last-child {
 
 img {
   display: block;
-  max-width: 100%;
-  margin: 0 0 1rem;
-  border-radius: 5px;
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto
 }
 
 /* Image with caption */
@@ -244,8 +244,7 @@ img + em {
 
   display: block;
   max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   border-radius: 5px;
 
   text-align: center;

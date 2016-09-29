@@ -3,7 +3,7 @@ layout: page
 title: Response and Correlation
 author: Austen Lamacraft
 chapter: 10
-summary: Response functions. Structure factor. Lindhard and dielectric function. Sum rules.
+summary: Response functions. Structure factor. Dielectric function. Sum rules.
 ---
 
 ## Contents

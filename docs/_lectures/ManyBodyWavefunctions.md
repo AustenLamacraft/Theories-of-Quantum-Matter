@@ -3,7 +3,7 @@ layout: page
 title: Many Body Wavefunctions
 author: Austen Lamacraft
 chapter: 1
-summary: Product States; Fermi gas; Quantum Hall Effect.
+summary: Product States. Fermi gas. Density, density matrix, and pair distribution. Quantum Hall Effect.
 published: true
 ---
 <p class="message">
@@ -45,9 +45,15 @@ $$
 
 does not, on account of the masses being all different. Any time we have a symmetry operation that commutes with the Hamiltonian, the eigenstates of that symmetry are preserved by time evolution with that Hamiltonian. Thus a symmetric potential $V(x)=V(-x)$ commutes with the parity operation $x\to -x$, so the eigenstates of this operation -- the even and odd wavefunctions -- are preserved by time evolution.
 
-The Hamiltonian of indistinguishable particles commutes with every operation of particle exchange. The only simultaneous eigenstates of all particle exchange operations (note that different exchanges don't commute if they involve the same particle) are the totally symmetric and antisymmetric wavefunctions. Thus these properties are preserved by time evolution. It's always been this way.
+The Hamiltonian of indistinguishable particles commutes with every operator of particle exchange, defined by
 
- Thus we classify particles into symmetric __bosons__ and antisymmetric __fermions__, named for Bose and Fermi respectively (the whimsical terminology is Dirac's). The distinction works equally well for composite particles, provide we ignore the internal degrees of freedom and discuss only the center of mass coordinate.
+$$
+P_{ij}\Psi(\br_1,\ldots, \br_i,\ldots, \br_j,\ldots \br_N) = \Psi(\br_1,\ldots, \br_j,\ldots, \br_i,\ldots \br_N).
+$$
+
+These operators satisfy $P_{ij}^2=\mathbb{1}$, so their eigenvalues are $\pm 1$, corresponding to states that are either symmetric or antisymmetric under exchange. The only simultaneous eigenstates of all particle exchange operations (note that different exchanges don't commute if they involve the same particle) are the totally symmetric and antisymmetric wavefunctions. Thus these properties are preserved by time evolution. It's always been this way.
+
+ We classify particles into symmetric __bosons__ and antisymmetric __fermions__, named for Bose and Fermi respectively (the whimsical terminology is Dirac's). The distinction works equally well for composite particles, provide we ignore the internal degrees of freedom and discuss only the center of mass coordinate.
  <!---
  Easy for us to say. Here's Dirac again: `The solution with antisymmetrical eigenfunctions, though, is probably the correct one for gas molecules, since it is known to be the correct one for electrons in an atom, and one would expect molecules to resemble electrons more closely than light-quanta.'~\citep{dirac1926}}
  and here
@@ -170,7 +176,7 @@ The vanishing of a determinant when two rows or two columns are identical means 
 
 ## The 1D Fermi Gas
 
-Let's consider perhaps the simplest many particle system one can think of: non-interacting particles on a ring. If the ring has circumference $L$, the single particle eigenstates are
+Let's consider perhaps the simplest many particle system one can think of: noninteracting particles on a ring. If the ring has circumference $L$, the single particle eigenstates are
 
 $$
 	\label{quantum_statistics_spstates}
@@ -208,10 +214,6 @@ $$
 $$
 
 Let's evaluate this complicated looking expression in a simple case. With three particles we have
-
-<a name="Nodal"></a>
-![]({{ site.baseurl }}/assets/NodalSurfaces.pdf)
-_Nodal surfaces $x_i=x_j$ for three fermions. Because of the periodic boundary conditions, the three dimensional space of particle coordinates is divided into two regions, corresponding to the even and odd permutations._
 
 $$
 \begin{align}
@@ -348,9 +350,11 @@ $$
 \bar N_k = \begin{cases}
 1 & |k|\leq k_F \\
 0 & |k|>k_F
-\end{cases}
+\end{cases}.
 \label{many_Nk}
 $$
+
+Note that in a translationally invariant system $g(x,y)=g(x-y)$, and is the Fourier transform of $\bar N_k$.
 
 We can also consider marginal probability distribution of a pair of particles, the __pair distribution function__
 
@@ -386,13 +390,13 @@ $$
 There's a bit more mileage in the 1D Fermi gas yet. Consider the following Hamiltonian, which we'll study in more detail in the next lecture
 
 $$
-H = \frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + g\sum_{j<k}\delta(x_j-x_k).
+H = \frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + c\sum_{j<k}\delta(x_j-x_k).
 \label{many_LL}
 $$
 
 The second term represents an interaction between pairs of particles. Of course, this model is rather special, as (1) it's 1D and (2) the interaction potential is a $\delta$-function. Nevertheless, it represents a huge step up in difficulty from the noninteracting examples we've discussed so far. At least, it does for bosons. For fermions, the wavefunctions vanish at coincident points, and so the interaction has no effect at all!
 
-For bosons, it happens that the Hamiltonian can still be solved exactly. For now, however, we'll concern ourselves only with the limit of infinite interaction: $g\to \infty$, sometimes called the impenetrable limit. In this case, _the eigenenergies coincide with those of the free fermion problem, and the eigenstates are just the modulus of the corresponding fermion eigenstate_ Just like that, we've solved our first interacting many body system (and with infinite coupling, no less)!
+For bosons, it happens that the Hamiltonian can still be solved exactly. For now, however, we'll concern ourselves only with the limit of infinite interaction: $c\to \infty$, sometimes called the impenetrable limit. In this case, _the eigenenergies coincide with those of the free fermion problem, and the eigenstates are just the modulus of the corresponding fermion eigenstate_ Just like that, we've solved our first interacting many body system (and with infinite coupling, no less)!
 
 Thus the ground state on the ring has the form
 
@@ -404,28 +408,250 @@ It's not hard to see why this works. For a state to have a finite energy, the wa
 
 This mapping is quite powerful, and allows us to calculate any observable of the impenetrable Bose gas in terms of free fermions _as long_ as that observable is insensitive to taking the modulus of the wavefunction. Thus the average density $\rho_1(x)$ and pair distribution $\rho_2(x_1,x_2)$ of the previous section can be found in this way, but the single particle density matrix $g(x,y)$ cannot. This means that the momentum distribution is _not_ given by \eqref{many_Nk}. Finding $g(x,y)$ for the impenetrable Bose gas is in fact really hard. We'll see in a later lecture how to obtain some of its important features.
 
-## Quantum Hall Effect
+## Fractional Quantum Hall Effect
 
-Next we turn to arguably the most remarkable phenomenon in condensed matter physics. 
+The Quantum Hall Effect refers to quantization of the Hall conductivity $G_{xy}= \frac{I_x}{V_y}$ into integer multiples of the __conductance quantum__ $e^2/h$. This phenomenon is obvserved in two dimensional electon gases at low temperatures in a strong magnetic field perpendicular to the plane. Some years after its discovery, the Fractional Quantum Hall Effect was observed, with $G_{xy} = \nu e^2/h$, with $\nu$ taking simple fractional values $\nu=1/3, 2/5$, etc..
+
+These fractional values are only the tip of an iceberg of remarkable phenomena, indicating that the electrons are reorganizing into a bewildering variety of exotic states of matter, characterized by excitations with fractional charge and statistics outside the boson / fermion dichotomy discussed earlier. Even more surprisingly, our understanding of these phases rests largely on _guessing_ the right wavefunction to describe these strongly interacting systems. How is such a thing possible? As we'll see below, the wavefunction is in fact strongly constrained by the presence of the magnetic field.
 
 ### Landau Levels
 
-### The Laughlin wavefunction
+The first task is to discuss the states of a single particle of charge $q$ in 2D in a perpendicular magnetic field. The Hamiltonian is
+
+$$
+H = -\frac{1}{2m}\left(\nabla -i q \mathbf{A}\right)^2,
+\label{Landau}
+$$
+
+where the vector potential $A(x,y)$ obeys
+
+$$
+\partial_x A_y - \partial_y A_x = B.
+$$
+
+As usual, there is some (gauge) freedom in our choice of $\mathbf{A}$. We choose __symmetric gauge__
+
+$$
+A_x = -\frac{1}{2} B y,\quad A_y = \frac{1}{2} B x.
+$$
+
+Next, we introduce complex coordinates
+
+$$
+z = x + i y \quad \bar z  = x - iy,
+$$
+
+(The notation $\bar z$ for the complex conjugate is neater when we need to write $\partial_{\bar z}$ together with the derivatives
+
+$$
+\partial_z = \frac{1}{2}\left(\partial_x - i\partial_y\right) \quad \partial_{\bar z} = \frac{1}{2}\left(\partial_x + i\partial_y\right).
+$$
+
+We can rewrite the Hamiltonian \eqref{Landau} as
+
+$$
+H = -\frac{2}{m}\left(\partial_z -\frac{qB \bar z}{4}\right)\left(\partial_{\bar z} +\frac{qB z}{4}\right) + \frac{\omega_c}{2}
+$$
+
+where $\omega_c = \frac{qB}{m}$ is the __cyclotron frequency__. States that satisfy
+
+$$
+\left(\partial_{\bar z} +\frac{qB z}{4}\right)\psi(z,\bar z) = 0
+$$
+
+therefore have energy $\omega_c/2$ and belong to the __lowest Landau level__ (LLL). Generally, such states have the form
+
+$$
+\psi(z,\bar z) = f(z) \exp\left(-\frac{eB}{4}\left|z\right|^2\right),
+$$
+
+where $f(z)$ is an _arbitrary_ analytic function. This accounts for the degeneracy of the LLL states, and yet the states are a very special subclass of the possible 2D wavefunctions $\psi(z,\bar z)$. It's often convenient to work with the analytic part $f(z)$ of the wavefunction, with the understanding that the inner product $\bra{f_1}f_2\rangle$ is
+
+$$
+\bra{f_1}f_2\rangle = \int \frac{d^2z}{2\pi} \overline{f_1(z)}f_2(z) \exp\left(-\left|z\right|^2/2\right),
+$$
+
+where we have chosen units in which the __magnetic length__ $\ell \equiv (qB)^{-1/2}$ is one. The physical meaning of this length scale is that an area $2\pi \ell^2$ contains one flux quantum $\Phi_0 = h/q=2\pi/q$.
+
+A possible orthonormal basis is
+
+$$
+f_n(z) = \frac{z^n}{\sqrt{2^n n!}}.
+$$
+
+### Filled LLL of Fermions
+
+Let's imagine filling the LLL with fermions. As it stands, there's no principle to suggest how we do this, as all the states are degenerate. We can lift that degeneracy by adding a rotationally symmetric harmonic potential
+
+$$
+V_\text{harm}(x,y) = \frac{v}{2}\left(x^2+y^2\right) = \frac{v}{2}\omega^2\left|z\right|^2.
+\label{many_HarmonicRound}
+$$
+
+When this potential acts on a state in the LLL, the result is not a LLL state because of the appearance of $\bar z$ in $V$. Let's suppose that the cyclotron energy $\omega_c$ that gives the spacing between Landau levels is the largest energy scale in the problem. Then we should consider only the action of $V$ in the LLL subspace. If we are only going to consider matrix elements $\bra{f_1}V\ket{f_2}$ it is possible to show that (integrating by parts), we can replace $\bar z\to 2\partial_z$. Note that the order is important: all the $\partial_z$ must stand to the left of the $z$, Thus
+
+$$
+V_\text{harm}\longrightarrow v\partial_z z =  v\left(1+z \partial_z\right).
+\label{many_HarmonicProject}
+$$
+
+Applied to the basis states $f_n(z)$, $V$ just counts the degree: $V_\text{harm} f_n = v(1+n)f_n$. The ground state of noninteracting fermions therefore just amounts to filling the states $\ket{f_n}$ from the bottom. Identical arguments to those used in discussing the Fermi gas on the ring then tell us that the ground state wavefunction of $N$ fermions is
+
+$$
+\Psi(z_1,\ldots, z_N) = \prod_{j<k}^N (z_j-z_k) \exp\left(-\frac{1}{4}\sum_{j=1}^N\left|z_j\right|^2\right)
+\label{many_nu1}
+$$
+
+Evaluating the density gives
+
+$$
+\rho_1(z,\bar z) = \frac{e^{-|z|^2/2}}{2\pi}\sum_{n=0}^{N-1} \frac{\left|z\right|^{2n}}{2^n n!} = \frac{1}{2\pi} \frac{\Gamma(N,|z|^2/2)}{(N-1)!}.
+\label{many_LLLdensity}
+$$
+
+Here $\Gamma(s,x) = \int^\infty_x t^{x-1}e^{-t}dt$ is the [incomplete gamma function](https://en.wikipedia.org/wiki/Incomplete_gamma_function).
+
+<a name="LLLdensity"></a>
+![]({{ site.baseurl }}/assets/LLLdensity.png)
+_Density of particles in the LLL for $N=100$._
+
+At small $\left\|z\right\|$, we can approximate the sum in \eqref{many_LLLdensity} by extending the upper limit to $\infty$, and we have $\rho_1\to \frac{1}{2\pi}$. In fact, the density is fixed at this value until we reach $\sim\sqrt{2N}$, at which point the density falls to zero on the scale of the magnetic length.
+
+Thus, with the potential \eqref{many_HarmonicRound}, the filled LLL is described by a circular droplet of fixed density $\rho_1 = 1/(2\pi)$, consistent with one state per flux quantum, which is the known degeneracy of the LLL. This picture is in fact quite general: changing the confining potential would cause the droplet to deform, but the density to remain constant (on the macroscopic scale).
+
+### The Laughlin Wavefunction
+
+The theory of the Fractional Quantum Hall Effect begins with Robert Laughlin's famous wavefunction {% cite Laughlin:1983aa %} generalizing \eqref{many_nu1}
+
+$$
+\Psi_m(z_1,\ldots, z_N) = \prod_{j<k}^N (z_j-z_k)^{m} \exp\left(-\frac{1}{4}\sum_{j=1}^N\left|z_j\right|^2\right).
+\label{many_nu}
+$$
+
+For this wavefunction to describe fermions, $m$ must be odd. Even $m$ describes bosons. I want to emphasize first that despite the superficial similarity of \eqref{many_nu1} and \eqref{many_nu}, they are very different beasts. While \eqref{many_nu} is an (antisymmetric) product state \eqref{many_nu1} is not, and indeed its expansion in product states is not known in general. Furthermore, the excitations formed by modifying this state have remarkable properties. As the abstract to Laughlin's paper puts it:
+
+> This Letter presents variational ground-state and excited-state wave functions which describe the condensation of a two-dimensional electron gas into a new state of matter.
+
+However, we'll see that the $m=1$ an $m>1$ cases do have some common features. First, we should try and explain where these wavefunctions came from. Conceptually, the simplest case to discuss is that of _bosons_ interacting via the repulsive potential
+
+$$
+H_{\text{int}} = g\sum_{j<k}\delta(\br_j-\br_k),\qquad g>0
+\label{many_delta}
+$$
+
+The Laughlin state \eqref{many_nu} with $m=2$ has zero interaction energy. In fact, any state with zero interaction energy must have $\Psi_2(z_1,\ldots, z_N)$ as a factor. But if a wavefunction has a higher degree, then in the presence of the potential \eqref{many_HarmonicProject} it will have a higher energy than $\Psi_2(z_1,\ldots, z_N)$. Thus $\Psi_2(z_1,\ldots, z_N)$ is the ground state.
+
+Laughlin argued that for electrons with Coulomb interaction $\Psi_{m}(z_1,\ldots, z_N)$ with $m$ odd is a good variational wavefunction. The fact that $(z_j-z_k)$ appears in a power higher than one means that the particles tend to stay away from each other more than in the $m=1$ state, thus lowering their interaction.
+
+To get more precise information about the behaviour of wavefunctions, Laughlin introduced a powerful analogy between the probability distribution $\left\|\Psi_m(z_1,\ldots, z_N)\right\|^2$ of the particles, and the Boltzmann distribution of particles in a classical 2D plasma.
+
+### The Plasma Analogy
+
+The Coulomb potential satisfies
+
+$$
+\nabla^2 V = -q\delta(\br).
+$$
+
+In 2D the solution describing a point charge is
+
+$$
+V_\text{point}(\br) = -\frac{q}{2\pi}\log\,\left|\br\right|,
+$$
+
+while a constant background charge density $-\rho_0$ gives rise to a potential
+
+$$
+V_\text{bg}(\br) = \frac{\rho_0}{4} \left|\br\right|^2.
+$$
+
+Thus a system of identical charges in a background charge has an overall electrostatic energy
+
+$$
+V(\br_1,\ldots,\br_N) = -\frac{q^2}{2\pi} \sum_{j<k}\log\left|\br_j-\br_k\right| + \frac{q\rho_0}{4}\sum_j \left|\br_j\right|^2.
+$$
+
+Now we suppose that our plasma is at finite temperature, in which case the Boltzmann factor giving the (unnormalized) probability of finding particles at locations $\br_1, \ldots, \br_N$ is
+
+$$
+\exp[-\beta V(\brN)] = \left|\Psi_m(\brN)\right|^2,
+$$
+
+where we set $\beta q^2/(2\pi) = 2m$ and $\beta q\rho_0 = 2$. This observation is Laughlin's plasma analogy. Do bear in mind that we are not talking about _physical_ electrostatic fields -- this is a mathematical identification of two probability distributions.
+
+Of course, we still have to analyze the statistical mechanical problem, which is hard to do exactly. Since we are interested in the large $N$ limit, we can introduce a continuum charge density $\rho(\br)$ and write the electrostatic energy as a functional of $\rho(\br)$ as
+
+$$
+\beta V[\rho] = -m\int d^2\br\, d^2\br'\, \rho(\br)\log\left|\br-\br'\right|\rho(\br') + \frac{1}{2}\int d^2\br\, \left|\br\right|^2\rho(\br).\
+$$
+
+A natural approximation would be to try and minimize the energy, leading to the condition
+
+$$
+-2m\int d^2\br'\, \log\left|\br-\br'\right|\rho(\br') + \frac{1}{2}\left|\br\right|^2 = 0.
+$$
+
+Applying $\nabla^2$ to both sides then gives
+
+$$
+\rho(\br) = \frac{1}{2\pi m}.
+$$
+
+On the basis of this approximation, we conclude that the density is fixed at $1/m$ of the value we found for the $m=1$ case, which seems reasonable. The result applies where the density is non-zero, so we get a uniform droplet as before, this time of radius $\sqrt{2N/m}$. $1/m$ is called the __filling fraction__ of the state.
+
+Although we ignored the effect of summing over all configuration of the particles in the partition function (i.e. we ignored the contribution of entropy to the free energy), it turns out that this effect can be ignored in the large $N$ limit.
+
+It's useful to ask how a typical configuration of particles looks.
 
 ### Fractional Charge
 
+Laughlin also suggested wavefunctions to describe excited states of the system, the simplest being the __quasihole__ wavefunction
+
+$$
+\Psi_\text{hole}(z_1,\ldots, z_N|Z) = \prod_j (Z-z_j)\Psi_m(z_1,\ldots, z_N).
+$$
+
+In the case of the $m=2$ state with the interaction \eqref{many_delta} discussed above, it's clear that this state still has zero interaction energy, although the harmonic potential \eqref{many_HarmonicProject} acts upon it non-trivially.
+
+The plasma analogy allows us to see that this state describes a __quasiparticle__ of fractional charge. The concept of a quasiparticle is one that we'll meet repeatedly in this course. It describes a particle-like excitation of a many body system.  __Phonons__ -- quantized lattice vibrations -- are a kind of quasiparticle that you will have met before. In quantum field theory, particles themselves are described as quantized excitations of a system -- fields that pervade spacetime -- so at a _formal_ level there is little difference between the particles of particle physics and the quasiparticles of condensed matter physics. The _physical_ difference is that in the latter case we know what the background medium is made of!
+
+Let's see how the plasma picture is modified by the introduction of the quasihole. The electrostatic energy is now
+
+$$
+V(\brN)=-\frac{q^2}{2\pi m}\sum_j \log\left|\br_j-\mathbf{R}\right|-\frac{q^2}{2\pi} \sum_{j<k}\log\left|\br_j-\br_k\right| + \frac{\rho q_0}{4}\sum_j \left|\br_j\right|^2.
+$$
+
+This is interpreted as the introduction of a charge $q/m$ at point $\mathbf{R} = (X, Y)$, where $Z=X+iY$. The charges of the plasma will screen this charge, leaving a 'hole' in the density distribution amounting to charge $-q/m$, corresponding to $-1/m$ real particles. The quasiholes have fractional charge! This means that the normalization integral is approximated by the Boltzmann weight corresponding to the interaction of this fractional charge with the background charge density
+
+$$
+\int \prod_{j=1}^N d^2z_j\,\left|\Psi_\text{hole}(z_1,\ldots, z_N|Z)\right|^2 \sim\exp\left(\frac{1}{2m}\left|Z\right|^2\right),
+$$
+
 ### Fractional Statistics
 
-## Physical Quantities
+Consider the two quasihole wavefunction
 
-Knowing the wavefunction $$\Psi(x_1,\ldots x_N)$$ of a many body system is one thing, but what to _do_ with it?
+$$
+\Psi_\text{2 hole}(z_1,\ldots, z_N|Z_1,Z_2) = \prod_j (Z_1-z_j)(Z_2-z_j)\Psi_m(z_1,\ldots, z_N).
+\label{many_2hole}
+$$
+
+The probability distribution $\left\|\Psi_\text{2 hole}(z_1,\ldots, z_N\|Z_1,Z_2)\right\|^2$ corresponds to a Coulomb plasma with two $1/m$ charges at the positions $\mathbf{R}_{1,2}$. There is no interaction term between these two fixed charges, but as we have argued, each is overwhelmingly likely to be surrounded by region of depleted density amounting to $-1/m$ of a particle. The normalization integral is then be given by the Boltzmann weight corresponding to the interaction of these two depleted regions
+
+$$
+\int \prod_{j=1}^N d^2z_j\,\left|\Psi_\text{2 hole}(z_1,\ldots, z_N|Z_1,Z_2)\right|^2 \sim\exp\left(\frac{2}{m}\log\left|Z_1-Z_2\right|+\frac{1}{2m}\left[\left|Z_1\right|^2+\left|Z_2\right|^2\right]\right).
+$$
+
+If we try to intepret this as the probability density of a two particle wavefunction, we arrive at
+
+$$
+\Psi_\text{2 hole}(Z_1,Z_2) \sim \left(Z_1-Z_2\right)^{1/m} \exp\left(\frac{1}{4m}\left[\left|Z_1\right|^2+\left|Z_2\right|^2\right]\right).
+$$
+
+For $m=1$ this is an antisymmetric wavefunction, and may be interpreted as a pair of fermionic holes. For $m>1$ the wavefunction is _multi-valued_, and changes by a phase $\pi/m$ when $Z_1$ and $Z_2$ are exchanged. The quasiholes are __anyons__, particles with fractional statistics intermediate between bosons and fermions.
 
 
-
-## Monte Carlo Simulation of Laughlin States
-
-# Bose and Fermi Partition Functions
-
-## Statistics of Bose Condensation
+References
+----------
 
 {% bibliography --cited %}

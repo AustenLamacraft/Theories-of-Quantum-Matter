@@ -3,7 +3,7 @@ layout: page
 title: Superconductivity
 author: Austen Lamacraft
 chapter: 10
-summary: Heisenberg's problem as a first encounter with the idea of renormalization. Cooper divergences. BCS theory. Anderson spin picture.
+summary: Cooper's problem. BCS theory. The BCS-BEC crossover.
 ---
 
 ## Contents
