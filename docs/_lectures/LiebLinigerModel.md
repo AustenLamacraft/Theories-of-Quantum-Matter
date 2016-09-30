@@ -100,7 +100,7 @@ $$
 with $\bk = (k_1,k_2,k_3)$ and $\bx = (x_1,x_2,x_3)$. This describes a state with
 
 $$
-P = k_1+k_2+k_3,\qquad E = \frac{k_1^2}{2m}+\frac{k_2^2}{2m} + \frac{k_3^2}{2m}.
+P = k_1+k_2+k_3,\qquad E = \frac{k_1^2}{2m}+\frac{k_2^2}{2} + \frac{k_3^2}{2}.
 $$
 
 We can picture these conditions as the intersection of a plane and a sphere in momentum space. This illustrates that on kinematic grounds alone we should expect a _continuum_ of plane waves in the superposition to make an eigenstate. It is here, however, that the special nature of the interaction saves us, as it turns out that can get away with only a _finite_ superposition of all the $3!=6$ ways to assign the three momenta $(k_1,k_2,k_3)$ to the three particles.
@@ -156,7 +156,7 @@ $$
 The momentum and energy are
 
 $$
-P = \sum_{j=1}^N k_j,\qquad E = \sum_{j=1}^N\frac{k_j^2}{2m}.
+P = \sum_{j=1}^N k_j,\qquad E = \sum_{j=1}^N\frac{k_j^2}{2}.
 $$
 
 I want to emphasize that, despite the apparent complexity of the wavefunction \eqref{LL_Npart}, consisting of a sum over $N!$ permutations, it represents a _huge_ simplification over the most general superposition of plane wave states of fixed energy and momentum.
@@ -236,6 +236,7 @@ Often we take the log and write this as
 
 $$
 k_j L = 2\pi I_j + \sum_{\substack{n=1\\n\neq j}}^N \theta(k_j-k_n),
+\label{LL_BE}
 $$
 
 where the $I_j$ are integers. These are the __Bethe equations__, which generalize the familiar quantization condition $k_j = 2\pi I_j/L$ for free particles. A set $k_j$ solving the equations are sometimes called the __Bethe roots__.
@@ -258,17 +259,129 @@ $$
 
 where $L\rho(k)dk$ is the number of $k_j$ in the interval $dk$ in the limit, and $\pm q$ represents the region of $k$ where the distribution $\rho(k)$ of Bethe roots is nonvanishing.
 
+The continuum limit of the Bethe equations \eqref{LL_BE} is then
+
+$$
+kL = 2\pi I + L\int_{-q}^q \theta(k-k')\rho(k')dk'.
+$$
+
+Differentiating with respect to $k$ and using $dI/dk = L\rho(k)$ gives finally
+
+$$
+1 = 2\pi\rho(k) + \int_{-q}^q \theta'(k-k')\rho(k')dk',
+\label{LL_BetheIntegral}
+$$
+
+where
+
+$$
+\theta'(k) = -\frac{2c}{k^2+c^2}
+$$
+
+This is an integral equation that we must solve to find the ground state distribution of the $\rho(k)$ in the thermodynamic limit, subject to the condition of fixed density $n$
+
+$$
+n\equiv \frac{N}{L} = \int_{-q}^q \rho(k)dk.
+$$
+
+<a name="BetheSolution"></a>
+![]({{ site.baseurl }}/assets/BetheSolution.png)
+_Solution of the Bethe equation \eqref{LL_BetheIntegral} for $c=1$_
+
+In terms of $\rho(k)$, the momentum and energy are
+
+$$
+P = L \int_{-q}^q \rho(k)dk,\quad E = L \int_{-q}^q \frac{k^2}{2}\rho(k)dk.
+$$
+
+Of course, the momentum will vanish in the ground state, as $\rho(k)$ will be an even function. If we fix the density $n$, there is a natural dimensionless parameter $\gamma\equiv c/n$, in terms of which we can express the energy per particle $e(\gamma)=E/N$.
+
+<a name="LL_EnergyDensity"></a>
+![]({{ site.baseurl }}/assets/LL_EnergyDensity.gif)
+_Energy density as a function of $\gamma = c/n$. From {% cite Lieb:1963aa %}._
+
+In the $\gamma\to\infty$ limit we have $\rho(k) = 1/(2\pi)$, $q=k_\text{F}$, so that
+
+$$
+e(\gamma\to\infty) = n^{-1}\int_{-q}^q \frac{k^2}{2}\rho(k)dk = \frac{1}{2\pi n} \frac{k_\text{F}^3}{3} = \frac{\pi^2 n^2}{6\pi}
+$$
+
 <div class="message">
 Although I've referred to the $k_j$ above as the momenta of the particles, this is actually highly misleading. In particular, the momentum distribution $\bar N_k$ introduced in the previous lecture does not correspond to the distribution $\rho(k)$ studied here. One way to convince yourself of this fact is to note that the second moment of $\rho(k)$ gives the total energy, while the second moment of $\bar N_k$ gives only the kinetic energy.
 
 Finding $\bar N_k$ is not straightforward for wavefunctions that are not product states of momentum eigenstates. For this reason it's useful to refer to the $k_j$ in the Bethe wavefunction as <strong>quasimomenta</strong>.
 </div>
 
-### Excited States
 
-### Excitation Spectrum of a Fermi Gas
+### Excited States
 
-Make correspondence with excited states of Fermi gas.
+Next we'd like to get a handle on the excited states. Again, we take our cue from the impenetrable limit, where we can think about the excitations of a Fermi gas. In this system, the basic excitation in the __particle-hole pair__, meaning that we take a particle from below the Fermi energy and move it above, leaving a hole behind.
+
+In terms of the momenta $k_\text{p}$, $k_\text{h}$ of the particle and hole, the energy and momentum of such a state is
+
+$$
+\begin{align}
+E_\text{ph}(k_\text{p},k_\text{h}) &= \frac{1}{2m}\left(k_\text{p}^2 - k_\text{h}^2\right),\qquad \abs{k_\text{p}}>k_\text{F}, \abs{k_\text{h}}<k_\text{F}\\
+P_\text{ph}(k_\text{p},k_\text{h}) &= k_\text{p}-k_\text{h}.
+\end{align}
+$$
+
+At fixed momentum, the highest (lowest) energy particle-hole pair has the hole (particle) at the Fermi surface. The extremal energies are
+
+$$
+\begin{align}
+\epsilon_I(P) = Pk_\text{F}/m+ P^2/2m\\
+\epsilon_{II}(P) = Pk_\text{F}/m- P^2/2m.
+\end{align}
+$$
+
+We can keep track of these excitations as we reduce $c$ from $\infty$. Lieb and Liniger christened them 'type I' and 'type II' excitations.
+
+Let's consider the type I excitations first. We imagine making a 'hole' in the distribution of roots and moving one particle above the 'Fermi surface' (by which I mean the largest root in the ground state distribution). The complication now is that doing so causes all the other roots to change slightly from their ground state values.
+
+Instead of solving \eqref{LL_BE} with a set of consecutive integers on the right hand side, the final (largest) root -- we'll call it $k_{I}$ -- should correspond to an integer 'standing apart' from the others. We can think of this as the ground state of an $N-1$ particle problem, with the $N-1$ roots being affected by the presence of another root at $k_{I}$. Let's write the shift in the ground state roots of the $N-1$ particle problem as $\delta k_{i}$. Then we have
+
+$$
+\delta k_{i}L+\sum_{j=1}^{N-1}\theta'(k_{i}-k_{j})(\delta k_{i}-\delta k_{j})+\theta(k_{i}-k_{I})=-\pi,\qquad i=1,2,\ldots, N-1.
+$$
+
+The shifts $\delta k_{i}$ are $O(1/L)$. Taking $\delta k$ to be a function of $k$, we define the quantity $\gamma(k)\equiv \delta k \rho(k)L$. Then it can be shown that $\gamma(k)$ is a solution of
+
+$$
+2\pi \gamma(k)-\int_{-q}^{q}\theta'(k-k')\gamma(k') dk'+\theta(k-k_{I})=-\pi,\qquad |k_{I}|>q.
+\label{LL_typeI}
+$$
+
+To derive this equation we need the \eqref{LL_BetheIntegral}, the integral equation for $\rho(k)$.
+
+The energy and momentum of the excitation (that is, the energy and momentum _difference_ of this state from the ground state) are
+
+$$
+\begin{align}
+\epsilon_{I}&=-\mu+\frac{k_{I}^{2}}{2}+\int_{-q}^{q}k\gamma(k)dk\nonumber\\
+P&=k_{I}+\int_{-q}^{q}\gamma(k)dk
+\label{LL_disp}
+\end{align}
+$$
+
+where $\mu=E_{0}(N)-E_{0}(N-1)$ is the difference in ground state energies for $N$ and $N-1$ particles.
+
+In these equations $k_{I}$ is a parameter that determines $\gamma(k)$ from \eqref{LL_typeI} and the dispersion relation $(E,P)$ is generated parametrically. Note that in \eqref{LL_disp} the last term in each expression is the result of the other roots being pushed around.
+
+Now we turn to the type II excitations. By taking $\delta k$ to be the shift in the roots of the ground state of the $N+1$ particle problem caused by the presence of a hole, we can show that the corresponding set of equations is
+
+$$
+\begin{align}\label{typeII}
+&2\pi \gamma(k)-\int_{-q}^{q}\theta'(k-k')\gamma(k') dk'-\theta(k-k_{II})=\pi,\qquad |k_{II}|<q \nonumber\\
+\epsilon_{II}&=\mu-\frac{k_{I}^{2}}{2}+\int_{-q}^{q}k\gamma(k)dk\nonumber\\
+P&=-k_{II}+\int_{-q}^{q}\gamma(k)dk.
+\end{align}
+$$
+
+<a name="LL_Modes"></a>
+![]({{ site.baseurl }}/assets/LL_TypeI+II.gif)
+_Type I and II modes. From {% cite Lieb:1963ab %}._
+
 
 References
 ----------

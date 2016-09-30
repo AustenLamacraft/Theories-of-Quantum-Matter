@@ -52,6 +52,12 @@ Show the explicit form of the ground state and demonstrate that this is of Bethe
 
 Relate to bright soliton -- captures leading order ground state energy (and mass, but that's easy)
 
+## Density correlations in Lieb--Liniger
+
+## Semiclassical limit of Type I and II modes
+
+Present numerical (or analytical) evidence that in the weak coupling (small $\gamma$) limit the type I excitations coincide with the Bogoliubov modes and the type II excitations describe the solitons discussed in the midterm. For the calculation of the dispersion relation for solitons, see Section II of Phys. Rev. A 78, 053630 (2008).
+
 ## Peirels instability
 
 ## Diagonalize quadratic Hamiltonian for general two particle potential

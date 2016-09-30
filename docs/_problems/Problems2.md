@@ -22,6 +22,9 @@ Do also the case of parametric oscillator
 
 ## Hydrodynamic formulaton of Gross--Pitaevskii equation
 
+## Bright soliton and attractive Bose gas
+
+
 ## Condensate Fluctuations
 
 ## Leggett's problem for metastable currents

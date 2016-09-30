@@ -3,7 +3,7 @@ layout: page
 title: Many Body Wavefunctions
 author: Austen Lamacraft
 chapter: 1
-summary: Product States. Fermi gas. Density, density matrix, and pair distribution. Quantum Hall Effect.
+summary: Product States. Fermi gas. Density, density matrix, and pair distribution. Quantum hall effect.
 published: true
 ---
 <p class="message">
@@ -261,7 +261,7 @@ $$
 
 </div>
 
-Let's take the opportunity to introduce some terminology. The wavevector of the last fermion added is called the __Fermi wavevector__ and denoted $k_{F}$. In this case $k_{F}=\frac{(N-1)\pi}{L}$. Its energy $E_{F}=\frac{k_{F}^{2}}{2m}$ is the __Fermi energy__.
+Let's take the opportunity to introduce some terminology. The wavevector of the last fermion added is called the __Fermi wavevector__ and denoted $k_\text{F}$. In this case $k_\text{F}=\frac{(N-1)\pi}{L}$. Its energy $E_{F}=\frac{k_\text{F}^{2}}{2m}$ is the __Fermi energy__.
 
 
 ### Density; Density Matrix; Pair Distribution
@@ -341,15 +341,15 @@ $$
 Let's find $g(x,y)$ for the ground state of the Fermi gas
 
 $$
-g(x,y) = \frac{L}\sum_{|k|<k_F} e^{ik(x-y)} = \int_{-k_F}^{k_F} \frac{dk}{2\pi} e^{ik(x-y)} = \bar\rho \frac{\sin [k_F(x-y)]}{k_F(x-y)}
+g(x,y) = \frac{L}\sum_{|k|<k_\text{F}} e^{ik(x-y)} = \int_{-k_\text{F}}^{k_\text{F}} \frac{dk}{2\pi} e^{ik(x-y)} = \bar\rho \frac{\sin [k_\text{F}(x-y)]}{k_\text{F}(x-y)}
 $$
 
-where $\bar\rho \equiv \frac{k_F}{\pi}$ is the average density. Evaluating the average number of particles in a momentum state $\ket{k}$ using \eqref{many_Nbar} then gives
+where $\bar\rho \equiv \frac{k_\text{F}}{\pi}$ is the average density. Evaluating the average number of particles in a momentum state $\ket{k}$ using \eqref{many_Nbar} then gives
 
 $$
 \bar N_k = \begin{cases}
-1 & |k|\leq k_F \\
-0 & |k|>k_F
+1 & |k|\leq k_\text{F} \\
+0 & |k|>k_\text{F}
 \end{cases}.
 \label{many_Nk}
 $$
@@ -367,7 +367,7 @@ The prefactor is to account for all pairs of particles.
 Starting from the Slater determinant \eqref{quantum_statistics_1ddet}, you should be able to derive
 
 $$
-\rho_2(x_1,x_2) = \bar n^2\left[1 - \left(\frac{\sin[k_F(x-y)]}{k_F(x-y)}\right)^2\right].
+\rho_2(x_1,x_2) = \bar n^2\left[1 - \left(\frac{\sin[k_\text{F}(x-y)]}{k_\text{F}(x-y)}\right)^2\right].
 $$
 
 This vanishes at $x_1=x_2$, consistent with the Pauli principle.
@@ -390,13 +390,13 @@ $$
 There's a bit more mileage in the 1D Fermi gas yet. Consider the following Hamiltonian, which we'll study in more detail in the next lecture
 
 $$
-H = \frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + c\sum_{j<k}\delta(x_j-x_k).
+H = \frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + g\sum_{j<k}\delta(x_j-x_k).
 \label{many_LL}
 $$
 
 The second term represents an interaction between pairs of particles. Of course, this model is rather special, as (1) it's 1D and (2) the interaction potential is a $\delta$-function. Nevertheless, it represents a huge step up in difficulty from the noninteracting examples we've discussed so far. At least, it does for bosons. For fermions, the wavefunctions vanish at coincident points, and so the interaction has no effect at all!
 
-For bosons, it happens that the Hamiltonian can still be solved exactly. For now, however, we'll concern ourselves only with the limit of infinite interaction: $c\to \infty$, sometimes called the impenetrable limit. In this case, _the eigenenergies coincide with those of the free fermion problem, and the eigenstates are just the modulus of the corresponding fermion eigenstate_ Just like that, we've solved our first interacting many body system (and with infinite coupling, no less)!
+For bosons, it happens that the Hamiltonian can still be solved exactly. For now, however, we'll concern ourselves only with the limit of infinite interaction: $g\to \infty$, sometimes called the impenetrable limit. In this case, _the eigenenergies coincide with those of the free fermion problem, and the eigenstates are just the modulus of the corresponding fermion eigenstate_ Just like that, we've solved our first interacting many body system (and with infinite coupling, no less)!
 
 Thus the ground state on the ring has the form
 
