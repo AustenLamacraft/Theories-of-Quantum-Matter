@@ -104,16 +104,19 @@ $$
 \label{res_chiFT}
 $$
 
-The integrand has two poles in the lower half plane at $\omega_\pm$, on account of $\gamma$ being positive, which in turn follows from (or defines?) the direction of time. The fact that the frequency response is _analytic in the upper half plane_ is equivalent to causality in the real time response. This is because for $t<0$ we can close the contour in \eqref{res_chiFT} in the upper half plane, on account of the
+The integrand has two poles in the lower half plane at $\omega_\pm$, on account of $\gamma$ being positive, which in turn follows from (or defines?) the direction of time. The fact that the frequency response is _analytic in the upper half plane_ is equivalent to causality in the real time response. This is because for $t<0$ we can close the contour in \eqref{res_chiFT} in the upper half plane, avoiding the poles and getting zero by Cauchy's theorem. For $t>0$ we close in the lower half plane (not forgetting the - from going the other way) and use the residue theorem to give
 
+$$
+\chi(t) = \frac{i}{m}\left(\frac{e^{-i\omega_+ t}}{\omega_+-\omega_-} + \frac{e^{-i\omega_- t}}{\omega_--\omega_+}\right) = \frac{1}{m\omega_1}\sin(\omega_1 t )e^{-\gamma/2t} \quad  t>0,
+$$
 
-back \eqref{res_shogf}
-
-If, $x(t)=0$ for $t<0$, the solution at positive times is
-
-
+as before.
 
 ### Mechanical Model of Dissipation
+
+When we move on to the quantum oscillator, we're going to run into the problem that we only know how to describe Hamiltonian time evolution in quantum mechanics, that is, without dissipation. It's possible to describe the damped oscillator in Hamiltonian terms at the expense of explicitly introducing the degrees of freedom that are doing the dissipating. You've met this in the realm of classical mechanics when you discuss the mechanical impedance of an elastic string.
+
+Imagine attaching an undamped oscillator to 
 
 ### Response of the Quantum Oscillator: Kubo Formula
 

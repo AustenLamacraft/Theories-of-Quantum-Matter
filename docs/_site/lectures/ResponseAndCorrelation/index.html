@@ -356,13 +356,17 @@ Calculating eigenstates and eigenenergies is one thing, but what do experimental
 <script type="math/tex; mode=display">\chi(t) = \int_{-\infty}^\infty \tilde\chi(\omega)e^{-i\omega t}\,\frac{d\omega}{2\pi} = -\frac{1}{m} \int_{-\infty}^\infty \frac{e^{-i\omega t}}{(\omega-\omega_+)(\omega-\omega_-)}\,\frac{d\omega}{2\pi}.
 \label{res_chiFT}</script>
 
-<p>The integrand has two poles in the lower half plane at $\omega_\pm$, on account of $\gamma$ being positive, which in turn follows from (or defines?) the direction of time. The fact that the frequency response is <em>analytic in the upper half plane</em> is equivalent to causality in the real time response. This is because for $t&lt;0$ we can close the contour in \eqref{res_chiFT} in the upper half plane, on account of the</p>
+<p>The integrand has two poles in the lower half plane at $\omega_\pm$, on account of $\gamma$ being positive, which in turn follows from (or defines?) the direction of time. The fact that the frequency response is <em>analytic in the upper half plane</em> is equivalent to causality in the real time response. This is because for $t&lt;0$ we can close the contour in \eqref{res_chiFT} in the upper half plane, avoiding the poles and getting zero by Cauchy’s theorem. For $t&gt;0$ we close in the lower half plane (not forgetting the - from going the other way) and use the residue theorem to give</p>
 
-<p>back \eqref{res_shogf}</p>
+<script type="math/tex; mode=display">\chi(t) = \frac{i}{m}\left(\frac{e^{-i\omega_+ t}}{\omega_+-\omega_-} + \frac{e^{-i\omega_- t}}{\omega_--\omega_+}\right) = \frac{1}{m\omega_1}\sin(\omega_1 t )e^{-\gamma/2t} \quad  t>0,</script>
 
-<p>If, $x(t)=0$ for $t&lt;0$, the solution at positive times is</p>
+<p>as before.</p>
 
 <h3 id="mechanical-model-of-dissipation">Mechanical Model of Dissipation</h3>
+
+<p>When we move on to the quantum oscillator, we’re going to run into the problem that we only know how to describe Hamiltonian time evolution in quantum mechanics, that is, without dissipation. It’s possible to describe the damped oscillator in Hamiltonian terms at the expense of explicitly introducing the degrees of freedom that are doing the dissipating. You’ve met this in the realm of classical mechanics when you discuss the mechanical impedance of an elastic string.</p>
+
+<p>Imagine attaching an undamped oscillator to</p>
 
 <h3 id="response-of-the-quantum-oscillator-kubo-formula">Response of the Quantum Oscillator: Kubo Formula</h3>
 
