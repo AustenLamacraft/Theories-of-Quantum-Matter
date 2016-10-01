@@ -97,7 +97,7 @@ $$
 \tilde\chi(\omega) = \frac{1}{m}\frac{1}{\omega_0^2-\omega^2-i\gamma\omega}.
 $$
 
-I'm going to assume that you've plotted the amplitude and phase of this function enough times in your life already. Fourier transforming
+I'm going to assume that you've plotted the amplitude and phase of this function enough times in your life already. Fourier transforming back to the time domain
 
 $$
 \chi(t) = \int_{-\infty}^\infty \tilde\chi(\omega)e^{-i\omega t}\,\frac{d\omega}{2\pi} = -\frac{1}{m} \int_{-\infty}^\infty \frac{e^{-i\omega t}}{(\omega-\omega_+)(\omega-\omega_-)}\,\frac{d\omega}{2\pi}.
@@ -116,7 +116,15 @@ as before.
 
 When we move on to the quantum oscillator, we're going to run into the problem that we only know how to describe Hamiltonian time evolution in quantum mechanics, that is, without dissipation. It's possible to describe the damped oscillator in Hamiltonian terms at the expense of explicitly introducing the degrees of freedom that are doing the dissipating. You've met this in the realm of classical mechanics when you discuss the mechanical impedance of an elastic string.
 
-Imagine attaching an undamped oscillator to 
+Attaching an undamped oscillator to a string gives the coupled system
+
+$$
+\begin{align}
+\ddot x +\omega_0^2 x + \gamma \dot x =\frac{1}{m}\frac{\partial u(x,t)}{\partial x}\Big|_{x=0}.
+\end{align}
+$$
+
+
 
 ### Response of the Quantum Oscillator: Kubo Formula
 
