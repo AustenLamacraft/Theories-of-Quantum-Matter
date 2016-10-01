@@ -1,6 +1,6 @@
 # Theories of Quantum Matter
 
-Material for the course Theories of Quantum Matter at the University of Cambridge. 
+Material for a Part III Physics course at the University of Cambridge, running in Michaelmas 2016.
 
 1. `docs` contains the files for the Jekyll site, currently living [here](http://tqm.usertest.mws3.csx.cam.ac.uk/Theories-of-Quantum-Matter/).
 
