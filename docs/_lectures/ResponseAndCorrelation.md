@@ -100,10 +100,11 @@ $$
 I'm going to assume that you've plotted the amplitude and phase of this function enough times in your life already. Fourier transforming
 
 $$
-\chi(t) = \int_{-\infty}^\infty \tilde\chi(\omega)e^{-i\omega t}\,\frac{d\omega}{2\pi} = -\frac{1}{m} \int_{-\infty}^\infty \frac{e^{-i\omega t}}{(\omega-\omega_+)(\omega-\omega_-)}\,\frac{d\omega}{2\pi}
+\chi(t) = \int_{-\infty}^\infty \tilde\chi(\omega)e^{-i\omega t}\,\frac{d\omega}{2\pi} = -\frac{1}{m} \int_{-\infty}^\infty \frac{e^{-i\omega t}}{(\omega-\omega_+)(\omega-\omega_-)}\,\frac{d\omega}{2\pi}.
+\label{res_chiFT}
 $$
 
-gives
+The integrand has two poles in the lower half plane at $\omega_\pm$, on account of $\gamma$ being positive, which in turn follows from (or defines?) the direction of time. The fact that the frequency response is _analytic in the upper half plane_ is equivalent to causality in the real time response. This is because for $t<0$ we can close the contour in \eqref{res_chiFT} in the upper half plane, on account of the
 
 
 back \eqref{res_shogf}

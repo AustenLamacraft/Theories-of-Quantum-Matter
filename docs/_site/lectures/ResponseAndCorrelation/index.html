@@ -353,9 +353,10 @@ Calculating eigenstates and eigenenergies is one thing, but what do experimental
 
 <p>I’m going to assume that you’ve plotted the amplitude and phase of this function enough times in your life already. Fourier transforming</p>
 
-<script type="math/tex; mode=display">\chi(t) = \int_{-\infty}^\infty \tilde\chi(\omega)e^{-i\omega t}\,\frac{d\omega}{2\pi} = -\frac{1}{m} \int_{-\infty}^\infty \frac{e^{-i\omega t}}{(\omega-\omega_+)(\omega-\omega_-)}\,\frac{d\omega}{2\pi}</script>
+<script type="math/tex; mode=display">\chi(t) = \int_{-\infty}^\infty \tilde\chi(\omega)e^{-i\omega t}\,\frac{d\omega}{2\pi} = -\frac{1}{m} \int_{-\infty}^\infty \frac{e^{-i\omega t}}{(\omega-\omega_+)(\omega-\omega_-)}\,\frac{d\omega}{2\pi}.
+\label{res_chiFT}</script>
 
-<p>gives</p>
+<p>The integrand has two poles in the lower half plane at $\omega_\pm$, on account of $\gamma$ being positive, which in turn follows from (or defines?) the direction of time. The fact that the frequency response is <em>analytic in the upper half plane</em> is equivalent to causality in the real time response. This is because for $t&lt;0$ we can close the contour in \eqref{res_chiFT} in the upper half plane, on account of the</p>
 
 <p>back \eqref{res_shogf}</p>
 
