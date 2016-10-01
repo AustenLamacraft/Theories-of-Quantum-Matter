@@ -261,24 +261,129 @@ $$
       <div class="container content" id="main">
         <div class="page">
   <h1 class="page-title">Response and Correlation</h1>
-  <h2 class="no_toc" id="contents">Contents</h2>
+  <p class="message">
+Calculating eigenstates and eigenenergies is one thing, but what do experimentalists actually measure?
+</p>
+
+<h2 class="no_toc" id="contents">Contents</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#review-of-greens-functions" id="markdown-toc-review-of-greens-functions">Review of Green’s Functions</a></li>
-  <li><a href="#linear-response-in-quantum-mechanics" id="markdown-toc-linear-response-in-quantum-mechanics">Linear Response in Quantum Mechanics</a></li>
+  <li><a href="#probing-many-body-systems" id="markdown-toc-probing-many-body-systems">Probing Many Body systems</a></li>
+  <li><a href="#response-of-a-damped-oscillator" id="markdown-toc-response-of-a-damped-oscillator">Response of a Damped Oscillator</a>    <ul>
+      <li><a href="#greens-function-for-the-damped-oscillator" id="markdown-toc-greens-function-for-the-damped-oscillator">Green’s Function for the Damped Oscillator</a></li>
+      <li><a href="#mechanical-model-of-dissipation" id="markdown-toc-mechanical-model-of-dissipation">Mechanical Model of Dissipation</a></li>
+      <li><a href="#response-of-the-quantum-oscillator-kubo-formula" id="markdown-toc-response-of-the-quantum-oscillator-kubo-formula">Response of the Quantum Oscillator: Kubo Formula</a></li>
+      <li><a href="#finite-temperature-and-fluctuation-dissipation-theorem" id="markdown-toc-finite-temperature-and-fluctuation-dissipation-theorem">Finite Temperature and Fluctuation Dissipation Theorem</a></li>
+      <li><a href="#spectral-representation-and-dynamical-structure-factor" id="markdown-toc-spectral-representation-and-dynamical-structure-factor">Spectral Representation and Dynamical Structure Factor</a></li>
+    </ul>
+  </li>
+  <li><a href="#response-of-matter" id="markdown-toc-response-of-matter">Response of Matter</a>    <ul>
+      <li><a href="#density-response" id="markdown-toc-density-response">Density Response</a></li>
+      <li><a href="#sum-rules" id="markdown-toc-sum-rules">Sum rules</a></li>
+      <li><a href="#inelastic-scattering-measures-the-dsf" id="markdown-toc-inelastic-scattering-measures-the-dsf">Inelastic Scattering Measures the DSF</a></li>
+      <li><a href="#phonon-decay" id="markdown-toc-phonon-decay">Phonon Decay</a></li>
+    </ul>
+  </li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
 
-<blockquote>
-  <p>Calculating eigenstates and eigenenergies is one thing, but what do experimentalists actually measure?</p>
-</blockquote>
+<p>Reading: <a href="#Chaikin:2000aa">(Chaikin &amp; Lubensky, 2000)</a>.</p>
 
 <hr />
 
-<h2 id="review-of-greens-functions">Review of Green’s Functions</h2>
+<h2 id="probing-many-body-systems">Probing Many Body systems</h2>
 
-<h2 id="linear-response-in-quantum-mechanics">Linear Response in Quantum Mechanics</h2>
+<p>Our first encounters with quantum mechanics involve finding the <em>energies</em> of stationary states, whether of the Hydrogen atom or a box of radiation in thermal equilibrium. Finding the energy of metallic Sodium (to pick a simple metal) is important if you want to be able calculate the melting temperature, but most experiments probe properties of a state of matter that are not simply contained in thermodynamic functions of state. For example, seeing that a metal is reflective involves shining light and measuring how it is scattered.</p>
+
+<p>When a theorist looks at an experimentalist, what they see is a machine for measuring <strong>response functions</strong>, which encode the response of a system to external perturbations. The theorist’s job is to understand what kinds of response are possible (e.g. metallic, insulating, superconducting), and hopefully to actually calculate response functions for a particular model. Often this is what really characterizes a state of matter: the thermodynamic differences between a metal and a superconductor are far less significant that the differing electromagnetic response.</p>
+
+<p>In this lecture we will see how response functions are encoded in the eigenvalues and eigenstates of a many body system, and their general features. In fact, you’ve probably already met response functions in another guise: as <strong>Green’s functions</strong>.</p>
+
+<h2 id="response-of-a-damped-oscillator">Response of a Damped Oscillator</h2>
+
+<p>On the grounds that it’s always best to start with a single degree of freedom first, we introduce the idea of response functions for (sigh) the harmonic oscillator.</p>
+
+<h3 id="greens-function-for-the-damped-oscillator">Green’s Function for the Damped Oscillator</h3>
+
+<p>Consider your old friend, the damped driven oscillator</p>
+
+<script type="math/tex; mode=display">\ddot x +\omega_0^2 x + \gamma \dot x =\frac{f(t)}{m}.
+\label{res_sho}</script>
+
+<p>Solving this problem, as you’ve doubtless done many times, involves finding $x(t)$ given $f(t)$. Without going any further, what can we say about such a solution? \eqref{res_sho} is linear, which means that $x(t)$ depends linearly on $f(t)$. By the principle of superposition we can immediately write</p>
+
+<script type="math/tex; mode=display">x(t) = \int \chi(t,s) f(s)\,ds.</script>
+
+<p>$\chi(t,s)$ is our first example of a response function, Green’s function, or <strong>susceptibility</strong>. On general grounds, we can say two more things about $\chi(t,s)$. First, that it is <strong>causal</strong>, meaning that, since effect follows cause:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\chi(t,s)=0,\quad \text{for }t<s. %]]></script>
+
+<p>Second, since the LHS of \eqref{res_sho} has no explicit time dependence, $\chi$ is really a function only of $t-s$. We can certainly imagine situations where this is not true. Causality, however, seems pretty watertight (even if we don’t understand why).</p>
+
+<p>We can interpret $\chi(t)$ as the solution of \eqref{res_sho} to a $\delta$-function force at $t=0$.</p>
+
+<script type="math/tex; mode=display">\ddot \chi +\omega_0^2 \chi + \gamma \dot \chi =\frac{\delta(t)}{m}.
+\label{res_chiode}</script>
+
+<p>There are at least two ways to go about finding $\chi(t)$ in this case. The first is most direct: recall that the free motion of the oscillator can be written in terms of the complex exponential $e^{-i\omega t}$, where $\omega$ satisfies</p>
+
+<script type="math/tex; mode=display">\omega^2+i\gamma\omega - \omega_0^2 =0,</script>
+
+<p>so that</p>
+
+<script type="math/tex; mode=display">\omega_{\pm} = \pm \sqrt{\omega_0^2-\frac{\gamma^2}{4}}-i\gamma /2\equiv \pm\omega_1-i\gamma/2.</script>
+
+<p>Since $\chi(t)=0$ for $t&lt;0$, we can get a $\delta$-functin in \eqref{res_chiode} by choosing a superposition of $e^{-i\omega_\pm t}$ such that $\chi’(0+)=m^{-1}$</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\chi(t) = \begin{cases}
+0 & t\leq 0 \\
+\frac{1}{m\omega_1}\sin(\omega_1 t )e^{-\gamma/2t} & t>0.
+\label{res_shogf}
+\end{cases} %]]></script>
+
+<p>The second method is to solve the equation \eqref(res_chiode) in the Fourier domain, where it becomes</p>
+
+<script type="math/tex; mode=display">\left[-\omega^2+\omega_0^2-i\gamma\omega\right]\tilde\chi(\omega) = \frac{1}{m},</script>
+
+<p>so that</p>
+
+<script type="math/tex; mode=display">\tilde\chi(\omega) = \frac{1}{m}\frac{1}{\omega_0^2-\omega^2-i\gamma\omega}.</script>
+
+<p>I’m going to assume that you’ve plotted the amplitude and phase of this function enough times in your life already. Fourier transforming</p>
+
+<script type="math/tex; mode=display">\chi(t) = \int_{-\infty}^\infty \tilde\chi(\omega)e^{-i\omega t}\,\frac{d\omega}{2\pi} = -\frac{1}{m} \int_{-\infty}^\infty \frac{e^{-i\omega t}}{(\omega-\omega_+)(\omega-\omega_-)}\,\frac{d\omega}{2\pi}</script>
+
+<p>gives</p>
+
+<p>back \eqref{res_shogf}</p>
+
+<p>If, $x(t)=0$ for $t&lt;0$, the solution at positive times is</p>
+
+<h3 id="mechanical-model-of-dissipation">Mechanical Model of Dissipation</h3>
+
+<h3 id="response-of-the-quantum-oscillator-kubo-formula">Response of the Quantum Oscillator: Kubo Formula</h3>
+
+<h3 id="finite-temperature-and-fluctuation-dissipation-theorem">Finite Temperature and Fluctuation Dissipation Theorem</h3>
+
+<h3 id="spectral-representation-and-dynamical-structure-factor">Spectral Representation and Dynamical Structure Factor</h3>
+
+<h2 id="response-of-matter">Response of Matter</h2>
+
+<h3 id="density-response">Density Response</h3>
+
+<h3 id="sum-rules">Sum rules</h3>
+
+<h3 id="inelastic-scattering-measures-the-dsf">Inelastic Scattering Measures the DSF</h3>
+
+<h3 id="phonon-decay">Phonon Decay</h3>
 
 <p>Here we introduce..</p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="Chaikin:2000aa">Chaikin, P. M., &amp; Lubensky, T. C. (2000). <i>Principles of condensed matter physics</i> (Vol. 1). Cambridge Univ Press.</span></li></ol>
 
 </div>
 

@@ -294,16 +294,16 @@ $$
 P = L \int_{-q}^q \rho(k)dk,\quad E = L \int_{-q}^q \frac{k^2}{2}\rho(k)dk.
 $$
 
-Of course, the momentum will vanish in the ground state, as $\rho(k)$ will be an even function. If we fix the density $n$, there is a natural dimensionless parameter $\gamma\equiv c/n$, in terms of which we can express the energy per particle $e(\gamma)=E/N$.
+Of course, the momentum will vanish in the ground state, as $\rho(k)$ will be an even function. If we fix the density $n$, there is a natural dimensionless parameter $\gamma\equiv c/n$, in terms of which we can express the energy per particle $E/L =\frac{n^3}{2}e(\gamma)$.
 
 <a name="LL_EnergyDensity"></a>
 ![]({{ site.baseurl }}/assets/LL_EnergyDensity.gif)
 _Energy density as a function of $\gamma = c/n$. From {% cite Lieb:1963aa %}._
 
-In the $\gamma\to\infty$ limit we have $\rho(k) = 1/(2\pi)$, $q=k_\text{F}$, so that
+In the $\gamma\to\infty$ limit we have $\rho(k) = 1/(2\pi)$, $q=k_\text{F}$, and $n=\pi k_\text{F}$, so that
 
 $$
-e(\gamma\to\infty) = n^{-1}\int_{-q}^q \frac{k^2}{2}\rho(k)dk = \frac{1}{2\pi n} \frac{k_\text{F}^3}{3} = \frac{\pi^2 n^2}{6\pi}
+e(\gamma\to\infty) = \frac{2}{n^3}\int_{-q}^q \frac{k^2}{2}\rho(k)dk = \frac{1}{\pi n^3} \frac{k_\text{F}^3}{3} = \frac{\pi^2}{3}
 $$
 
 <div class="message">

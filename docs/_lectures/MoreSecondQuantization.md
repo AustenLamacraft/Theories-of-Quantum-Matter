@@ -21,3 +21,7 @@ summary: Density matrix and density correlations. Second quantized Hamiltonians.
 Example of Lieb--Liniger Hamiltonian that we have met before.
 
 ## _When Perturbations Attack I_
+
+## Hartree--Fock
+
+Discuss fermionic energies in HF approx
