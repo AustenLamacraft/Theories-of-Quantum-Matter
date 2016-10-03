@@ -3,7 +3,7 @@ layout: page
 title: Spin Models
 author: Austen Lamacraft
 chapter: 4
-summary: Heisenberg model. Heisenberg chain. Magnons. Antiferromagnets. Symmetry breaking. Spin wave theory.
+summary: Heisenberg model; Heisenberg chain; Magnons; Antiferromagnets; Symmetry breaking; Spin wave theory.
 
 ---
 
@@ -501,5 +501,8 @@ Marshall sign rule. Lieb Mattis theorem. Lack of order theorems
 ## Outlook
 
 Anisotropy, frustration...
+
+References
+----------
 
 {% bibliography --cited %}

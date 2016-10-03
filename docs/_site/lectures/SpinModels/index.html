@@ -66,7 +66,7 @@
  MathJax.Hub.Config({
    TeX: { equationNumbers: { autoNumber: "all" },
           Macros: {
-          RR: '{\\bf R}',                // a simple string replacement
+          cP: '\\mathcal{P}',               
           br: '\\mathbf{r}',
           bx: '\\mathbf{x}',
           bp: '\\mathbf{p}',
@@ -96,7 +96,7 @@
           Re: '\\operatorname{Re}}',
           ket: ['\\lvert{#1}\\rangle',1],
           bra: ['\\langle{#1}\\rvert',1],
-          abs: ['\\lvert{#1}\\rvert',1]
+          abs: ['\\lvert{#1}\\rvert',1],
     }
   },
    extensions: ["tex2jax.js"],
@@ -290,6 +290,7 @@ In this lecture we introduce a simple quantum mechanical model of magnetism cons
   <li><a href="#a-numerical-experiment" id="markdown-toc-a-numerical-experiment">A Numerical Experiment</a></li>
   <li><a href="#some-facts-about-ground-states-of-heisenberg-models" id="markdown-toc-some-facts-about-ground-states-of-heisenberg-models">Some facts about ground states of Heisenberg Models</a></li>
   <li><a href="#outlook" id="markdown-toc-outlook">Outlook</a></li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
 
 <p>Reading: <a href="#Auerbach:2012">(Auerbach, 2012)</a>.</p>
@@ -688,6 +689,8 @@ p_j(t) &= \frac{1}{\sqrt{N}}\sum_{|n| \leq (N-1)/2} \pi_n(t) e^{-i\eta_n j}.
 <h2 id="outlook">Outlook</h2>
 
 <p>Anisotropy, frustration…</p>
+
+<h2 id="references">References</h2>
 
 <ol class="bibliography"><li><span id="Auerbach:2012">Auerbach, A. (2012). <i>Interacting electrons and quantum magnetism</i>. Springer Science &amp; Business Media.</span></li></ol>
 

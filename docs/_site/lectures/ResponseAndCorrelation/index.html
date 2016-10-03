@@ -66,7 +66,7 @@
  MathJax.Hub.Config({
    TeX: { equationNumbers: { autoNumber: "all" },
           Macros: {
-          RR: '{\\bf R}',                // a simple string replacement
+          cP: '\\mathcal{P}',               
           br: '\\mathbf{r}',
           bx: '\\mathbf{x}',
           bp: '\\mathbf{p}',
@@ -96,7 +96,7 @@
           Re: '\\operatorname{Re}}',
           ket: ['\\lvert{#1}\\rangle',1],
           bra: ['\\langle{#1}\\rvert',1],
-          abs: ['\\lvert{#1}\\rvert',1]
+          abs: ['\\lvert{#1}\\rvert',1],
     }
   },
    extensions: ["tex2jax.js"],
@@ -271,7 +271,10 @@ Calculating eigenstates and eigenenergies is one thing, but what do experimental
   <li><a href="#probing-many-body-systems" id="markdown-toc-probing-many-body-systems">Probing Many Body systems</a></li>
   <li><a href="#response-of-a-damped-oscillator" id="markdown-toc-response-of-a-damped-oscillator">Response of a Damped Oscillator</a>    <ul>
       <li><a href="#greens-function-for-the-damped-oscillator" id="markdown-toc-greens-function-for-the-damped-oscillator">Green’s Function for the Damped Oscillator</a></li>
+      <li><a href="#properties-of-the-susceptibility" id="markdown-toc-properties-of-the-susceptibility">Properties of the Susceptibility</a></li>
       <li><a href="#mechanical-model-of-dissipation" id="markdown-toc-mechanical-model-of-dissipation">Mechanical Model of Dissipation</a></li>
+      <li><a href="#finite-temperature-fluctuations" id="markdown-toc-finite-temperature-fluctuations">Finite Temperature Fluctuations</a></li>
+      <li><a href="#quantum-flucutations" id="markdown-toc-quantum-flucutations">Quantum Flucutations</a></li>
       <li><a href="#response-of-the-quantum-oscillator-kubo-formula" id="markdown-toc-response-of-the-quantum-oscillator-kubo-formula">Response of the Quantum Oscillator: Kubo Formula</a></li>
       <li><a href="#finite-temperature-and-fluctuation-dissipation-theorem" id="markdown-toc-finite-temperature-and-fluctuation-dissipation-theorem">Finite Temperature and Fluctuation Dissipation Theorem</a></li>
       <li><a href="#spectral-representation-and-dynamical-structure-factor" id="markdown-toc-spectral-representation-and-dynamical-structure-factor">Spectral Representation and Dynamical Structure Factor</a></li>
@@ -307,12 +310,12 @@ Calculating eigenstates and eigenenergies is one thing, but what do experimental
 
 <p>Consider your old friend, the damped driven oscillator</p>
 
-<script type="math/tex; mode=display">\ddot x +\omega_0^2 x + \gamma \dot x =\frac{f(t)}{m}.
+<script type="math/tex; mode=display">m\ddot y +m\omega_0^2 y + \gamma \dot y =f(t).
 \label{res_sho}</script>
 
-<p>Solving this problem, as you’ve doubtless done many times, involves finding $x(t)$ given $f(t)$. Without going any further, what can we say about such a solution? \eqref{res_sho} is linear, which means that $x(t)$ depends linearly on $f(t)$. By the principle of superposition we can immediately write</p>
+<p>Solving this problem, as you’ve doubtless done many times, involves finding $y(t)$ given $f(t)$. Without going any further, what can we say about such a solution? \eqref{res_sho} is linear, which means that $y(t)$ depends linearly on $f(t)$. By the principle of superposition we can immediately write</p>
 
-<script type="math/tex; mode=display">x(t) = \int \chi(t,s) f(s)\,ds.</script>
+<script type="math/tex; mode=display">y(t) = \int \chi(t,s) f(s)\,ds.</script>
 
 <p>$\chi(t,s)$ is our first example of a response function, Green’s function, or <strong>susceptibility</strong>. On general grounds, we can say two more things about $\chi(t,s)$. First, that it is <strong>causal</strong>, meaning that, since effect follows cause:</p>
 
@@ -323,33 +326,34 @@ Calculating eigenstates and eigenenergies is one thing, but what do experimental
 
 <p>We can interpret $\chi(t)$ as the solution of \eqref{res_sho} to a $\delta$-function force at $t=0$.</p>
 
-<script type="math/tex; mode=display">\ddot \chi +\omega_0^2 \chi + \gamma \dot \chi =\frac{\delta(t)}{m}.
+<script type="math/tex; mode=display">m\ddot \chi +m\omega_0^2 \chi + \gamma \dot \chi =\delta(t).
 \label{res_chiode}</script>
 
 <p>There are at least two ways to go about finding $\chi(t)$ in this case. The first is most direct: recall that the free motion of the oscillator can be written in terms of the complex exponential $e^{-i\omega t}$, where $\omega$ satisfies</p>
 
-<script type="math/tex; mode=display">\omega^2+i\gamma\omega - \omega_0^2 =0,</script>
+<script type="math/tex; mode=display">m\omega^2+i\gamma\omega - m\omega_0^2 =0,</script>
 
 <p>so that</p>
 
-<script type="math/tex; mode=display">\omega_{\pm} = \pm \sqrt{\omega_0^2-\frac{\gamma^2}{4}}-i\gamma /2\equiv \pm\omega_1-i\gamma/2.</script>
+<script type="math/tex; mode=display">\omega_{\pm} = \pm \sqrt{\omega_0^2-\frac{\gamma^2}{4m^2}}-i\frac{\gamma}{2m} \equiv \pm\omega_1-i\frac{\gamma}{2m}.</script>
 
 <p>Since $\chi(t)=0$ for $t&lt;0$, we can get a $\delta$-functin in \eqref{res_chiode} by choosing a superposition of $e^{-i\omega_\pm t}$ such that $\chi’(0+)=m^{-1}$</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \chi(t) = \begin{cases}
 0 & t\leq 0 \\
-\frac{1}{m\omega_1}\sin(\omega_1 t )e^{-\gamma/2t} & t>0.
+\frac{1}{m\omega_1}\sin(\omega_1 t )e^{-\gamma/2mt} & t>0.
 \label{res_shogf}
 \end{cases} %]]></script>
 
 <p>The second method is to solve the equation \eqref(res_chiode) in the Fourier domain, where it becomes</p>
 
-<script type="math/tex; mode=display">\left[-\omega^2+\omega_0^2-i\gamma\omega\right]\tilde\chi(\omega) = \frac{1}{m},</script>
+<script type="math/tex; mode=display">\left[-m\omega^2+m\omega_0^2-i\gamma\omega\right]\tilde\chi(\omega) = 1,</script>
 
 <p>so that</p>
 
-<script type="math/tex; mode=display">\tilde\chi(\omega) = \frac{1}{m}\frac{1}{\omega_0^2-\omega^2-i\gamma\omega}.</script>
+<script type="math/tex; mode=display">\tilde\chi(\omega) = \frac{1}{m(\omega_0^2-\omega^2)-i\gamma\omega}.
+\label{res_chi_SHO}</script>
 
 <p>I’m going to assume that you’ve plotted the amplitude and phase of this function enough times in your life already. Fourier transforming back to the time domain</p>
 
@@ -358,19 +362,149 @@ Calculating eigenstates and eigenenergies is one thing, but what do experimental
 
 <p>The integrand has two poles in the lower half plane at $\omega_\pm$, on account of $\gamma$ being positive, which in turn follows from (or defines?) the direction of time. The fact that the frequency response is <em>analytic in the upper half plane</em> is equivalent to causality in the real time response. This is because for $t&lt;0$ we can close the contour in \eqref{res_chiFT} in the upper half plane, avoiding the poles and getting zero by Cauchy’s theorem. For $t&gt;0$ we close in the lower half plane (not forgetting the - from going the other way) and use the residue theorem to give</p>
 
-<script type="math/tex; mode=display">\chi(t) = \frac{i}{m}\left(\frac{e^{-i\omega_+ t}}{\omega_+-\omega_-} + \frac{e^{-i\omega_- t}}{\omega_--\omega_+}\right) = \frac{1}{m\omega_1}\sin(\omega_1 t )e^{-\gamma/2t} \quad  t>0,</script>
+<script type="math/tex; mode=display">\chi(t) = \frac{i}{m}\left(\frac{e^{-i\omega_+ t}}{\omega_+-\omega_-} + \frac{e^{-i\omega_- t}}{\omega_--\omega_+}\right) = \frac{1}{m\omega_1}\sin(\omega_1 t )e^{-\gamma/2mt} \quad  t>0,</script>
 
 <p>as before.</p>
+
+<h3 id="properties-of-the-susceptibility">Properties of the Susceptibility</h3>
+
+<p>(I’m going to drop the tilde from $\tilde\chi(\omega)$, as there’s no real chance of confusion.)</p>
+
+<p>We’ve already argued that causality dictates that $\chi(\omega)$ be analytic in the upper half plane. What is the implication for the response measured at <em>real</em> frequencies? Let’s split $\chi(\omega)$ into its real and imaginary parts</p>
+
+<script type="math/tex; mode=display">\chi(\omega) = \chi'(\omega) + i\chi''(\omega).</script>
+
+<p>Then analyticity in the UHP implies the <strong>Kramers–Krönig relation</strong></p>
+
+<script type="math/tex; mode=display">\chi'(\omega) = \cP \int_{-\infty}^\infty \frac{d\omega'}{\pi}\frac{\chi''(\omega)}{\omega'-\omega},</script>
+
+<p class="message">
+Check this for \eqref{res_chi_SHO}.
+</p>
+
+<p>where $\cP$ denotes the principal part. Since $\chi(t)$ is real, we have $\chi(-\omega)^*=\chi(\omega)$, so that $\chi’(\omega)$ is an even function, while $\chi’’(\omega)$ is odd.</p>
+
+<p>The real and imaginary parts encode different aspects of the response. The imaginary part is related to the power dissipated by a driving force. For $f=f_0\cos\omega t$ we have</p>
+
+<script type="math/tex; mode=display">\begin{align}
+W_\text{diss} = \langle f(t) \dot x(t)\rangle = \frac{1}{2}\omega\chi'(\omega)f_0^2.
+\end{align}</script>
+
+<p>For stability we must have $\omega\chi’(\omega)&gt;0$ (and even).</p>
+
+<p>The real part is related to the shift in the <em>energy</em> of the system in the presence of a driving force. Recalling that the applied force appears in the Hamiltonian as $-f(t)x(t)$, we find the time average</p>
+
+<script type="math/tex; mode=display">E_\text{shift} = -\langle f(t) x(t)\rangle  = -\frac{1}{2}\chi''(\omega)f_0^2</script>
+
+<p>For the damped oscillator, the sign of of $\chi’’(\omega)$ changes at resonance. The drive lowers the energy beneath the resonance, and raises it above.</p>
 
 <h3 id="mechanical-model-of-dissipation">Mechanical Model of Dissipation</h3>
 
 <p>When we move on to the quantum oscillator, we’re going to run into the problem that we only know how to describe Hamiltonian time evolution in quantum mechanics, that is, without dissipation. It’s possible to describe the damped oscillator in Hamiltonian terms at the expense of explicitly introducing the degrees of freedom that are doing the dissipating. You’ve met this in the realm of classical mechanics when you discuss the mechanical impedance of an elastic string.</p>
 
-<p>Attaching an undamped oscillator to a string gives the coupled system</p>
+<p>Attaching an undamped oscillator to a string under tension $\tau$ gives the coupled system</p>
 
 <script type="math/tex; mode=display">\begin{align}
-\ddot x +\omega_0^2 x + \gamma \dot x =\frac{1}{m}\frac{\partial u(x,t)}{\partial x}\Big|_{x=0}.
+m\ddot y +m\omega_0^2 y =\tau\frac{\partial u(x,t)}{\partial x}\Bigg|_{x=0}\nonumber\\
+\frac{\partial^2 u}{\partial x^2}-\frac{1}{c^2}\frac{\partial^2 u}{\partial t^2}=0,\quad x>0\qquad u(0,t) = y(t).
+\label{res_SHOString}
 \end{align}</script>
+
+<p>If nothing is propagating towards the oscillator from the string, only away from it, we can write</p>
+
+<script type="math/tex; mode=display">u(x,t) = y(t-x/c).
+\label{res_ret}</script>
+
+<p>This gives $\frac{\partial u(x,t)}{\partial x}\big|_{x=0} = -\dot y/c$, and hence a closed equation for $y$</p>
+
+<script type="math/tex; mode=display">\ddot y +\omega_0^2 y + \gamma \dot y =0.
+\label{res_sho2}</script>
+
+<p>with $\gamma=\tau/c$. Note that this is the impedance of the string.</p>
+
+<p>The nice thing about this model is that it is very explicit. In particular, we can see exactly where the arrow of time comes from: the assumption \eqref{res_ret}. Had we somehow arranged to have an incoming wave that matched the motion of the oscillator, we would arrive at an equation of motion for the oscillator with damping of the other sign.</p>
+
+<p>Although we’ve introduced response functions for a linear system, this isn’t a requirement (fortunately). More generally, we can ask how the (nonlinear) motion of a system is modified at first order in some perturbation – a force in the case of the oscillator. The susceptibility describes the <strong>linear response</strong> of the system. Many quantities that we meet in elementary physics such as elastic constants and conductance (electrical and thermal) are really linear response functions that represent a convenient first approximation to the true nonlinear behaviour.</p>
+
+<h3 id="finite-temperature-fluctuations">Finite Temperature Fluctuations</h3>
+
+<p>\eqref{res_ret} corresponds to a ‘zero temperature’ environment. Finite temperature corresponds to an ‘incoming’ wave describing the thermal occupation of the Fourier modes of the string, which would cause Brownian motion of the oscillator. The energy scale of this motion is $k_\text{B}T$.</p>
+
+<p>We can easily extend the earlier discussion to finite temperature by writing $u(x,t)$ in terms of components approaching and leaving the oscillator</p>
+
+<script type="math/tex; mode=display">u(x,t) = u_\text{in}(t+x/c) + u_\text{out}(t-x/c).</script>
+
+<p>The force on the oscillator is proportional to</p>
+
+<script type="math/tex; mode=display">\frac{\partial u(x,t)}{\partial x}\Bigg|_{x=0} = c^{-1}\left(u'_\text{in}(t)-u'_\text{out}(t)\right) = c^{-1}\left(2u'_\text{in}(t)-\dot y(t)\right).</script>
+
+<p>The equation of motion can then be written as</p>
+
+<script type="math/tex; mode=display">m\ddot y +m\omega_0^2 y + \gamma \dot y =f_\text{noise}(t),
+\label{res_sho2_noise}</script>
+
+<p>where $f_\text{noise}(t) = \frac{2\tau}{c}u’_\text{in}(t)$ is a random force due to thermal fluctuations. As this derivation makes clear, the noise and the damping have a common origin.</p>
+
+<p>On account of the infinite bandwidth of the string, $f_\text{noise}$ is white noise</p>
+
+<script type="math/tex; mode=display">\E\left[f_\text{noise}(t)f_\text{noise}(t')\right] = 2\gamma k_\text{B}T\delta(t-t').
+\label{res_noise_var}</script>
+
+<p>A differential equation driven by noise like \eqref{res_sho2_noise} is known as a <strong>Langevin equation</strong> in physics and as a <strong>stochastic differential equation</strong> (SDE) in mathematics.</p>
+
+<div class="message">
+<p> Actually, no self-respecting mathematician would write something like \eqref{res_sho2_noise}, implying as it does that the instantaneous acceleration of the oscillator is infinite. Physicists, on the other hand, know that this is just an approximation caused by setting certain time scales to zero.
+</p>
+
+<p>The mathematical way to write an equation like \eqref{res_sho2_noise} is as the pair of first order SDEs
+
+$$
+\begin{align}
+dy &amp;= \frac{p}{m} dt\nonumber \\
+dp &amp;= -m\left[\omega_0^2 y +\gamma p\right]dt +\sqrt{2\gamma k_\text{B}T}dW,
+\end{align}
+$$
+
+where $W$ is a <a href="https://en.wikipedia.org/wiki/Wiener_process">Wiener process</a>. Writing the equation in terms of differentials avoids the awkward subject of infinite forces.
+</p>
+</div>
+
+<p>The motion of the oscillator in response to the thermal noise can be calculated using the response function. In the frequency domain,
+\eqref{res_noise_var} is</p>
+
+<script type="math/tex; mode=display">\E\left[\tilde f_\text{noise}(\omega)\tilde f_\text{noise}(\omega')\right] = 4\pi \gamma k_\text{B}T\delta(\omega+\omega'),</script>
+
+<p>giving a power spectrum of oscillator fluctuations</p>
+
+<script type="math/tex; mode=display">\E\left[\tilde y(\omega)\tilde y(\omega')\right] = 4\pi \gamma k_\text{B}T \abs{\chi(\omega)}^2 \delta(\omega+\omega').
+\label{res_power}</script>
+
+<p>Noting that</p>
+
+<script type="math/tex; mode=display">\Im \tilde\chi(\omega) =  \frac{\gamma \omega}{(\omega_0^2-\omega^2)^2+\gamma^2\omega^2} = \gamma\omega \abs{\chi(\omega)}^2</script>
+
+<p>we can write \eqref{res_power} as</p>
+
+<script type="math/tex; mode=display">\E\left[\tilde y(\omega)\tilde y(\omega')\right] = \frac{2k_\text{B}T}{\omega} \Im\chi(\omega) (2\pi)\delta(\omega+\omega').
+\label{res_power_final}</script>
+
+<h3 id="quantum-flucutations">Quantum Flucutations</h3>
+
+<p>Quantum mechanics provides another source of fluctuations. For a single oscillator</p>
+
+<script type="math/tex; mode=display">H = \frac{p^2}{2m} + \frac{1}{2}m\omega^2 x^2,</script>
+
+<p>we have the ground state fluctuations</p>
+
+<script type="math/tex; mode=display">\bra{0} x^2 \ket{0} = \frac{\omega}{2m},</script>
+
+<p>while at finite temperature</p>
+
+<script type="math/tex; mode=display">\tr\left[\rho\, x^2\right] = \frac{\omega\coth(\beta\omega/2)}{2m}.</script>
+
+<p>where $\rho = e^{-\beta H}/Z$ is the equilibrium density matrix.</p>
+
+<p>Now what about <em>time dependent fluctuations</em>? This is what was calculated in \eqref{res_power_final} for the classical damped oscillator. A natural candidate is</p>
 
 <h3 id="response-of-the-quantum-oscillator-kubo-formula">Response of the Quantum Oscillator: Kubo Formula</h3>
 
