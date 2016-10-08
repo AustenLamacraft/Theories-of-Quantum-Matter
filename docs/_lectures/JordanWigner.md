@@ -4,6 +4,7 @@ title: The Jordan-Wigner Transformation
 author: Austen Lamacraft
 chapter: 15
 summary: Spin-1/2 XY model as a system of free fermions. Bosonization
+published: false
 ---
 
 ## Contents

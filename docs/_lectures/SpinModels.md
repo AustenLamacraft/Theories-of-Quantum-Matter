@@ -4,7 +4,7 @@ title: Spin Models
 author: Austen Lamacraft
 chapter: 4
 summary: Heisenberg model; Heisenberg chain; Magnons; Antiferromagnets; Symmetry breaking; Spin wave theory.
-
+published: true
 ---
 
 <p class="message">

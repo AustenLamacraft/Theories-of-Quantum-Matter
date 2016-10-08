@@ -3,7 +3,7 @@ layout: page
 title: Many Body Wavefunctions
 author: Austen Lamacraft
 chapter: 1
-summary: Product States. Fermi gas. Density, density matrix, and pair distribution. Quantum hall effect.
+summary: Product States. Fermi gas. Density, density matrix, and pair distribution. Quantum Hall effect.
 published: true
 ---
 <p class="message">
@@ -90,7 +90,7 @@ This also follows from taking the square modulus of \eqref{quantum_statistics_Pr
 
 $$
 \begin{align}
-P_{12}(\br_1,\br_2) &= P_1(\br_1)P_2(\br_2) \\ &\pm \left[\varphi^{}_1(\br_1)\varphi^*_2(\br_1)\varphi^{}_2(\br_2)\varphi^*_1(\br_2)+\varphi^{}_1(\br_2)\varphi^*_2(\br_1)\varphi^{}_2(\br_1)\varphi^*_1(\br_1)\right].
+P_{12}(\br_1,\br_2) &= \frac{1}{2}\left[P_1(\br_1)P_2(\br_2)+P_1(\br_2)P_2(\br_1)\right] \\ &\pm \frac{1}{2}\left[\varphi^{}_1(\br_1)\varphi^*_2(\br_1)\varphi^{}_2(\br_2)\varphi^*_1(\br_2)+\varphi^{}_1(\br_2)\varphi^*_2(\br_2)\varphi^{}_2(\br_1)\varphi^*_1(\br_1)\right].
 \end{align}
 $$
 
@@ -106,7 +106,7 @@ One dramatic illustration of this deviation from our classical intuition is prov
    \frac{1}{\sqrt{2}}\left(\ket{\text{Left}}\pm \ket{\text{Right}}\right).
  $$
 
-Applying the above reasoning leads to the surprising conclusion that there is _zero_ probability to have one photon at each output: they both go to the left or both to the right.
+ By writing down the bosonic two particle state with one particle in each of these states, we arrive at the surprising conclusion that there is _zero_ probability to have one photon at each output: they both go to the left or both to the right.
 
 
 ### Product States
@@ -122,7 +122,7 @@ where $m$ is the particle mass, and $V(\mathbf{r_{i}})$ is a potential experienc
 
 $$
  \label{quantum_statistics_disting}
- \ket{\Psi_{\alpha_{1}\alpha_{2}\cdots \alpha_{N}}}=\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{1}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{1}})
+ \ket{\Psi_{\alpha_{1}\alpha_{2}\cdots \alpha_{N}}}=\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}})
 $$
 
 (We will frequently switch between the wavefunction $\varphi(\mathbf{x})$ and bra-ket notation $\ket{\varphi}$. In the latter notation the product wavefunction in \eqref{quantum_statistics_ProductWavefunction} is written $\ket{\varphi_{1}}\ket{\varphi_{2}}$)
@@ -180,7 +180,7 @@ Let's consider perhaps the simplest many particle system one can think of: nonin
 
 $$
 	\label{quantum_statistics_spstates}
-	\varphi_{n}(x)=\frac{1}{\sqrt{L}}\exp\left(k_n x\right),
+	\varphi_{n}(x)=\frac{1}{\sqrt{L}}\exp\left(ik_n x\right),
 $$
 
 with $k_n=\frac{2\pi n}{L}$, $n\in\mathbb{Z}$. The corresponding energies are $E_{n}=\frac{k_n^2}{2m}$.
@@ -233,7 +233,7 @@ The vanishing of the wavefunction when $x_{i}=x_{j}$ is consistent with the Paul
 \eqref{3particle} generalizes for any (odd) $N$ so that the ground state Slater determinant \eqref{quantum_statistics_1ddet} is proportional to
 
 $$  
-		\Psi_0(x_1,\ldots, x_N)\prod_{i<j}^{N} \sin\left(\frac{\pi[x_{i}-x_{j}]}{L}\right). 	
+		\Psi_0(x_1,\ldots, x_N)\propto\prod_{i<j}^{N} \sin\left(\frac{\pi[x_{i}-x_{j}]}{L}\right). 	
     \label{quantum_statistics_1dFermiGS}
 $$
 
@@ -331,7 +331,7 @@ $$
 g(x,y) \equiv N\int dx_2\ldots dx_N \,\Psi^{}(x,x_2,\ldots,x_N)\Psi^{*}(y,x_2,\ldots,x_N).
 $$
 
-Note that $g(x,x) = \rho_1(x)$. The average number of particles a single particle state $\ket{\psi}$ is then
+Note that $g(x,x) = \rho_1(x)$. The average number of particles in a single particle state $\ket{\psi}$ is then
 
 $$
 \bar N_\psi = \int dx dy\, \psi^*(x)g(x,y)\psi(y).
@@ -341,7 +341,7 @@ $$
 Let's find $g(x,y)$ for the ground state of the Fermi gas
 
 $$
-g(x,y) = \frac{L}\sum_{|k|<k_\text{F}} e^{ik(x-y)} = \int_{-k_\text{F}}^{k_\text{F}} \frac{dk}{2\pi} e^{ik(x-y)} = \bar\rho \frac{\sin [k_\text{F}(x-y)]}{k_\text{F}(x-y)}
+g(x,y) = \frac{1}{L}\sum_{|k|<k_\text{F}} e^{ik(x-y)} = \int_{-k_\text{F}}^{k_\text{F}} \frac{dk}{2\pi} e^{ik(x-y)} = \bar\rho \frac{\sin [k_\text{F}(x-y)]}{k_\text{F}(x-y)}
 $$
 
 where $\bar\rho \equiv \frac{k_\text{F}}{\pi}$ is the average density. Evaluating the average number of particles in a momentum state $\ket{k}$ using \eqref{many_Nbar} then gives
@@ -367,7 +367,7 @@ The prefactor is to account for all pairs of particles.
 Starting from the Slater determinant \eqref{quantum_statistics_1ddet}, you should be able to derive
 
 $$
-\rho_2(x_1,x_2) = \bar n^2\left[1 - \left(\frac{\sin[k_\text{F}(x-y)]}{k_\text{F}(x-y)}\right)^2\right].
+\rho_2(x_1,x_2) = \bar n^2\left[1 - \left(\frac{\sin[k_\text{F}(x_1-x_2)]}{k_\text{F}(x_1-x_2)}\right)^2\right].
 $$
 
 This vanishes at $x_1=x_2$, consistent with the Pauli principle.
@@ -410,7 +410,7 @@ This mapping is quite powerful, and allows us to calculate any observable of the
 
 ## Fractional Quantum Hall Effect
 
-The Quantum Hall Effect refers to quantization of the Hall conductivity $G_{xy}= \frac{I_x}{V_y}$ into integer multiples of the __conductance quantum__ $e^2/h$. This phenomenon is obvserved in two dimensional electon gases at low temperatures in a strong magnetic field perpendicular to the plane. Some years after its discovery, the Fractional Quantum Hall Effect was observed, with $G_{xy} = \nu e^2/h$, with $\nu$ taking simple fractional values $\nu=1/3, 2/5$, etc..
+The quantum Hall effect refers to quantization of the Hall conductivity $G_{xy}= \frac{I_x}{V_y}$ into integer multiples of the __conductance quantum__ $e^2/h$. This phenomenon is obvserved in two dimensional electon gases at low temperatures in a strong magnetic field perpendicular to the plane. Some years after its discovery, the fractional quantum Hall effect was observed, with $G_{xy} = \nu e^2/h$, with $\nu$ taking simple fractional values $\nu=1/3, 2/5$, etc..
 
 These fractional values are only the tip of an iceberg of remarkable phenomena, indicating that the electrons are reorganizing into a bewildering variety of exotic states of matter, characterized by excitations with fractional charge and statistics outside the boson / fermion dichotomy discussed earlier. Even more surprisingly, our understanding of these phases rests largely on _guessing_ the right wavefunction to describe these strongly interacting systems. How is such a thing possible? As we'll see below, the wavefunction is in fact strongly constrained by the presence of the magnetic field.
 
@@ -509,7 +509,7 @@ $$
 \label{many_LLLdensity}
 $$
 
-Here $\Gamma(s,x) = \int^\infty_x t^{x-1}e^{-t}dt$ is the [incomplete gamma function](https://en.wikipedia.org/wiki/Incomplete_gamma_function).
+Here $\Gamma(s,x) = \int^\infty_x t^{s-1}e^{-t}dt$ is the [incomplete gamma function](https://en.wikipedia.org/wiki/Incomplete_gamma_function).
 
 <a name="LLLdensity"></a>
 ![]({{ site.baseurl }}/assets/LLLdensity.png)
@@ -521,14 +521,14 @@ Thus, with the potential \eqref{many_HarmonicRound}, the filled LLL is described
 
 ### The Laughlin Wavefunction
 
-The theory of the Fractional Quantum Hall Effect begins with Robert Laughlin's famous wavefunction {% cite Laughlin:1983aa %} generalizing \eqref{many_nu1}
+The theory of the fractional quantum Hall effect begins with Robert Laughlin's famous wavefunction {% cite Laughlin:1983aa %} generalizing \eqref{many_nu1}
 
 $$
 \Psi_m(z_1,\ldots, z_N) = \prod_{j<k}^N (z_j-z_k)^{m} \exp\left(-\frac{1}{4}\sum_{j=1}^N\left|z_j\right|^2\right).
 \label{many_nu}
 $$
 
-For this wavefunction to describe fermions, $m$ must be odd. Even $m$ describes bosons. I want to emphasize first that despite the superficial similarity of \eqref{many_nu1} and \eqref{many_nu}, they are very different beasts. While \eqref{many_nu} is an (antisymmetric) product state \eqref{many_nu1} is not, and indeed its expansion in product states is not known in general. Furthermore, the excitations formed by modifying this state have remarkable properties. As the abstract to Laughlin's paper puts it:
+For this wavefunction to describe fermions, $m$ must be odd. Even $m$ describes bosons. I want to emphasize first that despite the superficial similarity of \eqref{many_nu1} and \eqref{many_nu}, they are very different beasts. While \eqref{many_nu1} is an (antisymmetric) product state \eqref{many_nu} is not, and indeed its expansion in product states is not known in general. Furthermore, the excitations formed by modifying this state have remarkable properties. As the abstract to Laughlin's paper puts it:
 
 > This Letter presents variational ground-state and excited-state wave functions which describe the condensation of a two-dimensional electron gas into a new state of matter.
 
@@ -543,7 +543,13 @@ The Laughlin state \eqref{many_nu} with $m=2$ has zero interaction energy. In fa
 
 Laughlin argued that for electrons with Coulomb interaction $\Psi_{m}(z_1,\ldots, z_N)$ with $m$ odd is a good variational wavefunction. The fact that $(z_j-z_k)$ appears in a power higher than one means that the particles tend to stay away from each other more than in the $m=1$ state, thus lowering their interaction.
 
-To get more precise information about the behaviour of wavefunctions, Laughlin introduced a powerful analogy between the probability distribution $\left\|\Psi_m(z_1,\ldots, z_N)\right\|^2$ of the particles, and the Boltzmann distribution of particles in a classical 2D plasma.
+To get more precise information about the behaviour of wavefunctions, Laughlin introduced a powerful analogy between the probability distribution $\left\|\Psi_m(z_1,\ldots, z_N)\right\|^2$ of the particles, and the Boltzmann distribution of particles in a classical 2D plasma. Before doing that, it's useful to actually 'look' at a typical configuration of particles.
+
+<a name="LaughlinMC"></a>
+![]({{ site.baseurl }}/assets/LaughlinMonteCarlo.png)
+_Comparison of Monte Carlo samples from an uncorrelated (Poisson) distrubution of points (left) vs. the Laughlin probability distribution $\abs{\Psi_3(z_1,\ldots z_N)}^2$ (right){% cite Girvin:1999 %}._
+
+The striking feature of the right hand picture is the _uniformity_ of the particle distribution, in contrast with the sample of uncorrelated particles on the left. The plasma analogy helps us to understand this, and a lot more.
 
 ### The Plasma Analogy
 
@@ -597,11 +603,10 @@ $$
 \rho(\br) = \frac{1}{2\pi m}.
 $$
 
-On the basis of this approximation, we conclude that the density is fixed at $1/m$ of the value we found for the $m=1$ case, which seems reasonable. The result applies where the density is non-zero, so we get a uniform droplet as before, this time of radius $\sqrt{2N/m}$. $1/m$ is called the __filling fraction__ of the state.
+On the basis of this approximation, we conclude that the density is fixed at $1/m$ of the value we found for the $m=1$ case, which seems reasonable. The result applies where the density is non-zero, so we get a uniform droplet as before, this time of radius $\sqrt{2Nm}$. $1/m$ is called the __filling fraction__ of the state.
 
 Although we ignored the effect of summing over all configuration of the particles in the partition function (i.e. we ignored the contribution of entropy to the free energy), it turns out that this effect can be ignored in the large $N$ limit.
 
-It's useful to ask how a typical configuration of particles looks.
 
 ### Fractional Charge
 

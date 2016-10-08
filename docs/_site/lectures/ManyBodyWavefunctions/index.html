@@ -66,7 +66,7 @@
  MathJax.Hub.Config({
    TeX: { equationNumbers: { autoNumber: "all" },
           Macros: {
-          cP: '\\mathcal{P}',               
+          cP: '\\mathcal{P}',
           br: '\\mathbf{r}',
           bx: '\\mathbf{x}',
           bp: '\\mathbf{p}',
@@ -74,8 +74,8 @@
           bk: '\\mathbf{k}',
           bv: '\\mathbf{v}',
           bA: '\\mathbf{A}',
-          brN: `\\br_1, \\ldots, \\br_N`,
-          bxN: `x_1, \\ldots, x_N`,
+          brN: '\\br_1, \\ldots, \\br_N',
+          bxN: 'x_1, \\ldots, x_N',
           pop: '\\psi^{\vphantom{\dagger}}',
           pdop: '\\psi^\\dagger',
           Phop: '\\Phi^{\\vphantom{\\dagger}}',
@@ -96,7 +96,7 @@
           Re: '\\operatorname{Re}}',
           ket: ['\\lvert{#1}\\rangle',1],
           bra: ['\\langle{#1}\\rvert',1],
-          abs: ['\\lvert{#1}\\rvert',1],
+          abs: ['\\lvert{#1}\\rvert',1]
     }
   },
    extensions: ["tex2jax.js"],
@@ -157,78 +157,6 @@ $$
       
         
           <a class="sidebar-nav-item" href="/docs/lectures/SpinModels/">Spin Models</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/SecondQuantization/">A is for Annihilation</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/MoreSecondQuantization/">More Second Quantization</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/Lattice/">Lattice Models and Strong Correlation</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/BoseGas/">Bose Gas</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/FermiGas/">Fermi Gas</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/Superconductivity/">Superconductivity</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/ResponseAndCorrelation/">Response and Correlation</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/Jellium/">Jellium</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/KondoEffect/">The Kondo Effect</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/DissipationQM/">Quantum Dissipation</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/JordanWigner/">The Jordan-Wigner Transformation</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/IsingModel/">The Ising Model and Quantum Phase Transitions</a>
         
       
     
@@ -354,7 +282,7 @@ We begin our study of many body quantum mechanics by examining a number of syste
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
-P_{12}(\br_1,\br_2) &= P_1(\br_1)P_2(\br_2) \\ &\pm \left[\varphi^{}_1(\br_1)\varphi^*_2(\br_1)\varphi^{}_2(\br_2)\varphi^*_1(\br_2)+\varphi^{}_1(\br_2)\varphi^*_2(\br_1)\varphi^{}_2(\br_1)\varphi^*_1(\br_1)\right].
+P_{12}(\br_1,\br_2) &= \frac{1}{2}\left[P_1(\br_1)P_2(\br_2)+P_1(\br_2)P_2(\br_1)\right] \\ &\pm \frac{1}{2}\left[\varphi^{}_1(\br_1)\varphi^*_2(\br_1)\varphi^{}_2(\br_2)\varphi^*_1(\br_2)+\varphi^{}_1(\br_2)\varphi^*_2(\br_2)\varphi^{}_2(\br_1)\varphi^*_1(\br_1)\right].
 \end{align} %]]></script>
 
 <p>In particular, $P_{12}(\br,\br) = 0$ for fermions, and $P_{12}(\br,\br) = 2P_1(\br)P_2(\br)$ for bosons. The first result is natural from the  standpoint of the exclusion principle, while the second is perhaps more surprising. This shows that, because probabilities arise from the squares of amplitudes, identical particles in quantum mechanics are never truly independent.</p>
@@ -367,7 +295,7 @@ P_{12}(\br_1,\br_2) &= P_1(\br_1)P_2(\br_2) \\ &\pm \left[\varphi^{}_1(\br_1)\va
 
 <script type="math/tex; mode=display">\frac{1}{\sqrt{2}}\left(\ket{\text{Left}}\pm \ket{\text{Right}}\right).</script>
 
-<p>Applying the above reasoning leads to the surprising conclusion that there is <em>zero</em> probability to have one photon at each output: they both go to the left or both to the right.</p>
+<p>By writing down the bosonic two particle state with one particle in each of these states, we arrive at the surprising conclusion that there is <em>zero</em> probability to have one photon at each output: they both go to the left or both to the right.</p>
 
 <h3 id="product-states">Product States</h3>
 
@@ -379,7 +307,7 @@ P_{12}(\br_1,\br_2) &= P_1(\br_1)P_2(\br_2) \\ &\pm \left[\varphi^{}_1(\br_1)\va
 <p>where $m$ is the particle mass, and $V(\mathbf{r_{i}})$ is a potential experienced by the particles. Let’s denote the eigenstates of the single particle Hamiltonian by ${\varphi_{\alpha}(\mathbf{r})}$, and the corresponding eigenenergies by ${E_{\alpha}}$, where $\alpha$ is a shorthand for whatever quantum numbers are used to label the states. A set of labels ${\alpha_{i}}$ $i=1,2,\ldots N$ tells us the state of each of the particles. Thus we can write an eigenstate of $N$ <em>distinguishable</em> particles with energy $E=\sum_{i=1}^{N}E_{\alpha_{i}}$ as</p>
 
 <script type="math/tex; mode=display">\label{quantum_statistics_disting}
- \ket{\Psi_{\alpha_{1}\alpha_{2}\cdots \alpha_{N}}}=\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{1}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{1}})</script>
+ \ket{\Psi_{\alpha_{1}\alpha_{2}\cdots \alpha_{N}}}=\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}})</script>
 
 <p>(We will frequently switch between the wavefunction $\varphi(\mathbf{x})$ and bra-ket notation $\ket{\varphi}$. In the latter notation the product wavefunction in \eqref{quantum_statistics_ProductWavefunction} is written $\ket{\varphi_{1}}\ket{\varphi_{2}}$)</p>
 
@@ -426,7 +354,7 @@ P_{12}(\br_1,\br_2) &= P_1(\br_1)P_2(\br_2) \\ &\pm \left[\varphi^{}_1(\br_1)\va
 <p>Let’s consider perhaps the simplest many particle system one can think of: noninteracting particles on a ring. If the ring has circumference $L$, the single particle eigenstates are</p>
 
 <script type="math/tex; mode=display">\label{quantum_statistics_spstates}
-	\varphi_{n}(x)=\frac{1}{\sqrt{L}}\exp\left(k_n x\right),</script>
+	\varphi_{n}(x)=\frac{1}{\sqrt{L}}\exp\left(ik_n x\right),</script>
 
 <p>with $k_n=\frac{2\pi n}{L}$, $n\in\mathbb{Z}$. The corresponding energies are $E_{n}=\frac{k_n^2}{2m}$.</p>
 
@@ -472,7 +400,7 @@ P_{12}(\br_1,\br_2) &= P_1(\br_1)P_2(\br_2) \\ &\pm \left[\varphi^{}_1(\br_1)\va
 <p>\eqref{3particle} generalizes for any (odd) $N$ so that the ground state Slater determinant \eqref{quantum_statistics_1ddet} is proportional to</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
-\Psi_0(x_1,\ldots, x_N)\prod_{i<j}^{N} \sin\left(\frac{\pi[x_{i}-x_{j}]}{L}\right). 	
+\Psi_0(x_1,\ldots, x_N)\propto\prod_{i<j}^{N} \sin\left(\frac{\pi[x_{i}-x_{j}]}{L}\right). 	
     \label{quantum_statistics_1dFermiGS} %]]></script>
 
 <div class="message">
@@ -554,7 +482,7 @@ $$
 
 <script type="math/tex; mode=display">g(x,y) \equiv N\int dx_2\ldots dx_N \,\Psi^{}(x,x_2,\ldots,x_N)\Psi^{*}(y,x_2,\ldots,x_N).</script>
 
-<p>Note that $g(x,x) = \rho_1(x)$. The average number of particles a single particle state $\ket{\psi}$ is then</p>
+<p>Note that $g(x,x) = \rho_1(x)$. The average number of particles in a single particle state $\ket{\psi}$ is then</p>
 
 <script type="math/tex; mode=display">\bar N_\psi = \int dx dy\, \psi^*(x)g(x,y)\psi(y).
 \label{many_Nbar}</script>
@@ -562,7 +490,7 @@ $$
 <p>Let’s find $g(x,y)$ for the ground state of the Fermi gas</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
-g(x,y) = \frac{L}\sum_{|k|<k_\text{F}} e^{ik(x-y)} = \int_{-k_\text{F}}^{k_\text{F}} \frac{dk}{2\pi} e^{ik(x-y)} = \bar\rho \frac{\sin [k_\text{F}(x-y)]}{k_\text{F}(x-y)} %]]></script>
+g(x,y) = \frac{1}{L}\sum_{|k|<k_\text{F}} e^{ik(x-y)} = \int_{-k_\text{F}}^{k_\text{F}} \frac{dk}{2\pi} e^{ik(x-y)} = \bar\rho \frac{\sin [k_\text{F}(x-y)]}{k_\text{F}(x-y)} %]]></script>
 
 <p>where $\bar\rho \equiv \frac{k_\text{F}}{\pi}$ is the average density. Evaluating the average number of particles in a momentum state $\ket{k}$ using \eqref{many_Nbar} then gives</p>
 
@@ -583,7 +511,7 @@ g(x,y) = \frac{L}\sum_{|k|<k_\text{F}} e^{ik(x-y)} = \int_{-k_\text{F}}^{k_\text
 
 <p>Starting from the Slater determinant \eqref{quantum_statistics_1ddet}, you should be able to derive</p>
 
-<script type="math/tex; mode=display">\rho_2(x_1,x_2) = \bar n^2\left[1 - \left(\frac{\sin[k_\text{F}(x-y)]}{k_\text{F}(x-y)}\right)^2\right].</script>
+<script type="math/tex; mode=display">\rho_2(x_1,x_2) = \bar n^2\left[1 - \left(\frac{\sin[k_\text{F}(x_1-x_2)]}{k_\text{F}(x_1-x_2)}\right)^2\right].</script>
 
 <p>This vanishes at $x_1=x_2$, consistent with the Pauli principle.</p>
 
@@ -618,7 +546,7 @@ H = \frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + g\sum_{j<k}\delta(x_j
 
 <h2 id="fractional-quantum-hall-effect">Fractional Quantum Hall Effect</h2>
 
-<p>The Quantum Hall Effect refers to quantization of the Hall conductivity $G_{xy}= \frac{I_x}{V_y}$ into integer multiples of the <strong>conductance quantum</strong> $e^2/h$. This phenomenon is obvserved in two dimensional electon gases at low temperatures in a strong magnetic field perpendicular to the plane. Some years after its discovery, the Fractional Quantum Hall Effect was observed, with $G_{xy} = \nu e^2/h$, with $\nu$ taking simple fractional values $\nu=1/3, 2/5$, etc..</p>
+<p>The quantum Hall effect refers to quantization of the Hall conductivity $G_{xy}= \frac{I_x}{V_y}$ into integer multiples of the <strong>conductance quantum</strong> $e^2/h$. This phenomenon is obvserved in two dimensional electon gases at low temperatures in a strong magnetic field perpendicular to the plane. Some years after its discovery, the fractional quantum Hall effect was observed, with $G_{xy} = \nu e^2/h$, with $\nu$ taking simple fractional values $\nu=1/3, 2/5$, etc..</p>
 
 <p>These fractional values are only the tip of an iceberg of remarkable phenomena, indicating that the electrons are reorganizing into a bewildering variety of exotic states of matter, characterized by excitations with fractional charge and statistics outside the boson / fermion dichotomy discussed earlier. Even more surprisingly, our understanding of these phases rests largely on <em>guessing</em> the right wavefunction to describe these strongly interacting systems. How is such a thing possible? As we’ll see below, the wavefunction is in fact strongly constrained by the presence of the magnetic field.</p>
 
@@ -690,7 +618,7 @@ H = \frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + g\sum_{j<k}\delta(x_j
 <script type="math/tex; mode=display">\rho_1(z,\bar z) = \frac{e^{-|z|^2/2}}{2\pi}\sum_{n=0}^{N-1} \frac{\left|z\right|^{2n}}{2^n n!} = \frac{1}{2\pi} \frac{\Gamma(N,|z|^2/2)}{(N-1)!}.
 \label{many_LLLdensity}</script>
 
-<p>Here $\Gamma(s,x) = \int^\infty_x t^{x-1}e^{-t}dt$ is the <a href="https://en.wikipedia.org/wiki/Incomplete_gamma_function">incomplete gamma function</a>.</p>
+<p>Here $\Gamma(s,x) = \int^\infty_x t^{s-1}e^{-t}dt$ is the <a href="https://en.wikipedia.org/wiki/Incomplete_gamma_function">incomplete gamma function</a>.</p>
 
 <p><a name="LLLdensity"></a>
 <img src="/docs/assets/LLLdensity.png" alt="" />
@@ -702,13 +630,13 @@ H = \frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + g\sum_{j<k}\delta(x_j
 
 <h3 id="the-laughlin-wavefunction">The Laughlin Wavefunction</h3>
 
-<p>The theory of the Fractional Quantum Hall Effect begins with Robert Laughlin’s famous wavefunction (missing reference) generalizing \eqref{many_nu1}</p>
+<p>The theory of the fractional quantum Hall effect begins with Robert Laughlin’s famous wavefunction <a href="#Laughlin:1983aa">(Laughlin, 1983)</a> generalizing \eqref{many_nu1}</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \Psi_m(z_1,\ldots, z_N) = \prod_{j<k}^N (z_j-z_k)^{m} \exp\left(-\frac{1}{4}\sum_{j=1}^N\left|z_j\right|^2\right).
 \label{many_nu} %]]></script>
 
-<p>For this wavefunction to describe fermions, $m$ must be odd. Even $m$ describes bosons. I want to emphasize first that despite the superficial similarity of \eqref{many_nu1} and \eqref{many_nu}, they are very different beasts. While \eqref{many_nu} is an (antisymmetric) product state \eqref{many_nu1} is not, and indeed its expansion in product states is not known in general. Furthermore, the excitations formed by modifying this state have remarkable properties. As the abstract to Laughlin’s paper puts it:</p>
+<p>For this wavefunction to describe fermions, $m$ must be odd. Even $m$ describes bosons. I want to emphasize first that despite the superficial similarity of \eqref{many_nu1} and \eqref{many_nu}, they are very different beasts. While \eqref{many_nu1} is an (antisymmetric) product state \eqref{many_nu} is not, and indeed its expansion in product states is not known in general. Furthermore, the excitations formed by modifying this state have remarkable properties. As the abstract to Laughlin’s paper puts it:</p>
 
 <blockquote>
   <p>This Letter presents variational ground-state and excited-state wave functions which describe the condensation of a two-dimensional electron gas into a new state of matter.</p>
@@ -724,7 +652,13 @@ H_{\text{int}} = g\sum_{j<k}\delta(\br_j-\br_k),\qquad g>0
 
 <p>Laughlin argued that for electrons with Coulomb interaction $\Psi_{m}(z_1,\ldots, z_N)$ with $m$ odd is a good variational wavefunction. The fact that $(z_j-z_k)$ appears in a power higher than one means that the particles tend to stay away from each other more than in the $m=1$ state, thus lowering their interaction.</p>
 
-<p>To get more precise information about the behaviour of wavefunctions, Laughlin introduced a powerful analogy between the probability distribution $\left|\Psi_m(z_1,\ldots, z_N)\right|^2$ of the particles, and the Boltzmann distribution of particles in a classical 2D plasma.</p>
+<p>To get more precise information about the behaviour of wavefunctions, Laughlin introduced a powerful analogy between the probability distribution $\left|\Psi_m(z_1,\ldots, z_N)\right|^2$ of the particles, and the Boltzmann distribution of particles in a classical 2D plasma. Before doing that, it’s useful to actually ‘look’ at a typical configuration of particles.</p>
+
+<p><a name="LaughlinMC"></a>
+<img src="/docs/assets/LaughlinMonteCarlo.png" alt="" />
+<em>Comparison of Monte Carlo samples from an uncorrelated (Poisson) distrubution of points (left) vs. the Laughlin probability distribution $\abs{\Psi_3(z_1,\ldots z_N)}^2$ (right)<a href="#Girvin:1999">(Girvin, 1999)</a>.</em></p>
+
+<p>The striking feature of the right hand picture is the <em>uniformity</em> of the particle distribution, in contrast with the sample of uncorrelated particles on the left. The plasma analogy helps us to understand this, and a lot more.</p>
 
 <h3 id="the-plasma-analogy">The Plasma Analogy</h3>
 
@@ -763,11 +697,9 @@ V(\br_1,\ldots,\br_N) = -\frac{q^2}{2\pi} \sum_{j<k}\log\left|\br_j-\br_k\right|
 
 <script type="math/tex; mode=display">\rho(\br) = \frac{1}{2\pi m}.</script>
 
-<p>On the basis of this approximation, we conclude that the density is fixed at $1/m$ of the value we found for the $m=1$ case, which seems reasonable. The result applies where the density is non-zero, so we get a uniform droplet as before, this time of radius $\sqrt{2N/m}$. $1/m$ is called the <strong>filling fraction</strong> of the state.</p>
+<p>On the basis of this approximation, we conclude that the density is fixed at $1/m$ of the value we found for the $m=1$ case, which seems reasonable. The result applies where the density is non-zero, so we get a uniform droplet as before, this time of radius $\sqrt{2Nm}$. $1/m$ is called the <strong>filling fraction</strong> of the state.</p>
 
 <p>Although we ignored the effect of summing over all configuration of the particles in the partition function (i.e. we ignored the contribution of entropy to the free energy), it turns out that this effect can be ignored in the large $N$ limit.</p>
-
-<p>It’s useful to ask how a typical configuration of particles looks.</p>
 
 <h3 id="fractional-charge">Fractional Charge</h3>
 
@@ -810,7 +742,8 @@ V(\brN)=-\frac{q^2}{2\pi m}\sum_j \log\left|\br_j-\mathbf{R}\right|-\frac{q^2}{2
 <ol class="bibliography"><li><span id="Baym:1969">Baym, G. (1969). <i>Lectures on quantum mechanics</i>. WA Benjamin New York.</span></li>
 <li><span id="Girvin:1999">Girvin, S. M. (1999). The quantum Hall effect: novel excitations and broken symmetries. In <i>Aspects topologiques de la physique en basse dimension. Topological aspects of low dimensional systems</i> (pp. 53–175). Springer.</span></li>
 <li><span id="Stone:1992">Stone, M. (1992). <i>Quantum Hall Effect</i>. World Scientific.</span></li>
-<li><span id="dirac1926">Dirac, P. A. M. (1926). On the theory of quantum mechanics. <i>Proceedings of the Royal Society of London. Series A, Containing Papers of a Mathematical and Physical Character</i>, 661–677.</span></li></ol>
+<li><span id="dirac1926">Dirac, P. A. M. (1926). On the theory of quantum mechanics. <i>Proceedings of the Royal Society of London. Series A, Containing Papers of a Mathematical and Physical Character</i>, 661–677.</span></li>
+<li><span id="Laughlin:1983aa">Laughlin, R. B. (1983). Anomalous quantum Hall effect: an incompressible quantum fluid with fractionally charged excitations. <i>Physical Review Letters</i>, <i>50</i>(18), 1395.</span></li></ol>
 
 </div>
 

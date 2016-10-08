@@ -66,7 +66,7 @@
  MathJax.Hub.Config({
    TeX: { equationNumbers: { autoNumber: "all" },
           Macros: {
-          cP: '\\mathcal{P}',               
+          cP: '\\mathcal{P}',
           br: '\\mathbf{r}',
           bx: '\\mathbf{x}',
           bp: '\\mathbf{p}',
@@ -74,8 +74,8 @@
           bk: '\\mathbf{k}',
           bv: '\\mathbf{v}',
           bA: '\\mathbf{A}',
-          brN: `\\br_1, \\ldots, \\br_N`,
-          bxN: `x_1, \\ldots, x_N`,
+          brN: '\\br_1, \\ldots, \\br_N',
+          bxN: 'x_1, \\ldots, x_N',
           pop: '\\psi^{\vphantom{\dagger}}',
           pdop: '\\psi^\\dagger',
           Phop: '\\Phi^{\\vphantom{\\dagger}}',
@@ -96,7 +96,7 @@
           Re: '\\operatorname{Re}}',
           ket: ['\\lvert{#1}\\rangle',1],
           bra: ['\\langle{#1}\\rvert',1],
-          abs: ['\\lvert{#1}\\rvert',1],
+          abs: ['\\lvert{#1}\\rvert',1]
     }
   },
    extensions: ["tex2jax.js"],
@@ -160,78 +160,6 @@ $$
         
       
     
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/SecondQuantization/">A is for Annihilation</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/MoreSecondQuantization/">More Second Quantization</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/Lattice/">Lattice Models and Strong Correlation</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/BoseGas/">Bose Gas</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/FermiGas/">Fermi Gas</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/Superconductivity/">Superconductivity</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/ResponseAndCorrelation/">Response and Correlation</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/Jellium/">Jellium</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/KondoEffect/">The Kondo Effect</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/DissipationQM/">Quantum Dissipation</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/JordanWigner/">The Jordan-Wigner Transformation</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/IsingModel/">The Ising Model and Quantum Phase Transitions</a>
-        
-      
-    
 
     <!-- The code below is used for manually entered links  -->
 
@@ -262,7 +190,7 @@ $$
         <div class="page">
   <h1 class="page-title">The Elastic Chain</h1>
   <p class="message">
-In this lecture we discuss a very simple many body system in which particles are coupled by Hooke's Law springs. Nevertheless, the quantization of this system has a lot to teach us about the appearance of <strong>collective excitations</strong>. Introducing anharmonicity causes these excitations to interact.
+In this lecture we discuss a very simple many body system in which particles are coupled by Hooke's Law springs. Nevertheless, the quantization of this system has a lot to teach us about the appearance of <strong>collective excitations</strong>.
 </p>
 
 <h2 class="no_toc" id="contents">Contents</h2>
@@ -283,7 +211,16 @@ In this lecture we discuss a very simple many body system in which particles are
       <li><a href="#position-and-density-fluctuations" id="markdown-toc-position-and-density-fluctuations">Position and Density Fluctuations</a></li>
     </ul>
   </li>
-  <li><a href="#fourier-review" id="markdown-toc-fourier-review">Fourier review</a></li>
+  <li><a href="#fourier-review" id="markdown-toc-fourier-review">Fourier review</a>    <ul>
+      <li><a href="#discrete-fourier-transform" id="markdown-toc-discrete-fourier-transform">Discrete Fourier Transform</a></li>
+      <li><a href="#ntoinfty-limit" id="markdown-toc-ntoinfty-limit">$N\to\infty$ limit</a></li>
+      <li><a href="#ntoinfty-with-fj--fjln" id="markdown-toc-ntoinfty-with-fj--fjln">$N\to\infty$, with $f_j = f(jL/N)$,</a></li>
+      <li><a href="#ltoinfty" id="markdown-toc-ltoinfty">$L\to\infty$</a></li>
+      <li><a href="#properties-of-the-fourier-transform" id="markdown-toc-properties-of-the-fourier-transform">Properties of the Fourier Transform</a></li>
+      <li><a href="#fourier-transforms-of-products" id="markdown-toc-fourier-transforms-of-products">Fourier Transforms of Products</a></li>
+      <li><a href="#higher-dimensions" id="markdown-toc-higher-dimensions">Higher dimensions</a></li>
+    </ul>
+  </li>
   <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
 
@@ -720,10 +657,159 @@ rho_k$, leaving $\left|\rho_k\right|^2$ (proportional to the intensity measured 
 
 <h2 id="fourier-review">Fourier review</h2>
 
-<p>Discrete FT to Fourier series to Fourier transform.</p>
+<p>This is a good place to collect some facts about Fourier transforms. We start from the <a href="https://en.wikipedia.org/wiki/Discrete_Fourier_transform">discrete Fourier transform</a> (DFT), which is a change of basis in a finite dimensional space. This is what we used in discussing the chain. There are then two ways to pass to the infinite continuous case described by the Fourier transform.</p>
 
-<p>This is a good excercise in writing things in Fourier modes
-Could compute phonon lifetime using Golden Rule</p>
+<h3 id="discrete-fourier-transform">Discrete Fourier Transform</h3>
+
+<p>For a vector $x_j = 1,\ldots N$ ($N$ taken to be odd), we define the DFT by</p>
+
+<script type="math/tex; mode=display">F_n = \sum_1^N f_j e^{-i\eta_n j},
+\label{coll_DFT}</script>
+
+<p>where $\eta_n\equiv \frac{2\pi n}{N}$, and $n = -(N-1)/2,\ldots, (N-1)/2$. The key to inverting \eqref{coll_DFT} is the observation</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\sum_{n=-(N-1)/2}^{(N-1)/2} e^{i\eta_n j} = \begin{cases}
+0 & j\neq 0 \mod N\\
+N & j = 0 \mod N.
+\label{coll_DFTIdent}
+\end{cases} %]]></script>
+
+<p>This gives</p>
+
+<script type="math/tex; mode=display">f_j = \frac{1}{N}\sum_{n=-(N-1)/2}^{(N-1)/2}  F_n e^{i\eta_n j}.
+\label{coll_IDFT}</script>
+
+<p>A more democratic definition would have $1/\sqrt{N}$ in both definitions \eqref{coll_DFT} and \eqref{coll_IDFT}. This would allow us to regard the DFT as a basis change to an orthonormal basis of vectors $e^(n)_j = \frac{e^{i\eta_n j}}{\sqrt{N}}$, and both the DFT and its inverse would be unitary transformations.</p>
+
+<h3 id="ntoinfty-limit">$N\to\infty$ limit</h3>
+
+<p>In this limit we the $\eta_n$ values become dense in the range $(-\pi,\pi]$, with separation $\Delta \eta = 2\pi/N$, and we replace the sum in the inverse DFT \eqref{coll_IDFT} by an integral according to the prescription</p>
+
+<script type="math/tex; mode=display">\sum_{|n| \leq (N-1)/2} \left(\cdots\right) \xrightarrow{N\to\infty} N \int_{-\pi}^\pi \frac{d\eta}{2\pi}\left(\cdots\right),</script>
+
+<p>giving</p>
+
+<script type="math/tex; mode=display">f_j = \int_{-\pi}^\pi \frac{d\eta}{2\pi}\,F(\eta) e^{i\eta j}.</script>
+
+<h3 id="ntoinfty-with-fj--fjln">$N\to\infty$, with $f_j = f(jL/N)$,</h3>
+
+<p>Alternatively, regard the $N\to\infty$ limit as sampling a function $f(x)$ ever more finely in the range (0,L]. Now it’s the DFT, rather than the inverse, that becomes an integral</p>
+
+<script type="math/tex; mode=display">\tilde f_k \equiv \int_0^L f(x) e^{-ik_n x}\,dx,</script>
+
+<p>where $k_n =2\pi n/L$. Note that $k_n x = \eta_n j$. The pair of transformations is now</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\tilde f_k & = \int_0^L f(x) e^{-ik_n x}\nonumber\\
+f(x) &= \frac{1}{L}\sum_k \tilde f_k e^{ik_n x}\,dx.
+\label{coll_FTSeries}
+\end{align} %]]></script>
+
+<p>This is the conventional form of the Fourier series for a function with period $L$.</p>
+
+<p>With this definition $\tilde f_k$ has an extra dimension of distance (on account of the integral), which gets removed by the $1/L$ in the inverse transform.</p>
+
+<p>The analog of the identity \eqref{coll_DFTIdent} is</p>
+
+<script type="math/tex; mode=display">\frac{1}{L}\sum_k e^{ik x} = \delta_L(x),</script>
+
+<p>where $\delta_L(x)$ is an $L$-periodic version of the $\delta$-function.</p>
+
+<h3 id="ltoinfty">$L\to\infty$</h3>
+
+<p>Finally we arrive at the Fourier transform, where we take $L\to\infty$, so that the inverse transform in \eqref{coll_FTSeries} becomes an integral too</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\tilde f(k) & = \int_{-\infty}^\infty f(x) e^{-ik_n x}\,dx\nonumber\\
+f(x) &= \int_{-\infty}^\infty \tilde f(k) e^{ik_n x}\,\frac{dk}{2\pi}.
+\label{coll_FTTrans}
+\end{align} %]]></script>
+
+<p>My preference is for taking this limit at the last possible moment, that is, sticking with discrete Fourier sums for as long as possible. There are some good(ish) reasons for this</p>
+
+<ol>
+  <li>
+    <p>Writing $\sum_k$ is easier than $L\int \frac{dk}{2\pi}$, because the $k_n = 2\pi n/L$ can be left implicit.</p>
+  </li>
+  <li>
+    <p>Leaving $k$ as a subsript means we don’t need the tilde to distinguish $f(x)$ and $f_k$.</p>
+  </li>
+  <li>
+    <p>There are times where taking the limit leads to a divergent integral, while the sums remain finite. This almost always tells us that there is something interesting going on when we are trying to pass to an infinite system.</p>
+  </li>
+</ol>
+
+<h3 id="properties-of-the-fourier-transform">Properties of the Fourier Transform</h3>
+
+<p>Here are some properties that hold for all of the above.</p>
+
+<ol>
+  <li>
+    <p>If $f(x)$ is real $f_k = \left[f_{-k}\right]^*$.</p>
+  </li>
+  <li>
+    <p>If $f(x)$ is even, $f_k$ is even.</p>
+  </li>
+  <li>
+    <p>(Ergo) if $f(x)$ is real and even, so is $f_k$.</p>
+  </li>
+</ol>
+
+<h3 id="fourier-transforms-of-products">Fourier Transforms of Products</h3>
+
+<p>Frequently we have to transform products, so we use the <a href="https://en.wikipedia.org/wiki/Convolution_theorem">convolution theorem</a></p>
+
+<script type="math/tex; mode=display">f(x)g(x) = \frac{1}{L^2}\sum_{k,k'}  f_k  g_k = \frac{1}{L}\sum_q \left(\frac{1}{L}\sum_k  f_k  g_{q-k} \right)e^{iqx},</script>
+
+<p>which shows us that</p>
+
+<script type="math/tex; mode=display">f(x)g(x) \stackrel{\text{FT}}{\longleftrightarrow} \frac{1}{L}\sum_k  f_k  g_{q-k},</script>
+
+<p>the latter being a discrete convolution.</p>
+
+<p>Frequently we’ll have to calculate integrals of such products. I record some examples to give you the general idea</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\int_{0}^L f(x)g(x)\,dx &= \frac{1}{L}\sum_k  f_k  g_{-k}\nonumber\\
+\int_{0}^L f'(x)g'(x)\,dx &= \frac{1}{L}\sum_k k^2 f_k  g_{-k}\nonumber\\
+\int_{0}^L f(x)g(x)h(x)\,dx &=  \frac{1}{L^2}\sum_{\substack{k_1,k_2,k_3 \\ k_1+k_2+k_2=0}}  f_{k_1} g_{k_2} h_{k_3}\nonumber\\
+\int_0^\infty  \phi(x)V(x-y)\phi(y)\,dx \,dy &= \frac{1}{L}\sum_{q}  \phi_{-q} V_q \phi_q
+\label{coll_FTExamples}
+\end{align} %]]></script>
+
+<p>Note that you can be guided to the right number of factors of $1/L$ by dimensional considerations, or from the number of ‘free’ sums over wavevectors.</p>
+
+<p>Finally, we often encounter the situation where we have two (or more) arguments, but there is only dependence on the difference, for example</p>
+
+<script type="math/tex; mode=display">F(x,x') = f(x-x').</script>
+
+<p>In this case</p>
+
+<script type="math/tex; mode=display">F_{k,k'} = f_k\delta_{k,-k'}.</script>
+
+<p>In the $L\to\infty$ limit this is</p>
+
+<script type="math/tex; mode=display">\tilde F(k,k') = \tilde f(k) (2\pi)\delta(k+k').</script>
+
+<p>$(2\pi)\delta(k+k’)$ is the $L\to\infty$ limit of $L\delta_{k,-k’}$ as</p>
+
+<script type="math/tex; mode=display">\frac{1}{L}\sum_k L\delta_k \xrightarrow{L\to\infty} \int_{-\infty}^\infty \frac{dk}{2\pi} 2\pi \delta(k)</script>
+
+<p>With practice, you will find you are able to write down the right hand sides of expressions like \eqref{coll_FTExamples} without too much difficulty.</p>
+
+<h3 id="higher-dimensions">Higher dimensions</h3>
+
+<p>This all generalizes to higher dimensions straightforwardly. For example</p>
+
+<script type="math/tex; mode=display">\frac{1}{L^d}\sum_\bk (\cdots) \xrightarrow{L\to\infty} \int (\cdots) \frac{d\bk}{(2\pi)^d}</script>
+
+<p class="message">
+Practice writing out \eqref{coll_FTExamples} in $d$ dimensions.
+</p>
 
 <h2 id="references">References</h2>
 

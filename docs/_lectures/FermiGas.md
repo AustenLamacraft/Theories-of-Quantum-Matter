@@ -4,6 +4,7 @@ title: Fermi Gas
 author: Austen Lamacraft
 chapter: 9
 summary: Interactions described by perturbation theory. Quasiparticles. Landau Fermi liquid.
+published: false
 ---
 
 ## Contents

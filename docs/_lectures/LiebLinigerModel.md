@@ -4,6 +4,7 @@ title: The Lieb-Liniger Model
 author: Austen Lamacraft
 chapter: 2
 summary: Bethe's wave function. The Bethe equations. Excited states.
+published: true
 ---
 
 <p class="message">

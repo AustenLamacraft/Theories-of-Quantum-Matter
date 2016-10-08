@@ -29,6 +29,9 @@ collections:
   problems:
     output: true
     permalink: /problems/:path/
+  drafts:
+    output: true
+    permalink: /drafts/:path/
 
 # Markdown specs
 markdown: kramdown

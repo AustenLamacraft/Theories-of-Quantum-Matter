@@ -4,10 +4,11 @@ title: The Elastic Chain
 author: Austen Lamacraft
 chapter: 3
 summary: Quantizing a chain. Ground state displacement fluctuations.
+published: true
 ---
 
 <p class="message">
-In this lecture we discuss a very simple many body system in which particles are coupled by Hooke's Law springs. Nevertheless, the quantization of this system has a lot to teach us about the appearance of <strong>collective excitations</strong>. Introducing anharmonicity causes these excitations to interact.
+In this lecture we discuss a very simple many body system in which particles are coupled by Hooke's Law springs. Nevertheless, the quantization of this system has a lot to teach us about the appearance of <strong>collective excitations</strong>.
 </p>
 
 ## Contents
@@ -579,10 +580,178 @@ Thus quantum fluctuations replace the Bragg peaks, an indicator of crystalline o
 
 ## Fourier review
 
-Discrete FT to Fourier series to Fourier transform.
+This is a good place to collect some facts about Fourier transforms. We start from the [discrete Fourier transform](https://en.wikipedia.org/wiki/Discrete_Fourier_transform) (DFT), which is a change of basis in a finite dimensional space. This is what we used in discussing the chain. There are then two ways to pass to the infinite continuous case described by the Fourier transform.
 
-This is a good excercise in writing things in Fourier modes
-Could compute phonon lifetime using Golden Rule
+### Discrete Fourier Transform
+
+For a vector $x_j = 1,\ldots N$ ($N$ taken to be odd), we define the DFT by
+
+$$
+F_n = \sum_1^N f_j e^{-i\eta_n j},
+\label{coll_DFT}
+$$
+
+where $\eta_n\equiv \frac{2\pi n}{N}$, and $n = -(N-1)/2,\ldots, (N-1)/2$. The key to inverting \eqref{coll_DFT} is the observation
+
+$$
+\sum_{n=-(N-1)/2}^{(N-1)/2} e^{i\eta_n j} = \begin{cases}
+0 & j\neq 0 \mod N\\
+N & j = 0 \mod N.
+\label{coll_DFTIdent}
+\end{cases}
+$$
+
+This gives
+
+$$
+f_j = \frac{1}{N}\sum_{n=-(N-1)/2}^{(N-1)/2}  F_n e^{i\eta_n j}.
+\label{coll_IDFT}
+$$
+
+A more democratic definition would have $1/\sqrt{N}$ in both definitions \eqref{coll_DFT} and \eqref{coll_IDFT}. This would allow us to regard the DFT as a basis change to an orthonormal basis of vectors $e^(n)_j = \frac{e^{i\eta_n j}}{\sqrt{N}}$, and both the DFT and its inverse would be unitary transformations.
+
+### $N\to\infty$ limit
+
+In this limit we the $\eta_n$ values become dense in the range $(-\pi,\pi]$, with separation $\Delta \eta = 2\pi/N$, and we replace the sum in the inverse DFT \eqref{coll_IDFT} by an integral according to the prescription
+
+$$
+\sum_{|n| \leq (N-1)/2} \left(\cdots\right) \xrightarrow{N\to\infty} N \int_{-\pi}^\pi \frac{d\eta}{2\pi}\left(\cdots\right),
+$$
+
+giving
+
+$$
+f_j = \int_{-\pi}^\pi \frac{d\eta}{2\pi}\,F(\eta) e^{i\eta j}.
+$$
+
+### $N\to\infty$, with $f_j = f(jL/N)$,
+
+Alternatively, regard the $N\to\infty$ limit as sampling a function $f(x)$ ever more finely in the range (0,L]. Now it's the DFT, rather than the inverse, that becomes an integral
+
+
+$$
+\tilde f_k \equiv \int_0^L f(x) e^{-ik_n x}\,dx,
+$$
+
+where $k_n =2\pi n/L$. Note that $k_n x = \eta_n j$. The pair of transformations is now
+
+$$
+\begin{align}
+\tilde f_k & = \int_0^L f(x) e^{-ik_n x}\nonumber\\
+f(x) &= \frac{1}{L}\sum_k \tilde f_k e^{ik_n x}\,dx.
+\label{coll_FTSeries}
+\end{align}
+$$
+
+This is the conventional form of the Fourier series for a function with period $L$.
+
+With this definition $\tilde f_k$ has an extra dimension of distance (on account of the integral), which gets removed by the $1/L$ in the inverse transform.
+
+The analog of the identity \eqref{coll_DFTIdent} is
+
+$$
+ \frac{1}{L}\sum_k e^{ik x} = \delta_L(x),
+$$
+
+where $\delta_L(x)$ is an $L$-periodic version of the $\delta$-function.
+
+### $L\to\infty$
+
+Finally we arrive at the Fourier transform, where we take $L\to\infty$, so that the inverse transform in \eqref{coll_FTSeries} becomes an integral too
+
+$$
+\begin{align}
+\tilde f(k) & = \int_{-\infty}^\infty f(x) e^{-ik_n x}\,dx\nonumber\\
+f(x) &= \int_{-\infty}^\infty \tilde f(k) e^{ik_n x}\,\frac{dk}{2\pi}.
+\label{coll_FTTrans}
+\end{align}
+$$
+
+My preference is for taking this limit at the last possible moment, that is, sticking with discrete Fourier sums for as long as possible. There are some good(ish) reasons for this
+
+1. Writing $\sum_k$ is easier than $L\int \frac{dk}{2\pi}$, because the $k_n = 2\pi n/L$ can be left implicit.
+
+2. Leaving $k$ as a subsript means we don't need the tilde to distinguish $f(x)$ and $f_k$.
+
+3. There are times where taking the limit leads to a divergent integral, while the sums remain finite. This almost always tells us that there is something interesting going on when we are trying to pass to an infinite system.
+
+### Properties of the Fourier Transform
+
+Here are some properties that hold for all of the above.
+
+1. If $f(x)$ is real $f_k = \left[f_{-k}\right]^*$.
+
+2. If $f(x)$ is even, $f_k$ is even.
+
+3. (Ergo) if $f(x)$ is real and even, so is $f_k$.
+
+### Fourier Transforms of Products
+
+Frequently we have to transform products, so we use the [convolution theorem](https://en.wikipedia.org/wiki/Convolution_theorem)
+
+$$
+f(x)g(x) = \frac{1}{L^2}\sum_{k,k'}  f_k  g_k = \frac{1}{L}\sum_q \left(\frac{1}{L}\sum_k  f_k  g_{q-k} \right)e^{iqx},
+$$
+
+which shows us that
+
+$$
+f(x)g(x) \stackrel{\text{FT}}{\longleftrightarrow} \frac{1}{L}\sum_k  f_k  g_{q-k},
+$$
+
+the latter being a discrete convolution.
+
+Frequently we'll have to calculate integrals of such products. I record some examples to give you the general idea
+
+$$
+\begin{align}
+\int_{0}^L f(x)g(x)\,dx &= \frac{1}{L}\sum_k  f_k  g_{-k}\nonumber\\
+\int_{0}^L f'(x)g'(x)\,dx &= \frac{1}{L}\sum_k k^2 f_k  g_{-k}\nonumber\\
+\int_{0}^L f(x)g(x)h(x)\,dx &=  \frac{1}{L^2}\sum_{\substack{k_1,k_2,k_3 \\ k_1+k_2+k_2=0}}  f_{k_1} g_{k_2} h_{k_3}\nonumber\\
+\int_0^\infty  \phi(x)V(x-y)\phi(y)\,dx \,dy &= \frac{1}{L}\sum_{q}  \phi_{-q} V_q \phi_q
+\label{coll_FTExamples}
+\end{align}
+$$
+
+Note that you can be guided to the right number of factors of $1/L$ by dimensional considerations, or from the number of 'free' sums over wavevectors.
+
+Finally, we often encounter the situation where we have two (or more) arguments, but there is only dependence on the difference, for example
+
+$$
+F(x,x') = f(x-x').
+$$
+
+In this case
+
+$$
+F_{k,k'} = f_k\delta_{k,-k'}.
+$$
+
+In the $L\to\infty$ limit this is
+
+$$
+\tilde F(k,k') = \tilde f(k) (2\pi)\delta(k+k').
+$$
+
+$(2\pi)\delta(k+k')$ is the $L\to\infty$ limit of $L\delta_{k,-k'}$ as
+
+$$
+\frac{1}{L}\sum_k L\delta_k \xrightarrow{L\to\infty} \int_{-\infty}^\infty \frac{dk}{2\pi} 2\pi \delta(k)
+$$
+
+With practice, you will find you are able to write down the right hand sides of expressions like \eqref{coll_FTExamples} without too much difficulty.
+
+### Higher dimensions
+
+This all generalizes to higher dimensions straightforwardly. For example
+
+$$
+\frac{1}{L^d}\sum_\bk (\cdots) \xrightarrow{L\to\infty} \int (\cdots) \frac{d\bk}{(2\pi)^d}
+$$
+
+<p class="message">
+Practice writing out \eqref{coll_FTExamples} in $d$ dimensions.
+</p>
 
 References
 ----------

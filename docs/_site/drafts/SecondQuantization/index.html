@@ -3,7 +3,7 @@
 
   <head>
   <!-- Canonical link to help search engines -->
-  <link rel="canonical" href="/docs/lectures/MoreSecondQuantization/"/>
+  <link rel="canonical" href="/docs/drafts/SecondQuantization/"/>
 
   <!-- Basic meta elements -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
 
   <!--   Dublin Core metadata for Zotero -->
-  <meta name="DC.title" content="More Second Quantization" />
+  <meta name="DC.title" content="A is for Annihilation" />
   <meta name="DC.creator" content="Austen Lamacraft" />
   <meta name="DC.contributor" content="" />
   <meta name="DC.date" content="" />
@@ -23,11 +23,11 @@
     <!-- Open Graph metadata -->
 
     
-    <meta property="og:title" content="More Second Quantization"/>
+    <meta property="og:title" content="A is for Annihilation"/>
     <meta property="og:description" content="An Ed edition">
     <meta property="fb:admins" content="elotroalex"/>
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/MoreSecondQuantization/"/>
+    <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/drafts/SecondQuantization/"/>
     <meta property="fb:app_id" content="589495744558280"/>
     <meta property="og:image" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/public/open-graph-logo.png"/>
     <meta property="og:image:width" content="200" />
@@ -36,7 +36,7 @@
 
   <title>
     
-      More Second Quantization
+      A is for Annihilation
     
   </title>
 
@@ -66,7 +66,7 @@
  MathJax.Hub.Config({
    TeX: { equationNumbers: { autoNumber: "all" },
           Macros: {
-          cP: '\\mathcal{P}',               
+          cP: '\\mathcal{P}',
           br: '\\mathbf{r}',
           bx: '\\mathbf{x}',
           bp: '\\mathbf{p}',
@@ -74,8 +74,8 @@
           bk: '\\mathbf{k}',
           bv: '\\mathbf{v}',
           bA: '\\mathbf{A}',
-          brN: `\\br_1, \\ldots, \\br_N`,
-          bxN: `x_1, \\ldots, x_N`,
+          brN: '\\br_1, \\ldots, \\br_N',
+          bxN: 'x_1, \\ldots, x_N',
           pop: '\\psi^{\vphantom{\dagger}}',
           pdop: '\\psi^\\dagger',
           Phop: '\\Phi^{\\vphantom{\\dagger}}',
@@ -96,7 +96,7 @@
           Re: '\\operatorname{Re}}',
           ket: ['\\lvert{#1}\\rangle',1],
           bra: ['\\langle{#1}\\rvert',1],
-          abs: ['\\lvert{#1}\\rvert',1],
+          abs: ['\\lvert{#1}\\rvert',1]
     }
   },
    extensions: ["tex2jax.js"],
@@ -160,82 +160,10 @@ $$
         
       
     
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/SecondQuantization/">A is for Annihilation</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item active" href="/docs/lectures/MoreSecondQuantization/">More Second Quantization</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/Lattice/">Lattice Models and Strong Correlation</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/BoseGas/">Bose Gas</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/FermiGas/">Fermi Gas</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/Superconductivity/">Superconductivity</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/ResponseAndCorrelation/">Response and Correlation</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/Jellium/">Jellium</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/KondoEffect/">The Kondo Effect</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/DissipationQM/">Quantum Dissipation</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/JordanWigner/">The Jordan-Wigner Transformation</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/docs/lectures/IsingModel/">The Ising Model and Quantum Phase Transitions</a>
-        
-      
-    
 
     <!-- The code below is used for manually entered links  -->
 
-    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/MoreSecondQuantization/">Annotate me</a>
+    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://tqm.usertest.mws3.csx.cam.ac.uk/docs/drafts/SecondQuantization/">Annotate me</a>
   </nav>
 
   <div class="sidebar-item">
@@ -260,29 +188,55 @@ $$
 
       <div class="container content" id="main">
         <div class="page">
-  <h1 class="page-title">More Second Quantization</h1>
-  <h2 class="no_toc" id="contents">Contents</h2>
+  <h1 class="page-title">A is for Annihilation</h1>
+  <p class="message">
+We have seen that product states can be described in terms of their occupation numbers. We now introduce a language to describe many body states, and the operators that act on them, that is adapted to this description. This method of <strong> second quantization </strong> represents the beginning of the field theoretic description of many body systems.
+</p>
+
+<h2 class="no_toc" id="contents">Contents</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#density-matrix-and-correlation-functions" id="markdown-toc-density-matrix-and-correlation-functions">Density Matrix and Correlation Functions</a></li>
-  <li><a href="#second-quantized-hamiltonians" id="markdown-toc-second-quantized-hamiltonians">Second Quantized Hamiltonians</a></li>
-  <li><a href="#when-perturbations-attack-i" id="markdown-toc-when-perturbations-attack-i"><em>When Perturbations Attack I</em></a></li>
-  <li><a href="#hartree--fock" id="markdown-toc-hartree--fock">Hartree–Fock</a></li>
+  <li><a href="#recap-product-states" id="markdown-toc-recap-product-states">Recap: Product States</a></li>
+  <li><a href="#creation-and-annihilation-operators" id="markdown-toc-creation-and-annihilation-operators">Creation and Annihilation Operators</a></li>
+  <li><a href="#the-case-of-fermions" id="markdown-toc-the-case-of-fermions">The Case of Fermions</a></li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
+
+<p>Reading: <a href="#Baym:1969">(Baym, 1969)</a>, <a href="#Nazarov:2013">(Nazarov &amp; Danon, 2013)</a>.</p>
 
 <hr />
 
-<h2 id="density-matrix-and-correlation-functions">Density Matrix and Correlation Functions</h2>
+<h2 id="recap-product-states">Recap: Product States</h2>
 
-<h2 id="second-quantized-hamiltonians">Second Quantized Hamiltonians</h2>
+<p>Remember that in <a href="/docs/lectures/ManyBodyWavefunctions/">Lecture 1</a> we saw that a normalized product state of $M$ bosons occupying orthonormal states $\varphi_{\alpha_n}(\br)$ $n=1,\ldots, M$ is</p>
 
-<p>Example of Lieb–Liniger Hamiltonian that we have met before.</p>
+<script type="math/tex; mode=display">\Psi^{\text{S}}_{\alpha_{1}\alpha_{2}\cdots\alpha_{M}}(\br_1,\ldots,\br_M)=\sqrt{\frac{M!}{\prod_{\alpha}N_{\alpha}!}}\mathcal{S}\,\varphi_{\alpha_{1}}(\mathbf{r}_{1})\varphi_{\alpha_{2}}(\mathbf{r}_{2})\cdots\varphi_{\alpha_{M}}(\mathbf{r}_{M}),</script>
 
-<h2 id="when-perturbations-attack-i"><em>When Perturbations Attack I</em></h2>
+<p>where</p>
 
-<h2 id="hartree--fock">Hartree–Fock</h2>
+<script type="math/tex; mode=display">\label{quantum_statistics_SymAntisym}
+   \mathcal{S}=\frac{1}{N!}\sum_{P} P</script>
 
-<p>Discuss fermionic energies in HF approx</p>
+<p>is the operation of symmetrization. The normalization factor involves the <strong>occupation numbers</strong> ${N_{\alpha}}$ giving the number of particles in state $\alpha$.</p>
+
+<p>Product states and matrix elements.</p>
+
+<p>Hark back to quantization of the elastic chain. We identify those with bosons</p>
+
+<h2 id="creation-and-annihilation-operators">Creation and Annihilation Operators</h2>
+
+<p>Our discussion of the elastic chain</p>
+
+<h2 id="the-case-of-fermions">The Case of Fermions</h2>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="Baym:1969">Baym, G. (1969). <i>Lectures on quantum mechanics</i>. WA Benjamin New York.</span></li>
+<li><span id="Nazarov:2013">Nazarov, Y. V., &amp; Danon, J. (2013). <i>Advanced Quantum Mechanics: A Practical Guide</i>. Cambridge University Press.</span></li></ol>
+
+<p><em>Possible pedagogical approach – state conditions for CCR and CAR algebras and let students figure out correspondence</em>.</p>
+
+<p>## Creation and Annihilation Operators</p>
 
 </div>
 

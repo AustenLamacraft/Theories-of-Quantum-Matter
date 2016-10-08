@@ -19,3 +19,7 @@ summary: Fermi gas; Superconductivity; Response and Correlation; Jellium.
 Chevy's wavefunction. Polaron residue
 
 ## Price's Inequality
+
+## Density Response of a Fermi Gas
+
+## Normal modes for the oscillator on a string.

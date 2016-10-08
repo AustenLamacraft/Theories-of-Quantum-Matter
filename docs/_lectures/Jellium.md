@@ -4,7 +4,7 @@ title: Jellium
 author: Austen Lamacraft
 chapter: 11
 summary: Ground state energy. Hubbard--Stratonovich transformation
-
+published: false
 ---
 
 ## Contents

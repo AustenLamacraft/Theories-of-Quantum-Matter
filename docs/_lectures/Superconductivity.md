@@ -4,6 +4,7 @@ title: Superconductivity
 author: Austen Lamacraft
 chapter: 10
 summary: Cooper's problem. BCS theory. The BCS-BEC crossover.
+published: false
 ---
 
 ## Contents
