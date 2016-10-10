@@ -88,7 +88,10 @@
           bdop: 'b^\\dagger',
           cop: 'c^{\\vphantom{\\dagger}}',
           cdop: 'c^\\dagger',
+          Nop:  '\\mathsf{N}^{\\vphantom{\\dagger}}',
           tr: '\\operatorname{tr}\\nolimits',
+          det: '\\operatorname{det}\\nolimits',
+          perm: '\\operatorname{perm}\\nolimits',
           sgn: '\\operatorname{sgn}',
           E: '\\operatorname{\\mathbb{E}}',
           Var: '\\operatorname{\\mathbb{Var}}',
@@ -311,7 +314,9 @@ P_{12}(\br_1,\br_2) &= \frac{1}{2}\left[P_1(\br_1)P_2(\br_2)+P_1(\br_2)P_2(\br_1
 
 <p>(We will frequently switch between the wavefunction $\varphi(\mathbf{x})$ and bra-ket notation $\ket{\varphi}$. In the latter notation the product wavefunction in \eqref{quantum_statistics_ProductWavefunction} is written $\ket{\varphi_{1}}\ket{\varphi_{2}}$)</p>
 
-<p>A general state will be expressed as a superposition of such states, of course. As we’ve just discussed, however, we should really be dealing with a totally symmetric or totally antisymmetric wavefunction, depending on whether our identical particles are bosons or fermions. To write these down we introduce the operators of <em>symmetrization</em> and <em>antisymmetrization</em></p>
+<p>Such states are called <strong>product states</strong>. A general state will be expressed as a superposition of product states: they are special states which provide a frequently convenient basis.</p>
+
+<p>As we’ve just discussed, however, we should really be dealing with a totally symmetric or totally antisymmetric wavefunction, depending on whether our identical particles are bosons or fermions. To write these down we introduce the operators of <em>symmetrization</em> and <em>antisymmetrization</em></p>
 
 <script type="math/tex; mode=display">\label{quantum_statistics_SymAntisym}
    \mathcal{S}=\frac{1}{N!}\sum_{P} P, \qquad \mathcal{A}=\frac{1}{N!}\sum_{P} \sgn(P)P</script>
@@ -327,7 +332,7 @@ P_{12}(\br_1,\br_2) &= \frac{1}{2}\left[P_1(\br_1)P_2(\br_2)+P_1(\br_2)P_2(\br_1
 
 <p>The normalization factors yield normalized wavefunctions <em>if</em> the single particle state $\ket{\varphi_\alpha}$ are orthonormal (as the eigenstates of the single particle Hamiltonian are).</p>
 
-<p>Such states are called <strong>product states</strong>. The normalization factor in the boson case involves the <strong>occupation numbers</strong> ${N_{\alpha}}$ giving the number of particles in state $\alpha$. In the fermion case each $N_{\alpha}$ is either $0$ or $1$ so the prefactor simplifies. Since the order of the $\alpha$ indices is irrelevant in the boson case, and amounts only to a sign in the fermion case, states based on a given set of single particle states are more efficiently labeled by the occupation numbers. In terms of these numbers the total energy is</p>
+<p>The normalization factor in the boson case involves the <strong>occupation numbers</strong> ${N_{\alpha}}$ giving the number of particles in state $\alpha$. In the fermion case each $N_{\alpha}$ is either $0$ or $1$ so the prefactor simplifies. Since the order of the $\alpha$ indices is irrelevant in the boson case, and amounts only to a sign in the fermion case, states based on a given set of single particle states are more efficiently labeled by the occupation numbers. In terms of these numbers the total energy is</p>
 
 <script type="math/tex; mode=display">\label{quantum_statistics_TotalEnergy}
  E=\sum_{i=1}^{N}E_{\alpha_{i}}=\sum_{\alpha}N_{\alpha} E_{\alpha}</script>

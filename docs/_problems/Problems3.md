@@ -23,3 +23,5 @@ Chevy's wavefunction. Polaron residue
 ## Density Response of a Fermi Gas
 
 ## Normal modes for the oscillator on a string.
+
+## Scattering of a particle from density fluctuations (Nozieres Pines discussion)

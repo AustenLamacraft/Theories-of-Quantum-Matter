@@ -670,6 +670,7 @@ The general theory described above applies here with $A=\rho_\bq$ and $B=\rho_{-
 
 $$
 S_\rho(\bq,\omega) = 2\pi\sum_{n}  \abs{\bra{0}\rho_\bq\ket{n}}^2 \delta(\omega-E_n+E_0),
+\label{res_Sdef}
 $$
 
 where we have used $\rho_\bq^\dagger=\rho_{-\bq}^{}$. This quantity is called the __dynamical structure factor__, on account of its importance in scattering experiments. It gives the rate at which the system makes transitions that impart energy $\omega$ and momentum  $\bq$ in the presence of the perturbation $H_\text{pert}$.
@@ -680,7 +681,11 @@ $$
 S_\rho(\bq) = \int S_\rho(\bq,\omega) \frac{d\omega}{2\pi} = \langle\langle\rho_\bq\rho_{-\bq}\rangle\rangle
 $$
 
-is usually called the __static structure factor__, which is a bit of a strange name given that it contains all frequencies. A better name would perhaps be _equal time_ structure factor.
+is usually called the __static structure factor__, which is a bit of a strange name given that it contains all frequencies. A better name would perhaps be _equal time_ structure factor. $S_\rho(\bq)$ quantifies the density fluctuations in a system. It is the Fourier transform of the quantity $\rho_2(\br_1,\br_2)$ considered in [Lecture 1]({{ site.baseurl }}/lectures/ManyBodyWavefunctions/).
+
+<p class="message">
+Some texts (e.g {% cite Nozieres:1999aa %}) omit the $2\pi$ in the definition \eqref{res_Sdef}. I prefer to keep it so that $S_\rho(\bq,t) = \langle\langle \rho_\bq(t)\rho_{-\bq}(0)\rangle\rangle$.
+</p>
 
 ### Sum rules
 
@@ -704,26 +709,77 @@ $$
 \int_{-\infty}^\infty \omega S(\bq,\omega) \frac{d\omega}{2\pi}= \frac{N\bq^2}{2m}.
 $$
 
-Next we discuss the __compressibility sum rule__. The compressibility is defined as
+Next we discuss the __compressibility sum rule__. The compressibility is defined in terms of the volume $V$ and pressure $p$ as
 
 $$
 \kappa=-\frac{1}{V}\frac{\partial V}{\partial p}.
 $$
 
-From thermodynamics,
+At zero temperature, the pressure is
+
+$$
+p = -\frac{\partial E_0}{\partial V},
+$$
+
+where $E_0$ is the ground state energy. Since energy is an extensive quentity we expect $E_0 = V \epsilon(\rho)$, where $\rho = N/V$ is the density, and $\epsilon(\rho)$ the energy per unit volume. Then
+
+$$
+\kappa^{-1} = \rho^2 e''(\rho).
+$$
+
+Recall that the chemical potential $\mu = \frac{\partial E_0}{\partial N}=\epsilon'(\rho)$. Then
 
 $$
 \kappa = \rho^{-2} \frac{\partial \rho}{\partial \mu} = \frac{1}{\rho N}\chi'(0,0).  
 $$
 
-Now $\chi'(\bq,\omega)$ can be written in terms of $\chi''(\bq,\omega)$ (Kramers--Krönig) and $\chi''(\bq,\omega)$ is related to $S_\rho(\bq,\omega)$. This gives, again at zero temperature
+Now $\chi'(\bq,\omega)$ can be written in terms of $\chi''(\bq,\omega)$ (Kramers--Krönig) and $\chi''(\bq,\omega)$ is related to $S_\rho(\bq,\omega)$. This gives the compressibility sum rule at zero temperature
 
 $$
-\lim_{\bq\to 0}\int_0^\infty \frac{S(\bq,\omega)}{\omega}\frac{d\omega}{2\pi} = N\rho\kappa.
+\lim_{\bq\to 0}\int_0^\infty \frac{S(\bq,\omega)}{\omega}\frac{d\omega}{2\pi} = \frac{N\rho\kappa}{2}.
 $$
 
 <p class="message">
 Why do we need $\lim_{\bq\to 0}$?
+</p>
+
+The compressibility sum rule is often written in terms of the speed of sound $c = (\kappa m \rho)^{-1/2}$ as
+
+$$
+\lim_{\bq\to 0}\int_0^\infty \frac{S(\bq,\omega)}{\omega}\frac{d\omega}{2\pi} = \frac{N}{2mc^2}.
+$$
+
+Let's consider a simple example. Some systems, notably Bose gases, have a zero temperature dynamical structure factor that at low momentum has the following approximate form
+
+$$
+S_\rho(\bq,\omega) \sim 2\pi S_\rho(\bq) \delta(\omega - \omega(\bq)),
+\label{res_SMA}
+$$
+
+where $\omega(\bq)$ is the dispersion relation of the collective excitations. In reality, the $\delta$-function is never infinitely sharp, but has a finite width on account of interactions between excitations causing scattering and / or decay. In the approximation \eqref{res_SMA}, often known as the __single mode approximation__, the f-sum rule tells us that
+
+$$
+S_\rho(\bq) = \frac{N\bq^2}{2m\omega(\bq)}.
+$$
+
+Let's consider two important cases. First, suppose $\omega(\bq) = \frac{\bq^2}{2m}$. This would be the case in a Bose condensate with strictly no interactions, so that excitations out of the condensate are free particles. Then
+
+$$
+S_\rho(\bq) = N.
+$$
+
+This result corresponds to completely uncorrelated particle positions (Poisson statistics).
+
+Second, suppose $\omega(\bq) = c\abs{\bq}$ i.e. linear dispersion with finite speed of sound. Then
+
+$$
+S_\rho(\bq) = \frac{N\abs{\bq}}{2mc}.
+$$
+
+In this case the density fluctuations vanish as the wavevector goes to zero, indicating long-range correlations between positions in the ground state.
+
+<p class="message">
+Check the compressibility sum rule in these two cases.
 </p>
 
 References

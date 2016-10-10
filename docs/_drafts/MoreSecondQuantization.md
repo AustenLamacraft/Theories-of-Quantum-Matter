@@ -4,7 +4,7 @@ title: More Second Quantization
 author: Austen Lamacraft
 chapter: 6
 summary: Density matrix and density correlations. Second quantized Hamiltonians. Hartree--Fock theory. Hanbury Brown and Twiss effect.
-published: false
+published: true
 ---
 
 ## Contents
@@ -17,6 +17,8 @@ published: false
 
 ## Density Matrix and Correlation Functions
 
+Finite temperature bosons...
+
 ## Second Quantized Hamiltonians
 
 Example of Lieb--Liniger Hamiltonian that we have met before.
@@ -25,4 +27,6 @@ Example of Lieb--Liniger Hamiltonian that we have met before.
 
 ## Hartree--Fock
 
+
+Stoner theory (see Nazarov for discussion )
 Discuss fermionic energies in HF approx
