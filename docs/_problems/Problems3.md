@@ -24,4 +24,6 @@ Chevy's wavefunction. Polaron residue
 
 ## Normal modes for the oscillator on a string.
 
+## Compressibility sum rule from perturbation theory
+
 ## Scattering of a particle from density fluctuations (Nozieres Pines discussion)

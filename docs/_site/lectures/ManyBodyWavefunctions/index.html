@@ -510,7 +510,7 @@ g(x,y) = \frac{1}{L}\sum_{|k|<k_\text{F}} e^{ik(x-y)} = \int_{-k_\text{F}}^{k_\t
 
 <p>We can also consider marginal probability distribution of a pair of particles, the <strong>pair distribution function</strong></p>
 
-<script type="math/tex; mode=display">\rho_2(x_1,x_2) = \frac{1}{2}N(N-1) \int dx_3\ldots dx_N \,\left|\Psi(x_1,x_2,\ldots,x_N)\right|^2.</script>
+<script type="math/tex; mode=display">\rho_2(x_1,x_2) = N(N-1) \int dx_3\ldots dx_N \,\left|\Psi(x_1,x_2,\ldots,x_N)\right|^2.</script>
 
 <p>The prefactor is to account for all pairs of particles.</p>
 
@@ -533,12 +533,12 @@ g(x,y) = \frac{1}{L}\sum_{|k|<k_\text{F}} e^{ik(x-y)} = \int_{-k_\text{F}}^{k_\t
 <p>There’s a bit more mileage in the 1D Fermi gas yet. Consider the following Hamiltonian, which we’ll study in more detail in the next lecture</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
-H = \frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + g\sum_{j<k}\delta(x_j-x_k).
+H = -\frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + c\sum_{j<k}\delta(x_j-x_k).
 \label{many_LL} %]]></script>
 
 <p>The second term represents an interaction between pairs of particles. Of course, this model is rather special, as (1) it’s 1D and (2) the interaction potential is a $\delta$-function. Nevertheless, it represents a huge step up in difficulty from the noninteracting examples we’ve discussed so far. At least, it does for bosons. For fermions, the wavefunctions vanish at coincident points, and so the interaction has no effect at all!</p>
 
-<p>For bosons, it happens that the Hamiltonian can still be solved exactly. For now, however, we’ll concern ourselves only with the limit of infinite interaction: $g\to \infty$, sometimes called the impenetrable limit. In this case, <em>the eigenenergies coincide with those of the free fermion problem, and the eigenstates are just the modulus of the corresponding fermion eigenstate</em> Just like that, we’ve solved our first interacting many body system (and with infinite coupling, no less)!</p>
+<p>For bosons, it happens that the Hamiltonian can still be solved exactly. For now, however, we’ll concern ourselves only with the limit of infinite interaction: $c\to \infty$, sometimes called the impenetrable limit. In this case, <em>the eigenenergies coincide with those of the free fermion problem, and the eigenstates are just the modulus of the corresponding fermion eigenstate</em> Just like that, we’ve solved our first interacting many body system (and with infinite coupling, no less)!</p>
 
 <p>Thus the ground state on the ring has the form</p>
 

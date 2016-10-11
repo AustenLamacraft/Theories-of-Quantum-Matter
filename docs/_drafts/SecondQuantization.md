@@ -179,6 +179,14 @@ You can think of the first of these as `count then destroy minus destroy then co
 
 Position space, momentum space
 
+<p class="message">
+What is the wavefunction of the two-particle state
+
+$$
+\sum_\bk c_k \adop_\bk\adop_{-\bk}\ket{\text{VAC}}?
+$$
+</p>
+
 ### The Case of Fermions
 
 ## Representation of Operators
@@ -192,6 +200,10 @@ $$
 $$
 
 where the subscript denotes that the operator acts on the position label $\br_n$ of the $n^\text{th}$ particle. The matrix element of $\hat A$ between product states is
+
+### Two Particle Operators
+
+
 
 References
 ----------

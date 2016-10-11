@@ -224,10 +224,10 @@ In this lecture we are going to look at a model of many interacting particles th
 <p>In the last lecture we encountered the Hamiltonian</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
-H = \frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + c\sum_{j<k}\delta(x_j-x_k),
+H = -\frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + c\sum_{j<k}\delta(x_j-x_k),
 \label{LL_LL} %]]></script>
 
-<p>describing a system of interacting one dimensional bosons. We showed that the $g\to\infty$ limit of this model can be described in terms of noninteracting fermions. We are know going to discuss the solution for general $g$. This is possible because the eigenfunctions, which are not product states, have a very special form first written down by Hans Bethe in 1931 in the context of a model of a chain of coupled spins (see <a href="/docs/lectures/SpinModels/">Lecture 4</a>). Bethe’s approach was applied to the model \eqref{LL_LL} by Lieb and Liniger in 1963 <a href="#Lieb:1963aa">(Lieb &amp; Liniger, 1963)</a>, and for that reason it is usually known as the <strong>Lieb–Liniger model</strong>.</p>
+<p>describing a system of interacting one dimensional bosons. We showed that the $c\to\infty$ limit of this model can be described in terms of noninteracting fermions. We are now going to discuss the solution for general $c$. This is possible because the eigenfunctions, which are not product states, have a very special form first written down by Hans Bethe in 1931 in the context of a model of a chain of coupled spins (see <a href="/docs/lectures/SpinModels/">Lecture 4</a>). Bethe’s approach was applied to the model \eqref{LL_LL} by Lieb and Liniger in 1963 <a href="#Lieb:1963aa">(Lieb &amp; Liniger, 1963)</a>, and for that reason it is usually known as the <strong>Lieb–Liniger model</strong>.</p>
 
 <h2 id="bethes-wavefunction">Bethe’s Wavefunction</h2>
 
@@ -247,7 +247,7 @@ H = \frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + c\sum_{j<k}\delta(x_j
 <script type="math/tex; mode=display">\Psi(x_1,x_2) =  \exp(i[k_1 x_1 + k_2 x_2])
 \label{LL_1wave}</script>
 
-<p>\eqref{LL_1wave} describes a state with momentum $P= k_1+k_2$ and energy $E = \frac{k_1^2}{2m}+\frac{k_2^2}{2m}$. Note that for given values of $P$ and $E$, the most general solution contains only the two terms</p>
+<p>\eqref{LL_1wave} describes a state with momentum $P_\text{tot}= k_1+k_2$ and energy $E_\text{tot} = \frac{k_1^2}{2}+\frac{k_2^2}{2}$. Note that for given values of $P_\text{tot}$ and $E_\text{tot}$, the most general solution contains only the two terms</p>
 
 <script type="math/tex; mode=display">\Psi(x_1,x_2) = A_{12} \exp(i[k_1 x_1 + k_2 x_2]) + A_{21} \exp(i[k_1 x_2 + k_2 x_1]),\quad x_1\leq x_2,
 \label{LL_Psi2}</script>
@@ -259,13 +259,13 @@ H = \frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + c\sum_{j<k}\delta(x_j
 
 <p>The relationship between the amplitudes $A_{12}$ and $A_{21}$ is determined by the interaction. Substituting \eqref{LL_Psi2} into the Schrödinger equation \eqref{LL_2part} gives</p>
 
-<script type="math/tex; mode=display">-\frac{i}{m}\left[A_{12}(k_2-k_1) + A_{21}(k_1-k_2)\right] + c\left[A_{12}+A_{21}\right]=0,</script>
+<script type="math/tex; mode=display">-i\left[A_{12}(k_2-k_1) + A_{21}(k_1-k_2)\right] + c\left[A_{12}+A_{21}\right]=0,</script>
 
 <p>or</p>
 
 <script type="math/tex; mode=display">\frac{A_{21}}{A_{12}} = \frac{k_1 - k_2 -ic}{k_1 - k_2 +ic} \equiv \exp\left[-i\theta(k_1-k_2)\right].</script>
 
-<p>The last equation defines the <strong>phase shift</strong> $\theta(k)$. Note that conservation of flux and the symmetry of the wavefunction means that $\abs{A_{12}}=\abs{A_{21}}$. In the impenetrable limit ($c\to\infty$) the phase shift goes to $\pi.</p>
+<p>The last equation defines the <strong>phase shift</strong> $\theta(k)$. Note that conservation of flux and the symmetry of the wavefunction means that $\abs{A_{12}}=\abs{A_{21}}$. In the impenetrable limit ($c\to\infty$) the phase shift goes to $\pi$.</p>
 
 <h3 id="three-particles">Three Particles</h3>
 
@@ -281,7 +281,7 @@ H = \frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + c\sum_{j<k}\delta(x_j
 
 <p>with $\bk = (k_1,k_2,k_3)$ and $\bx = (x_1,x_2,x_3)$. This describes a state with</p>
 
-<script type="math/tex; mode=display">P = k_1+k_2+k_3,\qquad E = \frac{k_1^2}{2m}+\frac{k_2^2}{2} + \frac{k_3^2}{2}.</script>
+<script type="math/tex; mode=display">P_\text{tot} = k_1+k_2+k_3,\qquad E_\text{tot} = \frac{k_1^2}{2}+\frac{k_2^2}{2} + \frac{k_3^2}{2}.</script>
 
 <p>We can picture these conditions as the intersection of a plane and a sphere in momentum space. This illustrates that on kinematic grounds alone we should expect a <em>continuum</em> of plane waves in the superposition to make an eigenstate. It is here, however, that the special nature of the interaction saves us, as it turns out that can get away with only a <em>finite</em> superposition of all the $3!=6$ ways to assign the three momenta $(k_1,k_2,k_3)$ to the three particles.</p>
 
@@ -289,7 +289,7 @@ H = \frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + c\sum_{j<k}\delta(x_j
 <img src="/docs/assets/ScatteringGeometry.png" alt="" />
 <em>Momentum space geometry of three particle scattering.</em></p>
 
-<p>There is a nice geometrical picture that allows us to understand why this is. In the <a href="#Nodal">above 3D representation</a>, the centre of mass coordinate of the three particles is increasing in the $(1,1,1)$ direction, in which the system naturally has translational invariance. The plane perpendicular to this direction describes the <em>relative</em> motion of the three particles. In this plane the the three planes corresponding to the pairwise coincidence of particle coordinates appear as three lines at $\pi/3$ to each other, meeting at the origin.</p>
+<p>There is a nice geometrical picture that allows us to understand why this is. In the <a href="#Nodal">above 3D representation</a>, the centre of mass coordinate of the three particles is increasing in the $(1,1,1)$ direction, in which the system naturally has translational invariance. The plane perpendicular to this direction describes the <em>relative</em> motion of the three particles. In this plane the three planes corresponding to the pairwise coincidence of particle coordinates appear as three lines at $\pi/3$ to each other, meeting at the origin.</p>
 
 <p><a name="mirrors"></a>
 <img src="/docs/assets/mirrors.png" alt="" />
@@ -316,7 +316,7 @@ H = \frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + c\sum_{j<k}\delta(x_j
 
 <script type="math/tex; mode=display">\frac{A_{321}}{A_{123}} = \exp\left[-i\theta(k_1-k_2)-i\theta(k_2-k_3)-i\theta(k_1-k_3)\right]</script>
 
-<p><em>irrespective</em> of which transpositions of neighbouring momenta we used to get from $(123)$ to $(321)$. In terms of our kaliedoscope, this corresponds to different rays having the same phase, no matter in which order they hit the mirrors.</p>
+<p><em>irrespective</em> of which transpositions of neighbouring momenta we used to get from $(123)$ to $(321)$. In terms of our kaleidoscope, this corresponds to different rays having the same phase, no matter in which order they hit the mirrors.</p>
 
 <h3 id="bethe-ansatz-for-n-particles">Bethe Ansatz for $N$ Particles</h3>
 
@@ -327,7 +327,7 @@ H = \frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + c\sum_{j<k}\delta(x_j
 
 <p>The momentum and energy are</p>
 
-<script type="math/tex; mode=display">P = \sum_{j=1}^N k_j,\qquad E = \sum_{j=1}^N\frac{k_j^2}{2}.</script>
+<script type="math/tex; mode=display">P_\text{tot} = \sum_{j=1}^N k_j,\qquad E_\text{tot} = \sum_{j=1}^N\frac{k_j^2}{2}.</script>
 
 <p>I want to emphasize that, despite the apparent complexity of the wavefunction \eqref{LL_Npart}, consisting of a sum over $N!$ permutations, it represents a <em>huge</em> simplification over the most general superposition of plane wave states of fixed energy and momentum.</p>
 
@@ -337,10 +337,10 @@ H = \frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + c\sum_{j<k}\delta(x_j
 
 <p>The same analysis as for the two particle case yields</p>
 
-<script type="math/tex; mode=display">\frac{A_{P'}}{A_P} = \frac{k_{P(j)}-k_{P(j+1)}-img}{k_{P(j)}-k_{P(j+1)}+img} = \exp\left[-i\theta(k_{P(j)}-k_{P(j+1)})\right].
+<script type="math/tex; mode=display">\frac{A_{P'}}{A_P} = \frac{k_{P(j)}-k_{P(j+1)}-ic}{k_{P(j)}-k_{P(j+1)}+ic} = \exp\left[-i\theta(k_{P(j)}-k_{P(j+1)})\right].
 \label{LL_NExchange}</script>
 
-<p>It can be checked that a solution of the set of $N-1$ such equations is given by</p>
+<p>It can be checked that a solution of the set of such equations is given by</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 A_P = \prod_{1\leq j<k\leq N}\left(1 + \frac{ic}{k_{P(j)}-k_{P(k)}}\right). %]]></script>
@@ -374,12 +374,12 @@ Confirm that $c\to\infty$ reproduces the result of last lecture on the impenetra
 
 <p>where $Q(2)=P(1)$, $Q(3)=P(2)$, … $Q(1)=P(N)$. Then equating $\Psi(x_1,\ldots, x_N)$, which lies in the first region, with $\Psi(x_1+L,\ldots,x_N)$, which lies in the second, gives</p>
 
-<script type="math/tex; mode=display">A(P) e^{ik_{Q(1)}L} = A(Q).
+<script type="math/tex; mode=display">A_P e^{ik_{Q(1)}L} = A_Q.
 \label{LL_quant}</script>
 
 <p>Using the relation between amplitudes \eqref{LL_NExchange}, we can find</p>
 
-<script type="math/tex; mode=display">\frac{A(P)}{A(Q)}= \prod_{j=2}^N \exp\left[-i\theta(k_{Q(1)}-k_{Q(j)})\right].</script>
+<script type="math/tex; mode=display">\frac{A_P}{A_Q}= \prod_{j=2}^N \exp\left[-i\theta(k_{Q(1)}-k_{Q(j)})\right].</script>
 
 <p>Putting this together with \eqref{LL_quant} gives the quantization conditions</p>
 
@@ -394,13 +394,26 @@ Confirm that $c\to\infty$ reproduces the result of last lecture on the impenetra
 
 <p>The solution of the Bethe equations gives us eigenstates of the periodic system and the corresponding eigenergies. In fact, all eigenstates have this form (it isn’t obvious). Unfortunately, the equations are hard to solve. We get some intuition by recalling the impenetrable limit. In this case the phase shift $\theta \to \pi$. If we have an <em>odd</em> number of particles we get back the free particle quantization condition, and the lowest energy state obviously corresponds to filling the states</p>
 
-<script type="math/tex; mode=display">I_j=-(N-1)/2, -(N-3)/2,\ldots, -1, 0, 1 \ldots (N-1)/2,</script>
+<script type="math/tex; mode=display">I_j=-(N-1)/2, -(N-3)/2,\ldots, -1, 0, 1 \ldots (N-1)/2,
+\label{LL_NevenI}</script>
 
-<p>just as when we discussed the Fermi gas. Thus, as we begin to reduce $c$ from $\infty$, as long as the values of $k_j$ evolve smoothly, without any jumps, we can stick with the above assignment of $I_j$ for the ground state.</p>
+<p>just as when we discussed the Fermi gas. For the case of an <em>even</em> number of particles, there is a small hitch. In \eqref{LL_BE} the sum is over an <em>odd</em> number, and in the impenetrable limit gives $(N-1)\pi$. Thus the quantization condition for $N$ even is</p>
+
+<script type="math/tex; mode=display">k_jL = 2\pi\left(I_j+\frac{1}{2}\right).
+\label{LL_Nodd}</script>
+
+<p>Alternatively, we can take $I_j$ to be <em>half odd integer</em>.</p>
+
+<script type="math/tex; mode=display">I_j=-N/2, -N/2+1,\ldots, -1/2, 1/2, 3/2 \ldots N/2.
+\label{LL_NoddI}</script>
+
+<p>However, if we do that we’ll have to shift $\theta(k)$ by $\pi$. Either way, we get a ground state distribution of $k_j$ that is symmetrically distributed around zero. If you think about the fermion problem, the quantization condition \eqref{LL_Nodd} is a bit odd, as it corresponds to <em>antiperiodic</em> boundary conditions. This doesn’t bother the bosons, since their wavefunction is the modulus of the fermionic wavefunction. Note that the ground state of an even number of fermions with periodic boundary conditions is actually two fold degenerate, with an ‘extra’ fermion at one of the Fermi points. For the bosons this would correspond to putting an extra $\pi$ into \eqref{LL_BE}.</p>
+
+<p>As we begin to reduce $c$ from $\infty$, and as long as the values of $k_j$ evolve smoothly, without any jumps, we can stick with the assignments \eqref{LL_NevenI} or \eqref{LL_NoddI} of $I_j$ for the ground state.</p>
 
 <h3 id="thermodynamic-limit">Thermodynamic Limit</h3>
 
-<p>Now is the time to leap to the thermodynamic limit! We expect the $k_j$ value to become closely spaced, just as in the Fermi gas, so that we can replace</p>
+<p>Now is the time to leap to the thermodynamic limit! We expect the $k_j$ values to become closely spaced, just as in the Fermi gas, so that we can replace</p>
 
 <script type="math/tex; mode=display">\sum_k\left(\cdots\right) = L\int^q_{-q} \rho(k)dk,</script>
 
@@ -429,9 +442,9 @@ Confirm that $c\to\infty$ reproduces the result of last lecture on the impenetra
 
 <p>In terms of $\rho(k)$, the momentum and energy are</p>
 
-<script type="math/tex; mode=display">P = L \int_{-q}^q \rho(k)dk,\quad E = L \int_{-q}^q \frac{k^2}{2}\rho(k)dk.</script>
+<script type="math/tex; mode=display">P_\text{tot} = L \int_{-q}^q k\rho(k)dk,\quad E_\text{tot} = L \int_{-q}^q \frac{k^2}{2}\rho(k)dk.</script>
 
-<p>Of course, the momentum will vanish in the ground state, as $\rho(k)$ will be an even function. If we fix the density $n$, there is a natural dimensionless parameter $\gamma\equiv c/n$, in terms of which we can express the energy per particle $E/L =\frac{n^3}{2}e(\gamma)$.</p>
+<p>Of course, the momentum will vanish in the ground state, as $\rho(k)$ will be an even function. If we fix the density $n$, there is a natural dimensionless parameter $\gamma\equiv c/n$, in terms of which we can express the energy per particle $E_\text{tot}/L =\frac{n^3}{2}e(\gamma)$.</p>
 
 <p><a name="LL_EnergyDensity"></a>
 <img src="/docs/assets/LL_EnergyDensity.gif" alt="" />
@@ -442,44 +455,52 @@ Confirm that $c\to\infty$ reproduces the result of last lecture on the impenetra
 <script type="math/tex; mode=display">e(\gamma\to\infty) = \frac{2}{n^3}\int_{-q}^q \frac{k^2}{2}\rho(k)dk = \frac{1}{\pi n^3} \frac{k_\text{F}^3}{3} = \frac{\pi^2}{3}</script>
 
 <div class="message">
-Although I've referred to the $k_j$ above as the momenta of the particles, this is actually highly misleading. In particular, the momentum distribution $\bar N_k$ introduced in the previous lecture does not correspond to the distribution $\rho(k)$ studied here. One way to convince yourself of this fact is to note that the second moment of $\rho(k)$ gives the total energy, while the second moment of $\bar N_k$ gives only the kinetic energy.
+<p>Although I've referred to the $k_j$ above as the momenta of the particles, this is actually highly misleading. In particular, the momentum distribution $\bar N_k$ introduced in the previous lecture does not correspond to the distribution $\rho(k)$ studied here. One way to convince yourself of this fact is to note that the second moment of $\rho(k)$ gives the total energy, while the second moment of $\bar N_k$ gives only the kinetic energy.</p>
 
-Finding $\bar N_k$ is not straightforward for wavefunctions that are not product states of momentum eigenstates. For this reason it's useful to refer to the $k_j$ in the Bethe wavefunction as <strong>quasimomenta</strong>.
+<p>Finding $\bar N_k$ is not straightforward for wavefunctions that are not product states of momentum eigenstates. For this reason it's useful to refer to the $k_j$ in the Bethe wavefunction as <strong>quasimomenta</strong>.</p>
+
+<p> Note that $P_\text{tot}$ is, however, the true total momentum!</p>
 </div>
 
 <h3 id="excited-states">Excited States</h3>
 
-<p>Next we’d like to get a handle on the excited states. Again, we take our cue from the impenetrable limit, where we can think about the excitations of a Fermi gas. In this system, the basic excitation in the <strong>particle-hole pair</strong>, meaning that we take a particle from below the Fermi energy and move it above, leaving a hole behind.</p>
+<p>Next we’d like to get a handle on the excited states. Again, we take our cue from the impenetrable limit, where we can think about the excitations of a Fermi gas. In this system, the basic excitation is the <strong>particle-hole pair</strong>, meaning that we take a particle from below the Fermi energy and move it above, leaving a hole behind.</p>
 
 <p>In terms of the momenta $k_\text{p}$, $k_\text{h}$ of the particle and hole, the energy and momentum of such a state is</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
-E_\text{ph}(k_\text{p},k_\text{h}) &= \frac{1}{2m}\left(k_\text{p}^2 - k_\text{h}^2\right),\qquad \abs{k_\text{p}}>k_\text{F}, \abs{k_\text{h}}<k_\text{F}\\
+E_\text{ph}(k_\text{p},k_\text{h}) &= \frac{1}{2}\left(k_\text{p}^2 - k_\text{h}^2\right),\qquad \abs{k_\text{p}}>k_\text{F}, \abs{k_\text{h}}<k_\text{F}\\
 P_\text{ph}(k_\text{p},k_\text{h}) &= k_\text{p}-k_\text{h}.
 \end{align} %]]></script>
 
 <p>At fixed momentum, the highest (lowest) energy particle-hole pair has the hole (particle) at the Fermi surface. The extremal energies are</p>
 
 <script type="math/tex; mode=display">\begin{align}
-\epsilon_I(P) = Pk_\text{F}/m+ P^2/2m\\
-\epsilon_{II}(P) = Pk_\text{F}/m- P^2/2m.
+\epsilon_I(P) = Pk_\text{F}+ P^2/2\\
+\epsilon_{II}(P) = Pk_\text{F}- P^2/2.
 \end{align}</script>
 
 <p>We can keep track of these excitations as we reduce $c$ from $\infty$. Lieb and Liniger christened them ‘type I’ and ‘type II’ excitations.</p>
 
 <p>Let’s consider the type I excitations first. We imagine making a ‘hole’ in the distribution of roots and moving one particle above the ‘Fermi surface’ (by which I mean the largest root in the ground state distribution). The complication now is that doing so causes all the other roots to change slightly from their ground state values.</p>
 
-<p>Instead of solving \eqref{LL_BE} with a set of consecutive integers on the right hand side, the final (largest) root – we’ll call it $k_{I}$ – should correspond to an integer ‘standing apart’ from the others. We can think of this as the ground state of an $N-1$ particle problem, with the $N-1$ roots being affected by the presence of another root at $k_{I}$. Let’s write the shift in the ground state roots of the $N-1$ particle problem as $\delta k_{i}$. Then we have</p>
+<p>Instead of solving \eqref{LL_BE} with a set of consecutive integers on the right hand side, the final (largest) root – we’ll call it $k_{I}$ – should correspond to an integer ‘standing apart’ from the others. We can think of this as the ground state of an $N-1$ particle problem, with the $N-1$ roots being affected by the presence of another root at $k_{I}$. However, if we want to get the $N$ particle ground state back as $k_I$ returns to join the others, we have to choose an assignment of the $I_j$ corresponding to $N$ particles, not $N-1$.</p>
 
-<script type="math/tex; mode=display">\delta k_{i}L+\sum_{j=1}^{N-1}\theta'(k_{i}-k_{j})(\delta k_{i}-\delta k_{j})+\theta(k_{i}-k_{I})=-\pi,\qquad i=1,2,\ldots, N-1.</script>
+<p><a name="PiShift"></a>
+<img src="/docs/assets/PiShift.png" alt="" />
+<em>(Working in the impenetrable limit for clarity). To get back the 7 particle ground state when $k_I$ joins the others, we have to shift the other $k_j$ half a quantum number from where they would be in the 6 particle ground state.</em></p>
+
+<p>Let’s write the shift in the ground state roots of the $N-1$ particle problem as $\delta k_{i}$. Then we have</p>
+
+<script type="math/tex; mode=display">\delta k_{i}L+\pi=\sum_{j=1}^{N-1}\theta'(k_{i}-k_{j})(\delta k_{i}-\delta k_{j})+\theta(k_{i}-k_{I}),\qquad i=1,2,\ldots, N-1.</script>
 
 <p>The shifts $\delta k_{i}$ are $O(1/L)$. Taking $\delta k$ to be a function of $k$, we define the quantity $\gamma(k)\equiv \delta k \rho(k)L$. Then it can be shown that $\gamma(k)$ is a solution of</p>
 
-<script type="math/tex; mode=display">2\pi \gamma(k)-\int_{-q}^{q}\theta'(k-k')\gamma(k') dk'+\theta(k-k_{I})=-\pi,\qquad |k_{I}|>q.
+<script type="math/tex; mode=display">-\int_{-q}^{q}\theta'(k-k')\gamma(k') dk'+\theta(k-k_{I})=\pi+2\pi \gamma(k),\qquad |k_{I}|>q.
 \label{LL_typeI}</script>
 
-<p>To derive this equation we need the \eqref{LL_BetheIntegral}, the integral equation for $\rho(k)$.</p>
+<p>To derive this equation we need the integral equation for $\rho(k)$ \eqref{LL_BetheIntegral}.</p>
 
 <p>The energy and momentum of the excitation (that is, the energy and momentum <em>difference</em> of this state from the ground state) are</p>
 
@@ -496,9 +517,13 @@ P&=k_{I}+\int_{-q}^{q}\gamma(k)dk
 
 <p>Now we turn to the type II excitations. By taking $\delta k$ to be the shift in the roots of the ground state of the $N+1$ particle problem caused by the presence of a hole, we can show that the corresponding set of equations is</p>
 
+<p><a name="PiShiftTypeII"></a>
+<img src="/docs/assets/PiShiftTypeII.png" alt="" />
+<em>Shifts relative to the $N=8$ ground state for the $N=7$ type II excitation.</em></p>
+
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}\label{typeII}
-&2\pi \gamma(k)-\int_{-q}^{q}\theta'(k-k')\gamma(k') dk'-\theta(k-k_{II})=\pi,\qquad |k_{II}|<q \nonumber\\
+&-2\pi \gamma(k)+\pi-\int_{-q}^{q}\theta'(k-k')\gamma(k') dk'-\theta(k-k_{II})=0,\qquad |k_{II}|<q \nonumber\\
 \epsilon_{II}&=\mu-\frac{k_{I}^{2}}{2}+\int_{-q}^{q}k\gamma(k)dk\nonumber\\
 P&=-k_{II}+\int_{-q}^{q}\gamma(k)dk.
 \end{align} %]]></script>
