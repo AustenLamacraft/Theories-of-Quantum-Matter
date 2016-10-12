@@ -18,12 +18,16 @@ summary: Fermi gas; Superconductivity; Response and Correlation; Jellium.
 
 Chevy's wavefunction. Polaron residue
 
+## Normal modes for the oscillator on a string.
+
 ## Price's Inequality
+
+## Verify Price Inequality for Elastic Chain
 
 ## Density Response of a Fermi Gas
 
-## Normal modes for the oscillator on a string.
+## Compressibility Sum Rule From Perturbation Theory
 
-## Compressibility sum rule from perturbation theory
+## Inelastic scattering of light
 
-## Scattering of a particle from density fluctuations (Nozieres Pines discussion)
+## Feynman--Bijl for Quantum Hall

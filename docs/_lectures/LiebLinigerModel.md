@@ -319,7 +319,7 @@ Of course, the momentum will vanish in the ground state, as $\rho(k)$ will be an
 ![]({{ site.baseurl }}/assets/LL_EnergyDensity.gif)
 _Energy density as a function of $\gamma = c/n$. From {% cite Lieb:1963aa %}._
 
-In the $\gamma\to\infty$ limit we have $\rho(k) = 1/(2\pi)$, $q=k_\text{F}$, and $n=\pi k_\text{F}$, so that
+In the $\gamma\to\infty$ limit we have $\rho(k) = 1/(2\pi)$, $q=k_\text{F}$, and $n=k_\text{F}/\pi$, so that
 
 $$
 e(\gamma\to\infty) = \frac{2}{n^3}\int_{-q}^q \frac{k^2}{2}\rho(k)dk = \frac{1}{\pi n^3} \frac{k_\text{F}^3}{3} = \frac{\pi^2}{3}

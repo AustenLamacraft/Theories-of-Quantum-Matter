@@ -14,99 +14,101 @@ summary: Many body wavefunctions; Lieb-Liniger; Collective excitations; Spin cha
 
 ---
 
-## Calogero-Sutherland Model
+## Sutherland Model
 
-Ground state wavefunction
+Show that
 
-## Impurity in Impenetrable Gas
+$$
+\Psi(x_1,\ldots, x_N)= \prod_{j<k}\left(\sin\left[\frac{\pi(x_j-x_k)}{L}\right]\right)^\lambda
+$$
 
-## Yrast States of Rotating Gas
+is an eigenstate -- in fact it's the ground state -- of the __Sutherland model__
 
-## Oddity of the Plasma analogy
+$$
+H = -\frac{1}{2}\sum_{j=1}^N \frac{\partial^2}{\partial x_j^2} + \frac{\lambda(\lambda-1)}{4}\sum_{j<k}
+\sin^{-2}\left(\frac{\pi[x_j-x_k]}{L}\right).
+$$
 
-We could define the potential of the background charge
+with periodic boundary conditions $\Psi(x_1,\ldots x_j+L,\ldots x_M)=\Psi(x_1,\ldots x_j,\ldots x_M)$. Find the energy.
 
-## Evolution of the Laughlin state under harmonic confinement
 
-## Density matrix of the $\nu=1$ state
+## Density Matrix of the Filled LLL of Fermions
 
-Behaviour at the edge
+In the lecture we found the density of lowest Landau level filled with $N$ fermions
 
-## Holes in the $\nu=1$ state
+$$
+\rho_1(z,\bar z) = \frac{e^{-|z|^2/2}}{2\pi}\sum_{n=0}^{N-1} \frac{\left|z\right|^{2n}}{2^n n!} = \frac{1}{2\pi} \frac{\Gamma(N,|z|^2/2)}{(N-1)!}.
+\label{many_LLLdensity}
+$$
 
-Confirm that
+Find the density matrix, and investigate its behaviour on the edge of the droplet (where $\abs{z}\sim \sqrt{2N}$) in the large $N$ limit.
+
+## Holes in the $\nu=1$ State
+
+The harmonic potential, projected into the LLL, has the form
+
+$$
+V_\text{harm}\longrightarrow v\partial_z z =  v\left(1+z \partial_z\right).
+\label{many_HarmonicProject}
+$$
+
+Show how to resolve the quasihole state
 
 $$
 \Psi_\text{hole}(z_1,\ldots, z_N|Z) = \prod_j (Z-z_j)\Psi_{m=1}(z_1,\ldots, z_N).
 $$
 
-can be formed from a superposition of single hole states in the Fermi sea
+into a superposition of eigenstates of $V_\text{harm}$, describing the occupation numbers of these eigenstates.
 
-## Improving the plasma picture
 
-Adding finite screening length by allowing for entropy...
+## Ground State of the Attractive Lieb--Liniger Model
 
-## Ground state of the attractive Lieb--Liniger model
+For _attractive_ interactions $c<0$ the ground state of $N$ bosons on the infinite line is
 
-Show the explicit form of the ground state and demonstrate that this is of Bethe form, identifying the Bethe momenta in this case.
+$$
+\Psi(x_1,\ldots,x_N) = \prod_{j<k}\exp\left(-\frac{\abs{c}}{2}\abs{x_j-x_k}\right),\quad x_1<x_2<\cdots <x_N
+$$
 
-Relate to bright soliton -- captures leading order ground state energy (and mass, but that's easy)
+Show that this is a Bethe state, find the Bethe roots, and calculate the energy.
 
-## Density correlations in Lieb--Liniger
 
-## Semiclassical limit of Type I and II modes
+## Density Correlations in Lieb--Liniger
 
-Present numerical (or analytical) evidence that in the weak coupling (small $\gamma$) limit the type I excitations coincide with the Bogoliubov modes and the type II excitations describe the solitons discussed in the midterm. For the calculation of the dispersion relation for solitons, see Section II of Phys. Rev. A 78, 053630 (2008).
+If $E_0(c)$ is the ground state energy of the Lieb--Liniger model as a function of $c$, show that
 
-## Peirels instability
+$$
+\frac{dE_0}{dc} = \bra{\Psi_0}\sum_{j<k}\delta(x_j-x_k)\ket{\Psi_0},
+$$
 
-## Diagonalize quadratic Hamiltonian for general two particle potential
+where $\ket{\Psi_0}$ is the ground state. By solving the Bethe equations numerically, find how the RHS varies with $c$, and interpret your results.
 
-## Quantize the 2D oscillator problem
+## Normal Modes in General
 
-## Optical phonons?
+Consider the more general Hamiltonian
 
-Double the size of the unit cell?
+$$
+H = \sum_{j=1}^N \left[\frac{p_j^2}{2m} + \sum_{j<k} V(x_j-x_k) \right].
+$$
 
-Model of a displacive phase transition
+1. Impose periodic boundary conditions and find normal modes for the oscillation about the equilibrium state -- a regular arrangement of masses.
 
-## Fluctuations of a mass in a finite chain
+2. Expand $H$ to quadratic order in the deviations from equilibrium and express the Hamiltonian in terms of oscillator variables.
+
+3. Expand to _cubic_ order and express the cubic parts in terms of oscillator variables. If we considered this part of the Hamiltonian as a perturbation in time dependent perturbation theory, what transitions could occur?
+
+
+## Fluctuations in a Finite Chain
 
 Investigate the behaviour of $\bra{0} u_j^2\ket{0}$ in a chain of length $N$. What happens as $N\to\infty$?
 
-## Thermal displacement in 2D
+## The 2D Elastic Solid
 
-Show that we get divergence of displacement in thermal equilibrium
+Solve the 2D harmonic solid, defined by
 
-## Excited States: Feynman--Bijl Formula
-
-## Nonlinearity and Interactions
-
-Introduce terminology of _free theory_
-
-## From Schwinger Bosons to Holstein--Primakoff
+<a name="2dSolid"></a>
+![]({{ site.baseurl }}/assets/2dSolid.png)
 
 
-Where does the Holstein--Primakoff representation come from?
+## Thermal Displacement in 2D
 
-[Jordan--Schwinger representation](https://en.wikipedia.org/wiki/Jordan_map)
-
-## Hartree-Fock Energy of Magnons
-
-## Spin Waves from Bogoliubov Transformation
-
-Write the Heisenberg model in terms of $\aop_j$ $\adop_j$ operators...
-
-## Classical Spin Waves
-
-Following Faddeev
-
-## Spin wave calculation with anisotropy
-
-## Proof of no LRO based on sum rules
-
-
-
-## The Simple Symmetric Exclusion Process (SEP)
-
-Show the relationship between generator and Heisenberg
+Show that $\bra{0} \mathbf{u}_{j,k}^2\ket{0}$ is finite in 2D, but diverges at finite temperature as $N\to\infty$.

@@ -23,6 +23,10 @@ In this lecture we discuss a very simple many body system in which particles are
 
 We study a chain of equal masses connected by springs, moving only in one dimension, along the chain. The Hamiltonian is
 
+<a name="ElasticChain"></a>
+![]({{ site.baseurl }}/assets/ElasticChain.png)
+
+
 $$\label{coll_Hchain}
 H = \sum_{j=1}^N \left[\frac{p_j^2}{2m} + \frac{k}{2} (u_j-u_{j+1})^2 \right].
 $$
