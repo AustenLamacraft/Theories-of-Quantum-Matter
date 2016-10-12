@@ -80,14 +80,14 @@ $$
 \frac{dE_0}{dc} = \bra{\Psi_0}\sum_{j<k}\delta(x_j-x_k)\ket{\Psi_0},
 $$
 
-where $\ket{\Psi_0}$ is the ground state. By solving the Bethe equations numerically, find how the RHS varies with $c$, and interpret your results.
+where $\ket{\Psi_0}$ is the ground state. By solving the Bethe equations numerically (see the [IPython notebook](https://github.com/AustenLamacraft/Theories-of-Quantum-Matter/blob/master/notebooks/BetheGroundState.ipynb)), find how the RHS varies with $c$, and interpret your results.
 
 ## Normal Modes in General
 
 Consider the more general Hamiltonian
 
 $$
-H = \sum_{j=1}^N \left[\frac{p_j^2}{2m} + \sum_{j<k} V(x_j-x_k) \right].
+H = \sum_{j=1}^N \frac{p_j^2}{2m} + \sum_{j<k} V(x_j-x_k) .
 $$
 
 1. Impose periodic boundary conditions and find normal modes for the oscillation about the equilibrium state -- a regular arrangement of masses.

@@ -24,6 +24,7 @@ Do also the case of parametric oscillator
 
 ## Bright soliton and attractive Bose gas
 
+Get the $N^3$ part of the energy
 
 ## Condensate Fluctuations
 

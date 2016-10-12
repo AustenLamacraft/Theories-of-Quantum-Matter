@@ -290,7 +290,7 @@ u_N
 <p>Notice that:</p>
 
 <ol>
-  <li>The frequency vanishes at $k\to 0$. This mode corresponds to translation of the system, for which there is no restoring force.</li>
+  <li>The frequency vanishes at $\eta\to 0$. This mode corresponds to translation of the system, for which there is no restoring force.</li>
   <li>At small $k$ the dispersion is linear, as we would expect for sound waves.</li>
 </ol>
 
@@ -358,8 +358,8 @@ H' = \sum_{0 < n \leq (N-1)/2} \left[\frac{1}{2m}\pi'_n \pi'_{n} + k  (1-\cos \e
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
-\dot a &= \{a, H \} = -i\omega\\
-\dot a^* &= \{a^*, H \} = i\omega.
+\dot a &= \{a, H \} = -i\omega a\\
+\dot a^* &= \{a^*, H \} = i\omega a^*.
 \end{align} %]]></script>
 
 <p>with solution $a(t) = e^{-i\omega t} a(0)$ describing circular motion in the complex $a$ plane on a contour of fixed energy.</p>
@@ -411,13 +411,13 @@ q_n &= \sqrt{\frac{1}{2m\omega(\eta_n)}}\left(a_n + a_{-n}^*\right)\nonumber\\
 
 <p>then $\adop\ket{\psi}$ is an eigenstate with energy $E+\omega$</p>
 
-<script type="math/tex; mode=display">H \adop \ket{\psi} = \adop H \ket{\psi} + [H, \adop] \ket{\psi} = \left(E+\omega\right)\ket{\psi}.</script>
+<script type="math/tex; mode=display">H \adop \ket{\psi} = \adop H \ket{\psi} + [H, \adop] \ket{\psi} = \left(E+\omega\right)\adop\ket{\psi}.</script>
 
 <p>Similarly $a\ket{\psi}$ is an eigenstate with energy $E-\omega$, unless $\ket{\psi}=\ket{0}$, the ground state, in which case we must have $\aop\ket{0}=0$.</p>
 
 <p>As a result, all states can be written as</p>
 
-<script type="math/tex; mode=display">\ket{n} = \frac{1}{\sqrt{n!}}\left(\adop\right)^N\ket{0}.</script>
+<script type="math/tex; mode=display">\ket{n} = \frac{1}{\sqrt{n!}}\left(\adop\right)^n\ket{0}.</script>
 
 <p>The factor of $\frac{1}{\sqrt{n!}}$ normalizes the state. The ground state has energy $E_0=\omega/2$.</p>
 

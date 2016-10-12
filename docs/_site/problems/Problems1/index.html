@@ -261,14 +261,14 @@ H = -\frac{1}{2}\sum_{j=1}^N \frac{\partial^2}{\partial x_j^2} + \frac{\lambda(\
 <script type="math/tex; mode=display">% <![CDATA[
 \frac{dE_0}{dc} = \bra{\Psi_0}\sum_{j<k}\delta(x_j-x_k)\ket{\Psi_0}, %]]></script>
 
-<p>where $\ket{\Psi_0}$ is the ground state. By solving the Bethe equations numerically, find how the RHS varies with $c$, and interpret your results.</p>
+<p>where $\ket{\Psi_0}$ is the ground state. By solving the Bethe equations numerically (see the <a href="https://github.com/AustenLamacraft/Theories-of-Quantum-Matter/blob/master/notebooks/BetheGroundState.ipynb">IPython notebook</a>), find how the RHS varies with $c$, and interpret your results.</p>
 
 <h2 id="normal-modes-in-general">Normal Modes in General</h2>
 
 <p>Consider the more general Hamiltonian</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
-H = \sum_{j=1}^N \left[\frac{p_j^2}{2m} + \sum_{j<k} V(x_j-x_k) \right]. %]]></script>
+H = \sum_{j=1}^N \frac{p_j^2}{2m} + \sum_{j<k} V(x_j-x_k) . %]]></script>
 
 <ol>
   <li>

@@ -89,7 +89,7 @@ $$
 
 Notice that:
 
-1. The frequency vanishes at $k\to 0$. This mode corresponds to translation of the system, for which there is no restoring force.
+1. The frequency vanishes at $\eta\to 0$. This mode corresponds to translation of the system, for which there is no restoring force.
 2. At small $k$ the dispersion is linear, as we would expect for sound waves.
 
 A general motion of the system can be represented as a superposition of the normal modes
@@ -174,8 +174,8 @@ Hamilton's equations of motion are then
 
 $$
 \begin{align}
-\dot a &= \{a, H \} = -i\omega\\
-\dot a^* &= \{a^*, H \} = i\omega.
+\dot a &= \{a, H \} = -i\omega a\\
+\dot a^* &= \{a^*, H \} = i\omega a^*.
 \end{align}
 $$
 
@@ -240,7 +240,7 @@ $$
 then $\adop\ket{\psi}$ is an eigenstate with energy $E+\omega$
 
 $$
-H \adop \ket{\psi} = \adop H \ket{\psi} + [H, \adop] \ket{\psi} = \left(E+\omega\right)\ket{\psi}.
+H \adop \ket{\psi} = \adop H \ket{\psi} + [H, \adop] \ket{\psi} = \left(E+\omega\right)\adop\ket{\psi}.
 $$
 
 Similarly $a\ket{\psi}$ is an eigenstate with energy $E-\omega$, unless $\ket{\psi}=\ket{0}$, the ground state, in which case we must have $\aop\ket{0}=0$.
@@ -248,7 +248,7 @@ Similarly $a\ket{\psi}$ is an eigenstate with energy $E-\omega$, unless $\ket{\p
 As a result, all states can be written as
 
 $$
-\ket{n} = \frac{1}{\sqrt{n!}}\left(\adop\right)^N\ket{0}.
+\ket{n} = \frac{1}{\sqrt{n!}}\left(\adop\right)^n\ket{0}.
 $$
 
 The factor of $\frac{1}{\sqrt{n!}}$ normalizes the state. The ground state has energy $E_0=\omega/2$.
