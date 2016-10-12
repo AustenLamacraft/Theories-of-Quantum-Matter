@@ -83,11 +83,11 @@ $$
 We'll write $\eta_n\equiv \frac{2\pi n}{N}$, so that the eigenstates have the form $u_j=\exp(i\eta_n j)$. Substitution into the equation of motion yields the dispersion relation
 
 $$
-\omega(\eta) = \sqrt{\frac{4k}{m}}\left|\sin\eta/2\right|,
+\omega(\eta) = \sqrt{\frac{4k}{m}}\left|\sin\eta/2\right|.
 \label{coll_Dispersion}
 $$
 
-which is plotted in Figure... Notice that:
+Notice that:
 
 1. The frequency vanishes at $k\to 0$. This mode corresponds to translation of the system, for which there is no restoring force.
 2. At small $k$ the dispersion is linear, as we would expect for sound waves.
@@ -288,7 +288,7 @@ $$
 \Psi^{\text{S}}_{\alpha_{1}\alpha_{2}\cdots\alpha_{M}}(\br_1,\ldots,\br_M)=\sqrt{\frac{M!}{\prod_{\alpha}N_{\alpha}!}}\mathcal{S}\,\varphi_{\alpha_{1}}(\mathbf{r}_{1})\varphi_{\alpha_{2}}(\mathbf{r}_{2})\cdots\varphi_{\alpha_{M}}(\mathbf{r}_{M}),
 $$
 
-where $\mathcal{S}=\frac{1}{N!}\sum_{P} P$ is the operation of _symmetrization_, and $N_\alpha$ denotes the number of occurrences of $\varphi_\alpha(\br)$ in the product, so that $M=\sum_\alpha N_\alpha$. It turns out that the Hilbert space spanned by these states is the same as that spanned by the states $\ket{\mathbf{N}}$, if the labels $\alpha$ are identified with the momentum labels $n$.
+where $\mathcal{S}=\frac{1}{M!}\sum_{P} P$ is the operation of _symmetrization_, and $N_\alpha$ denotes the number of occurrences of $\varphi_\alpha(\br)$ in the product, so that $M=\sum_\alpha N_\alpha$. It turns out that the Hilbert space spanned by these states is the same as that spanned by the states $\ket{\mathbf{N}}$, if the labels $\alpha$ are identified with the momentum labels $n$.
 
 It's important to note that these bosons are totally distinct from the original particles making up the chain. In fact, our original Hamiltonian \eqref{coll_Hchain} doesn't describe indistinguishable particles as written, as each particle is labelled by its position in the chain, with a particle only interacting with its two neighbours. Since the particles are assumed not to change places, there is no way of assigning statistics to their wavefunction.
 
@@ -348,7 +348,7 @@ $$
 Since we are taking the $N\to\infty$ limit it's convenient to define the Fourier modes slightly differently
 
 $$
-u(x) = \sum_{n=-\infty}^\infty u_n e^{k_n x},
+u(x) = \sum_{n=-\infty}^\infty u_n e^{ik_n x},
 $$
 
 where $k_n =2\pi n/L$. Note that $k_n x = \eta_n j$. We are recycling the notation $u_n$ now that we have taken the limit.
@@ -497,7 +497,7 @@ $$
 In this case we have
 
 $$
-\bra{0}\left(u_j-u_k\right)^2\ket{0} \sim  \frac{\ell_\text{osc}^2}{4\pi} \log \left|j-k\right|,\qquad \text{ as } \left|j-k\right|\to\infty
+\bra{0}\left(u_i-u_j\right)^2\ket{0} \sim  \frac{\ell_\text{osc}^2}{4\pi} \log \left|i-j\right|,\qquad \text{ as } \left|i-j\right|\to\infty
 \label{coll_LogFluct}
 $$
 
@@ -533,12 +533,12 @@ N & n = 0 \mod N \\
 $$
 
 These peaks at values of $k$ corresponding to multiples of $\frac{2\pi}{a}$ are nothing but the _Bragg peaks_ observed in a diffraction experiment, which translates the real space crystal arrangement into Fourier space. Note that an overall translation of lattice will just change the phase of the $
-rho_k$, leaving $\left|\rho_k\right|^2$ (proportional to the intensity measured in a diffraction experiment) unchanged.
+\rho_k$, leaving $\left|\rho_k\right|^2$ (proportional to the intensity measured in a diffraction experiment) unchanged.
 
 How is this picture altered in the quantum mechanical ground state? Given the above comment, we should evaluate
 
 $$
-\bra{0} \rho_k \rho_{-k} \ket{0} = \sum_{j,k=1}^N \bra{0} \exp(ik[x_j-x_k])\ket{0}.
+\bra{0} \rho_q \rho_{-q} \ket{0} = \sum_{j,k=1}^N \bra{0} \exp(iq[x_j-x_k])\ket{0}.
 \label{coll_Struct}
 $$
 
@@ -563,19 +563,19 @@ $$
 Deploying this strategy for \eqref{coll_Struct} gives
 
 $$
-\bra{0} \rho_k \rho_{-k} \ket{0} = \sum_{j,k=1}^N \exp(ika[j-k])\exp\left(-\frac{k^2}{2mN}\sum_{|n| \leq (N-1)/2} \frac{1-\cos\left(\eta[j-k]\right)}{\omega(\eta_n)}\right).
+\bra{0} \rho_q \rho_{-q} \ket{0} = \sum_{j,k=1}^N \exp(iqa[j-k])\exp\left(-\frac{q^2}{2mN}\sum_{|n| \leq (N-1)/2} \frac{1-\cos\left(\eta[j-k]\right)}{\omega(\eta_n)}\right).
 $$
 
-The second exponent modifies the classical prediction of Bragg peaks. We have encountered the expression in exponent before in \eqref{coll_uvar}. Taking the $N\to\infty$ limit with $\left\|j-k\right\|\gg 1$ as before, we find that in the vicinity of the first Bragg peak at $k=2\pi/a$ the summand has the form
+The second exponent modifies the classical prediction of Bragg peaks. We have encountered the expression in exponent before in \eqref{coll_uvar}. Taking the $N\to\infty$ limit with $\left\|j-k\right\|\gg 1$ as before, we find that in the vicinity of the first Bragg peak at $q=2\pi/a$ the summand has the form
 
 $$
-\exp(i\Delta k a[j-k])\, \left|j-k\right|^{-\pi\ell_\text{osc}^2/2a^2},
+\exp(i\Delta q a[j-k])\, \left|j-k\right|^{-\pi\ell_\text{osc}^2/2a^2},
 $$
 
-where $\Delta k$ denotes the deviation of $k$ from $2\pi/a$. This leads to the conclusion
+where $\Delta q$ denotes the deviation of $q$ from $2\pi/a$. This leads to the conclusion
 
 $$
-\bra{0} \rho_k \rho_{-k} \ket{0} \sim \left(\Delta k\right)^{-1+\pi\ell_\text{osc}^2/2a^2}.
+\bra{0} \rho_q \rho_{-q} \ket{0} \sim \left(\Delta q\right)^{-1+\pi\ell_\text{osc}^2/2a^2}.
 $$
 
 Thus quantum fluctuations replace the Bragg peaks, an indicator of crystalline order, with power law divergences. These remnants of order diminish as $\ell_\text{osc}/a$ increases, indicating larger quantum fluctuations. Again, things are different in higher dimensions: the Bragg peaks survive, albeit reduced in strength, at least for small fluctuations. It is possible, however, for quantum fluctuations to prevent crystallization in the ground state (i.e. at zero temperature). Such systems are called _quantum liquids_. Helium is the prototypical example: the low atomic mass and relatively weak interactions between atoms mean that quantum fluctuations are large.
@@ -591,7 +591,7 @@ This is a good place to collect some facts about Fourier transforms. We start fr
 For a vector $x_j = 1,\ldots N$ ($N$ taken to be odd), we define the DFT by
 
 $$
-F_n = \sum_1^N f_j e^{-i\eta_n j},
+F_n = \sum_{j=1}^N f_j e^{-i\eta_n j},
 \label{coll_DFT}
 $$
 
@@ -616,7 +616,7 @@ A more democratic definition would have $1/\sqrt{N}$ in both definitions \eqref{
 
 ### $N\to\infty$ limit
 
-In this limit we the $\eta_n$ values become dense in the range $(-\pi,\pi]$, with separation $\Delta \eta = 2\pi/N$, and we replace the sum in the inverse DFT \eqref{coll_IDFT} by an integral according to the prescription
+In this limit the $\eta_n$ values become dense in the range $(-\pi,\pi]$, with separation $\Delta \eta = 2\pi/N$, and we replace the sum in the inverse DFT \eqref{coll_IDFT} by an integral according to the prescription
 
 $$
 \sum_{|n| \leq (N-1)/2} \left(\cdots\right) \xrightarrow{N\to\infty} N \int_{-\pi}^\pi \frac{d\eta}{2\pi}\left(\cdots\right),
@@ -711,7 +711,7 @@ $$
 \begin{align}
 \int_{0}^L f(x)g(x)\,dx &= \frac{1}{L}\sum_k  f_k  g_{-k}\nonumber\\
 \int_{0}^L f'(x)g'(x)\,dx &= \frac{1}{L}\sum_k k^2 f_k  g_{-k}\nonumber\\
-\int_{0}^L f(x)g(x)h(x)\,dx &=  \frac{1}{L^2}\sum_{\substack{k_1,k_2,k_3 \\ k_1+k_2+k_2=0}}  f_{k_1} g_{k_2} h_{k_3}\nonumber\\
+\int_{0}^L f(x)g(x)h(x)\,dx &=  \frac{1}{L^2}\sum_{\substack{k_1,k_2,k_3 \\ k_1+k_2+k_3=0}}  f_{k_1} g_{k_2} h_{k_3}\nonumber\\
 \int_0^\infty  \phi(x)V(x-y)\phi(y)\,dx \,dy &= \frac{1}{L}\sum_{q}  \phi_{-q} V_q \phi_q
 \label{coll_FTExamples}
 \end{align}
