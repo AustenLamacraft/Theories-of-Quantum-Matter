@@ -25,7 +25,7 @@ $$
 is an eigenstate -- in fact it's the ground state -- of the __Sutherland model__
 
 $$
-H = -\frac{1}{2}\sum_{j=1}^N \frac{\partial^2}{\partial x_j^2} + \frac{\lambda(\lambda-1)}{4}\sum_{j<k}
+H = -\frac{1}{2}\sum_{j=1}^N \frac{\partial^2}{\partial x_j^2} + \frac{\lambda(\lambda-1)\pi^2}{4L^2}\sum_{j<k}
 \sin^{-2}\left(\frac{\pi[x_j-x_k]}{L}\right).
 $$
 
