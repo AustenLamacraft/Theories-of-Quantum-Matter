@@ -322,7 +322,7 @@ $$
 Then $k/m = \kappa/\rho$ and
 
 $$
-\frac{E_0}{L} = \frac{2N}{\pi}\sqrt{\frac{\kappa}{\rho}}.
+\frac{E_0}{L} = \left(\frac{N}{L}\right)^2\frac{2}{\pi}\sqrt{\frac{\kappa}{\rho}}.
 $$
 
 The energy per unit length diverges as $N\to\infty$. Thus the ground state energy of a continuous medium is infinite, on account of the infinite number of degrees of freedom it contains. This is only a problem if one insists on such a description: in practice (at least in condensed matter) there is always discreteness on the smallest scales.
@@ -398,20 +398,20 @@ This expresses the energy above the ground state in terms of the occupancy of th
 At finite temperature $T$ the occupancies of the modes have thermal averages given by the Bose occupation function
 
 $$
-\langle N_n \rangle = \mathcal{B}(\omega(\eta_n))\equiv \frac{1}{\exp\left(\beta\omega(\eta_n)\right)-1},
+\langle N_n \rangle = n_\text{B}(\omega(\eta_n))\equiv \frac{1}{\exp\left(\beta\omega(\eta_n)\right)-1},
 \label{coll_Bose}
 $$
 
 where $\beta=\frac{1}{k_\text{B}T}$. The thermal average of the energy of excited states is then
 
 $$
-\langle H - E_0 \rangle =\sum_{|n|\leq (N-1)/2} \omega(\eta_n)\mathcal{B}(\omega(\eta_n)).
+\langle H - E_0 \rangle =\sum_{|n|\leq (N-1)/2} \omega(\eta_n)n_\text{B}(\omega(\eta_n)).
 $$
 
 This is finite, even in the $N\to\infty$ limit, on account of the exponential tail of \eqref{coll_Bose}. Remember that this was the problem that the quantum theory was introduced to solve. At low energies $\mathcal{B}(\omega) = \frac{1}{\beta\omega}$ and the contribution of each mode is
 
 $$
-\omega \mathcal{B}(\omega) \xrightarrow{\omega\to 0}  k_\text{B}T,
+\omega n_\text{B}(\omega) \xrightarrow{\omega\to 0}  k_\text{B}T,
 $$
 
 in agreement with the classical equipartition theorem. Were this result to apply at all energies the thermal energy density of a continuum at finite temperature would be infinite (the [Ultraviolet Catastrophe](https://en.wikipedia.org/wiki/Ultraviolet_catastrophe)). It is the existence of Planck's constant, which appears in the dimensionless combination $\hbar\beta\omega$ in the Bose occupation function, that allows this conclusion to be avoided.
@@ -612,7 +612,7 @@ f_j = \frac{1}{N}\sum_{n=-(N-1)/2}^{(N-1)/2}  F_n e^{i\eta_n j}.
 \label{coll_IDFT}
 $$
 
-A more democratic definition would have $1/\sqrt{N}$ in both definitions \eqref{coll_DFT} and \eqref{coll_IDFT}. This would allow us to regard the DFT as a basis change to an orthonormal basis of vectors $e^(n)_j = \frac{e^{i\eta_n j}}{\sqrt{N}}$, and both the DFT and its inverse would be unitary transformations.
+A more democratic definition would have $1/\sqrt{N}$ in both definitions \eqref{coll_DFT} and \eqref{coll_IDFT}. This would allow us to regard the DFT as a basis change to an orthonormal basis of vectors $e^{(n)}_j = \frac{e^{i\eta_n j}}{\sqrt{N}}$, and both the DFT and its inverse would be unitary transformations.
 
 ### $N\to\infty$ limit
 

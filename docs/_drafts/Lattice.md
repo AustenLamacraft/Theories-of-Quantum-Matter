@@ -21,17 +21,17 @@ published: true
 
 Matrix form. Solution by Fourier transformation. _circulant matrix_
 
-# Bose--Hubbard Model
+# Bose Hubbard Model
 
-## the Mott State
+## The Mott State
 
 Getting at the phase boundaries for large $$U$$ by adding or removing a particle on top of the Mott state.
 
-## the Superfluid State
+## The Superfluid State
 
-## the Phase Diagram
+## The Phase Diagram
 
-# (Fermi--)Hubbard Model
+# Fermi Hubbard Model
 
 ## $$U\to\infty$$ and Superexchange
 
@@ -40,6 +40,8 @@ On account of their being more than one species of particle, the $$U\to\infty$$ 
 Should be cautious, as in a large system the energy spectrum of the Heisenberg model will exceed the separation from doubly occupied sites.
 
 ### Two Sites
+
+### Effective Hamiltonian
 
 ### Schrieffer--Wolf Transformation
 

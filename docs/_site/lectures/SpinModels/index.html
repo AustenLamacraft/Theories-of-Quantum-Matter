@@ -67,6 +67,7 @@
    TeX: { equationNumbers: { autoNumber: "all" },
           Macros: {
           cP: '\\mathcal{P}',
+          cN: '\\mathcal{N}',
           br: '\\mathbf{r}',
           bx: '\\mathbf{x}',
           bp: '\\mathbf{p}',
@@ -209,7 +210,6 @@ In this lecture we introduce a simple quantum mechanical model of magnetism cons
   </li>
   <li><a href="#antiferromagnets-are-different" id="markdown-toc-antiferromagnets-are-different">Antiferromagnets Are Different!</a>    <ul>
       <li><a href="#the-anderson-tower" id="markdown-toc-the-anderson-tower">The Anderson Tower</a></li>
-      <li><a href="#translational-invariance" id="markdown-toc-translational-invariance">Translational invariance</a></li>
     </ul>
   </li>
   <li><a href="#large-s-expansion" id="markdown-toc-large-s-expansion">Large $s$ Expansion</a>    <ul>
@@ -219,8 +219,6 @@ In this lecture we introduce a simple quantum mechanical model of magnetism cons
     </ul>
   </li>
   <li><a href="#a-numerical-experiment" id="markdown-toc-a-numerical-experiment">A Numerical Experiment</a></li>
-  <li><a href="#some-facts-about-ground-states-of-heisenberg-models" id="markdown-toc-some-facts-about-ground-states-of-heisenberg-models">Some facts about ground states of Heisenberg Models</a></li>
-  <li><a href="#outlook" id="markdown-toc-outlook">Outlook</a></li>
   <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
 
@@ -416,7 +414,7 @@ s^+ = \begin{pmatrix}
 
 <h3 id="n-magnon-states">$N$-Magnon States</h3>
 
-<p>We could continue to consider states with more magnons. It turns out that for the Heisenberg model we are lucky: Bethe’s ansatz for a general energy eigenstate works in this model too! In fact, the Heisenberg model was the subject of Bethe’s 1931 paper – so soon after the birth of quantum mechanics!</p>
+<p>We could continue to consider states with more magnons. It turns out that for the Heisenberg model we are lucky: Bethe’s ansatz from <a href="/docs/lectures/LiebLinigerModel/">Lecture 2</a> for a general energy eigenstate works in this model too! In fact, the Heisenberg model was the subject of Bethe’s 1931 paper – so soon after the birth of quantum mechanics!</p>
 
 <p>We started our discussion with the ground state of the ferromagnetic $J&lt;0$ Heisenberg model. What about $J&gt;0$? Can we guess the ground state in this case (of course, that’s equivalent to finding the <em>highest</em> excited state of the ferromagnet). Bethe would tell us that it must be some complicated gas of magnons, all scattering off each other. Why are things so complicated?</p>
 
@@ -424,53 +422,107 @@ s^+ = \begin{pmatrix}
 
 <p>Let’s try and <em>guess</em> the ground state of the antiferromagnet. Since anti-aligning spins should be favoured, we might try</p>
 
-<script type="math/tex; mode=display">\ket{\text{AFM}} = \equiv \ket{+}_1\ket{-}_{2}\cdots \ket{+}_{N-1}\ket{-}_{N},
+<script type="math/tex; mode=display">\ket{\text{AFM}}  \equiv \ket{+}_1\ket{-}_{2}\cdots \ket{+}_{N-1}\ket{-}_{N},
 \label{spin_AFM}</script>
 
 <p>assuming $N$ is odd. Acting with the $H$ reveals that we are out of luck, however. The reason is simple: regarding the down spins as particles arranged on every other site, the spin flip terms of the Hamiltonian cause them to move about. This is Bethe’s dense gas of interacting magnons.</p>
 
-<p>But antiferromagnets, with the kind of alternating order described by \eqref{spin_AFM} do exist! In fact, their existence was predicted  by <a href="https://en.wikipedia.org/wiki/Louis_Néel">Louis Néel</a> in 1936 <em>before</em> their experimental discovery. (\eqref{spin_AFM}) is sometimes called a <strong>Néel state</strong> for this reason.</p>
+<p>But antiferromagnets, with the kind of alternating order described by \eqref{spin_AFM} do exist! In fact, their existence was predicted  by <a href="https://en.wikipedia.org/wiki/Louis_Néel">Louis Néel</a> in 1936 <em>before</em> their experimental discovery. \eqref{spin_AFM} is sometimes called a <strong>Néel state</strong> for this reason.</p>
 
 <p>The Heisenberg antiferromagnetic spin chain does not have an antiferromagnetic ground state. The reason, as we’ll see, is similar to that behind the absence of Bragg peaks in the elastic chain: quantum fluctuations are too strong. On the square and cubic lattices, the Heisenberg model <em>does</em> display antiferromagnetism in the ground state. The above considerations show us, however, that these states are a bit more complicated than \eqref{spin_AFM}.</p>
 
 <h3 id="the-anderson-tower">The Anderson Tower</h3>
 
-<p>We consider a simple model due to Philip Anderson. The couplings of the nearest neighbour Heisenberg model on the chain, square and cubic lattices define a <a href="https://en.wikipedia.org/wiki/Bipartite_graph">bipartite graph</a>. This means that the sites (or vertices of the graph) can be grouped into two sets, with couplings only between the two sets (not within). Thus in the chain, the two sets are the even and odd sites.</p>
+<p>We consider a simple model due to Philip Anderson. The couplings of the nearest neighbour Heisenberg model on the chain, square and cubic lattices define a <a href="https://en.wikipedia.org/wiki/Bipartite_graph">bipartite graph</a>. This means that the sites (or vertices of the graph) can be grouped into two sets, with couplings only between the two sets (not within). Thus in the chain, the two sets are the even and odd sites. We call these two sets sublattice $A$ and sublattice $B$.</p>
 
-<p>Since it seems to be hard to solve the Heisenberg model, we simplify it in the following way. Introduce the Fourier components of the spin</p>
+<p>Since it seems to be hard to solve the Heisenberg model, we simplify it in the following way (this discussion follows <a href="#Lhuillier:2006aa">(Lhuillier, 2006)</a>). Introduce the Fourier components of the spin</p>
 
-<script type="math/tex; mode=display">\mathbf{S}_\mathbf{j} = \frac{1}{N^{d/2}} \sum_{\boldsymbol{\eta}} \mathbf{S}_\boldsymbol{\eta} e^{i \boldsymbol{\eta}\cdot \mathbf{j}}.</script>
+<script type="math/tex; mode=display">\mathbf{s}_\mathbf{j} =  \sum_{\boldsymbol{\eta}} \tilde{\mathbf{s}}_\boldsymbol{\eta} e^{i \boldsymbol{\eta}\cdot \mathbf{j}}.</script>
 
 <p>Here $\mathbf{j}$ denotes a $d$-dimensional vector of integers $\mathbf{j}=(j_1,\ldots j_d)$, $j=1,\ldots N$ giving the position of the spin in an $\overbrace{N\times N \times \cdots N}^{d\text{ times}}$ cubic lattice, and likewise</p>
 
-<script type="math/tex; mode=display">\boldsymbol{\eta} = (\eta_1,\ldots \eta_d) = \frac{2\pi}{N}(n_1,\ldots n_d),\quad n_a = -(N-1)/2,\ldots (N-1)/2</script>
+<script type="math/tex; mode=display">\boldsymbol{\eta} = (\eta_1,\ldots \eta_d) = \frac{2\pi}{N}(n_1,\ldots n_d),\quad n_a = -N/2+1,\ldots N/2</script>
 
-<script type="math/tex; mode=display">H = \frac{J}{N} \mathbf{S}_A\cdot \mathbf{S}_B,
-\label{spin_Anderson}</script>
+<p>gives all the wavevectors in the Brillouin zone. It’s easier to assume $N$ is even here, to accommodate antiferromagnetic order. In terms of $\tilde{\mathbf{s}}_\boldsymbol{\eta}$, the $d$-dimensional version of the Heisenberg Hamiltonian \eqref{spin_Hberg} on the square / cubic / hypercubic lattice can be written</p>
 
-<p>where</p>
+<script type="math/tex; mode=display">H = JN^d\sum_{\boldsymbol{\eta}\in \text{BZ}}\gamma_{\boldsymbol{\eta}}\tilde{\mathbf{s}}_\boldsymbol{\eta}\cdot \tilde{\mathbf{s}}_\boldsymbol{-\eta},
+\label{spin_HbergFT}</script>
 
-<script type="math/tex; mode=display">\mathbf{S}_A = \sum_{j\in A\text{ sublattice}} \mathbf{s}_j</script>
+<p>where $\gamma_{\boldsymbol{\eta}}=\frac{1}{2}\sum_{j=1}^d\cos(\eta_j)$. Now we are going to do something drastic and throw away all wavevectors apart from $\boldsymbol{\eta}=\boldsymbol{0}$ and $\boldsymbol{\eta}  = (\pi,\ldots,\pi)$. The motivation is that</p>
 
-<p>is the total spin of sublattice A, and similarly for sublattice B. The factor of $1/N$ in \eqref{spin_Anderson} is there to make the energies extensive ($\propto N$).</p>
+<script type="math/tex; mode=display">\tilde{\mathbf{s}}_\boldsymbol{0} = \cN^{-1}\left(\mathbf{S}_A + \mathbf{S}_B\right), \qquad\tilde{\mathbf{s}}_{(\pi,\ldots,\pi)} = \cN^{-1}\left(\mathbf{S}_A - \mathbf{S}_B\right),</script>
 
-<p>What is the ground state of $H$, assuming $J&gt;0$? This is easily answered by writing the Hamiltonian as</p>
+<p>where $\mathbf{S}_A$ and $\mathbf{S}_B$ are the total spins of the $A$ and $B$ sublattices, and $\cN = N^d$ is the total number of sites. Since antiferromagnetism involves anti-alignment of spins on the different sublattices, the second component should be particularly important. Our simplified Hamiltonian is then</p>
 
-<script type="math/tex; mode=display">H = \frac{J}{2N} \left[\left(\mathbf{S}_A + \mathbf{S}_B\right)^2 - \mathbf{S}_A^2 - \mathbf{S}_B^2\right] = \frac{J}{2N} \left[\left(\mathbf{S}_A + \mathbf{S}_B\right)^2 - \mathbf{S}_A^2 - \mathbf{S}_B^2\right].</script>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+H_{AB} &= \frac{J}{\cN}\left[\left(\mathbf{S}_A + \mathbf{S}_B\right)^2 - \left(\mathbf{S}_A - \mathbf{S}_B\right)^2\right]\\
+& = \frac{4J}{\cN}\mathbf{S}_A\cdot \mathbf{S}_B.
+\label{spin_HAB}
+\end{align} %]]></script>
 
-<p>It’s clear that we should form two spins of maximal size $N/4$ from each of the two sublattices, and then combine them to make an overall spin singlet. Obviously this singlet is a spherically symmetric state with no preferred direction, and hence no antiferromagnetic order.</p>
+<p>(Note that $\tilde{\mathbf{s}}_{(\pi,\ldots,\pi)}=\tilde{\mathbf{s}}_{-(\pi,\ldots,\pi)}$) Relative to the original model, this has the unphysical feature that every sublattice $A$ spin is interacting with every sublattice $B$ spin. The factor of $N^{-d}$ does guarantee that we’ll have an extensive energy, however.</p>
 
-<p>Now let’s add an external field that acts with opposite sign on the two sublattices</p>
+<p>What is the ground state of $H_{AB}$, assuming $J&gt;0$? This is easily answered by writing the Hamiltonian as</p>
 
-<script type="math/tex; mode=display">H = \frac{J}{N} \mathbf{S}_A\cdot \mathbf{S}_B - h\left(S^z_A - S^z_B\right).</script>
+<script type="math/tex; mode=display">H = \frac{2J}{\cN} \left[\left(\mathbf{S}_A + \mathbf{S}_B\right)^2 - \mathbf{S}_A^2 - \mathbf{S}_B^2\right].
+\label{spin_HAB2}</script>
 
-<p>Obviously this is not really feasible in a magnetic material, but this is a thought experiment! Now the Hamiltonian conserves $S^z_{A}+S^z_B$, but not the total spin.</p>
+<p>It’s clear that we should form two spins of maximal size $\cN/4$ from each of the two sublattices, and then combine them to make an overall spin singlet. Obviously this singlet is a spherically symmetric state with no preferred direction, and hence no antiferromagnetic order. The ground state energy is</p>
 
-<p>If we work with the set of states of fixed $S^z_\text{tot}$</p>
+<script type="math/tex; mode=display">E_0 = J\left(\frac{N^2}{4}+1\right),</script>
 
-<h3 id="translational-invariance">Translational invariance</h3>
+<p>which is extensive. What about the excited states? There are two options for the first excited states:</p>
 
-<p>Mention Bethe ansatz solution. Relation to SEP. Spin waves and solitons. Antiferromagnetic order. Symmetry breaking. Anderson tower. Other examples- polar condensate.</p>
+<ol>
+  <li>
+    <p>Stick with spins of size $\cN/4$ for the sublattices, but combine them to make a total spin $&gt;0$.</p>
+  </li>
+  <li>
+    <p>Make smaller spins on the sublattices, and combine them.</p>
+  </li>
+</ol>
+
+<p>In the first case, the energy of excitation above the ground state is</p>
+
+<script type="math/tex; mode=display">E_S - E_0 = \frac{2J}{\cN} S(S+1),</script>
+
+<p>with degeneracy $2S+1$. In the second case, reducing $S_A\to \cN/4 - 1$ means that $\Delta\mathbf{S}_A^2 = -\frac{\cN}{8}$. From \eqref{spin_HAB2} we see that this is going to cause the energy to increase by an amount of order $J$, while in the first case our excitations were of order $J/\cN$. The two kinds of excitations only have comparable energies when $S$ is $O(\sqrt{N})$.</p>
+
+<p>Let’s describe these low energy states in more detail. The two spins of magnitude $S_A = S_B = \frac{\cN}{4}$ can be combined to make a total spin between $\cN/2$ and $-\cN/2$. We can thus decompose the Hilbert space of the two spins as</p>
+
+<script type="math/tex; mode=display">\mathcal{H}_A\otimes \mathcal{H}_B = \mathcal{H}^{(-\cN/2)}\oplus\mathcal{H}^{(-\cN/2+1)}\oplus\cdots \mathcal{H}^{(\cN/2)},</script>
+
+<p>where $\mathcal{H}^{(S)}$ is the Hilbert space of a spin $S$.</p>
+
+<p>Now we consider a superficially different problem: a particle of mass $M$ moving on a sphere of radius $R$, with Hamiltonian</p>
+
+<script type="math/tex; mode=display">H_\text{rotor} = \frac{ \mathbf{L}^2}{2MR^2},
+\label{spin_rotor}</script>
+
+<p>where $\mathbf{L}=\br\times\bp$ is the orbital angular momentum. The eigenstates of the particle, or rotor, are spherical harmonics $Y_{lm}(\theta,\phi)$, with energy</p>
+
+<script type="math/tex; mode=display">E_{lm} = \frac{L(L+1)}{2MR^2},\qquad m=-l,\ldots, l.</script>
+
+<p>Thus the eigenstates and eigenergies of our model spin Hamiltonian can be identified with those of the rotor up to $l=\cN/2$. What plays the role of the direction of the rotor $\br= R\mathbf{n}$, where $\mathbf{n}$ is a unit vector? Here are some things we know about $\mathbf{n}$.</p>
+
+<script type="math/tex; mode=display">\begin{align}
+\mathbf{L}\cdot \mathbf{n} = 0,\quad \mathbf{n}^2 = 1\\
+[L_j,n_k] = i\epsilon_{jkl}n_l,\quad [n_j,n_k]=0.
+\label{spin_nidents}
+\end{align}</script>
+
+<p>We get the same relations at large $N$ if we make the identifications</p>
+
+<script type="math/tex; mode=display">\mathbf{L} = \mathbf{S}_A + \mathbf{S}_B,\quad \mathbf{n} = \frac{2}{\cN}\left(\mathbf{S}_A - \mathbf{S}_B\right),</script>
+
+<p>as long as we stick to $\mathbf{L}$ of $O(\sqrt{\cN})$.</p>
+
+<p class="message">
+Evaluate the expressions \eqref{spin_nidents} and see that they are fulfilled in the limit $\cN\to\infty$.
+</p>
+
+<p>Thus the Néel vector $\mathbf{n}$ acts like the axis of a heavy rotor. Although it is certainly true that the ground state of the rotor is the $l=0$ state, which is delocalized over the sphere, it is possible to form a localized state of the rotor using a superposition of the $l&gt;0$ states – sometimes called the <em>Anderson tower</em> – which have energies that vanish as $\cN\to \infty$. The dynamics of such a superposition is therefore very slow. Alternatively, we may imagine that small perturbations from the outside world lift the spherical symmetry of the problem, causing the true ground state to be localized in one direction. The strength of perturbation necessary goes to zero as $\cN\to 0$. In either case, the result is that a thermodynamically large system will at any instant in time be observed to be ordered in a particular direction, and that direction will change infinitesimally slowly. This situation is usually described as <strong>spontaneous symmetry breaking</strong> – not a brilliant term given the above discussion.</p>
 
 <h2 id="large-s-expansion">Large $s$ Expansion</h2>
 
@@ -547,7 +599,7 @@ p_j(t) &= \frac{1}{\sqrt{N}}\sum_{|n| \leq (N-1)/2} \pi_n(t) e^{-i\eta_n j}.
 
 <p>The Heisenberg chain Hamiltonian then becomes</p>
 
-<script type="math/tex; mode=display">H = -J \sum_{j=1}^N \left[s^x_j s^x_{j+1} z- s^y_j s^y_{j+1} + s^z_j s^z_{j+1}\right].</script>
+<script type="math/tex; mode=display">H = -J \sum_{j=1}^N \left[s^x_j s^x_{j+1} - s^y_j s^y_{j+1} + s^z_j s^z_{j+1}\right].</script>
 
 <p>Now we proceed exactly as before. In approximating this Hamiltonian by a harmonic description close to the ferromagnetic state $\ket{\text{FM}}$, we are in fact working close to the <em>antiferromagnetic</em> state $\ket{\text{AFM}}$ in the original variables. The oscillator Hamiltonian is now</p>
 
@@ -611,19 +663,12 @@ p_j(t) &= \frac{1}{\sqrt{N}}\sum_{|n| \leq (N-1)/2} \pi_n(t) e^{-i\eta_n j}.
 
 <h2 id="a-numerical-experiment">A Numerical Experiment</h2>
 
-<p>Exact diagonalization of spin chains;</p>
-
-<h2 id="some-facts-about-ground-states-of-heisenberg-models">Some facts about ground states of Heisenberg Models</h2>
-
-<p>Marshall sign rule. Lieb Mattis theorem. Lack of order theorems</p>
-
-<h2 id="outlook">Outlook</h2>
-
-<p>Anisotropy, frustration…</p>
+<p>Exact diagonalization of spin chains.</p>
 
 <h2 id="references">References</h2>
 
-<ol class="bibliography"><li><span id="Auerbach:2012">Auerbach, A. (2012). <i>Interacting electrons and quantum magnetism</i>. Springer Science &amp; Business Media.</span></li></ol>
+<ol class="bibliography"><li><span id="Auerbach:2012">Auerbach, A. (2012). <i>Interacting electrons and quantum magnetism</i>. Springer Science &amp; Business Media.</span></li>
+<li><span id="Lhuillier:2006aa">Lhuillier, C. (2006). Frustrated Quantum Magnets in 2d: from Néel phases to Spin Liquids.</span></li></ol>
 
 </div>
 

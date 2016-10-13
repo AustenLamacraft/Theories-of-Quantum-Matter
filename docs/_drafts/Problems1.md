@@ -141,3 +141,5 @@ Following Faddeev
 ## The Simple Symmetric Exclusion Process (SEP)
 
 Show the relationship between generator and Heisenberg
+
+Mention Bethe ansatz solution. Relation to SEP. Spin waves and solitons. Antiferromagnetic order. Symmetry breaking. Anderson tower. Other examples- polar condensate.
