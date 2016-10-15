@@ -3,7 +3,7 @@ layout: page
 title: A is for Annihilation
 author: Austen Lamacraft
 chapter: 5
-summary: Fock states and occupation numbers. Creation and annihilation operators. The case of fermions. Representation of operators.
+summary: Product states and occupation numbers. Creation and annihilation operators. The case of fermions. Representation of operators.
 published: true
 ---
 
@@ -207,9 +207,9 @@ and involves the wavefunctions $\varphi_{\beta}(\br)$, rather than their conjuga
 
 $$
 \begin{gather}
-	\label{2nd_quant_PositionRelations}
 	\left[\pop(\br),\pdop(\br')\right]=\delta(\br-\br')\nonumber\\
 	\left[\pop(\br),\pop(\br')\right]=\left[\pdop(\br),\pdop(\br')\right]=0.
+	\label{2nd_quant_PositionRelations}
 \end{gather}
 $$
 
@@ -364,6 +364,17 @@ $$
 							&=\sum_{\alpha} A_{\alpha \beta} \adop_{\alpha}\ket{\text{VAC}}.
 \end{align}
 $$
+
+The second quantized form of $\hat A$ allows us to find the matrix element between product states
+
+$$
+\braket{\mathbf{N}}{\hat A}{\mathbf{N'}} = \sum_{\alpha\beta} A_{\alpha\beta} \sqrt{N_\alpha N'_\beta}.
+\label{A_Aab}
+$$
+
+<p class="message">
+This formula is not so easy to work out in the first quantized representation. Try it!
+</p>
 
 We worked this out for the bosonic case. However, you can check that \eqref{A_bilin}, the basic relation that makes it all work, is also valid for fermions (as a commutation relation, note!). So $\hat A$ has the same form for fermions.
 
@@ -521,7 +532,15 @@ $$
 \hat B = \frac{1}{2}\sum_{\alpha\beta\gamma\delta} B_{\alpha\beta,\gamma\delta}\adop_\alpha\adop_\beta\aop_\delta\aop_\gamma.
 $$
 
-(Note the order, which is important for fermions!) The most important two particle operator that we encounter is that describing interactions between pairs of particles, usually of the the form
+(Note the order, which is important for fermions!) The analog of the formula \eqref{A_Aab} for the matrix elements of a two particle operator between two product states is
+
+$$
+\braket{\mathbf{N}}{\hat B}{\mathbf{N'}} = \sum_{\alpha\beta\gamma\delta} B_{\alpha\beta,\gamma\delta} \sqrt{N_\alpha N_\beta N'_\gamma N'_\delta}.
+\label{A_Babcd}
+$$
+
+
+The most important two particle operator that we encounter is that describing interactions between pairs of particles, usually of the the form
 
 $$
 \hat V = \sum_{j<k} V(\br_j-\br_k).
@@ -545,6 +564,16 @@ The difference lies in the order of the operators, which prevents a particle fro
 <p class="message">
 Check that \eqref{A_VNotNormal} has a nonzero expectation value in a 1 particle state.
 </p>
+
+As an example, let's write the Lieb--Liniger Hamiltonian of [Lecture 2]({{ site.baseurl }}/lectures/LiebLinigerModel/) in our new formalism.
+
+$$
+H = \int dx \left[\frac{1}{2}\partial_x\pdop(x)\partial_x\pop(x) + \frac{c}{2}\pdop(x)\pdop(x)\pop(x)\pop(x)\right],
+$$
+
+where $\pop(x)$, $\pdop(x)$ satisfy the canonical bosonic commutation relations \eqref{2nd_quant_PositionRelations}.
+
+We've succeeded in translating an interacting many body Hamiltonian into a quantum field theory. But we shouldn't feel too smug. As I said earlier, this is a change of _language_, and its usefulness is not guaranteed. The same warning applies to alternative formulations of the same problem: as a functional integral, for example. In the case of the Lieb--Liniger model, the exact solution was best presented in the first quantized, many body wavefunction framework. Ditto for the Laughlin states of the fractional quantum Hall effect. However, in approximate treatments of many body problems that we _can't_ solve exactly, like the Bose gas in higher dimensions that we'll discuss in [Lecture 8]({{ site.baseurl }}/lectures/BoseGas/), the second quantized framework is often a good starting point.
 
 References
 ----------

@@ -3,7 +3,7 @@ layout: page
 title: More Second Quantization
 author: Austen Lamacraft
 chapter: 6
-summary: Density matrix and density correlations. Second quantized Hamiltonians. Hartree--Fock theory. Hanbury Brown and Twiss effect.
+summary: Density correlations. Hanbury Brown and Twiss effect. Hartree--Fock theory. 
 published: true
 ---
 

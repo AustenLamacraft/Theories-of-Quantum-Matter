@@ -368,9 +368,9 @@ Show that this also reproduces \eqref{A_perm}.
 <p>and involves the wavefunctions $\varphi_{\beta}(\br)$, rather than their conjugates. The relations satisfied by these operators are</p>
 
 <script type="math/tex; mode=display">\begin{gather}
-	\label{2nd_quant_PositionRelations}
 	\left[\pop(\br),\pdop(\br')\right]=\delta(\br-\br')\nonumber\\
 	\left[\pop(\br),\pop(\br')\right]=\left[\pdop(\br),\pdop(\br')\right]=0.
+	\label{2nd_quant_PositionRelations}
 \end{gather}</script>
 
 <p>These operator-valued functions are called <strong>quantum fields</strong>. By introducing them, we have freed ourselves from many body wavefunctions. One should bear in mind that this is only a different <em>language</em> for talking about the same system: sometimes one language is better suited to the problem at hand; sometimes another.</p>
@@ -489,6 +489,15 @@ Think about the form that the operators $\aop_\alpha$, $\adop_\alpha$ take in th
 	\mathop{\hat A}\adop_{\beta}\ket{\text{VAC}}&=\left(\left[\mathop{\hat A},\adop_{\beta}\right]+\adop_{\beta}\mathop{\hat A}\right)\ket{\text{VAC}}\nonumber\\
 							&=\sum_{\alpha} A_{\alpha \beta} \adop_{\alpha}\ket{\text{VAC}}.
 \end{align} %]]></script>
+
+<p>The second quantized form of $\hat A$ allows us to find the matrix element between product states</p>
+
+<script type="math/tex; mode=display">\braket{\mathbf{N}}{\hat A}{\mathbf{N'}} = \sum_{\alpha\beta} A_{\alpha\beta} \sqrt{N_\alpha N'_\beta}.
+\label{A_Aab}</script>
+
+<p class="message">
+This formula is not so easy to work out in the first quantized representation. Try it!
+</p>
 
 <p>We worked this out for the bosonic case. However, you can check that \eqref{A_bilin}, the basic relation that makes it all work, is also valid for fermions (as a commutation relation, note!). So $\hat A$ has the same form for fermions.</p>
 
@@ -615,7 +624,12 @@ Think about the form that the operators $\aop_\alpha$, $\adop_\alpha$ take in th
 
 <script type="math/tex; mode=display">\hat B = \frac{1}{2}\sum_{\alpha\beta\gamma\delta} B_{\alpha\beta,\gamma\delta}\adop_\alpha\adop_\beta\aop_\delta\aop_\gamma.</script>
 
-<p>(Note the order, which is important for fermions!) The most important two particle operator that we encounter is that describing interactions between pairs of particles, usually of the the form</p>
+<p>(Note the order, which is important for fermions!) The analog of the formula \eqref{A_Aab} for the matrix elements of a two particle operator between two product states is</p>
+
+<script type="math/tex; mode=display">\braket{\mathbf{N}}{\hat B}{\mathbf{N'}} = \sum_{\alpha\beta\gamma\delta} B_{\alpha\beta,\gamma\delta} \sqrt{N_\alpha N_\beta N'_\gamma N'_\delta}.
+\label{A_Babcd}</script>
+
+<p>The most important two particle operator that we encounter is that describing interactions between pairs of particles, usually of the the form</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \hat V = \sum_{j<k} V(\br_j-\br_k). %]]></script>
@@ -634,6 +648,14 @@ Think about the form that the operators $\aop_\alpha$, $\adop_\alpha$ take in th
 <p class="message">
 Check that \eqref{A_VNotNormal} has a nonzero expectation value in a 1 particle state.
 </p>
+
+<p>As an example, let’s write the Lieb–Liniger Hamiltonian of <a href="/docs/lectures/LiebLinigerModel/">Lecture 2</a> in our new formalism.</p>
+
+<script type="math/tex; mode=display">H = \int dx \left[\frac{1}{2}\partial_x\pdop(x)\partial_x\pop(x) + \frac{c}{2}\pdop(x)\pdop(x)\pop(x)\pop(x)\right],</script>
+
+<p>where $\pop(x)$, $\pdop(x)$ satisfy the canonical bosonic commutation relations \eqref{2nd_quant_PositionRelations}.</p>
+
+<p>We’ve succeeded in translating an interacting many body Hamiltonian into a quantum field theory. But we shouldn’t feel too smug. As I said earlier, this is a change of <em>language</em>, and its usefulness is not guaranteed. The same warning applies to alternative formulations of the same problem: as a functional integral, for example. In the case of the Lieb–Liniger model, the exact solution was best presented in the first quantized, many body wavefunction framework. Ditto for the Laughlin states of the fractional quantum Hall effect. However, in approximate treatments of many body problems that we <em>can’t</em> solve exactly, like the Bose gas in higher dimensions that we’ll discuss in <a href="/docs/lectures/BoseGas/">Lecture 8</a>, the second quantized framework is often a good starting point.</p>
 
 <h2 id="references">References</h2>
 
