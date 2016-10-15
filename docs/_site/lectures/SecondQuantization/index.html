@@ -3,7 +3,7 @@
 
   <head>
   <!-- Canonical link to help search engines -->
-  <link rel="canonical" href="/docs/drafts/SecondQuantization/"/>
+  <link rel="canonical" href="/docs/lectures/SecondQuantization/"/>
 
   <!-- Basic meta elements -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -27,7 +27,7 @@
     <meta property="og:description" content="An Ed edition">
     <meta property="fb:admins" content="elotroalex"/>
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/drafts/SecondQuantization/"/>
+    <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/SecondQuantization/"/>
     <meta property="fb:app_id" content="589495744558280"/>
     <meta property="og:image" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/public/open-graph-logo.png"/>
     <meta property="og:image:width" content="200" />
@@ -166,10 +166,16 @@ $$
         
       
     
+      
+        
+          <a class="sidebar-nav-item active" href="/docs/lectures/SecondQuantization/">A is for Annihilation</a>
+        
+      
+    
 
     <!-- The code below is used for manually entered links  -->
 
-    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://tqm.usertest.mws3.csx.cam.ac.uk/docs/drafts/SecondQuantization/">Annotate me</a>
+    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/SecondQuantization/">Annotate me</a>
   </nav>
 
   <div class="sidebar-item">
@@ -588,7 +594,7 @@ Think about the form that the operators $\aop_\alpha$, $\adop_\alpha$ take in th
 	&=\frac{k_{F}^{3}}{2\pi^{2}}\left[\frac{\sin\left(k_{F}|\br'-\br|\right)}{(k_{F}|\br'-\br|)^{3}}-\frac{\cos\left(k_{F}|\br'-\br|\right)}{(k_{F}|\br'-\br|)^{2}}\right].
 \end{align} %]]></script>
 
-<p>Note that $g(\br,\br)=\frac{k_{F}^{3}}{6\pi^{2}}=n$, as it should. Also, $g(\br,\br’)\to 0$ as $\abs{\br-\br’}\to\infty$.</p>
+<p>Note that $g(\br,\br)=\frac{k_{F}^{3}}{6\pi^{2}}=\bar\rho$, as it should. Also, $g(\br,\br’)\to 0$ as $\abs{\br-\br’}\to\infty$.</p>
 
 <p><a name="FermiDensity"></a>
 <img src="/docs/assets/FermiDensityMatrixCut.png" alt="" />
@@ -596,7 +602,7 @@ Think about the form that the operators $\aop_\alpha$, $\adop_\alpha$ take in th
 
 <h3 id="two-particle-operators">Two Particle Operators</h3>
 
-<p>A <em>two particle operator</em> acts pairwise on the particles</p>
+<p>A <strong>two particle operator</strong> acts pairwise on the particles</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \hat B = \sum_{j<k} B_{jk}. %]]></script>
@@ -607,14 +613,27 @@ Think about the form that the operators $\aop_\alpha$, $\adop_\alpha$ take in th
 
 <p>By a similar argument to that used in the case of one particle operators, we arrive at the second quantized representation</p>
 
-<script type="math/tex; mode=display">\hat B = \frac{1}{2}\sum_{\alpha\beta\gamma\delta} B_{\alpha\beta,\gamma\delta}\adop_\alpha\adop_\beta\aop_\gamma\aop_\delta.</script>
+<script type="math/tex; mode=display">\hat B = \frac{1}{2}\sum_{\alpha\beta\gamma\delta} B_{\alpha\beta,\gamma\delta}\adop_\alpha\adop_\beta\aop_\delta\aop_\gamma.</script>
 
-<p>The most important two particle operator that we encounter is that describing interactions between pairs of particles, usually of the the form</p>
+<p>(Note the order, which is important for fermions!) The most important two particle operator that we encounter is that describing interactions between pairs of particles, usually of the the form</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
-\hat V = \sum{j<k} V(\br_j-\br_k). %]]></script>
+\hat V = \sum_{j<k} V(\br_j-\br_k). %]]></script>
 
-<p>Expressing this operator in the position</p>
+<p>Expressing this operator in the position basis gives</p>
+
+<script type="math/tex; mode=display">\hat V = \frac{1}{2}\int d\br_1 d\br_2\, V(\br_1-\br_2)\pdop(\br_1)\pdop(\br_2)\pop(\br_2)\pop(\br_1).</script>
+
+<p>Remembering that $\rho(\br) = \pdop(\br)\pop(\br)$, this is <em>almost</em> the same as</p>
+
+<script type="math/tex; mode=display">\hat V = \frac{1}{2}\int d\br_1 d\br_2\, V(\br_1-\br_2)\rho(\br_1)\rho(\br_2).
+\label{A_VNotNormal}</script>
+
+<p>The difference lies in the order of the operators, which prevents a particle from interacting with itself.</p>
+
+<p class="message">
+Check that \eqref{A_VNotNormal} has a nonzero expectation value in a 1 particle state.
+</p>
 
 <h2 id="references">References</h2>
 

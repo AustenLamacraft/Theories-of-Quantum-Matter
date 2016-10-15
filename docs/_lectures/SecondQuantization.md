@@ -495,7 +495,7 @@ $$
 \end{align}
 $$
 
-Note that $g(\br,\br)=\frac{k_{F}^{3}}{6\pi^{2}}=n$, as it should. Also, $g(\br,\br')\to 0$ as $\abs{\br-\br'}\to\infty$.
+Note that $g(\br,\br)=\frac{k_{F}^{3}}{6\pi^{2}}=\bar\rho$, as it should. Also, $g(\br,\br')\to 0$ as $\abs{\br-\br'}\to\infty$.
 
 <a name="FermiDensity"></a>
 ![]({{ site.baseurl }}/assets/FermiDensityMatrixCut.png)
@@ -503,7 +503,7 @@ _Single particle density matrix for the Fermi gas._
 
 ### Two Particle Operators
 
-A _two particle operator_ acts pairwise on the particles
+A __two particle operator__ acts pairwise on the particles
 
 $$
 \hat B = \sum_{j<k} B_{jk}.
@@ -518,16 +518,33 @@ $$
 By a similar argument to that used in the case of one particle operators, we arrive at the second quantized representation
 
 $$
-\hat B = \frac{1}{2}\sum_{\alpha\beta\gamma\delta} B_{\alpha\beta,\gamma\delta}\adop_\alpha\adop_\beta\aop_\gamma\aop_\delta.
+\hat B = \frac{1}{2}\sum_{\alpha\beta\gamma\delta} B_{\alpha\beta,\gamma\delta}\adop_\alpha\adop_\beta\aop_\delta\aop_\gamma.
 $$
 
-The most important two particle operator that we encounter is that describing interactions between pairs of particles, usually of the the form
+(Note the order, which is important for fermions!) The most important two particle operator that we encounter is that describing interactions between pairs of particles, usually of the the form
 
 $$
-\hat V = \sum{j<k} V(\br_j-\br_k).
+\hat V = \sum_{j<k} V(\br_j-\br_k).
 $$
 
-Expressing this operator in the position 
+Expressing this operator in the position basis gives
+
+$$
+\hat V = \frac{1}{2}\int d\br_1 d\br_2\, V(\br_1-\br_2)\pdop(\br_1)\pdop(\br_2)\pop(\br_2)\pop(\br_1).
+$$
+
+Remembering that $\rho(\br) = \pdop(\br)\pop(\br)$, this is _almost_ the same as
+
+$$
+\hat V = \frac{1}{2}\int d\br_1 d\br_2\, V(\br_1-\br_2)\rho(\br_1)\rho(\br_2).
+\label{A_VNotNormal}
+$$
+
+The difference lies in the order of the operators, which prevents a particle from interacting with itself.
+
+<p class="message">
+Check that \eqref{A_VNotNormal} has a nonzero expectation value in a 1 particle state.
+</p>
 
 References
 ----------
