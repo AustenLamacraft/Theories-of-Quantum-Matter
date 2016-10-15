@@ -77,7 +77,7 @@
           bA: '\\mathbf{A}',
           brN: '\\br_1, \\ldots, \\br_N',
           bxN: 'x_1, \\ldots, x_N',
-          pop: '\\psi^{\vphantom{\dagger}}',
+          pop: '\\psi^{\\vphantom{\\dagger}}',
           pdop: '\\psi^\\dagger',
           Phop: '\\Phi^{\\vphantom{\\dagger}}',
           Phdop: '\\Phi^\\dagger',
@@ -100,6 +100,8 @@
           Re: '\\operatorname{Re}}',
           ket: ['\\lvert{#1}\\rangle',1],
           bra: ['\\langle{#1}\\rvert',1],
+          inner: ['\\langle{#1}\\rvert #2 \\rangle',2],
+          braket: ['\\langle{#1}\\rvert #2 \\lvert #3 \\rangle',3],
           abs: ['\\lvert{#1}\\rvert',1]
     }
   },
@@ -318,6 +320,10 @@ H = -\frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + c\sum_{j<k}\delta(x_
 <script type="math/tex; mode=display">\frac{A_{321}}{A_{123}} = \exp\left[-i\theta(k_1-k_2)-i\theta(k_2-k_3)-i\theta(k_1-k_3)\right]</script>
 
 <p><em>irrespective</em> of which transpositions of neighbouring momenta we used to get from $(123)$ to $(321)$. In terms of our kaleidoscope, this corresponds to different rays having the same phase, no matter in which order they hit the mirrors.</p>
+
+<p><a name="2rays"></a>
+<img src="/docs/assets/2rays.png" alt="" />
+<em>Two ways for a ray to scatter from $(k_1,k_2,k_3)$ to $(k_3,k_2,k_1)$. The phases acquired must match if the Bethe ansatz is to work.</em></p>
 
 <h3 id="bethe-ansatz-for-n-particles">Bethe Ansatz for $N$ Particles</h3>
 

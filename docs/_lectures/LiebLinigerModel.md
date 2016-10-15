@@ -145,6 +145,10 @@ $$
 
 _irrespective_ of which transpositions of neighbouring momenta we used to get from $(123)$ to $(321)$. In terms of our kaleidoscope, this corresponds to different rays having the same phase, no matter in which order they hit the mirrors.
 
+<a name="2rays"></a>
+![]({{ site.baseurl }}/assets/2rays.png)
+_Two ways for a ray to scatter from $(k_1,k_2,k_3)$ to $(k_3,k_2,k_1)$. The phases acquired must match if the Bethe ansatz is to work._
+
 ### Bethe Ansatz for $N$ Particles
 
 The Bethe ansatz for $N$ particles is a straightforward generalization of \eqref{LL_3part}, and depends on a set of $N$ momenta $k_1,\ldots k_N$

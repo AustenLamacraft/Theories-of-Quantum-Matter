@@ -39,7 +39,9 @@ On account of their being more than one species of particle, the $$U\to\infty$$ 
 
 Should be cautious, as in a large system the energy spectrum of the Heisenberg model will exceed the separation from doubly occupied sites.
 
-### Two Sites
+### Discussion: two sites
+
+How does the degeneracy get lifted?
 
 ### Effective Hamiltonian
 

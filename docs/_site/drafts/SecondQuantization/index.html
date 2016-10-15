@@ -77,7 +77,7 @@
           bA: '\\mathbf{A}',
           brN: '\\br_1, \\ldots, \\br_N',
           bxN: 'x_1, \\ldots, x_N',
-          pop: '\\psi^{\vphantom{\dagger}}',
+          pop: '\\psi^{\\vphantom{\\dagger}}',
           pdop: '\\psi^\\dagger',
           Phop: '\\Phi^{\\vphantom{\\dagger}}',
           Phdop: '\\Phi^\\dagger',
@@ -100,6 +100,8 @@
           Re: '\\operatorname{Re}}',
           ket: ['\\lvert{#1}\\rangle',1],
           bra: ['\\langle{#1}\\rvert',1],
+          inner: ['\\langle{#1}\\rvert #2 \\rangle',2],
+          braket: ['\\langle{#1}\\rvert #2 \\lvert #3 \\rangle',3],
           abs: ['\\lvert{#1}\\rvert',1]
     }
   },
@@ -207,6 +209,7 @@ We have seen that product states can be described in terms of their occupation n
       <li><a href="#the-case-of-fermions" id="markdown-toc-the-case-of-fermions">The Case of Fermions</a></li>
     </ul>
   </li>
+  <li><a href="#discussion-explicit-form-of-operators" id="markdown-toc-discussion-explicit-form-of-operators">Discussion: Explicit Form of Operators</a></li>
   <li><a href="#representation-of-operators" id="markdown-toc-representation-of-operators">Representation of Operators</a>    <ul>
       <li><a href="#single-particle-operators" id="markdown-toc-single-particle-operators">Single Particle Operators</a></li>
       <li><a href="#two-particle-operators" id="markdown-toc-two-particle-operators">Two Particle Operators</a></li>
@@ -221,7 +224,7 @@ We have seen that product states can be described in terms of their occupation n
 
 <h2 id="creation-and-annihilation-operators">Creation and Annihilation Operators</h2>
 
-<p>When we discussed the elastic chain in <a href="/docs/lectures/ElasticChain/">Lecture 2</a>, we saw that the quanta of the normal modes of the chain could be thought of as bosons. The essence of second quantization is to turn this observation around, and formally introduce <strong>creation and annihilation operators</strong> that add and remove bosons to a system. Subsequently, we identify these operators as components of a <strong>quantum field</strong>. Whether you think of the field as a physical entity – with the bosons appearing upon quantization – or as a mathematical device for representing a system of indistinguishable particles is a question of taste. The former point of view is more common in particle physics, the latter in condensed matter.</p>
+<p>When we discussed the elastic chain in <a href="/docs/lectures/ElasticChain/">Lecture 3</a>, we saw that the quanta of the normal modes of the chain could be thought of as bosons. The essence of second quantization is to turn this observation around, and formally introduce <strong>creation and annihilation operators</strong> that add and remove bosons to a system. Subsequently, we identify these operators as components of a <strong>quantum field</strong>. Whether you think of the field as a physical entity – with the bosons appearing upon quantization – or as a mathematical device for representing a system of indistinguishable particles is a question of taste. The former point of view is more common in particle physics, the latter in condensed matter.</p>
 
 <h3 id="recap-product-states">Recap: Product States</h3>
 
@@ -290,18 +293,18 @@ Satisfy yourself that \eqref{A_perm} agrees with \eqref{A_OrthoProd} in the case
 
 <p>This isn’t the only requirement however: we need to make sure that the inner product comes out right. Evaluating the inner product between two one particle states on both sides of the corresponence \eqref{A_1part} gives</p>
 
-<script type="math/tex; mode=display">\bra{\psi}\phi\rangle = \bra{\text{VAC}}\aop(\psi)\adop(\phi)\ket{\text{VAC}}.</script>
+<script type="math/tex; mode=display">\bra{\psi}\phi\rangle = \braket{\text{VAC}}{\aop(\psi)\adop(\phi)}{\text{VAC}}.</script>
 
 <p>To be nonzero $\aop(\psi)\adop(\phi)\ket{\text{VAC}}$ must be proportional to the vacuum state, which means $\aop(\psi)$ removes a particle from the system: it is an annihilation operator. To get the right value for the inner product, we impose</p>
 
-<script type="math/tex; mode=display">\left[\aop(\psi),\adop(\phi)\right] = \bra{\psi}\phi\rangle.
+<script type="math/tex; mode=display">\left[\aop(\psi),\adop(\phi)\right] = \inner{\psi}{\phi}.
 \label{A_ada}</script>
 
 <p class="message">
 Show that this also reproduces \eqref{A_perm}.
 </p>
 
-<p>\eqref{A_adcommute}, \eqref{A_acommute} and \eqref{A_ada} constiute the bosonic <strong>canonical commutation relations</strong>. Via \eqref{A_ada}, this representation inherits the properties of the single particle Hilbert space.</p>
+<p>\eqref{A_adcommute}, \eqref{A_acommute} and \eqref{A_ada} constitute the bosonic <strong>canonical commutation relations</strong>. Via \eqref{A_ada}, this representation inherits the properties of the single particle Hilbert space.</p>
 
 <h3 id="choosing-a-basis">Choosing a Basis</h3>
 
@@ -318,7 +321,7 @@ Show that this also reproduces \eqref{A_perm}.
 
 <p>The same relations describe the ladder operators of a set of independent harmonic oscillators, revealing a deep connection between these two systems. The state $\Psi^{\text{S}}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}$ of \eqref{A_OrthoProd} – a normalized state with $N_\alpha$ particles in state $\alpha$ – may be written</p>
 
-<script type="math/tex; mode=display">\Psi^{\text{S}}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}(\br_1,\ldots,\br_N) \longleftrightarrow\ket{\mathbf{N}} \equiv \prod_\alpha \frac{\left(\adop\right)^{N_\alpha}}{\sqrt{N_\alpha!}}\ket{\text{VAC}}</script>
+<script type="math/tex; mode=display">\Psi^{\text{S}}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}(\br_1,\ldots,\br_N) \longleftrightarrow\ket{\mathbf{N}} \equiv \prod_\alpha \frac{\left(\adop_\alpha\right)^{N_\alpha}}{\sqrt{N_\alpha!}}\ket{\text{VAC}}</script>
 
 <p>The combination $\Nop_{\alpha}\equiv \adop_{\alpha}\aop_{\alpha}$ is called the <strong>number operator</strong> for state $\alpha$ for obvious reasons</p>
 
@@ -336,7 +339,56 @@ Show that this also reproduces \eqref{A_perm}.
 
 <p>You can think of the first of these as `count then destroy minus destroy then count’, for example.</p>
 
-<p>Position space, momentum space</p>
+<p>Suppose we want to move to a different basis of single particle states ${\ket{\tilde{\varphi}_{\alpha}}}$, corresponding to a unitary transformation</p>
+
+<script type="math/tex; mode=display">\label{2nd_quant_BasisChange}
+	\ket{\tilde{\varphi}_{\alpha}}=\sum_{\beta} \inner{\varphi_{\beta}}{\tilde{\varphi}_{\alpha}}\ket{\varphi_{\beta}}.</script>
+
+<p>Using our correspondence, the one particle states with the wavefunctions $\varphi_{\alpha}(\br)$ are just $\adop_{\alpha}\ket{\text{VAC}}$. So we see that the above basis transformation gives a new set of creation operators</p>
+
+<script type="math/tex; mode=display">\label{2nd_quant_BasisChangeCreation}
+	\tilde{\adop_{\alpha}}\equiv\sum_{\beta} \inner{\varphi_{\beta}}{\tilde{\varphi}_{\alpha}}\adop_{\beta}.</script>
+
+<p>Often we will work in the basis of position eigenstates ${\ket{\br}}$. In this case the matrix elements of the unitary transformation are $\inner{\varphi_{\beta}}{\br}=\varphi^{*}_{\beta}(\br)$, just the complex conjugate of the wavefunction. Denoting the corresponding creation operator as $\pdop(\br)$, \eqref{2nd_quant_BasisChangeCreation} becomes</p>
+
+<script type="math/tex; mode=display">\label{2nd_quant_PsiDDef}
+	\pdop(\br)\equiv\sum_{\beta}  \varphi^{*}_{\beta}(\br)\adop_{\beta}.</script>
+
+<p>Now we can see why we chose to work with the annihilation operator rather than the creation operator. The conjugate of \eqref{2nd_quant_PsiDDef} is</p>
+
+<script type="math/tex; mode=display">\label{2nd_quant_PsiDef}
+	\pop(\br)\equiv\sum_{\beta}  \varphi_{\beta}(\br)\aop_{\beta},</script>
+
+<p>and involves the wavefunctions $\varphi_{\beta}(\br)$, rather than their conjugates. The relations satisfied by these operators are</p>
+
+<script type="math/tex; mode=display">\begin{gather}
+	\label{2nd_quant_PositionRelations}
+	\left[\pop(\br),\pdop(\br')\right]=\delta(\br-\br')\nonumber\\
+	\left[\pop(\br),\pop(\br')\right]=\left[\pdop(\br),\pdop(\br')\right]=0.
+\end{gather}</script>
+
+<p>These operator-valued functions are called <strong>quantum fields</strong>. By introducing them, we have freed ourselves from many body wavefunctions. One should bear in mind that this is only a different <em>language</em> for talking about the same system: sometimes one language is better suited to the problem at hand; sometimes another.</p>
+
+<p class="message">
+If a state $\ket{\Psi}$ has wavefunction $\Psi(x_1,\ldots, x_N)$, what is the wavefunction of the state $\pop(X)\ket{\Psi}$?
+</p>
+
+<p>As an example, let our original basis be the eigenbasis of the free particle Hamiltonian $H=\frac{\bp^{2}}{2m}$ with periodic boundary conditions</p>
+
+<script type="math/tex; mode=display">\begin{align}
+	\label{2nd_quant_FreeParticleStates}
+	\ket{\bk}=\frac{\exp(i\bk \cdot \br)}{\sqrt{V}}, \quad \bk=2\pi\left(\frac{n_{x}}{L_{x}},\frac{n_{y}}{L_{y}},\frac{n_{z}}{L_{z}}\right),\quad n_{x,y,z}\text{ integer},
+\end{align}</script>
+
+<p>with $V=L_{x}L_{y}L_{z}$. The matrix elements of the transformation between this original basis and the position basis ${\ket{\br}}$ are $\bra{\bk}\br\rangle=\exp(-i\bk \cdot \br)/\sqrt{V}$, so we have</p>
+
+<script type="math/tex; mode=display">\label{2nd_quant_PositionAnnihilation}
+	\pdop(\br)\equiv\frac{1}{\sqrt{V}}\sum_{\bk} \exp(-i\bk\cdot\br)\adop_{\bk},</script>
+
+<p>and similarly</p>
+
+<script type="math/tex; mode=display">\label{2nd_quant_PositionCreation}
+	\pop(\br)\equiv\frac{1}{\sqrt{V}}\sum_{\bk} \exp(i\bk\cdot\br)\aop_{\bk}.</script>
 
 <p class="message">
 What is the wavefunction of the two-particle state
@@ -348,26 +400,226 @@ $$
 
 <h3 id="the-case-of-fermions">The Case of Fermions</h3>
 
+<p>We want a similar formalism for fermions, which is a bit trickier on account of those minus signs. We seek a representation of the product state</p>
+
+<script type="math/tex; mode=display">\Psi^{\text{P}}(\br_1,\ldots,\br_N) = \frac{1}{\sqrt{N!}}\sum_P (-1)^P\psi_1(\mathbf{r}_{P_1})\psi_{2}(\mathbf{r}_{P_2})\cdots\psi_{N}(\mathbf{r}_{P_N}).
+\label{A_NProdAnti}</script>
+
+<p>where $P$ is the signature of the permutation. Note that the overall sign is fixed here by the labelling of the states $\psi_j$. If we want to make the identification</p>
+
+<script type="math/tex; mode=display">\Psi^{\text{A}}(\br_1,\ldots,\br_N) \longleftrightarrow \adop(\psi_1)\cdots \adop(\psi_N)\ket{\text{VAC}},
+\label{A_NPartAnti}</script>
+
+<p>Then antisymmetry dictates</p>
+
+<script type="math/tex; mode=display">\left\{\adop(\psi),\adop(\phi)\right\}=0,
+\label{A_adanticommute}</script>
+
+<p>for any states $\psi(\br)$ and $\phi(\br)$, where $\{A,B\}\equiv AB+BA$ is called the <strong>anticommutator</strong>. Similarly</p>
+
+<script type="math/tex; mode=display">\left\{\aop(\psi),\aop(\phi)\right\}=0.
+\label{A_aanticommute}</script>
+
+<p>The form of $\left\{\aop(\psi),\adop(\phi)\right\}=0$ can be deduced from the inner product between product states</p>
+
+<script type="math/tex; mode=display">\bra{\Psi}\Phi\rangle = \sum_P (-1)^P\bra{\psi_n}\phi_{P_n}\rangle = \det \bra{\psi_m}\phi_{n}\rangle,
+\label{A_det}</script>
+
+<p>which can be obtained using the RHS of \eqref{A_NPartAnti} if we demand</p>
+
+<script type="math/tex; mode=display">\left\{\aop(\psi),\adop(\phi)\right\} = \inner{\psi}{\phi}.
+\label{A_adaanti}</script>
+
+<p class="message">
+Check this.
+</p>
+
+<h2 id="discussion-explicit-form-of-operators">Discussion: Explicit Form of Operators</h2>
+
+<p class="message">
+Think about the form that the operators $\aop_\alpha$, $\adop_\alpha$ take in the basis of product states. Start with one state $\varphi_\alpha$. What's the matrix form of $\adop_\alpha$ in terms of states $\ket{N_\alpha}$? Now consider two states. Can you see how the commutation and anticommutation relations can be satisfied?
+</p>
+
 <h2 id="representation-of-operators">Representation of Operators</h2>
 
 <h3 id="single-particle-operators">Single Particle Operators</h3>
 
 <p>Suppose we now have some operator $A$ that acts on the single particle states. We denote the action on $N$ particle states as $\hat A$</p>
 
-<script type="math/tex; mode=display">\hat A = \sum_{n=1}^N A_n,</script>
+<script type="math/tex; mode=display">\hat A = \sum_{j=1}^N A_j,</script>
 
-<p>where the subscript denotes that the operator acts on the position label $\br_n$ of the $n^\text{th}$ particle. The matrix element of $\hat A$ between product states is</p>
+<p>where the subscript denotes that the operator acts on the position label $\br_j$ of the $j^\text{th}$ particle. The example that we have met many times all ready is the Hamiltonian for noninteracting particles</p>
+
+<script type="math/tex; mode=display">\hat H = \sum_{j=1}^N H_j = \sum_{j=1}^N \left[-\frac{\nabla_j^2}{2m}+V(\br_j)\right].
+\label{A_H1}</script>
+
+<p>Operators of this type are known as <strong>single particle operators</strong>. We want to use our creation and annihilation operators to represent these operators. First, we note that the action of the operator $A$ on one of the basis states $\ket{\varphi_\alpha}$ can be written in terms of the matrix elements $A_{\alpha\beta}=\braket{\varphi_\alpha}{A}{\varphi_\beta}$ as</p>
+
+<script type="math/tex; mode=display">A\ket{\varphi_\alpha} = \sum_{\beta} \ket{\varphi_\beta}\braket{\varphi_\beta}{A}{\varphi_\alpha} = \sum_\beta A_{\beta\alpha}\ket{\varphi_\beta}</script>
+
+<p>Therefore, the action of $\hat A$ on the product state $\ket{\Psi^{\text{S}}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}$ is</p>
+
+<script type="math/tex; mode=display">\hat A \ket{\Psi^{\text{S}}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}} = \sum_\beta \left[A_{\beta\alpha_1}\ket{\Psi^{\text{S}}_{\beta\alpha_{2}\cdots\alpha_{N}}} +A_{\beta\alpha_2}\ket{\Psi^{\text{S}}_{\alpha_1\beta\cdots\alpha_{N}}}+\cdots A_{\beta\alpha_N}\ket{\Psi^{\text{S}}_{\alpha_1\alpha_{2}\cdots\beta}}\right]
+\label{A_1OpAct}</script>
+
+<p>Now we argue that the same job is done by</p>
+
+<script type="math/tex; mode=display">\hat A = \sum_{\alpha\beta}A_{\alpha\beta}\adop_\alpha\aop_\beta</script>
+
+<p>acting on the state $\ket{\mathbf{N}}$. Indeed, we have</p>
+
+<script type="math/tex; mode=display">\left[\adop_\alpha\aop_\beta,\adop_\gamma\right]=\adop_\alpha\delta_{\beta\gamma}
+\label{A_bilin}</script>
+
+<p>By commuting $\adop_\alpha \aop_\beta$ though each of the creation operators in</p>
+
+<script type="math/tex; mode=display">\ket{\mathbf{N}} \equiv \prod_\alpha \frac{\left(\adop_\alpha\right)^{N_\alpha}}{\sqrt{N_\alpha!}}\ket{\text{VAC}},</script>
+
+<p>we reproduce the action \eqref{A_1OpAct}. As a simple example,</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+	\label{2nd_quant_}
+	\mathop{\hat A}\adop_{\beta}\ket{\text{VAC}}&=\left(\left[\mathop{\hat A},\adop_{\beta}\right]+\adop_{\beta}\mathop{\hat A}\right)\ket{\text{VAC}}\nonumber\\
+							&=\sum_{\alpha} A_{\alpha \beta} \adop_{\alpha}\ket{\text{VAC}}.
+\end{align} %]]></script>
+
+<p>We worked this out for the bosonic case. However, you can check that \eqref{A_bilin}, the basic relation that makes it all work, is also valid for fermions (as a commutation relation, note!). So $\hat A$ has the same form for fermions.</p>
+
+<p>Notice that $\mathop{\hat A}$ \emph{looks} formally like the expectation value of $\mathop{A}$ in a single particle state $\sum_{\alpha}a_{\alpha}\ket{\varphi_{\alpha}}$. The difference, of course, is that the $a_{\alpha}$ in $\mathop{\hat A}$ are operators, so that the order is important, while those in the preceding expression are amplitudes. The replacement of amplitudes, or wavefunctions, by operators is the origin of the rather clumsy name <strong>second quantization</strong>, which is traditionally introduced with the caveat that what we are doing is not in any way ‘more quantum’ than before.</p>
+
+<p>To repeat the above prescription for emphasis: <em>A one particle operator $\mathop{\hat A}$ has a second quantized representation formally identical to the expectation value of its single particle counterpart $\mathop{A}$</em>.</p>
+
+<p>This probably all looks a bit abstract, so let’s turn to a one particle operator that we have already met, namely the noninteracting Hamiltonian in \eqref{A_H1}. According to the above prescription, this should have the second quantized form</p>
+
+<script type="math/tex; mode=display">\label{2nd_quant_H2ndQ}
+	\mathop{\hat H} \equiv \sum_{\alpha,\beta}\braket{\varphi_{\alpha}}{\mathop{H}}{\varphi_{\beta}} \adop_{\alpha}\aop_{\beta},</script>
+
+<p>where $H$ is the single particle Hamiltonian $H=-\frac{1}{2m}\nabla_{i}^{2}+V(\mathbf{r_{i}})$. This takes on a very simple form if the basis $\ket{\varphi_{\alpha}}$ is just the eigenbasis of this Hamiltonian, in which case $\braket{\varphi_{\alpha}}{\mathop{H}}{\varphi_{\beta}}=E_{\alpha}\delta_{\alpha \beta}$ and</p>
+
+<script type="math/tex; mode=display">\begin{align}
+	\label{2nd_quant_Nrep}
+	\mathop{\hat H} \equiv \sum_{\alpha} E_{\alpha} \adop_{\alpha}\aop_{\alpha}=\sum_{\alpha} E_{\alpha} \Nop_{\alpha}.
+\end{align}</script>
+
+<p>Evidently this is correct: the eigenstates of this operator are just the $N$ particle basis states $\ket{\Psi^{S/A}_{\alpha_{1}\alpha_{2}\cdots \alpha_{N}}}$, with eigenvalues $\sum_\alpha N_\alpha E_\alpha$.</p>
+
+<p>Alternatively, we can look at things in the position basis. By recalling how the expectation value of the Hamiltonian looks in this basis, we come up with</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+	\mathop{\hat H}&=\int d\br \left[-\frac{1}{2m}\pdop(\br)\nabla^{2}\pop(\br)+V(\br)\pdop(\br)\pop(\br)\right]\nonumber\\
+					&=\int d\br \left[\frac{1}{2m}\nabla\pdop(\br)\cdot\nabla\pop(\br)+V(\br)\pdop(\br)\pop(\br)\right],
+	\label{2nd_quant_HPos}
+\end{align} %]]></script>
+
+<p>where in the second line we have integrated by parts, assuming that boundary terms at infinity vanish. The equality of \eqref{2nd_quant_HPos} and \eqref{2nd_quant_Nrep} may be seen by using \eqref{2nd_quant_PsiDef}.</p>
+
+<p>The Heisenberg equation of motion corresponding to \eqref{2nd_quant_HPos} is</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}
+	\label{2nd_quant_HeomFree}
+	\begin{split}
+	i\partial_{t}\pop(\br,t) &= -\left[\mathop{\hat H},\pop(\br,t)\right]\\
+	&= -\frac{1}{2m}\nabla^{2}\pop(\br,t)+V(\br)\pop(\br,t),
+	\end{split}
+\end{equation} %]]></script>
+
+<p>which is just the time dependent Schr"odinger equation!</p>
+
+<p>As a second example, consider the particle density. This is not something that one encounters very often in few particle quantum mechanics, but is obviously an observable of interest in a extended system of many particles. The single particle operator for the density at $\mathbf{x}$ is</p>
+
+<script type="math/tex; mode=display">\label{2nd_quant_spDens}
+	\rho(\mathbf{x})\equiv\delta(\mathbf{x}-\br).</script>
+
+<p>This may look like a rather strange definition, but its expectation value on a single particle state $\varphi(\br)$ is just $\rho(\mathbf{x})=\abs{\varphi(\mathbf{x})}^{2}$, which is just the probability to find the particle at $\mathbf{x}$. Following our prescription, the second quantized form of the operator is then</p>
+
+<script type="math/tex; mode=display">\label{2nd_quant_2ndQDens}
+	\hat\rho(\mathbf{x})\equiv\pdop(\mathbf{x})\pop(\mathbf{x}).</script>
+
+<p>As a check, integrating over position should give the total number of particles</p>
+
+<script type="math/tex; mode=display">\label{2nd_quant_DensIntegral}
+	\hat N=\int d\mathbf{x}\, \pdop(\mathbf{x})\pop(\mathbf{x})=\sum_{\alpha} \adop_{\alpha}\aop_{a}=\sum_{\alpha}\Nop_{\alpha},</script>
+
+<p>as it does! Another useful thing to know is the expectation value of the density on a basis state $\ket{N_{0},N_{1}\ldots}$</p>
+
+<script type="math/tex; mode=display">\label{2nd_quant_DensityExp}
+	\braket{N_{0},N_{1}\ldots}{ \hat\rho(\br)}{N_{0},N_{1}\ldots} = \sum_{\alpha} N_{\alpha}\left|\varphi_{\alpha}(\br)\right|^{2}.</script>
+
+<p>which is most easily proved by substituting the representation \eqref{2nd_quant_PsiDef}. This seems like a very reasonable generalization of the single particle result: the density is given by sum of the probability densities in each of the constituent single particle state, weighted by the occupancy of the state. Note that the symmetry of the states played no role here.</p>
+
+<p>As a final example of a one particle operator, the particle current has the second quantized form</p>
+
+<script type="math/tex; mode=display">\label{2nd_quant_current}
+	\hat{\mathbf{j}}(\br)=-i\frac{1}{2m}\left[\pdop(\br)\left(\nabla\pop(\br)\right)-\left(\nabla\pdop(\br)\right)\pop(\br)\right].</script>
+
+<p>Often we consider the Fourier components of the density or current</p>
+
+<script type="math/tex; mode=display">\begin{align}
+	\label{2nd_quant_FourierComp}
+	\hat\rho_{\bq}\equiv\int d\br\, \hat\rho(\br)e^{-i\bq \cdot \br}=\sum_{\bk} \adop_{\bk-\bq/2}\aop_{\bk+\bq/2}\nonumber\\
+	\hat{\mathbf{j}}_{\bq}\equiv\int d\br\, \hat{\mathbf{j}}(\br)e^{-i\bq \cdot \br}=\sum_{\bk} \frac{\bk}{m}\adop_{\bk-\bq/2}\aop_{\bk+\bq/2}.
+\end{align}</script>
+
+<p>The $\bq=0$ modes are just the total particle number and $\frac{1}{m}$ times the total momentum, respectively.</p>
+
+<p>In <a href="/docs/lectures/ManyBodyWavefunctions/">Lecture 1</a> we introduced the <strong>single particle density matrix</strong></p>
+
+<script type="math/tex; mode=display">g(\br,\br') \equiv N \int d\br_{2}\cdots d\br_{N}\,\Psi^{*}(\br,\br_{2},\ldots,\br_{N})\Psi(\br',\br_{2},\ldots,\br_{N}).</script>
+
+<p>This can be written in terms of our field operators</p>
+
+<script type="math/tex; mode=display">\label{2nd_quant_SPDensity}
+	g(\br,\br')= \braket{\Psi}{\pdop(\br)\pop(\br)}{\Psi}</script>
+
+<p>Notice that $g(\br,\br)=\braket{\Psi}{\hat\rho(\br)}{\Psi}$. A slight generalization of the above calculation for the density gives for the state $\ket{\mathbf{N}}$</p>
+
+<script type="math/tex; mode=display">\label{2nd_quant_SPFock}
+	g(\br,\br') = \sum_{\alpha} N_{\alpha}\varphi_{\alpha}^{*}(\br)\varphi^{}_{\alpha}(\br').</script>
+
+<p>Let’s evaluate this for the ground state of noninteracting Fermi gas. Recall that in this case $N_{\bk}=1$ for $\abs{\bk}&lt;k_{F}$, and $0$ otherwise. Thus we have</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+	\label{2nd_quant_FermiDensityMatrix}
+	g(\br,\br')=\frac{1}{V}\sum_{|\bk|<k_{F}} e^{i\bk\cdot(\br'-\br)}&=\int_{|\bk|<k_{F}} \frac{d\bk}{(2\pi)^{3}}\,e^{i\bk\cdot(\br'-\br)}\nonumber\\
+	&=\frac{k_{F}^{3}}{2\pi^{2}}\left[\frac{\sin\left(k_{F}|\br'-\br|\right)}{(k_{F}|\br'-\br|)^{3}}-\frac{\cos\left(k_{F}|\br'-\br|\right)}{(k_{F}|\br'-\br|)^{2}}\right].
+\end{align} %]]></script>
+
+<p>Note that $g(\br,\br)=\frac{k_{F}^{3}}{6\pi^{2}}=n$, as it should. Also, $g(\br,\br’)\to 0$ as $\abs{\br-\br’}\to\infty$.</p>
+
+<p><a name="FermiDensity"></a>
+<img src="/docs/assets/FermiDensityMatrixCut.png" alt="" />
+<em>Single particle density matrix for the Fermi gas.</em></p>
 
 <h3 id="two-particle-operators">Two Particle Operators</h3>
+
+<p>A <em>two particle operator</em> acts pairwise on the particles</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\hat B = \sum_{j<k} B_{jk}. %]]></script>
+
+<p>Its action on a two particle product state $\ket{\varphi_{\alpha}}_1\ket{\varphi_{\beta}}_2$ can, as in the single particle case, be expressed in terms of the matrix elements</p>
+
+<script type="math/tex; mode=display">B_{\alpha\beta,\gamma\delta} = \bra{\varphi_\alpha}_1\bra{\varphi_\beta}_2 B_{12} \ket{\varphi_\gamma}_1\ket{\varphi_\delta}_2.</script>
+
+<p>By a similar argument to that used in the case of one particle operators, we arrive at the second quantized representation</p>
+
+<script type="math/tex; mode=display">\hat B = \frac{1}{2}\sum_{\alpha\beta\gamma\delta} B_{\alpha\beta,\gamma\delta}\adop_\alpha\adop_\beta\aop_\gamma\aop_\delta.</script>
+
+<p>The most important two particle operator that we encounter is that describing interactions between pairs of particles, usually of the the form</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\hat V = \sum{j<k} V(\br_j-\br_k). %]]></script>
+
+<p>Expressing this operator in the position</p>
 
 <h2 id="references">References</h2>
 
 <ol class="bibliography"><li><span id="Baym:1969">Baym, G. (1969). <i>Lectures on quantum mechanics</i>. WA Benjamin New York.</span></li>
 <li><span id="Nazarov:2013">Nazarov, Y. V., &amp; Danon, J. (2013). <i>Advanced Quantum Mechanics: A Practical Guide</i>. Cambridge University Press.</span></li></ol>
-
-<p><em>Possible pedagogical approach – state conditions for CCR and CAR algebras and let students figure out correspondence</em>.</p>
-
-<p>## Creation and Annihilation Operators</p>
 
 </div>
 

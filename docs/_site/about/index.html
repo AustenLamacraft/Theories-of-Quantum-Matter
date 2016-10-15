@@ -77,7 +77,7 @@
           bA: '\\mathbf{A}',
           brN: '\\br_1, \\ldots, \\br_N',
           bxN: 'x_1, \\ldots, x_N',
-          pop: '\\psi^{\vphantom{\dagger}}',
+          pop: '\\psi^{\\vphantom{\\dagger}}',
           pdop: '\\psi^\\dagger',
           Phop: '\\Phi^{\\vphantom{\\dagger}}',
           Phdop: '\\Phi^\\dagger',
@@ -100,6 +100,8 @@
           Re: '\\operatorname{Re}}',
           ket: ['\\lvert{#1}\\rangle',1],
           bra: ['\\langle{#1}\\rvert',1],
+          inner: ['\\langle{#1}\\rvert #2 \\rangle',2],
+          braket: ['\\langle{#1}\\rvert #2 \\lvert #3 \\rangle',3],
           abs: ['\\lvert{#1}\\rvert',1]
     }
   },
