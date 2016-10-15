@@ -201,28 +201,73 @@ $$
       <div class="container content" id="main">
         <div class="page">
   <h1 class="page-title">More Second Quantization</h1>
-  <h2 class="no_toc" id="contents">Contents</h2>
+  <p class="message">
+Bose or Fermi statistics gives rise to correlations in the positions of particles in a many body system, even in product states. These correlations affect the energy of many particle states, and provide the basis of the simplest approximate theories.
+</p>
+
+<h2 class="no_toc" id="contents">Contents</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#density-matrix-and-correlation-functions" id="markdown-toc-density-matrix-and-correlation-functions">Density Matrix and Correlation Functions</a></li>
-  <li><a href="#second-quantized-hamiltonians" id="markdown-toc-second-quantized-hamiltonians">Second Quantized Hamiltonians</a></li>
-  <li><a href="#when-perturbations-attack-i" id="markdown-toc-when-perturbations-attack-i"><em>When Perturbations Attack I</em></a></li>
-  <li><a href="#hartree--fock" id="markdown-toc-hartree--fock">Hartree–Fock</a></li>
+  <li><a href="#correlation-functions" id="markdown-toc-correlation-functions">Correlation Functions</a>    <ul>
+      <li><a href="#correlation-functions-in-second-quantization" id="markdown-toc-correlation-functions-in-second-quantization">Correlation Functions in Second Quantization</a></li>
+    </ul>
+  </li>
+  <li><a href="#the-hanbury-brown-and-twiss-effect" id="markdown-toc-the-hanbury-brown-and-twiss-effect">The Hanbury Brown and Twiss Effect</a></li>
+  <li><a href="#hartree--fock-theory" id="markdown-toc-hartree--fock-theory">Hartree–Fock Theory</a>    <ul>
+      <li><a href="#the-hartree-and-fock-potentials" id="markdown-toc-the-hartree-and-fock-potentials">The Hartree and Fock Potentials</a></li>
+      <li><a href="#hartree--fock-for-the-electron-gas" id="markdown-toc-hartree--fock-for-the-electron-gas">Hartree–Fock for the Electron Gas</a></li>
+      <li><a href="#stoner-criterion-for-ferromagnetism" id="markdown-toc-stoner-criterion-for-ferromagnetism">Stoner Criterion for Ferromagnetism</a></li>
+    </ul>
+  </li>
 </ul>
 
 <hr />
 
-<h2 id="density-matrix-and-correlation-functions">Density Matrix and Correlation Functions</h2>
+<h2 id="correlation-functions">Correlation Functions</h2>
 
-<p>Finite temperature bosons…</p>
+<p>In <a href="/docs/lectures/ManyBodyWavefunctions/">Lecture 1</a> we introduced  the <strong>pair distribution function</strong></p>
 
-<h2 id="second-quantized-hamiltonians">Second Quantized Hamiltonians</h2>
+<script type="math/tex; mode=display">\rho_2(x_1,x_2) = N(N-1) \int dx_3\ldots dx_N \,\left|\Psi(x_1,x_2,\ldots,x_N)\right|^2,
+\label{more_pdf}</script>
 
-<p>Example of Lieb–Liniger Hamiltonian that we have met before.</p>
+<p>which measures the likelihood of finding a pair of particles at $x_1$ and $x_2$. We also saw that $\rho_2(x_1,x_2)$ could be related to the expectation of the product of the density operators at different points.</p>
 
-<h2 id="when-perturbations-attack-i"><em>When Perturbations Attack I</em></h2>
+<script type="math/tex; mode=display">\rho_2(x_1,x_2) = \bra{\Psi}\rho(x_1)\rho(x_2)\ket{\Psi} - \rho_1(x_1)\delta(x_1-x_2).
+\label{more_rhorhonorm}</script>
 
-<h2 id="hartree--fock">Hartree–Fock</h2>
+<p>$\rho_2(x,y)$ is the simplest example of a <strong>correlation function</strong>. Note also that the quantity $\bra{\Psi} \rho_q \rho_{-q} \ket{\Psi}$, used to quantify the crystalline order in a solid in <a href="/docs/lectures/ElastiChain/">Lecture 3</a>, is just the Fourier transform of $\rho_2(x_1,x_2)$. Higher correlation functions, involving products of more than two density operators, provide more detailed information on the distribution of the particles.</p>
+
+<h3 id="correlation-functions-in-second-quantization">Correlation Functions in Second Quantization</h3>
+
+<p>We evaluated $\rho_2(x,y)$ for the 1D Fermi gas:</p>
+
+<script type="math/tex; mode=display">\rho_2(x_1,x_2) = \bar n^2\left[1 - \left(\frac{\sin[k_\text{F}(x_1-x_2)]}{k_\text{F}(x_1-x_2)}\right)^2\right].</script>
+
+<p>Let’s see how to reproduce this result using second quantization. First note that the definition \eqref{more_pdf} can be written</p>
+
+<script type="math/tex; mode=display">\rho_2(x_1,x_2) =\braket{\Psi}{\sum_{j\neq k}\delta(x_i-x_k)}{\Psi}.
+\label{more_rho21stquant}</script>
+
+<p>We recognize this as the expectation value of a two particle operator. From what we learnt last time, we can immediately write down the second quantized form</p>
+
+<script type="math/tex; mode=display">\rho_2(x_1,x_2) =\braket{\Psi}{\pdop(x_1)\pdop(x_2)\pop(x_2)\pop(x_1)}{\Psi}.
+\label{more_rho22ndquant}</script>
+
+<p>This differs from $\bra{\Psi}\rho(x_1)\rho(x_2)\ket{\Psi}$ by the ordering of operators. Using the canonical commutation relations for the fields gives the relation \eqref{more_rhorhonorm} for both bosons and fermions.</p>
+
+<p>Operators in which all annihilation operators stand to the right of all creation operators are said to be <strong>normal ordered</strong>. Here, the normal ordering serves to ensure that a term with $j=k$ does not appear in \eqref{more_rho21stquant}. Two particle terms in the Hamiltonian are normal ordered for the same reason.</p>
+
+<p>Now let’s evaluate \eqref{more_rho22ndquant}.</p>
+
+<h2 id="the-hanbury-brown-and-twiss-effect">The Hanbury Brown and Twiss Effect</h2>
+
+<h2 id="hartree--fock-theory">Hartree–Fock Theory</h2>
+
+<h3 id="the-hartree-and-fock-potentials">The Hartree and Fock Potentials</h3>
+
+<h3 id="hartree--fock-for-the-electron-gas">Hartree–Fock for the Electron Gas</h3>
+
+<h3 id="stoner-criterion-for-ferromagnetism">Stoner Criterion for Ferromagnetism</h3>
 
 <p>Stoner theory (see Nazarov for discussion )
 Discuss fermionic energies in HF approx</p>
