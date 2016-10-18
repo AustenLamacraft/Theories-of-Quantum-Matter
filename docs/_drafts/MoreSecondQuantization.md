@@ -343,7 +343,11 @@ $$
 \langle \hat V\rangle = \frac{1}{4}\int d\br\, d\br'\, \rho(\br) V(\br-\br')\rho(\br')- \int d\br\, d\br'\,  V(\br-\br')\mathbf{s}(\br_1)\cdot \mathbf{s}(\br_2).
 $$
 
-The second term favours ferromagnetism for repulsive interactions. The physical origin is the same as the Hund's rule coupling in atoms: fermions can avoid each other 
+The second term favours ferromagnetism for repulsive interactions. The physical origin is the same as the Hund's rule coupling in atoms: fermions can avoid each other by
+
+Case of bosons -- suggests fragmentations for strong repulsion?
+
+Hartree--Fock as variational method
 
 ### Stoner Criterion for Ferromagnetism
 
