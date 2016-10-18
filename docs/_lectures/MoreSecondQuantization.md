@@ -17,6 +17,8 @@ Bose or Fermi statistics gives rise to correlations in the positions of particle
 * Toc
 {:toc}
 
+Reading: {% cite Nazarov:2013 %}, {% cite Baym:1969 %}
+
 ---
 
 ## Correlation Functions
@@ -42,7 +44,7 @@ where $\rho_1(x)= \braket{\Psi}{\rho(x)}{\Psi}$. $\rho_2(x,y)$ is the simplest e
 We evaluated $\rho_2(x,y)$ for the 1D Fermi gas:
 
 $$
-\rho_2(x,y) = \bar n^2\left[1 - \left(\frac{\sin[k_\text{F}(x-y)]}{k_\text{F}(x-y)}\right)^2\right].
+\rho_2(x,y) = \bar \rho^2\left[1 - \left(\frac{\sin[k_\text{F}(x-y)]}{k_\text{F}(x-y)}\right)^2\right].
 \label{more_rho2evalFermi}
 $$
 
@@ -377,15 +379,104 @@ this is not too bad, as we are guaranteed to be working with plane wave single p
 
 Let us try to put a bit more flesh on the idea that repulsive interactions favour ferromagnetism in fermionic systems. We will continue to use the model interaction $V(\br)=V_0\delta(\br)$ that we introduced in the previous section. Of course, this isn't a realistic interaction between electrons in a metal, say, but as we'll see in [Lecture 11]({{ site.baseurl }}/lectures/Jellium/), the long-ranged Coulomb interaction is screened and becomes finite-ranged. Thus our model is not a bad approximation to the _effective_ interaction between electrons in a metal.
 
-Polarizing the spins in a Fermi gas is not without cost (otherwise everything would be ferromagnetic!): there is an energetic price to pay. 
+Polarizing the spins in a Fermi gas is not without cost (otherwise everything would be ferromagnetic!): there is a price to pay in increased kinetic energy. To understand why this is so, consider the ground state kinetic energy of $N$ (spinless) fermions in three dimensions, obtained from
 
+$$
+\begin{align}
+N &= \sum_{|\bk|<k_\text{F}}\longrightarrow L^3 \int_{|\bk|<k_\text{F}} \frac{d\bk}{(2\pi)^3} = \frac{k_\text{F}^3}{6\pi^2} \\
+E_\text{kin} &= \sum_{|\bk|<k_\text{F}} \frac{\bk^2}{2m} \longrightarrow L^3 \int_{|\bk|<k_\text{F}} \frac{d\bk}{(2\pi)^3} \frac{\bk^2}{2m} = \frac{k_\text{F}^5}{20\pi^2 m} = L^3 \frac{3}{10m}(6\pi^2)^{2/3} \bar\rho^{5/3},
+\end{align}
+$$
 
-Stoner theory (see Nazarov for discussion )
+(The assumption of a quadratic dispersion is not important here. More generally, we fill a band structure.) where $\bar\rho = \frac{N}{L^3}$ is the mean density. Assuming a system of fermions with spin is now polarized in the $z$-direction, we have differing densities $\bar\rho_{\uparrow,\downarrow}$ of spin up and spin down fermions. Their total energy is
+
+$$
+E_\text{kin}(\bar\rho_\uparrow,\bar\rho_\downarrow) = \frac{cL^3}{m}\left(\bar\rho_\uparrow^{5/3}+\bar\rho_\downarrow^{5/3}\right),
+$$
+
+where $c=\frac{3}{10}(6\pi^2)^{2/3}$. In terms of the overall density $\bar\rho=\bar\rho_\uparrow+\bar\rho_\downarrow$ and density of spin $\bar s = \left(\bar\rho_\uparrow-\bar\rho_\downarrow\right)/2$, we have
+
+$$
+E_\text{kin}(\bar\rho, \bar s) = \frac{cL^3}{m}\left(\left[\bar \rho/2+\bar s\right]^{5/3}+\left[\bar \rho/2-\bar s\right]^{5/3}\right).
+$$
+
+Alternatively, write this in terms of the __polarization__ $P \equiv \frac{n_\uparrow-n_\downarrow}{n}$ that varies in the range $[-1,1]$ as
+
+$$
+E_\text{kin}(P) = \frac{E_\text{K}}{2}\left[(1+P)^{5/3}+(1-P)^{5/3}\right].
+$$
+
+We see that, on account of the convexity of $x^{5/3}$, $E^{(0)}_\text{kin}(\bar \rho, \bar s)$ is minimized for $s=0$.
+
+Let's compare this with the effect of interactions. In the short-ranged model introduced above, the total Hartree--Fock energy is
+
+$$
+E_\text{HF}(\bar \rho,\bar s) = \frac{V_0L^3}{2} \bar \rho^2 - \frac{V_0L^3}{2} \left(\bar\rho_\uparrow^2+\bar\rho_\downarrow^2\right) =  \frac{V_0L^3}{2} \left(\frac{1}{2}\bar \rho^2 - 2\bar s^2\right).
+$$
+
+We write this in terms of the polarization as
+
+$$
+E_\text{HF}(P) = \frac{E_V}{2}(1-P^2).
+$$
+
+By minimizing the total energy $E(P) = E_\text{kin}(P) + E_\text{HF}(P)$ we find
+
+1. For $E_V/E_K<10/9$ the ground state is non-magnetic.
+2. As $E_V/E_K$ increases past $10/9$ the magnetization begins to increase.
+3. At $E_V/E_K>\frac{5}{6}2^{2/3}$ is the ground state is fully polarized.
+
+One shouldn't take these numerical values too seriously given the simplicity of the model, but they illustrate the physical principles at work behind the appearance of ferromagnetism in metals.
 
 ### Excited State Energies
 
+So far we have discussed properties of the ground state only. We can, however, evaluate the Hartree--Fock energy in a product state describing an excited state of a non-interacting system. This gives the first order perturbation theory correction to the excited state energy. For concreteness we will stick with fermions for now, though the method is general.
 
-Discuss fermionic energies in HF approx
+If we work in a translationally invariant system, the appropriate single particle states are plane waves. We write the field operators in the plane wave basis as
+
+$$
+\begin{align}
+	\pop(\br)\equiv\frac{1}{L^{3/2}}\sum_{\bk} \exp(i\bk\cdot\br)\aop_{\bk},\\
+  \pdop(\br)\equiv\frac{1}{L^{3/2}}\sum_{\bk} \exp(-i\bk\cdot\br)\adop_{\bk},
+\end{align}
+$$
+
+and represent the interaction potential in terms of its Fourier components
+
+$$
+V(\br-\br') = \sum_\bq \tilde V(\bq) \exp(i\bq\cdot[\br-\br']).
+$$
+
+The interaction Hamiltonian for spinless particles can then be written
+
+$$
+\hat V  = \frac{1}{2} \sum_{\bk_1+\bk_2=\bk_3+\bk_4} \tilde V(\bk_1-\bk_4) \adop_{\bk_1}\adop_{\bk_2}\aop_{\bk_3}\aop_{\bk_4}.
+\label{more_vertex}
+$$
+
+When written in this way, interaction Hamiltonians are sometimes associated with the graphical representation below, one of the ingredients of the __Feynman diagram__ technique for performing perturbation theory calculations in field theories. The incoming lines (arrows in) represent particles being removed (in momentum states $\bk_3$ and $\bk_4$) and the outgoing lines represent particles added (momenta $\bk_1$ and $\bk_2$). The wiggly line represents $\tilde V(\bq)$. The conservation of momentum at the vertices is a consequence of the translational invariance of the problem: the two integrations over $\br$ and $\br'$ give rise to two $\delta$-functions that perform this function.  
+
+<a name="Vertex"></a>
+![]({{ site.baseurl }}/assets/Vertex.png)
+_Graphical representation of the interaction \eqref{more_vertex}._
+
+As we've already discussed, the expectation value of \eqref{more_vertex} in a product state of momentum eigenstates gives two terms, which different 'matchings' of the momenta. We can represent these two terms graphically as shown below.
+
+<a name="HFDiag"></a>
+![]({{ site.baseurl }}/assets/HFDiag.png)
+_Graphical representation of the Hartree and Fock terms._
+
+Evaluating the two contributions in term of the occupation numbers gives
+
+$$
+\braket{\mathbf{N}}{\hat V}{\mathbf{N}} = \frac{1}{2}\tilde V(0) \sum_{\bk_1,\bk_2} N_{\bk_1}N_{\bk_2} - \frac{1}{2} \sum_{\bk_1,\bk_2} \tilde V(\bk_1-\bk_2) N_{\bk_1}N_{\bk_2}
+$$
+
+While the Hartree term just depends on the total number of particles, the Fock term depends on the individual occupations. The interaction energy to add a single particle to state $\bk$ is
+
+$$
+\Delta V_{\bk} = \tilde V(0) \sum_{\bk'} N_{\bk'} - \sum_{\bk'} \tilde V(\bk-\bk') N_{\bk'}
+$$
 
 
 References

@@ -3,7 +3,7 @@
 
   <head>
   <!-- Canonical link to help search engines -->
-  <link rel="canonical" href="/docs/drafts/MoreSecondQuantization/"/>
+  <link rel="canonical" href="/docs/lectures/MoreSecondQuantization/"/>
 
   <!-- Basic meta elements -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -27,7 +27,7 @@
     <meta property="og:description" content="An Ed edition">
     <meta property="fb:admins" content="elotroalex"/>
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/drafts/MoreSecondQuantization/"/>
+    <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/MoreSecondQuantization/"/>
     <meta property="fb:app_id" content="589495744558280"/>
     <meta property="og:image" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/public/open-graph-logo.png"/>
     <meta property="og:image:width" content="200" />
@@ -172,10 +172,16 @@ $$
         
       
     
+      
+        
+          <a class="sidebar-nav-item active" href="/docs/lectures/MoreSecondQuantization/">B is for Bunching</a>
+        
+      
+    
 
     <!-- The code below is used for manually entered links  -->
 
-    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://tqm.usertest.mws3.csx.cam.ac.uk/docs/drafts/MoreSecondQuantization/">Annotate me</a>
+    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/MoreSecondQuantization/">Annotate me</a>
   </nav>
 
   <div class="sidebar-item">
@@ -223,6 +229,8 @@ Bose or Fermi statistics gives rise to correlations in the positions of particle
   <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
 
+<p>Reading: <a href="#Nazarov:2013">(Nazarov &amp; Danon, 2013)</a>, <a href="#Baym:1969">(Baym, 1969)</a></p>
+
 <hr />
 
 <h2 id="correlation-functions">Correlation Functions</h2>
@@ -243,7 +251,7 @@ Bose or Fermi statistics gives rise to correlations in the positions of particle
 
 <p>We evaluated $\rho_2(x,y)$ for the 1D Fermi gas:</p>
 
-<script type="math/tex; mode=display">\rho_2(x,y) = \bar n^2\left[1 - \left(\frac{\sin[k_\text{F}(x-y)]}{k_\text{F}(x-y)}\right)^2\right].
+<script type="math/tex; mode=display">\rho_2(x,y) = \bar \rho^2\left[1 - \left(\frac{\sin[k_\text{F}(x-y)]}{k_\text{F}(x-y)}\right)^2\right].
 \label{more_rho2evalFermi}</script>
 
 <p>Let’s see how to reproduce this result using second quantization. First note that the definition \eqref{more_pdf} can be written</p>
@@ -514,17 +522,91 @@ $$
 
 <p>Let us try to put a bit more flesh on the idea that repulsive interactions favour ferromagnetism in fermionic systems. We will continue to use the model interaction $V(\br)=V_0\delta(\br)$ that we introduced in the previous section. Of course, this isn’t a realistic interaction between electrons in a metal, say, but as we’ll see in <a href="/docs/lectures/Jellium/">Lecture 11</a>, the long-ranged Coulomb interaction is screened and becomes finite-ranged. Thus our model is not a bad approximation to the <em>effective</em> interaction between electrons in a metal.</p>
 
-<p>Polarizing the spins in a Fermi gas is not without cost (otherwise everything would be ferromagnetic!): there is an energetic price to pay.</p>
+<p>Polarizing the spins in a Fermi gas is not without cost (otherwise everything would be ferromagnetic!): there is a price to pay in increased kinetic energy. To understand why this is so, consider the ground state kinetic energy of $N$ (spinless) fermions in three dimensions, obtained from</p>
 
-<p>Stoner theory (see Nazarov for discussion )</p>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+N &= \sum_{|\bk|<k_\text{F}}\longrightarrow L^3 \int_{|\bk|<k_\text{F}} \frac{d\bk}{(2\pi)^3} = \frac{k_\text{F}^3}{6\pi^2} \\
+E_\text{kin} &= \sum_{|\bk|<k_\text{F}} \frac{\bk^2}{2m} \longrightarrow L^3 \int_{|\bk|<k_\text{F}} \frac{d\bk}{(2\pi)^3} \frac{\bk^2}{2m} = \frac{k_\text{F}^5}{20\pi^2 m} = L^3 \frac{3}{10m}(6\pi^2)^{2/3} \bar\rho^{5/3},
+\end{align} %]]></script>
+
+<p>(The assumption of a quadratic dispersion is not important here. More generally, we fill a band structure.) where $\bar\rho = \frac{N}{L^3}$ is the mean density. Assuming a system of fermions with spin is now polarized in the $z$-direction, we have differing densities $\bar\rho_{\uparrow,\downarrow}$ of spin up and spin down fermions. Their total energy is</p>
+
+<script type="math/tex; mode=display">E_\text{kin}(\bar\rho_\uparrow,\bar\rho_\downarrow) = \frac{cL^3}{m}\left(\bar\rho_\uparrow^{5/3}+\bar\rho_\downarrow^{5/3}\right),</script>
+
+<p>where $c=\frac{3}{10}(6\pi^2)^{2/3}$. In terms of the overall density $\bar\rho=\bar\rho_\uparrow+\bar\rho_\downarrow$ and density of spin $\bar s = \left(\bar\rho_\uparrow-\bar\rho_\downarrow\right)/2$, we have</p>
+
+<script type="math/tex; mode=display">E_\text{kin}(\bar\rho, \bar s) = \frac{cL^3}{m}\left(\left[\bar \rho/2+\bar s\right]^{5/3}+\left[\bar \rho/2-\bar s\right]^{5/3}\right).</script>
+
+<p>Alternatively, write this in terms of the <strong>polarization</strong> $P \equiv \frac{n_\uparrow-n_\downarrow}{n}$ that varies in the range $[-1,1]$ as</p>
+
+<script type="math/tex; mode=display">E_\text{kin}(P) = \frac{E_\text{K}}{2}\left[(1+P)^{5/3}+(1-P)^{5/3}\right].</script>
+
+<p>We see that, on account of the convexity of $x^{5/3}$, $E^{(0)}_\text{kin}(\bar \rho, \bar s)$ is minimized for $s=0$.</p>
+
+<p>Let’s compare this with the effect of interactions. In the short-ranged model introduced above, the total Hartree–Fock energy is</p>
+
+<script type="math/tex; mode=display">E_\text{HF}(\bar \rho,\bar s) = \frac{V_0L^3}{2} \bar \rho^2 - \frac{V_0L^3}{2} \left(\bar\rho_\uparrow^2+\bar\rho_\downarrow^2\right) =  \frac{V_0L^3}{2} \left(\frac{1}{2}\bar \rho^2 - 2\bar s^2\right).</script>
+
+<p>We write this in terms of the polarization as</p>
+
+<script type="math/tex; mode=display">E_\text{HF}(P) = \frac{E_V}{2}(1-P^2).</script>
+
+<p>By minimizing the total energy $E(P) = E_\text{kin}(P) + E_\text{HF}(P)$ we find</p>
+
+<ol>
+  <li>For $E_V/E_K&lt;10/9$ the ground state is non-magnetic.</li>
+  <li>As $E_V/E_K$ increases past $10/9$ the magnetization begins to increase.</li>
+  <li>At $E_V/E_K&gt;\frac{5}{6}2^{2/3}$ is the ground state is fully polarized.</li>
+</ol>
+
+<p>One shouldn’t take these numerical values too seriously given the simplicity of the model, but they illustrate the physical principles at work behind the appearance of ferromagnetism in metals.</p>
 
 <h3 id="excited-state-energies">Excited State Energies</h3>
 
-<p>Discuss fermionic energies in HF approx</p>
+<p>So far we have discussed properties of the ground state only. We can, however, evaluate the Hartree–Fock energy in a product state describing an excited state of a non-interacting system. This gives the first order perturbation theory correction to the excited state energy. For concreteness we will stick with fermions for now, though the method is general.</p>
+
+<p>If we work in a translationally invariant system, the appropriate single particle states are plane waves. We write the field operators in the plane wave basis as</p>
+
+<script type="math/tex; mode=display">\begin{align}
+	\pop(\br)\equiv\frac{1}{L^{3/2}}\sum_{\bk} \exp(i\bk\cdot\br)\aop_{\bk},\\
+  \pdop(\br)\equiv\frac{1}{L^{3/2}}\sum_{\bk} \exp(-i\bk\cdot\br)\adop_{\bk},
+\end{align}</script>
+
+<p>and represent the interaction potential in terms of its Fourier components</p>
+
+<script type="math/tex; mode=display">V(\br-\br') = \sum_\bq \tilde V(\bq) \exp(i\bq\cdot[\br-\br']).</script>
+
+<p>The interaction Hamiltonian for spinless particles can then be written</p>
+
+<script type="math/tex; mode=display">\hat V  = \frac{1}{2} \sum_{\bk_1+\bk_2=\bk_3+\bk_4} \tilde V(\bk_1-\bk_4) \adop_{\bk_1}\adop_{\bk_2}\aop_{\bk_3}\aop_{\bk_4}.
+\label{more_vertex}</script>
+
+<p>When written in this way, interaction Hamiltonians are sometimes associated with the graphical representation below, one of the ingredients of the <strong>Feynman diagram</strong> technique for performing perturbation theory calculations in field theories. The incoming lines (arrows in) represent particles being removed (in momentum states $\bk_3$ and $\bk_4$) and the outgoing lines represent particles added (momenta $\bk_1$ and $\bk_2$). The wiggly line represents $\tilde V(\bq)$. The conservation of momentum at the vertices is a consequence of the translational invariance of the problem: the two integrations over $\br$ and $\br’$ give rise to two $\delta$-functions that perform this function.</p>
+
+<p><a name="Vertex"></a>
+<img src="/docs/assets/Vertex.png" alt="" />
+<em>Graphical representation of the interaction \eqref{more_vertex}.</em></p>
+
+<p>As we’ve already discussed, the expectation value of \eqref{more_vertex} in a product state of momentum eigenstates gives two terms, which different ‘matchings’ of the momenta. We can represent these two terms graphically as shown below.</p>
+
+<p><a name="HFDiag"></a>
+<img src="/docs/assets/HFDiag.png" alt="" />
+<em>Graphical representation of the Hartree and Fock terms.</em></p>
+
+<p>Evaluating the two contributions in term of the occupation numbers gives</p>
+
+<script type="math/tex; mode=display">\braket{\mathbf{N}}{\hat V}{\mathbf{N}} = \frac{1}{2}\tilde V(0) \sum_{\bk_1,\bk_2} N_{\bk_1}N_{\bk_2} - \frac{1}{2} \sum_{\bk_1,\bk_2} \tilde V(\bk_1-\bk_2) N_{\bk_1}N_{\bk_2}</script>
+
+<p>While the Hartree term just depends on the total number of particles, the Fock term depends on the individual occupations. The interaction energy to add a single particle to state $\bk$ is</p>
+
+<script type="math/tex; mode=display">\Delta V_{\bk} = \tilde V(0) \sum_{\bk'} N_{\bk'} - \sum_{\bk'} \tilde V(\bk-\bk') N_{\bk'}</script>
 
 <h2 id="references">References</h2>
 
-<ol class="bibliography"><li><span id="Andrews1997">Andrews, M. R., Townsend, C. G., Miesner, H. J., Durfee, D. S., Kurn, D. M., &amp; Ketterle, W. (1997). Observation of Interference Between Two Bose Condensates. <i>Science</i>, <i>275</i>(5300), 637–641.</span></li>
+<ol class="bibliography"><li><span id="Nazarov:2013">Nazarov, Y. V., &amp; Danon, J. (2013). <i>Advanced Quantum Mechanics: A Practical Guide</i>. Cambridge University Press.</span></li>
+<li><span id="Baym:1969">Baym, G. (1969). <i>Lectures on quantum mechanics</i>. WA Benjamin New York.</span></li>
+<li><span id="Andrews1997">Andrews, M. R., Townsend, C. G., Miesner, H. J., Durfee, D. S., Kurn, D. M., &amp; Ketterle, W. (1997). Observation of Interference Between Two Bose Condensates. <i>Science</i>, <i>275</i>(5300), 637–641.</span></li>
 <li><span id="Magyar1963">Magyar, G., &amp; Mandel, L. (1963). Interference fringes produced by superposition of two independent Maser light beams. <i>Nature</i>, <i>198</i>(4877), 255–256.</span></li>
 <li><span id="Baym:1998aa">Baym, G. (1998). The physics of Hanbury Brown-Twiss intensity interferometry from stars to nuclear collisions. <i>Acta Physica Polonica. Series B</i>, <i>29</i>(7), 1839–1884.</span></li>
 <li><span id="kleppner2008">Kleppner, D. (2008). Hanbury Brown’s steamroller. <i>Physics Today</i>, <i>61</i>(8), 8.</span></li></ol>

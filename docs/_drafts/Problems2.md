@@ -28,6 +28,8 @@ Get the $N^3$ part of the energy
 
 ## Condensate Fluctuations
 
+## Coulomb Hartree--Fock
+
 ## Hartree--Fock for bosons
 
 Case of bosons -- suggests fragmentations for strong repulsion? Nozieres model
