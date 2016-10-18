@@ -289,7 +289,7 @@ we can immediately write down the expectation value of the interaction energy in
 
 $$
 	\label{2nd_quant_HartreeFock}
-	\langle \hat V\rangle = \frac{1}{2}\int d\br\, d\br'\, \rho_1(\br) V(\br-\br')\rho_1(\br') \pm \frac{1}{2}\int d\br\, d\br'\,  V(\br-\br')g(\br,\br')g(\br',\br).
+	\langle \hat V\rangle = \overbrace{\frac{1}{2}\int d\br\, d\br'\, \rho_1(\br) V(\br-\br')\rho_1(\br')}^{\equiv E_\text{Hartree}} \overbrace{\pm \frac{1}{2}\int d\br\, d\br'\,  V(\br-\br')g(\br,\br')g(\br',\br)}^{\equiv E_\text{Fock}}.
 $$
 
 The two terms are known as the __Hartree__ and __Fock__ (or __exchange__) contributions, respectively. This expression lies at the core of the variational __Hartree--Fock method__ for many body systems, which approximates the ground state by a product state. The Hartree term looks completely reasonable, while the Fock potential doesn't look like a potential at all, and reflects the non-classical correlations.
@@ -337,21 +337,54 @@ $$
 \delta_{ab}\delta_{cd} = \frac{1}{2}\left[\boldsymbol{\sigma}_{a c}\cdot \boldsymbol{\sigma}_{d b} + \delta_{ac}\delta_{db}\right],
 $$
 
-which gives the Hartree--Fock energy
+which gives
 
 $$
-\langle \hat V\rangle = \frac{1}{4}\int d\br\, d\br'\, \rho(\br) V(\br-\br')\rho(\br')- \int d\br\, d\br'\,  V(\br-\br')\mathbf{s}(\br_1)\cdot \mathbf{s}(\br_2).
+\begin{align}
+E_{\text{Fock}} =-\frac{1}{4} \int d\br\, d\br'\,  V(\br-\br')\tr\left[g(\br,\br')\right]\tr\left[g(\br',\br)\right]\\-\frac{1}{4}\int d\br\, d\br'\,  V(\br-\br')\tr\left[\boldsymbol{\sigma}g(\br,\br')\right]\cdot\tr\left[\boldsymbol{\sigma}g(\br',\br)\right].
+\end{align}
 $$
 
-The second term favours ferromagnetism for repulsive interactions. The physical origin is the same as the Hund's rule coupling in atoms: fermions can avoid each other by
+Suppose we had a $\delta$-function interaction $V(\br)=V_0 \delta(\br)$. Then the Fock energy can be written
 
-Case of bosons -- suggests fragmentations for strong repulsion?
+$$
+\begin{align}
+E_{\text{Fock}} =-\frac{V_0}{4} \int d\br\, \rho(\br)^2-V_0\int d\br\, \mathbf{s}(\br)\cdot\mathbf{s}(\br)
+\end{align}
+$$
 
-Hartree--Fock as variational method
+The second term favours ferromagnetism for repulsive interactions. The physical origin is the same as the Hund's rule coupling in atoms: fermions in different spin states can sit at the same spatial location, while those in the same spin state must be in different locations. For repulsive interactions occupying the same spin state is energetically favourable.  
+
+<p class="message">
+This is most succintly put by the formula
+
+$$
+\rho_2(\br,\br) = \frac{1}{2}\rho(\br)^2 - 2\mathbf{s}(\br)\cdot\mathbf{s}(\br)
+$$
+
+</p>
+
+The Hartree--Fock energy forms the basis of a variational method using product states as variational wavefunctions. For a Hamiltonian with translational invariance, like
+
+$$
+H = \int d\br \frac{1}{2m}\nabla\pdop\cdot\nabla\pop + \frac{1}{2}\int d\br d\br' V(\br-\br')\pdop(\br)\pdop(\br')\pop(\br')\pop(\br),
+\label{more_H2nd}
+$$
+
+this is not too bad, as we are guaranteed to be working with plane wave single particle states. Then the only variational parameters are the occupancies of these states: we'll meet an example in the next section. If translational symmetry is broken by introducing a potential $U(\br)$ into the single particle part of \eqref{more_H2nd}, say, the situation is more complicated. We may be tempted to use single particle states that are the eigenstates of the single particle part of the Hamiltonian, but there is no real justification for this, and one has to allow the states, as well as the occupancies, to vary.
 
 ### Stoner Criterion for Ferromagnetism
 
+Let us try to put a bit more flesh on the idea that repulsive interactions favour ferromagnetism in fermionic systems. We will continue to use the model interaction $V(\br)=V_0\delta(\br)$ that we introduced in the previous section. Of course, this isn't a realistic interaction between electrons in a metal, say, but as we'll see in [Lecture 11]({{ site.baseurl }}/lectures/Jellium/), the long-ranged Coulomb interaction is screened and becomes finite-ranged. Thus our model is not a bad approximation to the _effective_ interaction between electrons in a metal.
+
+Polarizing the spins in a Fermi gas is not without cost (otherwise everything would be ferromagnetic!): there is an energetic price to pay. 
+
+
 Stoner theory (see Nazarov for discussion )
+
+### Excited State Energies
+
+
 Discuss fermionic energies in HF approx
 
 

@@ -151,7 +151,10 @@ $$
 
 Note that the dispersion relation is periodic, as in the case of the elastic chain, but is now quadratic, rather than linear, at small $\eta$. $\eta=0$ corresponds to the state \eqref{spin_Lowered}, and indeed the energy $\omega(0)=0$ in that case.
 
-> There is a general principle at work here: excitations that correspond at long wavelengths to symmetry operations have to have __gapless__ dispersion relations. In field theory this follows from a general result called __Goldstone's theorem__.
+
+<p class="message">
+There is a general principle at work here: excitations that correspond at long wavelengths to symmetry operations have to have <strong>gapless</strong> dispersion relations. In field theory this follows from a general result called <strong>Goldstone's theorem</strong>.</p>
+
 
 If we are thinking of the down spin as a particle, then the eigenstates \eqref{spin_wave} are like plane wave states. These excitations are known as __magnons__.
 
@@ -322,7 +325,7 @@ $$
 It's clear that we should form two spins of maximal size $\cN/4$ from each of the two sublattices, and then combine them to make an overall spin singlet. Obviously this singlet is a spherically symmetric state with no preferred direction, and hence no antiferromagnetic order. The ground state energy is
 
 $$
-E_0 = J\left(\frac{\cN^2}{4}+1\right),
+E_0 = -J\left(\frac{\cN}{4}+1\right),
 $$
 
 which is extensive. What about the excited states? There are two options for the first excited states:

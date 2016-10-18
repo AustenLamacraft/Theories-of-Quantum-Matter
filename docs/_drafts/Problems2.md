@@ -28,6 +28,10 @@ Get the $N^3$ part of the energy
 
 ## Condensate Fluctuations
 
+## Hartree--Fock for bosons
+
+Case of bosons -- suggests fragmentations for strong repulsion? Nozieres model
+
 ## Leggett's problem for metastable currents
 
 ## Superfluid density of Bose Hubbard
