@@ -207,8 +207,8 @@ and involves the wavefunctions $\varphi_{\beta}(\br)$, rather than their conjuga
 
 $$
 \begin{gather}
-	\left[\pop(\br),\pdop(\br')\right]=\delta(\br-\br')\nonumber\\
-	\left[\pop(\br),\pop(\br')\right]=\left[\pdop(\br),\pdop(\br')\right]=0.
+	\left[\pop(\br_1),\pdop(\br_2)\right]=\delta(\br_1-\br_2)\nonumber\\
+	\left[\pop(\br_1),\pop(\br_2)\right]=\left[\pdop(\br_1),\pdop(\br_2)\right]=0.
 	\label{2nd_quant_PositionRelations}
 \end{gather}
 $$
@@ -298,6 +298,16 @@ $$
 <p class="message">
 Check this.
 </p>
+
+Introducing field operators in the position basis as before leads to a system of operators satisfying the anticommutation relations
+
+$$
+\begin{gather}
+	\left\{\pop(\br_1),\pdop(\br_2)\right\}=\delta(\br_1-\br_2)\nonumber\\
+	\left\{\pop(\br_1),\pop(\br_2)\right\}=\left\{\pdop(\br_1),\pdop(\br_2)\right\}=0.
+	\label{2nd_quant_PositionRelationsAnti}
+\end{gather}
+$$
 
 
 ## Discussion: Explicit Form of Operators
