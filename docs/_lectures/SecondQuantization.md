@@ -375,7 +375,7 @@ $$
 \end{align}
 $$
 
-The second quantized form of $\hat A$ allows us to find the matrix element between product states
+The second quantized form of $\hat A$ allows us to find the matrix element between product states made of orthonormal single particle states
 
 $$
 \braket{\mathbf{N}}{\hat A}{\mathbf{N'}} = \sum_{\alpha\beta} A_{\alpha\beta} \sqrt{N_\alpha N'_\beta}.
@@ -388,7 +388,7 @@ This formula is not so easy to work out in the first quantized representation. T
 
 We worked this out for the bosonic case. However, you can check that \eqref{A_bilin}, the basic relation that makes it all work, is also valid for fermions (as a commutation relation, note!). So $\hat A$ has the same form for fermions.
 
-Notice that $\mathop{\hat A}$ \emph{looks} formally like the expectation value of $\mathop{A}$ in a single particle state $\sum_{\alpha}a_{\alpha}\ket{\varphi_{\alpha}}$. The difference, of course, is that the $a_{\alpha}$ in $\mathop{\hat A}$ are operators, so that the order is important, while those in the preceding expression are amplitudes. The replacement of amplitudes, or wavefunctions, by operators is the origin of the rather clumsy name __second quantization__, which is traditionally introduced with the caveat that what we are doing is not in any way 'more quantum' than before.
+Notice that $\mathop{\hat A}$ _looks_ formally like the expectation value of $\mathop{A}$ in a single particle state $\sum_{\alpha}a_{\alpha}\ket{\varphi_{\alpha}}$. The difference, of course, is that the $a_{\alpha}$ in $\mathop{\hat A}$ are operators, so that the order is important, while those in the preceding expression are amplitudes. The replacement of amplitudes, or wavefunctions, by operators is the origin of the rather clumsy name __second quantization__, which is traditionally introduced with the caveat that what we are doing is not in any way 'more quantum' than before.
 
 To repeat the above prescription for emphasis: _A one particle operator $\mathop{\hat A}$ has a second quantized representation formally identical to the expectation value of its single particle counterpart $\mathop{A}$_.
 
