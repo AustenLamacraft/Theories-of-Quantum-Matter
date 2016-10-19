@@ -281,7 +281,7 @@ $$
 \label{A_aanticommute}
 $$
 
-The form of $\left\\{\aop(\psi),\adop(\phi)\right\\}=0$ can be deduced from the inner product between product states
+The form of $\left\\{\adop(\psi),\adop(\phi)\right\\}=0$ can be deduced from the inner product between product states
 
 $$
 \bra{\Psi}\Phi\rangle = \sum_P (-1)^P\bra{\psi_n}\phi_{P_n}\rangle = \det \bra{\psi_m}\phi_{n}\rangle,
@@ -434,7 +434,7 @@ $$
 \end{equation}
 $$
 
-which is just the time dependent Schr\"odinger equation!
+which is just the time dependent Schrödinger equation!
 
 As a second example, consider the particle density. This is not something that one encounters very often in few particle quantum mechanics, but is obviously an observable of interest in a extended system of many particles. The single particle operator for the density at $\mathbf{x}$ is
 
@@ -495,7 +495,7 @@ This can be written in terms of our field operators
 
 $$
 	\label{2nd_quant_SPDensity}
-	g(\br,\br')= \braket{\Psi}{\pdop(\br)\pop(\br)}{\Psi}
+	g(\br,\br')= \braket{\Psi}{\pdop(\br)\pop(\br')}{\Psi}
 $$
 
 
