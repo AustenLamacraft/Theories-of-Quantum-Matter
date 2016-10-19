@@ -17,11 +17,15 @@ published: true
 
 # Tight Binding Models
 
+## Physical Motivation
 
+To get some idea of where these models come from, let's consider the Bloch states in a 1D lattice.
 
 Matrix form. Solution by Fourier transformation. _circulant matrix_
 
 # Bose Hubbard Model
+
+The simplest interacting tight binding model that we can write down is the celebrated __Hubbard model__.
 
 ## The Mott State
 

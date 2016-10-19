@@ -108,7 +108,69 @@ Solve the 2D harmonic solid, defined by
 <a name="2dSolid"></a>
 ![]({{ site.baseurl }}/assets/2dSolid.png)
 
+__NOTE__: You will need to assume that the equilibrium length of the springs is zero. If not, your solid will not be 'solid', in that even infinitely stiff bars connecting the atoms will not give a rigid structure because they are free to shear layer by layer:
+
+<a name="isostatic"></a>
+![]({{ site.baseurl }}/assets/isostatic.png)
 
 ## Thermal Displacement in 2D
 
-Show that $\bra{0} \mathbf{u}_{j,k}^2\ket{0}$ is finite in 2D, but diverges at finite temperature as $N\to\infty$.
+Show that the ground state expectation $\bra{0} \mathbf{u}_{j,k}^2\ket{0}$ is finite in 2D, but the finite temperature expectation diverges as $N\to\infty$.
+
+## Anisotropic Heisenberg Model
+
+Discuss the spin wave spectrum of the _aniotropic_ Heisenberg chain
+
+$$
+H = \sum_j\left[J_\parallel s^z_j s^z_{j+1} + \frac{J_\perp}{2}\left(s^+_js^-_{j+1}+s^-_js^+_{j+1}\right)\right],
+$$
+
+for both the ferromagnetic $J<0$ and antiferromagnetic $J>0$ cases.
+
+## From Schwinger Bosons to Holstein--Primakoff
+
+1. If we have $N$ bosons with $\left[\aop_j,\adop_k\right]=\delta_{jk}$, show that
+  $$
+  \left[\hat A, \hat B\right] = \widehat{\left[A,B\right]}
+  $$
+  where $\hat A = \adop_j A_{jk} \aop_k$ (summation implied). The commutation relations are 'copied' to the second quantized operators (or if you prefer, they form a representation of the Lie algebra of the matrices). This is apparently called the [Jordan map](https://en.wikipedia.org/wiki/Jordan_map).
+
+2. Applying this to the operators $\frac{\boldsymbol{\sigma}}{2}$ gives, with two bosons $\aop$ and $\bop$
+  $$
+  \begin{align}
+  S^x &= \frac{1}{2}\left(\adop\bop+\bdop\aop\right)\nonumber\\
+  S^y &= \frac{i}{2}\left(-\adop\bop+\bdop\aop\right)\nonumber\\
+  S^z &= \frac{1}{2}\left(\adop\aop-\bdop\bop\right).
+  \label{schwinger}
+  \end{align}
+  $$
+  This is a method for representing spins called __Schwinger bosons__. Identify which states $\ket{N_a}_a\ket{N_b}_b$ of the oscillators correspond to the states of a spin $s$.
+
+3. By considering the action of \eqref{schwinger} on the oscillator states corresponding to spin $s$, show that one can write their effect in terms of a _single_ oscillator, and that this gives the Holstein--Primakoff representation.
+
+## Spin Waves from Bogoliubov Transformation
+
+1. After our $\pi$ rotation of every other spin, the Hamiltonian for the antiferromagnetic chain is
+  $$
+  \begin{align}
+  H = -J \sum_{j=1}^N \left[s^x_j s^x_{j+1} - s^y_j s^y_{j+1} + s^z_j s^z_{j+1}\right].
+  \end{align}
+  $$
+  Substitute directly the Holstein--Primakoff representation in terms of $\aop_j$ and $\adop_j$, without introducing $x_j$ and $p_j$. You should find terms of the form $\aop_j\aop_{j+1}$ and $\adop_j\adop_{j+1}$, among others.
+
+2. Write the Hamiltonian in terms of the Fourier representation
+  $$
+  \begin{align}
+  \aop_p = \frac{1}{\sqrt{N}}\sum_j e^{i\eta_n j} \aop_k,\quad \adop_p = \frac{1}{\sqrt{N}}\sum_j e^{-i\eta_n j} \adop_k.
+  \end{align}
+  $$
+  Your answer should involve terms with $\aop_\eta\aop_{-\eta}$ and $\adop_{\eta}\adop_{-\eta}$.
+
+3. Check that the __Bogoliubov transformation__
+  $$
+  \begin{align}
+  \adop_\eta \longrightarrow \cosh\theta_\eta \adop_\eta -\sinh\theta_\eta \aop_{-\eta}\\
+  \aop_\eta \longrightarrow \cosh\theta_\eta \aop_\eta +\sinh\theta_\eta \adop_{-\eta}
+  \end{align}
+  $$
+  preserves the commutation relations of the bosons. Choose $\theta_\eta$ to eliminate the $\aop_\eta\aop_{-\eta}$ and $\adop_{\eta}\adop_{-\eta}$ terms from the Hamiltonian. Your answer should describe a system of bosons with the dispersion we found in the lecture.

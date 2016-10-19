@@ -219,6 +219,9 @@ $$
   <li><a href="#fluctuations-in-a-finite-chain" id="markdown-toc-fluctuations-in-a-finite-chain">Fluctuations in a Finite Chain</a></li>
   <li><a href="#the-2d-elastic-solid" id="markdown-toc-the-2d-elastic-solid">The 2D Elastic Solid</a></li>
   <li><a href="#thermal-displacement-in-2d" id="markdown-toc-thermal-displacement-in-2d">Thermal Displacement in 2D</a></li>
+  <li><a href="#anisotropic-heisenberg-model" id="markdown-toc-anisotropic-heisenberg-model">Anisotropic Heisenberg Model</a></li>
+  <li><a href="#from-schwinger-bosons-to-holstein--primakoff" id="markdown-toc-from-schwinger-bosons-to-holstein--primakoff">From Schwinger Bosons to Holstein–Primakoff</a></li>
+  <li><a href="#spin-waves-from-bogoliubov-transformation" id="markdown-toc-spin-waves-from-bogoliubov-transformation">Spin Waves from Bogoliubov Transformation</a></li>
 </ol>
 
 <hr />
@@ -308,9 +311,73 @@ H = \sum_{j=1}^N \frac{p_j^2}{2m} + \sum_{j<k} V(x_j-x_k) . %]]></script>
 <p><a name="2dSolid"></a>
 <img src="/docs/assets/2dSolid.png" alt="" /></p>
 
+<p><strong>NOTE</strong>: You will need to assume that the equilibrium length of the springs is zero. If not, your solid will not be ‘solid’, in that even infinitely stiff bars connecting the atoms will not give a rigid structure because they are free to shear layer by layer:</p>
+
+<p><a name="isostatic"></a>
+<img src="/docs/assets/isostatic.png" alt="" /></p>
+
 <h2 id="thermal-displacement-in-2d">Thermal Displacement in 2D</h2>
 
-<p>Show that $\bra{0} \mathbf{u}_{j,k}^2\ket{0}$ is finite in 2D, but diverges at finite temperature as $N\to\infty$.</p>
+<p>Show that the ground state expectation $\bra{0} \mathbf{u}_{j,k}^2\ket{0}$ is finite in 2D, but the finite temperature expectation diverges as $N\to\infty$.</p>
+
+<h2 id="anisotropic-heisenberg-model">Anisotropic Heisenberg Model</h2>
+
+<p>Discuss the spin wave spectrum of the <em>aniotropic</em> Heisenberg chain</p>
+
+<script type="math/tex; mode=display">H = \sum_j\left[J_\parallel s^z_j s^z_{j+1} + \frac{J_\perp}{2}\left(s^+_js^-_{j+1}+s^-_js^+_{j+1}\right)\right],</script>
+
+<p>for both the ferromagnetic $J&lt;0$ and antiferromagnetic $J&gt;0$ cases.</p>
+
+<h2 id="from-schwinger-bosons-to-holstein--primakoff">From Schwinger Bosons to Holstein–Primakoff</h2>
+
+<ol>
+  <li>
+    <p>If we have $N$ bosons with $\left[\aop_j,\adop_k\right]=\delta_{jk}$, show that
+  <script type="math/tex">\left[\hat A, \hat B\right] = \widehat{\left[A,B\right]}</script>
+  where $\hat A = \adop_j A_{jk} \aop_k$ (summation implied). The commutation relations are ‘copied’ to the second quantized operators (or if you prefer, they form a representation of the Lie algebra of the matrices). This is apparently called the <a href="https://en.wikipedia.org/wiki/Jordan_map">Jordan map</a>.</p>
+  </li>
+  <li>
+    <p>Applying this to the operators $\frac{\boldsymbol{\sigma}}{2}$ gives, with two bosons $\aop$ and $\bop$
+  <script type="math/tex">% <![CDATA[
+\begin{align}
+  S^x &= \frac{1}{2}\left(\adop\bop+\bdop\aop\right)\nonumber\\
+  S^y &= \frac{i}{2}\left(-\adop\bop+\bdop\aop\right)\nonumber\\
+  S^z &= \frac{1}{2}\left(\adop\aop-\bdop\bop\right).
+  \label{schwinger}
+  \end{align} %]]></script>
+  This is a method for representing spins called <strong>Schwinger bosons</strong>. Identify which states $\ket{N_a}_a\ket{N_b}_b$ of the oscillators correspond to the states of a spin $s$.</p>
+  </li>
+  <li>
+    <p>By considering the action of \eqref{schwinger} on the oscillator states corresponding to spin $s$, show that one can write their effect in terms of a <em>single</em> oscillator, and that this gives the Holstein–Primakoff representation.</p>
+  </li>
+</ol>
+
+<h2 id="spin-waves-from-bogoliubov-transformation">Spin Waves from Bogoliubov Transformation</h2>
+
+<ol>
+  <li>
+    <p>After our $\pi$ rotation of every other spin, the Hamiltonian for the antiferromagnetic chain is
+  <script type="math/tex">\begin{align}
+  H = -J \sum_{j=1}^N \left[s^x_j s^x_{j+1} - s^y_j s^y_{j+1} + s^z_j s^z_{j+1}\right].
+  \end{align}</script>
+  Substitute directly the Holstein–Primakoff representation in terms of $\aop_j$ and $\adop_j$, without introducing $x_j$ and $p_j$. You should find terms of the form $\aop_j\aop_{j+1}$ and $\adop_j\adop_{j+1}$, among others.</p>
+  </li>
+  <li>
+    <p>Write the Hamiltonian in terms of the Fourier representation
+  <script type="math/tex">\begin{align}
+  \aop_p = \frac{1}{\sqrt{N}}\sum_j e^{i\eta_n j} \aop_k,\quad \adop_p = \frac{1}{\sqrt{N}}\sum_j e^{-i\eta_n j} \adop_k.
+  \end{align}</script>
+  Your answer should involve terms with $\aop_\eta\aop_{-\eta}$ and $\adop_{\eta}\adop_{-\eta}$.</p>
+  </li>
+  <li>
+    <p>Check that the <strong>Bogoliubov transformation</strong>
+  <script type="math/tex">\begin{align}
+  \adop_\eta \longrightarrow \cosh\theta_\eta \adop_\eta -\sinh\theta_\eta \aop_{-\eta}\\
+  \aop_\eta \longrightarrow \cosh\theta_\eta \aop_\eta +\sinh\theta_\eta \adop_{-\eta}
+  \end{align}</script>
+  preserves the commutation relations of the bosons. Choose $\theta_\eta$ to eliminate the $\aop_\eta\aop_{-\eta}$ and $\adop_{\eta}\adop_{-\eta}$ terms from the Hamiltonian. Your answer should describe a system of bosons with the dispersion we found in the lecture.</p>
+  </li>
+</ol>
 
 </div>
 
