@@ -41,7 +41,7 @@ In the following parts, give all possible occupancies of outgoing states 1 and 2
 3. The initial state is $(\adop_1)^N(\adop_2)^N\ket{\text{VAC}}$ [Bosons].
 4. The initial state is $\exp(\alpha_1\adop_1+\alpha_2\adop_2)\ket{\text{VAC}}$ [Bosons].
 
-How does the distribution in part 3 _look_?
+How does the distribution in part 3 _look_? Try taking the limit of a large number of particles. 
 
 ## Equation of Motion for Density
 
