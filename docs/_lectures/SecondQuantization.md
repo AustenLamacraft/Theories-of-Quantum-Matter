@@ -326,7 +326,7 @@ $$
 \hat A = \sum_{j=1}^N A_j,
 $$
 
-where the subscript denotes that the operator acts on the position label $\br_j$ of the $j^\text{th}$ particle. The example that we have met many times all ready is the Hamiltonian for noninteracting particles
+where the subscript denotes that the operator acts on the position label $\br_j$ of the $j^\text{th}$ particle. The example that we have met many times already is the Hamiltonian for noninteracting particles
 
 $$
 \hat H = \sum_{j=1}^N H_j = \sum_{j=1}^N \left[-\frac{\nabla_j^2}{2m}+V(\br_j)\right].
