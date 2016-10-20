@@ -430,7 +430,7 @@ One shouldn't take these numerical values too seriously given the simplicity of 
 
 ### Excited State Energies
 
-So far we have discussed properties of the ground state only. We can, however, evaluate the Hartree--Fock energy in a product state describing an excited state of a non-interacting system. This gives the first order perturbation theory correction to the excited state energy. For concreteness we will stick with fermions for now, though the method is general.
+So far we have discussed properties of the ground state only. We can, however, evaluate the Hartree--Fock energy in a product state describing an excited state of a noninteracting system. This gives the first order perturbation theory correction to the excited state energy. For concreteness we will stick with fermions for now, though the method is general.
 
 If we work in a translationally invariant system, the appropriate single particle states are plane waves. We write the field operators in the plane wave basis as
 

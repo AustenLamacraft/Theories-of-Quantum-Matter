@@ -68,6 +68,7 @@
           Macros: {
           cP: '\\mathcal{P}',
           cN: '\\mathcal{N}',
+          cE: '\\mathcal{E}',
           br: '\\mathbf{r}',
           bx: '\\mathbf{x}',
           bp: '\\mathbf{p}',
@@ -168,7 +169,7 @@ $$
     
       
         
-          <a class="sidebar-nav-item" href="/docs/lectures/SecondQuantization/">A is for Annihilation</a>
+          <a class="sidebar-nav-item" href="/docs/lectures/secondquantization/">A is for Annihilation</a>
         
       
     
@@ -207,7 +208,11 @@ $$
       <div class="container content" id="main">
         <div class="page">
   <h1 class="page-title">Lattice Models and Strong Correlation</h1>
-  <h2 class="no_toc" id="contents">Contents</h2>
+  <p class="message">
+Models defined on discrete sites -- so-called <strong> tight binding models</strong> --  provide a conceptually simple way to think about the effects of strong interactions between particles. The phenomenology of these models is central to many current avenues of research in condensed matter, whether in solid state or atomic physics.
+</p>
+
+<h2 class="no_toc" id="contents">Contents</h2>
 
 <ul id="markdown-toc">
   <li><a href="#tight-binding-models" id="markdown-toc-tight-binding-models">Tight Binding Models</a>    <ul>
@@ -227,25 +232,128 @@ $$
           <li><a href="#schrieffer--wolf-transformation" id="markdown-toc-schrieffer--wolf-transformation">Schrieffer–Wolf Transformation</a></li>
         </ul>
       </li>
+      <li><a href="#references" id="markdown-toc-references">References</a></li>
     </ul>
   </li>
 </ul>
+
+<p>Reading:</p>
 
 <hr />
 
 <h1 id="tight-binding-models">Tight Binding Models</h1>
 
+<p>A typical many body Hamiltonian consists of kinetic energy and interaction terms. We haven’t yet had much to say about the situation where the particles additionally feel a potential that could arise from the crystal lattice, or impurity atoms, or both. In this lecture we will be concerned with systems in periodic potentials, so that the noninteracting part of the Hamiltonian is (taking the 1D case for simplicity)</p>
+
+<script type="math/tex; mode=display">H = \sum_{j=1}^N \left[-\frac{1}{2m}\partial_i^2 +V(\br_i)\right] = \int \left[\frac{1}{2m}\partial_x\pdop\partial_x\pop + V(x)\pdop\pop\right] dx,</script>
+
+<p>with $V(x+a)=V(x)$. As you know, <a href="https://en.wikipedia.org/wiki/Bloch_wave">Bloch’s theorem</a> tells us that the eigenstates are labelled by a continuous index $k$ (<strong>crystal momentum</strong>) and discrete index $n$ (<strong>band index</strong>) and have the form</p>
+
+<script type="math/tex; mode=display">\psi_{k,n}(x) = e^{ikx} \varphi_{k,n}(x),
+\label{latt_bloch}</script>
+
+<p>where $\varphi_{k,n}$ is periodic. $k$ lies in the <strong>Brillouin zone</strong> $(-\pi/a,\pi/a]$. The eigenvalues $E_n(k)$ give the <strong>energy bands</strong>.</p>
+
+<p>We are going to be concerned with the case where the lattice potential is very strong, so that the wavefunctions – at least in the lowest bands that we assume are those occupied – are highly localized. The wavefunctions become very small between the minima of the potential. We will see that in this limit we can introduce operators $\adop_j$, $\aop_j$ describing particles in these localized states, and that the coupling between neighbouring sites can be captured by the <strong>tight binding Hamiltonian</strong></p>
+
+<script type="math/tex; mode=display">H_t = -t \sum_{j} \left[\adop_j\aop_{j+1}+\adop_{j+1}\aop_j\right],
+\label{latt_tb}</script>
+
+<p>which will play the role of kinetic energy in our models. In fact, we’ve already met such a description, when we described a magnon propagating in a spin chain in <a href="/docs/lectures/SpinModels/">Lecture 4</a>.</p>
+
 <h2 id="physical-motivation">Physical Motivation</h2>
 
-<p>To get some idea of where these models come from, let’s consider the Bloch states in a 1D lattice.</p>
+<p>This subsection is to shed some light on the origin of \eqref{latt_tb}. Feel free to jump to the conclusion.</p>
 
-<p>Matrix form. Solution by Fourier transformation. <em>circulant matrix</em></p>
+<p>Let’s think about the form of the Bloch states in a deep 1D lattice in more detail. You know that in a stationary state, the current $j(x)$ is conserved</p>
+
+<script type="math/tex; mode=display">j = -\frac{i}{2m}\left[\psi^*(\partial_x\psi^{}) - (\partial_x\psi^*)\psi^{}\right].
+\label{latt_j}</script>
+
+<p>Representing $\psi(x)=\sqrt{\rho(x)}e^{i\theta(x)}$, this can be written</p>
+
+<script type="math/tex; mode=display">j = \frac{\rho\partial_x\theta}{m}.</script>
+
+<p>The Bloch states at non-zero $k$ carry a current. As we’ve said, away from the minima of the lattice potential, the amplitude of the wavefunction is very small. Thus if $j$ is constant, $\partial_x\theta$ must be large. Essentially all of the change in the phase of the wavefunction happens in these regions. Where the wavefunction is larger, its phase is barely changing.</p>
+
+<p>To describe this situation more quantitatively, we use the WKB approximation, which consists in writing the wavefunction in the form</p>
+
+<script type="math/tex; mode=display">\psi_\text{WKB}(x) = \frac{\alpha}{\sqrt{k(x)}}\exp\left(i\int^ x k(x')dx'\right)+ \frac{\beta}{\sqrt{k(x)}}\exp\left(=i\int^ x k(x')dx'\right),</script>
+
+<p>where $k(x) = \sqrt{2m(E-V(x))}$. In fact, we want to describe the part of the wavefunction with real exponents, where $k(x) = i\kappa(x)$ because $V(x)&gt;E$. Substitution into the current \eqref{latt_j} gives</p>
+
+<script type="math/tex; mode=display">j = \frac{1}{m}\Im \alpha^*\beta^{}.
+  \label{latt_jwkb}</script>
+
+<p><a name="WKB"></a>
+<img src="/docs/assets/WKB.png" alt="" />
+<em>The Bloch states in the WKB picture.</em></p>
+
+<p>$\alpha$ is the amplitude of the wavefunction in the well on the left, and $\beta$ is the amplitude on the right. By periodicity of the Bloch state, it is only their phase that differs. Call this phase change $\theta$. In terms of the Bloch states \eqref{latt_bloch} $\theta=ka$. Then \eqref{latt_jwkb} says</p>
+
+<script type="math/tex; mode=display">j = \frac{|\alpha|^2}{m}\sin\theta.
+\label{latt_jsin}</script>
+
+<p>Now the Bloch function $\varphi_k(x)$ satisfies the Schrödinger equation (we drop the band index)</p>
+
+<script type="math/tex; mode=display">\left[-\frac{1}{2m}\left(\partial_x + ik\right)^2 + V(x)\right]\varphi_k(x) = E_k \varphi_k(x),</script>
+
+<p>where a vector potential has arisen from the phase factor $e^{ikx}$. By considering a small change $\Delta k$ as a perturbation we can find</p>
+
+<script type="math/tex; mode=display">\frac{\partial E_k}{\partial k} = ja,</script>
+
+<p>or</p>
+
+<script type="math/tex; mode=display">\frac{\partial E_k}{\partial \theta} = j.</script>
+
+<p>Together with \eqref{latt_jsin} we conclude that the band has the form</p>
+
+<script type="math/tex; mode=display">E(k)-E(0) = 2t\left[1-\cos ka\right],</script>
+
+<p>with some characteristic energy $t$. Thus we have found</p>
+
+<ol>
+  <li>
+    <p>The Bloch states looks like a superposition of localized states, with the phase changing abruptly between sites.</p>
+  </li>
+  <li>
+    <p>The lowest band is sinusoidal.</p>
+  </li>
+</ol>
+
+<p class="message">
+Confirm that both these features are captured by the tight binding model \eqref{latt_tb}.
+</p>
 
 <h1 id="bose-hubbard-model">Bose Hubbard Model</h1>
 
 <p>The simplest interacting tight binding model that we can write down is the celebrated <strong>Hubbard model</strong>.</p>
 
+<script type="math/tex; mode=display">H = H_t + H_U = -t \sum_{\langle j\,k\rangle}  \left[\adop_j\aop_{k}+\adop_{k}\aop_j\right] + \frac{U}{2}\sum_j \Nop_j(\Nop_j-1),</script>
+
+<p>where $\Nop_j=\adop_j\aop_j$ is the number operator for site $j$, and the sum in the first term is over all nearest neighbour pairs on some lattice (e.g. square or cubic). The on-site interaction term $\Nop_j(\Nop_j-1)$ is just what we have been writing as $\adop_j\adop_j\aop_j\aop_j$ previously. In 1D, you can think of this as the lattice version of the Lieb–Liniger model, in that in involves a kinetic term (the tight binding model) and a short-ranged interaction term.</p>
+
+<p>The Hubbard model was first introduced to describe electrons in solids. In that case the particles are fermions, and we have to deal with their spin. We’ll come to this <strong>Fermi Hubbard model</strong> shortly. In this section we are going to discuss the more straightforward <strong>Bose Hubbard</strong> model introduced in <a href="#Fisher:1989aa">(Fisher, Weichman, Grinstein, &amp; Fisher, 1989)</a>. The application these authors had in mind was to liquid He$^{4}$ or superconductors in which the Cooper pairs (more on those later) approximate interacting bosons. However, ten years after its invention, the model found its natural home in the description of bosonic atoms confined to optical lattices.</p>
+
 <h2 id="the-mott-state">The Mott State</h2>
+
+<p>In analyzing a new model we always begin by asking what happens when each of the terms in the Hamiltonian dominate the others. This allows us to get the lie of the land, and think about how these different limits may fit together.</p>
+
+<p>For the Bose–Hubbard model, we start by taking $U/t\to\infty$ The eigenstates are then states of definite occupation number, with energy</p>
+
+<script type="math/tex; mode=display">E(\mathbf{N}) = U \sum_j N_j(N_j-1).</script>
+
+<p>To find the ground state at fixed particle number, we should try filling the $N_\text{sites}$ sites as uniformly as possible. This is easy if the filling $\nu \equiv N/N_\text{sites}$ is integer. Otherwise, denote by $\lfloor \nu\rfloor$ the largest integer less than $\nu$, and $\lceil \nu\rceil$ the smallest integer larger than $\nu$. Then the number of sites with occupancy $\lceil \nu\rceil$ is $N_\text{sites}\left(\nu - \lfloor \nu\rfloor\right)$. The ground state energy has a piecewise linear dependence on $\nu$</p>
+
+<script type="math/tex; mode=display">\frac{E_0}{N_\text{sites}} = \left(\nu - \lfloor \nu\rfloor\right)\cE(\lceil \nu\rceil) + \left(\lceil \nu\rceil - \nu\right)\cE(\lfloor \nu\rfloor),</script>
+
+<p>where $\cE(N) = \frac{U}{2}N(N-1)$. As the result the chemical potential $\mu = \frac{\partial E_0}{\partial N}$ is piecewise constant, with jumps occurring when $\nu$ is integer.</p>
+
+<script type="math/tex; mode=display">\mu =</script>
+
+<p>If we think about varying the chemical potential instead, th</p>
+
+<p>Need a picture.</p>
 
 <p>Getting at the phase boundaries for large <script type="math/tex">U</script> by adding or removing a particle on top of the Mott state.</p>
 
@@ -288,6 +396,10 @@ $$
 \label{lat_Aform}</script>
 
 <p>where $\alpha(\mathbf{N})$ is a function of the site occupancies. Note the minus sign in \eqref{lat_Aform}, required for antihermiticity. Substituting into \eqref{lat_Aeq} gives the condition</p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="Fisher:1989aa">Fisher, M. P. A., Weichman, P. B., Grinstein, G., &amp; Fisher, D. S. (1989). Boson localization and the superfluid-insulator transition. <i>Physical Review B</i>, <i>40</i>(1), 546.</span></li></ol>
 
 </div>
 
