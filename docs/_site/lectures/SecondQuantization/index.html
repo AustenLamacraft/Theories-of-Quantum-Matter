@@ -277,11 +277,11 @@ Satisfy yourself that \eqref{A_perm} agrees with \eqref{A_OrthoProd} in the case
 <script type="math/tex; mode=display">\psi(\br)\longleftrightarrow \adop(\psi)\ket{\text{VAC}}.
 \label{A_1part}</script>
 
-<p>States that can be written $\adop(\psi)\ket{\text{VAC}}$ form the space of one particle states, which are orthogonal to the vacuum state</p>
+<p>More generally, if $\ket{\Psi}$ is an $N$ particle state, $\adop(\psi)\ket{\Psi}$ is an $N+1$ particle state. Since this is orthogonal to the vacuum state</p>
 
-<script type="math/tex; mode=display">\bra{\text{VAC}} \adop(\psi)\ket{\text{VAC}}=0.</script>
+<script type="math/tex; mode=display">\bra{\text{VAC}} \adop(\psi)\ket{\Psi}=0,</script>
 
-<p>This means, taking the adjoint</p>
+<p>for any state $\ket{\Psi}$. This means, taking the adjoint</p>
 
 <script type="math/tex; mode=display">\aop(\psi)\ket{\text{VAC}}=0.</script>
 
@@ -505,9 +505,9 @@ Think about the form that the operators $\aop_\alpha$, $\adop_\alpha$ take in th
 							&=\sum_{\alpha} A_{\alpha \beta} \adop_{\alpha}\ket{\text{VAC}}.
 \end{align} %]]></script>
 
-<p>The second quantized form of $\hat A$ allows us to find the matrix element between product states made of orthonormal single particle states</p>
+<p>The second quantized form of $\hat A$ allows us to find the matrix element $\braket{\mathbf{N}}{\hat A}{\mathbf{N’}}$ between product states made of orthonormal single particle states. This vanishes unless $\mathbf{N}$ and $\mathbf{N’}$ differ by the movement of of one particle. If $N_\beta = N’_\beta-1$ and $N_\alpha = N’_\alpha+1$ we have</p>
 
-<script type="math/tex; mode=display">\braket{\mathbf{N}}{\hat A}{\mathbf{N'}} = \sum_{\alpha\beta} A_{\alpha\beta} \sqrt{N_\alpha N'_\beta}.
+<script type="math/tex; mode=display">\braket{\mathbf{N}}{\hat A}{\mathbf{N'}} = A_{\alpha\beta} \sqrt{N_\alpha N'_\beta}.
 \label{A_Aab}</script>
 
 <p class="message">

@@ -75,13 +75,13 @@ $$
 \label{A_1part}
 $$
 
-States that can be written $\adop(\psi)\ket{\text{VAC}}$ form the space of one particle states, which are orthogonal to the vacuum state
+More generally, if $\ket{\Psi}$ is an $N$ particle state, $\adop(\psi)\ket{\Psi}$ is an $N+1$ particle state. Since this is orthogonal to the vacuum state
 
 $$
-\bra{\text{VAC}} \adop(\psi)\ket{\text{VAC}}=0.
+\bra{\text{VAC}} \adop(\psi)\ket{\Psi}=0,
 $$
 
-This means, taking the adjoint
+for any state $\ket{\Psi}$. This means, taking the adjoint
 
 $$
 \aop(\psi)\ket{\text{VAC}}=0.
@@ -375,10 +375,10 @@ $$
 \end{align}
 $$
 
-The second quantized form of $\hat A$ allows us to find the matrix element between product states made of orthonormal single particle states
+The second quantized form of $\hat A$ allows us to find the matrix element $\braket{\mathbf{N}}{\hat A}{\mathbf{N'}}$ between product states made of orthonormal single particle states. This vanishes unless $\mathbf{N}$ and $\mathbf{N'}$ differ by the movement of of one particle. If $N\_\beta = N'\_\beta-1$ and $N\_\alpha = N'\_\alpha+1$ we have
 
 $$
-\braket{\mathbf{N}}{\hat A}{\mathbf{N'}} = \sum_{\alpha\beta} A_{\alpha\beta} \sqrt{N_\alpha N'_\beta}.
+\braket{\mathbf{N}}{\hat A}{\mathbf{N'}} = A_{\alpha\beta} \sqrt{N_\alpha N'_\beta}.
 \label{A_Aab}
 $$
 
