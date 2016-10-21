@@ -34,6 +34,8 @@ Get the $N^3$ part of the energy
 
 Case of bosons -- suggests fragmentations for strong repulsion? Nozieres model
 
+## Mean field for BH
+
 ## Leggett's problem for metastable currents
 
 ## Superfluid density of Bose Hubbard
