@@ -3,7 +3,7 @@
 
   <head>
   <!-- Canonical link to help search engines -->
-  <link rel="canonical" href="/docs/about/"/>
+  <link rel="canonical" href="/docs/drafts/BoseGas/"/>
 
   <!-- Basic meta elements -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
 
   <!--   Dublin Core metadata for Zotero -->
-  <meta name="DC.title" content="About This Course" />
+  <meta name="DC.title" content="Bose Gas" />
   <meta name="DC.creator" content="Austen Lamacraft" />
   <meta name="DC.contributor" content="" />
   <meta name="DC.date" content="" />
@@ -23,11 +23,11 @@
     <!-- Open Graph metadata -->
 
     
-    <meta property="og:title" content="About This Course"/>
+    <meta property="og:title" content="Bose Gas"/>
     <meta property="og:description" content="An Ed edition">
     <meta property="fb:admins" content="elotroalex"/>
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/about/"/>
+    <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/drafts/BoseGas/"/>
     <meta property="fb:app_id" content="589495744558280"/>
     <meta property="og:image" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/public/open-graph-logo.png"/>
     <meta property="og:image:width" content="200" />
@@ -36,7 +36,7 @@
 
   <title>
     
-      About This Course
+      Bose Gas
     
   </title>
 
@@ -189,7 +189,7 @@ $$
 
     <!-- The code below is used for manually entered links  -->
 
-    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://tqm.usertest.mws3.csx.cam.ac.uk/docs/about/">Annotate me</a>
+    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://tqm.usertest.mws3.csx.cam.ac.uk/docs/drafts/BoseGas/">Annotate me</a>
   </nav>
 
   <div class="sidebar-item">
@@ -214,52 +214,42 @@ $$
 
       <div class="container content" id="main">
         <div class="page">
-  <h1 class="page-title">About This Course</h1>
-  <p class="message">
-The purpose of this course is to introduce <strong>simple models </strong> of phenomena in condensed matter physics, and to equip you with the tools needed to analyse their behaviour. This involves the application of quantum mechanics to <strong>many body systems</strong>. There is a strong overlap with the subject of  <strong>quantum field theory</strong>, which deals with the quantum mechanics of continua (i.e. fields).
-</p>
-
-<h2 class="no_toc" id="contents">Contents</h2>
+  <h1 class="page-title">Bose Gas</h1>
+  <h2 class="no_toc" id="contents">Contents</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#models-of-matter" id="markdown-toc-models-of-matter">Models of Matter</a></li>
-  <li><a href="#structure-of-the-course" id="markdown-toc-structure-of-the-course">Structure of the Course</a>    <ul>
-      <li><a href="#prerequisites" id="markdown-toc-prerequisites">Prerequisites</a></li>
-      <li><a href="#lectures" id="markdown-toc-lectures">Lectures</a></li>
+  <li><a href="#the-gross--pitaevskii-approximation" id="markdown-toc-the-gross--pitaevskii-approximation">The Gross–Pitaevskii Approximation</a>    <ul>
+      <li><a href="#time-independent-gp-theory" id="markdown-toc-time-independent-gp-theory">Time-Independent GP Theory</a></li>
+      <li><a href="#time-dependent-gp-theory" id="markdown-toc-time-dependent-gp-theory">Time-dependent GP Theory</a></li>
+    </ul>
+  </li>
+  <li><a href="#superfluidity" id="markdown-toc-superfluidity">Superfluidity</a>    <ul>
+      <li><a href="#metastable-currents" id="markdown-toc-metastable-currents">Metastable Currents</a></li>
+    </ul>
+  </li>
+  <li><a href="#bogoliubov-theory" id="markdown-toc-bogoliubov-theory">Bogoliubov Theory</a>    <ul>
+      <li><a href="#discussion-whats-wrong-with-perturbation-theory" id="markdown-toc-discussion-whats-wrong-with-perturbation-theory">Discussion: What’s Wrong With Perturbation Theory?</a></li>
     </ul>
   </li>
 </ul>
 
 <hr />
 
-<h2 id="models-of-matter">Models of Matter</h2>
+<h2 id="the-gross--pitaevskii-approximation">The Gross–Pitaevskii Approximation</h2>
 
-<p>It’s important to realise that in general simple models are neither tractable, nor display simple behaviour! To take an example: all students of physics are familiar with the <a href="https://en.wikipedia.org/wiki/Ising_model">Ising model</a> of magnetism, which caricatures a lattice of magnetic ions and their complex interactions. The Ising model is defined in terms of an energy function</p>
+<h3 id="time-independent-gp-theory">Time-Independent GP Theory</h3>
 
-<script type="math/tex; mode=display">H = J\sum_{\langle j\,k\rangle} \sigma_j \sigma_k,
-\label{spin_ising}</script>
+<h3 id="time-dependent-gp-theory">Time-dependent GP Theory</h3>
 
-<p>where the ‘spin’ variables $\sigma_j$ take the values $\pm 1$. The notation ${\langle j\,k\rangle}$ indicates that the sum is over all nearest neighbour pairs on some (e.g. cubic) lattice. A negative coupling $J&lt;0$ tends to promote alignment of the spins.</p>
+<p>Changes</p>
 
-<p>The calculation of the partition function of the Ising model, and hence of its thermodynamic behaviour, is simple in 1D, extremely hard in 2D, and – as far as we know – impossible in the most interesting case of three dimensions. As well as being intractable, it is also highly unrealistic. The complexity of the magnetic atom, consisting of tens of electrons, is reduced to a single variable describing the spin only, which is not even treated quantum mechanically.  Why on earth should we care?</p>
+<h2 id="superfluidity">Superfluidity</h2>
 
-<p>The point is that the Ising model is a <a href="https://en.wikipedia.org/wiki/Minimal_Working_Example">minimal working example</a>. It is designed with the minimal set of ingredients necessary to demonstrate the phenomenon of ferromagnetism. The puzzle it seeks to explain is: how do a large number of microscopic ‘magnets’ (the spins), undergoing thermal fluctuations that are constantly seeking to randomize their direction, decide to develop a macroscopic magnetization in a particular direction?  Why does the magnetization appear abruptly at the the <a href="https://en.wikipedia.org/wiki/Curie_temperature">Curie temperature</a>, rather than gradually? Obviously the spins cannot be independent. The fact that the Ising model has a magnetic transition shows us that a nearest neighbour coupling is enough.</p>
+<h3 id="metastable-currents">Metastable Currents</h3>
 
-<p>That we can cook up such minimal models <em>and analyze them</em>, even if we can’t solve them exactly, gives us confidence that whether we are talking about Iron, Nickel, or Cobalt, the essence of the magnetic transition is the same. By understanding something about the Ising model, we can say we have understood something about magnetism <em>in general</em>.</p>
+<h2 id="bogoliubov-theory">Bogoliubov Theory</h2>
 
-<p>This certainly doesn’t mean the end of story, of course. Firstly, one can try to move towards a more realistic description of ferromagnetism. What is the microscopic origin and size of the coupling? Why does Cobalt have a higher Curie temperature than Nickel? How does the magnetism interact with other properties of the metal? These are all valid questions beyond our minimal working example.</p>
-
-<p>Secondly, one can ask whether, with similar models, one can describe <em>qualitatively different phenomena</em>. If $J&gt;0$ do the spins <em>anti</em>-align at some transition? What if we change the lattice? Make it disordered? Let $\sigma_j$ be a vector instead of a scalar? Make it truly quantum?</p>
-
-<p>This course pursues this second line of investigation. We will look at the simplest models decribing interacting bosons, fermions, and spins, and try to describe the properties of the states of matter that they form. These states of matter – magnets, metals, superconductors – have real world counterparts, and by studying their toy versions we learn what makes them tick. This strategy of introducing and analyzing new models is one of the ways in which theorists try to learn what states of matter <em>may</em> exist, and under what conditions.</p>
-
-<h2 id="structure-of-the-course">Structure of the Course</h2>
-
-<h3 id="prerequisites">Prerequisites</h3>
-
-<p>You should have taken a quantum mechanics course at the level of the advanced quantum course in Part II. You don’t need to have taken TP2. One of the main methods we use – second quantization – is covered in TP2 but will be introduced again from scratch.</p>
-
-<h3 id="lectures">Lectures</h3>
+<h3 id="discussion-whats-wrong-with-perturbation-theory">Discussion: What’s Wrong With Perturbation Theory?</h3>
 
 </div>
 

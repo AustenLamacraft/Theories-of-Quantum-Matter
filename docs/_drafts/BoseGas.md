@@ -3,8 +3,8 @@ layout: page
 title: Bose Gas
 author: Austen Lamacraft
 chapter: 8
-summary: Gross--Pitaevskii approximation. Bogoliubov theory. Superfluidity.
-published: false
+summary: Gross--Pitaevskii approximation. Superfluidity. Bogoliubov theory.
+published: true
 ---
 
 ## Contents
@@ -17,7 +17,16 @@ published: false
 
 ## The Gross--Pitaevskii Approximation
 
+### Time-Independent GP Theory
+
+### Time-dependent GP Theory
+
+
 Changes
+
+## Superfluidity
+
+### Metastable Currents
 
 ## Bogoliubov Theory
 
