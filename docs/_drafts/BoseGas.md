@@ -15,8 +15,10 @@ published: false
 
 ---
 
-# the Gross--Pitaevskii Approximation
+## The Gross--Pitaevskii Approximation
 
 Changes
 
-# _When Perturbations Attack III_
+## Bogoliubov Theory
+
+### Discussion: What's Wrong With Perturbation Theory?

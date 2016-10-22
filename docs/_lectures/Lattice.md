@@ -362,19 +362,31 @@ $$
 H_\text{eff} = -\frac{V^{}V^\dagger}{U} = -\frac{t^2}{U} \sum_{\substack{\langle j\,k\rangle\\s,s'}} \adop_{j,s}\aop_{k,s} \adop_{k,s'}\aop_{j,s'}.
 $$
 
-We can write this in a more familiar way using the identity
+We can write this in a more familiar way by first reordering the operators (not forgetting the anticommutation relations!)
 
 $$
-\delta_{ab}\delta_{cd} = \frac{1}{2}\left[\boldsymbol{\sigma}_{a d}\cdot \boldsymbol{\sigma}_{c b} + \delta_{ad}\delta_{cb}\right],
+ \adop_{j,s}\aop_{k,s} \adop_{k,s'}\aop_{j,s'} = -\adop_{j,s}\aop_{j,s'}\adop_{k,s'}\aop_{k,s} + \delta_{s^{}s'}\adop_{j,s}\aop_{j,s'},
 $$
 
-to give
+and then using the identity
 
 $$
-H_\text{eff} = \frac{N_\text{sites}t^2}{2U}+J\sum_{\langle j\,k\rangle} \mathbf{s}_j\cdot \mathbf{s}_k
+\delta_{ab}\delta_{cd} = \frac{1}{2}\left[\boldsymbol{\sigma}_{a d}\cdot \boldsymbol{\sigma}_{c b} + \delta_{ad}\delta_{cb}\right].
 $$
 
-with $J=\frac{2t^2}{U}$. The effective Hamiltonian is nothing but the spin-1/2 antiferromagnetic Heisenberg model!
+Finally, we get
+
+$$
+H_\text{eff} = -\frac{N_\text{sites}t^2}{2U}+J\sum_{\langle j\,k\rangle} \mathbf{s}_j\cdot \mathbf{s}_k
+$$
+
+with $J=\frac{2t^2}{U}$ and
+
+$$
+\mathbf{s}_j=\frac{1}{2}\sum_{s,s'}\adop_{j,s}\boldsymbol{\sigma}_{s^{}s'}\aop_{j,s'}.
+$$
+
+The effective Hamiltonian is nothing but the spin-1/2 antiferromagnetic Heisenberg model!
 
 <p class="message">
 Note that there is something slightly sly about this derivation. We assumed that the energy scale $U$ was the largest scale in the problem, in order to arrive at the effective Hamiltonian. However, typical excited state energies of the Heisenberg Hamiltonian are $\frac{N_\text{sites}t^2}{U}$. Thus for $N_\text{sites}\gtrsim \left(\frac{t}{U}\right)^2$ there isn't actually a separation between these two energies. Not a very useful condition! Physically, it's enough to have a small <strong>density </strong> $n$ of doublons and holes, with overall energy $\sim nU$, when $t/U$ is small.
