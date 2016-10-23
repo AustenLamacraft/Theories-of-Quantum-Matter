@@ -553,19 +553,19 @@ $$
 The most important two particle operator that we encounter is that describing interactions between pairs of particles, usually of the the form
 
 $$
-\hat V = \sum_{j<k} V(\br_j-\br_k).
+\hat H_\text{int.} = \sum_{j<k} U(\br_j-\br_k).
 $$
 
 Expressing this operator in the position basis gives
 
 $$
-\hat V = \frac{1}{2}\int d\br_1 d\br_2\, V(\br_1-\br_2)\pdop(\br_1)\pdop(\br_2)\pop(\br_2)\pop(\br_1).
+\hat H_\text{int.} = \frac{1}{2}\int d\br_1 d\br_2\, U(\br_1-\br_2)\pdop(\br_1)\pdop(\br_2)\pop(\br_2)\pop(\br_1).
 $$
 
 Remembering that $\rho(\br) = \pdop(\br)\pop(\br)$, this is _almost_ the same as
 
 $$
-\hat V = \frac{1}{2}\int d\br_1 d\br_2\, V(\br_1-\br_2)\rho(\br_1)\rho(\br_2).
+\hat H_\text{int.} = \frac{1}{2}\int d\br_1 d\br_2\, U(\br_1-\br_2)\rho(\br_1)\rho(\br_2).
 \label{A_VNotNormal}
 $$
 

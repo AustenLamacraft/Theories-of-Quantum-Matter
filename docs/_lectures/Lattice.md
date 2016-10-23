@@ -135,7 +135,7 @@ $$
 
 where $\Nop_j=\adop_j\aop_j$ is the number operator for site $j$, and the sum in the first term is over all nearest neighbour pairs on some lattice (e.g. square or cubic). The on-site interaction term $\Nop_j(\Nop_j-1)$ is just what we have been writing as $\adop_j\adop_j\aop_j\aop_j$ previously. In 1D, you can think of this as the lattice version of the Lieb--Liniger model, in that in involves a kinetic term (sometimes called the __hopping term__) and a short-ranged interaction.
 
-The Hubbard model was first introduced to describe electrons in solids. In that case the particles are fermions, and we have to deal with their spin. We'll come to this __Fermi Hubbard model__ shortly. In this section we are going to discuss the more straightforward __Bose Hubbard__ model introduced in {% cite Fisher:1989aa %}. The application these authors had in mind was to liquid He$^{4}$ or superconductors in which the Cooper pairs (more on those later) approximate interacting bosons. However, ten years after its invention, the model found its natural home in the description of bosonic atoms confined to optical lattices.
+The Hubbard model was first introduced to describe electrons in solids. In that case the particles are fermions, and we have to deal with their spin. We'll come to this __Fermi Hubbard model__ shortly. In this section we are going to discuss the more straightforward __Bose Hubbard__ model introduced in {% cite Fisher:1989aa %}. These authors had in mind applications to liquid He$^{4}$ on a substrate or granular superconductors in which the Cooper pairs (more on those later) approximate interacting bosons. However, ten years after its invention, the model found its natural home in the description of bosonic atoms confined to optical lattices.
 
 ### The Mott State
 
@@ -144,7 +144,7 @@ In analyzing a new model we always begin by asking what happens when each of the
 For the Bose--Hubbard model, we start by taking $U/t\to\infty$ The eigenstates are then states of definite occupation number, with energy
 
 $$
-E(\mathbf{N}) = U \sum_j N_j(N_j-1).
+E(\mathbf{N}) = \frac{U}{2} \sum_j N_j(N_j-1).
 $$
 
 To find the ground state at fixed particle number, we should try filling the $N_\text{sites}$ sites as uniformly as possible. This is easy if the filling $\nu \equiv N_{\text{particles}}/N_\text{sites}$ is integer. Otherwise, denote by $\lfloor \nu\rfloor$ the largest integer less than $\nu$, and $\lceil \nu\rceil$ the smallest integer larger than $\nu$. Then the number of sites with occupancy $\lceil \nu\rceil$ is $N\_\text{sites}\left(\nu - \lfloor \nu\rfloor\right)$. The ground state energy has a piecewise linear dependence on $\nu$
@@ -273,7 +273,7 @@ $$
 H=-t \sum_{\substack{\langle j\,k\rangle\\ s=\uparrow,\downarrow}}  \left[\adop_{j,s}\aop_{k,s}+\adop_{k,s}\aop_{j,s}\right] + U\sum_j N_\uparrow N_\downarrow,
 $$
 
-We could of course add spin to the Bose Hubbard model, but it's still interesting without it. By contrast, we need spin here to have an interacting model. It's hard to overstate the importance of this model in condensed matter physics because of the role that it has played in attempts to understand the high-temperature superconducting materials known as __cuprates__. The 2D model has long been argued to capture the physics of strong correlations in the CuO$_2$ layers that form the backbone of these materials. 'Capture the physics' would ideally mean that the ground state of the model is superconducting. This is still a controversial issue: some believe that the Hubbard model is enough, if only we could learn enough about its behaviour; others that it is missing some ingredient -- other bands, coupling between layers, phonons -- that is vital to superconductivity.
+We could of course add spin to the Bose Hubbard model, but it's still interesting without it. By contrast, we need spin here to have an interacting model. It's hard to overstate the importance of this model in condensed matter physics because of the role that it has played in attempts to understand the high-temperature superconducting materials known as __cuprates__. The 2D model has long been argued to capture the physics of strong correlations in the CuO$_2$ layers that form the backbone of these materials. 'Capture the physics' would ideally mean that the ground state of the model is superconducting. This is still a controversial issue: some believe that the Hubbard model suffices, if only we could learn enough about its behaviour; others that it is missing some ingredient -- other bands, coupling between layers, phonons -- that is vital to superconductivity.
 
 Relatively little is known _for sure_ about the Hubbard model, except in 1D, where it can be solved exactly using the Bethe ansatz. You may be wondering why it's so much harder than the Bose case. Let's find out...
 
@@ -356,7 +356,7 @@ $$
 H_\text{eff} = H_{\text{Mott}} -V^{} H^{-1}_\text{Not}V^\dagger.
 $$
 
-What form does $H_\text{eff}$ take? $H_{\text{Mott}}=0$, and $V^\dagger$ creates states with an adjacent hole and 'doublon' (doubly occupied site). $H_\text{Not}$ acting on these states is just $U$. Thus,
+What form does $H_\text{eff}$ take? $H_{\text{Mott}}=0$, and $V^\dagger$ creates states with an adjacent hole and __doublon__ (doubly occupied site). $H_\text{Not}$ acting on these states is just $U$, and $V$ has to remove the hole and doublon. Thus,
 
 $$
 H_\text{eff} = -\frac{V^{}V^\dagger}{U} = -\frac{t^2}{U} \sum_{\substack{\langle j\,k\rangle\\s,s'}} \adop_{j,s}\aop_{k,s} \adop_{k,s'}\aop_{j,s'}.

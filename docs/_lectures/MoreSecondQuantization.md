@@ -278,20 +278,20 @@ We now apply these ideas to the approxiamate calculation of the energy of an int
 Recall from last time that a two body interaction has the form
 
 $$
-\hat V = \sum_{j<k} V(\br_j-\br_k)=\frac{1}{2}\int d\br_1 d\br_2\, V(\br_1-\br_2)\pdop(\br_1)\pdop(\br_2)\pop(\br_2)\pop(\br_1).
+\hat H_\text{int.} = \sum_{j<k} U(\br_j-\br_k)=\frac{1}{2}\int d\br_1 d\br_2\, U(\br_1-\br_2)\pdop(\br_1)\pdop(\br_2)\pop(\br_2)\pop(\br_1).
 $$
 
 Since
 
 $$
-\sum_{j<k} V(\br_j-\br_k) = \frac{1}{2}\int \sum_{j\neq k}\delta(\br_1-\br_j)\delta(\br_2-\br_k) d\br_1 d\br_2,
+\sum_{j<k} U(\br_j-\br_k) = \frac{1}{2}\int \sum_{j\neq k}\delta(\br_1-\br_j)\delta(\br_2-\br_k) d\br_1 d\br_2,
 $$
 
 we can immediately write down the expectation value of the interaction energy in a product state
 
 $$
 	\label{2nd_quant_HartreeFock}
-	\langle \hat V\rangle = \overbrace{\frac{1}{2}\int d\br\, d\br'\, \rho_1(\br) V(\br-\br')\rho_1(\br')}^{\equiv E_\text{Hartree}} \overbrace{\pm \frac{1}{2}\int d\br\, d\br'\,  V(\br-\br')g(\br,\br')g(\br',\br)}^{\equiv E_\text{Fock}}.
+	\langle \hat V\rangle = \overbrace{\frac{1}{2}\int d\br\, d\br'\, \rho_1(\br) U(\br-\br')\rho_1(\br')}^{\equiv E_\text{Hartree}} \overbrace{\pm \frac{1}{2}\int d\br\, d\br'\,  U(\br-\br')g(\br,\br')g(\br',\br)}^{\equiv E_\text{Fock}}.
 $$
 
 The two terms are known as the __Hartree__ and __Fock__ (or __exchange__) contributions, respectively. This expression lies at the core of the variational __Hartree--Fock method__ for many body systems, which approximates the ground state by a product state. The Hartree term looks completely reasonable, while the Fock potential doesn't look like a potential at all, and reflects the non-classical correlations.
@@ -323,13 +323,13 @@ $$
 (I've dropped the subscript from $\rho_1(\br)$ here.) An spin-independent interaction potential is described by a Hamiltonian of the form
 
 $$
-\hat V = \frac{1}{2}\sum_{\sigma_1,\sigma_2}\int d\br_1 d\br_2\, V(\br_1-\br_2)\pdop_{\sigma_1}(\br_1)\pdop_{\sigma_2}(\br_2)\pop_{\sigma_2}(\br_2)\pop_{\sigma_1}(\br_1).
+\hat H_\text{int.} = \frac{1}{2}\sum_{\sigma_1,\sigma_2}\int d\br_1 d\br_2\, U(\br_1-\br_2)\pdop_{\sigma_1}(\br_1)\pdop_{\sigma_2}(\br_2)\pop_{\sigma_2}(\br_2)\pop_{\sigma_1}(\br_1).
 $$
 
 The Hartree--Fock energy is then
 
 $$
-	\langle \hat V\rangle =\frac{1}{2}\int d\br\, d\br'\, \rho(\br) V(\br-\br')\rho(\br')- \frac{1}{2}\int d\br\, d\br'\,  V(\br-\br')\tr\left[g(\br,\br')g(\br',\br)\right].
+	\langle \hat H_\text{int.}\rangle =\frac{1}{2}\int d\br\, d\br'\, \rho(\br) U(\br-\br')\rho(\br')- \frac{1}{2}\int d\br\, d\br'\,  U(\br-\br')\tr\left[g(\br,\br')g(\br',\br)\right].
   \label{2nd_quant_HFSpin}
 $$
 
@@ -343,11 +343,11 @@ which gives
 
 $$
 \begin{align}
-E_{\text{Fock}} =-\frac{1}{4} \int d\br\, d\br'\,  V(\br-\br')\tr\left[g(\br,\br')\right]\tr\left[g(\br',\br)\right]\\-\frac{1}{4}\int d\br\, d\br'\,  V(\br-\br')\tr\left[\boldsymbol{\sigma}g(\br,\br')\right]\cdot\tr\left[\boldsymbol{\sigma}g(\br',\br)\right].
+E_{\text{Fock}} =-\frac{1}{4} \int d\br\, d\br'\,  U(\br-\br')\tr\left[g(\br,\br')\right]\tr\left[g(\br',\br)\right]\\-\frac{1}{4}\int d\br\, d\br'\,  U(\br-\br')\tr\left[\boldsymbol{\sigma}g(\br,\br')\right]\cdot\tr\left[\boldsymbol{\sigma}g(\br',\br)\right].
 \end{align}
 $$
 
-Suppose we had a $\delta$-function interaction $V(\br)=V_0 \delta(\br)$. Then the Fock energy can be written
+Suppose we had a $\delta$-function interaction $U(\br)=U_0 \delta(\br)$. Then the Fock energy can be written
 
 $$
 \begin{align}
@@ -369,7 +369,7 @@ $$
 The Hartree--Fock energy forms the basis of a variational method using product states as variational wavefunctions. For a Hamiltonian with translational invariance, like
 
 $$
-H = \int d\br \frac{1}{2m}\nabla\pdop\cdot\nabla\pop + \frac{1}{2}\int d\br d\br' V(\br-\br')\pdop(\br)\pdop(\br')\pop(\br')\pop(\br),
+H = \int d\br \frac{1}{2m}\nabla\pdop\cdot\nabla\pop + \frac{1}{2}\int d\br d\br' U(\br-\br')\pdop(\br)\pdop(\br')\pop(\br')\pop(\br),
 \label{more_H2nd}
 $$
 
@@ -377,7 +377,7 @@ this is not too bad, as we are guaranteed to be working with plane wave single p
 
 ### Stoner Criterion for Ferromagnetism
 
-Let us try to put a bit more flesh on the idea that repulsive interactions favour ferromagnetism in fermionic systems. We will continue to use the model interaction $V(\br)=V_0\delta(\br)$ that we introduced in the previous section. Of course, this isn't a realistic interaction between electrons in a metal, say, but as we'll see in [Lecture 11]({{ site.baseurl }}/lectures/Jellium/), the long-ranged Coulomb interaction is screened and becomes finite-ranged. Thus our model is not a bad approximation to the _effective_ interaction between electrons in a metal.
+Let us try to put a bit more flesh on the idea that repulsive interactions favour ferromagnetism in fermionic systems. We will continue to use the model interaction $U(\br)=U_0\delta(\br)$ that we introduced in the previous section. Of course, this isn't a realistic interaction between electrons in a metal, say, but as we'll see in [Lecture 11]({{ site.baseurl }}/lectures/Jellium/), the long-ranged Coulomb interaction is screened and becomes finite-ranged. Thus our model is not a bad approximation to the _effective_ interaction between electrons in a metal.
 
 Polarizing the spins in a Fermi gas is not without cost (otherwise everything would be ferromagnetic!): there is a price to pay in increased kinetic energy. To understand why this is so, consider the ground state kinetic energy of $N$ (spinless) fermions in three dimensions, obtained from
 
@@ -444,13 +444,13 @@ $$
 and represent the interaction potential in terms of its Fourier components
 
 $$
-V(\br-\br') = \sum_\bq \tilde V(\bq) \exp(i\bq\cdot[\br-\br']).
+U(\br-\br') = \sum_\bq \tilde U(\bq) \exp(i\bq\cdot[\br-\br']).
 $$
 
 The interaction Hamiltonian for spinless particles can then be written
 
 $$
-\hat V  = \frac{1}{2} \sum_{\bk_1+\bk_2=\bk_3+\bk_4} \tilde V(\bk_1-\bk_4) \adop_{\bk_1}\adop_{\bk_2}\aop_{\bk_3}\aop_{\bk_4}.
+\hat H_\text{int.}  = \frac{1}{2} \sum_{\bk_1+\bk_2=\bk_3+\bk_4} \tilde U(\bk_1-\bk_4) \adop_{\bk_1}\adop_{\bk_2}\aop_{\bk_3}\aop_{\bk_4}.
 \label{more_vertex}
 $$
 
@@ -469,13 +469,13 @@ _Graphical representation of the Hartree and Fock terms._
 Evaluating the two contributions in term of the occupation numbers gives
 
 $$
-\braket{\mathbf{N}}{\hat V}{\mathbf{N}} = \frac{1}{2}\tilde V(0) \sum_{\bk_1,\bk_2} N_{\bk_1}N_{\bk_2} - \frac{1}{2} \sum_{\bk_1,\bk_2} \tilde V(\bk_1-\bk_2) N_{\bk_1}N_{\bk_2}
+\braket{\mathbf{N}}{\hat H_\text{int.}}{\mathbf{N}} = \frac{1}{2}\tilde U(0) \sum_{\bk_1,\bk_2} N_{\bk_1}N_{\bk_2} - \frac{1}{2} \sum_{\bk_1,\bk_2} \tilde U(\bk_1-\bk_2) N_{\bk_1}N_{\bk_2}
 $$
 
 While the Hartree term just depends on the total number of particles, the Fock term depends on the individual occupations. The interaction energy to add a single particle to state $\bk$ is
 
 $$
-\Delta V_{\bk} = \tilde V(0) \sum_{\bk'} N_{\bk'} - \sum_{\bk'} \tilde V(\bk-\bk') N_{\bk'}
+\Delta U_{\bk} = \tilde U(0) \sum_{\bk'} N_{\bk'} - \sum_{\bk'} \tilde U(\bk-\bk') N_{\bk'}
 $$
 
 

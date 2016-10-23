@@ -22,6 +22,8 @@ Do also the case of parametric oscillator
 
 ## Hydrodynamic formulaton of Gross--Pitaevskii equation
 
+## Vortex in GPE
+
 ## Bright soliton and attractive Bose gas
 
 Get the $N^3$ part of the energy
