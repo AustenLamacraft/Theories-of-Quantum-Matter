@@ -24,6 +24,8 @@ Do also the case of parametric oscillator
 
 ## Vortex in GPE
 
+## Bogoliubov modes from TDGP
+
 ## Bright soliton and attractive Bose gas
 
 Get the $N^3$ part of the energy

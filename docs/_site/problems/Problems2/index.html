@@ -220,6 +220,7 @@ $$
 <ol id="markdown-toc">
   <li><a href="#n-particle-hong--ou--mandel" id="markdown-toc-n-particle-hong--ou--mandel">$N$ Particle Hong–Ou–Mandel</a></li>
   <li><a href="#equation-of-motion-for-density" id="markdown-toc-equation-of-motion-for-density">Equation of Motion for Density</a></li>
+  <li><a href="#hbt-correlations-from-an-optical-lattice" id="markdown-toc-hbt-correlations-from-an-optical-lattice">HBT Correlations From an Optical Lattice</a></li>
   <li><a href="#mean-field-for-bose--hubbard" id="markdown-toc-mean-field-for-bose--hubbard">Mean Field for Bose–Hubbard</a></li>
   <li><a href="#bose--hubbard-with-spin" id="markdown-toc-bose--hubbard-with-spin">Bose–Hubbard With Spin</a></li>
 </ol>
@@ -265,6 +266,27 @@ $$
 <p>Interpret the result. Is the result changed if we introduce an interaction of the form</p>
 
 <script type="math/tex; mode=display">H_\text{int} = \frac{1}{2}\int d\br_1 d\br_2\, V(\br_1-\br_2)\pdop(\br_1)\pdop(\br_2)\pop(\br_2)\pop(\br_1)?</script>
+
+<h2 id="hbt-correlations-from-an-optical-lattice">HBT Correlations From an Optical Lattice</h2>
+
+<p>In <a href="#Folling:2005aa">(Fölling et al., 2005)</a>, bosonic atoms were initially prepared in an optical lattice in a Mott state:</p>
+
+<script type="math/tex; mode=display">\ket{\Psi}=\prod_{i} \adop_{i}\ket{\text{VAC}},</script>
+
+<p>where $\adop_{i}$ creates a particle localized at site $\br_{i}$ in the lattice, with (let’s say) Gaussian wavefunction</p>
+
+<script type="math/tex; mode=display">\varphi_{i}(\br)=\frac{1}{\left(\pi R^{2}\right)^{3/4}}\exp\left[-\frac{\left(\br-\br_{i}\right)^2}{2R^2}\right]</script>
+
+<p><a name="folling"></a>
+<img src="/docs/assets/FollingNoise.png" alt="" />
+<em>(a) raw image (b) density of an atomic cloud following expansion from a Mott state. (c) and (d) noise correlation signal extracted from the same image. From <a href="#Folling:2005aa">(Fölling et al., 2005)</a>.</em></p>
+
+<p>Show that the correlation function of momentum state occupancies is</p>
+
+<script type="math/tex; mode=display">\braket{\Psi}{:N(\bp)N(\bp'):}{\Psi}=\sum_{i,j}\tilde\varphi^{*}_{i}(\bp)\tilde\varphi^{}_{i}(\bp)\tilde\varphi^{*}_{j}(\bp')\tilde\varphi^{}_{j}(\bp')
++\tilde\varphi^{*}_{i}(\bp)\tilde\varphi^{}_{j}(\bp)\tilde\varphi^{*}_{j}(\bp')\tilde\varphi^{}_{i}(\bp').</script>
+
+<p>where $\tilde\varphi_{i}(\bp)$ is the Fourier transform of the spatial wavefunction, and $:(\cdots):$ denotes <em>normal ordering</em> of the operators between the colons. Evaluate the Fourier transform and explain the structure of the noise correlations in the above data.</p>
 
 <h2 id="mean-field-for-bose--hubbard">Mean Field for Bose–Hubbard</h2>
 

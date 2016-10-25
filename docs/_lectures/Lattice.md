@@ -69,7 +69,7 @@ The Bloch states at non-zero $k$ carry a current. As we've said, away from the m
 To describe this situation more quantitatively, we use the WKB approximation, which consists in writing the wavefunction in the form
 
 $$
-\psi_\text{WKB}(x) = \frac{\alpha}{\sqrt{k(x)}}\exp\left(i\int^ x k(x')dx'\right)+ \frac{\beta}{\sqrt{k(x)}}\exp\left(=i\int^ x k(x')dx'\right),
+\psi_\text{WKB}(x) = \frac{\alpha}{\sqrt{k(x)}}\exp\left(i\int^ x k(x')dx'\right)+ \frac{\beta}{\sqrt{k(x)}}\exp\left(-i\int^ x k(x')dx'\right),
 $$
 
 where $k(x) = \sqrt{2m(E-V(x))}$. In fact, we want to describe the part of the wavefunction with real exponents, where $k(x) = i\kappa(x)$ because $V(x)>E$. Substitution into the current \eqref{latt_j} gives

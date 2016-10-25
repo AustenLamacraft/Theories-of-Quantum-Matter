@@ -161,16 +161,16 @@ for both the ferromagnetic $J<0$ and antiferromagnetic $J>0$ cases.
 2. Write the Hamiltonian in terms of the Fourier representation
   $$
   \begin{align}
-  \aop_p = \frac{1}{\sqrt{N}}\sum_j e^{i\eta_n j} \aop_k,\quad \adop_p = \frac{1}{\sqrt{N}}\sum_j e^{-i\eta_n j} \adop_k.
+  \aop_j = \frac{1}{\sqrt{N}}\sum_n e^{i\eta_n j} \aop_j,\quad \adop_j = \frac{1}{\sqrt{N}}\sum_n e^{-i\eta_n j} \adop_n.
   \end{align}
   $$
-  Your answer should involve terms with $\aop_\eta\aop_{-\eta}$ and $\adop_{\eta}\adop_{-\eta}$.
+  Your answer should involve terms with $\aop_n\aop_{-n}$ and $\adop_{n}\adop_{-n}$.
 
 3. Check that the __Bogoliubov transformation__
   $$
   \begin{align}
-  \adop_\eta \longrightarrow \cosh\theta_\eta \adop_\eta -\sinh\theta_\eta \aop_{-\eta}\\
-  \aop_\eta \longrightarrow \cosh\theta_\eta \aop_\eta +\sinh\theta_\eta \adop_{-\eta}
+  \adop_n \longrightarrow \cosh\theta_n \adop_n +\sinh\theta_n \aop_{-n}\\
+  \aop_n \longrightarrow \cosh\theta_n \aop_n +\sinh\theta_n \adop_{-n}
   \end{align}
   $$
-  preserves the commutation relations of the bosons. Choose $\theta_\eta$ to eliminate the $\aop_\eta\aop_{-\eta}$ and $\adop_{\eta}\adop_{-\eta}$ terms from the Hamiltonian. Your answer should describe a system of bosons with the dispersion we found in the lecture.
+  preserves the commutation relations of the bosons. Choose $\theta_n$ to eliminate the $\aop_n\aop_{-n}$ and $\adop_{n}\adop_{-n}$ terms from the Hamiltonian. Your answer should describe a system of bosons with the dispersion we found in the lecture.

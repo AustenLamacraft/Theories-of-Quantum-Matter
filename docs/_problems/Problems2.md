@@ -57,6 +57,34 @@ $$
 H_\text{int} = \frac{1}{2}\int d\br_1 d\br_2\, V(\br_1-\br_2)\pdop(\br_1)\pdop(\br_2)\pop(\br_2)\pop(\br_1)?
 $$
 
+## HBT Correlations From an Optical Lattice
+
+In {% cite Folling:2005aa %}, bosonic atoms were initially prepared in an optical lattice in a Mott state:
+
+$$
+\ket{\Psi}=\prod_{i} \adop_{i}\ket{\text{VAC}},
+$$
+
+where $\adop_{i}$ creates a particle localized at site $\br_{i}$ in the lattice, with (let's say) Gaussian wavefunction
+
+$$
+\varphi_{i}(\br)=\frac{1}{\left(\pi R^{2}\right)^{3/4}}\exp\left[-\frac{\left(\br-\br_{i}\right)^2}{2R^2}\right]
+$$
+
+<a name="folling"></a>
+![]({{ site.baseurl }}/assets/FollingNoise.png)
+_(a) raw image (b) density of an atomic cloud following expansion from a Mott state. (c) and (d) noise correlation signal extracted from the same image. From {% cite Folling:2005aa %}._
+
+Show that the correlation function of momentum state occupancies is
+
+$$
+			\braket{\Psi}{:N(\bp)N(\bp'):}{\Psi}=\sum_{i,j}\tilde\varphi^{*}_{i}(\bp)\tilde\varphi^{}_{i}(\bp)\tilde\varphi^{*}_{j}(\bp')\tilde\varphi^{}_{j}(\bp')
++\tilde\varphi^{*}_{i}(\bp)\tilde\varphi^{}_{j}(\bp)\tilde\varphi^{*}_{j}(\bp')\tilde\varphi^{}_{i}(\bp').			
+	$$
+
+where $\tilde\varphi_{i}(\bp)$ is the Fourier transform of the spatial wavefunction, and $:(\cdots):$ denotes _normal ordering_ of the operators between the colons. Evaluate the Fourier transform and explain the structure of the noise correlations in the above data.
+
+
 ## Mean Field for Bose--Hubbard
 
 For the Bose--Hubbard model, let's try a variational wavefunction of the form

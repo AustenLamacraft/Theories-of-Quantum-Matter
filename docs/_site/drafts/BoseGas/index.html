@@ -224,10 +224,13 @@ The Lieb--Liniger model is an example of a gas of interacting bosons in the cont
 <ul id="markdown-toc">
   <li><a href="#the-gross--pitaevskii-approximation" id="markdown-toc-the-gross--pitaevskii-approximation">The Gross–Pitaevskii Approximation</a>    <ul>
       <li><a href="#time-independent-gp-theory" id="markdown-toc-time-independent-gp-theory">Time-Independent GP Theory</a></li>
+      <li><a href="#some-observables" id="markdown-toc-some-observables">Some Observables</a></li>
+      <li><a href="#example-vortex" id="markdown-toc-example-vortex">Example: Vortex</a></li>
+      <li><a href="#superfluidity" id="markdown-toc-superfluidity">Superfluidity</a></li>
       <li><a href="#time-dependent-gp-theory" id="markdown-toc-time-dependent-gp-theory">Time-dependent GP Theory</a></li>
     </ul>
   </li>
-  <li><a href="#superfluidity" id="markdown-toc-superfluidity">Superfluidity</a>    <ul>
+  <li><a href="#superfluidity-1" id="markdown-toc-superfluidity-1">Superfluidity</a>    <ul>
       <li><a href="#metastable-currents" id="markdown-toc-metastable-currents">Metastable Currents</a></li>
     </ul>
   </li>
@@ -242,12 +245,14 @@ The Lieb--Liniger model is an example of a gas of interacting bosons in the cont
 
 <h2 id="the-gross--pitaevskii-approximation">The Gross–Pitaevskii Approximation</h2>
 
-<p>Our first attack on the problem is variational. It’s very easy to come up with a variational wavefunction for the ground state of a Bose gas:</p>
+<p>Our first attack on the problem is variational. It’s very easy to come up with a variational wavefunction for the ground state of a Bose gas: put all the particles in the same single particle state!</p>
 
 <script type="math/tex; mode=display">\Psi(\br_1,\ldots \br_N) = \prod_{j=1}^N \varphi_0(\br_i)= \frac{1}{\sqrt{N!}}\left(\adop(\varphi_0)\right)^N\ket{\text{VAC}}.
 \label{bose_GPW}</script>
 
-<p>All particles in the same single particle state! We know that if we have a noninteracting Hamiltonian</p>
+<p>A state with a macroscopic number of particles in a single particle state is known as a <strong>Bose condensate</strong>. You have probably studied the statistical mechanics of an ideal Bose gas before: the main feature is a <strong>condensation temperature</strong> below which macroscopic occupation occurs.</p>
+
+<p>We know that if we have a noninteracting Hamiltonian</p>
 
 <script type="math/tex; mode=display">H = \sum\left[-\frac{\nabla_i^2}{2m} + V(\br_i)\right],</script>
 
@@ -256,7 +261,7 @@ The Lieb--Liniger model is an example of a gas of interacting bosons in the cont
 <script type="math/tex; mode=display">% <![CDATA[
 H_\text{int.} = \sum_{j<k} U(\br_j-\br_k) = \frac{1}{2}\int d\br_1 d\br_2\, U(\br_1-\br_2)\pdop(\br_1)\pdop(\br_2)\pop(\br_2)\pop(\br_1). %]]></script>
 
-<p>it is no longer true that \eqref{bose_GPW} gives the form of the ground state, but we can treat $\varphi_0(\br)$ as a variational function that we must find. This leads to the <strong>Gross–Pitaevskii equation</strong>.</p>
+<p>it is no longer true that the exact ground state has the form \eqref{bose_GPW}, but we can treat $\varphi_0(\br)$ as a variational function that we must find. This leads to the <strong>Gross–Pitaevskii equation</strong>.</p>
 
 <h3 id="time-independent-gp-theory">Time-Independent GP Theory</h3>
 
@@ -268,21 +273,169 @@ H_\text{int.} = \sum_{j<k} U(\br_j-\br_k) = \frac{1}{2}\int d\br_1 d\br_2\, U(\b
 
 <script type="math/tex; mode=display">\langle E \rangle = \frac{\braket{\Psi}{H}{\Psi}}{\inner{\Psi}{\Psi}}</script>
 
-<p>Take short ranged interactions</p>
+<p>In fact, it turns out to be more convenient to minimize $\braket{\Psi}{H}{\Psi}$, using a Lagrange multiplier to fix the normalization. We have</p>
 
-<p>Would be boring if we didn’t have spatially nonuniform situations</p>
+<script type="math/tex; mode=display">\begin{align}
+\braket{\Psi}{H}{\Psi}=N \int d\br \left[\frac{1}{2m}|\nabla\varphi_0|^2+V(\br)|\varphi_0(\br)|^2
+\right]\\
++\frac{1}{2}N(N-1)U_0\int d\br |\varphi_0(\br)|^4.
+\label{bose_energy}
+\end{align}</script>
+
+<p>For large $N$, we can neglect the difference between $N$ and $N+1$. Now we want to extremize this functional with respect to $\varphi_0(\br)$, keeping $\varphi_{0}(\br)$ normalized. To do this we introduce a Lagrange multiplier $\mu N$ (the factor of $N$ will become clear shortly) and extremize the functional</p>
+
+<script type="math/tex; mode=display">\braket{\Psi}{H}{\Psi} - \mu N \int d\br |\varphi_{0}(\br)|^{2}.</script>
+
+<p>To find the extremum requires a standard application of the calculus of variations, yielding the equation</p>
+
+<script type="math/tex; mode=display">\left[-\frac{1}{2m}\nabla^2-\mu+V(\br)+NU_0|\varphi_0(\br)|^2\right]\varphi_0(\br)=0.
+  \label{bose_static_PreGPEqn}</script>
+
+<p>It’s convenient to deal with the stray factor of $N$ in \eqref{bose_static_PreGPEqn} by defining $\varphi(\br)\equiv\sqrt{N}\varphi_{0}(\br)$. $\varphi(\br)$ is known as the <strong>condensate wavefunction</strong> or <strong>order parameter</strong>. Later we will give a more general definition that does not depend on the above variational approximation. We have thus obtained the <strong>Gross–Pitaevskii equation</strong></p>
+
+<script type="math/tex; mode=display">\left[-\frac{1}{2m}\nabla^2-\mu+V(\br)+U_0|\varphi(\br)|^2\right]\varphi(\br)=0.</script>
+
+<p>It remains to fix the Lagrange multiplier $\mu$. This is done by demanding that $\int d\br\,\abs{\varphi(\br)}^{2}=N$. Since $\braket{\Psi}{H}{\Psi}- \mu \int d\br \abs{\varphi(\br)}^{2}=\braket{\Psi}{H-\mu \mathsf{N}}{\Psi}$ was extremized under general variations, including those that changed $N$, we must have</p>
+
+<script type="math/tex; mode=display">\label{bose_static_GPmu}
+	\mu=\frac{\partial\braket{\Psi}{H}{\Psi}}{\partial N},</script>
+
+<p>so that $\mu$ is identified with the chemical potential.</p>
+
+<p>A fundamental effect of the nonlinearity of the GP equation is that there exists a length scale set by the
+typical value of $|\varphi(\br)|^2\sim \bar\rho$ and the interaction strength</p>
+
+<script type="math/tex; mode=display">\xi\equiv \frac{1}{\sqrt{2m\bar\rho U_0}}</script>
+
+<p>This <strong>healing length</strong> determines the scale over which  $\varphi(\br)$ is disturbed by the introduction
+of a localized potential of scale $\ll \xi$. It is a fundamental length scale in the system.</p>
+
+<p class="message">
+Show that near a hard wall, where the condensate wavefunction goes to zero, $\varphi(\br)$ is given by
+
+$$
+  \varphi(x)=\varphi_{\infty}\tanh \frac{x}{\sqrt{2}\xi}
+$$
+
+where $x$ is the distance from the wall, and $\varphi_{\infty}=\sqrt{n_{\infty}}$ is fixed by the density of the condensate far from the wall.</p>
+
+<h3 id="some-observables">Some Observables</h3>
+
+<p>With the ansatz \eqref{bose_GPW} for the wavefunction, we can obtain various observables without
+difficulty. The density and current density are</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\rho(\br)&=|\varphi(\br)|^2,\\
+\mathbf{j}(\br)&=-\frac{i}{2m}\left[\varphi^{*}(\br)\left(\nabla\varphi(\br)\right)-\left(\nabla\varphi^{*}(\br)\right)\varphi(\br)\right]
+\end{align} %]]></script>
+
+<p>Alternatively, one may write this is terms of the velocity field of the gas, using $\mathbf{j}=\rho \mathbf{v}$, and the decomposition of $\varphi(\br)$ into magnitude and phase</p>
+
+<script type="math/tex; mode=display">\varphi(\br)=\sqrt{\rho(\br)}e^{i\theta(\br)}.</script>
+
+<p>We thus find the <strong>superfluid velocity</strong></p>
+
+<script type="math/tex; mode=display">\mathbf{v}_{s}\equiv\frac{1}{m}\nabla\theta.
+  \label{bose_vs}</script>
+
+<p>The name is to distinguish this contribution from that arising from thermal excitations. For the moment we are considering zero temperature, so this is all there is.</p>
+
+<p>The usefulness of the Gross–Pitaevskii equations lies in its ability to describe spatially nonuniform situations. Often, nonuniformity is imposed by an external potential, but there is an important class of configurations that are stable – or metastable – for <em>topological</em> reasons.</p>
+
+<h3 id="example-vortex">Example: Vortex</h3>
+
+<p>Since \eqref{bose_vs} tells us that the superfluid velocity is a gradient of something, we may expect it to be <em>irrotational</em></p>
+
+<script type="math/tex; mode=display">\nabla\times \mathbf{v}_s = 0,</script>
+
+<p>or equivalently to have vanishing <em>circulation</em></p>
+
+<script type="math/tex; mode=display">\oint \mathbf{v}_s\cdot d\mathbf{l}=0</script>
+
+<p>around any closed loop. However, it is possible for the phase of the wavefunction to increase by a multiple of $2\pi$ around a closed loop, which still gives a single-valued condensate wavefunction since $\varphi(\br)=\sqrt{\rho(\br)}e^{i\theta(\br)}$. Thus in general the circulation</p>
+
+<script type="math/tex; mode=display">\oint \mathbf{v}_s\cdot d\mathbf{l}=\frac{2\pi \ell}{m},\quad \ell\in\mathbb{Z},</script>
+
+<p>which is known as the <strong>Onsager–Feynmann quantization condition</strong>. A localized configuration with finite circulation is called a <strong>vortex</strong> in fluid dynamics, but in a normal fluid there is no reason for the vorticity to be quantized. Restoring Planck’s constant just this once</p>
+
+<script type="math/tex; mode=display">\oint \mathbf{v}_s\cdot d\mathbf{l}=\frac{h\ell}{m},\quad \ell\in\mathbb{Z},</script>
+
+<p>shows that this is a truly <em>quantum</em> phenomenon.</p>
+
+<p>A non-zero winding of the phase requires that $\rho(\br)$ vanishes at a point (in two dimensions) or on a line (in three). Let’s see how such configurations are described by the Gross–Pitaevskii theory.</p>
+
+<p>We are going to look for 2D solutions where the phase winds $\ell$ times as we encircle the origin</p>
+
+<script type="math/tex; mode=display">\varphi(r,\theta)\xrightarrow{r\to\infty} \sqrt{\bar\rho} e^{i\ell\theta}.
+\label{bose_vortex}</script>
+
+<p>We parameterize the solution as $\varphi(r,\theta) = \sqrt{\bar\rho} f(r/\xi)e^{i\ell\theta}$, measuring distances in terms of the healing length. Substituting into the Gross–Pitaevskii equation gives an equation in $s\equiv r/\xi$.</p>
+
+<script type="math/tex; mode=display">-f'' -\frac{f'}{s} + \frac{\ell^2}{s^2} - f +f^3 =0.</script>
+
+<p>We take $\mu = U_0\bar\rho$ to get the behaviour \eqref{bose_vortex} at infinity. Without finding the solution explicitly, we can say that $f(s)\sim s^\ell$ for small $s$, and $f(s\to\infty) \to 1$. The region of suppressed density, of characteristic size $\xi$, is called the <strong>vortex core</strong>. In three dimensions, the vortex core is a line.</p>
+
+<p>We can find the energy of the vortex state by substituting the solution back into the energy functional \eqref{bose_energy} to find the energy excess relative to uniform state of density $\bar\rho$</p>
+
+<script type="math/tex; mode=display">\Delta E = \int d\br \left[\frac{\bar\rho^2}{2m\xi^2}(f')^2+\frac{U}{2}\bar\rho^2 \left(f^2-1\right)\right] + \frac{\bar\rho}{2m}\int d\br\, (\nabla\theta)^2.</script>
+
+<p>The first integral is finite, and arises purely from the departure of the density away from its bulk value. The second represents the contribution to the kinetic energy arising from the winding of the vortex’s phase. Since we have</p>
+
+<script type="math/tex; mode=display">\nabla \theta = \frac{\ell}{r}\hat{\mathbf{e}}_\theta,</script>
+
+<p>this contribution to the energy is <em>logarithmically divergent</em>.</p>
+
+<script type="math/tex; mode=display">\Delta E = \text{const.} + \frac{\pi\bar\rho \ell^2}{m}\log\left(\frac{L}{\xi}\right).</script>
+
+<p>There is far-reaching analogy between the superfluid velocity fields of vortices and the magnetostatics of current-carrying wires,</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Vortices</th>
+      <th>Magnetostatics</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Vortex cores</td>
+      <td>Wires</td>
+    </tr>
+    <tr>
+      <td>Superfluid velocity $\mathbf{v}_s$</td>
+      <td>Magnetic field, $\mathbf{B}$</td>
+    </tr>
+    <tr>
+      <td>Kinetic Energy</td>
+      <td>Magnetostatic Energy</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Vortices with $\abs{\ell}&gt;1$ are generally unstable, and will break into multiple vortices of winding $\ell=\pm 1$. Like vortices repel each other, and can form spectacular <strong>vortex lattices</strong>, akin to crystals</p>
+
+<h3 id="superfluidity">Superfluidity</h3>
+
+<p>This is a</p>
 
 <h3 id="time-dependent-gp-theory">Time-dependent GP Theory</h3>
 
 <p>Changes</p>
 
-<h2 id="superfluidity">Superfluidity</h2>
+<p>Landau criterion</p>
+
+<h2 id="superfluidity-1">Superfluidity</h2>
 
 <h3 id="metastable-currents">Metastable Currents</h3>
 
 <h2 id="bogoliubov-theory">Bogoliubov Theory</h2>
 
+<p>Landau criterion</p>
+
 <h3 id="discussion-whats-wrong-with-perturbation-theory">Discussion: What’s Wrong With Perturbation Theory?</h3>
+
+<p>General definitions of BEC, order parameter, and superfluidity..</p>
 
 <h2 id="references">References</h2>
 
