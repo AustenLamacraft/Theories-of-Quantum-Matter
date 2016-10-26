@@ -44,7 +44,7 @@ $$
 
 it is no longer true that the exact ground state has the form \eqref{bose_GPW}, but we can treat $\varphi_0(\br)$ as a variational function that we must find. This leads to the __Gross--Pitaevskii equation__.
 
-### Time-Independent GP Theory
+### Gross--Pitaevskii Equation
 
 From now on we will take a model of short-ranged interactions for simplicity
 
@@ -216,27 +216,17 @@ Vortex cores | Wires
 Superfluid velocity $\mathbf{v}_s$ | Magnetic field, $\mathbf{B}$
 Kinetic Energy | Magnetostatic Energy
 
-Vortices with $\abs{\ell}>1$ are generally unstable, and will break into multiple vortices of winding $\ell=\pm 1$. Like vortices repel each other, and can form spectacular __vortex lattices__, akin to crystals
+Vortices with $\abs{\ell}>1$ are generally unstable, and will break into multiple vortices of winding $\ell=\pm 1$. Like vortices repel each other, and can form spectacular __vortex lattices__, akin to crystals.
 
+<a name="3dLattices"></a>
+![]({{ site.baseurl }}/assets/3dLattices.jpg)
+_Vortex lattice in a Bose--Einstein condensate of Sodium atoms. Source: [Ketterle group, MIT](http://cua.mit.edu/ketterle_group/)._
 
-### Superfluidity
-
-This is a
-
-### Time-dependent GP Theory
-
-
-Changes
-
-Landau criterion
-
-## Superfluidity
-
-
-
-### Metastable Currents
+Vortices are one manifestation of the phenomenon of __superfluidity__: persistent flow without resistance. The true ground state of the system does not have such flows, of course, so these flows are only _metastable_ (as long as rotational symmetry is broken, so that angular momentum is not conserved). In the case of the vortex, it can only decay by its core leaving the system. An even simpler example is provided by currents flowing in a ring, a situation studied in [Problem Set 2]({{ site.baseurl }}/problems/Problems2/), which illustrates the important role played by repulsive interactions.
 
 ## Bogoliubov Theory
+
+How can we improve upon the Bogoliubov approximation? To answer this question,
 
 Landau criterion
 

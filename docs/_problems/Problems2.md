@@ -110,3 +110,99 @@ H = -t \sum_{\substack{\langle j\,k\rangle\\ s=\uparrow,\downarrow}}  \left[\ado
 $$
 
 where $\Nop_j = \Nop_{j,\uparrow}+\Nop_{j,\downarrow}$. If we have a $\nu=1$ Mott state, how does the behaviour at $t/U\ll 1$ differ from the Fermi Hubbard case?
+
+## Bose Gas with Attractive Interactions
+
+Consider the 1D Gross--Pitaevskii equation describing the attractive Lieb--Liniger model
+
+$$
+-\frac{1}{2m}\varphi'' - \mu \varphi - \frac{|c|}{2}\abs{\varphi}^2\varphi = 0.
+$$
+
+Look for a solution on the infinite line with $\varphi(x\to\pm\infty) =0$ describing a localized 'blob' containing $N$ bosons. Find the energy of this state. Compare with the ground state energy of the attractive gas you found in [Problem Set 1]({{ site.baseurl }}/problems/Problems1/).
+
+## Persistent Currents Without Rotational Symmetry
+
+A system of bosons moving on a ring of radius $R$ is described by the Hamiltonian $H=H_1+H_2$, where
+
+$$
+H_1 = \int_0^{2\pi} \left[\frac{\hbar^2}{2mR^2}\frac{d\pdop}{d\theta}\frac{d\pop}{d\theta} +V(\theta)\pdop\pop \right]d\theta
+$$
+
+is the single particle Hamiltonian, involving some potential $V(\theta)$, and
+
+$$
+H_2=\frac{U}{2}\int_0^{2\pi} \pdop\pdop\pop\pop\, d\theta
+$$
+
+describes interactions between the particles. $\pdop(\theta)$ and $\pop(\theta)$ satisfy
+
+$$
+	\begin{split}
+		\left[\pop(\theta),\pdop(\theta')\right]=\delta(\theta-\theta')\\
+		\left[\pop(\theta),\pop(\theta')\right]=\left[\pdop(\theta),\pdop(\theta')\right]=0
+	\end{split}
+$$
+
+
+In the basis of angular momentum eigenstates
+
+$$
+\varphi_l(\theta) =\frac{e^{il\theta}}{\sqrt{2\pi }},\qquad l=0,\pm 1, \pm 2,\ldots
+$$
+
+$\pop(\theta)$ may be expressed
+
+$$
+	\pop(\theta)=\sum_{l=-\infty}^\infty \varphi_l(\theta)a_l,
+$$
+
+where $a_l$ annihilates a particle in state $l$. By considering _only_ states $l=0$ and $1$, show that the Hamiltonian takes the form
+
+$$
+\begin{align}
+H_{\text{rot}}=\omega_c\left[\adop_1\aop_1-\adop_0\aop_0\right]+V_0\left[\adop_0\aop_1+\mathrm{h.c.}\right]\nonumber\\
++\frac{U_0}{2V}\left[\adop_0\adop_0\aop_0\aop_0+\adop_1\adop_1\aop_1\aop_1+4\adop_1
+\adop_0\aop_0\aop_1\right]
+\end{align}
+$$
+
+and identify $\omega_{c}$ and $V_{0}$.
+
+Introduce the Gross--Pitaevskii wavefunction
+
+$$
+\left[\cos\frac{\chi}{2}e^{i\varphi/2}\adop_0+\sin\frac{\chi}{2}e^{-i\varphi/2}\adop_1\right]^N\ket{\text{VAC}},
+$$
+
+and show that:
+
+1. The order parameter has a node for $\chi=\pi/2$. If $V_0$ is due to a localized potential, this node
+		will coincide with the position of that potential.
+
+2. The GP variational energy is (up to a constant, and ignoring terms lower order in $N$)
+
+	$$
+	E(\chi)/N=-\omega_c\cos\chi+V_0\sin\chi+\frac{nU_0}{2}\sin^2\chi,
+	$$
+
+	while the angular momentum is
+
+	$$
+	L(\chi)/N=\frac{1}{2}\left(1-\cos\chi\right).
+	$$
+
+
+3. A metastable minimum exists for $2U_0>V_0$ (assuming $U_0$ and $V _0$ are both much less
+		than $\omega_c$). That is, for small enough deviations from perfect symmetry, metastable
+		configurations are possible, and have their origin in the repulsive interactions. The point $\chi=\pi/2$ that
+		corresponds to an order parameter with a node is then a maximum of the energy.
+
+
+4. Finally, consider what would happen for Fock states of the form
+
+	$$
+		\frac{1}{\sqrt{N_{0}!N_{1}!}}\left(\adop_{0}\right)^{N_{0}}\left(\adop_{1}\right)^{N_{1}}\ket{\text{VAC}}.
+	$$
+
+	This situation --- macroscopic occupations of more than one single particle state --- is sometimes called a _fragmented_ condensate.

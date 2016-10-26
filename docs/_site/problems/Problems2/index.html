@@ -223,6 +223,8 @@ $$
   <li><a href="#hbt-correlations-from-an-optical-lattice" id="markdown-toc-hbt-correlations-from-an-optical-lattice">HBT Correlations From an Optical Lattice</a></li>
   <li><a href="#mean-field-for-bose--hubbard" id="markdown-toc-mean-field-for-bose--hubbard">Mean Field for Bose–Hubbard</a></li>
   <li><a href="#bose--hubbard-with-spin" id="markdown-toc-bose--hubbard-with-spin">Bose–Hubbard With Spin</a></li>
+  <li><a href="#bose-gas-with-attractive-interactions" id="markdown-toc-bose-gas-with-attractive-interactions">Bose Gas with Attractive Interactions</a></li>
+  <li><a href="#persistent-currents-without-rotational-symmetry" id="markdown-toc-persistent-currents-without-rotational-symmetry">Persistent Currents Without Rotational Symmetry</a></li>
 </ol>
 
 <hr />
@@ -312,6 +314,84 @@ $$
 <script type="math/tex; mode=display">H = -t \sum_{\substack{\langle j\,k\rangle\\ s=\uparrow,\downarrow}}  \left[\adop_{j,s}\aop_{k,s}+\adop_{k,s}\aop_{j,s}\right]  + \frac{U}{2}\sum_j \Nop_j(\Nop_j-1),</script>
 
 <p>where $\Nop_j = \Nop_{j,\uparrow}+\Nop_{j,\downarrow}$. If we have a $\nu=1$ Mott state, how does the behaviour at $t/U\ll 1$ differ from the Fermi Hubbard case?</p>
+
+<h2 id="bose-gas-with-attractive-interactions">Bose Gas with Attractive Interactions</h2>
+
+<p>Consider the 1D Gross–Pitaevskii equation describing the attractive Lieb–Liniger model</p>
+
+<script type="math/tex; mode=display">-\frac{1}{2m}\varphi'' - \mu \varphi - \frac{|c|}{2}\abs{\varphi}^2\varphi = 0.</script>
+
+<p>Look for a solution on the infinite line with $\varphi(x\to\pm\infty) =0$ describing a localized ‘blob’ containing $N$ bosons. Find the energy of this state. Compare with the ground state energy of the attractive gas you found in <a href="/docs/problems/Problems1/">Problem Set 1</a>.</p>
+
+<h2 id="persistent-currents-without-rotational-symmetry">Persistent Currents Without Rotational Symmetry</h2>
+
+<p>A system of bosons moving on a ring of radius $R$ is described by the Hamiltonian $H=H_1+H_2$, where</p>
+
+<script type="math/tex; mode=display">H_1 = \int_0^{2\pi} \left[\frac{\hbar^2}{2mR^2}\frac{d\pdop}{d\theta}\frac{d\pop}{d\theta} +V(\theta)\pdop\pop \right]d\theta</script>
+
+<p>is the single particle Hamiltonian, involving some potential $V(\theta)$, and</p>
+
+<script type="math/tex; mode=display">H_2=\frac{U}{2}\int_0^{2\pi} \pdop\pdop\pop\pop\, d\theta</script>
+
+<p>describes interactions between the particles. $\pdop(\theta)$ and $\pop(\theta)$ satisfy</p>
+
+<script type="math/tex; mode=display">\begin{split}
+		\left[\pop(\theta),\pdop(\theta')\right]=\delta(\theta-\theta')\\
+		\left[\pop(\theta),\pop(\theta')\right]=\left[\pdop(\theta),\pdop(\theta')\right]=0
+	\end{split}</script>
+
+<p>In the basis of angular momentum eigenstates</p>
+
+<script type="math/tex; mode=display">\varphi_l(\theta) =\frac{e^{il\theta}}{\sqrt{2\pi }},\qquad l=0,\pm 1, \pm 2,\ldots</script>
+
+<p>$\pop(\theta)$ may be expressed</p>
+
+<script type="math/tex; mode=display">\pop(\theta)=\sum_{l=-\infty}^\infty \varphi_l(\theta)a_l,</script>
+
+<p>where $a_l$ annihilates a particle in state $l$. By considering <em>only</em> states $l=0$ and $1$, show that the Hamiltonian takes the form</p>
+
+<script type="math/tex; mode=display">\begin{align}
+H_{\text{rot}}=\omega_c\left[\adop_1\aop_1-\adop_0\aop_0\right]+V_0\left[\adop_0\aop_1+\mathrm{h.c.}\right]\nonumber\\
++\frac{U_0}{2V}\left[\adop_0\adop_0\aop_0\aop_0+\adop_1\adop_1\aop_1\aop_1+4\adop_1
+\adop_0\aop_0\aop_1\right]
+\end{align}</script>
+
+<p>and identify $\omega_{c}$ and $V_{0}$.</p>
+
+<p>Introduce the Gross–Pitaevskii wavefunction</p>
+
+<script type="math/tex; mode=display">\left[\cos\frac{\chi}{2}e^{i\varphi/2}\adop_0+\sin\frac{\chi}{2}e^{-i\varphi/2}\adop_1\right]^N\ket{\text{VAC}},</script>
+
+<p>and show that:</p>
+
+<ol>
+  <li>
+    <p>The order parameter has a node for $\chi=\pi/2$. If $V_0$ is due to a localized potential, this node
+     will coincide with the position of that potential.</p>
+  </li>
+  <li>
+    <p>The GP variational energy is (up to a constant, and ignoring terms lower order in $N$)</p>
+
+    <script type="math/tex; mode=display">E(\chi)/N=-\omega_c\cos\chi+V_0\sin\chi+\frac{nU_0}{2}\sin^2\chi,</script>
+
+    <p>while the angular momentum is</p>
+
+    <script type="math/tex; mode=display">L(\chi)/N=\frac{1}{2}\left(1-\cos\chi\right).</script>
+  </li>
+  <li>
+    <p>A metastable minimum exists for $2U_0&gt;V_0$ (assuming $U_0$ and $V _0$ are both much less
+     than $\omega_c$). That is, for small enough deviations from perfect symmetry, metastable
+     configurations are possible, and have their origin in the repulsive interactions. The point $\chi=\pi/2$ that
+     corresponds to an order parameter with a node is then a maximum of the energy.</p>
+  </li>
+  <li>
+    <p>Finally, consider what would happen for Fock states of the form</p>
+
+    <script type="math/tex; mode=display">\frac{1}{\sqrt{N_{0}!N_{1}!}}\left(\adop_{0}\right)^{N_{0}}\left(\adop_{1}\right)^{N_{1}}\ket{\text{VAC}}.</script>
+
+    <p>This situation — macroscopic occupations of more than one single particle state — is sometimes called a <em>fragmented</em> condensate.</p>
+  </li>
+</ol>
 
 </div>
 
