@@ -197,14 +197,14 @@ $$
 Thus within the ground state multiplet $H_t$ corresponds to a tight binding model
 
 $$
-H_t\rvert_{+} = -t(N+1) \sum_{\langle j\,k\rangle} \ket{j,+}\bra{k,+}.
+H_t\rvert_{+} = -t(N+1) \sum_{\langle j\,k\rangle} \left[\ket{j,+}\bra{k,+}+\text{h.c.}\right].
 \label{latt_tbp}
 $$
 
 This is a very simple picture: the only many body effect is the factor of $N$ due to Bose statistics. The splitting of the degenerate states by $H_t$ is then given by the tight binding dispersion
 
 $$
-\omega_+(\boldsymbol{\eta}) = -t(N+1)\sum_{n=1}^d\cos\eta_n
+\omega_+(\boldsymbol{\eta}) = -2t(N+1)\sum_{n=1}^d\cos\eta_n
 \label{latt_pband}
 $$
 
@@ -217,14 +217,14 @@ $$
 Within these states, $H_t$ takes the form
 
 $$
-H_t\rvert_{-}=-tN \sum_{\langle j\,k\rangle} \ket{j,-}\bra{k,-},
+H_t\rvert_{-}=-tN \sum_{\langle j\,k\rangle} \left[\ket{j,-}\bra{k,-}+\text{h.c.}\right],
 \label{latt_tbh}
 $$
 
 with a spectrum
 
 $$
-\omega_-(\boldsymbol{\eta}) = -tN\sum_{n=1}^d\cos\eta_n.
+\omega_-(\boldsymbol{\eta}) = -2tN\sum_{n=1}^d\cos\eta_n.
 $$
 
 Let's see how these considerations change the picture of the previous subsection. We introduce the grand canonical Hamiltonian
@@ -239,19 +239,19 @@ $$
 \frac{\cE^{(N)}_\mu}{N_\text{sites}} = \frac{U}{2}N(N-1)-\mu N.
 $$
 
-$\cE^{(N)}\_\mu$ and $\cE^{(N+1)}\_\mu$ become degenerate when $\mu=UN$ for $t=0$. Let's compare this with the ground state with one extra particle on top of the $N$ Mott state. This state corresponds to a particle at the bottom of the tight binding band. From \eqref{latt_pband}, we see that the ground state energy of the tight binding model is $-td(N+1)$. Together with extra energy of interaction we have overall
+$\cE^{(N)}\_\mu$ and $\cE^{(N+1)}\_\mu$ become degenerate when $\mu=UN$ for $t=0$. Let's compare this with the ground state with one extra particle on top of the $N$ Mott state. This state corresponds to a particle at the bottom of the tight binding band. From \eqref{latt_pband}, we see that the ground state energy of the tight binding model is $-2td(N+1)$. Together with extra energy of interaction we have overall
 
 $$
-\cE^{(N)}_\mu + UN - \mu -dt(N+1).
+\cE^{(N)}_\mu + UN - \mu -2dt(N+1).
 $$
 
-We see that for $t>\frac{UN-\mu}{d(N+1)}$ the state with an extra particle actually has a _lower_ energy: the Mott states is not the ground state. Similarly, the energy of the ground state with one 'hole' in the $N+1$ Mott state is
+We see that for $t>\frac{UN-\mu}{2d(N+1)}$ the state with an extra particle actually has a _lower_ energy: the Mott states is not the ground state. Similarly, the energy of the ground state with one 'hole' in the $N+1$ Mott state is
 
 $$
-\cE^{(N+1)}_\mu - UN + \mu -dt(N+1).
+\cE^{(N+1)}_\mu - UN + \mu -2dt(N+1).
 $$
 
-Introducing a hole is thus favoured for $t>\frac{\mu-UN}{d(N+1)}$.
+Introducing a hole is thus favoured for $t>\frac{\mu-UN}{2d(N+1)}$.
 
 <a name="MottPerturb"></a>
 ![]({{ site.baseurl }}/assets/MottPerturb.png)

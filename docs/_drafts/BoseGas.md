@@ -226,7 +226,53 @@ Vortices are one manifestation of the phenomenon of __superfluidity__: persisten
 
 ## Bogoliubov Theory
 
-How can we improve upon the Bogoliubov approximation? To answer this question,
+How can we improve upon the Gross--Pitaevskii approximation? From now on we focus on a uniform condensate with no external potential $V(\br)$, in which case the condensate wavefunction is just a constant $\varphi(\br)=\sqrt{n}$. As usual we work in a plane wave basis, where the Hamiltonian takes the form
+
+$$
+H =\sum_\bk \epsilon(\bk)\adop_\bk\aop_\bk + \overbrace{\frac{U_0}{2}\sum_{\bk_1+\bk_2=\bk_3+\bk_4} \adop_{\bk_1}\adop_{\bk_2}\aop_{\bk_3}\aop_{\bk_4}}^{\equiv H_\text{int}},
+$$
+
+with $\epsilon(\bk)=\bk^2/2m$. The Gross--Pitaevskii approximation to the ground state is
+
+$$
+\ket{\Psi_\text{GP}} = \frac{1}{\sqrt{N!}}\left(\adop_0\right)^N\ket{\text{VAC}}.
+$$
+
+When $H_\text{int}$ acts on this state, the only terms that contribute are those with $\aop_{\bk_3}=\aop_{\bk_4}=0$
+
+$$
+H_\text{int}\ket{\Psi_\text{GP}} =  \frac{U_0}{2}\sum_{\bk} \adop_{\bk}\adop_{-\bk}\aop_{0}\aop_{0}\ket{\Psi_\text{GP}}.
+$$
+
+Thus, if we want a better wavefunction, we are going to have to add some $(\bk, -\bk)$ pairs!
+
+When interactions are weak, we expect that the true ground state is close to $\ket{\Psi_\text{GP}}$, so that most of the particles remain in the zero momentum state, with relatively few pairs created. Remembering that
+
+$$
+\aop\ket{N} = \sqrt{N}\ket{N-1},\quad \adop\ket{N} = \sqrt{N+1}\ket{N+1},
+\eqref{bose_aN}
+$$
+
+we see that a term in the Hamiltonian with $\aop_0$ or $\adop_0$ is going to be more important -- on account of the large occupancy of $\bk=0$ -- than a term without. For this reason we divide up the interaction Hamiltonian according to the number of occurrences of these operators
+
+$$
+\begin{align}
+H_\text{int} = \frac{U_0}{2}\adop_0\adop_0\aop_0\aop_0 + \frac{U_0}{2}\sum_{\bk\neq0}\left[\adop_{\bk}\adop_{-\bk}\aop_{0}\aop_{0} + \adop_{0}\adop_{0}\aop_{\bk}\aop_{-\bk}+4\adop_\bk\adop_0\aop_0\aop_\bk\right]\\\nonumber
++U_0\sum_{\substack{\bk_1=\bk_2+\bk_3\\ \bk_{1,2,3}\neq 0}}\left[\adop_{\bk_2}\adop_{\bk_2}\aop_{\bk_1}\aop_0 +\adop_0\adop_{\bk_1}\aop_{\bk_2}\aop_{\bk_3}\right]+\frac{U_0}{2}\sum_{\substack{\bk_1+\bk_2=\bk_3+\bk_4\\ \bk_{1,2,3,4}\neq 0}} \adop_{\bk_1}\adop_{\bk_2}\aop_{\bk_3}\aop_{\bk_4}.
+\end{align}
+$$
+
+The Gross--Pitaevskii approximation corresponds to the first term. We are now going to keep the second term, and neglect the third and fourth. Thus we study the Hamiltonian
+
+$$
+H_\text{pair} = \sum_\bk \epsilon(\bk)\adop_\bk\aop_\bk  +\frac{U_0}{2}\adop_0\adop_0\aop_0\aop_0 + \frac{U_0}{2}\sum_{\bk\neq0}\left[\adop_{\bk}\adop_{-\bk}\aop_{0}\aop_{0} + \adop_{0}\adop_{0}\aop_{\bk}\aop_{-\bk}+4\adop_\bk\adop_0\aop_0\aop_\bk\right].
+$$
+
+Even with this drastic simplification it's not so easy to solve this problem. Note, however, that the only terms that change the occupancy of the $\bk=0$ state are $\adop_{\bk}\adop_{-\bk}\aop_{0}\aop_{0}$ and $\adop_{0}\adop_{0}\aop_{\bk}\aop_{-\bk}$.
+
+However, noting \eqref{bose_aN} above, we can say that since the occupancy of the $\bk=0$ state is large
+
+ To answer this question,
 
 Landau criterion
 

@@ -384,12 +384,12 @@ How is a Mott state (all sites with the same occupation) affected by $H_t$ in fi
 
 <p>Thus within the ground state multiplet $H_t$ corresponds to a tight binding model</p>
 
-<script type="math/tex; mode=display">H_t\rvert_{+} = -t(N+1) \sum_{\langle j\,k\rangle} \ket{j,+}\bra{k,+}.
+<script type="math/tex; mode=display">H_t\rvert_{+} = -t(N+1) \sum_{\langle j\,k\rangle} \left[\ket{j,+}\bra{k,+}+\text{h.c.}\right].
 \label{latt_tbp}</script>
 
 <p>This is a very simple picture: the only many body effect is the factor of $N$ due to Bose statistics. The splitting of the degenerate states by $H_t$ is then given by the tight binding dispersion</p>
 
-<script type="math/tex; mode=display">\omega_+(\boldsymbol{\eta}) = -t(N+1)\sum_{n=1}^d\cos\eta_n
+<script type="math/tex; mode=display">\omega_+(\boldsymbol{\eta}) = -2t(N+1)\sum_{n=1}^d\cos\eta_n
 \label{latt_pband}</script>
 
 <p>(in $d$-dimensions). We could alternatively <em>remove</em> a particle from the Mott state</p>
@@ -398,12 +398,12 @@ How is a Mott state (all sites with the same occupation) affected by $H_t$ in fi
 
 <p>Within these states, $H_t$ takes the form</p>
 
-<script type="math/tex; mode=display">H_t\rvert_{-}=-tN \sum_{\langle j\,k\rangle} \ket{j,-}\bra{k,-},
+<script type="math/tex; mode=display">H_t\rvert_{-}=-tN \sum_{\langle j\,k\rangle} \left[\ket{j,-}\bra{k,-}+\text{h.c.}\right],
 \label{latt_tbh}</script>
 
 <p>with a spectrum</p>
 
-<script type="math/tex; mode=display">\omega_-(\boldsymbol{\eta}) = -tN\sum_{n=1}^d\cos\eta_n.</script>
+<script type="math/tex; mode=display">\omega_-(\boldsymbol{\eta}) = -2tN\sum_{n=1}^d\cos\eta_n.</script>
 
 <p>Let’s see how these considerations change the picture of the previous subsection. We introduce the grand canonical Hamiltonian</p>
 
@@ -413,15 +413,15 @@ How is a Mott state (all sites with the same occupation) affected by $H_t$ in fi
 
 <script type="math/tex; mode=display">\frac{\cE^{(N)}_\mu}{N_\text{sites}} = \frac{U}{2}N(N-1)-\mu N.</script>
 
-<p>$\cE^{(N)}_\mu$ and $\cE^{(N+1)}_\mu$ become degenerate when $\mu=UN$ for $t=0$. Let’s compare this with the ground state with one extra particle on top of the $N$ Mott state. This state corresponds to a particle at the bottom of the tight binding band. From \eqref{latt_pband}, we see that the ground state energy of the tight binding model is $-td(N+1)$. Together with extra energy of interaction we have overall</p>
+<p>$\cE^{(N)}_\mu$ and $\cE^{(N+1)}_\mu$ become degenerate when $\mu=UN$ for $t=0$. Let’s compare this with the ground state with one extra particle on top of the $N$ Mott state. This state corresponds to a particle at the bottom of the tight binding band. From \eqref{latt_pband}, we see that the ground state energy of the tight binding model is $-2td(N+1)$. Together with extra energy of interaction we have overall</p>
 
-<script type="math/tex; mode=display">\cE^{(N)}_\mu + UN - \mu -dt(N+1).</script>
+<script type="math/tex; mode=display">\cE^{(N)}_\mu + UN - \mu -2dt(N+1).</script>
 
-<p>We see that for $t&gt;\frac{UN-\mu}{d(N+1)}$ the state with an extra particle actually has a <em>lower</em> energy: the Mott states is not the ground state. Similarly, the energy of the ground state with one ‘hole’ in the $N+1$ Mott state is</p>
+<p>We see that for $t&gt;\frac{UN-\mu}{2d(N+1)}$ the state with an extra particle actually has a <em>lower</em> energy: the Mott states is not the ground state. Similarly, the energy of the ground state with one ‘hole’ in the $N+1$ Mott state is</p>
 
-<script type="math/tex; mode=display">\cE^{(N+1)}_\mu - UN + \mu -dt(N+1).</script>
+<script type="math/tex; mode=display">\cE^{(N+1)}_\mu - UN + \mu -2dt(N+1).</script>
 
-<p>Introducing a hole is thus favoured for $t&gt;\frac{\mu-UN}{d(N+1)}$.</p>
+<p>Introducing a hole is thus favoured for $t&gt;\frac{\mu-UN}{2d(N+1)}$.</p>
 
 <p><a name="MottPerturb"></a>
 <img src="/docs/assets/MottPerturb.png" alt="" />
