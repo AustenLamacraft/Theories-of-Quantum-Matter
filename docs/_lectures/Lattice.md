@@ -265,6 +265,10 @@ _Ground state phase diagram of the Bose--Hubbard model._
 
 Note the diminishing size of the Mott lobes, a consequence of the steepening boundaries as we go to higher filling, in turn a consequence of the enhanced hopping in the effective tight binding models \eqref{latt_tbp} and \eqref{latt_tbh}.
 
+<a name="mott_cake"></a>
+![]({{ site.baseurl }}/assets/mott_state_cake.jpg)
+_With a trap potential as well as a lattice, moving radially outwards corresponds to moving down a vertical slice through the phase diagram. Successive Mott states are separated by superfluid regions. Source: Cheng Chin, University of Chicago._
+
 ## Fermi Hubbard Model
 
 Now we turn to the case of fermions, the context in which the Hubbard model was originally introduced. Allowing for spin, the model is usually written.
