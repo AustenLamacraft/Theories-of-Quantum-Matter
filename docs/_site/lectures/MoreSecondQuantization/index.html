@@ -186,6 +186,12 @@ $$
         
       
     
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/BoseGas/">Bose Gas</a>
+        
+      
+    
 
     <!-- The code below is used for manually entered links  -->
 
@@ -259,7 +265,7 @@ Bose or Fermi statistics gives rise to correlations in the positions of particle
 
 <p>We evaluated $\rho_2(x,y)$ for the 1D Fermi gas:</p>
 
-<script type="math/tex; mode=display">\rho_2(x,y) = \bar \rho^2\left[1 - \left(\frac{\sin[k_\text{F}(x-y)]}{k_\text{F}(x-y)}\right)^2\right].
+<script type="math/tex; mode=display">\rho_2(x,y) = n^2\left[1 - \left(\frac{\sin[k_\text{F}(x-y)]}{k_\text{F}(x-y)}\right)^2\right].
 \label{more_rho2evalFermi}</script>
 
 <p>Let’s see how to reproduce this result using second quantization. First note that the definition \eqref{more_pdf} can be written</p>
@@ -535,26 +541,26 @@ $$
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
 N &= \sum_{|\bk|<k_\text{F}}\longrightarrow L^3 \int_{|\bk|<k_\text{F}} \frac{d\bk}{(2\pi)^3} = \frac{k_\text{F}^3}{6\pi^2} \\
-E_\text{kin} &= \sum_{|\bk|<k_\text{F}} \frac{\bk^2}{2m} \longrightarrow L^3 \int_{|\bk|<k_\text{F}} \frac{d\bk}{(2\pi)^3} \frac{\bk^2}{2m} = \frac{k_\text{F}^5}{20\pi^2 m} = L^3 \frac{3}{10m}(6\pi^2)^{2/3} \bar\rho^{5/3},
+E_\text{kin} &= \sum_{|\bk|<k_\text{F}} \frac{\bk^2}{2m} \longrightarrow L^3 \int_{|\bk|<k_\text{F}} \frac{d\bk}{(2\pi)^3} \frac{\bk^2}{2m} = \frac{k_\text{F}^5}{20\pi^2 m} = L^3 \frac{3}{10m}(6\pi^2)^{2/3} n^{5/3},
 \end{align} %]]></script>
 
-<p>(The assumption of a quadratic dispersion is not important here. More generally, we fill a band structure.) where $\bar\rho = \frac{N}{L^3}$ is the mean density. Assuming a system of fermions with spin is now polarized in the $z$-direction, we have differing densities $\bar\rho_{\uparrow,\downarrow}$ of spin up and spin down fermions. Their total energy is</p>
+<p>(The assumption of a quadratic dispersion is not important here. More generally, we fill a band structure.) where $n = \frac{N}{L^3}$ is the mean density. Assuming a system of fermions with spin is now polarized in the $z$-direction, we have differing densities $n_{\uparrow,\downarrow}$ of spin up and spin down fermions. Their total energy is</p>
 
-<script type="math/tex; mode=display">E_\text{kin}(\bar\rho_\uparrow,\bar\rho_\downarrow) = \frac{cL^3}{m}\left(\bar\rho_\uparrow^{5/3}+\bar\rho_\downarrow^{5/3}\right),</script>
+<script type="math/tex; mode=display">E_\text{kin}(n_\uparrow,n_\downarrow) = \frac{cL^3}{m}\left(n_\uparrow^{5/3}+n_\downarrow^{5/3}\right),</script>
 
-<p>where $c=\frac{3}{10}(6\pi^2)^{2/3}$. In terms of the overall density $\bar\rho=\bar\rho_\uparrow+\bar\rho_\downarrow$ and density of spin $\bar s = \left(\bar\rho_\uparrow-\bar\rho_\downarrow\right)/2$, we have</p>
+<p>where $c=\frac{3}{10}(6\pi^2)^{2/3}$. In terms of the overall density $n=n_\uparrow+n_\downarrow$ and density of spin $\bar s = \left(n_\uparrow-n_\downarrow\right)/2$, we have</p>
 
-<script type="math/tex; mode=display">E_\text{kin}(\bar\rho, \bar s) = \frac{cL^3}{m}\left(\left[\bar \rho/2+\bar s\right]^{5/3}+\left[\bar \rho/2-\bar s\right]^{5/3}\right).</script>
+<script type="math/tex; mode=display">E_\text{kin}(n, \bar s) = \frac{cL^3}{m}\left(\left[n/2+\bar s\right]^{5/3}+\left[n/2-\bar s\right]^{5/3}\right).</script>
 
 <p>Alternatively, write this in terms of the <strong>polarization</strong> $P \equiv \frac{n_\uparrow-n_\downarrow}{n}$ that varies in the range $[-1,1]$ as</p>
 
 <script type="math/tex; mode=display">E_\text{kin}(P) = \frac{E_\text{K}}{2}\left[(1+P)^{5/3}+(1-P)^{5/3}\right].</script>
 
-<p>We see that, on account of the convexity of $x^{5/3}$, $E^{(0)}_\text{kin}(\bar \rho, \bar s)$ is minimized for $s=0$.</p>
+<p>We see that, on account of the convexity of $x^{5/3}$, $E^{(0)}_\text{kin}(n, \bar s)$ is minimized for $s=0$.</p>
 
 <p>Let’s compare this with the effect of interactions. In the short-ranged model introduced above, the total Hartree–Fock energy is</p>
 
-<script type="math/tex; mode=display">E_\text{HF}(\bar \rho,\bar s) = \frac{V_0L^3}{2} \bar \rho^2 - \frac{V_0L^3}{2} \left(\bar\rho_\uparrow^2+\bar\rho_\downarrow^2\right) =  \frac{V_0L^3}{2} \left(\frac{1}{2}\bar \rho^2 - 2\bar s^2\right).</script>
+<script type="math/tex; mode=display">E_\text{HF}(n,\bar s) = \frac{V_0L^3}{2} n^2 - \frac{V_0L^3}{2} \left(n_\uparrow^2+n_\downarrow^2\right) =  \frac{V_0L^3}{2} \left(\frac{1}{2}n^2 - 2\bar s^2\right).</script>
 
 <p>We write this in terms of the polarization as</p>
 

@@ -516,7 +516,7 @@ $$
 \end{align}
 $$
 
-Note that $g(\br,\br)=\frac{k_{F}^{3}}{6\pi^{2}}=\bar\rho$, as it should. Also, $g(\br,\br')\to 0$ as $\abs{\br-\br'}\to\infty$.
+Note that $g(\br,\br)=\frac{k_{F}^{3}}{6\pi^{2}}=n$, as it should. Also, $g(\br,\br')\to 0$ as $\abs{\br-\br'}\to\infty$.
 
 <a name="FermiDensity"></a>
 ![]({{ site.baseurl }}/assets/FermiDensityMatrixCut.png)

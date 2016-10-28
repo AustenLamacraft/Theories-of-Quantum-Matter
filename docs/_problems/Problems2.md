@@ -206,3 +206,42 @@ and show that:
 	$$
 
 	This situation --- macroscopic occupations of more than one single particle state --- is sometimes called a _fragmented_ condensate.
+
+## Perturbation Theory for the Bose gas
+
+1. Find an expression for the ground state energy of the Bose gas at second order in the interaction, and confirm the ultraviolet divergence found in the lectures. This can be 'cured' by recognizing that a real potential as a finite range, which cuts off the integral.
+
+2. _[Harder]_. The expression for the _third order_ perturbative correction is
+
+	$$
+		E^{(3)}_{0} = \sum_{m,n\neq 0} \frac{\braket{0}{H_{\text{int}}}{m}\braket{m}{H_{\text{int}}}{n}\braket{n}{H_{\text{int}}}{0}}{\left(E^{(0)}_{m}-E^{(0)}_{0}\right)\left(E^{(0)}_{n}-E^{(0)}_{0}\right)}-\braket{0}{H_{\text{int}}}{0}\sum_{n\neq 0}\frac{|\braket{n}{H_{\text{int}}}{0}|^{2}}{\left(E^{(0)}_{0}-E^{(0)}_{n}\right)^{2}}.
+		$$
+
+	Show that this expression contains an _infrared_ divergence (i.e. at low momenta). This can't be fixed by appealing to the interaction potential, and is the reason we need Bogoliubov theory! See {% cite Brueckner:1957aa  %}.
+
+## Bogoliubov as Unitary Transformation
+
+Find an antihermitian generator $A$ that generates a Bogoliubov transformation, i.e.
+
+$$
+\exp(A) \aop_{\bk} \exp(-A)= \cosh\kappa_\bk \aop_\bk -\sinh\kappa_\bk \adop_{-\bk}.
+$$
+
+_Hint:_ expand in $\kappa_\bk$. Compare the action of this transformation on the vacuum state with the form of the Bogoliubov transformation given in the lecture.
+
+## Condensate Depletion in One and Two Dimensions
+
+1. Show that the condensate depletion in one dimension is logarithmically divergent in the length of the system, indicating a breakdown of Bogoliubov theory in the infinite length limit.
+
+2. By assuming that the Bogoliubov modes have thermal occupations at finite temperature
+
+	$$
+	\langle\langle \bdop_\bp\bop_\bp\rangle\rangle = \frac{1}{\exp\left(\beta\omega(\bp)\right)-1}\equiv n_\text{B}(\omega(\bp)),
+	$$
+
+	Show that the depletion is logarithmically divergent in the system size in _two_ dimensions at finite temperature.
+
+References
+----------
+
+{% bibliography --cited %}

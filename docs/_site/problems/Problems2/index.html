@@ -186,6 +186,12 @@ $$
         
       
     
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/BoseGas/">Bose Gas</a>
+        
+      
+    
 
     <!-- The code below is used for manually entered links  -->
 
@@ -225,6 +231,10 @@ $$
   <li><a href="#bose--hubbard-with-spin" id="markdown-toc-bose--hubbard-with-spin">Bose–Hubbard With Spin</a></li>
   <li><a href="#bose-gas-with-attractive-interactions" id="markdown-toc-bose-gas-with-attractive-interactions">Bose Gas with Attractive Interactions</a></li>
   <li><a href="#persistent-currents-without-rotational-symmetry" id="markdown-toc-persistent-currents-without-rotational-symmetry">Persistent Currents Without Rotational Symmetry</a></li>
+  <li><a href="#perturbation-theory-for-the-bose-gas" id="markdown-toc-perturbation-theory-for-the-bose-gas">Perturbation Theory for the Bose gas</a></li>
+  <li><a href="#bogoliubov-as-unitary-transformation" id="markdown-toc-bogoliubov-as-unitary-transformation">Bogoliubov as Unitary Transformation</a></li>
+  <li><a href="#condensate-depletion-in-one-and-two-dimensions" id="markdown-toc-condensate-depletion-in-one-and-two-dimensions">Condensate Depletion in One and Two Dimensions</a></li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ol>
 
 <hr />
@@ -392,6 +402,49 @@ H_{\text{rot}}=\omega_c\left[\adop_1\aop_1-\adop_0\aop_0\right]+V_0\left[\adop_0
     <p>This situation — macroscopic occupations of more than one single particle state — is sometimes called a <em>fragmented</em> condensate.</p>
   </li>
 </ol>
+
+<h2 id="perturbation-theory-for-the-bose-gas">Perturbation Theory for the Bose gas</h2>
+
+<ol>
+  <li>
+    <p>Find an expression for the ground state energy of the Bose gas at second order in the interaction, and confirm the ultraviolet divergence found in the lectures. This can be ‘cured’ by recognizing that a real potential as a finite range, which cuts off the integral.</p>
+  </li>
+  <li>
+    <p><em>[Harder]</em>. The expression for the <em>third order</em> perturbative correction is</p>
+
+    <script type="math/tex; mode=display">E^{(3)}_{0} = \sum_{m,n\neq 0} \frac{\braket{0}{H_{\text{int}}}{m}\braket{m}{H_{\text{int}}}{n}\braket{n}{H_{\text{int}}}{0}}{\left(E^{(0)}_{m}-E^{(0)}_{0}\right)\left(E^{(0)}_{n}-E^{(0)}_{0}\right)}-\braket{0}{H_{\text{int}}}{0}\sum_{n\neq 0}\frac{|\braket{n}{H_{\text{int}}}{0}|^{2}}{\left(E^{(0)}_{0}-E^{(0)}_{n}\right)^{2}}.</script>
+
+    <p>Show that this expression contains an <em>infrared</em> divergence (i.e. at low momenta). This can’t be fixed by appealing to the interaction potential, and is the reason we need Bogoliubov theory! See <a href="#Brueckner:1957aa">(Brueckner &amp; Sawada, 1957)</a>.</p>
+  </li>
+</ol>
+
+<h2 id="bogoliubov-as-unitary-transformation">Bogoliubov as Unitary Transformation</h2>
+
+<p>Find an antihermitian generator $A$ that generates a Bogoliubov transformation, i.e.</p>
+
+<script type="math/tex; mode=display">\exp(A) \aop_{\bk} \exp(-A)= \cosh\kappa_\bk \aop_\bk -\sinh\kappa_\bk \adop_{-\bk}.</script>
+
+<p><em>Hint:</em> expand in $\kappa_\bk$. Compare the action of this transformation on the vacuum state with the form of the Bogoliubov transformation given in the lecture.</p>
+
+<h2 id="condensate-depletion-in-one-and-two-dimensions">Condensate Depletion in One and Two Dimensions</h2>
+
+<ol>
+  <li>
+    <p>Show that the condensate depletion in one dimension is logarithmically divergent in the length of the system, indicating a breakdown of Bogoliubov theory in the infinite length limit.</p>
+  </li>
+  <li>
+    <p>By assuming that the Bogoliubov modes have thermal occupations at finite temperature</p>
+
+    <script type="math/tex; mode=display">\langle\langle \bdop_\bp\bop_\bp\rangle\rangle = \frac{1}{\exp\left(\beta\omega(\bp)\right)-1}\equiv n_\text{B}(\omega(\bp)),</script>
+
+    <p>Show that the depletion is logarithmically divergent in the system size in <em>two</em> dimensions at finite temperature.</p>
+  </li>
+</ol>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="Folling:2005aa">Fölling, S., Gerbier, F., Widera, A., Mandel, O., Gericke, T., &amp; Bloch, I. (2005). Spatial quantum noise interferometry in expanding ultracold atom clouds. <i>Nature</i>, <i>434</i>(7032), 481–484.</span></li>
+<li><span id="Brueckner:1957aa">Brueckner, K. A., &amp; Sawada, K. (1957). Bose-Einstein gas with repulsive interactions: General theory. <i>Physical Review</i>, <i>106</i>(6), 1117.</span></li></ol>
 
 </div>
 

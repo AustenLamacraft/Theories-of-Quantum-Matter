@@ -342,10 +342,10 @@ $$
 Let's find $g(x,y)$ for the ground state of the Fermi gas
 
 $$
-g(x,y) = \frac{1}{L}\sum_{|k|<k_\text{F}} e^{ik(x-y)} = \int_{-k_\text{F}}^{k_\text{F}} \frac{dk}{2\pi} e^{ik(x-y)} = \bar\rho \frac{\sin [k_\text{F}(x-y)]}{k_\text{F}(x-y)}
+g(x,y) = \frac{1}{L}\sum_{|k|<k_\text{F}} e^{ik(x-y)} = \int_{-k_\text{F}}^{k_\text{F}} \frac{dk}{2\pi} e^{ik(x-y)} = n \frac{\sin [k_\text{F}(x-y)]}{k_\text{F}(x-y)}
 $$
 
-where $\bar\rho \equiv \frac{k_\text{F}}{\pi}$ is the average density. Evaluating the average number of particles in a momentum state $\ket{k}$ using \eqref{many_Nbar} then gives
+where $n \equiv \frac{k_\text{F}}{\pi}$ is the average density. Evaluating the average number of particles in a momentum state $\ket{k}$ using \eqref{many_Nbar} then gives
 
 $$
 \bar N_k = \begin{cases}
@@ -368,7 +368,7 @@ The prefactor is to account for all pairs of particles.
 Starting from the Slater determinant \eqref{quantum_statistics_1ddet}, you should be able to derive
 
 $$
-\rho_2(x_1,x_2) = \bar \rho^2\left[1 - \left(\frac{\sin[k_\text{F}(x_1-x_2)]}{k_\text{F}(x_1-x_2)}\right)^2\right].
+\rho_2(x_1,x_2) = n^2\left[1 - \left(\frac{\sin[k_\text{F}(x_1-x_2)]}{k_\text{F}(x_1-x_2)}\right)^2\right].
 $$
 
 This vanishes at $x_1=x_2$, consistent with the Pauli principle.
