@@ -57,3 +57,5 @@ Leggett variational argument
 ## Bosonization of bosons
 
 ## Bose--Hubbard dimer and relation to spin model
+
+## Bose--Hubbard checkerboard

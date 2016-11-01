@@ -343,33 +343,6 @@ $$
 
 (Use the substitution $u=\sin\phi/2$ to do the integral.) Again, the point is not the value that we've obtained, but the argument we used to do so. In systems with strong interactions it's possible for the effective mass to be very different from the bare mass: in the [heavy fermion materials](https://en.wikipedia.org/wiki/Heavy_fermion_material) $m_*/m$ can approach 1000! Despite being so far from the noninteracting limit, Landau's picture of fermionic quasiparticles still applies.
 
-### Eigenstates in Perturbation Theory: What is a Quasiparticle?
-
-So far we've focused on the energies of the excited states of the gas. But what do these quasiparticle states _look_ like? In perturbation theory at least, we can see fairly explicitly.
-
-
-Quasiparticle residue
-1D case as special (no residue)
-
-$N_k$ and its jump.
-
-### Collisions
-
-I think one could say that the previous arguments based on quasiparticle states ignore the possibility of resonances between degenerate levels.
-
-Usual argument for vanishing collisions based on kinematics
-
-## Landau Fermi Liquid Theory
-
-Argument from Galilean invariance for effective mass.
-
-All thermodynamic quantities -- give example of compressibility
-
-### Collective modes?
-
-### Spectral function?
-
-Interpret in terms of probability to stay in state.
 
 References
 ----------

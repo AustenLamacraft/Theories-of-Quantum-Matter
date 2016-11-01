@@ -257,17 +257,17 @@ Introducing a hole is thus favoured for $t>\frac{\mu-UN}{2d(N+1)}$.
 ![]({{ site.baseurl }}/assets/MottPerturb.png)
 _Comparing the energies of the Mott states with single particle or hole states. At $t=0$ the red line is the absolute ground state. For nonzero $t$ the dashed blue line corresponds to non-integer filling._
 
-This analysis applies only at small $t/U$. What happens in the regions where the Mott states are not the ground states, and there are excess bosonic particles or holes that are free to move? If we let $t/U\to\infty$ we have a __Bose condensate__: all the particles can sit in the $\eta=0$ Bloch state. When interactions are finite but small, we will see in the next lecture that the result is a __superfluid__. The boundaries that we have have found can be connected (drawing freehand -- see [Problem Set 2]({{ site.baseurl }}/problems/Problems2/) for a variational approach) to give the following phase diagram for the ground state of the Bose--Hubbard model
+This analysis applies only at small $t/U$. What happens in the regions where the Mott states are not the ground states, and there are excess bosonic particles or holes that are free to move? If we let $t/U\to\infty$ we have a __Bose condensate__: all the particles can sit in the $\eta=0$ Bloch state. When interactions are finite but small, we will see in the next lecture that the result is a __superfluid__. The boundaries that we have have found can be connected (drawing freehand -- see [Problem Set 2]({{ site.baseurl }}/problems/Problems2/) for a variational approach) to give the following phase diagram for the ground state of the Bose--Hubbard model.
 
 <a name="BHPhase"></a>
 ![]({{ site.baseurl }}/assets/BHPhase.png)
 _Ground state phase diagram of the Bose--Hubbard model._
 
-Note the diminishing size of the Mott lobes, a consequence of the steepening boundaries as we go to higher filling, in turn a consequence of the enhanced hopping in the effective tight binding models \eqref{latt_tbp} and \eqref{latt_tbh}.
+Note the diminishing size of the Mott lobes, a consequence of the enhanced hopping in the effective tight binding models \eqref{latt_tbp} and \eqref{latt_tbh} as we go to higher filling.
 
 <a name="mott_cake"></a>
 ![]({{ site.baseurl }}/assets/mott_state_cake.jpg)
-_With a trap potential as well as a lattice, moving radially outwards corresponds to moving down a vertical slice through the phase diagram. Successive Mott states are separated by superfluid regions. Source: Cheng Chin, University of Chicago._
+_With a trap potential as well as a lattice, moving radially outwards corresponds to moving down a vertical slice through the phase diagram, producing this distinctive 'wedding cake' structure. Successive Mott states are separated by superfluid regions. Source: Cheng Chin, University of Chicago._
 
 ## Fermi Hubbard Model
 
