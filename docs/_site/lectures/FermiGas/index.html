@@ -238,6 +238,8 @@ A Fermi gas with weak interactions provides an example of one of the 'standard m
       <li><a href="#perturbation-theory-to-second-order" id="markdown-toc-perturbation-theory-to-second-order">Perturbation Theory to Second Order</a></li>
       <li><a href="#landau-f-function" id="markdown-toc-landau-f-function">Landau $f$ function</a></li>
       <li><a href="#quasiparticle-energy-varepsilonsbk" id="markdown-toc-quasiparticle-energy-varepsilonsbk">Quasiparticle energy $\varepsilon_s(\bk)$</a></li>
+      <li><a href="#eigenstates-in-perturbation-theory-what-is-a-quasiparticle" id="markdown-toc-eigenstates-in-perturbation-theory-what-is-a-quasiparticle">Eigenstates in Perturbation Theory: What is a Quasiparticle?</a></li>
+      <li><a href="#collisions" id="markdown-toc-collisions">Collisions</a></li>
     </ul>
   </li>
   <li><a href="#references" id="markdown-toc-references">References</a></li>
@@ -273,6 +275,7 @@ A Fermi gas with weak interactions provides an example of one of the 'standard m
 \begin{align}
 E^{(1)}(\mathbf{N}) &= \braket{\mathbf{N}}{H_\text{int}}{\mathbf{N}}\\
 E^{(2)}(\mathbf{N}) &= \sum_{\mathbf{N}'\neq \mathbf N}\frac{\abs{\braket{\mathbf{N'}}{H_\text{int}}{\mathbf{N}}}^2}{E^{(0)}(\mathbf{N})-E^{(0)}(\mathbf{N}')}.
+\label{fermi_2nd}
 \end{align} %]]></script>
 
 <p>The first order correction is easily found to be</p>
@@ -312,6 +315,8 @@ N'_{\downarrow}(\bk_3) = N_{\downarrow}(\bk_3) - 1, \quad N'_{\uparrow}(\bk_4) =
 
 <script type="math/tex; mode=display">\Delta E = \sum_{\bk,s} \varepsilon_s(\bk)n_{s}(\bk) + \frac{1}{2V}\sum_{\bk, s,\bk', s'} f_{s^{}s'}(\bk,\bk')n_{s}(\bk)n_{s'}(\bk').
 \label{fermi_fdef}</script>
+
+<p>This expansion is the key idea in the theory of the Fermi liquid. Although we will calculate the quasiparticle energy $\varepsilon_s(\bk)$ and interaction function $f_{s^{}s’}(\bk,\bk’)$ using perturbation theory, Landau’s idea was that <em>any</em> interacting Fermi system could be described in similar terms, as long as the ground state does not change abruptly as we increase the interaction from zero (normally a thought experiment!). An example of an abrupt change would be a transition from liquid to solid (crystallization).</p>
 
 <p>To first order in the interaction we have the not-so-interesting result</p>
 
@@ -502,9 +507,74 @@ N_s(\bk-\delta\bk) &=\theta(k_F-\abs{\bk-\delta\bk}) + n_{s}(\bk-\delta\bk)+\cdo
 
 <p>(Use the substitution $u=\sin\phi/2$ to do the integral.) Again, the point is not the value that we’ve obtained, but the argument we used to do so. In systems with strong interactions it’s possible for the effective mass to be very different from the bare mass: in the <a href="https://en.wikipedia.org/wiki/Heavy_fermion_material">heavy fermion materials</a> $m_*/m$ can approach 1000! Despite being so far from the noninteracting limit, Landau’s picture of fermionic quasiparticles still applies.</p>
 
+<h3 id="eigenstates-in-perturbation-theory-what-is-a-quasiparticle">Eigenstates in Perturbation Theory: What is a Quasiparticle?</h3>
+
+<p>So far we’ve focused on the energies of the excited states of the gas. But what do these quasiparticle states <em>look</em> like? In perturbation theory at least, we can see fairly explicitly. At first order we have</p>
+
+<script type="math/tex; mode=display">\ket{\mathbf{N}^{(1)}} = \sum_{\mathbf{N}'\neq \mathbf N}\frac{\braket{\mathbf{N'}}{H_\text{int}}{\mathbf{N}}}{E^{(0)}(\mathbf{N})-E^{(0)}(\mathbf{N}')}\ket{\mathbf{N}'}.</script>
+
+<p>Let’s consider the ground state first. What states can appear in the above sum in this case? The only possibility is that the interaction creates two particle-hole pairs out of the Fermi sea, with total momentum zero.</p>
+
+<p><a name="2ph"></a>
+<img src="/docs/assets/2ph.png" alt="" />
+<em>Two particle-hole pairs created out of the Fermi sea.</em></p>
+
+<p>What about an excited state? If we consider the state</p>
+
+<script type="math/tex; mode=display">\adop_{\bk,s}\ket{\text{Fermi sea}},</script>
+
+<p>two kinds of states can contribute. Either we create a pair of particle-hole pairs, as before, or we create a single particle-hole pair and scatter the particle at $\bk$ somewhere else</p>
+
+<p><a name="phscatter"></a>
+<img src="/docs/assets/phscatter.png" alt="" />
+<em>Particle scatters, creating a particle-hole pair.</em></p>
+
+<p>Consider the state $\adop_{\bk,s}\ket{0}$, creating a particle in the <em>exact</em> ground state of the problem. Since $\ket{0}$ includes the first kind of state (2 particle-hole pair states), $\adop_{\bk,s}\ket{0}$ is only missing the second kind. Therefore to first order, the single quasiparticle state is</p>
+
+<script type="math/tex; mode=display">\ket{\bk,s} = \sqrt{\frac{z_k}{\braket{0}{\aop_{\bk,s}\adop_{\bk,s}}{0}}}\adop_{\bk,s}\ket{0} + \frac{U_0}{V}\sum_{\substack{\bk_1+\bk_2=\bk_3+\bk\\ s,s'}}\frac{\adop_{\bk_1,s}\adop_{\bk_2,s'}\aop_{\bk_3,s'}\ket{\text{Fermi sea}}}{\epsilon(\bk_1)+\epsilon(\bk_2)-\epsilon(\bk_3)-\epsilon(\bk)},
+\label{fermi_phpeturb}</script>
+
+<p>where $\sqrt{z_k}$ is a normalization factor. As we go to successively higher orders of perturbation theory, the quasiparticle state is ‘dressed’ with more particle-hole pairs. The quasiparticle retains the conserved quantum numbers (momentum and spin in this case) of the fermions of the noninteracting theory.</p>
+
+<p>Normalizing \eqref{fermi_phpeturb} gives</p>
+
+<script type="math/tex; mode=display">z_\bk = 1 - \left(\frac{U_0}{V}\right)^2\sum_{\substack{\bk_1+\bk_2=\bk_3+\bk\\ s,s'}}\frac{1}{\left[\epsilon(\bk_1)+\epsilon(\bk_2)-\epsilon(\bk_3)-\epsilon(\bk)\right]^2}+\cdots.
+\label{fermi_z}</script>
+
+<p>This quantity can be interpreted in terms of the overlap of the single quasiparticle state $\ket{\bk,s}$ with $\adop_{s,\bk}\ket{0}$.</p>
+
+<script type="math/tex; mode=display">z_\bk = \frac{\abs{\braket{\bk,s}{\adop_{\bk,s}}{0}}^2}{\braket{0}{\aop_{\bk,s}\adop_{\bk,s}}{0}}</script>
+
+<p>A finite overlap – evaluated for quasiparticles at the Fermi surface – is a requirement for the Fermi liquid picture to hold. If it were to vanish, any resemblance of the quasiparticle to a free fermion would disappear with it!</p>
+
+<p>Obviously evaluating the integrals in \eqref{fermi_z} is a challenge involving a double integral over momentum, but I have it on good authority (see <a href="#Abrikosov:1975aa">(Abrikosov, Dzyaloshinskii, &amp; Gorkov, 1975)</a>, though they don’t give the details) that the answer is</p>
+
+<script type="math/tex; mode=display">z_{\abs{\bk}=k_\text{F}} = 1 - \frac{(mUk_\text{F})^2}{8\pi^4}\left[\log 2 + \frac{1}{3}\right]</script>
+
+<p class="message">
+This is also the occupation number of the original fermions $\braket{0}{\adop_{\bk,s}\aop_{\bk,s}}{0}$ (not the quasiparticles!) just below the Fermi surface in the ground state. There is a corresponding result just above. Even with interactions, there is a finite step in the distribution function at the Fermi surface.
+</p>
+
+<p><a name="FermiJump"></a>
+<img src="/docs/assets/FermiJump.png" alt="" />
+<em>Discontinutity in the ground state occupation number.</em></p>
+
+<h3 id="collisions">Collisions</h3>
+
+<p>The picture we have developed so far of eigenstates labelled by quasiparticle occupations is actually a bit of an oversimplification. When we apply the second order perturbation theory formula \eqref{fermi_2nd} we have to omit degenerate states. It isn’t really enough to insist that the occupancies differ $\mathbf{N}’\neq \mathbf N$, because many states with different occupancies have the same energy in the thermodynamic limit. From a time-dependent point of view, the interaction can cause transitions between these states, leading to the quasiparticle distribution changing over time. The rate of these transitions can be described by the Fermi golden rule.</p>
+
+<script type="math/tex; mode=display">\Gamma_{\mathbf{N}\to\mathbf{N'}} = 2\pi \abs{\braket{\mathbf{N'}}{H_\text{int}}{\mathbf{N}}}^2 \delta(E(\mathbf{N})-E(\mathbf{N}'))</script>
+
+<p>By considering the volume of phase space available for the scattering of a quasiparticle of energy $\Delta$ above the Fermi surface, you should be able to argue that this rate varies like $\Delta^2$. This means that at low energy (or temperature) such scattering is ineffective and the Landau picture holds.</p>
+
+<p><a name="Collision"></a>
+<img src="/docs/assets/Collision.png" alt="" />
+<em>Discontinutity in the ground state occupation number.</em></p>
+
 <h2 id="references">References</h2>
 
-<ol class="bibliography"><li><span id="Landau:1980aa">Landau, L. D., Lifshitz, E. M., &amp; Pitaevskii, L. P. (1980). Statistical Physics. Part 2, Theory of the Condensed State (Course of Theoretical Physics). Butterworth-Heineman, Oxford,</span></li></ol>
+<ol class="bibliography"><li><span id="Landau:1980aa">Landau, L. D., Lifshitz, E. M., &amp; Pitaevskii, L. P. (1980). Statistical Physics. Part 2, Theory of the Condensed State (Course of Theoretical Physics). Butterworth-Heineman, Oxford,</span></li>
+<li><span id="Abrikosov:1975aa">Abrikosov, A. A., Dzyaloshinskii, I., &amp; Gorkov, L. P. (1975). Methods of quantum field theory in statistical physics.</span></li></ol>
 
 </div>
 
