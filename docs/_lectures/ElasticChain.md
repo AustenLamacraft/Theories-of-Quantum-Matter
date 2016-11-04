@@ -408,7 +408,7 @@ $$
 \langle H - E_0 \rangle =\sum_{|n|\leq (N-1)/2} \omega(\eta_n)n_\text{B}(\omega(\eta_n)).
 $$
 
-This is finite, even in the $N\to\infty$ limit, on account of the exponential tail of \eqref{coll_Bose}. Remember that this was the problem that the quantum theory was introduced to solve. At low energies $\mathcal{B}(\omega) = \frac{1}{\beta\omega}$ and the contribution of each mode is
+This is finite, even in the $N\to\infty$ limit, on account of the exponential tail of \eqref{coll_Bose}. Remember that this was the problem that the quantum theory was introduced to solve. At low energies $n_{\text{B}}(\omega) = \frac{1}{\beta\omega}$ and the contribution of each mode is
 
 $$
 \omega n_\text{B}(\omega) \xrightarrow{\omega\to 0}  k_\text{B}T,

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="/docs/lectures/Superconductivity/"/>
+
+  <!-- Basic meta elements -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+
+  <!--   Dublin Core metadata for Zotero -->
+  <meta name="DC.title" content="Superconductivity" />
+  <meta name="DC.creator" content="Austen Lamacraft" />
+  <meta name="DC.contributor" content="" />
+  <meta name="DC.date" content="" />
+  <meta name="DC.rights" content="" />
+  <meta name="DC.source" content="Theories of Quantum Matter" />
+
+    <!-- Open Graph metadata -->
+
+    
+    <meta property="og:title" content="Superconductivity"/>
+    <meta property="og:description" content="An Ed edition">
+    <meta property="fb:admins" content="elotroalex"/>
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/Superconductivity/"/>
+    <meta property="fb:app_id" content="589495744558280"/>
+    <meta property="og:image" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/public/open-graph-logo.png"/>
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+
+  <title>
+    
+      Superconductivity
+    
+  </title>
+
+  <!-- CSS links -->
+  <link rel="stylesheet" href="/docs/public/css/syntax.css"/>
+  <link rel="stylesheet" href="/docs/public/css/tqm.css"/>
+
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/docs/public/apple-touch-icon-precomposed.png"/>
+  <link rel="shortcut icon" href="/docs/public/favicon.ico"/>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/docs/atom.xml"/>
+
+  <!-- MathJax -->
+
+ <script type="text/javascript"
+   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>
+
+ <!---<script type="text/javascript"
+   src="/docs/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>--->
+
+ <script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+   TeX: { equationNumbers: { autoNumber: "all" },
+          Macros: {
+          cP: '\\mathcal{P}',
+          cN: '\\mathcal{N}',
+          cE: '\\mathcal{E}',
+          cO: '\\mathcal{O}',
+          cH: '\\mathcal{H}',
+          br: '\\mathbf{r}',
+          bx: '\\mathbf{x}',
+          bp: '\\mathbf{p}',
+          bq: '\\mathbf{q}',
+          bk: '\\mathbf{k}',
+          bv: '\\mathbf{v}',
+          bA: '\\mathbf{A}',
+          brN: '\\br_1, \\ldots, \\br_N',
+          bxN: 'x_1, \\ldots, x_N',
+          pop: '\\psi^{\\vphantom{\\dagger}}',
+          pdop: '\\psi^\\dagger',
+          Phop: '\\Phi^{\\vphantom{\\dagger}}',
+          Phdop: '\\Phi^\\dagger',
+          phop: '\\phi^{\\vphantom{\\dagger}}',
+          phdop: '\\phi^\\dagger',
+          aop: 'a^{\\vphantom{\\dagger}}',
+          adop: 'a^\\dagger',
+          bop: 'b^{\\vphantom{\\dagger}}',
+          bdop: 'b^\\dagger',
+          cop: 'c^{\\vphantom{\\dagger}}',
+          cdop: 'c^\\dagger',
+          Nop:  '\\mathsf{N}^{\\vphantom{\\dagger}}',
+          tr: '\\operatorname{tr}\\nolimits',
+          det: '\\operatorname{det}\\nolimits',
+          perm: '\\operatorname{perm}\\nolimits',
+          sgn: '\\operatorname{sgn}',
+          E: '\\operatorname{\\mathbb{E}}',
+          Var: '\\operatorname{\\mathbb{Var}}',
+          Cov: '\\operatorname{\\mathbb{Cov}}',
+          Re: '\\operatorname{Re}}',
+          ket: ['\\lvert{#1}\\rangle',1],
+          bra: ['\\langle{#1}\\rvert',1],
+          inner: ['\\langle{#1}\\rvert #2 \\rangle',2],
+          braket: ['\\langle{#1}\\rvert #2 \\lvert #3 \\rangle',3],
+          abs: ['\\lvert{#1}\\rvert',1]
+    }
+  },
+   extensions: ["tex2jax.js"],
+   jax: ["input/TeX","output/HTML-CSS"],
+   tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+ });
+ </script>
+
+$$
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\nonumber
+$$
+
+
+</head>
+
+
+  <body>
+
+    <!-- This if statement decides which sidebar to use -->
+    
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>A Part III Physics Course at the University of Cambridge</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/docs/">Home</a>
+
+    
+
+    
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/ManyBodyWavefunctions/">Many Body Wavefunctions</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/LiebLinigerModel/">The Lieb-Liniger Model</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/ElasticChain/">The Elastic Chain</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/SpinModels/">Spin Models</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/SecondQuantization/">A is for Annihilation</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/MoreSecondQuantization/">B is for Bunching</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/Lattice/">Lattice Models and Strong Correlations</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/BoseGas/">Bose Gas</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/FermiGas/">Fermi Gas</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item active" href="/docs/lectures/Superconductivity/">Superconductivity</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/ResponseAndCorrelation/">Response and Correlation</a>
+        
+      
+    
+
+    <!-- The code below is used for manually entered links  -->
+
+    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/Superconductivity/">Annotate me</a>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>Distributed with an MIT license.</p>
+  </div>
+</div>
+
+    
+
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/docs/" title="Home">Theories of Quantum Matter</a>
+            <br><small>Quantum Mechanics of Many Body Systems</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content" id="main">
+        <div class="page">
+  <h1 class="page-title">Superconductivity</h1>
+  <p class="message">
+Our grand tour of many body theories continues with <strong>Bardeen, Cooper and Schrieffer's</strong> (BCS) theory of superconductivity, based on the idea that electrons in a superconductor bind to form <strong> Cooper pairs</strong> that behave like bosons. The phenomena of superconductivity and superfluidity are then closely linked.
+</p>
+
+<h2 class="no_toc" id="contents">Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#bosons-as-fermion-pairs" id="markdown-toc-bosons-as-fermion-pairs">Bosons as Fermion Pairs</a></li>
+  <li><a href="#bcs-theory" id="markdown-toc-bcs-theory">BCS Theory</a>    <ul>
+      <li><a href="#the-bcs-wavefunction" id="markdown-toc-the-bcs-wavefunction">The BCS Wavefunction</a></li>
+      <li><a href="#discussion-heisenbergs-problem" id="markdown-toc-discussion-heisenbergs-problem">Discussion: Heisenberg’s Problem</a></li>
+      <li><a href="#the-bcs-bec-crossover" id="markdown-toc-the-bcs-bec-crossover">The BCS-BEC Crossover</a></li>
+      <li><a href="#excited-states" id="markdown-toc-excited-states">Excited states</a></li>
+      <li><a href="#the-effect-of-temperature" id="markdown-toc-the-effect-of-temperature">The Effect of Temperature</a></li>
+      <li><a href="#bcs-from-bogoliubov-transformation" id="markdown-toc-bcs-from-bogoliubov-transformation">BCS from Bogoliubov Transformation</a></li>
+    </ul>
+  </li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
+</ul>
+
+<hr />
+
+<h2 id="bosons-as-fermion-pairs">Bosons as Fermion Pairs</h2>
+
+<p>So far, we have discussed Bose condensation and superfluidity using models of bosonic particles. Can systems of fermions display the same phenomena? Experimentally, we already know that the answer must be yes, as an atom of He$^4$ consists of protons, neutrons, and electrons – two of each – which are are all fermions. A He$^4$ atom is a composite boson, but in many situations its internal structure is of no relevance.</p>
+
+<p>To return to model systems, consider the Fermi gas Hamiltonian that we discussed in the last lecture</p>
+
+<script type="math/tex; mode=display">H = \int d\br\left[ \sum_{s=\uparrow,\downarrow}\frac{1}{2m}\nabla\pdop_s\cdot\nabla\pop_s + U_0 \pdop_\uparrow\pdop_\downarrow\pop_\downarrow\pop_\uparrow\right].
+\label{super_model}</script>
+
+<p>For a pair of particles of opposite spin, this is equivalent to</p>
+
+<script type="math/tex; mode=display">H = -\frac{1}{2m}\left[\nabla_1^2+\nabla^2\right] + U_0\delta(\br_1-\br_2).</script>
+
+<p>For $U_0&lt;0$ and sufficiently large, we expect a bound state to form with a symmetric spatial wavefunction and a spin singlet. Now consider a dilute gas of such bound pairs. ‘Dilute’ in this context means that the interparticle separation is large compared to the size of the bound state. In this limit, we expect to be able to treat the bound pairs as spinless bosons, which can then display all the usual phenomena associated with Bose gases.</p>
+
+<p>The idea that superfluidity can arise in a system of fermions as a result of pairing was conjectured to explain the phenomenon of <strong>superconductivity</strong> in metals at low temperatures <a href="#Schafroth:1954aa">(Schafroth, 1954)</a>. If electrons could form pairs, then superconductivity could be understood as superfluidity of charge $-2e$ bosons. Job done.</p>
+
+<p>You may have spotted the problem with this idea: electrons actually <em>repel</em> each other due to the Coulomb interaction. A realistic description of electron pairing must involve a mechanism for attractive interactions. The 1957 realization of Bardeen, Cooper and Schrieffer (BCS) was that such an attraction is provided by the coupling of the electrons to phonons. For states near the Fermi surface, this attraction can actually overcome the Coulomb repulsion (once screening is accounted for, see <a href="/docs/lectures/Jellium/">Lecture 12</a>). <a href="/docs/problems/Problems3/">Problem Set 3</a> describes how this can occur in a simple model.</p>
+
+<p>This is still not the whole story. The net attraction between electrons is still not strong enough to form a bound state, if we were just to consider one pair. However, BCS showed that in a gas of fermions at finite density, <em>arbitrarily</em> weak attraction is enough to cause pairing: it is a truly many body phenomenon. This was first shown by Leon Cooper using a toy model that accounted for the existence of the Fermi sea in the pairing problem, and for this reason we speak of <strong>Cooper pairs</strong>.</p>
+
+<p>So BCS got the Nobel prize (which conveniently can be split three ways) and their theory become one of the pillars of condensed matter physics. In this lecture we’ll discuss BCS theory using the model Hamiltonian \eqref{super_model} with attractive short-ranged interactions. This is not a particularly realistic model of the combined phonon-mediated attraction and screened Coulomb repulsion, but displays the same physics. It <em>is</em> a good model for pairing of ultracold atoms, first observed in 2004 <a href="#Regal:2004aa">(Regal, Greiner, &amp; Jin, 2004)</a>.</p>
+
+<h2 id="bcs-theory">BCS Theory</h2>
+
+<h3 id="the-bcs-wavefunction">The BCS Wavefunction</h3>
+
+<p>In momentum space our Hamiltonian \eqref{super_model} has the form</p>
+
+<script type="math/tex; mode=display">H =\sum_{\bk,s} \epsilon(\bk)\adop_{\bk,s}\aop_{\bk,s} + \overbrace{\frac{U_0}{V}\sum_{\bk_1+\bk_2=\bk_3+\bk_4} \adop_{\bk_1,\uparrow}\adop_{\bk_2,\downarrow}\aop_{\bk_3,\downarrow}\aop_{\bk_4,\uparrow}}^{\equiv H_\text{int}},</script>
+
+<p>We take the interaction between the two species to be attractive $U_0&lt;0$. The ground state
+of the non-interacting problem is</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\ket{\text{FS}}=\prod_{|\bp|<p_F} \adop_{\bp\uparrow}\adop_{\bp\downarrow}\ket{\text{VAC}}. %]]></script>
+
+<p>The application of the interaction Hamiltonian $H_\text{int}$ generates terms of the form</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\adop_{\bp+\bq\uparrow}\adop_{-\bp\downarrow}\aop_{-\bp'\downarrow}\aop_{\bp'+\bq\uparrow}\ket{\text{FS}}.\qquad |\bp|,|\bp+\bq|>p_F,\, |\bp'|,|\bp'+\bq|<p_F. %]]></script>
+
+<p>Note the difference from the Bose case: because the state $\bp=0$ plays no special role – like every
+other state below the Fermi surface it is occupied with one fermion of each species – we do not just
+create pair excitations with zero centre of mass momentum $\bq=0$. Nevertheless, the BCS theory starts
+from the assumption that such finite momentum pairs do not contribute significantly to the ground state,
+and makes a pair ansatz of essentially the same form that was used in the Bogoliubov theory</p>
+
+<script type="math/tex; mode=display">\ket{\text{pair}}\equiv\sum_{\sum_\bp n^P_\bp=N/2} c_{\{n^P_{\bp}\}} \prod_{\bp}\Lambda_{\bp'}^
+{n_{\bp}}\ket{\text{VAC}},
+\label{pair_fermi}</script>
+
+<p>where $\Lambda_\bk=\adop_{\bp\uparrow}\adop_{-\bp\downarrow}$ creates a $\left(+\bp,-\bp\right)$
+pair and the numbers $n_{\bp}^P$ are either $0$ or $1$. Note that in writing \eqref{pair_fermi} the
+number of each species is assumed to be exactly $N/2$. As in the Bogoliubov case, such a form allows us to work with a pair Hamiltonian</p>
+
+<script type="math/tex; mode=display">H_{\mathrm{pair}}=\sum_{\bp,s}\epsilon_{\bp}\adop_{\bp,s}\aop_{\bp, s}+\frac{U_0}{V}\sum_{\bp, \bp'}\adop_
+{\bp\uparrow}\adop_{-\bp\downarrow}\aop_{-\bp'\downarrow}\aop_{\bp'\uparrow}.
+\label{super_bcsH}</script>
+
+<p>That is, just $H_\text{int}$, but with all but the $\bq=0$ part discarded. Now, can we solve \eqref{super_bcsH})? It is illuminating to introduce the operators $\bdop_\bp=\adop_{\bp\uparrow}\adop_{-\bp
+\downarrow}$ and its conjugate, that create and destroy a $\left(+\bp,-\bp\right)$ pair. Because our pair
+ansatz \eqref{pair_fermi}) only includes amplitudes for a given $\left(+\bp,-\bp\right)$ pair of momenta
+having either none or two fermions, the pair Hamiltonian can be written in terms of the pair operators $
+\bdop_\bp$, $\bop_\bp$ as</p>
+
+<script type="math/tex; mode=display">H_{\text{pair}}=2\sum_{\bp}\xi_{\bp}\bdop_\bp\bop_\bp+\frac{U_0}{V}\sum'_{\bp,\bp'} \bdop_\bp
+\bop_{\bp'}.
+\label{pair_h}</script>
+
+<p>This may now look like a quadratic problem, but the pair operators $\bop_\bp$, while commuting at different momenta</p>
+
+<script type="math/tex; mode=display">[\bop_\bp,\bop_{\bp'}]=[\bdop_\bp,\bdop_{\bp'}]=[\bdop_\bp,\bop_{\bp'}]=0\qquad \bp\neq\bp',</script>
+
+<p>obey the <em>hardcore constraint</em></p>
+
+<script type="math/tex; mode=display">(\bdop_\bp)^2=0,</script>
+
+<p>which is a result of $\bdop$ being composed of a pair of fermions obeying the exclusion principle.
+Nevertheless, given that a pair that `hops’ into a level at $\bp$ could come from any other level $\bp’$, it
+seems reasonable to try, as a variational state, one in which the amplitudes for the occupancy of each
+level are uncorrelated</p>
+
+<script type="math/tex; mode=display">\ket{N \text{ pair}}\equiv\left[\sum_\bp c_\bp \bdop_\bp\right]^{N/2}\ket{\text{VAC}}
+\label{bcs_cons}</script>
+
+<p>corresponding to \eqref{pair_fermi}) but with a set of coefficients $c_{{n^P_\bp}}$ that factorizes.
+Finding the variational energy of Equation (\ref{bcs_cons}) is still a tricky problem. For instance, what is the
+expectation value of the kinetic energy?</p>
+
+<script type="math/tex; mode=display">\mathrm{K.E}=2\sum_\bp\xi_{\bp}\langle\bdop_\bp\bop_\bp\rangle\equiv 2\sum_\bp\xi_{\bp} \langle n^P_
+\bp\rangle,
+\label{ke}</script>
+
+<p>Finding the average number of pairs $\langle n^P_\bp\rangle$ in \eqref{bcs_cons} is however not
+obvious. Instead, we follow the route taken by BCS, and consider instead the
+normalized wavefunction</p>
+
+<script type="math/tex; mode=display">\ket{\text{BCS}} =\prod_\bp \left[v_\bp\bdop_\bp+u_\bp\right]\ket{\text{VAC}}\qquad |u_\bp|^2+|v_\bp|
+^2=1.
+\label{bcs}</script>
+
+<p>This is a superposition of states with different total number of particles. One can see quite easily,
+however, that the projection onto a fixed number $N$ of particles corresponds exactly to \eqref{bcs_cons} if $c_\bp=v_\bp/u_\bp$. Since \eqref{bcs}) is a product of factors corresponding to each
+momentum separately,  $\langle n^P_\bp\rangle$ is easily found to be $v_\bp^2$. The total variational
+energy of this state is</p>
+
+<script type="math/tex; mode=display">\braket{\text{BCS}}{H}{\text{BCS}}=2\sum_\bp \xi_{\bp}v_\bp^2+\frac{U_0}{V}\sum_{\bp,\bp'}u^*_\bp v_
+\bp u_{\bp'}v^*_{\bp'}.
+\label{bcs_en}</script>
+
+<p>What about our use of a non-conserving wavefunction? The expectation value of any operator that itself
+conserves the number of particles can evidently be written</p>
+
+<script type="math/tex; mode=display">\braket{\text{BCS}}{\cO}{\text{BCS}}=\sum_N P_N \braket{N \text{ pair}}{\cO}{N\text{ pair}},</script>
+
+<p>The probabilities $P_N$ are</p>
+
+<script type="math/tex; mode=display">P_N=\sum_{\sum n^P_\bp=N/2}\prod_\bp \left[n^P_\bp v^2_\bp+\left(1-n^P_\bp\right)u^2_\bp \right],</script>
+
+<p>which is strongly peaked around $\langle N \rangle=2\sum_\bp v^2_\bp=2\sum_\bp \langle n^P_\bp
+\rangle$, with a variance that is $O(N)$. Thus at large $N$</p>
+
+<script type="math/tex; mode=display">\braket{\text{BCS}}{\cO}{\text{BCS}}\to \braket{\langle N\rangle \text{ pair}}{\cO}{\langle N\rangle\text{ pair}}.</script>
+
+<p>In the thermodynamic limit, we might as well work with the non-conserving form \eqref{bcs}. To fix the number of particles, we should introduce a chemical potential into the Hamiltonian. Note that we didn’t have to do this with the Bogoliubov theory as we fixed the number of particles in the condensate $N_0$.</p>
+
+<p>There is an interesting alternative interpretation of the pair Hamiltonian \eqref{pair_h}. Acting within
+the pair subspace, the three operators $\bop_\bp$, $\bdop_\bp$, and $\bdop_\bp\bop_\bp-1/2$ behave
+as the components of a spin-$1/2$</p>
+
+<script type="math/tex; mode=display">S_\bp^+ \equiv \bdop,\quad S_\bp^- \equiv \bop_\bp,\quad S^z_\bp = \bdop_\bp\bop_\bp-1/2,</script>
+
+<p>on account of the commutation relations</p>
+
+<script type="math/tex; mode=display">\left[\bdop_\bp,\bop_\bp\right]=2\left(\bdop_\bp\bop_\bp-1/2\right)\nonumber\\
+\left[\bdop_\bp,\left(\bdop_\bp\bop_\bp-1/2\right)\right]=-\bdop_\bp.</script>
+
+<p>This representation is sometimes called <strong>Anderson spins</strong>. In this way we can write \eqref{pair_h} as a spin chain</p>
+
+<script type="math/tex; mode=display">H_{\text{pair}}=2\sum_\bp \epsilon_{\bp}S_\bp^z+\frac{U_0}{V}\sum_{\bp,\bp'}S^+_\bp S^-_{\bp'}.</script>
+
+<p>If we parameterize $\left(u_\bp,v_\bp\right)$ as $(\cos(\theta/2)e^{i\varphi/2},\sin(\theta/2)e^{-i\varphi/2})$
+then the variational energy Equation (\ref{bcs_en}) has the form (except for a constant)</p>
+
+<script type="math/tex; mode=display">\braket{\text{BCS}}{H}{\text{BCS}}=-\sum_\bp \xi_{\bp}\cos\theta_\bp+\frac{U_0}{4V}\sum_{\bp,\bp'}\sin
+\theta_\bp\sin\theta_{\bp'}\cos\left(\varphi_\bp-\varphi_{\bp'}\right).
+\label{spin_en}</script>
+
+<p>where $\xi(\bp)=\epsilon(\bp)-\mu$. The interpretation of \eqref{spin_en} is the following. The first term tends to align the spins with the z-axis in the - direction for $\xi_{\bp}&lt;0$ and in the + direction for $\xi_{\bp}&gt;0$. On the other hand, the
+second term, originating from the potential energy between the constituents of a pair, wants the spins to
+lie in the x-y plane. Of course, the spins are really quantum mechanical spin-1/2 operators. The
+direction corresponds to the direction of $\langle \mathbf{S}\rangle$ in the BCS state.</p>
+
+<p>It remains to actually minimize the energy \eqref{bcs_en} to determine the $u$’s and $v$’s, or
+equivalently, the configurations of the spins. For $U_0&gt;0$ (repulsive interactions), the spins all point in
+the $\pm z$ direction, forming a ‘domain wall’ where $\xi_{\bp}$ changes sign at the Fermi surface. The relationship between the spin picture and the average number of pairs is</p>
+
+<script type="math/tex; mode=display">\langle n^P_{\bp}\rangle=v_\bp^2=\left[1-\cos\theta_\bp\right]/2,</script>
+
+<p>so we see that this corresponds simply to a sharp fermi step. For $U_0&lt;0$, the system can lower its
+energy by taking $\sin\theta_\bp\neq 0$. The lowering of the interaction energy more than compensates
+the increase in kinetic energy that comes from smearing the step, see Equation (\ref{ke}). Clearly all of the
+angles $\varphi_\bp$, describing the angle in the x-y plane, should be equal. Taking  the extremum of
+Equation (\ref{spin_en}) with respect to the angles $\theta_{\bp}$ gives the condition</p>
+
+<p><a name="FermiWall"></a>
+<img src="/docs/assets/wall.png" alt="" />
+<em>Anderson spin configurations and the associated distribution functions for the free fermi gas
+  (top) and the BCS state (bottom).</em></p>
+
+<script type="math/tex; mode=display">\xi_{\bp}\sin\theta_\bp-|\Delta|\cos\theta_\bp=0,</script>
+
+<p>where it is convenient to introduce the <strong>gap parameter</strong></p>
+
+<script type="math/tex; mode=display">\Delta=-\frac{U_0}{2V}\sum_\bp e^{i\varphi}\sin\theta_\bp=-\frac{U_0}{V}\sum_\bp u_\bp v^*_\bp.</script>
+
+<p>Thus we have</p>
+
+<script type="math/tex; mode=display">\cos\theta_\bp=\frac{\xi_{\bp}}{E_\bp},\qquad \sin\theta_\bp=\frac{|\Delta|}{E_\bp}, \qquad E_\bp=\sqrt{\xi
+(\bp)^2+|\Delta|^2}.</script>
+
+<p>The meaning of these solutions is very simple. They correspond to the alignment of the spin vector with the direction of the effective `magnetic field’</p>
+
+<script type="math/tex; mode=display">\left(\mathrm{Re}\,\Delta.\mathrm{Im}\,\Delta,\xi_\bp\right)</script>
+
+<p>To be self-consistent, the solution must further satisfy the <strong>gap equation</strong></p>
+
+<script type="math/tex; mode=display">\Delta=-\frac{U_0}{2V}\sum_\bp \frac{\Delta}{E_\bp}.
+\label{gap_eq}</script>
+
+<p>It is clear that for $U_0&gt;0$ there are no non-trivial solutions ($\Delta=0$ always), while for any $U_0&lt;0$ there is always a solution at finite $\Delta$ (One can also show that it corresponds to a minimum of energy. In the repulsive case, the
+solution at $\Delta=0$, which always exists, corresponds to a maximum). Passing to the continuum limit
+we have</p>
+
+<script type="math/tex; mode=display">\Delta=-\frac{U_0}{2}\int \frac{d\bp}{\left(2\pi\right)^3} \frac{\Delta}{E_\bp}
+\label{cont_sc}</script>
+
+<p>This integral is divergent in the ultraviolet. We turn to the question of how to regularize it in the next
+section. More significant, however, is the dependence of the right hand side on $\Delta$ for small $
+\Delta$. This is</p>
+
+<script type="math/tex; mode=display">\sim-\frac{U_0}{2}\nu(\mu)\Delta\log \Lambda/\Delta,</script>
+
+<p>where $\Lambda$ is the UV cut-off (we will shortly identify it with the Fermi energy), and $\nu(\mu)$ is the density of states at the chemical potential. This shows that no matter how small the attraction $U_0&lt;0$, there will always be a solution of \eqref{cont_sc} with finite $\Delta$. This is the essence of the <strong>Cooper phenomenon</strong>. It should be compared with the
+situation in which there are not a macroscopically large number of particles present. In that case $\mu=0
+$, so that $\xi_{\bp}=\epsilon(\bp)&gt;0$. Then the right hand side of \eqref{cont_sc} has no divergence at
+low energies because the density of states $\nu(E)$ vanishes. The finite value of $\Delta$ is thus seen to be a consequence of the fermi sea.</p>
+
+<p>Thus we have demonstrated the presence of a fermion condensate for an attractive interaction, no matter
+how weak. To be more honest, what we
+have really shown is that the BCS state always has a lower energy than the free fermion problem. Since
+this certainly <em>is</em> the ground state at $U_0=0$, and the BCS is smoothly connected to it, it seems
+clear that the BCS state can be trusted at least for small coupling. At larger coupling some other state of
+matter could win out, but given our argument that we should eventually arrive in a BEC state of
+pairs, this seems unlikely.</p>
+
+<h3 id="discussion-heisenbergs-problem">Discussion: Heisenberg’s Problem</h3>
+
+<h3 id="the-bcs-bec-crossover">The BCS-BEC Crossover</h3>
+
+<h3 id="excited-states">Excited states</h3>
+
+<h3 id="the-effect-of-temperature">The Effect of Temperature</h3>
+
+<h3 id="bcs-from-bogoliubov-transformation">BCS from Bogoliubov Transformation</h3>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="Schafroth:1954aa">Schafroth, M. R. (1954). Theory of superconductivity. <i>Physical Review</i>, <i>96</i>(5), 1442.</span></li>
+<li><span id="Regal:2004aa">Regal, C. A., Greiner, M., &amp; Jin, D. S. (2004). Observation of resonance condensation of fermionic atom pairs. <i>Physical Review Letters</i>, <i>92</i>(4), 040403.</span></li></ol>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+    <script>
+
+    // Highlight search Query
+    var url = window.location.href;
+      if (url.lastIndexOf("?q=") > 0) {
+        // get the index of the parameter, add three (to account for length)
+        var stringloc = url.lastIndexOf("?q=") + 3;
+        // get the substring (query) and decode
+        var searchquery = decodeURIComponent(url.substr(stringloc));
+        // regex matches at beginning of line, end of line or word boundary, useful for poetry
+        var regex = new RegExp("(?:^|\\b)(" + searchquery + ")(?:$|\\b)", "gim");
+        // get, add mark and then set content
+        var content = document.getElementById("main").innerHTML;
+        document.getElementById("main").innerHTML = content.replace(regex, "<mark>$1</mark>");
+      }
+
+    // Toggle sidebar
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+    <!-- Facebook SDK for JavaScript -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '589495744558280',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+  </body>
+</html>

@@ -132,7 +132,7 @@ $$
 is the single particle Hamiltonian, involving some potential $V(\theta)$, and
 
 $$
-H_2=\frac{U}{2}\int_0^{2\pi} \pdop\pdop\pop\pop\, d\theta
+H_2=\frac{U_0}{2}\int_0^{2\pi} \pdop\pdop\pop\pop\, d\theta
 $$
 
 describes interactions between the particles. $\pdop(\theta)$ and $\pop(\theta)$ satisfy
@@ -162,7 +162,7 @@ where $a_l$ annihilates a particle in state $l$. By considering _only_ states $l
 $$
 \begin{align}
 H_{\text{rot}}=\omega_c\left[\adop_1\aop_1-\adop_0\aop_0\right]+V_0\left[\adop_0\aop_1+\mathrm{h.c.}\right]\nonumber\\
-+\frac{U_0}{2V}\left[\adop_0\adop_0\aop_0\aop_0+\adop_1\adop_1\aop_1\aop_1+4\adop_1
++\frac{U_0}{4\pi}\left[\adop_0\adop_0\aop_0\aop_0+\adop_1\adop_1\aop_1\aop_1+4\adop_1
 \adop_0\aop_0\aop_1\right]
 \end{align}
 $$

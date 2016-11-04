@@ -69,6 +69,7 @@
           cP: '\\mathcal{P}',
           cN: '\\mathcal{N}',
           cE: '\\mathcal{E}',
+          cO: '\\mathcal{O}',
           cH: '\\mathcal{H}',
           br: '\\mathbf{r}',
           bx: '\\mathbf{x}',
@@ -198,6 +199,18 @@ $$
         
       
     
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/Superconductivity/">Superconductivity</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/ResponseAndCorrelation/">Response and Correlation</a>
+        
+      
+    
 
     <!-- The code below is used for manually entered links  -->
 
@@ -231,6 +244,7 @@ $$
 
 <ol id="markdown-toc">
   <li><a href="#nbk-in-the-ground-state" id="markdown-toc-nbk-in-the-ground-state">$N(\bk)$ in the Ground State</a></li>
+  <li><a href="#pair-correlations-in-the-bcs-state" id="markdown-toc-pair-correlations-in-the-bcs-state">Pair Correlations in the BCS State</a></li>
 </ol>
 
 <hr />
@@ -238,6 +252,22 @@ $$
 <h2 id="nbk-in-the-ground-state">$N(\bk)$ in the Ground State</h2>
 
 <p>In second order perturbation theory, find the occupation number $N(\bk)=\braket{0}{\adop_{\bk,s}\aop_{\bk,s}}{0}$ in the ground state of the interacting Fermi gas. Compare with the quantity $z_\bk$ introduced in the lecture.</p>
+
+<h2 id="pair-correlations-in-the-bcs-state">Pair Correlations in the BCS State</h2>
+
+<p>As well as the average occupancy of a given momentum state we can consider the correlations between
+the occupancy of different $\bp$ states</p>
+
+<script type="math/tex; mode=display">C_{ss'}(\bp,\bp')\equiv\langle n_{\bp,s} n_{\bp',s'}\rangle-\langle n_{\bp,s}\rangle\langle n_{\bp',s'}</script>
+
+<p>Show that for the BCS state</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+C_{\uparrow\downarrow}(\bp_1,\bp_2)&=&\delta_{\bp_1,-\bp_2}u_{\bp_1}^2v_{\bp_1}^2=\delta_
+{\bp_1,-\bp_2}\frac{|\Delta|^2}{4E_{\bp_1}^2}\nonumber\\
+\cC_{\uparrow\uparrow}(\bp_1,\bp_2)&=&\delta_{\bp_1,\bp_2}\frac{|\Delta|^2}{4E_{\bp_1}^2} %]]></script>
+
+<p>Interpret these two expressions.</p>
 
 </div>
 

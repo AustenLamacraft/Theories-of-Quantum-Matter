@@ -2,7 +2,7 @@
 layout: page
 title: Response and Correlation
 author: Austen Lamacraft
-chapter: 10
+chapter: 11
 summary: Response functions. Structure factor. Dielectric function. Sum rules.
 published: true
 ---
