@@ -30,9 +30,11 @@ $$
 Show that for the BCS state
 
 $$
-C_{\uparrow\downarrow}(\bp_1,\bp_2)&=&\delta_{\bp_1,-\bp_2}u_{\bp_1}^2v_{\bp_1}^2=\delta_
+\begin{align}
+C_{\uparrow\downarrow}(\bp_1,\bp_2)&=\delta_{\bp_1,-\bp_2}u_{\bp_1}^2v_{\bp_1}^2=\delta_
 {\bp_1,-\bp_2}\frac{|\Delta|^2}{4E_{\bp_1}^2}\nonumber\\
-\cC_{\uparrow\uparrow}(\bp_1,\bp_2)&=&\delta_{\bp_1,\bp_2}\frac{|\Delta|^2}{4E_{\bp_1}^2}
+C_{\uparrow\uparrow}(\bp_1,\bp_2)&=\delta_{\bp_1,\bp_2}\frac{|\Delta|^2}{4E_{\bp_1}^2}
+\end{align}
 $$
 
 Interpret these two expressions.

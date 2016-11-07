@@ -22,7 +22,7 @@ Our grand tour of many body theories continues with <strong>Bardeen, Cooper and 
 
 ## Bosons as Fermion Pairs
 
-So far, we have discussed Bose condensation and superfluidity using models of bosonic particles. Can systems of fermions display the same phenomena? Experimentally, we already know that the answer must be yes, as an atom of He$^4$ consists of protons, neutrons, and electrons -- two of each -- which are are all fermions. A He$^4$ atom is a composite boson, but in many situations its internal structure is of no relevance.
+So far, we have discussed Bose--Einsetein condensation and superfluidity using models of bosonic particles. Can systems of fermions display the same phenomena? Experimentally, we already know that the answer must be yes, as an atom of He$^4$ consists of protons, neutrons, and electrons -- two of each -- which are are all fermions. A He$^4$ atom is a composite boson, but in many situations its internal structure is of no relevance.
 
 To return to model systems, consider the Fermi gas Hamiltonian that we discussed in the last lecture
 
@@ -43,9 +43,9 @@ The idea that superfluidity can arise in a system of fermions as a result of pai
 
 You may have spotted the problem with this idea: electrons actually _repel_ each other due to the Coulomb interaction. A realistic description of electron pairing must involve a mechanism for attractive interactions. The 1957 realization of Bardeen, Cooper and Schrieffer (BCS) was that such an attraction is provided by the coupling of the electrons to phonons. For states near the Fermi surface, this attraction can actually overcome the Coulomb repulsion (once screening is accounted for, see [Lecture 12]({{ site.baseurl }}/lectures/Jellium/)). [Problem Set 3]({{ site.baseurl }}/problems/Problems3/) describes how this can occur in a simple model.
 
-This is still not the whole story. The net attraction between electrons is still not strong enough to form a bound state, if we were just to consider one pair. However, BCS showed that in a gas of fermions at finite density, _arbitrarily_ weak attraction is enough to cause pairing: it is a truly many body phenomenon. This was first shown by Leon Cooper using a toy model that accounted for the existence of the Fermi sea in the pairing problem, and for this reason we speak of __Cooper pairs__.
+This is still not the whole story. The net attraction between electrons is still not strong enough to form a bound state, if we were just to consider isolated pair. BCS showed that in a gas of fermions at finite density, _arbitrarily_ weak attraction is enough to cause pairing: it is a truly many body phenomenon. This was first demonstrated by Leon Cooper using a toy model that accounted for the existence of the Fermi sea in the pairing problem, and for this reason we speak of __Cooper pairs__.
 
-So BCS got the Nobel prize (which conveniently can be split three ways) and their theory become one of the pillars of condensed matter physics. In this lecture we'll discuss BCS theory using the model Hamiltonian \eqref{super_model} with attractive short-ranged interactions. This is not a particularly realistic model of the combined phonon-mediated attraction and screened Coulomb repulsion, but displays the same physics. It _is_ a good model for pairing of ultracold atoms, first observed in 2004 {% cite Regal:2004aa %}.
+So BCS got the Nobel prize (which conveniently can be split three ways) and their theory become one of the pillars of condensed matter physics. In this lecture we'll discuss BCS theory using the model Hamiltonian \eqref{super_model} with attractive short-ranged interactions. This is not a particularly realistic model of the combined phonon-mediated attraction and screened Coulomb repulsion, but displays the same physics. It _is_ a good model for pairing of ultracold fermionic atoms, first observed in 2004 {% cite Regal:2004aa %}.
 
 ## BCS Theory
 
@@ -61,40 +61,44 @@ We take the interaction between the two species to be attractive $U_0<0$. The gr
 of the non-interacting problem is
 
 $$
-\ket{\text{FS}}=\prod_{|\bp|<p_F} \adop_{\bp\uparrow}\adop_{\bp\downarrow}\ket{\text{VAC}}.
+\ket{\text{FS}}=\prod_{|\bp|<k_\text{F}} \adop_{\bp\uparrow}\adop_{\bp\downarrow}\ket{\text{VAC}}.
 $$
 
 The application of the interaction Hamiltonian $H_\text{int}$ generates terms of the form
 
 $$
-\adop_{\bp+\bq\uparrow}\adop_{-\bp\downarrow}\aop_{-\bp'\downarrow}\aop_{\bp'+\bq\uparrow}\ket{\text{FS}}.\qquad |\bp|,|\bp+\bq|>p_F,\, |\bp'|,|\bp'+\bq|<p_F.
+\adop_{\bp+\bq\uparrow}\adop_{-\bp\downarrow}\aop_{-\bp'\downarrow}\aop_{\bp'+\bq\uparrow}\ket{\text{FS}}.\qquad |\bp|,|\bp+\bq|>k_\text{F},\, |\bp'|,|\bp'+\bq|<k_\text{F}.
 $$
 
 Note the difference from the Bose case: because the state $\bp=0$ plays no special role -- like every
 other state below the Fermi surface it is occupied with one fermion of each species -- we do not just
 create pair excitations with zero centre of mass momentum $\bq=0$. Nevertheless, the BCS theory starts
-from the assumption that such finite momentum pairs do not contribute significantly to the ground state,
-and makes a pair ansatz of essentially the same form that was used in the Bogoliubov theory
+makes the assumption that the ground state involves a superposition of zero momentum pairs only. We can write such a state very generally as
 
 $$
-\ket{\text{pair}}\equiv\sum_{\sum_\bp n^P_\bp=N/2} c_{\{n^P_{\bp}\}} \prod_{\bp}\Lambda_{\bp'}^
+\ket{\text{pair}}\equiv\sum_{\sum_\bp n^P_\bp=N/2} c_{\{n^P_{\bp}\}} \prod_{\bp}\left[\adop_{\bp\uparrow}\adop_{-\bp\downarrow}\right]^
 {n_{\bp}}\ket{\text{VAC}},
 \label{pair_fermi}
 $$
 
-where $\Lambda_\bk=\adop_{\bp\uparrow}\adop_{-\bp\downarrow}$ creates a $\left(+\bp,-\bp\right)$
-pair and the numbers $n_{\bp}^P$ are either $0$ or $1$. Note that in writing \eqref{pair_fermi} the
-number of each species is assumed to be exactly $N/2$. As in the Bogoliubov case, such a form allows us to work with a pair Hamiltonian
+where the numbers $n_{\bp}^P$ are either $0$ or $1$ (why?). Note that in writing \eqref{pair_fermi} the
+number of each species is assumed to be exactly $N/2$. Restricting outselves to states of this form means that
 
 $$
-H_{\mathrm{pair}}=\sum_{\bp,s}\epsilon_{\bp}\adop_{\bp,s}\aop_{\bp, s}+\frac{U_0}{V}\sum_{\bp, \bp'}\adop_
+\braket{\text{pair}}{H}{\text{pair}} = \braket{\text{pair}}{H_{\text{pair}}}{\text{pair}},
+$$
+
+where $H_{\text{pair}}$ is
+
+$$
+H_{\text{pair}}=\sum_{\bp,s}\epsilon_{\bp}\adop_{\bp,s}\aop_{\bp, s}+\frac{U_0}{V}\sum_{\bp, \bp'}\adop_
 {\bp\uparrow}\adop_{-\bp\downarrow}\aop_{-\bp'\downarrow}\aop_{\bp'\uparrow}.
 \label{super_bcsH}
 $$
 
-That is, just $H_\text{int}$, but with all but the $\bq=0$ part discarded. Now, can we solve \eqref{super_bcsH})? It is illuminating to introduce the operators $\bdop_\bp=\adop_{\bp\uparrow}\adop_{-\bp
+Now, can we solve \eqref{super_bcsH}? It's useful to introduce the operators $\bdop_\bp=\adop_{\bp\uparrow}\adop_{-\bp
 \downarrow}$ and its conjugate, that create and destroy a $\left(+\bp,-\bp\right)$ pair. Because our pair
-ansatz \eqref{pair_fermi}) only includes amplitudes for a given $\left(+\bp,-\bp\right)$ pair of momenta
+ansatz \eqref{pair_fermi} only includes amplitudes for a given $\left(+\bp,-\bp\right)$ pair of momenta
 having either none or two fermions, the pair Hamiltonian can be written in terms of the pair operators $
 \bdop_\bp$, $\bop_\bp$ as
 
@@ -114,6 +118,7 @@ obey the _hardcore constraint_
 
 $$
 (\bdop_\bp)^2=0,
+\label{hardcore}
 $$
 
 which is a result of $\bdop$ being composed of a pair of fermions obeying the exclusion principle.
@@ -126,7 +131,7 @@ $$
 \label{bcs_cons}
 $$
 
-corresponding to \eqref{pair_fermi}) but with a set of coefficients $c_{\{n^P_\bp\}}$ that factorizes.
+corresponding to \eqref{pair_fermi} but with a set of coefficients $c_{\{n^P_\bp\}}$ that factorizes.
 Finding the variational energy of Equation (\ref{bcs_cons}) is still a tricky problem. For instance, what is the
 expectation value of the kinetic energy?
 
@@ -184,7 +189,7 @@ the pair subspace, the three operators $\bop_\bp$, $\bdop_\bp$, and $\bdop_\bp\b
 as the components of a spin-$1/2$
 
 $$
-S_\bp^+ \equiv \bdop,\quad S_\bp^- \equiv \bop_\bp,\quad S^z_\bp = \bdop_\bp\bop_\bp-1/2,
+S_\bp^+ \equiv \bdop_\bp,\quad S_\bp^- \equiv \bop_\bp,\quad S^z_\bp = \bdop_\bp\bop_\bp-1/2,
 $$
 
 on account of the commutation relations
@@ -226,7 +231,7 @@ so we see that this corresponds simply to a sharp fermi step. For $U_0<0$, the s
 energy by taking $\sin\theta_\bp\neq 0$. The lowering of the interaction energy more than compensates
 the increase in kinetic energy that comes from smearing the step, see Equation (\ref{ke}). Clearly all of the
 angles $\varphi_\bp$, describing the angle in the x-y plane, should be equal. Taking  the extremum of
-Equation (\ref{spin_en}) with respect to the angles $\theta_{\bp}$ gives the condition
+\eqref{spin_en} with respect to the angles $\theta_{\bp}$ gives the condition
 
 <a name="FermiWall"></a>
 ![]({{ site.baseurl }}/assets/wall.png)
@@ -254,6 +259,7 @@ The meaning of these solutions is very simple. They correspond to the alignment 
 
 $$
 \left(\mathrm{Re}\,\Delta.\mathrm{Im}\,\Delta,\xi_\bp\right)
+\label{heff}
 $$
 
 To be self-consistent, the solution must further satisfy the __gap equation__
@@ -285,28 +291,293 @@ situation in which there are not a macroscopically large number of particles pre
 $, so that $\xi_{\bp}=\epsilon(\bp)>0$. Then the right hand side of \eqref{cont_sc} has no divergence at
 low energies because the density of states $\nu(E)$ vanishes. The finite value of $\Delta$ is thus seen to be a consequence of the fermi sea.
 
-Thus we have demonstrated the presence of a fermion condensate for an attractive interaction, no matter
-how weak. To be more honest, what we
-have really shown is that the BCS state always has a lower energy than the free fermion problem. Since
-this certainly _is_ the ground state at $U_0=0$, and the BCS is smoothly connected to it, it seems
-clear that the BCS state can be trusted at least for small coupling. At larger coupling some other state of
-matter could win out, but given our argument that we should eventually arrive in a BEC state of
-pairs, this seems unlikely.
-
-
+We have shown that the BCS state, consisting of a superposition of zero momentum pairs, is a better variational state than the Fermi sea for arbitrarily weak attractive interactions. Further, it coincides with the Fermi sea at zero interaction, suggesting a smooth evolution of the ground state as interactions are switched on. What, if anything, does this have to do with the strong coupling picture of tightly bound bosonic pairs in a dilute gas that we gave in the introduction?
 
 ### Discussion: Heisenberg's Problem
 
+
 ### The BCS-BEC Crossover
 
-### Excited states
+Surprisingly, the wavefunctions in two limits are the same! This can be seen
+from the first quantized form of the number conserving wavefunction  \eqref{bcs_cons}
+
+$$
+\ket{N \text{ pair}}=\mathcal{A}\prod_{i<j}^{N/2} \varphi(\br_{i\uparrow}-\br_{j\downarrow}),
+\label{bcs_first}
+$$
+
+where $\varphi_\bp=v_\bp/u_\bp$.
+
+<p class="message">
+Do you understand where this comes from?
+</p>
+
+At weak coupling the extent of the `pair wavefunction' $\varphi(\br)$ is
+large compared to the separation between pairs. In this limit the antisymmetrization operation, required
+by the exclusion principle, plays a dominant role, as we have seen. When the pair wavefunction $\varphi
+(\br)$ has a much smaller extent than the typical separation between pairs, we can expect that the
+anitsymmetrization operation in \eqref{bcs_first} is not too important, as two fermions of the same
+type rarely overlap. In this limit, any given momentum state has a low average occupancy, and the
+hardcore constraint \eqref{hardcore} does not play a significant role. Then \eqref{pair_h} can
+really be thought of as a Hamiltonian for isolated pairs, with the corresponding binding energy. The resulting wavefunction is then essentially a Gross-Pitaevskii state of molecules. This all suggests that the BCS state is smoothly connected to the Bose--Einstein condensate (BEC), though the __BCS-BEC crossover__.
+
+To see how this works in detail we first have to address the issue of regularizing \eqref{cont_sc}. The ultraviolet divergence that we encountered here, and in the Bose gas, is really a two body effect that arises from our model $\delta$-function potential. To see why this is so, consider the two particle Schrödinger equation
+
+$$
+-\frac{1}{2m}\left[\nabla_1^2+\nabla^2\right]\Psi(\br_1,\br_2) + U(\br_1-\br_2)\Psi(\br_1,\br_2)=E\Psi(\br_1,\br_2),
+$$
+
+now with a general two-body potential $U(\br_1-\br_2)$. In terms of the relative coordinate $\br=\br_1-\br_2$ this becomes
+
+$$
+-\frac{\nabla^2}{m}\Psi(\br) + U(\br)\Psi(\br)=E\Psi(\br),
+$$
+
+corresponding to a reduced mass of $\mu = m/2$. In scattering problems we look for solutions of the form
+
+$$
+\Psi(\br) = \Psi_\text{free}(\br) + \Psi_\text{scatt}(\br),
+$$
+
+where $\Psi_\text{free}(\br)$ solves the free particle equation, giving the inhomogenous equation for $\Psi_\text{scatt}(\br)$
+
+$$
+\left[E-\frac{\nabla^2}{m}\right]\Psi_\text{scatt}(\br) + U(\br)\Psi_\text{scatt}(\br)=-U(\br)\Psi_\text{free}(\br).
+\label{inhomog}
+$$
+
+It is a standard result of scattering theory that the zero energy wavefunction as the form
+
+$$
+\Psi(\br)\xrightarrow{\abs{\br}\gg r_0} \overbrace{1}^{\Psi_\text{free}} - \overbrace{\frac{a}{\abs{\br}}}^{\Psi_\text{scatt}}
+$$
+
+where $a$ is the (s-wave) scattering length, and $r_0$ is the range of the potential. This corresponds to the behaviour in Fourier space
+
+$$
+\tilde\Psi_\text{scatt}(\bk)\xrightarrow{\abs{\bk}\ll r_0^{-1}} \frac{4\pi a}{\abs{\bk}^2}
+$$
+
+Returning to the BCS problem, it's not hard to see that with a general potential the gap parameter is now momentum dependent, leading to a gap equation
+
+$$
+\Delta_\bp=-\frac{1}{2}\int \frac{d\bp'}{(2\pi)^3}\tilde U(\bp-\bp')\frac{\Delta_{\bp'}}{E_{\bp'}}.
+\label{gen_gap_eq}
+$$
+
+The solution of \eqref{gen_gap_eq} is in general very difficult, but it can be greatly simplified if we
+assume that the range of the potential $U(\br)$ is the shortest length scale in the problem. With this assumption we can write \eqref{gen_gap_eq}
+
+$$
+\begin{align}
+\Delta_\bp+\frac{1}{V}\sum_{\bp'}U(\bp-\bp')\frac{\Delta_{\bp'}}{2\epsilon_{\bp'}}&=-\frac{1}{V}\sum_{\bp'} \left[U_0(\bp)\frac{\Delta_{\bp'}}{2E_{\bp'}}-U(\bp-\bp')\frac{\Delta_{\bp'}}{2\epsilon_
+{\bp'}}\right]\nonumber\\
+&=-\frac{U_0(\bp)}{V}\sum_{\bp'} \left[\frac{\Delta_{0}}{2E_{\bp'}}-\frac{\Delta_{0}}{2\epsilon_
+{\bp'}}\right].
+\label{super_GapReg}
+\end{align}
+$$
+
+We have added the same term to both sides. However, the integral on the right hand side
+converges on a scale set by the momentum corresponding to the larger of $\Delta_\bp$ or $\mu$, which
+by assumption is much less than the scale on which $U_0(\bp)$ varies, and justifies replacing $U_0(\bp-
+\bp')$ with $U_0(\bp)$, and $\Delta_{\bp'}$ with $\Delta_0$.
+
+By comparing the Fourier transform of \eqref{inhomog} at $E=0$ and \eqref{super_GapReg}, we can conclude
+
+$$
+\Delta_\bp=-\frac{m}{4\pi a}\Delta_0 \widetilde{\nabla^2 \Psi_\text{scatt}}(\bp),
+$$
+
+so that
+
+$$
+-\frac{m}{4\pi a}\Delta_0=\frac{1}{V}\sum_{\bp}\left[\frac{\Delta_{0}}{2E_{\bp'}}-\frac{\Delta_{0}}
+{2\epsilon_{\bp'}}\right].
+\label{sc_reg}
+$$
+
+In the weak-coupling limit, the gap $\Delta$ (we drop the subscript $0$ from now on, as we never need
+to discuss the high momentum behaviour of $\Delta_\bp$ again) is expected to be much smaller than
+the Fermi energy, and the chemical potential is just equal to the Fermi energy $E_F=k_\text{F}^2/2m$. The
+integral in \eqref{sc_reg} can then be done explicitly to give the gap
+
+$$
+\Delta_{\mathrm{BCS}}=\frac{8}{e^2}E_F\exp\left[-\frac{\pi}{2|k_\text{F} a|}\right]
+\label{bcs_gap}
+$$
+
+Outside of the weak-coupling limit, we have to account for a change in the chemical potential, in order to
+keep a fixed density. This is apparent from the equation
+
+$$
+N=2\sum_\bp \langle n^P_\bp\rangle=2\sum_\bp v_{\bp}^2=\sum_\bp \left[1-\frac{\xi_{\bp}}{E_\bp}\right]
+\label{mu_eq}
+$$
+
+The two  equations \eqref{sc_reg} and \eqref{mu_eq} are conveniently cast in the dimensionless
+form
+
+$$
+\begin{align}
+\frac{\pi}{2k_\text{F} a}=\int_0^{\infty} dx \left[1-\frac{x^2}{\sqrt{(x^2-\mu)^2+\Delta_0^2}} \right] \nonumber\\
+\frac{2}{3}=\int_0^{\infty} dx\, x^2\left[1-\frac{x^2-\mu}{\sqrt{(x^2-\mu)^2+\Delta_0^2}}\right]
+\end{align}
+$$
+
+where $\mu$ and $\Delta\_0$ are measured in units of $E_F=p\_F^2/2m$, and the unit of length is $k_\text{F}^
+{-1}$. In these units the total density of particles of both types is $1/3\pi^2$.
+
+<a name="BCS-BEC"></a>
+![]({{ site.baseurl }}/assets/BCS-BEC.png)
+_Variation of gap and chemical potential accross the BCS (left, weak attraction) to BEC (right, strong attraction)._
+
+The point $1/k_\text{F}a=0$, where the scattering length diverges, corresponds to the formation of a bound state. This is
+an interesting part of the phase diagram, because here (if
+the temperature is zero) there is only one energy scale (the Fermi energy) and only one length scale (the
+fermi wavelength). All quantities such as $\Delta$ and $\mu$ are simply some universal fraction of the
+Fermi energy. In particular the equation of state of the system is
+
+$$
+E/V=\alpha\frac{3}{5}E_Fn\propto n^{5/3}.
+$$
+
+The numerical factors are to emphasize the resemblance of the unitary gas to the free fermi gas, where $
+\alpha=1$. The mean field theory above gives $\alpha=0.59$, while a Quantum Monte Carlo calculation
+found $\alpha=0.44\pm0.01$. There is of course no reason to believe the quantitative
+predictions of the mean-field theory in the region where interactions are so strong.
+
+### Quasiparticle Excitations
+
+Like the Bogoliubov theory, this BCS theory also lets us discuss excitations out of the ground state. We
+didn't solve the BCS hamiltonian by a Bogoliubov transformation, as is often done, but we can introduce
+the Bogoliubov-type excitations after the fact. Recalling the BCS state
+
+$$
+\ket{\text{BCS}} =\prod_\bp \left[v_\bp\adop_{\bp\uparrow}\adop_{-\bp\downarrow}+u_\bp\right]\ket{\text{VAC}},
+$$
+
+it's easy to see that the operators
+
+$$
+\begin{eqnarray}
+\alop_{\bp\uparrow}&=&u_\bp\aop_{\bp\uparrow}-v_\bp\adop_{-\bp\downarrow}\nonumber\\
+\alop_{\bp\downarrow}&=&u_\bp\aop_{\bp\downarrow}+v_\bp\adop_{-\bp\uparrow},
+\end{eqnarray}
+$$
+
+satisfy the canonical fermion anticommutation relations and annihilate the BCS state
+
+$$
+\alop_{\bp,s}\ket{\text{BCS}}\rangle=0.
+$$
+
+Consider the state
+
+$$
+\ket{\bp,s}=\aldop_{\bp,s}\ket{\text{BCS}}=\adop_{\bp,s}\prod_{\bp'\neq \bp} \left[v_\bp\adop_
+{\bp\uparrow}\adop_{-\bp\downarrow}+u_\bp\right]\ket{\text{VAC}},
+$$
+
+corresponding to the momentum state $\bp$ certainly containing one particle with (pseudo-)spin $s$,
+and the $\left(-\bp,-s\right)$ state certainly being empty. The result is an eigenstate of momentum and
+spin, but is it an energy eigenstate, and thus a sharply defined excitation? Note that if we chose $s=
+\uparrow$ so that the $\left(\bp,\uparrow\right)$ state is certainly occupied it means that $\adop_{\bp
+\uparrow}\adop_{-\bp\downarrow}\ket{\bp,\uparrow}=0$, so that the corresponding term no longer
+appears in the interaction term when it is applied to this state. The level is said to be `blocked'. Thus it
+certainly is an eigenstate of the pair problem, if $\ket{\text{BCS}}$ is. What is its energy? We have
+to take into account the kinetic energy as well as the loss of attractive interaction energy, see \eqref{spin_en}
+
+$$
+E_{s}(\bp)=\xi_{\bp}[\overbrace{\left(1-\langle n^P_\bp\rangle\right)}^{\left(\bp,s\right)\,\mathrm{occupied}}
+\overbrace{-\langle n^P_\bp\rangle}^{\left(-\bp,-s\right)\,\mathrm{empty}}]+\overbrace{\Delta\sin\theta_
+\bp}^{\mathrm{`blocking'}}=E_{\bp}
+$$
+
+Note that these quasiparticle excitations always have a gap $\Delta_{s}$ given by  
+
+$$
+\Delta_s=\min_\bp E_\bp=\begin{cases}
+\Delta, & \mu>0,\\
+\sqrt{\Delta^2+\mu^2},&  \mu<0.
+\end{cases}
+$$
+
+As $\mu$ turns from positive to negative as we pass from BCS to BEC (see the [above figure]({{ site.baseurl }}/lectures/Superconductivity/#BCS-BEC)), the density of states of the quasiparticle excitations turns from having a square root singularity $\nu(\epsilon)\sim \left(\epsilon-\Delta_s\right)^{-1/2}$ to vanishing like a square root $\nu(\epsilon)\sim \left(\epsilon-\Delta_s\right)^{1/2}$.
 
 ### The Effect of Temperature
 
-### BCS from Bogoliubov Transformation
+When we discussed the quasiparticle excitations, we didn't account for the effect that they have on the
+self-consistent equation. This is fine when there are few excitations in the system, but when many levels
+are blocked, we have to take this effect into account, leading to a reduction in the gap parameter. The
+obvious example of this effect is a system at finite temperature, where the quasiparticles, being
+fermionic, have the fermi-dirac distribution function
+
+$$
+n_s(\bp)=\frac{1}{e^{\beta E_s(\bp)}+1},
+$$
+
+where we allow the quasiparticle energies, and hence distributions, to differ for the two species. Since
+the occupancy of a given state can be zero or one only $n_s(\bp)$ is also the _probability_ for that
+state to be occupied. Thus the probability of a  $(\bp,s;-\bp,-s)$ state being blocked is $n_s(\bp)\left[1-n_
+{-s}(-\bp)\right]+n_{-s}(-\bp)\left[1-n_{s}(\bp)\right]$. What if we have _both_ a $(\bp,s)$ and a $(-
+\bp,-s)$ quasiparticle present?
 
 
+$$
+\aldop_{\bp\uparrow}\aldop_{-\bp\downarrow}\ket{\text{BCS}}=\left[u_\bp\adop_{\bp\uparrow}
+\adop_{-\bp\downarrow}-v_\bp\right]\prod_{\bp'\neq \bp} \left[v_\bp\adop_{\bp\uparrow}\adop_{-\bp
+\downarrow}+u_\bp\right]\ket{\text{VAC}},
+$$
 
+which is orthogonal to the BCS state. In the Anderson spin language this corresponds to a single flipped
+spin, and has energy given by twice the 'magnetic field' each pair experiences $2E(\bp)$, see \eqref{heff}. The spin interpretation allows us to see easily that this state contributes $-u_\bp v_\bp$ to the self consistent
+equation, and occurs with probability $n_{\uparrow}(\bp)n_{\downarrow}(-\bp)$. The overall result is thus
+
+$$
+\begin{eqnarray}
+\Delta&=&\frac{U_0}{V}\sum_{\bp}\frac{\Delta}{2E_{\bp'}}(\overbrace{[1-n_{\uparrow}(\bp)][1-n_
+{\downarrow}(-\bp)]}^{\mathrm{no\,qp}}-\overbrace{n_{\uparrow}(\bp)n_{\downarrow}(-\bp)}^{\mathrm
+{two\, qp}})\nonumber\\
+&=&\frac{U_0}{V}\sum_{\bp}\frac{\Delta}{2E_{\bp'}}[1-n_{\uparrow}(\bp)-n_{\downarrow}(-\bp)].
+\end{eqnarray}
+$$
+
+For the case $E_s(\bp)=E(\bp)$, and in the BCS limit where $\mu\sim E_F$, $\Delta\ll E_F$, this is
+conveniently presented in the form
+
+$$
+\frac{1}{U_0\nu(E_F)}=-\int_\Delta dE \tanh\left(\frac{E}{2T}\right)\frac{\Delta}{\sqrt{E^2-\Delta^2}},
+$$
+
+where $\nu(E_F)$ is the fermi surface density of states, and we have left out the upper cut-off. This
+expression needs to be regularized as in the zero temperature case considered before. The resulting $
+\Delta(T)$ varies from $\Delta(0)=\Delta_{\text{BCS}}$ given by \eqref{bcs_gap}, to zero at
+
+$$
+\begin{equation}\label{Tc}
+k_\text{B}T_\text{c}=\frac{\gamma}{\pi}\Delta_{\text{BCS}},
+\end{equation}
+$$
+
+where $\gamma$ is the [Euler--Mascheroni constant](https://en.wikipedia.org/wiki/Euler–Mascheroni_constant). This relationship between $T_\text{c}$ and $\Delta_\text{BCS}$ is a key numerical prediction of the BCS theory. An important point is that the variation is smooth, suggesting a second order transition to a normal (non-superfluid) state above $T_\text{c}$.
+
+There is a small problem. If we continue the calculation through the crossover, the temperature at which a non-zero $\Delta$ develops continues to increase indefinitely on the BEC side {% cite De-Melo1993:aa %}
+
+$$
+k_\text{B}T_\text{c} \sim E_b/2\left[\log E_b/E_F\right]^{3/2}, 1/k_\text{F} a\gg 0
+$$
+
+where $E_b=1/ma^2$ is the binding energy of a pair. This temperature should be thought of as a
+dissociation temperature below which pairs can form (the logarithmic factor is entropic in origin). The
+temperature at which these pairs condense will however be lower, tending to the ideal bose $T_
+{\mathrm{BEC}}$ in the $1/k_\text{F}a\to \infty$ limit. A more sophisticated treatment is required to find a
+smooth interpolating $T_\text{c}(1/k_\text{F}a)$.
+
+<a name="EngelbrechtTc"></a>
+![]({{ site.baseurl }}/assets/EngelbrechtTc.png)
+_$T\_c$ in the mean-field theory (solid line), compared with the result of a treatment that smoothly
+  interpolates to $T\_{\text{BEC}}$ (dashed). Reproduced from {% cite De-Melo1993:aa %}._
 
 
 References

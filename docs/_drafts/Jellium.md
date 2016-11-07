@@ -22,3 +22,5 @@ Structure of the perturbation expansion
 ## the Hubbard--Stratonovich Transformation
 
 Here we introduce..
+
+Evaluate the partition function using the linked cluster expansion
