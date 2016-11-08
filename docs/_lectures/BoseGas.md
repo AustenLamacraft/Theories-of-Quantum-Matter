@@ -351,7 +351,7 @@ E_0=\frac{1}{2}nU_0  N\left[1-\frac{1}{V}\sum_\bp \frac{U_0}{2\epsilon(\bp)}\rig
 $$
 
 In this form, the term we have added and subtracted is recognized as the next order in the Born
-approximation for the scattering length $a_s=a_0+a_1+\cdots$. The second term can now be evaluated
+approximation for the scattering length $a=a_0+a_1+\cdots$. The second term can now be evaluated
 to give
 
 $$
@@ -435,16 +435,16 @@ $$
 and then finding the average
 
 $$
-N_\bp=\langle \adop_{\bp}\aop_{\bp}\rangle = \frac{1}{2}\sinh 2\kappa_{p}\xrightarrow{ \abs{\bp}\ll \xi^{-1}}\frac{mc_s}{2\abs{\bp}}.
+N_\bp=\langle \adop_{\bp}\aop_{\bp}\rangle = \sinh^2\kappa_{p}\xrightarrow{ \abs{\bp}\ll \xi^{-1}}\frac{mc_s}{2\abs{\bp}}.
 $$
 
 The radial density distribution $4\pi p^2 N_\bp$ is peaked around $\xi^{-1}$. Summing over $\bp$ gives the fraction of atoms not in the condensate
 
 $$
-\frac{1}{N}\sum_{\bp\neq 0} n(\bp)=\frac{8}{3\sqrt{\pi}}\sqrt{na_s^3},
+\frac{1}{N}\sum_{\bp\neq 0} n(\bp)=\frac{8}{3\sqrt{\pi}}\sqrt{n a^3},
 $$
 
-where we used the Born approximation for the scattering length $a_s=\frac{4\pi U_0}{m}$. Excluding the value $\bp=0$ has no effect, because of the vanishing phase space at small momentum in three dimensions.
+where we used the Born approximation for the scattering length $a=\frac{4\pi U_0}{m}$. Excluding the value $\bp=0$ has no effect, because of the vanishing phase space at small momentum in three dimensions.
 
 Under typical experimental conditions in experiments on ultracold atoms the depletion does not much exceed $0.01$, which justifies the use of the GP approximation. Liquid He$^{4}$, the first superfluid to be discovered, can be described as an interacting Bose condensate, but the depletion is much larger. The Bogoliubov approximation does not provide a quantiatively accurate description in this case.
 
