@@ -271,7 +271,25 @@ There are many situations in which an approach based on finite orders of perturb
 
 <script type="math/tex; mode=display">V(\br) = \frac{q^2}{\abs{\br}}</script>
 
-<p>(in <a href="https://en.wikipedia.org/wiki/Electrostatic_units">Electrostatic units</a>). A basic question is: what is the relative magnitude of the kinetic and potential terms? For a free fermion gas in its ground state, the kinetic energy per particle is $\frac{3}{5}E_F = $</p>
+<p>(in <a href="https://en.wikipedia.org/wiki/Electrostatic_units">Electrostatic units</a>). A basic question is: what is the relative magnitude of the kinetic and potential terms? For a free fermion gas in its ground state, the kinetic energy per particle is $\frac{3}{5}E_F$. Since $n = \frac{k_\text{F}^3}{6\pi^2}$ this scales with density as $n^{2/3}$. The scaling of the interaction energy is $n^{1/3}$, showing that (perhaps counterintuitively) low density corresponds to strong interactions, relatively speaking. An appropriate dimensionless parameter is the ratio of the <a href="https://en.wikipedia.org/wiki/Wigner–Seitz_radius">Wigner–Seitz radius</a> to the Bohr radius $r_\text{Bohr} = (mq^2)^{-1}$ for our system. This gives</p>
+
+<script type="math/tex; mode=display">\frac{r_s}{r_\text{Bohr}} = \left(\frac{3}{4\pi n}\right)^{1/3} mq^2.</script>
+
+<p>We have already encountered the following states in Fermi gases, roughly in order of increasing interaction strength:</p>
+
+<ol>
+  <li>
+    <p>The <a href="/docs/lectures/FermiGas/">Landau Fermi liquid</a></p>
+  </li>
+  <li>
+    <p><a href="/docs/lectures/MoreSecondQuantization/#stoner-criterion-for-ferromagnetism">Ferromagnetism</a>, when the Stoner criterion is reached. Although we discussed a microscopic calculation, the same criterion can easily be phrased in terms of the Landau function $G(\phi)$.</p>
+  </li>
+  <li>
+    <p><a href="/docs/lectures/Lattice/#fermi-hubbard-model">Mott states</a> that can occur in a lattice potential, giving insulating behaviour in systems that band theory predicts to be metallic.</p>
+  </li>
+</ol>
+
+<p>In Jellium, where there is no lattice potential, it is possible crystallization to occur at very large values of $r_s$, breaking the continuous symmetry of spatial translations and forming a <a href="https://en.wikipedia.org/wiki/Wigner_crystal">Wigner Crystal</a>.</p>
 
 <h2 id="perturbation-series-for-the-partition-function">Perturbation Series for the Partition Function</h2>
 

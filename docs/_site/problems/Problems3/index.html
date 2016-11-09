@@ -247,6 +247,7 @@ $$
 <ol id="markdown-toc">
   <li><a href="#nbk-in-the-ground-state" id="markdown-toc-nbk-in-the-ground-state">$N(\bk)$ in the Ground State</a></li>
   <li><a href="#pair-correlations-in-the-bcs-state" id="markdown-toc-pair-correlations-in-the-bcs-state">Pair Correlations in the BCS State</a></li>
+  <li><a href="#a-very-simple-model-for-phonon-mediated-attraction" id="markdown-toc-a-very-simple-model-for-phonon-mediated-attraction">A Very Simple Model for Phonon Mediated Attraction</a></li>
 </ol>
 
 <hr />
@@ -272,6 +273,22 @@ C_{\uparrow\uparrow}(\bp_1,\bp_2)&=\delta_{\bp_1,\bp_2}\frac{|\Delta|^2}{4E_{\bp
 \end{align} %]]></script>
 
 <p>Interpret these two expressions.</p>
+
+<h2 id="a-very-simple-model-for-phonon-mediated-attraction">A Very Simple Model for Phonon Mediated Attraction</h2>
+
+<p>An optical phonon mode gives rise to an oscillating charge that couples to the electrons at a site. We model this by the Hamiltonian</p>
+
+<script type="math/tex; mode=display">H = \frac{p^2}{2m}+\frac{1}{2}m\omega^2 x^2 + \alpha x\left(N_\uparrow+N_\downarrow\right),</script>
+
+<p>where $N_s=0,1$ are the number of electrons of spin $s$ at the site. Since $N_s$ is conserved you can solve the model exactly.</p>
+
+<p>Next, introduce an oscillator at each site of a Fermi Hubbard model</p>
+
+<script type="math/tex; mode=display">H = H_\text{Hubbard} + \sum_j \left[\frac{p_j^2}{2m}+\frac{1}{2}m\omega^2 x_j^2 + \alpha x_j\left(N_{j,\uparrow}+N_{j,\downarrow}\right)\right].</script>
+
+<p>If the energy $\omega$ of the oscillators is larger than other scales, you can use the technique from <a href="/docs/lectures/Lattice/">Lecture 7</a> to derive an effective Hamiltonian. What form does this take?</p>
+
+<p>The physics behind this mechanism is a very simple consequence of living in an elastic medium, and is not really a quantum effect at all. The fact that two heavy spheres on a stretched horizontal rubber sheet will roll towards each other is a nearly perfect analogy for this effect (as well as a very poor one for gravitational attraction in GR!).</p>
 
 </div>
 

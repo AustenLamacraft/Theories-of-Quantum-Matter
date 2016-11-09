@@ -34,8 +34,21 @@ $$
 V(\br) = \frac{q^2}{\abs{\br}}
 $$
 
-(in [Electrostatic units](https://en.wikipedia.org/wiki/Electrostatic_units)). A basic question is: what is the relative magnitude of the kinetic and potential terms? For a free fermion gas in its ground state, the kinetic energy per particle is $\frac{3}{5}E_F = $
+(in [Electrostatic units](https://en.wikipedia.org/wiki/Electrostatic_units)). A basic question is: what is the relative magnitude of the kinetic and potential terms? For a free fermion gas in its ground state, the kinetic energy per particle is $\frac{3}{5}E_F$. Since $n = \frac{k_\text{F}^3}{6\pi^2}$ this scales with density as $n^{2/3}$. The scaling of the interaction energy is $n^{1/3}$, showing that (perhaps counterintuitively) low density corresponds to strong interactions, relatively speaking. An appropriate dimensionless parameter is the ratio of the [Wigner--Seitz radius](https://en.wikipedia.org/wiki/Wigner–Seitz_radius) to the Bohr radius $r_\text{Bohr} = (mq^2)^{-1}$ for our system. This gives
 
+$$
+\frac{r_s}{r_\text{Bohr}} = \left(\frac{3}{4\pi n}\right)^{1/3} mq^2.
+$$
+
+We have already encountered the following states in Fermi gases, roughly in order of increasing interaction strength:
+
+1. The [Landau Fermi liquid]({{ site.baseurl }}/lectures/FermiGas/)
+
+2. [Ferromagnetism]({{ site.baseurl }}/lectures/MoreSecondQuantization/#stoner-criterion-for-ferromagnetism), when the Stoner criterion is reached. Although we discussed a microscopic calculation, the same criterion can easily be phrased in terms of the Landau function $G(\phi)$.
+
+3. [Mott states]({{ site.baseurl }}/lectures/Lattice/#fermi-hubbard-model) that can occur in a lattice potential, giving insulating behaviour in systems that band theory predicts to be metallic.
+
+In Jellium, where there is no lattice potential, it is possible crystallization to occur at very large values of $r_s$, breaking the continuous symmetry of spatial translations and forming a [Wigner Crystal](https://en.wikipedia.org/wiki/Wigner_crystal).
 
 ## Perturbation Series for the Partition Function
 
