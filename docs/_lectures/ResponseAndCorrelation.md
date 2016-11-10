@@ -278,7 +278,7 @@ $$
 
 Note that $S(\omega)=S(-\omega)$ on account of $\chi''(\omega)$ being odd. This result tells us that the fluctuations and response of our oscillator are related to each other. This is actually rather natural -- the fluctuations are a response to the thermal noise felt by the system. Since it is $\chi''(\omega)$ -- the dissipative part of the response -- that appears in \eqref{res_ClassicalFDT}, relations of this sort are called __fluctuation--dissipation relations__. We'll meet the quantum version next.
 
-### Quantum Flucutations
+### Quantum Fluctuations
 
 Quantum mechanics provides another source of fluctuations. For a single (undamped) oscillator
 
@@ -396,7 +396,7 @@ $$
 
 With a continuum of modes, as in the oscillator coupled to a string, $S(\omega)$ can have a smooth (not just $\delta$-function like) behaviour. Nevertheless, the basic relation \eqref{res_NoiseAsym} is still obeyed.
 
-Now, we'll show that $S(\omega)$ is related to the _response_ of our quantum system, just as in the classical case. For a system of oscillators, finding the response is actually no harder than the classical case, as the Heisenberg equations of motion in the presence of a driving force are exactly the same as in the classical case. Thus the response is the same. In terms of the normal modes the Hamiltonian looks like
+Now, we'll show that $S(\omega)$ is related to the _response_ of our quantum system, just as in the classical case. For a system of oscillators, finding the response is actually no harder, as the Heisenberg equations of motion in the presence of a driving force are exactly the same as in the classical case. Thus the response is the same. In terms of the normal modes the Hamiltonian looks like
 
 $$
 H = \sum_k \omega_k \adop_k\aop_k - f(t)y,

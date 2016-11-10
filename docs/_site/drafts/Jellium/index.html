@@ -250,7 +250,11 @@ There are many situations in which an approach based on finite orders of perturb
 
 <ul id="markdown-toc">
   <li><a href="#dimensionless-parameters" id="markdown-toc-dimensionless-parameters">Dimensionless parameters</a></li>
-  <li><a href="#perturbation-series-for-the-partition-function" id="markdown-toc-perturbation-series-for-the-partition-function">Perturbation Series for the Partition Function</a></li>
+  <li><a href="#perturbation-series-for-the-partition-function" id="markdown-toc-perturbation-series-for-the-partition-function">Perturbation Series for the Partition Function</a>    <ul>
+      <li><a href="#wicks-theorem" id="markdown-toc-wicks-theorem">Wick’s Theorem</a></li>
+      <li><a href="#the-linked-cluster-expansion" id="markdown-toc-the-linked-cluster-expansion">The Linked Cluster Expansion</a></li>
+    </ul>
+  </li>
   <li><a href="#the-hubbard--stratonovich-transformation" id="markdown-toc-the-hubbard--stratonovich-transformation">The Hubbard–Stratonovich Transformation</a>    <ul>
       <li><a href="#trace-over-fermions" id="markdown-toc-trace-over-fermions">Trace Over Fermions</a></li>
       <li><a href="#polarization-operator" id="markdown-toc-polarization-operator">Polarization Operator</a></li>
@@ -264,46 +268,123 @@ There are many situations in which an approach based on finite orders of perturb
 
 <p>The Jellium Hamiltonian describing fermions interacting via the Coulomb interaction is (we ignore spin)</p>
 
-<script type="math/tex; mode=display">H = \int \frac{1}{2m}\nabla\pdop\cdot\nabla\pop + \frac{1}{2}\int d\br d\br' :\left[\rho(\br)-n
-\right]V(\br-\br')\left[\rho(\br')-n\right]:.</script>
+<script type="math/tex; mode=display">H = \int \frac{1}{2m}\nabla\pdop\cdot\nabla\pop + \overbrace{\frac{1}{2}\int d\br d\br' :\left[\rho(\br)-n
+\right]U(\br-\br')\left[\rho(\br')-n\right]:}^{\equiv H_\text{int}}.
+\label{jelliumH}</script>
 
 <p>Here, as usual, $\rho(\br)=\pdop(\br)\pop(\br)$ is the number density operator, $:(\cdots):$ denotes normal ordering, and $\rho(\br)-n$ is the deviation from the uniform background charge. The two body interaction is</p>
 
-<script type="math/tex; mode=display">V(\br) = \frac{q^2}{\abs{\br}}</script>
+<script type="math/tex; mode=display">U(\br) = \frac{e^2}{\abs{\br}}</script>
 
-<p>(in <a href="https://en.wikipedia.org/wiki/Electrostatic_units">Electrostatic units</a>). A basic question is: what is the relative magnitude of the kinetic and potential terms? For a free fermion gas in its ground state, the kinetic energy per particle is $\frac{3}{5}E_F$. Since $n = \frac{k_\text{F}^3}{6\pi^2}$ this scales with density as $n^{2/3}$. The scaling of the interaction energy is $n^{1/3}$, showing that (perhaps counterintuitively) low density corresponds to strong interactions, relatively speaking. An appropriate dimensionless parameter is the ratio of the <a href="https://en.wikipedia.org/wiki/Wigner–Seitz_radius">Wigner–Seitz radius</a> to the Bohr radius $r_\text{Bohr} = (mq^2)^{-1}$ for our system. This gives</p>
+<p>(in <a href="https://en.wikipedia.org/wiki/Electrostatic_units">Electrostatic units</a>). A basic question is: what is the relative magnitude of the kinetic and potential terms? For a free fermion gas in its ground state, the kinetic energy per particle is $\frac{3}{5}E_F$. Since $n = \frac{k_\text{F}^3}{6\pi^2}$ this scales with density as $n^{2/3}$. The scaling of the interaction energy is $n^{1/3}$, showing that (perhaps counterintuitively) low density corresponds to strong interactions, relatively speaking. An appropriate dimensionless parameter is the ratio of the <a href="https://en.wikipedia.org/wiki/Wigner–Seitz_radius">Wigner–Seitz radius</a> to the Bohr radius $r_\text{Bohr} = (me^2)^{-1}$ for our system. This gives</p>
 
-<script type="math/tex; mode=display">\frac{r_s}{r_\text{Bohr}} = \left(\frac{3}{4\pi n}\right)^{1/3} mq^2.</script>
+<script type="math/tex; mode=display">\frac{r_s}{r_\text{Bohr}} = \left(\frac{3}{4\pi n}\right)^{1/3} me^2.</script>
 
 <p>We have already encountered the following states in Fermi gases, roughly in order of increasing interaction strength:</p>
 
 <ol>
   <li>
-    <p>The <a href="/docs/lectures/FermiGas/">Landau Fermi liquid</a></p>
+    <p>The <a href="/docs/lectures/FermiGas/">Landau Fermi liquid</a>.</p>
   </li>
   <li>
     <p><a href="/docs/lectures/MoreSecondQuantization/#stoner-criterion-for-ferromagnetism">Ferromagnetism</a>, when the Stoner criterion is reached. Although we discussed a microscopic calculation, the same criterion can easily be phrased in terms of the Landau function $G(\phi)$.</p>
   </li>
   <li>
-    <p><a href="/docs/lectures/Lattice/#fermi-hubbard-model">Mott states</a> that can occur in a lattice potential, giving insulating behaviour in systems that band theory predicts to be metallic.</p>
+    <p><a href="/docs/lectures/Lattice/#fermi-hubbard-model">Mott states</a> that can occur in a lattice potential, giving insulating behaviour in systems band theory predicts to be metallic.</p>
   </li>
 </ol>
 
-<p>In Jellium, where there is no lattice potential, it is possible crystallization to occur at very large values of $r_s$, breaking the continuous symmetry of spatial translations and forming a <a href="https://en.wikipedia.org/wiki/Wigner_crystal">Wigner Crystal</a>.</p>
+<p>For very strong interactions, corresponding $r_s$ values greater than 100, the system can form a <a href="https://en.wikipedia.org/wiki/Wigner_crystal">Wigner crystal</a>, breaking the continuous symmetry of spatial translations.</p>
+
+<p>Using perturbation theory to go beyond the Hartree–Fock approximation leads to divergences in the case of Coulomb interactions. Far from being a mere technical nuisance, these divergences are intimately linked to real physical effects arising from the long-ranged interaction, namely <strong>screening</strong> and collective excitations corresponding to quantized <strong>plasma oscillations</strong>.</p>
 
 <h2 id="perturbation-series-for-the-partition-function">Perturbation Series for the Partition Function</h2>
 
-<p>We are going to be concerned with the calculation of the partition function</p>
+<p>We are going to begin in very general terms, and consider the calculation of the (grand canonical) partition function</p>
 
 <script type="math/tex; mode=display">Z = \tr\left[\exp\left(-\beta H\right)\right],</script>
 
-<p>where $H=H_0+H_\text{int}$, with $H_0$ a free particle Hamiltonian and $H_\text{int}$ describes interactions</p>
+<p>where $H=H_0+H_\text{int}$, and $H_0$ is the free particle Hamiltonian including the chemical potential, which we can write</p>
 
-<p>Could calculate other things, but this is the simplest to start with.</p>
+<script type="math/tex; mode=display">H_0 = \sum_\bk \xi(\bk)\adop_\bk \aop_\bk,</script>
+
+<p>where $\xi(\bk)=\epsilon(\bk)-\mu$. All thermodynamic quantities can be obtained from $Z$, and the formalism can be further extended to calculate correlation functions.</p>
+
+<p>The key to our approach is to exploit then analogy between the ‘Boltzmann operator’ $e^{-\beta H}$ and the unitary time evolution operator $U(t) = e^{-iHt}$. Calculating the partition function seems to involve evolution for imaginary time $-i\beta$! This suggests we can develop an interaction picture, just as in the real time case. We have the equation of motion</p>
+
+<script type="math/tex; mode=display">\frac{d}{d\tau}\exp(-\tau H) = -\left(H_0+H_\int\right)\exp(-\tau H).</script>
+
+<p>Multiplying on the left by $e^{\tau H_0}$ gives an equation satisfied by $e^{\tau H_0}e^{-\tau H}$</p>
+
+<script type="math/tex; mode=display">\frac{d}{d\tau}\left[e^{\tau H_0}e^{-\tau H}\right] = -H_\text{int}(\tau)\left[e^{\tau H_0}e^{-\tau H}\right],
+\label{int_pic}</script>
+
+<p>where $H_\text{int}(\tau)\equiv e^{\tau H_0} H_\text{int}e^{-\tau H_0}$ corresponds to the perturbation in the interaction picture at time $t=-i\tau$. The formal solution to \eqref{int_pic} at $\tau=\beta$</p>
+
+<script type="math/tex; mode=display">e^{\beta H_0}e^{-\beta H} = T_\tau \exp\left(-\int_0^\beta H_\text{int}(\tau)d\tau\right),</script>
+
+<p>where $T_\tau$ is the operation of time ordering of the exponent, which is a shorthand for</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+T_\tau \exp\left(-\int_0^\beta H_\text{int}(\tau)d\tau\right) &= 1 - \int_0^\beta H_\text{int}(\tau_1)d\tau_1 + \int_0^\beta d\tau_2 \int_0^{\tau_1} d\tau_1 H_\text{int}(\tau_2)H_\text{int}(\tau_1) \\
+&- \int_0^\beta d\tau_3 \int_0^{\tau_3} d\tau_2 \int_0^{\tau_2} d\tau_1 H_\text{int}(\tau_3)H_\text{int}(\tau_2)H_\text{int}(\tau_1)+\cdots,
+\end{align} %]]></script>
+
+<p>with the times increasing from left to right. This gives our final expression for the partition function</p>
+
+<script type="math/tex; mode=display">Z = \tr\left[e^{-\beta H_0}T_\tau \exp\left(-\int_0^\beta H_\text{int}(\tau)d\tau\right)\right].</script>
+
+<p>Perturbation theory then involves computing averages of a string of $H_\text{int}(\tau)$ operators with respect to the Boltzmann distribution of the free Hamiltonian.</p>
+
+<h3 id="wicks-theorem">Wick’s Theorem</h3>
+
+<p>Let’s see how this works by considering the lowest order term when $H_\text{int}$ is given by \eqref{jelliumH}. In this case we just have to compute the thermal average of $H_\text{int}$: the time dependence vanishes by virtue of the cyclic property of the trace. Writing out the perturbation in terms of the Fourier modes gives</p>
+
+<script type="math/tex; mode=display">H_\text{int}  = \frac{1}{2} \sum_{\bk_1+\bk_2=\bk_3+\bk_4} \tilde U(\bk_1-\bk_4) :(\adop_{\bk_1}\aop_{\bk_4}-nV)(\adop_{\bk_2}\aop_{\bk_3}-nV):,
+\label{Hint_exp}</script>
+
+<p>where</p>
+
+<script type="math/tex; mode=display">\tilde U(\bq) = \frac{4\pi e^2}{\abs{\bq}^2}</script>
+
+<p>if the Fourier transform of the Coulomb potential. We have already discussed the expectation value of $H_\text{int}$ in a product state in <a href="/docs/lectures/MoreSecondQuantization/#excited-state-energies">Lecture 6</a>). Recall that the Hartree and Fock terms arise from two different ‘pairings’ of creation operators with annihilation operators. This sum over different pairings is a feature of expectations in a product state. Since $e^{-\beta H_0}$ represents a statistical mixture of product states in which the occupation of each momentum state is independent</p>
+
+<script type="math/tex; mode=display">e^{-\beta H_0} =\prod_\bk e^{-\beta\xi(\bk)N_\bk},</script>
+
+<p>we just set $N_\bk\to \langle\langle N_\bk\rangle\rangle$ in our earlier expression. The importance of including the background charge density now becomes clear: the Hartree term vanishes (without the background charge it would be infinite!), leaving only the Fock term</p>
+
+<script type="math/tex; mode=display">\langle\langle H_\text{int}\rangle\rangle =  - \frac{1}{2} \sum_{\bk_1,\bk_2} \tilde U(\bk_1-\bk_2) \langle\langle N_{\bk_1}\rangle\rangle\langle\langle N_{\bk_2}\rangle\rangle.</script>
+
+<p>What about the second order contribution, which depends on</p>
+
+<script type="math/tex; mode=display">\langle\langle H_\text{int}(\tau_2)H_\text{int}(\tau_1)\rangle\rangle.
+\label{2nd_Hint}</script>
+
+<p>This is a function of $\tau_1-\tau_2$, again as a result of the cyclic property. Including the time dependence in \eqref{Hint_exp} is straightforward</p>
+
+<script type="math/tex; mode=display">H_\text{int}  = \frac{1}{2} \sum_{\bk_1+\bk_2=\bk_3+\bk_4} \tilde U(\bk_1-\bk_4) :(\adop_{\bk_1}(\tau)\aop_{\bk_4}(\tau)-nV)(\adop_{\bk_2}(\tau)\aop_{\bk_3}(\tau)-nV):,
+\label{Hint_exp_TD}</script>
+
+<p>where the time dependence of the Fourier components is</p>
+
+<script type="math/tex; mode=display">\aop_\bk(\tau) = e^{-\tau\xi(\bp)}\aop_\bk,\quad \adop_\bk(\tau) = e^{\tau\xi(\bp)}\adop_\bk.</script>
+
+<p>The same logic applies to the evaluation of \eqref{2nd_Hint} as to the Hartree–Fock term. In the expectation value we will have a separate term arising from each possible pairing of a creation operator with an annihilation operator (recalling that in <a href="/docs/lectures/MoreSecondQuantization/#excited-state-energies">Lecture 6</a>) we argued that the accounting errors involved can be ignored in the thermodynamic limit). For fermions we have to in addition be careful to include a minus sign when, in moving paired creation and annihilation operators into position next to each other, we perform an odd number of transpositions. We have already seen an example of such a minus sign in the Fock potential. One compact way to write this result is</p>
+
+<script type="math/tex; mode=display">\langle\langle \pop(\br_1)\cdots \pop(\br_N)\pdop(\br_N)\cdots \pdop(\br_1) \rangle\rangle = \det \langle\langle \pop(\br_j)\pdop(\br_k) \rangle\rangle</script>
+
+<p>Statements of this form are normally called the <strong>Wick theorem</strong></p>
 
 <p>Consider the case of quartic interactions</p>
 
+<p>Normal order w.r.t the Fermi surface???</p>
+
+<h3 id="the-linked-cluster-expansion">The Linked Cluster Expansion</h3>
+
 <h2 id="the-hubbard--stratonovich-transformation">The Hubbard–Stratonovich Transformation</h2>
+
+<p>We don’t need the determinant if we have the linked cluster theorem!</p>
 
 <h3 id="trace-over-fermions">Trace Over Fermions</h3>
 

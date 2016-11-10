@@ -338,11 +338,11 @@ Bose or Fermi statistics gives rise to correlations in the positions of particle
 \label{more_rho2result}
 \end{align}</script>
 
-<p>You might notice that this expression double counts the case $\alpha=\beta=\gamma=\delta$ in the case of bosons. When does this matter? As usual we are interested in the continuum limit. When $\varphi_\alpha(x)$ are plane wave states this involves the usual prescription</p>
+<p>You might notice that this expression weights the case $\alpha=\beta=\gamma=\delta$ by a factor $2N_\alpha^2$ when it should have $N_\alpha(N_\alpha-1)$ in the case of bosons, and zero for fermions. On the other hand, such cases amount to a sum over a <em>single index</em>, where the general case is a sum over a double index. It seems reasonable, then, that this accounting error is not important in the thermodynamic limit. For instance, in the case that $\varphi_\alpha(x)$ are plane wave states we have the usual prescription</p>
 
 <script type="math/tex; mode=display">\sum_\alpha(\cdots) \longrightarrow L\int (\cdots)\frac{dk}{2\pi},</script>
 
-<p><em>assuming</em> the integrand is smooth. In this case the error in \eqref{more_rho2result} is a factor of $L^{-1}$ smaller than what we retain. However, if the occupancies of the single particle states are not smooth functions, this conclusion is not safe. We will meet this situation when we discuss Bose condensates in <a href="/docs/lectures/BoseGas/">Lecture 8</a>.</p>
+<p>assuming the integrand is smooth. In this case the error in \eqref{more_rho2result} is a factor of $L^{-1}$ smaller than what we retain. We do however have to be careful in Bose condensates, where one state has a finite fraction of the particles and this argument does not apply.</p>
 
 <p>We can express the result \eqref{more_rho2result} in terms of the density and density matrix as</p>
 
@@ -623,7 +623,7 @@ E_\text{kin} &= \sum_{|\bk|<k_\text{F}} \frac{\bk^2}{2m} \longrightarrow L^3 \in
 <img src="/docs/assets/Vertex.png" alt="" />
 <em>Graphical representation of the interaction \eqref{more_vertex}.</em></p>
 
-<p>As we’ve already discussed, the expectation value of \eqref{more_vertex} in a product state of momentum eigenstates gives two terms, which different ‘matchings’ of the momenta. We can represent these two terms graphically as shown below.</p>
+<p>As we’ve already discussed, the expectation value of \eqref{more_vertex} in a product state of momentum eigenstates gives two terms, with different ‘pairings’ of creation operators with annihilation operators. We can represent these two terms graphically as shown below.</p>
 
 <p><a name="HFDiag"></a>
 <img src="/docs/assets/HFDiag.png" alt="" />

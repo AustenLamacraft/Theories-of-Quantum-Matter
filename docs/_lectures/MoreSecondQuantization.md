@@ -109,13 +109,13 @@ $$
 \end{align}
 $$
 
-You might notice that this expression double counts the case $\alpha=\beta=\gamma=\delta$ in the case of bosons. When does this matter? As usual we are interested in the continuum limit. When $\varphi_\alpha(x)$ are plane wave states this involves the usual prescription
+You might notice that this expression weights the case $\alpha=\beta=\gamma=\delta$ by a factor $2N_\alpha^2$ when it should have $N_\alpha(N_\alpha-1)$ in the case of bosons, and zero for fermions. On the other hand, such cases amount to a sum over a _single index_, where the general case is a sum over a double index. It seems reasonable, then, that this accounting error is not important in the thermodynamic limit. For instance, in the case that $\varphi_\alpha(x)$ are plane wave states we have the usual prescription
 
 $$
 \sum_\alpha(\cdots) \longrightarrow L\int (\cdots)\frac{dk}{2\pi},
 $$
 
-_assuming_ the integrand is smooth. In this case the error in \eqref{more_rho2result} is a factor of $L^{-1}$ smaller than what we retain. However, if the occupancies of the single particle states are not smooth functions, this conclusion is not safe. We will meet this situation when we discuss Bose condensates in [Lecture 8]({{ site.baseurl }}/lectures/BoseGas/).
+assuming the integrand is smooth. In this case the error in \eqref{more_rho2result} is a factor of $L^{-1}$ smaller than what we retain. We do however have to be careful in Bose condensates, where one state has a finite fraction of the particles and this argument does not apply.
 
 We can express the result \eqref{more_rho2result} in terms of the density and density matrix as
 
@@ -460,7 +460,7 @@ When written in this way, interaction Hamiltonians are sometimes associated with
 ![]({{ site.baseurl }}/assets/Vertex.png)
 _Graphical representation of the interaction \eqref{more_vertex}._
 
-As we've already discussed, the expectation value of \eqref{more_vertex} in a product state of momentum eigenstates gives two terms, which different 'matchings' of the momenta. We can represent these two terms graphically as shown below.
+As we've already discussed, the expectation value of \eqref{more_vertex} in a product state of momentum eigenstates gives two terms, with different 'pairings' of creation operators with annihilation operators. We can represent these two terms graphically as shown below.
 
 <a name="HFDiag"></a>
 ![]({{ site.baseurl }}/assets/HFDiag.png)

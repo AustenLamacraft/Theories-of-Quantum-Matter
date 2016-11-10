@@ -403,7 +403,7 @@ $$
 where
 
 $$
-e^{-\kappa_\bq} = \sqrt{\frac{\epsilon(\bq)}{\omega{\bq}}}.
+e^{-\kappa_\bq} = \sqrt{\frac{\epsilon(\bq)}{\omega(\bq)}}.
 $$
 
 The density fluctuations in the ground state are then

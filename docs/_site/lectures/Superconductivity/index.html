@@ -331,7 +331,7 @@ ansatz \eqref{pair_fermi} only includes amplitudes for a given $\left(+\bp,-\bp\
 having either none or two fermions, the pair Hamiltonian can be written in terms of the pair operators $
 \bdop_\bp$, $\bop_\bp$ as</p>
 
-<script type="math/tex; mode=display">H_{\text{pair}}=2\sum_{\bp}\xi_{\bp}\bdop_\bp\bop_\bp+\frac{U_0}{V}\sum'_{\bp,\bp'} \bdop_\bp
+<script type="math/tex; mode=display">H_{\text{pair}}=2\sum_{\bp}\epsilon_{\bp}\bdop_\bp\bop_\bp+\frac{U_0}{V}\sum'_{\bp,\bp'} \bdop_\bp
 \bop_{\bp'}.
 \label{pair_h}</script>
 
@@ -356,7 +356,7 @@ level are uncorrelated</p>
 Finding the variational energy of Equation (\ref{bcs_cons}) is still a tricky problem. For instance, what is the
 expectation value of the kinetic energy?</p>
 
-<script type="math/tex; mode=display">\mathrm{K.E}=2\sum_\bp\xi_{\bp}\langle\bdop_\bp\bop_\bp\rangle\equiv 2\sum_\bp\xi_{\bp} \langle n^P_
+<script type="math/tex; mode=display">\mathrm{K.E}=2\sum_\bp\epsilon_{\bp}\langle\bdop_\bp\bop_\bp\rangle\equiv 2\sum_\bp\epsilon_{\bp} \langle n^P_
 \bp\rangle,
 \label{ke}</script>
 
@@ -373,7 +373,7 @@ however, that the projection onto a fixed number $N$ of particles corresponds ex
 momentum separately,  $\langle n^P_\bp\rangle$ is easily found to be $v_\bp^2$. The total variational
 energy of this state is</p>
 
-<script type="math/tex; mode=display">\braket{\text{BCS}}{H}{\text{BCS}}=2\sum_\bp \xi_{\bp}v_\bp^2+\frac{U_0}{V}\sum_{\bp,\bp'}u^*_\bp v_
+<script type="math/tex; mode=display">\braket{\text{BCS}}{H}{\text{BCS}}=2\sum_\bp \epsilon_{\bp}v_\bp^2+\frac{U_0}{V}\sum_{\bp,\bp'}u^*_\bp v_
 \bp u_{\bp'}v^*_{\bp'}.
 \label{bcs_en}</script>
 
@@ -406,16 +406,16 @@ as the components of a spin-$1/2$</p>
 
 <p>This representation is sometimes called <strong>Anderson spins</strong>. In this way we can write \eqref{pair_h} as a spin chain</p>
 
-<script type="math/tex; mode=display">H_{\text{pair}}=2\sum_\bp \epsilon_{\bp}S_\bp^z+\frac{U_0}{V}\sum_{\bp,\bp'}S^+_\bp S^-_{\bp'}.</script>
+<script type="math/tex; mode=display">H_{\text{pair}}-\mu N=2\sum_\bp \xi({\bp})S_\bp^z+\frac{U_0}{V}\sum_{\bp,\bp'}S^+_\bp S^-_{\bp'},</script>
 
-<p>If we parameterize $\left(u_\bp,v_\bp\right)$ as $(\cos(\theta/2)e^{i\varphi/2},\sin(\theta/2)e^{-i\varphi/2})$
+<p>where we have included the chemical potential by defining $\xi_\bp\equiv\epsilon(\bp)-\mu$. If we parameterize $\left(u_\bp,v_\bp\right)$ as $(\cos(\theta/2)e^{i\varphi/2},\sin(\theta/2)e^{-i\varphi/2})$
 then the variational energy Equation (\ref{bcs_en}) has the form (except for a constant)</p>
 
-<script type="math/tex; mode=display">\braket{\text{BCS}}{H}{\text{BCS}}=-\sum_\bp \xi_{\bp}\cos\theta_\bp+\frac{U_0}{4V}\sum_{\bp,\bp'}\sin
+<script type="math/tex; mode=display">\braket{\text{BCS}}{H}{\text{BCS}}=-\sum_\bp \xi_\bp\cos\theta_\bp+\frac{U_0}{4V}\sum_{\bp,\bp'}\sin
 \theta_\bp\sin\theta_{\bp'}\cos\left(\varphi_\bp-\varphi_{\bp'}\right).
 \label{spin_en}</script>
 
-<p>where $\xi(\bp)=\epsilon(\bp)-\mu$. The interpretation of \eqref{spin_en} is the following. The first term tends to align the spins with the z-axis in the - direction for $\xi_{\bp}&lt;0$ and in the + direction for $\xi_{\bp}&gt;0$. On the other hand, the
+<p>The interpretation of \eqref{spin_en} is the following. The first term tends to align the spins with the z-axis in the - direction for $\xi_\bp&lt;0$ and in the + direction for $\xi_\bp&gt;0$. On the other hand, the
 second term, originating from the potential energy between the constituents of a pair, wants the spins to
 lie in the x-y plane. Of course, the spins are really quantum mechanical spin-1/2 operators. The
 direction corresponds to the direction of $\langle \mathbf{S}\rangle$ in the BCS state.</p>
@@ -471,7 +471,7 @@ section. More significant, however, is the dependence of the right hand side on 
 
 <script type="math/tex; mode=display">\sim-\frac{U_0}{2}\nu(\mu)\Delta\log \Lambda/\Delta,</script>
 
-<p>where $\Lambda$ is the UV cut-off (we will shortly identify it with the Fermi energy), and $\nu(\mu)$ is the density of states at the chemical potential. This shows that no matter how small the attraction $U_0&lt;0$, there will always be a solution of \eqref{cont_sc} with finite $\Delta$. This is the essence of the <strong>Cooper phenomenon</strong>. It should be compared with the
+<p>where $\Lambda$ is the UV cut-off (we will shortly identify it with the Fermi energy), and $\nu(\mu)$ is the density of states per spin component at the chemical potential. This shows that no matter how small the attraction $U_0&lt;0$, there will always be a solution of \eqref{cont_sc} with finite $\Delta$. This is the essence of the <strong>Cooper phenomenon</strong>. It should be compared with the
 situation in which there are not a macroscopically large number of particles present. In that case $\mu=0
 $, so that $\xi_{\bp}=\epsilon(\bp)&gt;0$. Then the right hand side of \eqref{cont_sc} has no divergence at
 low energies because the density of states $\nu(E)$ vanishes. The finite value of $\Delta$ is thus seen to be a consequence of the fermi sea.</p>
@@ -482,14 +482,13 @@ low energies because the density of states $\nu(E)$ vanishes. The finite value o
 
 <h3 id="the-bcs-bec-crossover">The BCS-BEC Crossover</h3>
 
-<p>Surprisingly, the wavefunctions in two limits are the same! This can be seen
+<p>Surprisingly, the wavefunctions in the two limits are the same! This can be seen
 from the first quantized form of the number conserving wavefunction  \eqref{bcs_cons}</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\ket{N \text{ pair}}=\mathcal{A}\prod_{i<j}^{N/2} \varphi(\br_{i\uparrow}-\br_{j\downarrow}),
-\label{bcs_first} %]]></script>
+<script type="math/tex; mode=display">\ket{N \text{ pair}}=\sum_P (-1)^P \prod_{j=1}^{N/2} \varphi(\br^\uparrow_{i}-\br^\downarrow_{P(j)}),
+\label{bcs_first}</script>
 
-<p>where $\varphi_\bp=v_\bp/u_\bp$.</p>
+<p>where $\varphi_\bp=v_\bp/u_\bp$, and $\br^{\uparrow,\downarrow}_j$ are the positions of the spin up and spin down fermions, and we sum over all permutations of $N/2$ objects (assuming $N$ is even).</p>
 
 <p class="message">
 Do you understand where this comes from?
@@ -553,7 +552,7 @@ by assumption is much less than the scale on which $U_0(\bp)$ varies, and justif
 
 <p>By comparing the Fourier transform of \eqref{inhomog} at $E=0$ and \eqref{super_GapReg}, we can conclude</p>
 
-<script type="math/tex; mode=display">\Delta_\bp=-\frac{m}{4\pi a}\Delta_0 \widetilde{\nabla^2 \Psi_\text{scatt}}(\bp),</script>
+<script type="math/tex; mode=display">\Delta_\bp=\frac{\Delta_0\abs{\bp}^2}{4\pi a} \tilde\Psi_\text{scatt}(\bp),</script>
 
 <p>so that</p>
 
@@ -677,10 +676,10 @@ equation, and occurs with probability $n_{\uparrow}(\bp)n_{\downarrow}(-\bp)$. T
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{eqnarray}
-\Delta&=&\frac{U_0}{V}\sum_{\bp}\frac{\Delta}{2E_{\bp'}}(\overbrace{[1-n_{\uparrow}(\bp)][1-n_
+\Delta&=&-\frac{U_0}{V}\sum_{\bp}\frac{\Delta}{2E_{\bp'}}(\overbrace{[1-n_{\uparrow}(\bp)][1-n_
 {\downarrow}(-\bp)]}^{\mathrm{no\,qp}}-\overbrace{n_{\uparrow}(\bp)n_{\downarrow}(-\bp)}^{\mathrm
 {two\, qp}})\nonumber\\
-&=&\frac{U_0}{V}\sum_{\bp}\frac{\Delta}{2E_{\bp'}}[1-n_{\uparrow}(\bp)-n_{\downarrow}(-\bp)].
+&=&-\frac{U_0}{V}\sum_{\bp}\frac{\Delta}{2E_{\bp'}}[1-n_{\uparrow}(\bp)-n_{\downarrow}(-\bp)].
 \end{eqnarray} %]]></script>
 
 <p>For the case $E_s(\bp)=E(\bp)$, and in the BCS limit where $\mu\sim E_F$, $\Delta\ll E_F$, this is
@@ -688,7 +687,7 @@ conveniently presented in the form</p>
 
 <script type="math/tex; mode=display">\frac{1}{U_0\nu(E_F)}=-\int_\Delta dE \tanh\left(\frac{E}{2T}\right)\frac{\Delta}{\sqrt{E^2-\Delta^2}},</script>
 
-<p>where $\nu(E_F)$ is the fermi surface density of states, and we have left out the upper cut-off. This
+<p>where $\nu(E_F)$ is the fermi surface density of states per spin, and we have left out the upper cut-off. This
 expression needs to be regularized as in the zero temperature case considered before. The resulting $
 \Delta(T)$ varies from $\Delta(0)=\Delta_{\text{BCS}}$ given by \eqref{bcs_gap}, to zero at</p>
 
