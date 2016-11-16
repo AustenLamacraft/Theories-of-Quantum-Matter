@@ -27,6 +27,10 @@ Compressibility Sum Rule From Perturbation Theory
 Inelastic scattering of light
 Feynman--Bijl for Quantum Hall
 
+Explicitly find Matsubara GF from definition.
+
+Find second order contribution to free energy by usual perturbation theory
+
 ## From the Anderson Model to the Kondo Model
 
 ## Spin-flip mediated inelastic scattering

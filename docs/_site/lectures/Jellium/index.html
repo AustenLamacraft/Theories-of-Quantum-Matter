@@ -3,7 +3,7 @@
 
   <head>
   <!-- Canonical link to help search engines -->
-  <link rel="canonical" href="/docs/drafts/Jellium/"/>
+  <link rel="canonical" href="/docs/lectures/Jellium/"/>
 
   <!-- Basic meta elements -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -27,7 +27,7 @@
     <meta property="og:description" content="An Ed edition">
     <meta property="fb:admins" content="elotroalex"/>
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/drafts/Jellium/"/>
+    <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/Jellium/"/>
     <meta property="fb:app_id" content="589495744558280"/>
     <meta property="og:image" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/public/open-graph-logo.png"/>
     <meta property="og:image:width" content="200" />
@@ -213,10 +213,16 @@ $$
         
       
     
+      
+        
+          <a class="sidebar-nav-item active" href="/docs/lectures/Jellium/">Jellium</a>
+        
+      
+    
 
     <!-- The code below is used for manually entered links  -->
 
-    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://tqm.usertest.mws3.csx.cam.ac.uk/docs/drafts/Jellium/">Annotate me</a>
+    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/Jellium/">Annotate me</a>
   </nav>
 
   <div class="sidebar-item">
@@ -252,14 +258,11 @@ There are many situations in which an approach based on finite orders of perturb
   <li><a href="#dimensionless-parameters" id="markdown-toc-dimensionless-parameters">Dimensionless parameters</a></li>
   <li><a href="#perturbation-series-for-the-partition-function" id="markdown-toc-perturbation-series-for-the-partition-function">Perturbation Series for the Partition Function</a>    <ul>
       <li><a href="#wicks-theorem" id="markdown-toc-wicks-theorem">Wick’s Theorem</a></li>
+      <li><a href="#greens-functions" id="markdown-toc-greens-functions">Green’s functions</a></li>
       <li><a href="#the-linked-cluster-expansion" id="markdown-toc-the-linked-cluster-expansion">The Linked Cluster Expansion</a></li>
     </ul>
   </li>
-  <li><a href="#the-hubbard--stratonovich-transformation" id="markdown-toc-the-hubbard--stratonovich-transformation">The Hubbard–Stratonovich Transformation</a>    <ul>
-      <li><a href="#trace-over-fermions" id="markdown-toc-trace-over-fermions">Trace Over Fermions</a></li>
-      <li><a href="#polarization-operator" id="markdown-toc-polarization-operator">Polarization Operator</a></li>
-    </ul>
-  </li>
+  <li><a href="#the-hubbard--stratonovich-transformation" id="markdown-toc-the-hubbard--stratonovich-transformation">The Hubbard–Stratonovich Transformation</a></li>
 </ul>
 
 <hr />
@@ -352,13 +355,38 @@ T_\tau \exp\left(-\int_0^\beta H_\text{int}(\tau)d\tau\right) &= 1 - \int_0^\bet
 
 <script type="math/tex; mode=display">e^{-\beta H_0} =\prod_\bk e^{-\beta\xi(\bk)N_\bk},</script>
 
-<p>we just set $N_\bk\to \langle\langle N_\bk\rangle\rangle$ in our earlier expression. The importance of including the background charge density now becomes clear: the Hartree term vanishes (without the background charge it would be infinite!), leaving only the Fock term</p>
+<p>we just set $N_\bk\to \langle N_\bk\rangle$ in our earlier expression. We are now denoting the quantum and thermal expectation by single angular brackets to avoid clutter. Thus, for some operator $A$</p>
 
-<script type="math/tex; mode=display">\langle\langle H_\text{int}\rangle\rangle =  - \frac{1}{2} \sum_{\bk_1,\bk_2} \tilde U(\bk_1-\bk_2) \langle\langle N_{\bk_1}\rangle\rangle\langle\langle N_{\bk_2}\rangle\rangle.</script>
+<script type="math/tex; mode=display">\langle A\rangle \equiv \frac{\tr\left[e^{-\beta H_0} A\right]}{Z_0},\quad Z_0 = \tr e^{-\beta H_0}</script>
 
-<p>What about the second order contribution, which depends on</p>
+<p>The importance of including the background charge density now becomes clear: the Hartree term vanishes (without the background charge it would be infinite!), leaving only the Fock term</p>
 
-<script type="math/tex; mode=display">\langle\langle H_\text{int}(\tau_2)H_\text{int}(\tau_1)\rangle\rangle.
+<script type="math/tex; mode=display">\langle H_\text{int}\rangle =  - \frac{1}{2} \sum_{\bk_1,\bk_2} \tilde U(\bk_1-\bk_2) \langle N_{\bk_1}\rangle\langle N_{\bk_2}\rangle.</script>
+
+<p>Before considering a situation where the time dependence enters in an essential way, let’s look at a slightly more general example of an expectation value</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\langle \pdop(\br_1)\pop(\br_2)\pdop(\br_3)\pop(\br_4)\rangle &= \frac{1}{V^2}\sum_{\bk_1,\bk_2,\bk_3,\bk_4} e^{i(-\bk_1\cdot\br_1+\bk_2\cdot\br_2-\bk_3\cdot\br_3+\bk_4\cdot\br_4)} \langle \adop_{\bk_1}\aop_{\bk_2}\adop_{\bk_3}\aop_{\bk_4} \rangle\nonumber\\
+&= \frac{1}{V^2}\sum_{\bk_1,\bk_3} e^{i[\bk_1\cdot(\br_2-\br_1)+\bk_3\cdot(\br_4-\br_3)]} \langle \adop_{\bk_1}\aop_{\bk_1}\rangle\langle\adop_{\bk_3}\aop_{\bk_3} \rangle\nonumber\\
+&\quad+ \frac{1}{V^2}\sum_{\bk_1,\bk_2} e^{i[\bk_1\cdot(\br_4-\br_1)+\bk_2\cdot(\br_2-\br_3)]} \langle \adop_{\bk_1}\aop_{\bk_1}\rangle\langle\adop_{\bk_2}\aop_{\bk_2} \rangle +\cdots\nonumber\\
+&=\langle \pdop(\br_1)\pop(\br_2)\rangle\langle\pdop(\br_3)\pop(\br_4)\rangle \nonumber\\
+&\quad+\langle \pdop(\br_1)\pop(\br_4)\rangle\langle\pop(\br_2)\pdop(\br_3)\rangle .
+\label{Wick_Example}
+\end{align} %]]></script>
+
+<p>The dots in the second equality are the accounting errors that we argued in <a href="/docs/lectures/MoreSecondQuantization/#excited-state-energies">Lecture 6</a> can be ignored in the thermodynamic limit. There are no signs on account of the even number of transpositions to shift things into order in the second term. On the other hand</p>
+
+<script type="math/tex; mode=display">\begin{align}
+\langle \pdop(\br_1)\pdop(\br_2)\pop(\br_3)\pop(\br_4)\rangle =\langle \pdop(\br_1)\pop(\br_4)\rangle\langle\pdop(\br_2)\pop(\br_3)\rangle\nonumber\\
+\quad\pm\langle \pdop(\br_1)\pop(\br_3)\rangle\langle\pdop(\br_2)\pop(\br_4)\rangle,
+\end{align}</script>
+
+<p>with the plus sign for bosons and the minus sign for fermions. Hopefully the picture is clear: we sum over all possible pairings of creation with annihilation operators. For fermions we must in addition be careful to include a minus sign when, in moving paired creation and annihilation operators into position next to each other, we perform an odd number of transpositions.</p>
+
+<p>The second order contribution to the partition function depends on</p>
+
+<script type="math/tex; mode=display">\langle T_\tau H_\text{int}(\tau_2)H_\text{int}(\tau_1)\rangle.
 \label{2nd_Hint}</script>
 
 <p>This is a function of $\tau_1-\tau_2$, again as a result of the cyclic property. Including the time dependence in \eqref{Hint_exp} is straightforward</p>
@@ -370,29 +398,125 @@ T_\tau \exp\left(-\int_0^\beta H_\text{int}(\tau)d\tau\right) &= 1 - \int_0^\bet
 
 <script type="math/tex; mode=display">\aop_\bk(\tau) = e^{-\tau\xi(\bp)}\aop_\bk,\quad \adop_\bk(\tau) = e^{\tau\xi(\bp)}\adop_\bk.</script>
 
-<p>The same logic applies to the evaluation of \eqref{2nd_Hint} as to the Hartree–Fock term. In the expectation value we will have a separate term arising from each possible pairing of a creation operator with an annihilation operator (recalling that in <a href="/docs/lectures/MoreSecondQuantization/#excited-state-energies">Lecture 6</a>) we argued that the accounting errors involved can be ignored in the thermodynamic limit). For fermions we have to in addition be careful to include a minus sign when, in moving paired creation and annihilation operators into position next to each other, we perform an odd number of transpositions. We have already seen an example of such a minus sign in the Fock potential. One compact way to write this result is</p>
+<p>How to we evaluate expectations of time ordered products? It’s fairly clear that our example \eqref{Wick_Example} is also an identity in this case</p>
 
-<script type="math/tex; mode=display">\langle\langle \pop(\br_1)\cdots \pop(\br_N)\pdop(\br_N)\cdots \pdop(\br_1) \rangle\rangle = \det \langle\langle \pop(\br_j)\pdop(\br_k) \rangle\rangle</script>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+&\langle T_\tau\pdop(\br_1,\tau_1)\pop(\br_2,\tau_2)\pdop(\br_3,\tau_3)\pop(\br_4,\tau_4)\rangle=\nonumber\\ &\qquad\langle T_\tau\pdop(\br_1,\tau_1)\pop(\br_2,\tau_2)\rangle\langle T_\tau\pdop(\br_3,\tau_3)\pop(\br_4,\tau_4)\rangle\nonumber\\
+&\qquad\qquad+\langle T_\tau\pdop(\br_1,\tau_1)\pop(\br_4,\tau_4)\rangle\langle T_\tau\pop(\br_2,\tau_2)\pdop(\br_3,\tau_3)\rangle,
+\label{Wick_ExampleT}
+\end{align} %]]></script>
 
-<p>Statements of this form are normally called the <strong>Wick theorem</strong></p>
+<p>because the operators appear in the right time order in the expectation values on both sides. In turns out that this works for fermions too, <em>provided</em> that we define time ordering to include a sign corresponding to the signature of the permutation involved in putting the operators in time order. In the simplest case:</p>
 
-<p>Consider the case of quartic interactions</p>
+<script type="math/tex; mode=display">% <![CDATA[
+\langle T_\tau \pdop(\br,\tau)\pop(\br',\tau') \rangle = \begin{cases}
+\langle \pdop(\br,\tau)\pop(\br',\tau') \rangle & \tau>\tau'\\
+-\langle \pop(\br',\tau')\pdop(\br,\tau) \rangle & \tau'>\tau.\
+\label{Fermi_Tdef}
+\end{cases} %]]></script>
 
-<p>Normal order w.r.t the Fermi surface???</p>
+<p>To see why this is necessary, consider the expectation corresponding to the time ordering $\tau_1&gt;\tau_3&gt;\tau_2&gt;\tau_4$</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+&\pdop(\br_1,\tau_1)\pdop(\br_3,\tau_3)\pop(\br_2,\tau_2)\pop(\br_4,\tau_4)\rangle=\nonumber\\ &\qquad-\langle \pdop(\br_1,\tau_1)\pop(\br_2,\tau_2)\rangle\langle \pdop(\br_3,\tau_3)\pop(\br_4,\tau_4)\rangle\nonumber\\
+&\qquad\qquad+\langle \pdop(\br_1,\tau_1)\pop(\br_4,\tau_4)\rangle\langle \pdop(\br_3,\tau_3)\pop(\br_2,\tau_2)\rangle.
+\end{align} %]]></script>
+
+<p>Since the first term on the right hand side contains time ordered products, this identity is only described correctly by \eqref{Wick_ExampleT} if we use the above convention.</p>
+
+<p>One further note about $T_\tau$-products: operators appearing in a $T_\tau$ product can be regarded as (anti-)commuting, because the actual order that they appear in depends on their $\tau$ labels. For instance $T_\tau A(\tau_1)B(\tau_2) = \pm T_\tau B(\tau_2)A(\tau_1)$, depending on whether the operators are bosonic or fermionic.</p>
+
+<p>To outcome of this discussion is <strong>Wick’s theorem</strong>:</p>
+
+<p class="message">
+An expectation of a $T_\tau$-product of operators with respect to a free Hamiltonian can be written as a sum of terms corresponding to all possible pairings of the operators. Each term consists of the product of $T_\tau$-product expectations for each pair. In the case of fermions, each term will have a sign corresponding to the signature of the permutation reordering the operators so that paired operators are adjacent.
+</p>
+
+<p>This is the basic result used for evaluating the time ordered products like \eqref{2nd_Hint}.</p>
+
+<h3 id="greens-functions">Green’s functions</h3>
+
+<p>In light of Wick’s theorem, we see that the basic quantity that appears in perturbation theory is</p>
+
+<script type="math/tex; mode=display">G(\br,\tau,\br',\tau')\equiv\langle T_\tau \pop(\br,\tau)\pdop(\br',\tau') \rangle.
+\label{GF_def}</script>
+
+<p>This is called a <strong>Green’s function</strong>, because it satisfies the equation</p>
+
+<script type="math/tex; mode=display">\left[\partial_\tau + H_0\right]G(\br,\tau,\br',\tau')=\delta(\tau-\tau')\delta(\br-\br').
+\label{GF_eq}</script>
+
+<p class="message">
+Make sure you understand where those $\delta$-functions on the right hand side come from!
+</p>
+
+<p>The name is slightly unfortunate, because $G(\br,\tau,\br’,\tau’)$ has a physical meaning in its own right, apart from being useful in perturbation calculation, and we can define it for an interacting system by taking expectations in \eqref{GF_def} with respect to the density matrix of the interacting system. In that case, however, $G(\br,\tau,\br’,\tau’)$ does not obey a differntial equation like \eqref{GF_eq}. So in general many body Green’s functions are <em>not</em> Green’s functions in the sense of differential equations. Just to confuse you.</p>
+
+<p>For the noninteracting Green’s functions that appear in our perturbation calculations \eqref{GF_eq} is very useful, allowing us to find $G(\br,\tau,\br’,\tau’)$ using Fourier analysis. The Green’s function depends on $\tau-\tau’$ (by the cyclic property of the trace), and in a translationally invariant system it will depend on $\br-\br’$. What about boundary conditions? They are very simple</p>
+
+<script type="math/tex; mode=display">G(\br,\tau) = \pm G(\br,\tau+\beta).
+\label{GF_bc}</script>
+
+<p>The Green’s function is periodic in $\beta$ for bosons, and antiperiodic for fermions. This follows from carefully writing out the definition \eqref{GF_def} and using the cyclic property of the trace, not forgetting \eqref{Fermi_Tdef} in the case of fermions. As a result of \eqref{GF_bc}, we can expand $G(\br,\tau)$ in a Fourier series.</p>
+
+<script type="math/tex; mode=display">G(\br,\tau) = \sum_{n=-\infty}^\infty G_{\omega_n}(\br) e^{-i\omega_n \tau}.</script>
+
+<p>The frequencies $\omega_n$ are called <strong>Matsubara frequencies</strong>, and are</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\omega_n = \begin{cases}
+2\pi n T & \text{bosons}\\
+2\pi \left(n+\frac{1}{2}\right) T & \text{fermions}.\\
+\end{cases} %]]></script>
+
+<p>By Fourier transforming, we find the Green’s function in momentum and frequency space to be</p>
+
+<script type="math/tex; mode=display">G_{\bk,\omega_n} = \frac{1}{-i\omega_n + \xi(\bk)}.</script>
 
 <h3 id="the-linked-cluster-expansion">The Linked Cluster Expansion</h3>
 
+<p>So far we have described how (in principle) we go about calculating</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+Z &= \tr\left[e^{-\beta H_0}T_\tau \exp\left(-\int_0^\beta H_\text{int}(\tau)d\tau\right)\right]\\
+&=Z_0\left(1 - \beta \langle H_\text{int}\rangle +\frac{1}{2} \int_0^\beta d\tau_2 \int_0^{\beta} d\tau_1 \langle T_\tau H_\text{int}(\tau_2)H_\text{int}(\tau_1)\rangle+\cdots \right)
+\label{Z_exp}
+\end{align} %]]></script>
+
+<p>When we discussed Hartree–Fock theory in <a href="/docs/lectures/MoreSecondQuantization/#excited-state-energies">Lecture 6</a>, we represented the Hartree and Fock terms by the diagrams</p>
+
+<p><a name="HFDiag"></a>
+<img src="/docs/assets/HFDiag.png" alt="" />
+<em>Graphical representation of the Hartree and Fock terms.</em></p>
+
+<p>corresponding to the different ways of pairing the operators. Some of the diagrams arising at the second term in \eqref{Z_exp} are shown below</p>
+
+<p><a name="HFDiag"></a>
+<img src="/docs/assets/2ndOrderDiagrams.png" alt="" />
+<em>Some of the diagrams contributing at second order. 1. is a pair of disconnected components, each corresponding to the Fock diagram at first order. 2. and 3. are connected diagrams.</em></p>
+
+<p>We see that some of these diagrams consist of a <em>single</em> connected component of interaction vertices joined by lines corresponding to pairing of creation and annihilation operators. The other diagrams consists of two disconnected copies of those that have already appeared at first order. The contribution from a diagram consisting of disconnected components factorizes, so there’s no difficulty including these repeated components as we will have already calculated them at a lower order in the series.</p>
+
+<p>Now, what we actually want to calculate is not the partition function, but its logarithm, or derivatives thereof. For example,</p>
+
+<script type="math/tex; mode=display">F = -k_\text{B}T \log Z</script>
+
+<p>is the free energy, while</p>
+
+<script type="math/tex; mode=display">U = -\frac{\partial}{\partial \beta}\log Z</script>
+
+<p>is the internal energy. Fortunately, we have the following amazing fact, known as the <strong>linked cluster theorem</strong>:</p>
+
+<p class="message">
+The expansion of $\log Z$ involves only those diagrams forming a <strong>single connected component </strong>.
+</p>
+
+<p>Let’s see how this works by evaluating the second order contribution to the free energy.</p>
+
 <h2 id="the-hubbard--stratonovich-transformation">The Hubbard–Stratonovich Transformation</h2>
-
-<p>We don’t need the determinant if we have the linked cluster theorem!</p>
-
-<h3 id="trace-over-fermions">Trace Over Fermions</h3>
-
-<h3 id="polarization-operator">Polarization Operator</h3>
-
-<p>Here we introduce..</p>
-
-<p>Evaluate the partition function using the linked cluster expansion</p>
 
 </div>
 
