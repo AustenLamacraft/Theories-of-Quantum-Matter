@@ -8,7 +8,7 @@ published: true
 ---
 
 <p class="message">
-There are many situations in which an approach based on finite orders of perturbation theory either misses important physics, or leads to divergences (often both). Mean field theories like those of BCS or Bogoliubov are one way forward. Here we introduce another: transforming the calculation of the partition function into a field theory in an auxillary field, which can then be analyzed by the saddle point method. We use this approach to study a toy model for electrons in a metal: a gas of fermions interacting via the Coulomb force in a neutralizing background of uniform charge density that plays the role of the ionic lattice. This is <strong>Jellium</strong>.
+There are many situations in which an approach based on finite orders of perturbation theory either misses important physics, or leads to divergences (often both). In this lecture we develop many body perturbation theory in more detail by considering a formalism to calculate the partition function or free energy. We apply this approach to a toy model for electrons in a metal: a gas of fermions interacting via the Coulomb force in a neutralizing background of uniform charge density that plays the role of the ionic lattice. This is <strong>Jellium</strong>.
 </p>
 
 ## Contents
@@ -51,7 +51,7 @@ We have already encountered the following states in Fermi gases, roughly in orde
 
 For very strong interactions, corresponding $r_s$ values greater than 100, the system can form a [Wigner crystal](https://en.wikipedia.org/wiki/Wigner_crystal), breaking the continuous symmetry of spatial translations.
 
-Using perturbation theory to go beyond the Hartree--Fock approximation leads to divergences in the case of Coulomb interactions. Far from being a mere technical nuisance, these divergences are intimately linked to real physical effects arising from the long-ranged interaction, namely __screening__ and collective excitations corresponding to quantized __plasma oscillations__.
+Using perturbation theory to go beyond the Hartree--Fock approximation leads to divergences in the case of Coulomb interactions. As a result, certain contributions to the perturbation series have to be summed to all orders. Far from being a mere technical nuisance, this resummation is linked to real physical effects arising from the long-ranged interaction, namely __screening__ and collective excitations corresponding to quantized __plasma oscillations__.
 
 ## Perturbation Series for the Partition Function
 
@@ -320,9 +320,4 @@ The expansion of $\log Z$ involves only those diagrams forming a <strong>single 
 
 Let's see how this works by evaluating the second order contribution to the free energy. According to the linked cluster theorem, this involves the diagrams
 
-We will focus on the first of these. The reason for this is that for Coulomb interactions, this causes the biggest headache. To see what the problem is, let's first write out the  
-
-
-The reason becomes clear when we consider the momenta associated with each line in the diagram.
-
-## The Hubbard--Stratonovich Transformation
+For Coulomb interactions, the first of these causes the biggest headache. To see what the problem is, let's first write out the contribution of this diagram using Wick's theorem.
