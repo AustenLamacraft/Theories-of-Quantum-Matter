@@ -3,7 +3,7 @@ layout: page
 title: Jellium
 author: Austen Lamacraft
 chapter: 11
-summary: Ground state energy. Hubbard--Stratonovich transformation
+summary: Perturbation series for partition function and free energy. Screening.
 published: true
 ---
 
@@ -318,7 +318,11 @@ is the internal energy. Fortunately, we have the following amazing fact, known a
 The expansion of $\log Z$ involves only those diagrams forming a <strong>single connected component </strong>.
 </p>
 
-Let's see how this works by evaluating the second order contribution to the free energy.
+Let's see how this works by evaluating the second order contribution to the free energy. According to the linked cluster theorem, this involves the diagrams
 
+We will focus on the first of these. The reason for this is that for Coulomb interactions, this causes the biggest headache. To see what the problem is, let's first write out the  
+
+
+The reason becomes clear when we consider the momenta associated with each line in the diagram.
 
 ## The Hubbard--Stratonovich Transformation
