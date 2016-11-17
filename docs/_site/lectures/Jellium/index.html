@@ -261,6 +261,7 @@ There are many situations in which an approach based on finite orders of perturb
       <li><a href="#wicks-theorem" id="markdown-toc-wicks-theorem">Wick’s Theorem</a></li>
       <li><a href="#greens-functions" id="markdown-toc-greens-functions">Green’s functions</a></li>
       <li><a href="#the-linked-cluster-expansion" id="markdown-toc-the-linked-cluster-expansion">The Linked Cluster Expansion</a></li>
+      <li><a href="#summing-the-singular-diagrams" id="markdown-toc-summing-the-singular-diagrams">Summing the Singular Diagrams</a></li>
       <li><a href="#evaluating-the-polarization" id="markdown-toc-evaluating-the-polarization">Evaluating the Polarization</a></li>
     </ul>
   </li>
@@ -316,7 +317,7 @@ There are many situations in which an approach based on finite orders of perturb
 
 <p>The key to our approach is to exploit then analogy between the ‘Boltzmann operator’ $e^{-\beta H}$ and the unitary time evolution operator $U(t) = e^{-iHt}$. Calculating the partition function seems to involve evolution for imaginary time $-i\beta$! This suggests we can develop an interaction picture, just as in the real time case. We have the equation of motion</p>
 
-<script type="math/tex; mode=display">\frac{d}{d\tau}\exp(-\tau H) = -\left(H_0+H_\int\right)\exp(-\tau H).</script>
+<script type="math/tex; mode=display">\frac{d}{d\tau}\exp(-\tau H) = -\left(H_0+H_\text{int}\right)\exp(-\tau H).</script>
 
 <p>Multiplying on the left by $e^{\tau H_0}$ gives an equation satisfied by $e^{\tau H_0}e^{-\tau H}$</p>
 
@@ -331,7 +332,7 @@ There are many situations in which an approach based on finite orders of perturb
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
-T_\tau \exp\left(-\int_0^\beta H_\text{int}(\tau)d\tau\right) &= 1 - \int_0^\beta H_\text{int}(\tau_1)d\tau_1 + \int_0^\beta d\tau_2 \int_0^{\tau_1} d\tau_1 H_\text{int}(\tau_2)H_\text{int}(\tau_1) \\
+T_\tau \exp\left(-\int_0^\beta H_\text{int}(\tau)d\tau\right) &= 1 - \int_0^\beta H_\text{int}(\tau_1)d\tau_1 + \int_0^\beta d\tau_2 \int_0^{\tau_2} d\tau_1 H_\text{int}(\tau_2)H_\text{int}(\tau_1) \\
 &- \int_0^\beta d\tau_3 \int_0^{\tau_3} d\tau_2 \int_0^{\tau_2} d\tau_1 H_\text{int}(\tau_3)H_\text{int}(\tau_2)H_\text{int}(\tau_1)+\cdots,
 \end{align} %]]></script>
 
@@ -345,12 +346,12 @@ T_\tau \exp\left(-\int_0^\beta H_\text{int}(\tau)d\tau\right) &= 1 - \int_0^\bet
 
 <p>Let’s see how this works by considering the lowest order term when $H_\text{int}$ is given by \eqref{jelliumH}. In this case we just have to compute the thermal average of $H_\text{int}$: the time dependence vanishes by virtue of the cyclic property of the trace. Writing out the perturbation in terms of the Fourier modes gives</p>
 
-<script type="math/tex; mode=display">H_\text{int}  = \frac{1}{2V} \sum_{\bk_1+\bk_2=\bk_3+\bk_4} \tilde U(\bk_1-\bk_4) :(\adop_{\bk_1}\aop_{\bk_4}-nV)(\adop_{\bk_2}\aop_{\bk_3}-nV):,
+<script type="math/tex; mode=display">H_\text{int}  = \frac{1}{2V} \sum_{\bk_1+\bk_2=\bk_3+\bk_4} U_{\bk_1-\bk_4} :(\adop_{\bk_1}\aop_{\bk_4}-nV\delta_{\bk_1,\bk_4})(\adop_{\bk_2}\aop_{\bk_3}-nV\delta_{\bk_2,\bk_3}):,
 \label{Hint_exp}</script>
 
 <p>where</p>
 
-<script type="math/tex; mode=display">\tilde U_\bq = \frac{4\pi e^2}{\abs{\bq}^2}</script>
+<script type="math/tex; mode=display">U_\bq = \frac{4\pi e^2}{\abs{\bq}^2}</script>
 
 <p>is the Fourier transform of the Coulomb potential. We have already discussed the expectation value of $H_\text{int}$ in a product state in <a href="/docs/lectures/MoreSecondQuantization/#excited-state-energies">Lecture 6</a>). Recall that the Hartree and Fock terms arise from two different ‘pairings’ of creation operators with annihilation operators. This sum over different pairings is a feature of expectations in a product state. Since $e^{-\beta H_0}$ represents a statistical mixture of product states in which the occupation of each momentum state is independent</p>
 
@@ -362,7 +363,7 @@ T_\tau \exp\left(-\int_0^\beta H_\text{int}(\tau)d\tau\right) &= 1 - \int_0^\bet
 
 <p>The importance of including the background charge density now becomes clear: the Hartree term vanishes (without the background charge it would be infinite!), leaving only the Fock term</p>
 
-<script type="math/tex; mode=display">\langle H_\text{int}\rangle =  - \frac{1}{2V} \sum_{\bk_1,\bk_2} \tilde U_{\bk_1-\bk_2} \langle N_{\bk_1}\rangle\langle N_{\bk_2}\rangle.</script>
+<script type="math/tex; mode=display">\langle H_\text{int}\rangle =  - \frac{1}{2V} \sum_{\bk_1,\bk_2} \U_{\bk_1-\bk_2} \langle N_{\bk_1}\rangle\langle N_{\bk_2}\rangle.</script>
 
 <p>Before considering a situation where the time dependence enters in an essential way, let’s look at a slightly more general example of an expectation value</p>
 
@@ -392,7 +393,7 @@ T_\tau \exp\left(-\int_0^\beta H_\text{int}(\tau)d\tau\right) &= 1 - \int_0^\bet
 
 <p>This is a function of $\tau_1-\tau_2$, again as a result of the cyclic property. Including the time dependence in \eqref{Hint_exp} is straightforward</p>
 
-<script type="math/tex; mode=display">H_\text{int}  = \frac{1}{2V} \sum_{\bk_1+\bk_2=\bk_3+\bk_4} \tilde U_{\bk_1-\bk_4} :(\adop_{\bk_1}(\tau)\aop_{\bk_4}(\tau)-nV)(\adop_{\bk_2}(\tau)\aop_{\bk_3}(\tau)-nV):,
+<script type="math/tex; mode=display">H_\text{int}  = \frac{1}{2V} \sum_{\bk_1+\bk_2=\bk_3+\bk_4} U_{\bk_1-\bk_4} :(\adop_{\bk_1}(\tau)\aop_{\bk_4}(\tau)-nV)(\adop_{\bk_2}(\tau)\aop_{\bk_3}(\tau)-nV):,
 \label{Hint_exp_TD}</script>
 
 <p>where the time dependence of the Fourier components is</p>
@@ -516,6 +517,8 @@ Z &= \tr\left[e^{-\beta H_0}T_\tau \exp\left(-\int_0^\beta H_\text{int}(\tau)d\t
 The expansion of $\log Z$ involves only those diagrams forming a <strong>single connected component </strong>.
 </p>
 
+<h3 id="summing-the-singular-diagrams">Summing the Singular Diagrams</h3>
+
 <p>Let’s see how this works by evaluating the second order contribution to the free energy. According to the linked cluster theorem, this involves the diagrams</p>
 
 <p><a name="HFDiag"></a>
@@ -537,37 +540,45 @@ The expansion of $\log Z$ involves only those diagrams forming a <strong>single 
 <p>Writing \eqref{2bubb} in terms of momentum and frequency gives</p>
 
 <script type="math/tex; mode=display">\begin{align}
-2\times \frac{1}{8}\sum_{\bq,\omega_n}  \tilde U_\bq^2\pi_{\bq,\omega_n}^2.
+2\times \frac{1}{8}\sum_{\bq,\omega_n}  U_\bq^2\pi_{\bq,\omega_n}^2.
 \end{align}</script>
 
 <p>The factor of $2$ arises from the two ways in which one can pair the operators to get such a diagram.</p>
 
-<p>Since $\tilde U_\bq = \frac{4\pi e^2}{\abs{\bq}^2}$, we can see that – unless the behaviour of $\pi_{\bq,\omega_n}$ saves us – these integrands will contain infrared divergences. Furthermore, higher order ring diagrams have even worse divergences!</p>
+<p>Since $U_\bq = \frac{4\pi e^2}{\abs{\bq}^2}$, we can see that – unless the behaviour of $\pi_{\bq,\omega_n}$ saves us – these integrands will contain infrared divergences. Furthermore, higher order ring diagrams have even worse divergences!</p>
 
 <p><a name="HFDiag"></a>
 <img src="/docs/assets/3rdOrderRing.png" alt="" />
 <em>Third order ring diagram.</em></p>
 
-<p>There’s no sense in which these higher order diagrams are negligible. Fortunately, there’s a simple way to sum all diagrams of this class: pairing operators to get a ring of $n$ bubbles can be done in $2^{n-1}(n-1)!$ ways, so that the overall contribution to $\log Z$ from these diagrams is</p>
+<p>There’s no sense in which these higher order diagrams are negligible. Fortunately, there’s a simple way to sum all diagrams of this class. Pairing operators to get a ring of $p$ bubbles can be done in $2^{p-1}(p-1)!$ ways. To see this, fix one of the factors of $H_\text{int}$, and then choose one of the $(n-1)$ factors to pair with it. There are two ways to do it - depending on whether we pair with the top or bottom. Continuing this process gives the factor $2^{p-1}(p-1)!$.</p>
 
-<script type="math/tex; mode=display">-\sum_{\bq,\omega_n}\log\left[1-\frac{\tilde U_\bq \pi_{\bq,\omega_n}}{2}\right].</script>
+<p>In this way we find the overall contribution to $\log Z$</p>
 
-<p>In this calculation, we have taken into account only the contribution of the simplest diagram at each order with the highest singularity. Higher order diagrams can be interpreted as giving rise to a corrected polarization.</p>
+<script type="math/tex; mode=display">\begin{align}
+\sum_{p=1}^\infty\sum_{\bq,\omega_n}\frac{ 2^{p-1}(p-1)!}{2^p p!} \left[U_\bq \pi_{\bq,\omega_n}\right]^p =-\frac{1}{2}\sum_{\bq,\omega_n}\log\left[1-U_\bq \pi_{\bq,\omega_n}\right].
+\end{align}</script>
 
-<p>The physical meaning of this sum becomes clear if we consider the effect on the partition function of introducing some non-uniformity into the <em>background</em> charge density: $n\to n+\delta n(\br)$. At first order in the interaction we obtain a rather trivial contribution to the free energy, arising from the interaction of this charge distribution with itself</p>
+<p>In this calculation we have taken into account only the contribution of the simplest diagram at each order with the highest singularity. Higher order diagrams can be interpreted as giving rise to a corrected polarization.</p>
 
-<script type="math/tex; mode=display">\frac{1}{2}\int d\br_1 d\br_2 \delta n(\br_1)U(\br_1-\br_2)\delta n(\br_2) = \frac{1}{2}\sum_\bq \delta n_\bq \tilde U_\bq \delta n_{-\bq}.
+<p>The physical meaning of this sum becomes clear if we consider the effect on the partition function of introducing some non-uniformity into the background charge density: $n\to n+\delta n(\br)$. At first order in the interaction we obtain a rather trivial contribution to the free energy, arising from the interaction of this charge distribution with itself</p>
+
+<script type="math/tex; mode=display">\frac{1}{2}\int d\br_1 d\br_2 \delta n(\br_1)U(\br_1-\br_2)\delta n(\br_2) = \frac{1}{2}\sum_\bq \delta n_\bq U_\bq \delta n_{-\bq}.
 \label{inhomog}</script>
 
-<p>The above argument shows, however, that we cannot neglect the effect of the bubble diagrams, which now form a chain</p>
+<p>The above argument shows, however, that we cannot neglect the effect of the bubble diagrams, which now form a chain:</p>
 
-<p>The combinatoric factor here is $2^n n!$ at $n^\text{th}$ order, showing that we now have a <em>geometric</em> series, rather than a logarithm. The overall effect is that at second order in $\delta n(\br)$, the change in the free energy is still given by \eqref{inhomog}, but now with the <strong>effective interaction</strong></p>
+<p><a name="BubbleChain"></a>
+<img src="/docs/assets/BubbleChain.png" alt="" />
+<em>Chain of bubbles giving the effective interaction.</em></p>
 
-<script type="math/tex; mode=display">\tilde U_{\text{eff},\bq} = \frac{\tilde U_\bq}{1-\tilde U_\bq \pi_{\bq,0}}.</script>
+<p>The combinatoric factor here is $2^p p!$ at $p^\text{th}$ order, showing that we now have a <em>geometric</em> series, rather than a logarithm. The overall effect is that at second order in $\delta n(\br)$, the change in the free energy is still given by \eqref{inhomog}, but now with the <strong>effective interaction</strong></p>
 
-<p>The denominator can be interpreted as a <strong>dielectric function</strong> due to the plasma</p>
+<script type="math/tex; mode=display">U_{\text{eff},\bq} = \frac{U_\bq}{1-U_\bq \pi_{\bq,0}}.</script>
 
-<script type="math/tex; mode=display">\varepsilon(\bq,\omega_n) \equiv 1-\tilde U_\bq \pi_{\bq,\omega_n}.
+<p>The denominator can be interpreted as a <strong>dielectric function</strong> that tells us how the fermions modify the interaction between charges.</p>
+
+<script type="math/tex; mode=display">\varepsilon(\bq,\omega_n) \equiv 1-U_\bq \pi_{\bq,\omega_n}.
 \label{dielectric}</script>
 
 <p>It remains to calculate the polarization.</p>
@@ -583,9 +594,14 @@ The expansion of $\log Z$ involves only those diagrams forming a <strong>single 
 
 <p>The sum in \eqref{pol} can be turned into an integral using the following neat formula</p>
 
-<script type="math/tex; mode=display">\sum_{\epsilon_n} f(i\epsilon_n)=-i\frac{\beta}{4\pi }\int_\cC \tanh\left(\frac{\beta\epsilon}{2}\right)f(\epsilon) d\epsilon,</script>
+<script type="math/tex; mode=display">\sum_{\epsilon_n} f(i\epsilon_n)=-i\frac{\beta}{4\pi }\int_\cC \tanh\left(\frac{\beta\epsilon}{2}\right)f(\epsilon) d\epsilon,
+\label{MatsubaraSum}</script>
 
 <p>where the contour $\cC$ encircles anti-clockwise <em>only</em> the poles of $\tanh\left(\frac{\beta\epsilon}{2}\right)$, which lie at $i\epsilon_n$. The formula then follows from finding the residues.</p>
+
+<p><a name="Poles"></a>
+<img src="/docs/assets/Poles.png" alt="" />
+<em>Contour of integration for \eqref{MatsubaraSum}, showing the poles of $\tanh\left(\frac{\beta\epsilon}{2}\right)$ and the extra two poles when $f(\epsilon)=G_{\bp,-i\epsilon}G_{\bp+\bq,\omega_n-i\epsilon}$.</em></p>
 
 <p>After writing \eqref{pol} as an integral, we can take the contour $\cC$ to encircle <em>clockwise</em> the other poles of the integral, arising from the pair of Green’s functions, considered as functions of $\epsilon$</p>
 
@@ -601,11 +617,11 @@ The expansion of $\log Z$ involves only those diagrams forming a <strong>single 
   <li>
     <p><strong>Static limit</strong>. $\omega,\bk\to 0$, with $\abs{\omega_n}\ll k_\text{F}\abs{\bq}/m$.</p>
 
-    <script type="math/tex; mode=display">\pi(\bq,\omega)\to -\nu(E_\text{F})</script>
+    <script type="math/tex; mode=display">\pi_{\bq,\omega}\to -\nu(E_\text{F})</script>
 
     <p>where $\nu(E_F)$ is the density of states at the Fermi surface. This gives the effective interaction.</p>
 
-    <script type="math/tex; mode=display">\tilde U_{\text{eff},\bq} = \frac{\tilde U_\bq}{1+\tilde U_\bq \nu(E_\text{F})},</script>
+    <script type="math/tex; mode=display">U_{\text{eff},\bq} = \frac{U_\bq}{1+U_\bq \nu(E_\text{F})},</script>
 
     <p>which in real space has the formula</p>
 
@@ -616,7 +632,7 @@ The expansion of $\log Z$ involves only those diagrams forming a <strong>single 
   <li>
     <p><strong>High frequencies</strong>. $\abs{\omega_n}\ll k_\text{F}\abs{\bq}/m$.</p>
 
-    <script type="math/tex; mode=display">\pi(\bq,\omega_n) \longrightarrow -\frac{n\bq^2}{m\omega_n^2}</script>
+    <script type="math/tex; mode=display">\pi_{\bq,\omega_n} \longrightarrow -\frac{n\bq^2}{m\omega_n^2}</script>
 
     <p>If we continue to real frequencies $i\omega_n\to \omega + i0$, we find that in this limit the dielectric function in \eqref{dielectric} becomes</p>
 
