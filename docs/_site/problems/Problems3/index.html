@@ -71,6 +71,7 @@
           cE: '\\mathcal{E}',
           cO: '\\mathcal{O}',
           cH: '\\mathcal{H}',
+          cC: '\\mathcal{C}',
           br: '\\mathbf{r}',
           bx: '\\mathbf{x}',
           bp: '\\mathbf{p}',
@@ -254,6 +255,11 @@ $$
   <li><a href="#nbk-in-the-ground-state" id="markdown-toc-nbk-in-the-ground-state">$N(\bk)$ in the Ground State</a></li>
   <li><a href="#pair-correlations-in-the-bcs-state" id="markdown-toc-pair-correlations-in-the-bcs-state">Pair Correlations in the BCS State</a></li>
   <li><a href="#a-very-simple-model-for-phonon-mediated-attraction" id="markdown-toc-a-very-simple-model-for-phonon-mediated-attraction">A Very Simple Model for Phonon Mediated Attraction</a></li>
+  <li><a href="#an-inequality-for-the-static-structure-factor" id="markdown-toc-an-inequality-for-the-static-structure-factor">An Inequality for the Static Structure factor</a></li>
+  <li><a href="#srhobqomega-for-1d-fermi-gas" id="markdown-toc-srhobqomega-for-1d-fermi-gas">$S_\rho(\bq,\omega)$ for 1D Fermi gas</a></li>
+  <li><a href="#srhobq-for-the-elastic-chain" id="markdown-toc-srhobq-for-the-elastic-chain">$S_\rho(\bq)$ for the elastic chain</a></li>
+  <li><a href="#ground-state-energy-of-jellium-in-perturbation-theory" id="markdown-toc-ground-state-energy-of-jellium-in-perturbation-theory">Ground State Energy of Jellium in Perturbation Theory</a></li>
+  <li><a href="#limits-of-the-polarization" id="markdown-toc-limits-of-the-polarization">Limits of the Polarization</a></li>
 </ol>
 
 <hr />
@@ -295,6 +301,32 @@ C_{\uparrow\uparrow}(\bp_1,\bp_2)&=\delta_{\bp_1,\bp_2}\frac{|\Delta|^2}{4E_{\bp
 <p>If the energy $\omega$ of the oscillators is larger than other scales, you can use the technique from <a href="/docs/lectures/Lattice/">Lecture 7</a> to derive an effective Hamiltonian. What form does this take?</p>
 
 <p>The physics behind this mechanism is a very simple consequence of living in an elastic medium, and is not really a quantum effect at all. The fact that two heavy spheres on a stretched horizontal rubber sheet will roll towards each other is a nearly perfect analogy for this effect (as well as a very poor one for gravitational attraction in GR!).</p>
+
+<h2 id="an-inequality-for-the-static-structure-factor">An Inequality for the Static Structure factor</h2>
+
+<p>Use the f-sum and compressibility sum rules, together with the <a href="https://en.wikipedia.org/wiki/Cauchy–Schwarz_inequality#L2">Cauchy-Schwartz inequality</a></p>
+
+<script type="math/tex; mode=display">\abs{\int f(x)g^*(x) dx}^2 \leq \int \abs{f(x)}^2 dx \int \abs{g(x)}^2 dx</script>
+
+<p>to obtain the <strong>Onsager bound</strong> on the static structure factor</p>
+
+<script type="math/tex; mode=display">S_\rho(\bq)\leq \frac{N\abs{\bq}}{2mc}</script>
+
+<h2 id="srhobqomega-for-1d-fermi-gas">$S_\rho(\bq,\omega)$ for 1D Fermi gas</h2>
+
+<p>Find the dynamical structure factor for a 1D Fermi gas, and verify the Onsager bound.</p>
+
+<h2 id="srhobq-for-the-elastic-chain">$S_\rho(\bq)$ for the elastic chain</h2>
+
+<p>In <a href="/docs/lectures/ElasticChain/">Lecture 3</a> we found the static structure factor of the elastic chain. Verify the Onsager bound.</p>
+
+<h2 id="ground-state-energy-of-jellium-in-perturbation-theory">Ground State Energy of Jellium in Perturbation Theory</h2>
+
+<p>In <a href="/docs/lectures/FermiGas/">Lecture 9</a> we found the corrections to the eigenenergies of a Fermi gas to second order in the interaction. Show that for Jellium the correction to the ground state energy has an infrared divergence.</p>
+
+<h2 id="limits-of-the-polarization">Limits of the Polarization</h2>
+
+<p>Check the two limits for the polarization described at the end of <a href="/docs/lectures/Jellium/">Lecture 12</a>.</p>
 
 </div>
 

@@ -322,11 +322,11 @@ $$
 Many of the properties of this function are most easily understood from a __spectral representation__, which is obtained by inserting a complete set of energy eigenstates between $x(0)$ and $x(t)$ in \eqref{res_QNoise}. This gives
 
 $$
-S(\omega) = 2\pi\sum_{m,n} \frac{e^{-\beta E_n}}{Z} \abs{\bra{n}y\ket{m}}^2 \delta(\omega-E_m-E_n).
+S(\omega) = 2\pi\sum_{m,n} \frac{e^{-\beta E_n}}{Z} \abs{\bra{n}y\ket{m}}^2 \delta(\omega-E_m+E_n).
 \label{res_SSpectral}
 $$
 
-This expression is completely general, but already it is possible to see what is going on. The reason for the asymmetry in $S(\omega)$ is that the term with $\delta(\omega-E_m-E_n)$ is weighted by $e^{-\beta E_n}$, while the term with $\delta(\omega-E_n-E_m)$ has $e^{-\beta E_m}$. Thus we can say
+This expression is completely general, but already it is possible to see what is going on. The reason for the asymmetry in $S(\omega)$ is that the term with $\delta(\omega-E_m+E_n)$ is weighted by $e^{-\beta E_n}$, while the term with $\delta(\omega-E_n-E_m)$ has $e^{-\beta E_m}$. Thus we can say
 
 $$
 S(\omega) = S(-\omega) e^{\beta\omega}.
@@ -724,7 +724,7 @@ $$
 where $E_0$ is the ground state energy. Since energy is an extensive quentity we expect $E_0 = V \epsilon(\rho)$, where $\rho = N/V$ is the density, and $\epsilon(\rho)$ the energy per unit volume. Then
 
 $$
-\kappa^{-1} = \rho^2 e''(\rho).
+\kappa^{-1} = \rho^2 \epsilon''(\rho).
 $$
 
 Recall that the chemical potential $\mu = \frac{\partial E_0}{\partial N}=\epsilon'(\rho)$. Then

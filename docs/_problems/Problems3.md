@@ -58,3 +58,33 @@ $$
 If the energy $\omega$ of the oscillators is larger than other scales, you can use the technique from [Lecture 7]({{ site.baseurl }}/lectures/Lattice/) to derive an effective Hamiltonian. What form does this take?
 
 The physics behind this mechanism is a very simple consequence of living in an elastic medium, and is not really a quantum effect at all. The fact that two heavy spheres on a stretched horizontal rubber sheet will roll towards each other is a nearly perfect analogy for this effect (as well as a very poor one for gravitational attraction in GR!).
+
+## An Inequality for the Static Structure factor
+
+Use the f-sum and compressibility sum rules, together with the [Cauchy-Schwartz inequality](https://en.wikipedia.org/wiki/Cauchy–Schwarz_inequality#L2)
+
+$$
+\abs{\int f(x)g^*(x) dx}^2 \leq \int \abs{f(x)}^2 dx \int \abs{g(x)}^2 dx
+$$
+
+to obtain the __Onsager bound__ on the static structure factor
+
+$$
+	S_\rho(\bq)\leq \frac{N\abs{\bq}}{2mc}
+$$
+
+## $S_\rho(\bq,\omega)$ for 1D Fermi gas
+
+Find the dynamical structure factor for a 1D Fermi gas, and verify the Onsager bound.
+
+## $S_\rho(\bq)$ for the elastic chain
+
+In [Lecture 3]({{ site.baseurl }}/lectures/ElasticChain/) we found the static structure factor of the elastic chain. Verify the Onsager bound.
+
+## Ground State Energy of Jellium in Perturbation Theory
+
+In [Lecture 9]({{ site.baseurl }}/lectures/FermiGas/) we found the corrections to the eigenenergies of a Fermi gas to second order in the interaction. Show that for Jellium the correction to the ground state energy has an infrared divergence.
+
+## Limits of the Polarization
+
+Check the two limits for the polarization described at the end of [Lecture 12]({{ site.baseurl }}/lectures/Jellium/).

@@ -110,17 +110,17 @@ Perturbation theory then involves computing averages of a string of $H_\text{int
 Let's see how this works by considering the lowest order term when $H_\text{int}$ is given by \eqref{jelliumH}. In this case we just have to compute the thermal average of $H_\text{int}$: the time dependence vanishes by virtue of the cyclic property of the trace. Writing out the perturbation in terms of the Fourier modes gives
 
 $$
-H_\text{int}  = \frac{1}{2} \sum_{\bk_1+\bk_2=\bk_3+\bk_4} \tilde U(\bk_1-\bk_4) :(\adop_{\bk_1}\aop_{\bk_4}-nV)(\adop_{\bk_2}\aop_{\bk_3}-nV):,
+H_\text{int}  = \frac{1}{2V} \sum_{\bk_1+\bk_2=\bk_3+\bk_4} \tilde U(\bk_1-\bk_4) :(\adop_{\bk_1}\aop_{\bk_4}-nV)(\adop_{\bk_2}\aop_{\bk_3}-nV):,
 \label{Hint_exp}
 $$
 
 where
 
 $$
-\tilde U(\bq) = \frac{4\pi e^2}{\abs{\bq}^2}
+\tilde U_\bq = \frac{4\pi e^2}{\abs{\bq}^2}
 $$
 
-if the Fourier transform of the Coulomb potential. We have already discussed the expectation value of $H_\text{int}$ in a product state in [Lecture 6]({{ site.baseurl }}/lectures/MoreSecondQuantization/#excited-state-energies)). Recall that the Hartree and Fock terms arise from two different 'pairings' of creation operators with annihilation operators. This sum over different pairings is a feature of expectations in a product state. Since $e^{-\beta H_0}$ represents a statistical mixture of product states in which the occupation of each momentum state is independent
+is the Fourier transform of the Coulomb potential. We have already discussed the expectation value of $H_\text{int}$ in a product state in [Lecture 6]({{ site.baseurl }}/lectures/MoreSecondQuantization/#excited-state-energies)). Recall that the Hartree and Fock terms arise from two different 'pairings' of creation operators with annihilation operators. This sum over different pairings is a feature of expectations in a product state. Since $e^{-\beta H_0}$ represents a statistical mixture of product states in which the occupation of each momentum state is independent
 
 $$
 e^{-\beta H_0} =\prod_\bk e^{-\beta\xi(\bk)N_\bk},
@@ -135,7 +135,7 @@ $$
 The importance of including the background charge density now becomes clear: the Hartree term vanishes (without the background charge it would be infinite!), leaving only the Fock term
 
 $$
-\langle H_\text{int}\rangle =  - \frac{1}{2} \sum_{\bk_1,\bk_2} \tilde U(\bk_1-\bk_2) \langle N_{\bk_1}\rangle\langle N_{\bk_2}\rangle.
+\langle H_\text{int}\rangle =  - \frac{1}{2V} \sum_{\bk_1,\bk_2} \tilde U_{\bk_1-\bk_2} \langle N_{\bk_1}\rangle\langle N_{\bk_2}\rangle.
 $$
 
 Before considering a situation where the time dependence enters in an essential way, let's look at a slightly more general example of an expectation value
@@ -172,7 +172,7 @@ $$
 This is a function of $\tau_1-\tau_2$, again as a result of the cyclic property. Including the time dependence in \eqref{Hint_exp} is straightforward
 
 $$
-H_\text{int}  = \frac{1}{2} \sum_{\bk_1+\bk_2=\bk_3+\bk_4} \tilde U(\bk_1-\bk_4) :(\adop_{\bk_1}(\tau)\aop_{\bk_4}(\tau)-nV)(\adop_{\bk_2}(\tau)\aop_{\bk_3}(\tau)-nV):,
+H_\text{int}  = \frac{1}{2V} \sum_{\bk_1+\bk_2=\bk_3+\bk_4} \tilde U_{\bk_1-\bk_4} :(\adop_{\bk_1}(\tau)\aop_{\bk_4}(\tau)-nV)(\adop_{\bk_2}(\tau)\aop_{\bk_3}(\tau)-nV):,
 \label{Hint_exp_TD}
 $$
 
@@ -265,6 +265,7 @@ $$
 2\pi n T & \text{bosons}\\
 2\pi \left(n+\frac{1}{2}\right) T & \text{fermions}.\\
 \end{cases}
+\label{matsubaras}
 $$
 
 By Fourier transforming, we find the Green's function in momentum and frequency space to be
@@ -320,4 +321,137 @@ The expansion of $\log Z$ involves only those diagrams forming a <strong>single 
 
 Let's see how this works by evaluating the second order contribution to the free energy. According to the linked cluster theorem, this involves the diagrams
 
+<a name="HFDiag"></a>
+![]({{ site.baseurl }}/assets/2ndOrderConnectedDiagrams.png)
+_Diagrams contributing to the logarithm of the partition function at second order._
+
 For Coulomb interactions, the first of these causes the biggest headache. To see what the problem is, let's first write out the contribution of this diagram using Wick's theorem.
+
+$$
+\begin{align}
+\frac{1}{8} \int_0^\beta d\tau_2 \int_0^{\beta} d\tau_1 \int \prod_{i=1}^4 d\br_i U(\br_1-\br_2)U(\br_3-\br_4)\nonumber\\
+\times\pi(\br_4-\br_1,\tau_2-\tau_1)\pi(\br_2-\br_3,\tau_1-\tau_2),
+\label{2bubb}
+\end{align}
+$$
+
+where $\pi(\br,\tau)$ is the __polarization__
+
+$$
+\pi(\br,\tau) \equiv -\langle T_\tau \left(\rho(\br,\tau)-n\right)\left(\rho(0,0)-n\right)\rangle = G(\br,\tau)G(-\br,-\tau).
+$$
+
+Writing \eqref{2bubb} in terms of momentum and frequency gives
+
+$$
+\begin{align}
+2\times \frac{1}{8}\sum_{\bq,\omega_n}  \tilde U_\bq^2\pi_{\bq,\omega_n}^2.
+\end{align}
+$$
+
+The factor of $2$ arises from the two ways in which one can pair the operators to get such a diagram.
+
+Since $\tilde U_\bq = \frac{4\pi e^2}{\abs{\bq}^2}$, we can see that -- unless the behaviour of $\pi_{\bq,\omega_n}$ saves us -- these integrands will contain infrared divergences. Furthermore, higher order ring diagrams have even worse divergences!
+
+<a name="HFDiag"></a>
+![]({{ site.baseurl }}/assets/3rdOrderRing.png)
+_Third order ring diagram._
+
+There's no sense in which these higher order diagrams are negligible. Fortunately, there's a simple way to sum all diagrams of this class: pairing operators to get a ring of $n$ bubbles can be done in $2^{n-1}(n-1)!$ ways, so that the overall contribution to $\log Z$ from these diagrams is
+
+$$
+-\sum_{\bq,\omega_n}\log\left[1-\frac{\tilde U_\bq \pi_{\bq,\omega_n}}{2}\right].
+$$
+
+In this calculation, we have taken into account only the contribution of the simplest diagram at each order with the highest singularity. Higher order diagrams can be interpreted as giving rise to a corrected polarization.
+
+The physical meaning of this sum becomes clear if we consider the effect on the partition function of introducing some non-uniformity into the _background_ charge density: $n\to n+\delta n(\br)$. At first order in the interaction we obtain a rather trivial contribution to the free energy, arising from the interaction of this charge distribution with itself
+
+$$
+\frac{1}{2}\int d\br_1 d\br_2 \delta n(\br_1)U(\br_1-\br_2)\delta n(\br_2) = \frac{1}{2}\sum_\bq \delta n_\bq \tilde U_\bq \delta n_{-\bq}.
+\label{inhomog}
+$$
+
+The above argument shows, however, that we cannot neglect the effect of the bubble diagrams, which now form a chain
+
+The combinatoric factor here is $2^n n!$ at $n^\text{th}$ order, showing that we now have a _geometric_ series, rather than a logarithm. The overall effect is that at second order in $\delta n(\br)$, the change in the free energy is still given by \eqref{inhomog}, but now with the __effective interaction__
+
+$$
+\tilde U_{\text{eff},\bq} = \frac{\tilde U_\bq}{1-\tilde U_\bq \pi_{\bq,0}}.
+$$
+
+The denominator can be interpreted as a __dielectric function__ due to the plasma
+
+$$
+\varepsilon(\bq,\omega_n) \equiv 1-\tilde U_\bq \pi_{\bq,\omega_n}.
+\label{dielectric}
+$$
+
+It remains to calculate the polarization.
+
+### Evaluating the Polarization
+
+In momentum and frequency space we have
+
+$$
+\pi_{\bq,\omega_n} = \frac{1}{\beta V}\sum_{\bp,\epsilon_m} G_{\bp+\bq,\epsilon_m+\omega_n}G_{\bp,\epsilon_n}.
+\label{pol}
+$$
+
+Recall that $\epsilon_m = 2\pi\left(m+\frac{1}{2}\right) T$ for fermions, while $\omega_n$, being a sum of two fermionic Matsubara frequencies, is $\omega_n = 2\pi n T$.
+
+The sum in \eqref{pol} can be turned into an integral using the following neat formula
+
+$$
+\sum_{\epsilon_n} f(i\epsilon_n)=-i\frac{\beta}{4\pi }\int_\cC \tanh\left(\frac{\beta\epsilon}{2}\right)f(\epsilon) d\epsilon,
+$$
+
+where the contour $\cC$ encircles anti-clockwise _only_ the poles of $\tanh\left(\frac{\beta\epsilon}{2}\right)$, which lie at $i\epsilon_n$. The formula then follows from finding the residues.
+
+After writing \eqref{pol} as an integral, we can take the contour $\cC$ to encircle _clockwise_ the other poles of the integral, arising from the pair of Green's functions, considered as functions of $\epsilon$
+
+$$
+G_{\bp,-i\epsilon}G_{\bp+\bq,\omega_n-i\epsilon} = \frac{1}{\left[\xi(\bp)-\epsilon\right]\left[\xi(\bp+\bq)-\epsilon-i\omega_n\right]}.
+$$
+
+This then gives for the polarization
+
+$$
+\pi_{\bq,\omega_n} = \frac{1}{V}\sum_\bp \frac{\tanh\left(\frac{\beta\xi(\bp)}{2}\right)-\tanh\left(\frac{\beta\xi(\bp+\bq)}{2}\right)}{\xi(\bp+\bq)-\xi(\bp)-i\omega_n}.
+$$
+
+Although this is still a complicated looking function, there are a couple of simple limits we can consider. We quote these, leaving their proof as an exercise
+
+1. __Static limit__. $\omega,\bk\to 0$, with $\abs{\omega_n}\ll k_\text{F}\abs{\bq}/m$.
+
+    $$
+    \pi(\bq,\omega)\to -\nu(E_\text{F})
+    $$
+
+    where $\nu(E_F)$ is the density of states at the Fermi surface. This gives the effective interaction.
+
+    $$
+    \tilde U_{\text{eff},\bq} = \frac{\tilde U_\bq}{1+\tilde U_\bq \nu(E_\text{F})},
+    $$
+
+    which in real space has the formula
+
+    $$
+    U_\text{eff}(\br) = \frac{e^2}{\abs{\br}}\exp\left(-\abs{\br}/\lambda_\text{TF}\right),
+    $$
+
+    where $\lambda_\text{TF}=\sqrt{4\pi e^2\nu(E_F)}$ is the __Thomas--Fermi screening length__. Our summation of an infinite series of diagrams that are increasingly singular due to the long ranged nature of the Coulomb force is ... a finite ranged potential!
+
+2. __High frequencies__. $\abs{\omega_n}\ll k_\text{F}\abs{\bq}/m$.
+
+    $$
+    \pi(\bq,\omega_n) \longrightarrow -\frac{n\bq^2}{m\omega_n^2}
+    $$
+
+    If we continue to real frequencies $i\omega_n\to \omega + i0$, we find that in this limit the dielectric function in \eqref{dielectric} becomes
+
+    $$
+    \varepsilon(\bq,\omega) = 1-\frac{\omega_\text{p}^2}{\omega^2}
+    $$
+
+    where $\omega_\text{p}= \frac{4\pi e^2n}{m}$ is the __plasma frequency__. Reproducing this piece of classical physics is only possible because of the infinite summation we have performed.
