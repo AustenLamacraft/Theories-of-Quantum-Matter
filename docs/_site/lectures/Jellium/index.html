@@ -353,7 +353,7 @@ T_\tau \exp\left(-\int_0^\beta H_\text{int}(\tau)d\tau\right) &= 1 - \int_0^\bet
 
 <script type="math/tex; mode=display">U_\bq = \frac{4\pi e^2}{\abs{\bq}^2}</script>
 
-<p>is the Fourier transform of the Coulomb potential. We have already discussed the expectation value of $H_\text{int}$ in a product state in <a href="/docs/lectures/MoreSecondQuantization/#excited-state-energies">Lecture 6</a>). Recall that the Hartree and Fock terms arise from two different ‘pairings’ of creation operators with annihilation operators. This sum over different pairings is a feature of expectations in a product state. Since $e^{-\beta H_0}$ represents a statistical mixture of product states in which the occupation of each momentum state is independent</p>
+<p>is the Fourier transform of the Coulomb potential. We have already discussed the expectation value of $H_\text{int}$ in a product state in <a href="/docs/lectures/MoreSecondQuantization/#excited-state-energies">Lecture 6</a>. Recall that the Hartree and Fock terms arise from two different ‘pairings’ of creation operators with annihilation operators. This sum over different pairings is a feature of expectations in a product state. Since $e^{-\beta H_0}$ represents a statistical mixture of product states in which the occupation of each momentum state is independent</p>
 
 <script type="math/tex; mode=display">e^{-\beta H_0} =\prod_\bk e^{-\beta\xi(\bk)N_\bk},</script>
 
@@ -363,7 +363,7 @@ T_\tau \exp\left(-\int_0^\beta H_\text{int}(\tau)d\tau\right) &= 1 - \int_0^\bet
 
 <p>The importance of including the background charge density now becomes clear: the Hartree term vanishes (without the background charge it would be infinite!), leaving only the Fock term</p>
 
-<script type="math/tex; mode=display">\langle H_\text{int}\rangle =  - \frac{1}{2V} \sum_{\bk_1,\bk_2} \U_{\bk_1-\bk_2} \langle N_{\bk_1}\rangle\langle N_{\bk_2}\rangle.</script>
+<script type="math/tex; mode=display">\langle H_\text{int}\rangle =  - \frac{1}{2V} \sum_{\bk_1,\bk_2} U_{\bk_1-\bk_2} \langle N_{\bk_1}\rangle\langle N_{\bk_2}\rangle.</script>
 
 <p>Before considering a situation where the time dependence enters in an essential way, let’s look at a slightly more general example of an expectation value</p>
 
@@ -463,7 +463,7 @@ Make sure you understand where those $\delta$-functions on the right hand side c
 
 <p>The Green’s function is periodic in $\beta$ for bosons, and antiperiodic for fermions. This follows from carefully writing out the definition \eqref{GF_def} and using the cyclic property of the trace, not forgetting \eqref{Fermi_Tdef} in the case of fermions. As a result of \eqref{GF_bc}, we can expand $G(\br,\tau)$ in a Fourier series.</p>
 
-<script type="math/tex; mode=display">G(\br,\tau) = \sum_{n=-\infty}^\infty G_{\omega_n}(\br) e^{-i\omega_n \tau}.</script>
+<script type="math/tex; mode=display">G(\br,\tau) = T\sum_{n=-\infty}^\infty G_{\omega_n}(\br) e^{-i\omega_n \tau}.</script>
 
 <p>The frequencies $\omega_n$ are called <strong>Matsubara frequencies</strong>, and are</p>
 

@@ -20,8 +20,6 @@ The Fermi Polaron
 Chevy's wavefunction. Polaron residue
 
 Normal modes for the oscillator on a string.
-Price's Inequality
-Verify Price Inequality for Elastic Chain
 Density Response of a Fermi Gas
 Compressibility Sum Rule From Perturbation Theory
 Inelastic scattering of light

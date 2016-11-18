@@ -17,6 +17,9 @@ In this lecture we discuss a very simple many body system in which particles are
 * Toc
 {:toc}
 
+Reading: {% cite Coleman:2015 %}, Chapter 2.
+
+
 ---
 
 ## The Classical System

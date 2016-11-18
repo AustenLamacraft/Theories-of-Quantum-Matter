@@ -73,11 +73,11 @@ $$
 	S_\rho(\bq)\leq \frac{N\abs{\bq}}{2mc}
 $$
 
-## $S_\rho(\bq,\omega)$ for 1D Fermi gas
+## $S_\rho(q,\omega)$ for 1D Fermi Gas
 
 Find the dynamical structure factor for a 1D Fermi gas, and verify the Onsager bound.
 
-## $S_\rho(\bq)$ for the elastic chain
+## $S_\rho(q)$ for the Elastic Chain
 
 In [Lecture 3]({{ site.baseurl }}/lectures/ElasticChain/) we found the static structure factor of the elastic chain. Verify the Onsager bound.
 
@@ -88,3 +88,25 @@ In [Lecture 9]({{ site.baseurl }}/lectures/FermiGas/) we found the corrections t
 ## Limits of the Polarization
 
 Check the two limits for the polarization described at the end of [Lecture 12]({{ site.baseurl }}/lectures/Jellium/).
+
+## Explicit Evaluation of Green's Functions
+
+Starting from the definition of the fermion Green's function, show that
+
+$$
+G_\bk(\tau) = e^{-\xi(\bk)\tau}\begin{cases}
+	1-\langle N_\bk\rangle & \tau>0\\
+	-\langle N_\bk \rangle & \tau<0
+	\end{cases}
+	\label{Gexp}
+$$		
+
+where $\langle N_\bk\rangle = n_\text{F}(\xi(\bp))$, and $n_\text{F}(\omega)=\frac{1}{e^{\beta\omega}+1}$ is the Fermi--Dirac distribution.
+
+We also have
+
+$$
+G_\bk(\tau) = T\sum_{\epsilon_n} \frac{e^{-i\epsilon_n \tau}}{i\epsilon_n-\xi(\bk)}.
+$$
+
+Evaluate the sum to find \eqref{Gexp}. In the lecture, we used the auxillary function $\tanh\left(\frac{\beta\epsilon}{2}\right)$ to turn the Matsubara sum into an integral. Here, to be able to deform the contour in a useful way, we must use $n_\text{F}(\omega)$ or $1-n_\text{F}(\omega)$.

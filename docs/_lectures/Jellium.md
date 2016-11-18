@@ -120,7 +120,7 @@ $$
 U_\bq = \frac{4\pi e^2}{\abs{\bq}^2}
 $$
 
-is the Fourier transform of the Coulomb potential. We have already discussed the expectation value of $H_\text{int}$ in a product state in [Lecture 6]({{ site.baseurl }}/lectures/MoreSecondQuantization/#excited-state-energies)). Recall that the Hartree and Fock terms arise from two different 'pairings' of creation operators with annihilation operators. This sum over different pairings is a feature of expectations in a product state. Since $e^{-\beta H_0}$ represents a statistical mixture of product states in which the occupation of each momentum state is independent
+is the Fourier transform of the Coulomb potential. We have already discussed the expectation value of $H_\text{int}$ in a product state in [Lecture 6]({{ site.baseurl }}/lectures/MoreSecondQuantization/#excited-state-energies). Recall that the Hartree and Fock terms arise from two different 'pairings' of creation operators with annihilation operators. This sum over different pairings is a feature of expectations in a product state. Since $e^{-\beta H_0}$ represents a statistical mixture of product states in which the occupation of each momentum state is independent
 
 $$
 e^{-\beta H_0} =\prod_\bk e^{-\beta\xi(\bk)N_\bk},
@@ -135,7 +135,7 @@ $$
 The importance of including the background charge density now becomes clear: the Hartree term vanishes (without the background charge it would be infinite!), leaving only the Fock term
 
 $$
-\langle H_\text{int}\rangle =  - \frac{1}{2V} \sum_{\bk_1,\bk_2} \U_{\bk_1-\bk_2} \langle N_{\bk_1}\rangle\langle N_{\bk_2}\rangle.
+\langle H_\text{int}\rangle =  - \frac{1}{2V} \sum_{\bk_1,\bk_2} U_{\bk_1-\bk_2} \langle N_{\bk_1}\rangle\langle N_{\bk_2}\rangle.
 $$
 
 Before considering a situation where the time dependence enters in an essential way, let's look at a slightly more general example of an expectation value
@@ -255,7 +255,7 @@ $$
 The Green's function is periodic in $\beta$ for bosons, and antiperiodic for fermions. This follows from carefully writing out the definition \eqref{GF_def} and using the cyclic property of the trace, not forgetting \eqref{Fermi_Tdef} in the case of fermions. As a result of \eqref{GF_bc}, we can expand $G(\br,\tau)$ in a Fourier series.
 
 $$
-G(\br,\tau) = \sum_{n=-\infty}^\infty G_{\omega_n}(\br) e^{-i\omega_n \tau}.
+G(\br,\tau) = T\sum_{n=-\infty}^\infty G_{\omega_n}(\br) e^{-i\omega_n \tau}.
 $$
 
 The frequencies $\omega_n$ are called __Matsubara frequencies__, and are

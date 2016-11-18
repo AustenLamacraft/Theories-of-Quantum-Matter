@@ -444,13 +444,13 @@ $$
 and represent the interaction potential in terms of its Fourier components
 
 $$
-U(\br-\br') = \sum_\bq \tilde U(\bq) \exp(i\bq\cdot[\br-\br']).
+U(\br-\br') = \frac{1}{L^3}\sum_\bq \tilde U(\bq) \exp(i\bq\cdot[\br-\br']).
 $$
 
 The interaction Hamiltonian for spinless particles can then be written
 
 $$
-\hat H_\text{int.}  = \frac{1}{2} \sum_{\bk_1+\bk_2=\bk_3+\bk_4} \tilde U(\bk_1-\bk_4) \adop_{\bk_1}\adop_{\bk_2}\aop_{\bk_3}\aop_{\bk_4}.
+\hat H_\text{int.}  = \frac{1}{2L^3} \sum_{\bk_1+\bk_2=\bk_3+\bk_4} \tilde U(\bk_1-\bk_4) \adop_{\bk_1}\adop_{\bk_2}\aop_{\bk_3}\aop_{\bk_4}.
 \label{more_vertex}
 $$
 
@@ -466,16 +466,16 @@ As we've already discussed, the expectation value of \eqref{more_vertex} in a pr
 ![]({{ site.baseurl }}/assets/HFDiag.png)
 _Graphical representation of the Hartree and Fock terms._
 
-Evaluating the two contributions in term of the occupation numbers gives
+Evaluating the two contributions in terms of the occupation numbers gives
 
 $$
-\braket{\mathbf{N}}{\hat H_\text{int.}}{\mathbf{N}} = \frac{1}{2}\tilde U(0) \sum_{\bk_1,\bk_2} N_{\bk_1}N_{\bk_2} - \frac{1}{2} \sum_{\bk_1,\bk_2} \tilde U(\bk_1-\bk_2) N_{\bk_1}N_{\bk_2}
+\braket{\mathbf{N}}{\hat H_\text{int.}}{\mathbf{N}} = \frac{1}{2V}\tilde U(0) \sum_{\bk_1,\bk_2} N_{\bk_1}N_{\bk_2} - \frac{1}{2V} \sum_{\bk_1,\bk_2} \tilde U(\bk_1-\bk_2) N_{\bk_1}N_{\bk_2}
 $$
 
 While the Hartree term just depends on the total number of particles, the Fock term depends on the individual occupations. The interaction energy to add a single particle to state $\bk$ is
 
 $$
-\Delta U_{\bk} = \tilde U(0) \sum_{\bk'} N_{\bk'} - \sum_{\bk'} \tilde U(\bk-\bk') N_{\bk'}
+\Delta U_{\bk} = \frac{\tilde U(0)}{V} \sum_{\bk'} N_{\bk'} - \frac{1}{V}\sum_{\bk'} \tilde U(\bk-\bk') N_{\bk'}
 $$
 
 

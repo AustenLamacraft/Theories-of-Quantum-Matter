@@ -256,10 +256,11 @@ $$
   <li><a href="#pair-correlations-in-the-bcs-state" id="markdown-toc-pair-correlations-in-the-bcs-state">Pair Correlations in the BCS State</a></li>
   <li><a href="#a-very-simple-model-for-phonon-mediated-attraction" id="markdown-toc-a-very-simple-model-for-phonon-mediated-attraction">A Very Simple Model for Phonon Mediated Attraction</a></li>
   <li><a href="#an-inequality-for-the-static-structure-factor" id="markdown-toc-an-inequality-for-the-static-structure-factor">An Inequality for the Static Structure factor</a></li>
-  <li><a href="#srhobqomega-for-1d-fermi-gas" id="markdown-toc-srhobqomega-for-1d-fermi-gas">$S_\rho(\bq,\omega)$ for 1D Fermi gas</a></li>
-  <li><a href="#srhobq-for-the-elastic-chain" id="markdown-toc-srhobq-for-the-elastic-chain">$S_\rho(\bq)$ for the elastic chain</a></li>
+  <li><a href="#srhoqomega-for-1d-fermi-gas" id="markdown-toc-srhoqomega-for-1d-fermi-gas">$S_\rho(q,\omega)$ for 1D Fermi Gas</a></li>
+  <li><a href="#srhoq-for-the-elastic-chain" id="markdown-toc-srhoq-for-the-elastic-chain">$S_\rho(q)$ for the Elastic Chain</a></li>
   <li><a href="#ground-state-energy-of-jellium-in-perturbation-theory" id="markdown-toc-ground-state-energy-of-jellium-in-perturbation-theory">Ground State Energy of Jellium in Perturbation Theory</a></li>
   <li><a href="#limits-of-the-polarization" id="markdown-toc-limits-of-the-polarization">Limits of the Polarization</a></li>
+  <li><a href="#explicit-evaluation-of-greens-functions" id="markdown-toc-explicit-evaluation-of-greens-functions">Explicit Evaluation of Green’s Functions</a></li>
 </ol>
 
 <hr />
@@ -312,11 +313,11 @@ C_{\uparrow\uparrow}(\bp_1,\bp_2)&=\delta_{\bp_1,\bp_2}\frac{|\Delta|^2}{4E_{\bp
 
 <script type="math/tex; mode=display">S_\rho(\bq)\leq \frac{N\abs{\bq}}{2mc}</script>
 
-<h2 id="srhobqomega-for-1d-fermi-gas">$S_\rho(\bq,\omega)$ for 1D Fermi gas</h2>
+<h2 id="srhoqomega-for-1d-fermi-gas">$S_\rho(q,\omega)$ for 1D Fermi Gas</h2>
 
 <p>Find the dynamical structure factor for a 1D Fermi gas, and verify the Onsager bound.</p>
 
-<h2 id="srhobq-for-the-elastic-chain">$S_\rho(\bq)$ for the elastic chain</h2>
+<h2 id="srhoq-for-the-elastic-chain">$S_\rho(q)$ for the Elastic Chain</h2>
 
 <p>In <a href="/docs/lectures/ElasticChain/">Lecture 3</a> we found the static structure factor of the elastic chain. Verify the Onsager bound.</p>
 
@@ -327,6 +328,25 @@ C_{\uparrow\uparrow}(\bp_1,\bp_2)&=\delta_{\bp_1,\bp_2}\frac{|\Delta|^2}{4E_{\bp
 <h2 id="limits-of-the-polarization">Limits of the Polarization</h2>
 
 <p>Check the two limits for the polarization described at the end of <a href="/docs/lectures/Jellium/">Lecture 12</a>.</p>
+
+<h2 id="explicit-evaluation-of-greens-functions">Explicit Evaluation of Green’s Functions</h2>
+
+<p>Starting from the definition of the fermion Green’s function, show that</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+G_\bk(\tau) = e^{-\xi(\bk)\tau}\begin{cases}
+	1-\langle N_\bk\rangle & \tau>0\\
+	-\langle N_\bk \rangle & \tau<0
+	\end{cases}
+	\label{Gexp} %]]></script>
+
+<p>where $\langle N_\bk\rangle = n_\text{F}(\xi(\bp))$, and $n_\text{F}(\omega)=\frac{1}{e^{\beta\omega}+1}$ is the Fermi–Dirac distribution.</p>
+
+<p>We also have</p>
+
+<script type="math/tex; mode=display">G_\bk(\tau) = T\sum_{\epsilon_n} \frac{e^{-i\epsilon_n \tau}}{i\epsilon_n-\xi(\bk)}.</script>
+
+<p>Evaluate the sum to find \eqref{Gexp}. In the lecture, we used the auxillary function $\tanh\left(\frac{\beta\epsilon}{2}\right)$ to turn the Matsubara sum into an integral. Here, to be able to deform the contour in a useful way, we must use $n_\text{F}(\omega)$ or $1-n_\text{F}(\omega)$.</p>
 
 </div>
 

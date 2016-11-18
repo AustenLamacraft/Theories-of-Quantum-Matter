@@ -617,11 +617,11 @@ E_\text{kin} &= \sum_{|\bk|<k_\text{F}} \frac{\bk^2}{2m} \longrightarrow L^3 \in
 
 <p>and represent the interaction potential in terms of its Fourier components</p>
 
-<script type="math/tex; mode=display">U(\br-\br') = \sum_\bq \tilde U(\bq) \exp(i\bq\cdot[\br-\br']).</script>
+<script type="math/tex; mode=display">U(\br-\br') = \frac{1}{L^3}\sum_\bq \tilde U(\bq) \exp(i\bq\cdot[\br-\br']).</script>
 
 <p>The interaction Hamiltonian for spinless particles can then be written</p>
 
-<script type="math/tex; mode=display">\hat H_\text{int.}  = \frac{1}{2} \sum_{\bk_1+\bk_2=\bk_3+\bk_4} \tilde U(\bk_1-\bk_4) \adop_{\bk_1}\adop_{\bk_2}\aop_{\bk_3}\aop_{\bk_4}.
+<script type="math/tex; mode=display">\hat H_\text{int.}  = \frac{1}{2L^3} \sum_{\bk_1+\bk_2=\bk_3+\bk_4} \tilde U(\bk_1-\bk_4) \adop_{\bk_1}\adop_{\bk_2}\aop_{\bk_3}\aop_{\bk_4}.
 \label{more_vertex}</script>
 
 <p>When written in this way, interaction Hamiltonians are sometimes associated with the graphical representation below, one of the ingredients of the <strong>Feynman diagram</strong> technique for performing perturbation theory calculations in field theories. The incoming lines (arrows in) represent particles being removed (in momentum states $\bk_3$ and $\bk_4$) and the outgoing lines represent particles added (momenta $\bk_1$ and $\bk_2$). The wiggly line represents $\tilde V(\bq)$. The conservation of momentum at the vertices is a consequence of the translational invariance of the problem: the two integrations over $\br$ and $\br’$ give rise to two $\delta$-functions that perform this function.</p>
@@ -636,13 +636,13 @@ E_\text{kin} &= \sum_{|\bk|<k_\text{F}} \frac{\bk^2}{2m} \longrightarrow L^3 \in
 <img src="/docs/assets/HFDiag.png" alt="" />
 <em>Graphical representation of the Hartree and Fock terms.</em></p>
 
-<p>Evaluating the two contributions in term of the occupation numbers gives</p>
+<p>Evaluating the two contributions in terms of the occupation numbers gives</p>
 
-<script type="math/tex; mode=display">\braket{\mathbf{N}}{\hat H_\text{int.}}{\mathbf{N}} = \frac{1}{2}\tilde U(0) \sum_{\bk_1,\bk_2} N_{\bk_1}N_{\bk_2} - \frac{1}{2} \sum_{\bk_1,\bk_2} \tilde U(\bk_1-\bk_2) N_{\bk_1}N_{\bk_2}</script>
+<script type="math/tex; mode=display">\braket{\mathbf{N}}{\hat H_\text{int.}}{\mathbf{N}} = \frac{1}{2V}\tilde U(0) \sum_{\bk_1,\bk_2} N_{\bk_1}N_{\bk_2} - \frac{1}{2V} \sum_{\bk_1,\bk_2} \tilde U(\bk_1-\bk_2) N_{\bk_1}N_{\bk_2}</script>
 
 <p>While the Hartree term just depends on the total number of particles, the Fock term depends on the individual occupations. The interaction energy to add a single particle to state $\bk$ is</p>
 
-<script type="math/tex; mode=display">\Delta U_{\bk} = \tilde U(0) \sum_{\bk'} N_{\bk'} - \sum_{\bk'} \tilde U(\bk-\bk') N_{\bk'}</script>
+<script type="math/tex; mode=display">\Delta U_{\bk} = \frac{\tilde U(0)}{V} \sum_{\bk'} N_{\bk'} - \frac{1}{V}\sum_{\bk'} \tilde U(\bk-\bk') N_{\bk'}</script>
 
 <h2 id="references">References</h2>
 
