@@ -802,7 +802,9 @@ What is the role of translational invariance?
 
 <script type="math/tex; mode=display">S_\rho(\bq) = \int S_\rho(\bq,\omega) \frac{d\omega}{2\pi} = \langle\langle\rho_\bq\rho_{-\bq}\rangle\rangle</script>
 
-<p>is usually called the <strong>static structure factor</strong>, which is a bit of a strange name given that it contains all frequencies. A better name would perhaps be <em>equal time</em> structure factor. $S_\rho(\bq)$ quantifies the density fluctuations in a system. It is the Fourier transform of the quantity $\rho_2(\br_1,\br_2)$ considered in <a href="/docs/lectures/ManyBodyWavefunctions/">Lecture 1</a>.</p>
+<p>is usually called the <strong>static structure factor</strong>, which is a bit of a strange name given that it contains all frequencies. A better name would perhaps be <em>equal time</em> structure factor. $S_\rho(\bq)$ quantifies the density fluctuations in a system. It is related to the quantity $\rho_2(\br_1,\br_2)$ considered in <a href="/docs/lectures/ManyBodyWavefunctions/">Lecture 1</a> since</p>
+
+<script type="math/tex; mode=display">\rho_2(\br_1,\br_2) = \bra{\Psi}\rho(\br_1)\rho(\br_2)\ket{\Psi} - \rho_1(\br_1)\delta(\br_1-\br_2).</script>
 
 <p class="message">
 Some texts (e.g <a href="#Nozieres:1999aa">(Nozières &amp; Pines, 1999)</a>) omit the $2\pi$ in the definition \eqref{res_Sdef}. I prefer to keep it so that $S_\rho(\bq,t) = \langle\langle \rho_\bq(t)\rho_{-\bq}(0)\rangle\rangle$.

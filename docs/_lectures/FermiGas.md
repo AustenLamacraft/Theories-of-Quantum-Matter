@@ -418,7 +418,7 @@ $$
 \Gamma_{\mathbf{N}\to\mathbf{N'}} = 2\pi \abs{\braket{\mathbf{N'}}{H_\text{int}}{\mathbf{N}}}^2 \delta(E(\mathbf{N})-E(\mathbf{N}'))
 $$
 
-By considering the volume of phase space available for the scattering of a quasiparticle of energy $\Delta$ above the Fermi surface, you should be able to argue that this rate varies like $\Delta^2$. This means that at low energy (or temperature) such scattering is ineffective and the Landau picture holds.
+By considering the volume of phase space available for the scattering of a quasiparticle of energy $\Delta$ above the Fermi surface, you should be able to argue that the _total_ rate, obtained by integrating over all possible final states, varies like $\Delta^2$. This means that at low energy (or temperature) such scattering is ineffective and the Landau picture holds.
 
 <a name="Collision"></a>
 ![]({{ site.baseurl }}/assets/Collision.png)

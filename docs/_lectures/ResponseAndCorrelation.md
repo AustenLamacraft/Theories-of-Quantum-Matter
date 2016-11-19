@@ -681,7 +681,11 @@ $$
 S_\rho(\bq) = \int S_\rho(\bq,\omega) \frac{d\omega}{2\pi} = \langle\langle\rho_\bq\rho_{-\bq}\rangle\rangle
 $$
 
-is usually called the __static structure factor__, which is a bit of a strange name given that it contains all frequencies. A better name would perhaps be _equal time_ structure factor. $S_\rho(\bq)$ quantifies the density fluctuations in a system. It is the Fourier transform of the quantity $\rho_2(\br_1,\br_2)$ considered in [Lecture 1]({{ site.baseurl }}/lectures/ManyBodyWavefunctions/).
+is usually called the __static structure factor__, which is a bit of a strange name given that it contains all frequencies. A better name would perhaps be _equal time_ structure factor. $S_\rho(\bq)$ quantifies the density fluctuations in a system. It is related to the quantity $\rho_2(\br_1,\br_2)$ considered in [Lecture 1]({{ site.baseurl }}/lectures/ManyBodyWavefunctions/) since
+
+$$
+\rho_2(\br_1,\br_2) = \bra{\Psi}\rho(\br_1)\rho(\br_2)\ket{\Psi} - \rho_1(\br_1)\delta(\br_1-\br_2).
+$$
 
 <p class="message">
 Some texts (e.g {% cite Nozieres:1999aa %}) omit the $2\pi$ in the definition \eqref{res_Sdef}. I prefer to keep it so that $S_\rho(\bq,t) = \langle\langle \rho_\bq(t)\rho_{-\bq}(0)\rangle\rangle$.
