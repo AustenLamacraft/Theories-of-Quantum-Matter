@@ -3,7 +3,7 @@
 
   <head>
   <!-- Canonical link to help search engines -->
-  <link rel="canonical" href="/docs/drafts/KondoEffect/"/>
+  <link rel="canonical" href="/docs/lectures/KondoEffect/"/>
 
   <!-- Basic meta elements -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -27,7 +27,7 @@
     <meta property="og:description" content="An Ed edition">
     <meta property="fb:admins" content="elotroalex"/>
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/drafts/KondoEffect/"/>
+    <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/KondoEffect/"/>
     <meta property="fb:app_id" content="589495744558280"/>
     <meta property="og:image" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/public/open-graph-logo.png"/>
     <meta property="og:image:width" content="200" />
@@ -220,10 +220,16 @@ $$
         
       
     
+      
+        
+          <a class="sidebar-nav-item active" href="/docs/lectures/KondoEffect/">The Kondo Effect</a>
+        
+      
+    
 
     <!-- The code below is used for manually entered links  -->
 
-    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://tqm.usertest.mws3.csx.cam.ac.uk/docs/drafts/KondoEffect/">Annotate me</a>
+    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/KondoEffect/">Annotate me</a>
   </nav>
 
   <div class="sidebar-item">
@@ -262,22 +268,16 @@ $$
       <li><a href="#second-order" id="markdown-toc-second-order">Second Order</a></li>
     </ul>
   </li>
-  <li><a href="#comparison-with-impurity" id="markdown-toc-comparison-with-impurity">Comparison with Impurity</a></li>
-  <li><a href="#scattering-from-the-spin" id="markdown-toc-scattering-from-the-spin">Scattering from the Spin</a>    <ul>
-      <li><a href="#time-dependent-perturbation-theory" id="markdown-toc-time-dependent-perturbation-theory">Time Dependent Perturbation Theory</a></li>
-      <li><a href="#first-order-1" id="markdown-toc-first-order-1">First Order</a></li>
-      <li><a href="#second-order-1" id="markdown-toc-second-order-1">Second Order</a></li>
-      <li><a href="#the-resistance-minimum" id="markdown-toc-the-resistance-minimum">The Resistance Minimum</a></li>
-    </ul>
-  </li>
-  <li><a href="#renormalization-of-the-kondo-hamiltonian" id="markdown-toc-renormalization-of-the-kondo-hamiltonian">Renormalization of the Kondo Hamiltonian</a>    <ul>
-      <li><a href="#schrieffer--wolf-transformation" id="markdown-toc-schrieffer--wolf-transformation">Schrieffer–Wolf Transformation</a></li>
+  <li><a href="#renormalization-group-analysis-of-the-kondo-hamiltonian" id="markdown-toc-renormalization-group-analysis-of-the-kondo-hamiltonian">Renormalization Group analysis of the Kondo Hamiltonian</a>    <ul>
+      <li><a href="#effective-hamiltonian" id="markdown-toc-effective-hamiltonian">Effective Hamiltonian</a></li>
       <li><a href="#solution-of-the-rg-equations" id="markdown-toc-solution-of-the-rg-equations">Solution of the RG Equations</a></li>
     </ul>
   </li>
-  <li><a href="#kondo-problem-at-strong-coupling" id="markdown-toc-kondo-problem-at-strong-coupling">Kondo Problem at Strong Coupling</a></li>
   <li><a href="#the-kondo-effect-in-quantum-dots" id="markdown-toc-the-kondo-effect-in-quantum-dots">The Kondo Effect in Quantum Dots</a></li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
+
+<p>Reading: <a href="#Kouwenhoven:2001aa">(Kouwenhoven &amp; Glazman, 2001)</a></p>
 
 <hr />
 
@@ -334,7 +334,8 @@ $$
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
-\braket{\bk,s,S}{H_J(t)}{\bk',s',S'} &=\frac{J}{4V}\boldsymbol{\sigma}_{SS'}\cdot\boldsymbol{\sigma}_{ss'}e^{i[\xi(\bk)-\xi(\bk')]t}.
+-i\braket{\bk,s,S}{H_J(t)}{\bk',s',S'} &=-i\frac{J}{4V}\boldsymbol{\sigma}_{SS'}\cdot\boldsymbol{\sigma}_{ss'}e^{i[\xi(\bk)-\xi(\bk')]t}.
+\label{1stAmp}
 \end{align} %]]></script>
 
 <p>The Fermi Golden Rule then gives the scattering rate</p>
@@ -358,11 +359,19 @@ $$
 
 <h3 id="second-order">Second Order</h3>
 
-<p>The magic happens at the next order, where we have to consider</p>
+<p>The magic happens at the next order, where we have the contribution to the amplitude</p>
 
 <script type="math/tex; mode=display">\begin{align}
-\int_0^\infty\braket{\bk,s,S}{H_J(t)H_J(0)}{\bk',s',S'} dt.
+-\int_0^t dt_2 \int_0^{t_2}dt_1\braket{\bk,s,S}{H_J(t_2)H_J(t_1)}{\bk',s',S'}.
 \end{align}</script>
+
+<p>Comparing with the first order amplitude \eqref{1stAmp} shows that</p>
+
+<script type="math/tex; mode=display">\begin{align}
+- \int_0^{t}dt'\braket{\bk,s,S}{H_J(t)H_J(t')}{\bk',s',S'},
+\end{align}</script>
+
+<p>can be regarded as a correction to the matrix element to be inserted into the Golden Rule.</p>
 
 <p>If we insert a complete set of states between the two occurrences of $H_J$, what intermediate (or <strong>virtual</strong>) states contribute to the scattering amplitude? There are just two possibilities</p>
 
@@ -381,31 +390,106 @@ $$
 
 <p>We see that indistinguishability (and hence fermionic statistics) plays a fundamental role in the second process.</p>
 
-<h2 id="comparison-with-impurity">Comparison with Impurity</h2>
+<p>We consider the particle process first. This arises from the terms</p>
 
-<h2 id="scattering-from-the-spin">Scattering from the Spin</h2>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+H_J(t') &\longrightarrow \frac{J}{4V} \boldsymbol{\sigma}_{S_iS'}\cdot \boldsymbol{\sigma}_{s_i s'}\adop_{\bk_i,s_i}(t')\aop_{\bk',s'}(t')\nonumber\\
+H_J(t) &\longrightarrow \frac{J}{4V} \boldsymbol{\sigma}_{SS_i}\cdot \boldsymbol{\sigma}_{ss_i}\adop_{\bk,s}(t)\aop_{\bk_i,s_i}(t),\quad \abs{\bk_i}>k_\text{F}
+\end{align} %]]></script>
 
-<h3 id="time-dependent-perturbation-theory">Time Dependent Perturbation Theory</h3>
+<p>The time dependence of the operators gives rise to the phase factor</p>
 
-<h3 id="first-order-1">First Order</h3>
+<script type="math/tex; mode=display">\begin{align}
+\exp\left(i[\xi(\bk)-\xi(\bk_i)]t+i[\xi(\bk_i)-\xi(\bk')]t'\right)\nonumber\\
+= \exp\left(i[\xi(\bk)-\xi(\bk')]t+i[\xi(\bk_i)-\xi(\bk')](t'-t)\right)
+\end{align}</script>
 
-<h3 id="second-order-1">Second Order</h3>
+<p>Extending the integral over $t-t’$ to $\infty$ gives</p>
 
-<h3 id="the-resistance-minimum">The Resistance Minimum</h3>
+<script type="math/tex; mode=display">\int_0^\infty d(t-t') \exp\left(i[\xi(\bk')-\xi(\bk_i)](t-t')\right) = \frac{i}{\xi(\bk')-\xi(\bk_i)+i0}.</script>
 
-<h2 id="renormalization-of-the-kondo-hamiltonian">Renormalization of the Kondo Hamiltonian</h2>
+<p>Putting it all together gives a contribution</p>
 
-<h3 id="schrieffer--wolf-transformation">Schrieffer–Wolf Transformation</h3>
+<script type="math/tex; mode=display">-i\sum_{\abs{\bk_i}>k_\text{F}}\frac{\exp\left(i[\xi(\bk)-\xi(\bk')]t\right)}{\xi(\bk')-\xi(\bk_i)+i0}\left(\frac{J}{4V}\right)^2\left(\sigma^j\sigma^k\right)_{SS'}\left(\sigma^j\sigma^k\right)_{ss'}.
+\label{plike}</script>
+
+<p>Now we turn to the hole process. The relevant terms in the coupling are now</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+H_J(t') &\longrightarrow \frac{J}{4V} \boldsymbol{\sigma}_{S_iS'}\cdot \boldsymbol{\sigma}_{s s_i}\adop_{\bk,s}(t')\aop_{\bk_i,s_i}(t')\nonumber\\
+H_J(t) &\longrightarrow \frac{J}{4V} \boldsymbol{\sigma}_{SS_i}\cdot \boldsymbol{\sigma}_{s_i s'}\adop_{\bk_i,s_i}(t)\aop_{\bk',s'}(t),\quad \abs{\bk_i}<k_\text{F}.
+\end{align} %]]></script>
+
+<p>The phase factor is now</p>
+
+<script type="math/tex; mode=display">\begin{align}
+\exp\left(i[\xi(\bk_i)-\xi(\bk')]t+i[\xi(\bk)-\xi(\bk_i)]t'\right)\nonumber\\
+= \exp\left(i[\xi(\bk)-\xi(\bk')]t+i[\xi(\bk)-\xi(\bk_i)](t'-t)\right).
+\end{align}</script>
+
+<p>Integrating over $t-t’$ then gives</p>
+
+<script type="math/tex; mode=display">\int_0^\infty d(t-t') \exp\left(i[\xi(\bk_i)-\xi(\bk)](t-t')\right) = \frac{i}{\xi(\bk_i)-\xi(\bk)+i0}.</script>
+
+<p>On account of the order of $\adop_{\bk,s}$ and $\aop_{\bk’,s’}$ being reversed, we have a minus sign relative to the particle contribution, leading to</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+i\sum_{\abs{\bk_i}<k_\text{F}}\frac{\exp\left(i[\xi(\bk)-\xi(\bk')]t\right)}{\xi(\bk_i)-\xi(\bk)+i0}\left(\frac{J}{4V}\right)^2\left(\sigma^j\sigma^k\right)_{SS'}\left(\sigma^k\sigma^j\right)_{ss'}.
+\label{hlike} %]]></script>
+
+<p>The phase factors in \eqref{plike} and \eqref{hlike}, as in the first order result \eqref{1stAmp}, are responsible for the $\delta$-function setting $\xi(\bk)=\xi(\bk’)$ in the Golden Rule. Both \eqref{plike} and \eqref{hlike} have a logarithmic divergence that is cut-off at low energies by $\xi(\bk)=\xi(\bk’)$. For example,</p>
+
+<script type="math/tex; mode=display">\sum_{\abs{\bk_i}>k_\text{F}}\frac{1}{\xi(\bk')-\xi(\bk_i)+i0}\sim -\nu(0)V\log\left(\frac{\Lambda}{\xi(\bk)}\right),</script>
+
+<p>where $\Lambda$ is an upper cut-off arising from the microscopic scales of the problem. The overall logarithmic dependence of the second order correction is then</p>
+
+<script type="math/tex; mode=display">i\frac{J^2\nu(0)}{32 V}\exp\left(i[\xi(\bk)-\xi(\bk')]t\right)\log\left(\frac{\Lambda}{\xi(\bk)}\right)\left[\sigma^j,\sigma^k\right]_{SS'} \left[\sigma^j,\sigma^k\right]_{ss'}.
+\label{TotalLog}</script>
+
+<p>Since</p>
+
+<script type="math/tex; mode=display">\left[\sigma^j,\sigma^k\right]_{SS'} = 2i\epsilon_{jkl} \sigma^l_{SS'},</script>
+
+<p>we can interpret \eqref{TotalLog} as a logarithmic correction to the coupling $J$</p>
+
+<script type="math/tex; mode=display">\delta J = \frac{J^2\nu(0)}{2}\log\left(\frac{\Lambda}{\xi(\bk)}\right).
+\label{KondoCorrect}</script>
+
+<p>This was Kondo’s discovery. For $J&gt;0$ this represents an <em>increase</em> in the magnitude of the coupling, and a corresponding logarithmic correction to the scattering rate. At finite temperature, the lower cutoff in the integrals is replaced by the temperature, leading to the observed $\log T$ dependence of the resistivity on temperature.</p>
+
+<h2 id="renormalization-group-analysis-of-the-kondo-hamiltonian">Renormalization Group analysis of the Kondo Hamiltonian</h2>
+
+<p>The logarithmic correction \eqref{KondoCorrect} becomes the same order as  $J$ when the low energy cut-off approaches the <strong>Kondo scale</strong></p>
+
+<script type="math/tex; mode=display">E_\text{K} \equiv \Lambda \exp\left(-\frac{2}{\nu(0)\abs{J}}\right).</script>
+
+<p>What can we say about the physics at or below this scale? Continuing with perturbation theory leads to contributions $\propto \log^p(\Lambda/\xi)$ with $p&gt;1$, which doesn’t really help to clarify things. An alternative is to ask for the <strong>effective Hamiltonian</strong> describing the problem on a particular scale.</p>
+
+<h3 id="effective-hamiltonian">Effective Hamiltonian</h3>
+
+<p>To be precise, we start with a Kondo problem defined with a certain $\Lambda$. Then, for $\Lambda’\ll\Lambda$, we ask for the effective Hamiltonian describing the system when there are no particle excitations with $\xi(\bp)&gt;\Lambda’$ and no hole excitations with $\xi(\bp)&lt;-\Lambda’$. Let’s refer to this subspace as $\cH_{\Lambda’}$. This effective Hamiltonian is different from the original Hamiltonian: we saw in <a href="/docs/lectures/Lattice/">Lecture 7</a> that, since $\Lambda’\ll \Lambda$, the effective Hamiltonian in $\cH_{\Lambda’}$ is</p>
+
+<script type="math/tex; mode=display">\delta H = - H_JP_{[\Lambda',\Lambda]}H_0^{-1}H_J,</script>
+
+<p>where $P_{[\Lambda’,\Lambda]}$ projects on particle excitations with $\Lambda&gt;\xi(\bp)&gt;\Lambda’$ and hole excitations with $-\Lambda&lt;\xi(\bp)&lt;-\Lambda’$. It’s not hard to see that evaluating $\delta H$ is very similar to the second order calculation of the previous section, showing that $\delta H$ has the same form as $H_J$ with $\delta J$ given by</p>
+
+<script type="math/tex; mode=display">\delta J = \frac{J^2\nu(0)}{2}\log\left(\frac{\Lambda}{\Lambda'}\right).
+\label{KondoCorrectRG}</script>
 
 <h3 id="solution-of-the-rg-equations">Solution of the RG Equations</h3>
-
-<h2 id="kondo-problem-at-strong-coupling">Kondo Problem at Strong Coupling</h2>
 
 <h2 id="the-kondo-effect-in-quantum-dots">The Kondo Effect in Quantum Dots</h2>
 
 <p>Glazman Kouwenhoven article</p>
 
-<p>Kondo enhances conduction</p>
+<p><a href="#Kouwenhoven:2001aa">(Kouwenhoven &amp; Glazman, 2001)</a></p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="Kouwenhoven:2001aa">Kouwenhoven, L., &amp; Glazman, L. (2001). Revival of the Kondo effect. <i>Physics World</i>, <i>14</i>(1), 33.</span></li>
+<li><span id="Kondo:1964aa">Kondo, J. (1964). Resistance minimum in dilute magnetic alloys. <i>Progress of Theoretical Physics</i>, <i>32</i>(1), 37–49.</span></li></ol>
 
 </div>
 

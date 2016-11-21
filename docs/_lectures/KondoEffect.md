@@ -15,6 +15,8 @@ published: true
 * Toc
 {:toc}
 
+Reading: {% cite Kouwenhoven:2001aa %}
+
 ---
 
 ## The Kondo Model
@@ -85,7 +87,8 @@ The relevant matrix element is just
 
 $$
 \begin{align}
-\braket{\bk,s,S}{H_J(t)}{\bk',s',S'} &=\frac{J}{4V}\boldsymbol{\sigma}_{SS'}\cdot\boldsymbol{\sigma}_{ss'}e^{i[\xi(\bk)-\xi(\bk')]t}.
+-i\braket{\bk,s,S}{H_J(t)}{\bk',s',S'} &=-i\frac{J}{4V}\boldsymbol{\sigma}_{SS'}\cdot\boldsymbol{\sigma}_{ss'}e^{i[\xi(\bk)-\xi(\bk')]t}.
+\label{1stAmp}
 \end{align}
 $$
 
@@ -115,13 +118,23 @@ $$
 
 ### Second Order
 
-The magic happens at the next order, where we have to consider
+The magic happens at the next order, where we have the contribution to the amplitude
 
 $$
 \begin{align}
-\int_0^\infty\braket{\bk,s,S}{H_J(t)H_J(0)}{\bk',s',S'} dt.
+-\int_0^t dt_2 \int_0^{t_2}dt_1\braket{\bk,s,S}{H_J(t_2)H_J(t_1)}{\bk',s',S'}.
 \end{align}
 $$
+
+Comparing with the first order amplitude \eqref{1stAmp} shows that
+
+$$
+\begin{align}
+- \int_0^{t}dt'\braket{\bk,s,S}{H_J(t)H_J(t')}{\bk',s',S'},
+\end{align}
+$$
+
+can be regarded as a correction to the matrix element to be inserted into the Golden Rule.
 
 If we insert a complete set of states between the two occurrences of $H_J$, what intermediate (or __virtual__) states contribute to the scattering amplitude? There are just two possibilities
 
@@ -135,30 +148,134 @@ _The two kinds of intermediate states that contribute at second order._
 
 We see that indistinguishability (and hence fermionic statistics) plays a fundamental role in the second process.
 
-## Comparison with Impurity
+We consider the particle process first. This arises from the terms
 
-## Scattering from the Spin
+$$
+\begin{align}
+H_J(t') &\longrightarrow \frac{J}{4V} \boldsymbol{\sigma}_{S_iS'}\cdot \boldsymbol{\sigma}_{s_i s'}\adop_{\bk_i,s_i}(t')\aop_{\bk',s'}(t')\nonumber\\
+H_J(t) &\longrightarrow \frac{J}{4V} \boldsymbol{\sigma}_{SS_i}\cdot \boldsymbol{\sigma}_{ss_i}\adop_{\bk,s}(t)\aop_{\bk_i,s_i}(t),\quad \abs{\bk_i}>k_\text{F}
+\end{align}
+$$
 
-### Time Dependent Perturbation Theory
+The time dependence of the operators gives rise to the phase factor
 
-### First Order
+$$
+\begin{align}
+\exp\left(i[\xi(\bk)-\xi(\bk_i)]t+i[\xi(\bk_i)-\xi(\bk')]t'\right)\nonumber\\
+= \exp\left(i[\xi(\bk)-\xi(\bk')]t+i[\xi(\bk_i)-\xi(\bk')](t'-t)\right)
+\end{align}
+$$
 
-### Second Order
+Extending the integral over $t-t'$ to $\infty$ gives
 
-### The Resistance Minimum
+$$
+\int_0^\infty d(t-t') \exp\left(i[\xi(\bk')-\xi(\bk_i)](t-t')\right) = \frac{i}{\xi(\bk')-\xi(\bk_i)+i0}.
+$$
 
-## Renormalization of the Kondo Hamiltonian
+Putting it all together gives a contribution
 
-### Schrieffer--Wolf Transformation
+$$
+-i\sum_{\abs{\bk_i}>k_\text{F}}\frac{\exp\left(i[\xi(\bk)-\xi(\bk')]t\right)}{\xi(\bk')-\xi(\bk_i)+i0}\left(\frac{J}{4V}\right)^2\left(\sigma^j\sigma^k\right)_{SS'}\left(\sigma^j\sigma^k\right)_{ss'}.
+\label{plike}
+$$
+
+Now we turn to the hole process. The relevant terms in the coupling are now
+
+$$
+\begin{align}
+H_J(t') &\longrightarrow \frac{J}{4V} \boldsymbol{\sigma}_{S_iS'}\cdot \boldsymbol{\sigma}_{s s_i}\adop_{\bk,s}(t')\aop_{\bk_i,s_i}(t')\nonumber\\
+H_J(t) &\longrightarrow \frac{J}{4V} \boldsymbol{\sigma}_{SS_i}\cdot \boldsymbol{\sigma}_{s_i s'}\adop_{\bk_i,s_i}(t)\aop_{\bk',s'}(t),\quad \abs{\bk_i}<k_\text{F}.
+\end{align}
+$$
+
+The phase factor is now
+
+$$
+\begin{align}
+\exp\left(i[\xi(\bk_i)-\xi(\bk')]t+i[\xi(\bk)-\xi(\bk_i)]t'\right)\nonumber\\
+= \exp\left(i[\xi(\bk)-\xi(\bk')]t+i[\xi(\bk)-\xi(\bk_i)](t'-t)\right).
+\end{align}
+$$
+
+Integrating over $t-t'$ then gives
+
+$$
+\int_0^\infty d(t-t') \exp\left(i[\xi(\bk_i)-\xi(\bk)](t-t')\right) = \frac{i}{\xi(\bk_i)-\xi(\bk)+i0}.
+$$
+
+On account of the order of $\adop_{\bk,s}$ and $\aop_{\bk',s'}$ being reversed, we have a minus sign relative to the particle contribution, leading to
+
+$$
+i\sum_{\abs{\bk_i}<k_\text{F}}\frac{\exp\left(i[\xi(\bk)-\xi(\bk')]t\right)}{\xi(\bk_i)-\xi(\bk)+i0}\left(\frac{J}{4V}\right)^2\left(\sigma^j\sigma^k\right)_{SS'}\left(\sigma^k\sigma^j\right)_{ss'}.
+\label{hlike}
+$$
+
+The phase factors in \eqref{plike} and \eqref{hlike}, as in the first order result \eqref{1stAmp}, are responsible for the $\delta$-function setting $\xi(\bk)=\xi(\bk')$ in the Golden Rule. Both \eqref{plike} and \eqref{hlike} have a logarithmic divergence that is cut-off at low energies by $\xi(\bk)=\xi(\bk')$. For example,
+
+$$
+\sum_{\abs{\bk_i}>k_\text{F}}\frac{1}{\xi(\bk')-\xi(\bk_i)+i0}\sim -\nu(0)V\log\left(\frac{\Lambda}{\xi(\bk)}\right),
+$$
+
+where $\Lambda$ is an upper cut-off arising from the microscopic scales of the problem. The overall logarithmic dependence of the second order correction is then
+
+$$
+i\frac{J^2\nu(0)}{32 V}\exp\left(i[\xi(\bk)-\xi(\bk')]t\right)\log\left(\frac{\Lambda}{\xi(\bk)}\right)\left[\sigma^j,\sigma^k\right]_{SS'} \left[\sigma^j,\sigma^k\right]_{ss'}.
+\label{TotalLog}
+$$
+
+Since
+
+$$
+\left[\sigma^j,\sigma^k\right]_{SS'} = 2i\epsilon_{jkl} \sigma^l_{SS'},
+$$
+
+we can interpret \eqref{TotalLog} as a logarithmic correction to the coupling $J$
+
+$$
+\delta J = \frac{J^2\nu(0)}{2}\log\left(\frac{\Lambda}{\xi(\bk)}\right).
+\label{KondoCorrect}
+$$
+
+This was Kondo's discovery. For $J>0$ this represents an _increase_ in the magnitude of the coupling, and a corresponding logarithmic correction to the scattering rate. At finite temperature, the lower cutoff in the integrals is replaced by the temperature, leading to the observed $\log T$ dependence of the resistivity on temperature.
+
+## Renormalization Group analysis of the Kondo Hamiltonian
+
+The logarithmic correction \eqref{KondoCorrect} becomes the same order as  $J$ when the low energy cut-off approaches the __Kondo scale__
+
+$$
+E_\text{K} \equiv \Lambda \exp\left(-\frac{2}{\nu(0)\abs{J}}\right).
+$$
+
+What can we say about the physics at or below this scale? Continuing with perturbation theory leads to contributions $\propto \log^p(\Lambda/\xi)$ with $p>1$, which doesn't really help to clarify things. An alternative is to ask for the __effective Hamiltonian__ describing the problem on a particular scale.
+
+### Effective Hamiltonian
+
+To be precise, we start with a Kondo problem defined with a certain $\Lambda$. Then, for $\Lambda'\ll\Lambda$, we ask for the effective Hamiltonian describing the system when there are no particle excitations with $\xi(\bp)>\Lambda'$ and no hole excitations with $\xi(\bp)<-\Lambda'$. Let's refer to this subspace as $\cH_{\Lambda'}$. This effective Hamiltonian is different from the original Hamiltonian: we saw in [Lecture 7]({{ site.baseurl }}/lectures/Lattice/) that, since $\Lambda'\ll \Lambda$, the effective Hamiltonian in $\cH_{\Lambda'}$ is
+
+$$
+\delta H = - H_JP_{[\Lambda',\Lambda]}H_0^{-1}H_J,
+$$
+
+where $P_{[\Lambda',\Lambda]}$ projects on particle excitations with $\Lambda>\xi(\bp)>\Lambda'$ and hole excitations with $-\Lambda<\xi(\bp)<-\Lambda'$. It's not hard to see that evaluating $\delta H$ is very similar to the second order calculation of the previous section, showing that $\delta H$ has the same form as $H_J$ with $\delta J$ given by
+
+$$
+\delta J = \frac{J^2\nu(0)}{2}\log\left(\frac{\Lambda}{\Lambda'}\right).
+\label{KondoCorrectRG}
+$$
+
 
 
 ### Solution of the RG Equations
 
 
-## Kondo Problem at Strong Coupling
-
 ## The Kondo Effect in Quantum Dots
 
 Glazman Kouwenhoven article
 
-Kondo enhances conduction
+{% cite Kouwenhoven:2001aa %}
+
+
+References
+----------
+
+{% bibliography --cited %}
