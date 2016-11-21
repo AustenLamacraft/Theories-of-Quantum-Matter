@@ -270,7 +270,6 @@ $$
 
 ## The Kondo Effect in Quantum Dots
 
-Glazman Kouwenhoven article
 
 {% cite Kouwenhoven:2001aa %}
 
