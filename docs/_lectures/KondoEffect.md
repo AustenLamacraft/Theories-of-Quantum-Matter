@@ -7,7 +7,10 @@ summary: The Kondo model. Divergences at second order. Scaling theory.
 published: true
 ---
 
-> The Kondo model describes a single spin coupled to a Fermi gas. It seems innocuous enough: one small step up in difficulty from a static impurity, perhaps. Not so! The Kondo problem has in fact played a huge role in many body physics over the years, both for the <strong> methods </strong> required to solve it, and because it keeps popping up in different guises.
+
+<p class="message">
+The Kondo model describes a single spin coupled to a Fermi gas. It seems innocuous enough: one small step up in difficulty from a static impurity, perhaps. Not so! The Kondo problem has in fact played a huge role in many body physics over the years, both for the <strong> methods </strong> required to solve it, and because it keeps popping up in different guises.
+</p>
 
 ## Contents
 {:.no_toc}
@@ -15,7 +18,7 @@ published: true
 * Toc
 {:toc}
 
-Reading: {% cite Kouwenhoven:2001aa %}
+Reading: {% cite Kouwenhoven:2001aa %}, {% cite Hewson:1997aa %}, {% cite Kondo:2012aa %},
 
 ---
 
@@ -238,6 +241,10 @@ $$
 
 This was Kondo's discovery. For $J>0$ this represents an _increase_ in the magnitude of the coupling, and a corresponding logarithmic correction to the scattering rate. At finite temperature, the lower cutoff in the integrals is replaced by the temperature, leading to the observed $\log T$ dependence of the resistivity on temperature.
 
+<p class="message">
+It's instructive to compare this calculation with what you would get for a static impurity described by a localized potential. We know that this situation could be described by solving the single particle problem including the potential and just filling the resulting states. The appearance of the spin commutation relations in \eqref{TotalLog} shows us that the quantum dynamics of the impurity is essential.
+</p>
+
 ## Renormalization Group analysis of the Kondo Hamiltonian
 
 The logarithmic correction \eqref{KondoCorrect} becomes the same order as  $J$ when the low energy cut-off approaches the __Kondo scale__
@@ -263,15 +270,143 @@ $$
 \label{KondoCorrectRG}
 $$
 
+The implication is that the physics of excitations within $\Lambda'$ of the Fermi surface can be described either by the original Hamiltonian with cut-off $\Lambda$, or by $H+\delta H$ -- the same model with $J\to J+\delta J$ -- with cut-off $\Lambda'$.
 
+### Scaling of the Hamiltonian
+
+Now let's see what this has to do with scale invariance. Suppose we were studying the Kondo problem in which we had already removed almost all the degrees of freedom, leaving only those in a thin shell of energy thickness $2\Lambda$ around the Fermi surface
+
+<a name="FermiShell"></a>
+![]({{ site.baseurl }}/assets/FermiShell.png)
+_Model defined in a shell of thickness $\Lambda\ll k\_\text{F}$._
+
+The Kondo model defined in this shell may be written
+
+$$
+\begin{align}
+\frac{H_\Lambda}{V} &= \nu(0)\sum_s\int_{-\Lambda}^\Lambda d\xi \int_{S^2} d\Omega_{\hat{\mathbf{n}}}\,\xi \adop_{\bk,s}\aop_{\bk,s}\nonumber  \\  
+&+\nu(0)^2J \mathbf{S}\cdot \int_{-\Lambda}^\Lambda d\xi \int_{-\Lambda}^\Lambda d\xi' \int_{S^2} d\Omega_{\hat{\mathbf{n}}} \int_{S^2}d\Omega_{\hat{\mathbf{n}}'} \sum_{s,s'}\frac{\boldsymbol{\sigma}_{ss'}}{2} \adop_{\bk,s}\aop_{\bk',s'}
+\label{KondoShell}
+\end{align}
+$$
+
+where
+
+$$
+\bk = \hat{\mathbf{n}} \left(k_\text{F}+ \xi/v_\text{F}\right),\quad \bk' = \hat{\mathbf{n}}' \left(k_\text{F}+ \xi/v_\text{F}\right).
+$$
+
+Now, \eqref{KondoShell} has the feature that both terms scale the same way under a re-scaling $\Lambda\to\Lambda'$, essentially because both contain the second power of $\xi$.
+
+To state this more precisely, let's re-define the field operators to incorporate factors of $\sqrt{V}$
+
+$$
+\adop_{\hat{\mathbf{n}},\xi,s}\equiv  \sqrt{V}\adop_{\bk,s},\quad \aop_{\hat{\mathbf{n}},\xi,s}\equiv \sqrt{V}\aop_{\bk,s},\quad
+$$
+
+so now
+
+$$
+\begin{align}
+\left\{\aop_{\hat{\mathbf{n}},\xi,s},\adop_{\hat{\mathbf{n}}',\xi',s'}\right\}=(2\pi)^3\delta_{ss'}v_\text{F} k_\text{F}^{-2}\delta(\hat{\mathbf{n}}-\hat{\mathbf{n}}')\delta(\xi-\xi'),
+\label{CARcont}
+\end{align}
+$$
+
+and
+
+$$
+\begin{align}
+H_\Lambda&= \nu(0)\sum_s\int_{-\Lambda}^\Lambda d\xi \int_{S^2} d\Omega_{\hat{\mathbf{n}}}\,\xi \adop_{\hat{\mathbf{n}},\xi,s}\aop_{\hat{\mathbf{n}},\xi,s} \nonumber \\  
+&+\nu(0)^2J \mathbf{S}\cdot \int_{-\Lambda}^\Lambda d\xi \int_{-\Lambda}^\Lambda d\xi' \int_{S^2} d\Omega_{\hat{\mathbf{n}}} \int_{S^2}d\Omega_{\hat{\mathbf{n}}'} \sum_{s,s'}\frac{\boldsymbol{\sigma}_{ss'}}{2} \adop_{\hat{\mathbf{n}},\xi,s}\aop_{\hat{\mathbf{n}}',\xi',s'}.
+\label{KondoShellInfinite}
+\end{align}
+$$
+
+In this way, we can state the scaling of the Hamiltonian precisely as
+
+$$
+H_\Lambda(\adop_{\hat{\mathbf{n}},\xi,s},\aop_{\hat{\mathbf{n}},\xi,s}) =\frac{\Lambda}{\Lambda'} H_{\Lambda'}\left(\tilde\adop_{\hat{\mathbf{n}},\xi,s},\tilde\aop_{\hat{\mathbf{n}},\xi,s}\right)
+\label{Hscale}
+$$
+
+where
+
+$$
+\tilde\adop_{\hat{\mathbf{n}},\xi,s} = \sqrt{\frac{\Lambda}{\Lambda'}}\adop_{\hat{\mathbf{n}},\frac{\Lambda}{\Lambda'}\xi,s},\quad \tilde\aop_{\hat{\mathbf{n}},\xi,s} = \sqrt{\frac{\Lambda}{\Lambda'}}\aop_{\hat{\mathbf{n}},\frac{\Lambda}{\Lambda'}\xi,s}
+$$
+
+obey the same relations \eqref{CARcont}.
+
+\eqref{Hscale} is inarguable as an operator identity between Kondo Hamiltonians defined in two different energy shells. However, the previous section shows that the _effective_ Hamiltonian acting in the $\Lambda'$ (sub-)shell for a system described by $H_\Lambda$ in the $\Lambda$ shell is _not_ $H_{\Lambda'}$, but $H_{\Lambda'}+\delta H$. Thus the similarity between the two scales is incomplete, but can be fixed by the modest change
+
+$$
+\delta J = \frac{J^2\nu(0)}{2}\log\left(\frac{\Lambda}{\Lambda'}\right).
+$$
+
+Having returned to the original $\Lambda$ shell, with only a shift in the coupling to show for it (and an overall scaling in the Hamiltonian -- see \eqref{Hscale}), we are free to repeat the procedure again. In this way the renormalization of $J$ is iterated repeatedly. Normally, we express this iteration not in terms of a discrete mapping of the coupling of the Hamiltonian, but through a differential equation.
+
+$$
+\frac{dJ}{d\tau} = \frac{J^2\nu(0)}{2}
+\label{RGIso}
+$$
+
+where $\tau\equiv\log \Lambda/\Lambda'$ represents the scale factor between the original scale $\Lambda$ and the current scale $\Lambda'$.
+
+There's something a bit fishy about this last step. After all, wasn't the effective Hamiltonian derived on the assumption that $\Lambda'\ll \Lambda$? Thinking in differential terms really only requires $J\nu(0)\Delta t\ll 1$, however, which can be satisfied even if $\Lambda\gg\Lambda'$.
+
+\eqref{RGIso} is an example of an __RG flow equation__, expressing the incomplete self-similarity of the Kondo problem as we zoom inwards ever closer to the Fermi surface. Similar equations describe the scaling of parameters in theories describing continuous phase transitions -- where there are fluctuations at all length scales -- or massless quantum field theories -- where zero mass means the absence of any length or timescale.
 
 ### Solution of the RG Equations
 
+The single equation \eqref{RGIso} is a bit boring. We can make things more interesting by introducing anisotropy into the original Kondo coupling
 
-## The Kondo Effect in Quantum Dots
+$$
+H_J = \frac{1}{V}\sum_{\substack{\bk,\bk'\\ s,s'}}  \left[J_\parallel S^z s^z_{ss'}\adop_{k',s'}\aop_{k,s} + J_\perp\left( S^+\frac{s^-_{ss'}}{2}\adop_{k',s'}\aop_{k,s} +\text{h.c.}\right)\right].
+$$
 
+It isn't hard to show that \eqref{RGIso} is now replaced with
 
-{% cite Kouwenhoven:2001aa %}
+$$
+\begin{align}
+\frac{dJ_\parallel}{d\tau} &= \frac{J_\perp^2\nu(0)}{2}\nonumber\\
+\frac{dJ_\perp}{d\tau} &= \frac{J_\perp J_\parallel\nu(0)}{2}.
+\end{align}
+$$
+
+The character of the solutions can be readily understood by noticing that
+
+$$
+J_\perp^2-J_\parallel^2=\text{const.}
+$$
+
+is preserved along the flow, leading to a series of hyperbolae. It remains to figure out the direction of the flow:
+
+<a name="AndersonRG"></a>
+![]({{ site.baseurl }}/assets/AndersonRG.png)
+_The RG flow for the anisotropic Kondo problem. From {% cite Anderson:1970aa %}._
+
+The conclusions of this analysis are as follows:
+
+1. For ferromagnetic couplings $J_z<0$ with $\abs{J_z}>\abs{J_\perp}$, the flow is to $J_\perp=0$. This means that at low energies the amplitude for spin-flips vanishes, leaving only a $S^z s^z(0)$ coupling.
+
+2. For antiferromagnetic coupling $J_z>0$, or ferromagnetic coupling with $\abs{J_z}<\abs{J_\perp}$, the flow is to strong coupling. This means that our analysis -- which was still based on the smallness of $J$ despite all the fancy bells and whistles -- breaks down.
+
+<p class="message">
+It would be remiss of me not to mention that exactly the same RG flow governs the <a href="https://en.wikipedia.org/wiki/Kosterlitz–Thouless_transition">Kosterlitz--Thouless transition</a> of two dimensional superfluid systems, cited in this years Nobel Prize. In this case the role of $J_\parallel$ is taken by the deviation in temperature from the critical temperature, and $J_\perp$ corresponds to the chemical potential of vortices, which proliferate at the transition.
+</p>
+
+## Epilogue: What Really Happens?
+
+My intention in this lecture was to give a taste of what makes the Kondo problem so intriguing. However, we certainly haven't gotten to the bottom of it. Let me try to summarize an enormous amount of history in a paragraph or two.
+
+[Kenneth Wilson's](https://en.wikipedia.org/wiki/Kenneth_G._Wilson) __numerical RG__ calculations, which informed his formulation of the general framework that won him the Nobel prize, showed that in the low energy limit the impurity spin is completely 'quenched', forming a singlet with the Fermi sea {% cite Wilson:1975aa %}. This is a highly nontrivial process, but a simple caricature is that the singlet forms with the one fermion allowed at the site of the impurity by the exclusion principle. This process is often called _screening_ in analogy to a plasma, though the physics is of course rather different. Nevertheless, it leads to a very simple Fermi liquid-like picture of the physics close to the ground state, as explained by Nozières {% cite Nozieres:1974aa %}
+
+The same qualitative consideration lets us understand what happens for larger impurity spin $S$: in the ground state the impurity has spin $S-1/2$. We can also add more 'channels', coupling the impurity to other species of fermions that represent the interaction of different partial waves (angular momentum states) with the impurity. Then it is possible for 'overscreening' to occur, meaning that the strongly coupled picture is unstable as both channels try to form a singlet with the impurity. The instability of both strong and weak coupling suggests an _intermediate coupling_ ground state, which turns out to have highly unusual __non-Fermi liquid__ properties without well defined fermionic quasiparticles. However, this state only exists for exactly equal coupling in two or more channels, which is unlikely to occur with a magnetic impurity atom.
+
+One of the great innovations of the last couple of decades, however, is the use of __quantum dots__ as artificial magnetic impurities. These mesoscopic electronic devices can be connected in a circuit, so that the Kondo effect is probed by electical conduction rather than through the resistivity that arises from scattering. Even better, quantum dots are a a highly _tunable_ Kondo system that has allowed the two-channel effect to be observed, for example. You can read about some of these developments in the article {% cite Kouwenhoven:2001aa %}.
+
+You can find even more in the textbook {% cite Hewson:1997aa %} or {% cite Kondo:2012aa %} from the man himself.
 
 
 References
