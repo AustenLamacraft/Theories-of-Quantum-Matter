@@ -3,7 +3,7 @@
 
   <head>
   <!-- Canonical link to help search engines -->
-  <link rel="canonical" href="/docs/drafts/Problems4/"/>
+  <link rel="canonical" href="/docs/problems/Problems4/"/>
 
   <!-- Basic meta elements -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -27,7 +27,7 @@
     <meta property="og:description" content="An Ed edition">
     <meta property="fb:admins" content="elotroalex"/>
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/drafts/Problems4/"/>
+    <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/problems/Problems4/"/>
     <meta property="fb:app_id" content="589495744558280"/>
     <meta property="og:image" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/public/open-graph-logo.png"/>
     <meta property="og:image:width" content="200" />
@@ -229,7 +229,7 @@ $$
 
     <!-- The code below is used for manually entered links  -->
 
-    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://tqm.usertest.mws3.csx.cam.ac.uk/docs/drafts/Problems4/">Annotate me</a>
+    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://tqm.usertest.mws3.csx.cam.ac.uk/docs/problems/Problems4/">Annotate me</a>
   </nav>
 
   <div class="sidebar-item">
@@ -259,42 +259,112 @@ $$
 
 <ol id="markdown-toc">
   <li><a href="#from-the-anderson-model-to-the-kondo-model" id="markdown-toc-from-the-anderson-model-to-the-kondo-model">From the Anderson Model to the Kondo Model</a></li>
-  <li><a href="#spin-flip-mediated-inelastic-scattering" id="markdown-toc-spin-flip-mediated-inelastic-scattering">Spin-flip mediated inelastic scattering</a></li>
-  <li><a href="#anderson-yuval-hamam-representation-of-the-kondo-problem" id="markdown-toc-anderson-yuval-hamam-representation-of-the-kondo-problem">Anderson, Yuval, Hamam representation of the Kondo Problem</a></li>
-  <li><a href="#spin-boson-model" id="markdown-toc-spin-boson-model">Spin-boson Model</a></li>
-  <li><a href="#coulomb--blockade-and-kondo" id="markdown-toc-coulomb--blockade-and-kondo">Coulomb–Blockade and Kondo</a></li>
+  <li><a href="#spin-flip-mediated-inelastic-scattering" id="markdown-toc-spin-flip-mediated-inelastic-scattering">Spin-Flip Mediated Inelastic Scattering</a></li>
+  <li><a href="#kondo-effect-without-spin" id="markdown-toc-kondo-effect-without-spin">Kondo Effect Without Spin</a></li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ol>
 
 <hr />
 
-<p>Simple model of phonon mediated attraction</p>
-
-<p>The Fermi Polaron
-Chevy’s wavefunction. Polaron residue</p>
-
-<p>Normal modes for the oscillator on a string.
-Density Response of a Fermi Gas
-Compressibility Sum Rule From Perturbation Theory
-Inelastic scattering of light
-Feynman–Bijl for Quantum Hall</p>
-
-<p>Explicitly find Matsubara GF from definition.</p>
-
-<p>Find second order contribution to free energy by usual perturbation theory</p>
-
 <h2 id="from-the-anderson-model-to-the-kondo-model">From the Anderson Model to the Kondo Model</h2>
 
-<h2 id="spin-flip-mediated-inelastic-scattering">Spin-flip mediated inelastic scattering</h2>
+<p>One route to understanding the origin of the Kondo coupling is to start from the <a href="https://en.wikipedia.org/wiki/Anderson_impurity_model">Anderson impurity model</a>.</p>
 
-<h2 id="anderson-yuval-hamam-representation-of-the-kondo-problem">Anderson, Yuval, Hamam representation of the Kondo Problem</h2>
+<script type="math/tex; mode=display">\begin{align}
+H = \sum_{\bk,s}\xi(\bk)\adop_{\bk,s}\aop_{\bk,s}+\overbrace{\sum_s\epsilon_b N_{b,s} + U N_{b,\uparrow}N_{b,\downarrow}}^{\equiv H_b} + \overbrace{\frac{t}{\sqrt{V}}\sum_{\bk,s}\left[\adop_{\bk,s}\bop_s+\text{h.c.}\right]}^{\equiv H_t}
+\end{align}</script>
 
-<h2 id="spin-boson-model">Spin-boson Model</h2>
+<p>here the $\bop$ fermion describes the impurity site: $N_{b,s}=\bdop_{s}\bop_s$.</p>
 
-<p>Map to Kondo</p>
+<p>For $t=0$ and $\epsilon_b=-U/2$ the singly occupied, doubly degenerate impurity state has energy $-U/2$, with the empty and double occupied states having larger energy $0$ (this choice is made for simplicity). We can then ask for the effective Hamiltonian describing the singly occupied site. We’ve seen one way to do this in <a href="/docs/lectures/Lattice/">Lecture 7</a>). A second way is to use the <strong>Schrieffer–Wolff transformation</strong> <a href="#Schrieffer:1966aa">(Schrieffer &amp; Wolff, 1966)</a>. The idea is to perform a unitary transformation on the Hamiltonian that removes the coupling in the last term to lowest order.</p>
 
-<h2 id="coulomb--blockade-and-kondo">Coulomb–Blockade and Kondo</h2>
+<p>We write</p>
 
-<p>Smearing of the Coulomb step</p>
+<script type="math/tex; mode=display">H\to H'\equiv e^S H e^{-S},</script>
+
+<p>where $S$ is antihermitian.</p>
+
+<ol>
+  <li>
+    <p>Show that, if we ignore the kinetic energy, $S$ must be chosen so that</p>
+
+    <script type="math/tex; mode=display">\left[S, H_b\right] = - H_t.</script>
+  </li>
+  <li>
+    <p>Show that the transformed Hamiltonian $H’$ contains the term</p>
+
+    <script type="math/tex; mode=display">H^{(2)} = \frac{1}{2}\left[S,H_t\right]</script>
+
+    <p>of order $t^2$.</p>
+  </li>
+  <li>
+    <p>Try $S$ of the form</p>
+
+    <script type="math/tex; mode=display">S = f(N_{b,\uparrow}+N_{b,\downarrow})\sum_{k,s} \adop_{\bk,s}\bop_s - \text{h.c.}</script>
+
+    <p>Find the form of $f(N_b)$ and compute $H^{(2)}$, retaining only those parts that keep the occupancy of the impurity fixed. You should be able to write $H^{(2)}$ as a Kondo Hamiltonian and identify $J$. What sign does it have?</p>
+
+    <p><em>Hint:</em> $\bdop_s f(N_b) = f(N_b-1)\bdop_s$, $\bop_s f(N_b) = f(N_b+1)\bop_s$</p>
+  </li>
+</ol>
+
+<h2 id="spin-flip-mediated-inelastic-scattering">Spin-Flip Mediated Inelastic Scattering</h2>
+
+<p><a href="#Kaminski:2001aa">(Kaminski &amp; Glazman, 2001)</a></p>
+
+<p>Consider the scattering of <em>two</em> fermions in the Kondo problem</p>
+
+<script type="math/tex; mode=display">\ket{\bk_1,s_1,\bk_2,s_2} = \adop_{\bk_1,s_1}\adop_{\bk_2,s_2}\ket{\text{FS}}</script>
+
+<p>Find at second order in $J$ the amplitude for the process</p>
+
+<script type="math/tex; mode=display">\bk'_1,s'_1,\bk'_2,s'_2\longrightarrow \bk_1,s_1,\bk_2,s_2,</script>
+
+<p>and show that the total scattering rate, averaged over intial spin states of the fermions and the impurity spin $S$, is</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\Gamma(\epsilon_1',\epsilon_2',\epsilon_1,\epsilon_2)&=\frac{\pi}{4}\frac{n}{\nu}S(S+1)(J\nu)^4\\
+&\times\left[\frac{1}{(\epsilon'_1-\epsilon_1)^2}+\frac{1}{(\epsilon'_1-\epsilon_2)^2}\right]\delta(\epsilon_1+\epsilon_2-\epsilon_1'-\epsilon_2')
+\end{align} %]]></script>
+
+<p>where $\nu$ is the Fermi surface density of states per unit volume per spin component.</p>
+
+<h2 id="kondo-effect-without-spin">Kondo Effect Without Spin</h2>
+
+<p><a href="#Matveev:1990aa">(Matveev, 1990)</a></p>
+
+<p>A model for (spinless) electrons hopping on and off a metal grain or quantum dot  ($a$ fermions) to a lead  ($b$ fermions) is</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+H &= \sum_{\bk} \xi(\bk)\left[\adop_\bk\aop_\bk+\bdop_\bk\bop_\bk
+\right] + \frac{Q^2}{2C}+\varphi Q\\
+&\quad+\overbrace{\frac{1}{\sqrt{V_aV_b}}\sum_{\bk,\bk'} \left[t\,\adop_\bk\bop_{\bk'}+\text{h.c.}\right]}^{\equiv H_t}.
+\end{align} %]]></script>
+
+<p>Here $C$ is the capacitance, and $Q$ is the charge of the dot</p>
+
+<script type="math/tex; mode=display">Q = e\sum_\bk \left[\adop_\bk\aop_\bk - \theta(-\xi(\bk))\right],</script>
+
+<p>defined so that the dot is neutral when filled to $\xi(\bk)=0$. $\varphi$ is a gate voltage. In the region</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+-\frac{e}{2C}< \varphi < \frac{e}{2C}, %]]></script>
+
+<p>the ground state of the decoupled system ($t=0$) has $Q=0$. Show that at second order in the hopping, the ground state fluctuations of the dot charge are given by</p>
+
+<script type="math/tex; mode=display">\langle Q^2\rangle \sim e^2g \log\left(\frac{e/2C-\varphi}{e/2C+\varphi}\right),</script>
+
+<p>where $g \equiv \abs{t}^2\nu_a(0)\nu_b(0)$.</p>
+
+<p>What has this got to do with the Kondo effect? Try to establish a dictionary between the two phenomena.</p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="Schrieffer:1966aa">Schrieffer, J. R., &amp; Wolff, P. A. (1966). Relation between the anderson and kondo hamiltonians. <i>Physical Review</i>, <i>149</i>(2), 491.</span></li>
+<li><span id="Kaminski:2001aa">Kaminski, A., &amp; Glazman, L. I. (2001). Electron energy relaxation in the presence of magnetic impurities. <i>Physical Review Letters</i>, <i>86</i>(11), 2400.</span></li>
+<li><span id="Matveev:1990aa">Matveev, K. A. (1990). Quantum fluctuations of the charge of a metal particle under the Coulomb blockade conditions. <i>Zh. Eksp. Teor. Fiz</i>, <i>99</i>, 1598.</span></li></ol>
 
 </div>
 

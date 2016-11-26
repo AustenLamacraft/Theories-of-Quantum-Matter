@@ -469,14 +469,14 @@ Make sure you understand where those $\delta$-functions on the right hand side c
 
 <p>The Green’s function is periodic in $\beta$ for bosons, and antiperiodic for fermions. This follows from carefully writing out the definition \eqref{GF_def} and using the cyclic property of the trace, not forgetting \eqref{Fermi_Tdef} in the case of fermions. As a result of \eqref{GF_bc}, we can expand $G(\br,\tau)$ in a Fourier series.</p>
 
-<script type="math/tex; mode=display">G(\br,\tau) = T\sum_{n=-\infty}^\infty G_{\omega_n}(\br) e^{-i\omega_n \tau}.</script>
+<script type="math/tex; mode=display">G(\br,\tau) = k_\text{B}T\sum_{n=-\infty}^\infty G_{\omega_n}(\br) e^{-i\omega_n \tau}.</script>
 
 <p>The frequencies $\omega_n$ are called <strong>Matsubara frequencies</strong>, and are</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \omega_n = \begin{cases}
-2\pi n T & \text{bosons}\\
-2\pi \left(n+\frac{1}{2}\right) T & \text{fermions}.\\
+2\pi n k_\text{B}T & \text{bosons}\\
+2\pi \left(n+\frac{1}{2}\right) k_\text{B}T & \text{fermions}.\\
 \end{cases}
 \label{matsubaras} %]]></script>
 

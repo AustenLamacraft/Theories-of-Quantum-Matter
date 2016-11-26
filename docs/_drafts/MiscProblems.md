@@ -31,6 +31,8 @@ Find second order contribution to free energy by usual perturbation theory
 
 ## From the Anderson Model to the Kondo Model
 
+## Matveev Kondo
+
 ## Spin-flip mediated inelastic scattering
 
 ## Anderson, Yuval, Hamam representation of the Kondo Problem

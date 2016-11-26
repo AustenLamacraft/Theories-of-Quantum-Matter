@@ -180,12 +180,12 @@ Applying $H_t$ to such a state gives a superposition of states, each with one pa
 How is a Mott state (all sites with the same occupation) affected by $H_t$ in first order perturbation theory?
 </p>
 
-Let's now consider a Mott state of filling $\nu=n$ with one extra particle added. We now have $N_\text{sites}$ degenerate ground states when $t=0$, corresponding to placing the extra particle on each lattice site. $H_t$ mixes these states together: we have a problem of degenerate perturbation theory. All other states are separated from these lowest states by energies of order $U$.
+Let's now consider a Mott state of filling $\nu=N$ with one extra particle added. We now have $N_\text{sites}$ degenerate ground states when $t=0$, corresponding to placing the extra particle on each lattice site. $H_t$ mixes these states together: we have a problem of degenerate perturbation theory. All other states are separated from these lowest states by energies of order $U$.
 
 The states in the ground state multiplet are
 
 $$
-\ket{i,+}\equiv \frac{\adop_i}{\sqrt{N+1}}\bigotimes_{j\neq i} \ket{N}_j.
+\ket{i,+}\equiv \frac{\adop_i}{\sqrt{N+1}}\bigotimes_{j} \ket{N}_j.
 $$
 
 Evidently, only states corresponding to adjacent $j$ are coupled by $H_t$. These matrix elements are
@@ -211,7 +211,7 @@ $$
 (in $d$-dimensions). We could alternatively _remove_ a particle from the Mott state
 
 $$
-\ket{i,-}\equiv \sqrt{N}\aop_i\bigotimes_{j\neq i} \ket{N}_j.
+\ket{i,-}\equiv \sqrt{N}\aop_i\bigotimes_{j} \ket{N}_j.
 $$
 
 Within these states, $H_t$ takes the form
