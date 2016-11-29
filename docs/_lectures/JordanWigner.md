@@ -404,7 +404,8 @@ $$
 \begin{align}
 \braket{0}{\pdop(x)\pop(x')}{0} &\sim \rho_0\braket{0}{e^{-i\theta(x)}e^{i\theta(x')}}{0}\\
 &\sim \rho_0 \exp\left(-\frac{1}{2}\braket{0}{\left[\theta(x)-\theta(x')\right]^2}{0}\right)\\
-&\sim \rho_0 \exp\left(-\frac{1}{4K}\int dk\frac{1-\cos(k[x-x'])}{\abs{k}}\right)
+&\sim \rho_0 \exp\left(-\frac{1}{4K}\int dk\frac{1-\cos(k[x-x'])}{\abs{k}}\right)\\
+&\sim \rho_0 \exp\left(-\frac{1}{2K}\log\abs{x-x'}\right)
 \end{align}
 $$
 
