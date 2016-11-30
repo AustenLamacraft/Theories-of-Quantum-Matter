@@ -3,7 +3,7 @@ layout: page
 title: Problem Set 4
 author: Austen Lamacraft
 chapter: 3
-summary: Kondo Model; Jordan--Wigner; Ising Model.
+summary: Kondo Model; Jordan--Wigner; Bosonization.
 ---
 
 ## Contents
@@ -54,10 +54,10 @@ where $S$ is antihermitian.
 3. Try $S$ of the form
 
 	$$
-	S = f(N_{b,\uparrow}+N_{b,\downarrow})\sum_{k,s} \adop_{\bk,s}\bop_s - \text{h.c.}
+	S = \sum_{k,s} f(N_{b,\bar s})\adop_{\bk,s}\bop_s - \text{h.c.},
 	$$
 
-	Find the form of $f(N_b)$ and compute $H^{(2)}$, retaining only those parts that keep the occupancy of the impurity fixed. You should be able to write $H^{(2)}$ as a Kondo Hamiltonian and identify $J$. What sign does it have?
+	where $\bar\uparrow=\downarrow$, $\bar\downarrow=\uparrow$. Find the form of $f(N)$ and compute $H^{(2)}$, retaining only those parts that keep the occupancy of the impurity fixed. You should be able to write $H^{(2)}$ as a Kondo Hamiltonian and identify $J$. What sign does it have?
 
 	_Hint:_ $\bdop_s f(N_b) = f(N_b-1)\bdop_s$, $\bop_s f(N_b) = f(N_b+1)\bop_s$
 
@@ -115,15 +115,88 @@ $$
 -\frac{e}{2C}< \varphi < \frac{e}{2C},
 $$
 
-the ground state of the decoupled system ($t=0$) has $Q=0$. Show that at second order in the hopping, the ground state fluctuations of the dot charge are given by
+the ground state of the decoupled system ($t=0$) has $Q=0$.
+
+1. Show that at second order in the hopping, the ground state 	expectation of the charge on the dot is
+
+	$$
+	\langle Q\rangle \sim eg \log\left(\frac{e/2C-\varphi}{e/2C+\varphi}\right),
+	$$
+
+	where $g \equiv \abs{t}^2\nu_a(0)\nu_b(0)$.
+
+2. What has this got to do with the Kondo effect? Try to establish a dictionary between the two phenomena.
+
+## Anomalous Commutators for 1D Fermions
+
+To describe the physics at low energies, it is convenient to write the fermion field operator in one dimension as
 
 $$
-\langle Q^2\rangle \sim e^2g \log\left(\frac{e/2C-\varphi}{e/2C+\varphi}\right),
+\pop(x) = e^{ik_\text{F}x}\pop_R(x)+e^{-ik_\text{F}x}\pop_L(x),
 $$
 
-where $g \equiv \abs{t}^2\nu_a(0)\nu_b(0)$.
+where the modes contributing to $\pop_{L/R}(x)$ are restricted to a momentum shell $[-\Lambda,\Lambda]$ around the Fermi points, with $\Lambda\ll k_\text{F}$. Thus
 
-What has this got to do with the Kondo effect? Try to establish a dictionary between the two phenomena.
+$$
+\pop_R(x)=\sum_{k=-\Lambda}^\Lambda \aop_{k+k_\text{F}}e^{ikx}.
+$$
+
+In this way we hope to affect a clean separation of low energy excitations into right and left movers. This has some slightly surprising consequences, however.
+
+We define the density operators for right movers by
+
+$$
+\rho^R_q = \sum_{p=-\Lambda+\abs{q}/2}^{\Lambda-\abs{q}/2}\adop_{p-q/2+k_\text{F}}\aop_{p+q/2+k_\text{F}},
+\label{rhodef}
+$$
+
+where we have chosen the labels so that the hermiticity condition $\left(\rho^R_q\right)^\dagger=\rho^R_{-q}$ is respected.
+
+1. Show that as a result
+
+	$$
+	\left[\rho^R_{q},\rho^R_{-q}\right] = \frac{qL}{2\pi},\quad \abs{q}<2\Lambda
+	\label{Anom}
+	$$
+
+	leading to the real space commutator
+
+	$$
+	\left[\rho_R(x),\rho_R(x')\right] =-\frac{i}{2\pi}\delta'(x-x').
+	$$
+
+2. Show that the left moving commutator has the opposite sign, so the total density $\rho^R(x)+\rho^L(x)$ still commutes at different points.
+
+3. \eqref{Anom} tells us that $\rho^R_q$ can be written
+
+	$$
+	\begin{align}
+	\rho^R_q &= \sqrt{\frac{qL}{2\pi}}r_q, \\
+	\rho^R_{-q} &= \sqrt{\frac{qL}{2\pi}}r^\dagger_q, \quad q>0,
+	\end{align}
+	$$
+
+	where $\left[r_q,r_{q'}^\dagger\right]=\delta_{q,q'}$. From the definition \eqref{rhodef} we see that $\rho_q^R$ annihilates the ground state, while $\rho^R_{-q}$ creates an excitation with momentum $q$.
+
+	Show that the structure factor of the density $\rho_q = \rho^R_q+\rho^L_q$ saturates the Onsager bound discussed in [Problem Set 3]({{ site.baseurl }}/problems/Problems3/).
+
+## Bosonized Form of the Fermion Operator
+
+Using the density operator in the previous question, define
+
+$$
+\begin{align}
+\phi^R(x) = 2\pi\int^x \rho^R(x')dx' = -i\sum_{q>0}\sqrt{\frac{2\pi}{qL}}\left[r_q e^{iqx}-r^\dagger_q e^{-iqx}\right].
+\end{align}
+$$
+
+Show that $e^{\pm i\phi^R(x)}$ _anticommute_ at different positions, and further that
+
+$$
+\left\{e^{i\phi^R(x)},e^{-i\phi^R(x')}\right\}\propto \delta(x-x').
+$$
+
+The overall normalization is cut-off dependent.
 
 References
 ----------

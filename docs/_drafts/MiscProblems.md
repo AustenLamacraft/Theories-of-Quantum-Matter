@@ -25,22 +25,26 @@ Compressibility Sum Rule From Perturbation Theory
 Inelastic scattering of light
 Feynman--Bijl for Quantum Hall
 
+Sawada model for plasmons
+
 Explicitly find Matsubara GF from definition.
 
 Find second order contribution to free energy by usual perturbation theory
 
-## From the Anderson Model to the Kondo Model
 
-## Matveev Kondo
 
-## Spin-flip mediated inelastic scattering
+
+## Bosonized form of the fermion operator
+
+## Oscillatory part of the Density
+
+Relate to elastic chain Bragg peaks
+
+Where does this come from in Boson picture? From the zero modes.
+
 
 ## Anderson, Yuval, Hamam representation of the Kondo Problem
 
 ## Spin-boson Model
 
 Map to Kondo
-
-## Coulomb--Blockade and Kondo
-
-Smearing of the Coulomb step
