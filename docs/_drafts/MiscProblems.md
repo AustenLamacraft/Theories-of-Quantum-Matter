@@ -27,6 +27,8 @@ Feynman--Bijl for Quantum Hall
 
 Sawada model for plasmons
 
+Condensate fluctuations.
+
 Explicitly find Matsubara GF from definition.
 
 Find second order contribution to free energy by usual perturbation theory

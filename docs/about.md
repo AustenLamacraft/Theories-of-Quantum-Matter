@@ -47,7 +47,7 @@ This course pursues this second line of investigation. We will look at the simpl
 
 ### Prerequisites
 
-You should have taken a quantum mechanics course at the level of the advanced quantum course in Part II. You don't need to have taken TP2. One of the main methods we use -- second quantization -- is covered in TP2 but will be introduced again from scratch. 
+You should have taken a quantum mechanics course at the level of the advanced quantum course in Part II. You don't need to have taken TP2. One of the main methods we use -- second quantization -- is covered in TP2 but will be introduced again from scratch.
 
 
 ### Lectures
