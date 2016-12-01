@@ -81,13 +81,18 @@ and show that the total scattering rate, averaged over intial spin states of the
 
 $$
 \begin{align}
-\Gamma(\epsilon_1',\epsilon_2',\epsilon_1,\epsilon_2)&=\frac{\pi}{4}\frac{n}{\nu}S(S+1)(J\nu)^4\\
-&\times\left[\frac{1}{(\epsilon'_1-\epsilon_1)^2}+\frac{1}{(\epsilon'_1-\epsilon_2)^2}\right]\delta(\epsilon_1+\epsilon_2-\epsilon_1'-\epsilon_2')
+\Gamma(\epsilon_1',\epsilon_2',\epsilon_1,\epsilon_2)&=\frac{\pi}{4}S(S+1)\left(\frac{J}{V}\right)^4\\
+&\times\left[\frac{1}{(\epsilon'_1-\epsilon_1)^2}+\frac{1}{(\epsilon'_1-\epsilon_2)^2}\right]\delta(\epsilon_1+\epsilon_2-\epsilon_1'-\epsilon_2').
 \end{align}
 $$
 
-where $\nu$ is the Fermi surface density of states per unit volume per spin component.
+Making sense of Golden Rule calculations is always tricky. To convert this into a total rate at which a particle scatters from state $1$ requires us to multiply by a factor
 
+$$
+N_\text{imp} n_\text{F}(\epsilon_2)\left[1-n_\text{F}(\epsilon_3)\right]\left[1-n_\text{F}(\epsilon_4)\right]\nu^3 V^3 d\xi_2 d\xi_3 d\xi_4,
+$$
+
+where $\nu$ is the density of states per spin per unit volume. $n_\text{F}(\epsilon)$ is the Fermi distribution, as states $2$ must be occupied, while $3$ and $4$ must be empty. This rate is volume independent, as it should be. Note that if we wanted the _total_ rate for all particles in state 1 we'd need another $ n_\text{F}(\epsilon_1)\nu Vd\xi_1$, which would be proportional to volume.
 
 ## Kondo Effect Without Spin
 
