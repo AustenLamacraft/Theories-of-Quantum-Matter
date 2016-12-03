@@ -13,3 +13,11 @@ Issue of $\sqrt{n(x)}e^{i\theta(x)}$ vs. $e^{i\theta(x)}\sqrt{n(x)}$.
 Fix Schrieffer--Wolff
 
 Improve discussion of fractional statistics
+
+Question on condensate fluctuations (essentially in my atoms notes)
+
+Sawada for plasmons
+
+Question on Majumdar--Ghosh
+
+Structure factor from scattering of a particle from density fluctuations

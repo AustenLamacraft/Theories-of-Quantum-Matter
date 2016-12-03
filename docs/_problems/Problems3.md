@@ -24,7 +24,7 @@ As well as the average occupancy of a given momentum state we can consider the c
 the occupancy of different $\bp$ states
 
 $$
-C_{ss'}(\bp,\bp')\equiv\langle n_{\bp,s} n_{\bp',s'}\rangle-\langle n_{\bp,s}\rangle\langle n_{\bp',s'}
+C_{ss'}(\bp,\bp')\equiv\langle n_{\bp,s} n_{\bp',s'}\rangle-\langle n_{\bp,s}\rangle\langle n_{\bp',s'}\rangle
 $$
 
 Show that for the BCS state
@@ -61,7 +61,7 @@ The physics behind this mechanism is a very simple consequence of living in an e
 
 ## An Inequality for the Static Structure factor
 
-Use the f-sum and compressibility sum rules, together with the [Cauchy-Schwartz inequality](https://en.wikipedia.org/wiki/Cauchy–Schwarz_inequality#L2)
+Use the f-sum and compressibility sum rules, together with the [Cauchy-Schwarz inequality](https://en.wikipedia.org/wiki/Cauchy–Schwarz_inequality#L2)
 
 $$
 \abs{\int f(x)g^*(x) dx}^2 \leq \int \abs{f(x)}^2 dx \int \abs{g(x)}^2 dx
@@ -70,7 +70,7 @@ $$
 to obtain the __Onsager bound__ on the static structure factor
 
 $$
-	S_\rho(\bq)\leq \frac{N\abs{\bq}}{2mc}
+	\lim_{\bq\to 0}\frac{S_\rho(\bq)}{\abs{\bq}}\leq \frac{N}{2mc}
 $$
 
 ## $S_\rho(q,\omega)$ for 1D Fermi Gas

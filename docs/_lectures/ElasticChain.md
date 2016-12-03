@@ -644,8 +644,8 @@ where $k_n =2\pi n/L$. Note that $k_n x = \eta_n j$. The pair of transformations
 
 $$
 \begin{align}
-\tilde f_k & = \int_0^L f(x) e^{-ik_n x}\nonumber\\
-f(x) &= \frac{1}{L}\sum_k \tilde f_k e^{ik_n x}\,dx.
+\tilde f_k & = \int_0^L f(x) e^{-ik_n x}\,dx\nonumber\\
+f(x) &= \frac{1}{L}\sum_k \tilde f_k e^{ik_n x}
 \label{coll_FTSeries}
 \end{align}
 $$

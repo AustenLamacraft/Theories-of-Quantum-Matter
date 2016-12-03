@@ -36,7 +36,6 @@ Find second order contribution to free energy by usual perturbation theory
 
 
 
-## Bosonized form of the fermion operator
 
 ## Oscillatory part of the Density
 

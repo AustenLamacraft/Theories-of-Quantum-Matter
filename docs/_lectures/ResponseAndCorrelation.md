@@ -124,7 +124,7 @@ $$
 \chi(\omega) = \chi'(\omega) + i\chi''(\omega).
 $$
 
-Then analyticity in the UHP implies the __Kramers--Krönig relation__
+Then analyticity in the UHP implies the __Kramers--Kronig relation__
 
 $$
 \chi'(\omega) = \cP \int_{-\infty}^\infty \frac{d\omega'}{\pi}\frac{\chi''(\omega')}{\omega'-\omega},
@@ -595,7 +595,7 @@ $$
 \end{align}
 $$
 
-To make sense of this formula, use the Kramers--Krönig relation \eqref{res_KK} to write
+To make sense of this formula, use the Kramers--Kronig relation \eqref{res_KK} to write
 
 $$
 \begin{align}
@@ -737,7 +737,7 @@ $$
 \kappa = \rho^{-2} \frac{\partial \rho}{\partial \mu} = \frac{1}{\rho N}\chi'(0,0).  
 $$
 
-Now $\chi'(\bq,\omega)$ can be written in terms of $\chi''(\bq,\omega)$ (Kramers--Krönig) and $\chi''(\bq,\omega)$ is related to $S_\rho(\bq,\omega)$. This gives the compressibility sum rule at zero temperature
+Now $\chi'(\bq,\omega)$ can be written in terms of $\chi''(\bq,\omega)$ (Kramers--Kronig) and $\chi''(\bq,\omega)$ is related to $S_\rho(\bq,\omega)$. This gives the compressibility sum rule at zero temperature
 
 $$
 \lim_{\bq\to 0}\int_0^\infty \frac{S(\bq,\omega)}{\omega}\frac{d\omega}{2\pi} = \frac{N\rho\kappa}{2}.

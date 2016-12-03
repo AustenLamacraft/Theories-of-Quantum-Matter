@@ -129,7 +129,7 @@ $$
 \adop_j = \left(\prod_{k=1}^{j-1}\sigma^z_k\right) \sigma^+_j.
 $$
 
-For applications, we mostly interested in the _inverse_ transformation, expressing spins in terms of fermions. Notice that $\sigma^z_j$ is simply related to the number operator
+For applications, we are mostly interested in the _inverse_ transformation, expressing spins in terms of fermions. Notice that $\sigma^z_j$ is simply related to the number operator
 
 $$
 \sigma^z_j = 2\adop_j\aop_j-1 = 2n_j-1,
@@ -415,4 +415,4 @@ $$
 \braket{0}{\pdop(x)\pop(x')}{0}\sim \frac{\rho_0}{\abs{x-x'}^{1/2}}.
 $$
 
-Although the bosonization method is only able to obtain results about the _asymptotic_ behaviour of correlation functions, it has a generality far beyond the Jordan-Wigner approach. For exampoe, when $J_z\neq 0$ in the Heisenberg model, the Jordan--Wigner transformation maps the spin chain to a system of _interacting_ fermions. Nevertheless, the Tomonaga--Luttinger Hamiltonian is still the correct long distance description, with the asymptotic behaviour of all correlation functions depending only on $K$.
+Although the bosonization method is only able to obtain results about the _asymptotic_ behaviour of correlation functions, it has a generality far beyond the Jordan-Wigner approach. For example, when $J_z\neq 0$ in the Heisenberg model, the Jordan--Wigner transformation maps the spin chain to a system of _interacting_ fermions. Nevertheless, the Tomonaga--Luttinger Hamiltonian is still the correct long distance description, with the asymptotic behaviour of all correlation functions depending only on $K$.

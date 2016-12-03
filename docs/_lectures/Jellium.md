@@ -179,7 +179,7 @@ $$
 where the time dependence of the Fourier components is
 
 $$
-\aop_\bk(\tau) = e^{-\tau\xi(\bp)}\aop_\bk,\quad \adop_\bk(\tau) = e^{\tau\xi(\bp)}\adop_\bk.
+\aop_\bk(\tau) = e^{-\tau\xi(\bk)}\aop_\bk,\quad \adop_\bk(\tau) = e^{\tau\xi(\bk)}\adop_\bk.
 $$
 
 How to we evaluate expectations of time ordered products? It's fairly clear that our example \eqref{Wick_Example} is also an identity in this case

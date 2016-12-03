@@ -17,9 +17,6 @@ published: false
 
 ---
 
-## Quantum Hydrodynamics
-
-This can be similar to my Obergurgl lectures
 
 ## Modelling a Dissipative Environment
 

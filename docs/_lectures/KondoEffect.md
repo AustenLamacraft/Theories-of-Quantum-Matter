@@ -67,7 +67,7 @@ $$
 where $T$ denotes time ordering, and the time evolution of the coupling is
 
 $$
-H_J(t) = \frac{1}{V}\sum_{\substack{\bk,\bk'\\s,s'}} \mathbf{S}(t)\cdot\frac{\boldsymbol{\sigma}_{ss'}}{2}\adop_{k',s'}(t)\aop_{k,s}(t),
+H_J(t) = \frac{J}{V}\sum_{\substack{\bk,\bk'\\s,s'}} \mathbf{S}(t)\cdot\frac{\boldsymbol{\sigma}_{ss'}}{2}\adop_{k',s'}(t)\aop_{k,s}(t),
 $$
 
 with
@@ -147,7 +147,7 @@ _The two kinds of intermediate states that contribute at second order._
 
 1. The fermion scatters to $\bk_i$, $s_i$, with $\bk_i$ _above_ the Fermi surface.
 
-2. A particle hole pair is created, with the particle at $\bk,s$. The hole is subsequently removed as the
+2. A particle hole pair is created, with the particle at $\bk,s$. The hole is subsequently filled.
 
 We see that indistinguishability (and hence fermionic statistics) plays a fundamental role in the second process.
 
