@@ -8,16 +8,16 @@ Material for a Part III Physics course at the University of Cambridge, running i
 
 ## To Do
 
-Issue of $\sqrt{n(x)}e^{i\theta(x)}$ vs. $e^{i\theta(x)}\sqrt{n(x)}$.
+1. Background charge density in Jellium lecture handled correctly?
 
-Fix Schrieffer--Wolff
+1. Improve discussion of fractional statistics
 
-Improve discussion of fractional statistics
+1. Question on condensate fluctuations (essentially in my atoms notes)
 
-Question on condensate fluctuations (essentially in my atoms notes)
+1. Sawada for plasmons
 
-Sawada for plasmons
+1. Question on Majumdar--Ghosh
 
-Question on Majumdar--Ghosh
+1. Structure factor from scattering of a particle from density fluctuations.
 
-Structure factor from scattering of a particle from density fluctuations
+1. Issue of $\sqrt{n(x)}e^{i\theta(x)}$ vs. $e^{i\theta(x)}\sqrt{n(x)}$.
