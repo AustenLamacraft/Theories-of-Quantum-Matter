@@ -406,7 +406,7 @@ It remains to calculate the polarization.
 In momentum and frequency space we have
 
 $$
-\pi_{\bq,\omega_n} = \frac{1}{\beta V}\sum_{\bp,\epsilon_m} G_{\bp+\bq,\epsilon_m+\omega_n}G_{\bp,\epsilon_n}.
+\pi_{\bq,\omega_n} = \frac{1}{\beta V}\sum_{\bp,\epsilon_m} G_{\bp+\bq,\epsilon_m+\omega_n}G_{\bp,\epsilon_m}.
 \label{pol}
 $$
 
