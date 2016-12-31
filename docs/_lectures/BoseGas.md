@@ -193,7 +193,7 @@ We take $\mu = U_0 n$ to get the behaviour \eqref{bose_vortex} at infinity. With
 We can find the energy of the vortex state by substituting the solution back into the energy functional \eqref{bose_energy} to find the energy excess relative to uniform state of density $n$
 
 $$
-\Delta E = \int d\br \left[\frac{n^2}{2m\xi^2}(f')^2+\frac{U}{2}n^2 \left(f^2-1\right)\right] + \frac{n}{2m}\int d\br\, (\nabla\theta)^2.
+\Delta E = \int d\br \left[\frac{n^2}{2m\xi^2}(f')^2+\frac{U}{2}n^2 \left(f^2-1\right)^2\right] + \frac{n}{2m}\int d\br\, f^2(\nabla\theta)^2.
 $$
 
 The first integral is finite, and arises purely from the departure of the density away from its bulk value. The second represents the contribution to the kinetic energy arising from the winding of the vortex's phase. Since we have
