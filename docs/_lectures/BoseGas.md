@@ -429,19 +429,19 @@ corresponding to uncorrelated, Poissonian fluctuations of number inside any volu
 The other qualitatively new feature of the Bogoliubov ground state is that the zero momentum state is _depleted_. We find the momentum distribution by first writing the number operator $N_\bp=\adop_{\bp}\aop_{\bp}$ in terms of the Bogoliubov quasiparticles
 
 $$
-	\adop_{\bp}\aop_{\bp}=(\bdop\cosh\kappa_{\bp}+\bop\sinh\kappa_{\bp})(\bop\cosh\kappa_{\bp}+\bdop\sinh\kappa_{\bp}),
+	\adop_{\bp}\aop_{\bp}=(\bdop_\bp\cosh\kappa_{\bp}+\bop_{-\bp}\sinh\kappa_{\bp})(\bop_\bp\cosh\kappa_{\bp}+\bdop_{-\bp}\sinh\kappa_{\bp}),
 $$
 
 and then finding the average
 
 $$
-N_\bp=\langle \adop_{\bp}\aop_{\bp}\rangle = \sinh^2\kappa_{p}\xrightarrow{ \abs{\bp}\ll \xi^{-1}}\frac{mc_s}{2\abs{\bp}}.
+\langle N_\bp\rangle=\langle \adop_{\bp}\aop_{\bp}\rangle = \sinh^2\kappa_{p}\xrightarrow{ \abs{\bp}\ll \xi^{-1}}\frac{mc_s}{2\abs{\bp}}.
 $$
 
 The radial density distribution $4\pi p^2 N_\bp$ is peaked around $\xi^{-1}$. Summing over $\bp$ gives the fraction of atoms not in the condensate
 
 $$
-\frac{1}{N}\sum_{\bp\neq 0} n(\bp)=\frac{8}{3\sqrt{\pi}}\sqrt{n a^3},
+\frac{1}{N}\sum_{\bp\neq 0} \langle N_\bp\rangle=\frac{8}{3\sqrt{\pi}}\sqrt{n a^3},
 $$
 
 where we used the Born approximation for the scattering length $a=\frac{4\pi U_0}{m}$. Excluding the value $\bp=0$ has no effect, because of the vanishing phase space at small momentum in three dimensions.
