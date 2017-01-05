@@ -429,7 +429,7 @@ corresponding to uncorrelated, Poissonian fluctuations of number inside any volu
 The other qualitatively new feature of the Bogoliubov ground state is that the zero momentum state is _depleted_. We find the momentum distribution by first writing the number operator $N_\bp=\adop_{\bp}\aop_{\bp}$ in terms of the Bogoliubov quasiparticles
 
 $$
-	\adop_{\bp}\aop_{\bp}=(\bdop_\bp\cosh\kappa_{\bp}+\bop_{-\bp}\sinh\kappa_{\bp})(\bop_\bp\cosh\kappa_{\bp}+\bdop_{-\bp}\sinh\kappa_{\bp}),
+	\adop_{\bp}\aop_{\bp}=(\bdop_\bp\cosh\kappa_{\bp}-\bop_{-\bp}\sinh\kappa_{\bp})(\bop_\bp\cosh\kappa_{\bp}-\bdop_{-\bp}\sinh\kappa_{\bp}),
 $$
 
 and then finding the average
@@ -444,7 +444,7 @@ $$
 \frac{1}{N}\sum_{\bp\neq 0} \langle N_\bp\rangle=\frac{8}{3\sqrt{\pi}}\sqrt{n a^3},
 $$
 
-where we used the Born approximation for the scattering length $a=\frac{4\pi U_0}{m}$. Excluding the value $\bp=0$ has no effect, because of the vanishing phase space at small momentum in three dimensions.
+where we used the Born approximation for the scattering length $a=\frac{mU_0}{4\pi}$. Excluding the value $\bp=0$ has no effect, because of the vanishing phase space at small momentum in three dimensions.
 
 Under typical experimental conditions in experiments on ultracold atoms the depletion does not much exceed $0.01$, which justifies the use of the GP approximation. Liquid He$^{4}$, the first superfluid to be discovered, can be described as an interacting Bose condensate, but the depletion is much larger. The Bogoliubov approximation does not provide a quantiatively accurate description in this case.
 

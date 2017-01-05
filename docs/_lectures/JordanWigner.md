@@ -285,7 +285,7 @@ The idea is very natural: instead of dealing with the particle operators $\adop_
 A key role is played by the __density-phase representation__
 
 $$
-\pop(x)=\sqrt{n(x)}e^{i\theta(x)}.
+\pop(x)=e^{i\theta(x)}\sqrt{n(x)}.
 \label{DensityPhase}
 $$
 
@@ -298,7 +298,7 @@ $$
 if we demand that
 
 $$
-\left[n(x),\theta(y)\right]=-i\delta(x-y).
+\left[n(x),\theta(y)\right]=i\delta(x-y).
 $$
 
 The density $n(x)$ and phase $\theta(x)$ are then seen to be continuum conjugate variables, like the displacement and momentum density in the elastic chain.
@@ -393,7 +393,7 @@ $$
 Now let's turn back to our original problem: the computation of the transverse spin correlation function \eqref{Transverse}, or equivalently, the boson density matrix for hardcore bosons. The simplest approximation is to take
 
 $$
-\pop(x)=\sqrt{n(x)}e^{i\theta(x)}\sim\sqrt{\rho_0}e^{i\theta(x)}.
+\pop(x)=e^{i\theta(x)}\sqrt{n(x)}\sim\sqrt{\rho_0}e^{i\theta(x)}.
 $$
 
 The justification for this is that inside a correlation function, the corrections will decay more quickly than the contribution from this part.
