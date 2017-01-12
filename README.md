@@ -18,6 +18,8 @@ Material for a Part III Physics course at the University of Cambridge, running i
 
 1. Question on Majumdar--Ghosh
 
+1. Luttinger model: density matrix of left movers when right movers traced out.
+
 1. Structure factor from scattering of a particle from density fluctuations.
 
 1. Issue of $\sqrt{n(x)}e^{i\theta(x)}$ vs. $e^{i\theta(x)}\sqrt{n(x)}$.

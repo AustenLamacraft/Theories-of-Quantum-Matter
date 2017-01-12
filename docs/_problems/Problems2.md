@@ -113,13 +113,21 @@ where $\Nop_j = \Nop_{j,\uparrow}+\Nop_{j,\downarrow}$. If we have a $\nu=1$ Mot
 
 ## Bose Gas with Attractive Interactions
 
-Consider the 1D Gross--Pitaevskii equation describing the attractive Lieb--Liniger model
+1. Consider the 1D Gross--Pitaevskii equation describing the attractive Lieb--Liniger model
 
-$$
--\frac{1}{2m}\varphi'' - \mu \varphi - \frac{|c|}{2}\abs{\varphi}^2\varphi = 0.
-$$
+	$$
+	-\frac{1}{2m}\varphi'' - \mu \varphi - \frac{|c|}{2}\abs{\varphi}^2\varphi = 0.
+	$$
 
-Look for a solution on the infinite line with $\varphi(x\to\pm\infty) =0$ describing a localized 'blob' containing $N$ bosons. Find the energy of this state. Compare with the ground state energy of the attractive gas you found in [Problem Set 1]({{ site.baseurl }}/problems/Problems1/).
+	Look for a solution on the infinite line with $\varphi(x\to\pm\infty) =0$ describing a localized 'blob' (properly called a __bright soliton__) containing $N$ bosons. Find the energy of this state. Compare with the ground state energy of the attractive gas you found in [Problem Set 1]({{ site.baseurl }}/problems/Problems1/).
+
+2. The ground state wavefunction is
+
+	$$
+	\Psi(x_1,\ldots,x_N) = \prod_{j<k}\exp\left(-\frac{\abs{c}}{2}\abs{x_j-x_k}\right),\quad x_1<x_2<\cdots <x_N.
+	$$
+
+	Find the probability distribution of the separations $x_{j+1}-x_j$ in this state. Replacing each separation by its mean value, show that the resulting density profile coincides with that of the bright soliton.
 
 ## Persistent Currents Without Rotational Symmetry
 
