@@ -51,4 +51,6 @@ version:             0.0.6
 # Exclusions from the final site
 exclude: [optional, vendor]
 
-gems: ['jekyll/scholar']
+gems:
+  - jekyll/scholar
+  - jekyll-seo-tag

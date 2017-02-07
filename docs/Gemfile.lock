@@ -52,6 +52,8 @@ GEM
       citeproc-ruby (~> 1.0)
       csl-styles (~> 1.0)
       jekyll (~> 3.0)
+    jekyll-seo-tag (2.0.0)
+      jekyll (~> 3.1)
     jekyll-watch (1.5.0)
       listen (~> 3.0, < 3.1)
     json (1.8.3)
@@ -94,6 +96,7 @@ DEPENDENCIES
   html-proofer
   jekyll (~> 3.2.1)
   jekyll-scholar
+  jekyll-seo-tag
 
 BUNDLED WITH
    1.12.5
