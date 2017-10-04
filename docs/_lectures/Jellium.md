@@ -2,7 +2,7 @@
 layout: page
 title: Jellium
 author: Austen Lamacraft
-chapter: 11
+chapter: 12
 summary: Perturbation series for partition function and free energy. Screening.
 published: true
 ---

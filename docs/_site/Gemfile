@@ -3,3 +3,7 @@ gem 'jekyll', '~>3.2.1'
 gem "html-proofer"
 gem 'jekyll-scholar'
 gem 'jekyll-seo-tag'
+
+group :jekyll_plugins do
+  gem "jekyll-assets"
+end

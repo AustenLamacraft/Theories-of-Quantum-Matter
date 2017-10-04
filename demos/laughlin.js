@@ -22,9 +22,9 @@ function setup() {
 	noStroke();
 	fill(255, 128);
 
-	slider = createSlider(0, 0.000005, 0.0000025, 0);
-	slider.position(0, height - 32);
-	slider.style('width', width - 8 + 'px');
+	// slider = createSlider(0, 0.000005, 0.0000025, 0);
+	// slider.position(0, height - 32);
+	// slider.style('width', width - 8 + 'px');
 
 	for (var a = 0; a < c; a++) {
 		x[a] = random(0,windowWidth);
@@ -38,7 +38,7 @@ function setup() {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function draw() {
-	var g = slider.value();
+	// var g = slider.value();
 
 	for (var a = 0; a < c; a++) {
 		var ax = 0, ay = 0;

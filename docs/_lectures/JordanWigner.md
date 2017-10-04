@@ -2,7 +2,7 @@
 layout: page
 title: Jordan-Wigner and Bosonization
 author: Austen Lamacraft
-chapter: 15
+chapter: 14
 summary: Spin-1/2 XY model as a system of free fermions. Bosonization.
 published: true
 ---

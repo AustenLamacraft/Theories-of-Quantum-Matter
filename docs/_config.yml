@@ -54,3 +54,6 @@ exclude: [optional, vendor]
 gems:
   - jekyll/scholar
   - jekyll-seo-tag
+
+plugins_dir:
+  - jekyll-assets
