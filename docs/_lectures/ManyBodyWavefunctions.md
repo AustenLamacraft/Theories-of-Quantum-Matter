@@ -3,7 +3,7 @@ layout: page
 title: Many Body Wavefunctions
 author: Austen Lamacraft
 chapter: 1
-summary: Product States. Fermi gas. Density, density matrix, and pair distribution. 
+summary: Product States. Fermi gas. Density, density matrix, and pair distribution.
 published: true
 ---
 <p class="message">
