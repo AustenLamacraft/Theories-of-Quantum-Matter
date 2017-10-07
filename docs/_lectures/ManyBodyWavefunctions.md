@@ -106,8 +106,9 @@ One dramatic illustration of this deviation from our classical intuition is prov
    \frac{1}{\sqrt{2}}\left(\ket{\text{Left}}\pm \ket{\text{Right}}\right).
  $$
 
- By writing down the bosonic two particle state with one particle in each of these states, we arrive at the surprising conclusion that there is _zero_ probability to have one photon at each output: they both go to the left or both to the right.
-
+<p class="message">
+ Write down the bosonic two particle state with one particle in each of these states, and show that there is zero probability to have one photon at each output: they both go to the left or both to the right.
+</p>
 
 ### Product States
 
@@ -239,7 +240,7 @@ $$
 $$
 
 <div class="message">
-	To show this you will need the <strong>Vandermonde determinant</strong>
+	Show this using the <strong>Vandermonde determinant</strong>
 
   $$
 			\begin{vmatrix}
@@ -278,14 +279,22 @@ $$
 \label{ave_density}
 $$
 
-Note that although I use the symbol $\rho$, density is always going to be _number_ density.
+Note that although I use the symbol $\rho$, density is always going to be _number_ density (not the mass density).
 
 <div class="message">
-(Definitely feel free to ignore this!) For some joint distribution of points $P(\mathbf{x})$ with $\mathbf{x}=(x_1,\ldots x_N)$ (let the labels be discrete for now), denote the number of points with $x_j=X$ by $\left|\{y \in \mathbf{x}: y=X\}\right|$. then the expectation value of this number is
+<!---(Definitely feel free to ignore this!) For some joint distribution of points $P(\mathbf{x})$ with $\mathbf{x}=(x_1,\ldots x_N)$ (let the labels be discrete for now), denote the number of points with $x_j=X$ by $\left|\{y \in \mathbf{x}: y=X\}\right|$. then the expectation value of this number is
 
 $$
 \E\left[\left|\{y \in \mathbf{x}: y=X\}\right|\right] = \sum_{j} \sum_{x_1,\ldots,x_{j-1},x_{j+1},\ldots x_N}  P(x_1,\ldots,x_{j-1},X,x_{j+1},\ldots x_N)
 $$
+--->
+Can you explain why this is the density? Think about the simpler case of two particles, with discrete locations. Why is the expected number of particles at position $x$
+
+$$
+N_x = \sum_y \left[P(x,y) + P(y,x)\right]?
+$$
+
+What if we have more particles?
 
 </div>
 
@@ -326,26 +335,40 @@ $$
 P_\psi = \bra{\psi}\varrho\ket{\psi}.
 $$
 
-Applied to our many body states, the same logic leads to the __single particle density matrix__
+Applied to our many body states, the same logic leads us to define the __single particle density matrix__ as
 
 $$
 g(x,y) \equiv N\int dx_2\ldots dx_N \,\Psi^{}(x,x_2,\ldots,x_N)\Psi^{*}(y,x_2,\ldots,x_N).
 $$
 
-Note that $g(x,x) = \rho_1(x)$. The average number of particles in a single particle state $\ket{\psi}$ is then
+Note that $g(x,x) = \rho_1(x)$.
+
+<p class="message">
+
+Show that the average number of particles in a single particle state $\ket{\psi}$ is
 
 $$
 \bar N_\psi = \int dx dy\, \psi^*(x)g(x,y)\psi(y).
 \label{many_Nbar}
 $$
 
-Let's find $g(x,y)$ for the ground state of the Fermi gas
+</p>
+
+<p class="message">
+
+Find $g(x,y)$ for the ground state of the Fermi gas
 
 $$
 g(x,y) = \frac{1}{L}\sum_{|k|<k_\text{F}} e^{ik(x-y)} = \int_{-k_\text{F}}^{k_\text{F}} \frac{dk}{2\pi} e^{ik(x-y)} = n \frac{\sin [k_\text{F}(x-y)]}{k_\text{F}(x-y)}
 $$
 
-where $n \equiv \frac{k_\text{F}}{\pi}$ is the average density. Evaluating the average number of particles in a momentum state $\ket{k}$ using \eqref{many_Nbar} then gives
+where $n \equiv \frac{k_\text{F}}{\pi}$ is the average density.
+
+</p>
+
+<p class="message">
+
+Find the average number of particles in a momentum state $\ket{k}$ using \eqref{many_Nbar}
 
 $$
 \bar N_k = \begin{cases}
@@ -357,7 +380,9 @@ $$
 
 Note that in a translationally invariant system $g(x,y)=g(x-y)$, and is the Fourier transform of $\bar N_k$.
 
-We can also consider marginal probability distribution of a pair of particles, the __pair distribution function__
+</p>
+
+We can also consider marginal probability distribution of a pair of particles, and define the __pair distribution function__
 
 $$
 \rho_2(x_1,x_2) = N(N-1) \int dx_3\ldots dx_N \,\left|\Psi(x_1,x_2,\ldots,x_N)\right|^2.
@@ -365,7 +390,9 @@ $$
 
 The prefactor is to account for all pairs of particles.
 
-Starting from the Slater determinant \eqref{quantum_statistics_1ddet}, you should be able to derive
+<p class="message">
+
+Starting from the Slater determinant \eqref{quantum_statistics_1ddet}, show that
 
 $$
 \rho_2(x_1,x_2) = n^2\left[1 - \left(\frac{\sin[k_\text{F}(x_1-x_2)]}{k_\text{F}(x_1-x_2)}\right)^2\right].
@@ -373,17 +400,25 @@ $$
 
 This vanishes at $x_1=x_2$, consistent with the Pauli principle.
 
+</p>
+
 A natural question:
 
 $$
 \rho_2(x_1,x_2) \overset{?}{=} \bra{\Psi}\rho(x_1)\rho(x_2)\ket{\Psi}.
 $$
 
-_Almost_. Looking back at \eqref{many_densityop}, we see that the product of two density operators will contain terms involving the same particle, which are absent from $\rho_2(x_1,x_2)$. In fact, the correct relationship is
+_Almost_. Looking back at \eqref{many_densityop}, we see that the product of two density operators will contain terms involving the same particle, which are absent from $\rho_2(x_1,x_2)$.
+
+
+<p class="message">
+Show that the correct relationship is
 
 $$
 \rho_2(x_1,x_2) = \bra{\Psi}\rho(x_1)\rho(x_2)\ket{\Psi} - \rho_1(x_1)\delta(x_1-x_2).
 $$
+
+</p>
 
 
 ### Impenetrable Bose Gas
@@ -397,7 +432,16 @@ $$
 
 The second term represents an interaction between pairs of particles. Of course, this model is rather special, as (1) it's 1D and (2) the interaction potential is a $\delta$-function. Nevertheless, it represents a huge step up in difficulty from the noninteracting examples we've discussed so far. At least, it does for bosons. For fermions, the wavefunctions vanish at coincident points, and so the interaction has no effect at all!
 
-For bosons, it happens that the Hamiltonian can still be solved exactly. For now, however, we'll concern ourselves only with the limit of infinite interaction: $c\to \infty$, sometimes called the impenetrable limit. In this case, _the eigenenergies coincide with those of the free fermion problem, and the eigenstates are just the modulus of the corresponding fermion eigenstate_ Just like that, we've solved our first interacting many body system (and with infinite coupling, no less)!
+For bosons, it happens that the Hamiltonian can still be solved exactly. For now, however, we'll concern ourselves only with the limit of infinite interaction: $c\to \infty$, sometimes called the impenetrable limit. In this case, _the eigenenergies coincide with those of the free fermion problem, and the eigenstates are just the modulus of the corresponding fermion eigenstate_.
+
+
+<p class="message">
+
+Why?
+
+</p>
+
+Just like that, we've solved our first interacting many body system (and with infinite coupling, no less)!
 
 Thus the ground state on the ring has the form
 
@@ -405,7 +449,7 @@ $$
 \Psi_0(x_1,\ldots, x_N) = \prod_{i<j}^{N} \left|\sin\left(\frac{\pi[x_{i}-x_{j}]}{L}\right)\right|. 	
 $$
 
-It's not hard to see why this works. For a state to have a finite energy, the wavefunction must vanish whenever two coordinates coincide. But we already have a complete set of eigenstates that obey this condition, namely the free fermion Slater determinants. It remains to make them symmetric functions by taking the modulus.
+<!---It's not hard to see why this works. For a state to have a finite energy, the wavefunction must vanish whenever two coordinates coincide. But we already have a complete set of eigenstates that obey this condition, namely the free fermion Slater determinants. It remains to make them symmetric functions by taking the modulus.--->
 
 This mapping is quite powerful, and allows us to calculate any observable of the impenetrable Bose gas in terms of free fermions _as long_ as that observable is insensitive to taking the modulus of the wavefunction. Thus the average density $\rho_1(x)$ and pair distribution $\rho_2(x_1,x_2)$ of the previous section can be found in this way, but the single particle density matrix $g(x,y)$ cannot. This means that the momentum distribution is _not_ given by \eqref{many_Nk}. Finding $g(x,y)$ for the impenetrable Bose gas is in fact really hard. We'll see in a later lecture how to obtain some of its important features.
 

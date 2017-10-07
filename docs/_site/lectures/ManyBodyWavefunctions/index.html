@@ -9,13 +9,13 @@
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/ManyBodyWavefunctions/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-04T12:00:06-04:00" />
+<meta property="article:published_time" content="2017-10-07T17:56:37-04:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Many Body Wavefunctions",
-    "datePublished": "2017-10-04T12:00:06-04:00",
+    "datePublished": "2017-10-07T17:56:37-04:00",
     "description": "We begin our study of many body quantum mechanics by examining a number of systems where eigenstates and eigenvalues may be found explicitly for any number of particles. Be warned that these situations are highly atypical -- but are nevertheless very informative.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/ManyBodyWavefunctions/"
   }
@@ -152,13 +152,13 @@ $$
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/ManyBodyWavefunctions/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-04T12:00:06-04:00" />
+<meta property="article:published_time" content="2017-10-07T17:56:37-04:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Many Body Wavefunctions",
-    "datePublished": "2017-10-04T12:00:06-04:00",
+    "datePublished": "2017-10-07T17:56:37-04:00",
     "description": "We begin our study of many body quantum mechanics by examining a number of systems where eigenstates and eigenvalues may be found explicitly for any number of particles. Be warned that these situations are highly atypical -- but are nevertheless very informative.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/ManyBodyWavefunctions/"
   }
@@ -404,7 +404,9 @@ P_{12}(\br_1,\br_2) &= \frac{1}{2}\left[P_1(\br_1)P_2(\br_2)+P_1(\br_2)P_2(\br_1
 
 <script type="math/tex; mode=display">\frac{1}{\sqrt{2}}\left(\ket{\text{Left}}\pm \ket{\text{Right}}\right).</script>
 
-<p>By writing down the bosonic two particle state with one particle in each of these states, we arrive at the surprising conclusion that there is <em>zero</em> probability to have one photon at each output: they both go to the left or both to the right.</p>
+<p class="message">
+ Write down the bosonic two particle state with one particle in each of these states, and show that there is zero probability to have one photon at each output: they both go to the left or both to the right.
+</p>
 
 <h3 id="product-states">Product States</h3>
 
@@ -515,7 +517,7 @@ P_{12}(\br_1,\br_2) &= \frac{1}{2}\left[P_1(\br_1)P_2(\br_2)+P_1(\br_2)P_2(\br_1
     \label{quantum_statistics_1dFermiGS} %]]></script>
 
 <div class="message">
-	To show this you will need the <strong>Vandermonde determinant</strong>
+	Show this using the <strong>Vandermonde determinant</strong>
 
   $$
 			\begin{vmatrix}
@@ -551,14 +553,22 @@ P_{12}(\br_1,\br_2) &= \frac{1}{2}\left[P_1(\br_1)P_2(\br_2)+P_1(\br_2)P_2(\br_1
 <script type="math/tex; mode=display">\rho_1(x_1) = N \int dx_2\ldots dx_N \,\left|\Psi(x_1,x_2,\ldots,x_N)\right|^2.
 \label{ave_density}</script>
 
-<p>Note that although I use the symbol $\rho$, density is always going to be <em>number</em> density.</p>
+<p>Note that although I use the symbol $\rho$, density is always going to be <em>number</em> density (not the mass density).</p>
 
 <div class="message">
-(Definitely feel free to ignore this!) For some joint distribution of points $P(\mathbf{x})$ with $\mathbf{x}=(x_1,\ldots x_N)$ (let the labels be discrete for now), denote the number of points with $x_j=X$ by $\left|\{y \in \mathbf{x}: y=X\}\right|$. then the expectation value of this number is
+<!---(Definitely feel free to ignore this!) For some joint distribution of points $P(\mathbf{x})$ with $\mathbf{x}=(x_1,\ldots x_N)$ (let the labels be discrete for now), denote the number of points with $x_j=X$ by $\left|\{y \in \mathbf{x}: y=X\}\right|$. then the expectation value of this number is
 
 $$
 \E\left[\left|\{y \in \mathbf{x}: y=X\}\right|\right] = \sum_{j} \sum_{x_1,\ldots,x_{j-1},x_{j+1},\ldots x_N}  P(x_1,\ldots,x_{j-1},X,x_{j+1},\ldots x_N)
 $$
+--->
+Can you explain why this is the density? Think about the simpler case of two particles, with discrete locations. Why is the expected number of particles at position $x$
+
+$$
+N_x = \sum_y \left[P(x,y) + P(y,x)\right]?
+$$
+
+What if we have more particles?
 
 </div>
 
@@ -589,50 +599,83 @@ $$
 
 <script type="math/tex; mode=display">P_\psi = \bra{\psi}\varrho\ket{\psi}.</script>
 
-<p>Applied to our many body states, the same logic leads to the <strong>single particle density matrix</strong></p>
+<p>Applied to our many body states, the same logic leads us to define the <strong>single particle density matrix</strong> as</p>
 
 <script type="math/tex; mode=display">g(x,y) \equiv N\int dx_2\ldots dx_N \,\Psi^{}(x,x_2,\ldots,x_N)\Psi^{*}(y,x_2,\ldots,x_N).</script>
 
-<p>Note that $g(x,x) = \rho_1(x)$. The average number of particles in a single particle state $\ket{\psi}$ is then</p>
+<p>Note that $g(x,x) = \rho_1(x)$.</p>
 
-<script type="math/tex; mode=display">\bar N_\psi = \int dx dy\, \psi^*(x)g(x,y)\psi(y).
-\label{many_Nbar}</script>
+<p class="message">
 
-<p>Let’s find $g(x,y)$ for the ground state of the Fermi gas</p>
+Show that the average number of particles in a single particle state $\ket{\psi}$ is
 
-<script type="math/tex; mode=display">% <![CDATA[
-g(x,y) = \frac{1}{L}\sum_{|k|<k_\text{F}} e^{ik(x-y)} = \int_{-k_\text{F}}^{k_\text{F}} \frac{dk}{2\pi} e^{ik(x-y)} = n \frac{\sin [k_\text{F}(x-y)]}{k_\text{F}(x-y)} %]]></script>
+$$
+\bar N_\psi = \int dx dy\, \psi^*(x)g(x,y)\psi(y).
+\label{many_Nbar}
+$$
 
-<p>where $n \equiv \frac{k_\text{F}}{\pi}$ is the average density. Evaluating the average number of particles in a momentum state $\ket{k}$ using \eqref{many_Nbar} then gives</p>
+</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
+<p class="message">
+
+Find $g(x,y)$ for the ground state of the Fermi gas
+
+$$
+g(x,y) = \frac{1}{L}\sum_{|k|&lt;k_\text{F}} e^{ik(x-y)} = \int_{-k_\text{F}}^{k_\text{F}} \frac{dk}{2\pi} e^{ik(x-y)} = n \frac{\sin [k_\text{F}(x-y)]}{k_\text{F}(x-y)}
+$$
+
+where $n \equiv \frac{k_\text{F}}{\pi}$ is the average density.
+
+</p>
+
+<p class="message">
+
+Find the average number of particles in a momentum state $\ket{k}$ using \eqref{many_Nbar}
+
+$$
 \bar N_k = \begin{cases}
-1 & |k|\leq k_\text{F} \\
-0 & |k|>k_\text{F}
+1 &amp; |k|\leq k_\text{F} \\
+0 &amp; |k|&gt;k_\text{F}
 \end{cases}.
-\label{many_Nk} %]]></script>
+\label{many_Nk}
+$$
 
-<p>Note that in a translationally invariant system $g(x,y)=g(x-y)$, and is the Fourier transform of $\bar N_k$.</p>
+Note that in a translationally invariant system $g(x,y)=g(x-y)$, and is the Fourier transform of $\bar N_k$.
 
-<p>We can also consider marginal probability distribution of a pair of particles, the <strong>pair distribution function</strong></p>
+</p>
+
+<p>We can also consider marginal probability distribution of a pair of particles, and define the <strong>pair distribution function</strong></p>
 
 <script type="math/tex; mode=display">\rho_2(x_1,x_2) = N(N-1) \int dx_3\ldots dx_N \,\left|\Psi(x_1,x_2,\ldots,x_N)\right|^2.</script>
 
 <p>The prefactor is to account for all pairs of particles.</p>
 
-<p>Starting from the Slater determinant \eqref{quantum_statistics_1ddet}, you should be able to derive</p>
+<p class="message">
 
-<script type="math/tex; mode=display">\rho_2(x_1,x_2) = n^2\left[1 - \left(\frac{\sin[k_\text{F}(x_1-x_2)]}{k_\text{F}(x_1-x_2)}\right)^2\right].</script>
+Starting from the Slater determinant \eqref{quantum_statistics_1ddet}, show that
 
-<p>This vanishes at $x_1=x_2$, consistent with the Pauli principle.</p>
+$$
+\rho_2(x_1,x_2) = n^2\left[1 - \left(\frac{\sin[k_\text{F}(x_1-x_2)]}{k_\text{F}(x_1-x_2)}\right)^2\right].
+$$
+
+This vanishes at $x_1=x_2$, consistent with the Pauli principle.
+
+</p>
 
 <p>A natural question:</p>
 
 <script type="math/tex; mode=display">\rho_2(x_1,x_2) \overset{?}{=} \bra{\Psi}\rho(x_1)\rho(x_2)\ket{\Psi}.</script>
 
-<p><em>Almost</em>. Looking back at \eqref{many_densityop}, we see that the product of two density operators will contain terms involving the same particle, which are absent from $\rho_2(x_1,x_2)$. In fact, the correct relationship is</p>
+<p><em>Almost</em>. Looking back at \eqref{many_densityop}, we see that the product of two density operators will contain terms involving the same particle, which are absent from $\rho_2(x_1,x_2)$.</p>
 
-<script type="math/tex; mode=display">\rho_2(x_1,x_2) = \bra{\Psi}\rho(x_1)\rho(x_2)\ket{\Psi} - \rho_1(x_1)\delta(x_1-x_2).</script>
+<p class="message">
+Show that the correct relationship is
+
+$$
+\rho_2(x_1,x_2) = \bra{\Psi}\rho(x_1)\rho(x_2)\ket{\Psi} - \rho_1(x_1)\delta(x_1-x_2).
+$$
+
+</p>
 
 <h3 id="impenetrable-bose-gas">Impenetrable Bose Gas</h3>
 
@@ -644,14 +687,22 @@ H = -\frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + c\sum_{j<k}\delta(x_
 
 <p>The second term represents an interaction between pairs of particles. Of course, this model is rather special, as (1) it’s 1D and (2) the interaction potential is a $\delta$-function. Nevertheless, it represents a huge step up in difficulty from the noninteracting examples we’ve discussed so far. At least, it does for bosons. For fermions, the wavefunctions vanish at coincident points, and so the interaction has no effect at all!</p>
 
-<p>For bosons, it happens that the Hamiltonian can still be solved exactly. For now, however, we’ll concern ourselves only with the limit of infinite interaction: $c\to \infty$, sometimes called the impenetrable limit. In this case, <em>the eigenenergies coincide with those of the free fermion problem, and the eigenstates are just the modulus of the corresponding fermion eigenstate</em> Just like that, we’ve solved our first interacting many body system (and with infinite coupling, no less)!</p>
+<p>For bosons, it happens that the Hamiltonian can still be solved exactly. For now, however, we’ll concern ourselves only with the limit of infinite interaction: $c\to \infty$, sometimes called the impenetrable limit. In this case, <em>the eigenenergies coincide with those of the free fermion problem, and the eigenstates are just the modulus of the corresponding fermion eigenstate</em>.</p>
+
+<p class="message">
+
+Why?
+
+</p>
+
+<p>Just like that, we’ve solved our first interacting many body system (and with infinite coupling, no less)!</p>
 
 <p>Thus the ground state on the ring has the form</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \Psi_0(x_1,\ldots, x_N) = \prod_{i<j}^{N} \left|\sin\left(\frac{\pi[x_{i}-x_{j}]}{L}\right)\right|. %]]></script>
 
-<p>It’s not hard to see why this works. For a state to have a finite energy, the wavefunction must vanish whenever two coordinates coincide. But we already have a complete set of eigenstates that obey this condition, namely the free fermion Slater determinants. It remains to make them symmetric functions by taking the modulus.</p>
+<!---It's not hard to see why this works. For a state to have a finite energy, the wavefunction must vanish whenever two coordinates coincide. But we already have a complete set of eigenstates that obey this condition, namely the free fermion Slater determinants. It remains to make them symmetric functions by taking the modulus.--->
 
 <p>This mapping is quite powerful, and allows us to calculate any observable of the impenetrable Bose gas in terms of free fermions <em>as long</em> as that observable is insensitive to taking the modulus of the wavefunction. Thus the average density $\rho_1(x)$ and pair distribution $\rho_2(x_1,x_2)$ of the previous section can be found in this way, but the single particle density matrix $g(x,y)$ cannot. This means that the momentum distribution is <em>not</em> given by \eqref{many_Nk}. Finding $g(x,y)$ for the impenetrable Bose gas is in fact really hard. We’ll see in a later lecture how to obtain some of its important features.</p>
 
