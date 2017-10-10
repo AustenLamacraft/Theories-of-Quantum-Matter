@@ -71,13 +71,21 @@ $$
 \left(\partial_{\bar z} +\frac{qB z}{4}\right)\psi(z,\bar z) = 0
 $$
 
-therefore have energy $\omega_c/2$ and belong to the __lowest Landau level__ (LLL). Generally, such states have the form
+therefore have energy $\omega_c/2$ and belong to the __lowest Landau level__ (LLL).
+
+<p class="message">
+Show that these states have the form
 
 $$
 \psi(z,\bar z) = f(z) \exp\left(-\frac{eB}{4}\left|z\right|^2\right),
 $$
 
-where $f(z)$ is an _arbitrary_ analytic function. This accounts for the degeneracy of the LLL states, and yet the states are a very special subclass of the possible 2D wavefunctions $\psi(z,\bar z)$. It's often convenient to work with the analytic part $f(z)$ of the wavefunction, with the understanding that the inner product $\bra{f_1}f_2\rangle$ is
+where $f(z)$ is an arbitrary analytic function.
+</p>
+
+You may recall that the Landau levels are highly degenerate. In symmetric gauge this degeneracy may be seen to result from our freedom to choose the coefficients of this power series, and yet the states are a very special subclass of the possible 2D wavefunctions $\psi(z,\bar z)$.
+
+It's often convenient to work with the analytic part $f(z)$ of the wavefunction, with the understanding that the inner product $\bra{f_1}f_2\rangle$ is
 
 $$
 \bra{f_1}f_2\rangle = \int \frac{d^2z}{2\pi} \overline{f_1(z)}f_2(z) \exp\left(-\left|z\right|^2/2\right),
@@ -114,14 +122,16 @@ $$
 \label{many_nu1}
 $$
 
-Evaluating the density gives
+<p class="message">
+Show that the density is
 
 $$
 \rho_1(z,\bar z) = \frac{e^{-|z|^2/2}}{2\pi}\sum_{n=0}^{N-1} \frac{\left|z\right|^{2n}}{2^n n!} = \frac{1}{2\pi} \frac{\Gamma(N,|z|^2/2)}{(N-1)!}.
 \label{many_LLLdensity}
 $$
 
-Here $\Gamma(s,x) = \int^\infty_x t^{s-1}e^{-t}dt$ is the [incomplete gamma function](https://en.wikipedia.org/wiki/Incomplete_gamma_function).
+Here $\Gamma(s,x) = \int^\infty_x t^{s-1}e^{-t}dt$ is the  <a href="https://en.wikipedia.org/wiki/Incomplete_gamma_function">incomplete gamma function</a>.
+</p>
 
 <a name="LLLdensity"></a>
 ![]({{ site.baseurl }}/assets/LLLdensity.png)
@@ -203,17 +213,20 @@ $$
 \beta V[\rho] = -m\int d^2\br\, d^2\br'\, \rho(\br)\log\left|\br-\br'\right|\rho(\br') + \frac{1}{2}\int d^2\br\, \left|\br\right|^2\rho(\br).\
 $$
 
-A natural approximation would be to try and minimize the energy, leading to the condition
-
+<p class="message">
+Show that minimizing the energy with respect to $\rho(\br)$ leads to the condition
 $$
 -2m\int d^2\br'\, \log\left|\br-\br'\right|\rho(\br') + \frac{1}{2}\left|\br\right|^2 = 0.
 $$
+</p>
 
-Applying $\nabla^2$ to both sides then gives
+<p class="message">
+Show that applying $\nabla^2$ to both sides gives
 
 $$
 \rho(\br) = \frac{1}{2\pi m}.
 $$
+</p>
 
 On the basis of this approximation, we conclude that the density is fixed at $1/m$ of the value we found for the $m=1$ case, which seems reasonable. The result applies where the density is non-zero, so we get a uniform droplet as before, this time of radius $\sqrt{2Nm}$. $1/m$ is called the __filling fraction__ of the state.
 
