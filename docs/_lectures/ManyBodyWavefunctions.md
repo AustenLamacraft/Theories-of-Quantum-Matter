@@ -16,7 +16,7 @@ We begin our study of many body quantum mechanics by examining a number of syste
 * Toc
 {:toc}
 
-Reading: {% cite Baym:1969 %}, {% cite Girvin:1999 %}, {% cite Stone:1992 %}.
+Reading: {% cite Baym:1969 %}.
 
 ---
 
@@ -219,11 +219,11 @@ Let's evaluate this complicated looking expression in a simple case. With three 
 
 $$
 \begin{align}
-	\Psi_0(x_1,x_2,x_3)=\begin{vmatrix}
+	\Psi_0(x_1,x_2,x_3)&=\begin{vmatrix}
 		z_{1}^{-1} & z_{2}^{-1} & z_{3}^{-1} \\
 		1 & 1 & 1 \\
 		z_{1} & z_{2} & z_{3}
-	\end{vmatrix} &= \frac{z_{1}}{z_{2}}-\frac{z_{2}}{z_{1}}+\frac{z_{3}}{z_{1}}-\frac{z_{1}}{z_{3}}+\frac{z_{2}}{z_{3}}-\frac{z_{3}}{z_{2}}\nonumber\\
+	\end{vmatrix} = \frac{z_{1}}{z_{2}}-\frac{z_{2}}{z_{1}}+\frac{z_{3}}{z_{1}}-\frac{z_{1}}{z_{3}}+\frac{z_{2}}{z_{3}}-\frac{z_{3}}{z_{2}}\nonumber\\
 	&=\left(\sqrt{\frac{z_{3}}{z_{1}}}-\sqrt{\frac{z_{1}}{z_{3}}}\right)\left(\sqrt{\frac{z_{1}}{z_{2}}}-\sqrt{\frac{z_{2}}{z_{1}}}\right)\left(\sqrt{\frac{z_{2}}{z_{3}}}-\sqrt{\frac{z_{3}}{z_{2}}}\right)  \nonumber\\
 	&\propto \sin\left(\frac{ \pi[x_{1}-x_{2}]}{L}\right)\sin\left(\frac{ \pi[x_{3}-x_{1}]}{L}\right)\sin\left(\frac{ \pi[x_{2}-x_{3}]}{L}\right)
   \label{3particle}
@@ -452,7 +452,7 @@ $$
 This mapping is quite powerful, and allows us to calculate any observable of the impenetrable Bose gas in terms of free fermions _as long_ as that observable is insensitive to taking the modulus of the wavefunction. Thus the average density $\rho_1(x)$ and pair distribution $\rho_2(x_1,x_2)$ of the previous section can be found in this way, but the single particle density matrix $g(x,y)$ cannot.
 
 <p class="message">
-Show this explicitly. 
+Show this explicitly.
 </p>
 
 This means that the momentum distribution is _not_ given by \eqref{many_Nk}. Finding $g(x,y)$ for the impenetrable Bose gas is in fact really hard. We'll see in a later lecture how to obtain some of its important features.

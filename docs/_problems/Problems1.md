@@ -14,6 +14,14 @@ summary: Many body wavefunctions; Lieb-Liniger; Collective excitations; Spin cha
 
 ---
 
+## Fermions and Bosons at Finite Temperature
+
+Density matrix and correlations
+
+## Impenetrable Impurity in a Fermi Gas
+
+Fluctuations of impurity?
+
 ## Sutherland Model
 
 Show that
@@ -60,27 +68,6 @@ $$
 
 into a superposition of eigenstates of $V_\text{harm}$, describing the occupation numbers of these eigenstates.
 
-
-## Ground State of the Attractive Lieb--Liniger Model
-
-For _attractive_ interactions $c<0$ the ground state of $N$ bosons on the infinite line is
-
-$$
-\Psi(x_1,\ldots,x_N) = \prod_{j<k}\exp\left(-\frac{\abs{c}}{2}\abs{x_j-x_k}\right),\quad x_1<x_2<\cdots <x_N
-$$
-
-Show that this is a Bethe state, find the Bethe roots, and calculate the energy.
-
-
-## Density Correlations in Lieb--Liniger
-
-If $E_0(c)$ is the ground state energy of the Lieb--Liniger model as a function of $c$, show that
-
-$$
-\frac{dE_0}{dc} = \bra{\Psi_0}\sum_{j<k}\delta(x_j-x_k)\ket{\Psi_0},
-$$
-
-where $\ket{\Psi_0}$ is the ground state. By solving the Bethe equations numerically (see the [IPython notebook](https://github.com/AustenLamacraft/Theories-of-Quantum-Matter/blob/master/notebooks/BetheGroundState.ipynb)), find how the RHS varies with $c$, and interpret your results.
 
 ## Normal Modes in General
 

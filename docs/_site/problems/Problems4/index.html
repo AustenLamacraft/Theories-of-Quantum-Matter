@@ -9,13 +9,13 @@
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/problems/Problems4/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-07T18:21:20-04:00" />
+<meta property="article:published_time" content="2017-10-10T15:57:22+01:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Problem Set 4",
-    "datePublished": "2017-10-07T18:21:20-04:00",
+    "datePublished": "2017-10-10T15:57:22+01:00",
     "description": "Contents",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/problems/Problems4/"
   }
@@ -152,13 +152,13 @@ $$
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/problems/Problems4/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-07T18:21:20-04:00" />
+<meta property="article:published_time" content="2017-10-10T15:57:22+01:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Problem Set 4",
-    "datePublished": "2017-10-07T18:21:20-04:00",
+    "datePublished": "2017-10-10T15:57:22+01:00",
     "description": "Contents",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/problems/Problems4/"
   }
@@ -315,6 +315,8 @@ $$
   <li><a href="#kondo-effect-without-spin" id="markdown-toc-kondo-effect-without-spin">Kondo Effect Without Spin</a></li>
   <li><a href="#anomalous-commutators-for-1d-fermions" id="markdown-toc-anomalous-commutators-for-1d-fermions">Anomalous Commutators for 1D Fermions</a></li>
   <li><a href="#bosonized-form-of-the-fermion-operator" id="markdown-toc-bosonized-form-of-the-fermion-operator">Bosonized Form of the Fermion Operator</a></li>
+  <li><a href="#ground-state-of-the-attractive-liebliniger-model" id="markdown-toc-ground-state-of-the-attractive-liebliniger-model">Ground State of the Attractive Lieb–Liniger Model</a></li>
+  <li><a href="#density-correlations-in-liebliniger" id="markdown-toc-density-correlations-in-liebliniger">Density Correlations in Lieb–Liniger</a></li>
   <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ol>
 
@@ -488,6 +490,24 @@ H &= \sum_{\bk} \xi(\bk)\left[\adop_\bk\aop_\bk+\bdop_\bk\bop_\bk
 <script type="math/tex; mode=display">\left\{e^{i\phi^R(x)},e^{-i\phi^R(x')}\right\}\propto \delta(x-x').</script>
 
 <p>The overall normalization is cut-off dependent.</p>
+
+<h2 id="ground-state-of-the-attractive-liebliniger-model">Ground State of the Attractive Lieb–Liniger Model</h2>
+
+<p>For <em>attractive</em> interactions $c&lt;0$ the ground state of $N$ bosons on the infinite line is</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\Psi(x_1,\ldots,x_N) = \prod_{j<k}\exp\left(-\frac{\abs{c}}{2}\abs{x_j-x_k}\right),\quad x_1<x_2<\cdots <x_N %]]></script>
+
+<p>Show that this is a Bethe state, find the Bethe roots, and calculate the energy.</p>
+
+<h2 id="density-correlations-in-liebliniger">Density Correlations in Lieb–Liniger</h2>
+
+<p>If $E_0(c)$ is the ground state energy of the Lieb–Liniger model as a function of $c$, show that</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\frac{dE_0}{dc} = \bra{\Psi_0}\sum_{j<k}\delta(x_j-x_k)\ket{\Psi_0}, %]]></script>
+
+<p>where $\ket{\Psi_0}$ is the ground state. By solving the Bethe equations numerically (see the <a href="https://github.com/AustenLamacraft/Theories-of-Quantum-Matter/blob/master/notebooks/BetheGroundState.ipynb">IPython notebook</a>), find how the RHS varies with $c$, and interpret your results.</p>
 
 <h2 id="references">References</h2>
 
