@@ -248,7 +248,10 @@ The plasma analogy allows us to see that this state describes a __quasiparticle_
 Let's see how the plasma picture is modified by the introduction of the quasihole. The electrostatic energy is now
 
 $$
-V(\brN)=-\frac{q^2}{2\pi m}\sum_j \log\left|\br_j-\mathbf{R}\right|-\frac{q^2}{2\pi} \sum_{j<k}\log\left|\br_j-\br_k\right| + \frac{\rho q_0}{4}\sum_j \left|\br_j\right|^2.
+\begin{align}
+V(\brN)=&-\frac{q^2}{2\pi m}\sum_j \log\left|\br_j-\mathbf{R}\right|-\frac{q^2}{2\pi} \sum_{j<k}\log\left|\br_j-\br_k\right|\\
+ &+ \frac{\rho q_0}{4}\sum_j \left|\br_j\right|^2.
+\end{align}
 $$
 
 This is interpreted as the introduction of a charge $q/m$ at point $\mathbf{R} = (X, Y)$, where $Z=X+iY$. The charges of the plasma will screen this charge, leaving a 'hole' in the density distribution amounting to charge $-q/m$, corresponding to $-1/m$ real particles. The quasiholes have fractional charge! This means that the normalization integral is approximated by the Boltzmann weight corresponding to the interaction of this fractional charge with the background charge density
@@ -269,7 +272,9 @@ $$
 The probability distribution $\left\|\Psi_\text{2 hole}(z_1,\ldots, z_N\|Z_1,Z_2)\right\|^2$ corresponds to a Coulomb plasma with two $1/m$ charges at the positions $\mathbf{R}_{1,2}$. There is no interaction term between these two fixed charges, but as we have argued, each is overwhelmingly likely to be surrounded by region of depleted density amounting to $-1/m$ of a particle. The normalization integral is then be given by the Boltzmann weight corresponding to the interaction of these two depleted regions
 
 $$
-\int \prod_{j=1}^N d^2z_j\,\left|\Psi_\text{2 hole}(z_1,\ldots, z_N|Z_1,Z_2)\right|^2 \sim\exp\left(\frac{2}{m}\log\left|Z_1-Z_2\right|+\frac{1}{2m}\left[\left|Z_1\right|^2+\left|Z_2\right|^2\right]\right).
+\begin{align}
+\int \prod_{j=1}^N &d^2z_j\,\left|\Psi_\text{2 hole}(z_1,\ldots, z_N|Z_1,Z_2)\right|^2\\ &\sim\exp\left(\frac{2}{m}\log\left|Z_1-Z_2\right|+\frac{1}{2m}\left[\left|Z_1\right|^2+\left|Z_2\right|^2\right]\right).
+\end{align}
 $$
 
 If we try to intepret this as the probability density of a two particle wavefunction, we arrive at
