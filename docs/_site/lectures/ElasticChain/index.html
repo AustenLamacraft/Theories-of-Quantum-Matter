@@ -9,13 +9,13 @@
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/ElasticChain/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-12T16:31:51+01:00" />
+<meta property="article:published_time" content="2017-10-12T20:57:11+01:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "The Elastic Chain",
-    "datePublished": "2017-10-12T16:31:51+01:00",
+    "datePublished": "2017-10-12T20:57:11+01:00",
     "description": "In this lecture we discuss a very simple many body system in which particles are coupled by Hooke&#39;s Law springs. Nevertheless, the quantization of this system has a lot to teach us about the appearance of collective excitations.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/ElasticChain/"
   }
@@ -152,13 +152,13 @@ $$
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/ElasticChain/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-12T16:31:51+01:00" />
+<meta property="article:published_time" content="2017-10-12T20:57:11+01:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "The Elastic Chain",
-    "datePublished": "2017-10-12T16:31:51+01:00",
+    "datePublished": "2017-10-12T20:57:11+01:00",
     "description": "In this lecture we discuss a very simple many body system in which particles are coupled by Hooke&#39;s Law springs. Nevertheless, the quantization of this system has a lot to teach us about the appearance of collective excitations.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/ElasticChain/"
   }
@@ -325,8 +325,8 @@ In this lecture we discuss a very simple many body system in which particles are
       <li><a href="#oscillator-quanta-are-bosons" id="markdown-toc-oscillator-quanta-are-bosons">Oscillator Quanta are Bosons!</a></li>
       <li><a href="#thermodynamic-nto-infty-limit" id="markdown-toc-thermodynamic-nto-infty-limit">Thermodynamic ($N\to \infty$) limit</a></li>
       <li><a href="#finite-temperature" id="markdown-toc-finite-temperature">Finite Temperature</a></li>
-      <li><a href="#ground-state-wavefunction" id="markdown-toc-ground-state-wavefunction">Ground State Wavefunction</a></li>
-      <li><a href="#position-and-density-fluctuations" id="markdown-toc-position-and-density-fluctuations">Position and Density Fluctuations</a></li>
+      <li><a href="#position-fluctuations" id="markdown-toc-position-fluctuations">Position Fluctuations</a></li>
+      <li><a href="#density-fluctuations" id="markdown-toc-density-fluctuations">Density Fluctuations</a></li>
     </ul>
   </li>
   <li><a href="#fourier-review" id="markdown-toc-fourier-review">Fourier review</a>    <ul>
@@ -678,31 +678,39 @@ a^*_n &= \frac{1}{\sqrt{2}}\left[\sqrt{ZkL} u_{-n} - \frac{i}{\sqrt{ZkL}}\pi_{n}
 
 <p>in agreement with the classical equipartition theorem. Were this result to apply at all energies the thermal energy density of a continuum at finite temperature would be infinite (the <a href="https://en.wikipedia.org/wiki/Ultraviolet_catastrophe">Ultraviolet Catastrophe</a>). It is the existence of Planck’s constant, which appears in the dimensionless combination $\hbar\beta\omega$ in the Bose occupation function, that allows this conclusion to be avoided.</p>
 
-<h3 id="ground-state-wavefunction">Ground State Wavefunction</h3>
+<!-- ### Ground State Wavefunction
 
-<p>Classically, we understand the motion of the chain very well. What can we say about the quantum states of the system? The differences from the classical picture are most evident in the ground state.</p>
+Classically, we understand the motion of the chain very well. What can we say about the quantum states of the system? The differences from the classical picture are most evident in the ground state.
 
-<p>As a reminder, the ground state wavefunction of a single oscillator is</p>
+As a reminder, the ground state wavefunction of a single oscillator is
 
-<script type="math/tex; mode=display">\psi_0(x) = \left(\frac{m\omega}{\pi}\right)^{1/4} \exp\left(-m\omega x^2 /2\right)</script>
+$$
+\psi_0(x) = \left(\frac{m\omega}{\pi}\right)^{1/4} \exp\left(-m\omega x^2 /2\right)
+$$
 
-<p>A quick way to get this is to regard the condition $a|0\rangle = 0$ as a first order differential equation and solve it (just as the lowest Landau level condition is obtained in <a href="/docs/lectures/QHE">Lecture 2</a>).</p>
+A quick way to get this is to regard the condition $a\|0\rangle = 0$ as a first order differential equation and solve it (just as the lowest Landau level condition is obtained in [Lecture 2](/docs/lectures/QHE)).
 
-<p>Since our Hamiltonian \eqref{coll_HDiag} is just a sum of single oscillator Hamiltonians, we can write the ground state wavefunction as a function of the oscillator coordinates $q_n$</p>
+Since our Hamiltonian \eqref{coll_HDiag} is just a sum of single oscillator Hamiltonians, we can write the ground state wavefunction as a function of the oscillator coordinates $q_n$
 
-<script type="math/tex; mode=display">\Psi_0(\mathbf{q}) = \prod_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \left(\frac{m\omega(\eta_n)}{\pi}\right)^{1/4} \exp\left(-m\omega(\eta_n) \left|q_n\right|^2 /2\right).</script>
+$$
+\Psi_0(\mathbf{q}) = \prod_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \left(\frac{m\omega(\eta_n)}{\pi}\right)^{1/4} \exp\left(-m\omega(\eta_n) \left|q_n\right|^2 /2\right).
+$$
 
-<p>Since the $\mathbf{q}$ are related by \eqref{coll_modes} to the real space displacements $\mathbf{u}$, this allows us to find the ground state as a function of the displacements. First, we invert \eqref{coll_modes} to give</p>
+Since the $\mathbf{q}$ are related by \eqref{coll_modes} to the real space displacements $\mathbf{u}$, this allows us to find the ground state as a function of the displacements. First, we invert \eqref{coll_modes} to give
 
-<script type="math/tex; mode=display">q_n = \frac{1}{\sqrt{N}}\sum_{j=1}^N u_j e^{-i\eta_n j},</script>
+$$
+q_n = \frac{1}{\sqrt{N}}\sum_{j=1}^N u_j e^{-i\eta_n j},
+$$
 
-<p>and then insert this into $\Psi_0(\mathbf{q})$</p>
+and then insert this into $\Psi_0(\mathbf{q})$
 
-<script type="math/tex; mode=display">\Psi_0(\mathbf{u}) \propto \exp\left(-\frac{m}{2N}\sum_{\substack{|n| \leq (N-1)/2\\ j,k =1,\ldots N}} u_j u_k \exp\left(i\eta_n[j-k]\right) \omega(\eta_n)\right),</script>
+$$
+\Psi_0(\mathbf{u}) \propto \exp\left(-\frac{m}{2N}\sum_{\substack{|n| \leq (N-1)/2\\ j,k =1,\ldots N}} u_j u_k \exp\left(i\eta_n[j-k]\right) \omega(\eta_n)\right),
+$$
 
-<p>where we drop the overall normalization constant.</p>
+where we drop the overall normalization constant. -->
 
-<h3 id="position-and-density-fluctuations">Position and Density Fluctuations</h3>
+<h3 id="position-fluctuations">Position Fluctuations</h3>
 
 <p>Classically, the ground state configuration of our elastic chain corresponds to a regular ‘crystalline’ arrangement of masses at separation $a$, with all $u_j=0$. Mass $j$ and mass $k$ are then separated by $(j-k)a + u_j-u_k = (j-k)a$. Quantum mechanically, $u_j-u_k$ fluctuates, even in the ground state. For the notion of a crystal to make sense, these fluctuations should not be too large. Let’s evaluate them for the elastic chain.</p>
 
@@ -734,13 +742,13 @@ a^*_n &= \frac{1}{\sqrt{2}}\left[\sqrt{ZkL} u_{-n} - \frac{i}{\sqrt{ZkL}}\pi_{n}
 <p>The dispersion relation \eqref{coll_Dispersion} makes this integral a little difficult.</p>
 
 <p class="message">
-Show that if $\left\|j-k\right\|\gg 1$, the integral is determined by small values of $\eta$, and we can use the approximation
+When $\left|j-k\right|\gg 1$, the integral is dominated by values of $\left|j-k\right|^{-1}\lesssim\eta\lesssim 1$. In this limit the dispersion can be linearized
 
 $$
 \omega(\eta) \sim \sqrt{\frac{k}{m}}|\eta|.
 $$
 
-In this case
+Show that we then have
 
 $$
 \bra{0}\left(u_i-u_j\right)^2\ket{0} \sim  \frac{\ell_\text{osc}^2}{4\pi} \log \left|i-j\right|,\qquad \text{ as } \left|i-j\right|\to\infty
@@ -752,6 +760,8 @@ where we have introduced $\ell_\text{osc}=\left(km\right)^{-1/4}$, the natural l
 </p>
 
 <p>The result \eqref{coll_LogFluct} shows that the uncertainty in the separation of two masses in the chain increases with their separation. This implies that the ground state of the chain is <em>not</em> a crystal, but more closely resembles a fluid. It turns out that this conclusion depends strongly on the dimensionality of the system. In higher dimensions, crystalline ground states <em>do</em> exist (thankfully).</p>
+
+<h3 id="density-fluctuations">Density Fluctuations</h3>
 
 <p>An alternative way of quantifying crystalline order is to consider the fluctuations of the density of particles, defined by</p>
 
@@ -785,13 +795,21 @@ N & n = 0 \mod N \\
 
 <script type="math/tex; mode=display">\bra{0} \exp(\lambda \aop + \mu \adop)\ket{0}.</script>
 
-<p>We do this by expressing the exponent in a form with all occurrences of $\adop$ to the left of all $\aop$ (this operation is called <em>normal ordering</em>; we will meet it again).</p>
+<p class="message">
 
-<script type="math/tex; mode=display">\exp(\lambda \aop + \mu \adop) = \exp(\lambda \mu /2) \exp(\mu\adop)\exp(\lambda\aop).</script>
+Show that the exponent can be written in a form with all occurrences of $\adop$ to the left of all $\aop$ (this operation is called <strong>normal ordering</strong>; we will meet it again).
 
-<p>Calculating the expectation value is now simple</p>
+$$
+\exp(\lambda \aop + \mu \adop) = \exp(\lambda \mu /2) \exp(\mu\adop)\exp(\lambda\aop).
+$$
 
-<script type="math/tex; mode=display">\bra{0} \exp(\lambda \aop + \mu \adop)\ket{0} = \exp(\lambda \mu /2).</script>
+Use this result to show that
+
+$$
+\bra{0} \exp(\lambda \aop + \mu \adop)\ket{0} = \exp(\lambda \mu /2).
+$$
+
+</p>
 
 <p>Deploying this strategy for \eqref{coll_Struct} gives</p>
 
@@ -848,20 +866,20 @@ N & j = 0 \mod N.
 
 <p>Alternatively, regard the $N\to\infty$ limit as sampling a function $f(x)$ ever more finely in the range (0,L]. Now it’s the DFT, rather than the inverse, that becomes an integral</p>
 
-<script type="math/tex; mode=display">\tilde f_k \equiv \int_0^L f(x) e^{-ik_n x}\,dx,</script>
+<script type="math/tex; mode=display">\hat f(k) \equiv \int_0^L f(x) e^{-ik_n x}\,dx,</script>
 
 <p>where $k_n =2\pi n/L$. Note that $k_n x = \eta_n j$. The pair of transformations is now</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
-\tilde f_k & = \int_0^L f(x) e^{-ik_n x}\,dx\nonumber\\
-f(x) &= \frac{1}{L}\sum_k \tilde f_k e^{ik_n x}
+\hat f_k &= \int_0^L f(x) e^{-ik_n x}\,dx\nonumber\\
+f(x) &= \frac{1}{L}\sum_k \hat f_k e^{ik_n x}
 \label{coll_FTSeries}
 \end{align} %]]></script>
 
 <p>This is the conventional form of the Fourier series for a function with period $L$.</p>
 
-<p>With this definition $\tilde f_k$ has an extra dimension of distance (on account of the integral), which gets removed by the $1/L$ in the inverse transform.</p>
+<p>With this definition $\hat f_k$ has an extra dimension of distance (on account of the integral), which gets removed by the $1/L$ in the inverse transform.</p>
 
 <p>The analog of the identity \eqref{coll_DFTIdent} is</p>
 
@@ -875,8 +893,8 @@ f(x) &= \frac{1}{L}\sum_k \tilde f_k e^{ik_n x}
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
-\tilde f(k) & = \int_{-\infty}^\infty f(x) e^{-ik_n x}\,dx\nonumber\\
-f(x) &= \int_{-\infty}^\infty \tilde f(k) e^{ik_n x}\,\frac{dk}{2\pi}.
+\hat{f}(k) & = \int_{-\infty}^\infty f(x) e^{-ik_n x}\,dx\nonumber\\
+f(x) &= \int_{-\infty}^\infty \hat f(k) e^{ik_n x}\,\frac{dk}{2\pi}.
 \label{coll_FTTrans}
 \end{align} %]]></script>
 
@@ -945,7 +963,7 @@ f(x) &= \int_{-\infty}^\infty \tilde f(k) e^{ik_n x}\,\frac{dk}{2\pi}.
 
 <p>In the $L\to\infty$ limit this is</p>
 
-<script type="math/tex; mode=display">\tilde F(k,k') = \tilde f(k) (2\pi)\delta(k+k').</script>
+<script type="math/tex; mode=display">\hat F(k,k') = \hat f(k) (2\pi)\delta(k+k').</script>
 
 <p>$(2\pi)\delta(k+k’)$ is the $L\to\infty$ limit of $L\delta_{k,-k’}$ as</p>
 

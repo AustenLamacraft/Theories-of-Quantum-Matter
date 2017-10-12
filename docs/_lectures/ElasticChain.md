@@ -437,7 +437,7 @@ $$
 in agreement with the classical equipartition theorem. Were this result to apply at all energies the thermal energy density of a continuum at finite temperature would be infinite (the [Ultraviolet Catastrophe](https://en.wikipedia.org/wiki/Ultraviolet_catastrophe)). It is the existence of Planck's constant, which appears in the dimensionless combination $\hbar\beta\omega$ in the Bose occupation function, that allows this conclusion to be avoided.
 
 
-### Ground State Wavefunction
+<!-- ### Ground State Wavefunction
 
 Classically, we understand the motion of the chain very well. What can we say about the quantum states of the system? The differences from the classical picture are most evident in the ground state.
 
@@ -467,9 +467,9 @@ $$
 \Psi_0(\mathbf{u}) \propto \exp\left(-\frac{m}{2N}\sum_{\substack{|n| \leq (N-1)/2\\ j,k =1,\ldots N}} u_j u_k \exp\left(i\eta_n[j-k]\right) \omega(\eta_n)\right),
 $$
 
-where we drop the overall normalization constant.
+where we drop the overall normalization constant. -->
 
-### Position and Density Fluctuations
+### Position Fluctuations
 
 Classically, the ground state configuration of our elastic chain corresponds to a regular 'crystalline' arrangement of masses at separation $a$, with all $u_j=0$. Mass $j$ and mass $k$ are then separated by $(j-k)a + u_j-u_k = (j-k)a$. Quantum mechanically, $u_j-u_k$ fluctuates, even in the ground state. For the notion of a crystal to make sense, these fluctuations should not be too large. Let's evaluate them for the elastic chain.
 
@@ -511,13 +511,13 @@ $$
 The dispersion relation \eqref{coll_Dispersion} makes this integral a little difficult.
 
 <p class="message">
-Show that if $\left\|j-k\right\|\gg 1$, the integral is determined by small values of $\eta$, and we can use the approximation
+When $\left|j-k\right|\gg 1$, the integral is dominated by values of $\left|j-k\right|^{-1}\lesssim\eta\lesssim 1$. In this limit the dispersion can be linearized
 
 $$
 \omega(\eta) \sim \sqrt{\frac{k}{m}}|\eta|.
 $$
 
-In this case
+Show that we then have
 
 $$
 \bra{0}\left(u_i-u_j\right)^2\ket{0} \sim  \frac{\ell_\text{osc}^2}{4\pi} \log \left|i-j\right|,\qquad \text{ as } \left|i-j\right|\to\infty
@@ -529,6 +529,8 @@ where we have introduced $\ell_\text{osc}=\left(km\right)^{-1/4}$, the natural l
 </p>
 
 The result \eqref{coll_LogFluct} shows that the uncertainty in the separation of two masses in the chain increases with their separation. This implies that the ground state of the chain is _not_ a crystal, but more closely resembles a fluid. It turns out that this conclusion depends strongly on the dimensionality of the system. In higher dimensions, crystalline ground states _do_ exist (thankfully).
+
+### Density Fluctuations
 
 An alternative way of quantifying crystalline order is to consider the fluctuations of the density of particles, defined by
 
@@ -573,17 +575,21 @@ $$
 \bra{0} \exp(\lambda \aop + \mu \adop)\ket{0}.
 $$
 
-We do this by expressing the exponent in a form with all occurrences of $\adop$ to the left of all $\aop$ (this operation is called _normal ordering_; we will meet it again).
+<p class="message">
+
+Show that the exponent can be written in a form with all occurrences of $\adop$ to the left of all $\aop$ (this operation is called <strong>normal ordering</strong>; we will meet it again).
 
 $$
 \exp(\lambda \aop + \mu \adop) = \exp(\lambda \mu /2) \exp(\mu\adop)\exp(\lambda\aop).
 $$
 
-Calculating the expectation value is now simple
+Use this result to show that
 
 $$
 \bra{0} \exp(\lambda \aop + \mu \adop)\ket{0} = \exp(\lambda \mu /2).
 $$
+
+</p>
 
 Deploying this strategy for \eqref{coll_Struct} gives
 
@@ -659,22 +665,22 @@ Alternatively, regard the $N\to\infty$ limit as sampling a function $f(x)$ ever 
 
 
 $$
-\tilde f_k \equiv \int_0^L f(x) e^{-ik_n x}\,dx,
+\hat f(k) \equiv \int_0^L f(x) e^{-ik_n x}\,dx,
 $$
 
 where $k_n =2\pi n/L$. Note that $k_n x = \eta_n j$. The pair of transformations is now
 
 $$
 \begin{align}
-\tilde f_k & = \int_0^L f(x) e^{-ik_n x}\,dx\nonumber\\
-f(x) &= \frac{1}{L}\sum_k \tilde f_k e^{ik_n x}
+\hat f_k &= \int_0^L f(x) e^{-ik_n x}\,dx\nonumber\\
+f(x) &= \frac{1}{L}\sum_k \hat f_k e^{ik_n x}
 \label{coll_FTSeries}
 \end{align}
 $$
 
 This is the conventional form of the Fourier series for a function with period $L$.
 
-With this definition $\tilde f_k$ has an extra dimension of distance (on account of the integral), which gets removed by the $1/L$ in the inverse transform.
+With this definition $\hat f_k$ has an extra dimension of distance (on account of the integral), which gets removed by the $1/L$ in the inverse transform.
 
 The analog of the identity \eqref{coll_DFTIdent} is
 
@@ -690,8 +696,8 @@ Finally we arrive at the Fourier transform, where we take $L\to\infty$, so that 
 
 $$
 \begin{align}
-\tilde f(k) & = \int_{-\infty}^\infty f(x) e^{-ik_n x}\,dx\nonumber\\
-f(x) &= \int_{-\infty}^\infty \tilde f(k) e^{ik_n x}\,\frac{dk}{2\pi}.
+\hat{f}(k) & = \int_{-\infty}^\infty f(x) e^{-ik_n x}\,dx\nonumber\\
+f(x) &= \int_{-\infty}^\infty \hat f(k) e^{ik_n x}\,\frac{dk}{2\pi}.
 \label{coll_FTTrans}
 \end{align}
 $$
@@ -759,7 +765,7 @@ $$
 In the $L\to\infty$ limit this is
 
 $$
-\tilde F(k,k') = \tilde f(k) (2\pi)\delta(k+k').
+\hat F(k,k') = \hat f(k) (2\pi)\delta(k+k').
 $$
 
 $(2\pi)\delta(k+k')$ is the $L\to\infty$ limit of $L\delta_{k,-k'}$ as
