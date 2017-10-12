@@ -16,13 +16,17 @@ summary: Many body wavefunctions; Lieb-Liniger; Collective excitations; Spin cha
 
 ## Fermions and Bosons at Finite Temperature
 
-Density matrix and correlations
+At finite temperature $T$ and chemical potential $\mu$ we can describe a system of free particles in terms of the density matrix
 
-## Impenetrable Impurity in a Fermi Gas
+$$
+\rho = \sum_{\{N_\alpha\}} \exp\left(-\frac{1}{k_\text{B}T}\sum_\alpha N_\alpha [E_\alpha -\mu]\right)\ket{\Psi^{S/A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\bra{\Psi^{S/A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}
+$$
 
-Fluctuations of impurity?
+where the sum is over the occupation number of each state. Find the single particle density matrix $g(x,y)$ for bosons and fermions. 
 
 ## Sutherland Model
+
+_[This one's a bit hard! In the lectures we talked about verifying that the explicit ground state Slater determinant is an eigenstate of the free particle Hamiltonian. DO THIS FIRST!]_
 
 Show that
 
@@ -39,6 +43,14 @@ $$
 
 with periodic boundary conditions $\Psi(x_1,\ldots x_j+L,\ldots x_M)=\Psi(x_1,\ldots x_j,\ldots x_M)$. Find the energy.
 
+_[If you stick with the $x_j$ variables, you'll need the identity_
+
+$$
+  \label{2nd_quant_cotident}
+\cot(x-y)\cot(y-z)+\cot(y-z)\cot(x-z)+\cot(z-x)\cot(x-y)=1.	\nonumber
+$$
+
+_Alternatively, work with the complex variables $z_j=e^{2\pi x_j/L}$]_
 
 ## Density Matrix of the Filled LLL of Fermions
 

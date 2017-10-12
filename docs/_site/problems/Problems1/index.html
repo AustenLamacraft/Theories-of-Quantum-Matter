@@ -9,13 +9,13 @@
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/problems/Problems1/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-10T16:39:25+01:00" />
+<meta property="article:published_time" content="2017-10-12T09:45:54+01:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Problem Set 1",
-    "datePublished": "2017-10-10T16:39:25+01:00",
+    "datePublished": "2017-10-12T09:45:54+01:00",
     "description": "Contents",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/problems/Problems1/"
   }
@@ -152,13 +152,13 @@ $$
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/problems/Problems1/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-10T16:39:25+01:00" />
+<meta property="article:published_time" content="2017-10-12T09:45:54+01:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Problem Set 1",
-    "datePublished": "2017-10-10T16:39:25+01:00",
+    "datePublished": "2017-10-12T09:45:54+01:00",
     "description": "Contents",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/problems/Problems1/"
   }
@@ -311,7 +311,6 @@ $$
 
 <ol id="markdown-toc">
   <li><a href="#fermions-and-bosons-at-finite-temperature" id="markdown-toc-fermions-and-bosons-at-finite-temperature">Fermions and Bosons at Finite Temperature</a></li>
-  <li><a href="#impenetrable-impurity-in-a-fermi-gas" id="markdown-toc-impenetrable-impurity-in-a-fermi-gas">Impenetrable Impurity in a Fermi Gas</a></li>
   <li><a href="#sutherland-model" id="markdown-toc-sutherland-model">Sutherland Model</a></li>
   <li><a href="#density-matrix-of-the-filled-lll-of-fermions" id="markdown-toc-density-matrix-of-the-filled-lll-of-fermions">Density Matrix of the Filled LLL of Fermions</a></li>
   <li><a href="#holes-in-the-nu1-state" id="markdown-toc-holes-in-the-nu1-state">Holes in the $\nu=1$ State</a></li>
@@ -328,13 +327,15 @@ $$
 
 <h2 id="fermions-and-bosons-at-finite-temperature">Fermions and Bosons at Finite Temperature</h2>
 
-<p>Density matrix and correlations</p>
+<p>At finite temperature $T$ and chemical potential $\mu$ we can describe a system of free particles in terms of the density matrix</p>
 
-<h2 id="impenetrable-impurity-in-a-fermi-gas">Impenetrable Impurity in a Fermi Gas</h2>
+<script type="math/tex; mode=display">\rho = \sum_{\{N_\alpha\}} \exp\left(-\frac{1}{k_\text{B}T}\sum_\alpha N_\alpha [E_\alpha -\mu]\right)\ket{\Psi^{S/A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\bra{\Psi^{S/A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}</script>
 
-<p>Fluctuations of impurity?</p>
+<p>where the sum is over the occupation number of each state. Find the single particle density matrix $g(x,y)$ for bosons and fermions.</p>
 
 <h2 id="sutherland-model">Sutherland Model</h2>
+
+<p><em>[This one’s a bit hard! In the lectures we talked about verifying that the explicit ground state Slater determinant is an eigenstate of the free particle Hamiltonian. DO THIS FIRST!]</em></p>
 
 <p>Show that</p>
 
@@ -348,6 +349,13 @@ H = -\frac{1}{2}\sum_{j=1}^N \frac{\partial^2}{\partial x_j^2} + \frac{\lambda(\
 \sin^{-2}\left(\frac{\pi[x_j-x_k]}{L}\right). %]]></script>
 
 <p>with periodic boundary conditions $\Psi(x_1,\ldots x_j+L,\ldots x_M)=\Psi(x_1,\ldots x_j,\ldots x_M)$. Find the energy.</p>
+
+<p><em>[If you stick with the $x_j$ variables, you’ll need the identity</em></p>
+
+<script type="math/tex; mode=display">\label{2nd_quant_cotident}
+\cot(x-y)\cot(y-z)+\cot(y-z)\cot(x-z)+\cot(z-x)\cot(x-y)=1.	\nonumber</script>
+
+<p><em>Alternatively, work with the complex variables $z_j=e^{2\pi x_j/L}$]</em></p>
 
 <h2 id="density-matrix-of-the-filled-lll-of-fermions">Density Matrix of the Filled LLL of Fermions</h2>
 
