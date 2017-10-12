@@ -108,12 +108,18 @@ V_\text{harm}(x,y) = \frac{v}{2}\left(x^2+y^2\right) = \frac{v}{2}\omega^2\left|
 \label{many_HarmonicRound}
 $$
 
-When this potential acts on a state in the LLL, the result is not a LLL state because of the appearance of $\bar z$ in $V$. Let's suppose that the cyclotron energy $\omega_c$ that gives the spacing between Landau levels is the largest energy scale in the problem. Then we should consider only the action of $V$ in the LLL subspace. If we are only going to consider matrix elements $\bra{f_1}V\ket{f_2}$ it is possible to show that (integrating by parts), we can replace $\bar z\to 2\partial_z$. Note that the order is important: all the $\partial_z$ must stand to the left of the $z$, Thus
+When this potential acts on a state in the LLL, the result is not a LLL state because of the appearance of $\bar z$ in $V$. Let's suppose that the cyclotron energy $\omega_c$ that gives the spacing between Landau levels is the largest energy scale in the problem. Then we should consider only the action of $V$ in the LLL subspace.
+
+<p class="message">
+By considering matrix elements $\bra{f_1}V\ket{f_2}$ between LLL states, show (by integrating by parts) that it is possible to replace any occurrence of $\bar z$ in $V$ with $2\partial_z$.
+
+Note that the order is important: all the $\partial_z$ must stand to the left of the $z$, Thus
 
 $$
 V_\text{harm}\longrightarrow v\partial_z z =  v\left(1+z \partial_z\right).
 \label{many_HarmonicProject}
 $$
+</p>
 
 Applied to the basis states $f_n(z)$, $V$ just counts the degree: $V_\text{harm} f_n = v(1+n)f_n$. The ground state of noninteracting fermions therefore just amounts to filling the states $\ket{f_n}$ from the bottom. Identical arguments to those used in discussing the Fermi gas on the ring then tell us that the ground state wavefunction of $N$ fermions is
 

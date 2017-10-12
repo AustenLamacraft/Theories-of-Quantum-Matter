@@ -83,12 +83,18 @@ $$
 z_n = \exp\left(\frac{2\pi i n}{N}\right),\qquad n = -(N-1)/2,\ldots, (N-1)/2.
 $$
 
-We'll write $\eta_n\equiv \frac{2\pi n}{N}$, so that the eigenstates have the form $u_j=\exp(i\eta_n j)$. Substitution into the equation of motion yields the dispersion relation
+We'll write $\eta_n\equiv \frac{2\pi n}{N}$, so that the eigenstates have the form $u_j=\exp(i\eta_n j)$.
+
+
+<p class="message">
+By substituting into the equation of motion show that the dispersion relation is
 
 $$
 \omega(\eta) = \sqrt{\frac{4k}{m}}\left|\sin\eta/2\right|.
 \label{coll_Dispersion}
 $$
+
+</p>
 
 Notice that:
 
@@ -127,12 +133,16 @@ $$
 
 If $u_j$, $p_j$ are canonical variables with Poisson Bracket $\\{u_j, p_k\\}=\delta_{jk}$, then it follows that $\\{q_m,\pi_n\\}=\delta_{mn}$.
 
-In terms of the Fourier modes the Hamiltonian \eqref{coll_Hchain} is
+<p class="message">
+
+Show that in terms of the Fourier modes the Hamiltonian \eqref{coll_Hchain} is
 
 $$
  H = \sum_{|n| \leq (N-1)/2} \left[\frac{1}{2m}\pi_n \pi_{-n} + k  (1-\cos \eta_n) q_n q_{-n}\right].
  \label{coll_HDiag}
 $$
+
+</p>
 
 This _almost_ looks like a system of harmonic oscillators. Bear in mind that the $q_n$ and $\pi_n$ are complex. One could, for example, split the amplitudes into their real and imaginary parts
 
@@ -164,7 +174,10 @@ we can read off the dispersion relation \eqref{coll_Dispersion}. The decompositi
 Sticking with the classical problem, let's introduce complex coordinates to describe the two dimensional phase space of a single oscillator
 
 $$
+\begin{equation}
 a = \sqrt{\frac{m\omega}{2}}\left(x + \frac{i}{m\omega} p \right).
+\label{a_def}
+\end{equation}
 $$
 
 $a$ and its conjugate satisfy $\\{a^{},a^*\\}=-i$. This definition is chosen so that the Hamiltonian takes the simple form
@@ -183,6 +196,10 @@ $$
 $$
 
 with solution $a(t) = e^{-i\omega t} a(0)$ describing circular motion in the complex $a$ plane on a contour of fixed energy.
+
+<p class="message">
+Satisfy yourself -- without doing any calculations -- that $a(t)$ defined by \eqref{a_def} goes clockwise in the complex plane.
+</p>
 
 In the same way, we can introduce the coordinates
 
@@ -430,7 +447,7 @@ $$
 \psi_0(x) = \left(\frac{m\omega}{\pi}\right)^{1/4} \exp\left(-m\omega x^2 /2\right)
 $$
 
-A quick way to get this is to regard the condition $a\|0\rangle = 0$ as a first order differential equation and solve it.
+A quick way to get this is to regard the condition $a\|0\rangle = 0$ as a first order differential equation and solve it (just as the lowest Landau level condition is obtained in [Lecture 2]({{ site.baseurl }}/lectures/QHE)).
 
 Since our Hamiltonian \eqref{coll_HDiag} is just a sum of single oscillator Hamiltonians, we can write the ground state wavefunction as a function of the oscillator coordinates $q_n$
 
@@ -491,13 +508,16 @@ $$
 \end{multline}
 $$
 
-The dispersion relation \eqref{coll_Dispersion} makes this integral a little difficult. However, if $\left\|j-k\right\|\gg 1$, the integral is determined by small values of $\eta$ (why?), where we can use the approximation
+The dispersion relation \eqref{coll_Dispersion} makes this integral a little difficult.
+
+<p class="message">
+Show that if $\left\|j-k\right\|\gg 1$, the integral is determined by small values of $\eta$, and we can use the approximation
 
 $$
 \omega(\eta) \sim \sqrt{\frac{k}{m}}|\eta|.
 $$
 
-In this case we have
+In this case
 
 $$
 \bra{0}\left(u_i-u_j\right)^2\ket{0} \sim  \frac{\ell_\text{osc}^2}{4\pi} \log \left|i-j\right|,\qquad \text{ as } \left|i-j\right|\to\infty
@@ -505,6 +525,8 @@ $$
 $$
 
 where we have introduced $\ell_\text{osc}=\left(km\right)^{-1/4}$, the natural length scale of an oscillator.
+
+</p>
 
 The result \eqref{coll_LogFluct} shows that the uncertainty in the separation of two masses in the chain increases with their separation. This implies that the ground state of the chain is _not_ a crystal, but more closely resembles a fluid. It turns out that this conclusion depends strongly on the dimensionality of the system. In higher dimensions, crystalline ground states _do_ exist (thankfully).
 

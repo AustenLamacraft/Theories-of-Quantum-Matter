@@ -9,13 +9,13 @@
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/ElasticChain/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-12T09:54:11+01:00" />
+<meta property="article:published_time" content="2017-10-12T16:31:51+01:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "The Elastic Chain",
-    "datePublished": "2017-10-12T09:54:11+01:00",
+    "datePublished": "2017-10-12T16:31:51+01:00",
     "description": "In this lecture we discuss a very simple many body system in which particles are coupled by Hooke&#39;s Law springs. Nevertheless, the quantization of this system has a lot to teach us about the appearance of collective excitations.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/ElasticChain/"
   }
@@ -152,13 +152,13 @@ $$
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/ElasticChain/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-12T09:54:11+01:00" />
+<meta property="article:published_time" content="2017-10-12T16:31:51+01:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "The Elastic Chain",
-    "datePublished": "2017-10-12T09:54:11+01:00",
+    "datePublished": "2017-10-12T16:31:51+01:00",
     "description": "In this lecture we discuss a very simple many body system in which particles are coupled by Hooke&#39;s Law springs. Nevertheless, the quantization of this system has a lot to teach us about the appearance of collective excitations.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/ElasticChain/"
   }
@@ -399,10 +399,17 @@ u_N
 
 <script type="math/tex; mode=display">z_n = \exp\left(\frac{2\pi i n}{N}\right),\qquad n = -(N-1)/2,\ldots, (N-1)/2.</script>
 
-<p>We’ll write $\eta_n\equiv \frac{2\pi n}{N}$, so that the eigenstates have the form $u_j=\exp(i\eta_n j)$. Substitution into the equation of motion yields the dispersion relation</p>
+<p>We’ll write $\eta_n\equiv \frac{2\pi n}{N}$, so that the eigenstates have the form $u_j=\exp(i\eta_n j)$.</p>
 
-<script type="math/tex; mode=display">\omega(\eta) = \sqrt{\frac{4k}{m}}\left|\sin\eta/2\right|.
-\label{coll_Dispersion}</script>
+<p class="message">
+By substituting into the equation of motion show that the dispersion relation is
+
+$$
+\omega(\eta) = \sqrt{\frac{4k}{m}}\left|\sin\eta/2\right|.
+\label{coll_Dispersion}
+$$
+
+</p>
 
 <p>Notice that:</p>
 
@@ -435,10 +442,16 @@ u_N
 
 <p>If $u_j$, $p_j$ are canonical variables with Poisson Bracket $\{u_j, p_k\}=\delta_{jk}$, then it follows that $\{q_m,\pi_n\}=\delta_{mn}$.</p>
 
-<p>In terms of the Fourier modes the Hamiltonian \eqref{coll_Hchain} is</p>
+<p class="message">
 
-<script type="math/tex; mode=display">H = \sum_{|n| \leq (N-1)/2} \left[\frac{1}{2m}\pi_n \pi_{-n} + k  (1-\cos \eta_n) q_n q_{-n}\right].
- \label{coll_HDiag}</script>
+Show that in terms of the Fourier modes the Hamiltonian \eqref{coll_Hchain} is
+
+$$
+ H = \sum_{|n| \leq (N-1)/2} \left[\frac{1}{2m}\pi_n \pi_{-n} + k  (1-\cos \eta_n) q_n q_{-n}\right].
+ \label{coll_HDiag}
+$$
+
+</p>
 
 <p>This <em>almost</em> looks like a system of harmonic oscillators. Bear in mind that the $q_n$ and $\pi_n$ are complex. One could, for example, split the amplitudes into their real and imaginary parts</p>
 
@@ -465,7 +478,10 @@ H' = \sum_{0 < n \leq (N-1)/2} \left[\frac{1}{2m}\pi'_n \pi'_{n} + k  (1-\cos \e
 
 <p>Sticking with the classical problem, let’s introduce complex coordinates to describe the two dimensional phase space of a single oscillator</p>
 
-<script type="math/tex; mode=display">a = \sqrt{\frac{m\omega}{2}}\left(x + \frac{i}{m\omega} p \right).</script>
+<script type="math/tex; mode=display">\begin{equation}
+a = \sqrt{\frac{m\omega}{2}}\left(x + \frac{i}{m\omega} p \right).
+\label{a_def}
+\end{equation}</script>
 
 <p>$a$ and its conjugate satisfy $\{a^{},a^*\}=-i$. This definition is chosen so that the Hamiltonian takes the simple form</p>
 
@@ -480,6 +496,10 @@ H' = \sum_{0 < n \leq (N-1)/2} \left[\frac{1}{2m}\pi'_n \pi'_{n} + k  (1-\cos \e
 \end{align} %]]></script>
 
 <p>with solution $a(t) = e^{-i\omega t} a(0)$ describing circular motion in the complex $a$ plane on a contour of fixed energy.</p>
+
+<p class="message">
+Satisfy yourself -- without doing any calculations -- that $a(t)$ defined by \eqref{a_def} goes clockwise in the complex plane.
+</p>
 
 <p>In the same way, we can introduce the coordinates</p>
 
@@ -666,7 +686,7 @@ a^*_n &= \frac{1}{\sqrt{2}}\left[\sqrt{ZkL} u_{-n} - \frac{i}{\sqrt{ZkL}}\pi_{n}
 
 <script type="math/tex; mode=display">\psi_0(x) = \left(\frac{m\omega}{\pi}\right)^{1/4} \exp\left(-m\omega x^2 /2\right)</script>
 
-<p>A quick way to get this is to regard the condition $a|0\rangle = 0$ as a first order differential equation and solve it.</p>
+<p>A quick way to get this is to regard the condition $a|0\rangle = 0$ as a first order differential equation and solve it (just as the lowest Landau level condition is obtained in <a href="/docs/lectures/QHE">Lecture 2</a>).</p>
 
 <p>Since our Hamiltonian \eqref{coll_HDiag} is just a sum of single oscillator Hamiltonians, we can write the ground state wavefunction as a function of the oscillator coordinates $q_n$</p>
 
@@ -711,16 +731,25 @@ a^*_n &= \frac{1}{\sqrt{2}}\left[\sqrt{ZkL} u_{-n} - \frac{i}{\sqrt{ZkL}}\pi_{n}
 \label{coll_uvar}
 \end{multline}</script>
 
-<p>The dispersion relation \eqref{coll_Dispersion} makes this integral a little difficult. However, if $\left|j-k\right|\gg 1$, the integral is determined by small values of $\eta$ (why?), where we can use the approximation</p>
+<p>The dispersion relation \eqref{coll_Dispersion} makes this integral a little difficult.</p>
 
-<script type="math/tex; mode=display">\omega(\eta) \sim \sqrt{\frac{k}{m}}|\eta|.</script>
+<p class="message">
+Show that if $\left\|j-k\right\|\gg 1$, the integral is determined by small values of $\eta$, and we can use the approximation
 
-<p>In this case we have</p>
+$$
+\omega(\eta) \sim \sqrt{\frac{k}{m}}|\eta|.
+$$
 
-<script type="math/tex; mode=display">\bra{0}\left(u_i-u_j\right)^2\ket{0} \sim  \frac{\ell_\text{osc}^2}{4\pi} \log \left|i-j\right|,\qquad \text{ as } \left|i-j\right|\to\infty
-\label{coll_LogFluct}</script>
+In this case
 
-<p>where we have introduced $\ell_\text{osc}=\left(km\right)^{-1/4}$, the natural length scale of an oscillator.</p>
+$$
+\bra{0}\left(u_i-u_j\right)^2\ket{0} \sim  \frac{\ell_\text{osc}^2}{4\pi} \log \left|i-j\right|,\qquad \text{ as } \left|i-j\right|\to\infty
+\label{coll_LogFluct}
+$$
+
+where we have introduced $\ell_\text{osc}=\left(km\right)^{-1/4}$, the natural length scale of an oscillator.
+
+</p>
 
 <p>The result \eqref{coll_LogFluct} shows that the uncertainty in the separation of two masses in the chain increases with their separation. This implies that the ground state of the chain is <em>not</em> a crystal, but more closely resembles a fluid. It turns out that this conclusion depends strongly on the dimensionality of the system. In higher dimensions, crystalline ground states <em>do</em> exist (thankfully).</p>
 
