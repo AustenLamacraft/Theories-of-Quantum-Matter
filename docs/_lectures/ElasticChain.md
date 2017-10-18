@@ -524,7 +524,7 @@ $$
 Show that we then have
 
 $$
-\bra{0}\left(u_i-u_j\right)^2\ket{0} \sim  \frac{\ell_\text{osc}^2}{4\pi} \log \left|i-j\right|,\qquad \text{ as } \left|i-j\right|\to\infty
+\bra{0}\left(u_i-u_j\right)^2\ket{0} \sim  \frac{\ell_\text{osc}^2}{\pi} \log \left|i-j\right|,\qquad \text{ as } \left|i-j\right|\to\infty
 \label{coll_LogFluct}
 $$
 
