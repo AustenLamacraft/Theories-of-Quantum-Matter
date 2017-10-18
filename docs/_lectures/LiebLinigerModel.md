@@ -24,14 +24,14 @@ Reading: {% cite Sutherland:2004 %}.
 
 ## The Model
 
-In the last lecture we encountered the Hamiltonian
+In the first lecture we encountered the Hamiltonian
 
 $$
 H = -\frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + c\sum_{j<k}\delta(x_j-x_k),
 \label{LL_LL}
 $$
 
-describing a system of interacting one dimensional bosons. We showed that the $c\to\infty$ limit of this model can be described in terms of noninteracting fermions. We are now going to discuss the solution for general $c$. This is possible because the eigenfunctions, which are not product states, have a very special form first written down by Hans Bethe in 1931 in the context of a model of a chain of coupled spins (see [Lecture 4]({{ site.baseurl }}/lectures/SpinModels/)). Bethe's approach was applied to the model \eqref{LL_LL} by Lieb and Liniger in 1963 {% cite Lieb:1963aa %}, and for that reason it is usually known as the __Lieb--Liniger model__.
+describing a system of interacting one dimensional bosons. We showed that the $c\to\infty$ limit of this model can be described in terms of noninteracting fermions. We are now going to discuss the solution for general $c$. This is possible because the eigenfunctions, which are not product states, have a very special form first written down by Hans Bethe in 1931 -- so soon after the birth of quantum mechanics! -- in the context of the Heisenberg model of a spin chain (see [Lecture 4]({{ site.baseurl }}/lectures/SpinModels/)).  Bethe's approach was applied to the model \eqref{LL_LL} by Lieb and Liniger in 1963 {% cite Lieb:1963aa %}, and for that reason it is usually known as the __Lieb--Liniger model__.
 
 ## Bethe's Wavefunction
 

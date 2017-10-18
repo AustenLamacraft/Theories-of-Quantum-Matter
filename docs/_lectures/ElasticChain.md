@@ -598,19 +598,24 @@ $$
 Deploying this strategy for \eqref{coll_Struct} gives
 
 $$
-\bra{0} \rho_q \rho_{-q} \ket{0} = \sum_{j,k=1}^N \exp(iqa[j-k])\exp\left(-\frac{q^2}{2mN}\sum_{|n| \leq (N-1)/2} \frac{1-\cos\left(\eta[j-k]\right)}{\omega(\eta_n)}\right).
+\begin{equation}
+\begin{split}
+\bra{0} \rho_q \rho_{-q} \ket{0} = \sum_{j,k=1}^N &\exp(iqa[j-k])\\
+&\times\exp\left(-\frac{q^2}{2mN}\sum_{|n| \leq (N-1)/2} \frac{1-\cos\left(\eta[j-k]\right)}{\omega(\eta_n)}\right).
+\end{split}
+\end{equation}
 $$
 
 The second exponent modifies the classical prediction of Bragg peaks. We have encountered the expression in exponent before in \eqref{coll_uvar}. Taking the $N\to\infty$ limit with $\left\|j-k\right\|\gg 1$ as before, we find that in the vicinity of the first Bragg peak at $q=2\pi/a$ the summand has the form
 
 $$
-\exp(i\Delta q a[j-k])\, \left|j-k\right|^{-\pi\ell_\text{osc}^2/2a^2},
+\exp(i\Delta q a[j-k])\, \left|j-k\right|^{-2\pi\ell_\text{osc}^2/a^2},
 $$
 
 where $\Delta q$ denotes the deviation of $q$ from $2\pi/a$. This leads to the conclusion
 
 $$
-\bra{0} \rho_q \rho_{-q} \ket{0} \sim \left(\Delta q\right)^{-1+\pi\ell_\text{osc}^2/2a^2}.
+\bra{0} \rho_q \rho_{-q} \ket{0} \sim \left(\Delta q\right)^{-1+2\pi\ell_\text{osc}^2/a^2}.
 $$
 
 Thus quantum fluctuations replace the Bragg peaks, an indicator of crystalline order, with power law divergences. These remnants of order diminish as $\ell_\text{osc}/a$ increases, indicating larger quantum fluctuations. Again, things are different in higher dimensions: the Bragg peaks survive, albeit reduced in strength, at least for small fluctuations. It is possible, however, for quantum fluctuations to prevent crystallization in the ground state (i.e. at zero temperature). Such systems are called _quantum liquids_. Helium is the prototypical example: the low atomic mass and relatively weak interactions between atoms mean that quantum fluctuations are large.

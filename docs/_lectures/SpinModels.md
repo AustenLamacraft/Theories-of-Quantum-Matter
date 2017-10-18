@@ -74,7 +74,9 @@ S^-\ket{\text{FM}} = \sum_{j=1}^N s^-_j\ket{\text{FM}} = \sum_{j=1}^N \ket{+}_1\
 \label{spin_Lowered}
 $$
 
-You should be able to verify that $S^z = N/2-1$, but that $\mathbf{S}^2$ and $H$ are unchanged. While all eigenstates can be labelled by these eigenvalues, this doesn't fix the state uniquely (compare the numbers involved).
+<p class="message">
+Verify that $S^z = N/2-1$, but that $\mathbf{S}^2$ and $H$ are unchanged.
+</p>
 
 \eqref{spin_Lowered} is a superposition of terms with one spin flipped. If we continue the process to explore the whole multiplet, we will at each state end up with a constant amplitude superposition of all states with two spins flipped (for $S^z=N/2-2$), three flipped (for $S^z=N/2-3$) and so on.
 
@@ -251,13 +253,16 @@ $$
 \epsilon_\text{bound}(K) = \omega(\eta_1) + \omega(\eta_2) = 2(1-\cos K),
 $$
 
-which should be compared with the energy of two free magnons.
+
+<p class="message">
+As a function of momentum, compare the bound state energy with the lowest energy of two free magnons.
+</p>
 
 ### $N$-Magnon States
 
-We could continue to consider states with more magnons. It turns out that for the Heisenberg model we are lucky: Bethe's ansatz from [Lecture 2]({{ site.baseurl }}/lectures/LiebLinigerModel/) for a general energy eigenstate works in this model too! In fact, the Heisenberg model was the subject of Bethe's 1931 paper -- so soon after the birth of quantum mechanics!
+We could continue to consider states with more magnons. It turns out that for the Heisenberg model we are lucky, and we know the form of a general energy eigenstate. It's called __Bethe's ansatz__ and we'll meet it in [Lecture 15]({{ site.baseurl }}/lectures/LiebLinigerModel/).
 
-We started our discussion with the ground state of the ferromagnetic $J<0$ Heisenberg model. What about $J>0$? Can we guess the ground state in this case (of course, that's equivalent to finding the _highest_ excited state of the ferromagnet). Bethe would tell us that it must be some complicated gas of magnons, all scattering off each other. Why are things so complicated?
+We started our discussion with the ground state of the ferromagnetic $J<0$ Heisenberg model. What about $J>0$? Can we guess the ground state in this case (of course, that's equivalent to finding the _highest_ excited state of the ferromagnet). Bethe's ansatz tells us that it must be some complicated gas of magnons, all scattering off each other. Why are things so complicated?
 
 ## Antiferromagnets Are Different!
 
@@ -495,7 +500,11 @@ $$
 \label{spin_AFMDispersion}
 $$
 
-This is rather different to the ferromagnetic case. Note that it vanishes both $\eta=0$ and at the Brillouin zone boundary $\eta=\pi$, and is linear in the vicinity of both points, compared with the quadratic behaviour of the ferromagnet. The reason for the difference is clear on comparing \eqref{spin_H2FM} and \eqref{spin_H2AFM}. In the first case both the position and momentum terms vanish at $\eta=0$, while in the second only the position term vanishes here, with the momentum term vanishing at $\eta=\pi$. See if you can figure out why.
+This is rather different to the ferromagnetic case. Note that it vanishes both $\eta=0$ and at the Brillouin zone boundary $\eta=\pi$, and is linear in the vicinity of both points, compared with the quadratic behaviour of the ferromagnet. The reason for the difference is clear on comparing \eqref{spin_H2FM} and \eqref{spin_H2AFM}. In the first case both the position and momentum terms vanish at $\eta=0$, while in the second only the position term vanishes here, with the momentum term vanishing at $\eta=\pi$.
+
+<p class="message">
+Can you figure out why?
+</p>
 
 Incidentally, the Bethe ansatz solution of the spin-1/2 Heisenberg chain yields dispersion relation for the lowest excited state of momentum $\eta$ (__des Cloiseaux--Pearson__ dispersion)
 
@@ -551,7 +560,15 @@ $$
 \end{align}
 $$
 
-This represents an $O(s^0)$ correction to $\langle s^z_j\rangle = (-1)^j\left(s - \Delta s\right)$. However, the integral diverges logarithmically at $\eta=0$ and $\eta=\pi$. This indicates that our approach breaks down in the $N\to\infty$ limit: at finite $N$ the sums are all finite if $n=0$ is excluded (Why can we do this? Compare with the elastic chain.). In higher dimensions -- repeating the analysis yields the same integrand but with an integral over the $d$-dimensional Brillouin zone -- the integrals are finite, however. This indicates that our expansion is well behaved.
+This represents an $O(s^0)$ correction to $\langle s^z_j\rangle = (-1)^j\left(s - \Delta s\right)$. However, the integral diverges logarithmically at $\eta=0$ and $\eta=\pi$. This indicates that our approach breaks down in the $N\to\infty$ limit: at finite $N$ the sums are all finite if $n=0$ is excluded
+
+<p class="message">
+Why can we do this? Compare with the elastic chain.
+</p>
+
+<p class="message">
+Repeat the analysis on a 2D square lattice. You should find the same integrand but with an integral over the two-dimensional Brillouin zone. Do you find divergences?
+</p>
 
 The breakdown of the spin wave treatment in 1D has a physical meaning: there is no long range antiferromagnetic order, even at zero temperature. The situation is closely analogous to the elastic chain, where we saw that quantum fluctuations destroyed the Bragg peaks.
 
