@@ -9,13 +9,13 @@
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/ElasticChain/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-12T20:57:11+01:00" />
+<meta property="article:published_time" content="2017-10-18T21:29:33+01:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "The Elastic Chain",
-    "datePublished": "2017-10-12T20:57:11+01:00",
+    "datePublished": "2017-10-18T21:29:33+01:00",
     "description": "In this lecture we discuss a very simple many body system in which particles are coupled by Hooke&#39;s Law springs. Nevertheless, the quantization of this system has a lot to teach us about the appearance of collective excitations.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/ElasticChain/"
   }
@@ -152,13 +152,13 @@ $$
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/ElasticChain/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-12T20:57:11+01:00" />
+<meta property="article:published_time" content="2017-10-18T21:29:33+01:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "The Elastic Chain",
-    "datePublished": "2017-10-12T20:57:11+01:00",
+    "datePublished": "2017-10-18T21:29:33+01:00",
     "description": "In this lecture we discuss a very simple many body system in which particles are coupled by Hooke&#39;s Law springs. Nevertheless, the quantization of this system has a lot to teach us about the appearance of collective excitations.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/ElasticChain/"
   }
@@ -415,7 +415,7 @@ $$
 
 <ol>
   <li>The frequency vanishes at $\eta\to 0$. This mode corresponds to translation of the system, for which there is no restoring force.</li>
-  <li>At small $k$ the dispersion is linear, as we would expect for sound waves.</li>
+  <li>At small $\eta$ the dispersion is linear, as we would expect for sound waves.</li>
 </ol>
 
 <p>A general motion of the system can be represented as a superposition of the normal modes</p>
@@ -512,7 +512,7 @@ a^*_n &= \sqrt{\frac{m\omega(\eta_n)}{2}}\left(q_{-n} - \frac{i}{m\omega(\eta_n)
 
 <p>Remember that $q_n = q_{-n}^*$ and $\pi_n = \pi_{-n}^*$ in order that $u_j$ and $p_j$ are real. Note that $n=0$ is excluded because $\omega(0)=0$. These coordinates satisfy</p>
 
-<script type="math/tex; mode=display">\{a_m,a^{*}_n\}=\delta_{mn}.</script>
+<script type="math/tex; mode=display">\{a_m,a^{*}_n\}=-i\delta_{mn}.</script>
 
 <p>Inverting the definition \eqref{coll_adef} gives</p>
 
@@ -741,8 +741,12 @@ where we drop the overall normalization constant. -->
 
 <p>The dispersion relation \eqref{coll_Dispersion} makes this integral a little difficult.</p>
 
+<p><a name="disp_fluct"></a>
+<img src="/docs/assets/disp_fluct.png" alt="" />
+<em>The integrand in \eqref{coll_uvar} for $j-k=20$. What form does it take for $\left|j-k\right|^{-1}\lesssim\eta\lesssim \pi$?</em></p>
+
 <p class="message">
-When $\left|j-k\right|\gg 1$, the integral is dominated by values of $\left|j-k\right|^{-1}\lesssim\eta\lesssim 1$. In this limit the dispersion can be linearized
+When $\left|j-k\right|\gg 1$, the integral is dominated by values of $\left|j-k\right|^{-1}\lesssim\eta\lesssim \pi$. In this limit the dispersion can be linearized
 
 $$
 \omega(\eta) \sim \sqrt{\frac{k}{m}}|\eta|.
@@ -982,6 +986,8 @@ Practice writing out \eqref{coll_FTExamples} in $d$ dimensions.
 </p>
 
 <h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="Coleman:2015">Coleman, P. (2015). <i>Introduction to many-body physics</i>. Cambridge University Press.</span></li></ol>
 
 </div>
 

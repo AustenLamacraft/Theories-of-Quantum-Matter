@@ -99,7 +99,7 @@ $$
 Notice that:
 
 1. The frequency vanishes at $\eta\to 0$. This mode corresponds to translation of the system, for which there is no restoring force.
-2. At small $k$ the dispersion is linear, as we would expect for sound waves.
+2. At small $\eta$ the dispersion is linear, as we would expect for sound waves.
 
 A general motion of the system can be represented as a superposition of the normal modes
 
@@ -214,7 +214,7 @@ $$
 Remember that $q_n = q_{-n}^\*$ and $\pi_n = \pi_{-n}^\*$ in order that $u_j$ and $p_j$ are real. Note that $n=0$ is excluded because $\omega(0)=0$. These coordinates satisfy
 
 $$
-\{a_m,a^{*}_n\}=\delta_{mn}.
+\{a_m,a^{*}_n\}=-i\delta_{mn}.
 $$
 
 Inverting the definition \eqref{coll_adef} gives
@@ -510,8 +510,12 @@ $$
 
 The dispersion relation \eqref{coll_Dispersion} makes this integral a little difficult.
 
+<a name="disp_fluct"></a>
+![]({{ site.baseurl }}/assets/disp_fluct.png)
+_The integrand in \eqref{coll_uvar} for $j-k=20$. What form does it take for $\left|j-k\right|^{-1}\lesssim\eta\lesssim \pi$?_
+
 <p class="message">
-When $\left|j-k\right|\gg 1$, the integral is dominated by values of $\left|j-k\right|^{-1}\lesssim\eta\lesssim 1$. In this limit the dispersion can be linearized
+When $\left|j-k\right|\gg 1$, the integral is dominated by values of $\left|j-k\right|^{-1}\lesssim\eta\lesssim \pi$. In this limit the dispersion can be linearized
 
 $$
 \omega(\eta) \sim \sqrt{\frac{k}{m}}|\eta|.
@@ -790,3 +794,5 @@ Practice writing out \eqref{coll_FTExamples} in $d$ dimensions.
 
 References
 ----------
+
+{% bibliography --cited %}
