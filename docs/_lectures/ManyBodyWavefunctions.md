@@ -256,7 +256,7 @@ $$
 
 	$$
 		\label{2nd_quant_cotident}
-	\cot(x-y)\cot(y-z)+\cot(y-z)\cot(x-z)+\cot(z-x)\cot(x-y)=1.	\nonumber
+	\cot(x-y)\cot(y-z)+\cot(y-z)\cot(z-x)+\cot(z-x)\cot(x-y)=1.	\nonumber
 	$$
 
   Check carefully that \eqref{quantum_statistics_1dFermiGS} is periodic and totally antisymmetric.

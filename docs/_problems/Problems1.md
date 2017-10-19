@@ -22,7 +22,7 @@ $$
 \rho = \sum_{\{N_\alpha\}} \exp\left(-\frac{1}{k_\text{B}T}\sum_\alpha N_\alpha [E_\alpha -\mu]\right)\ket{\Psi^{S/A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\bra{\Psi^{S/A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}
 $$
 
-where the sum is over the occupation number of each state. Find the single particle density matrix $g(x,y)$ for bosons and fermions. 
+where the sum is over the occupation number of each state. Find the single particle density matrix $g(x,y)$ for bosons and fermions.
 
 ## Sutherland Model
 
@@ -37,7 +37,7 @@ $$
 is an eigenstate -- in fact it's the ground state -- of the __Sutherland model__
 
 $$
-H = -\frac{1}{2}\sum_{j=1}^N \frac{\partial^2}{\partial x_j^2} + \frac{\lambda(\lambda-1)\pi^2}{4L^2}\sum_{j<k}
+H = -\frac{1}{2}\sum_{j=1}^N \frac{\partial^2}{\partial x_j^2} + \frac{\lambda(\lambda-1)\pi^2}{L^2}\sum_{j<k}
 \sin^{-2}\left(\frac{\pi[x_j-x_k]}{L}\right).
 $$
 
@@ -47,7 +47,7 @@ _[If you stick with the $x_j$ variables, you'll need the identity_
 
 $$
   \label{2nd_quant_cotident}
-\cot(x-y)\cot(y-z)+\cot(y-z)\cot(x-z)+\cot(z-x)\cot(x-y)=1.	\nonumber
+\cot(x-y)\cot(y-z)+\cot(y-z)\cot(z-x)+\cot(z-x)\cot(x-y)=1.	\nonumber
 $$
 
 _Alternatively, work with the complex variables $z_j=e^{2\pi x_j/L}$]_
