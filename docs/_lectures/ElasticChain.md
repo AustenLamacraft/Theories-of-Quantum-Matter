@@ -606,6 +606,10 @@ $$
 \end{equation}
 $$
 
+<a name="struct_fact"></a>
+![]({{ site.baseurl }}/assets/struct_fact.png)
+_Numerical evaluation of $\bra{0} \rho\_q \rho\_{-q} \ket{0}$ for $\ell\_\text{osc}/a=0.2$, $N=51$. Note that the second Bragg peak is hardly visible._
+
 The second exponent modifies the classical prediction of Bragg peaks. We have encountered the expression in exponent before in \eqref{coll_uvar}. Taking the $N\to\infty$ limit with $\left\|j-k\right\|\gg 1$ as before, we find that in the vicinity of the first Bragg peak at $q=2\pi/a$ the summand has the form
 
 $$
@@ -618,11 +622,11 @@ $$
 \bra{0} \rho_q \rho_{-q} \ket{0} \sim \left(\Delta q\right)^{-1+2\pi\ell_\text{osc}^2/a^2}.
 $$
 
-<a name="struct_fact"></a>
-![]({{ site.baseurl }}/assets/struct_fact.png)
-_\bra{0} \rho_q \rho_{-q} \ket{0} for $\ell_\text{osc}/a=0.1$ ,$N=51$._
+<p class="message">
+What happens to the higher Bragg peaks?
+</p>
 
-Thus quantum fluctuations replace the Bragg peaks, an indicator of crystalline order, with power law divergences. These remnants of order diminish as $\ell_\text{osc}/a$ increases, indicating larger quantum fluctuations. Again, things are different in higher dimensions: the Bragg peaks survive, albeit reduced in strength, at least for small fluctuations. It is possible, however, for quantum fluctuations to prevent crystallization in the ground state (i.e. at zero temperature). Such systems are called _quantum liquids_. Helium is the prototypical example: the low atomic mass and relatively weak interactions between atoms mean that quantum fluctuations are large.
+Thus quantum fluctuations replace the Bragg peaks, an indicator of crystalline order, with power law divergences. These remnants of order diminish as $\ell_\text{osc}/a$ increases, indicating larger quantum fluctuations. Again, things are different in higher dimensions: the Bragg peaks survive, albeit reduced in strength, at least for small fluctuations. It is possible, however, for quantum fluctuations to prevent crystallization in the ground state (i.e. at zero temperature). Such systems are called _quantum liquids_. Helium is the prototypical example: the low atomic mass and relatively weak interactions between atoms mean that quantum fluctuations are large. 
 
 
 
