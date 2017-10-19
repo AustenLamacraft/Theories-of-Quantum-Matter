@@ -503,7 +503,7 @@ Taking the $N\to\infty$ limit in the sum gives
 
 $$
 \begin{multline}
-\bra{0}\left(u_j-u_k\right)^2\ket{0} = \frac{1}{mN}\sum_{|n| \leq (N-1)/2} \frac{1-\cos\left(\eta[j-k]\right)}{\omega(\eta_n)}\\ = \frac{1}{m}\int_{-\pi}^\pi \frac{d\eta}{2\pi} \frac{1-\cos\left(\eta[j-k]\right)}{\omega(\eta)}.
+\bra{0}\left(u_j-u_k\right)^2\ket{0} = \frac{1}{mN}\sum_{|n| \leq (N-1)/2} \frac{1-\cos\left(\eta_n[j-k]\right)}{\omega(\eta_n)}\\ = \frac{1}{m}\int_{-\pi}^\pi \frac{d\eta}{2\pi} \frac{1-\cos\left(\eta[j-k]\right)}{\omega(\eta)}.
 \label{coll_uvar}
 \end{multline}
 $$
@@ -601,7 +601,7 @@ $$
 \begin{equation}
 \begin{split}
 \bra{0} \rho_q \rho_{-q} \ket{0} = \sum_{j,k=1}^N &\exp(iqa[j-k])\\
-&\times\exp\left(-\frac{q^2}{2mN}\sum_{|n| \leq (N-1)/2} \frac{1-\cos\left(\eta[j-k]\right)}{\omega(\eta_n)}\right).
+&\times\exp\left(-\frac{q^2}{2mN}\sum_{|n| \leq (N-1)/2} \frac{1-\cos\left(\eta_n[j-k]\right)}{\omega(\eta_n)}\right).
 \end{split}
 \end{equation}
 $$
