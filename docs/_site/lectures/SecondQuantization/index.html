@@ -9,13 +9,13 @@
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/SecondQuantization/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-27T09:14:36+01:00" />
+<meta property="article:published_time" content="2017-10-27T10:37:05+01:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "A is for Annihilation",
-    "datePublished": "2017-10-27T09:14:36+01:00",
+    "datePublished": "2017-10-27T10:37:05+01:00",
     "description": "We have seen that product states can be described in terms of their occupation numbers. We now introduce a language to describe many body states, and the operators that act on them, that is adapted to this description. This method of  second quantization  represents the beginning of the field theoretic description of many body systems.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/SecondQuantization/"
   }
@@ -152,13 +152,13 @@ $$
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/SecondQuantization/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-27T09:14:36+01:00" />
+<meta property="article:published_time" content="2017-10-27T10:37:05+01:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "A is for Annihilation",
-    "datePublished": "2017-10-27T09:14:36+01:00",
+    "datePublished": "2017-10-27T10:37:05+01:00",
     "description": "We have seen that product states can be described in terms of their occupation numbers. We now introduce a language to describe many body states, and the operators that act on them, that is adapted to this description. This method of  second quantization  represents the beginning of the field theoretic description of many body systems.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/SecondQuantization/"
   }
@@ -358,7 +358,7 @@ We have seen that product states can be described in terms of their occupation n
 
 <p>The result is</p>
 
-<script type="math/tex; mode=display">\bra{\Psi}\Phi\rangle = \sum_P \bra{\psi_n}\phi_{P_n}\rangle = \perm \bra{\psi_m}\phi_{n}\rangle,
+<script type="math/tex; mode=display">\bra{\Psi}\Phi\rangle = \sum_P \prod_{n=1}^N\bra{\psi_n}\phi_{P_n}\rangle = \perm \bra{\psi_m}\phi_{n}\rangle,
 \label{A_perm}</script>
 
 <p>where we have introduced the <a href="https://en.wikipedia.org/wiki/Permanent">permanent</a> of the matrix $\bra{\psi_m}\phi_{n}\rangle$, which is defined just like the determinant that we met in the case of fermions, but without the minus signs.</p>
@@ -482,7 +482,13 @@ Show that this also reproduces \eqref{A_perm}.
 <p>These operator-valued functions are called <strong>quantum fields</strong>. By introducing them, we have freed ourselves from many body wavefunctions. One should bear in mind that this is only a different <em>language</em> for talking about the same system: sometimes one language is better suited to the problem at hand; sometimes another.</p>
 
 <p class="message">
-If a state $\ket{\Psi}$ has wavefunction $\Psi(x_1,\ldots, x_N)$, what is the wavefunction of the state $\pop(X)\ket{\Psi}$?
+If a state $\ket{\Psi}$ has wavefunction $\Psi(x_1,\ldots, x_N)$, show that the wavefunction of the state $\pop(X)\ket{\Psi}$ is the $N-1$ particle wavefunction
+
+$$
+\sqrt{N}\Psi(X,x_1,\ldots, x_{N-1})
+$$
+
+Hint: Show that is is true for a product state first.
 </p>
 
 <p>As an example, let our original basis be the eigenbasis of the free particle Hamiltonian $H=\frac{\bp^{2}}{2m}$ with periodic boundary conditions</p>
@@ -514,7 +520,7 @@ $$
 
 <p>We want a similar formalism for fermions, which is a bit trickier on account of those minus signs. We seek a representation of the product state</p>
 
-<script type="math/tex; mode=display">\Psi^{\text{P}}(\br_1,\ldots,\br_N) = \frac{1}{\sqrt{N!}}\sum_P (-1)^P\psi_1(\mathbf{r}_{P_1})\psi_{2}(\mathbf{r}_{P_2})\cdots\psi_{N}(\mathbf{r}_{P_N}).
+<script type="math/tex; mode=display">\Psi^{\text{A}}(\br_1,\ldots,\br_N) = \frac{1}{\sqrt{N!}}\sum_P (-1)^P\psi_1(\mathbf{r}_{P_1})\psi_{2}(\mathbf{r}_{P_2})\cdots\psi_{N}(\mathbf{r}_{P_N}).
 \label{A_NProdAnti}</script>
 
 <p>where $P$ is the signature of the permutation. Note that the overall sign is fixed here by the labelling of the states $\psi_j$. If we want to make the identification</p>
@@ -534,7 +540,7 @@ $$
 
 <p>The form of $\left\{\adop(\psi),\adop(\phi)\right\}=0$ can be deduced from the inner product between product states</p>
 
-<script type="math/tex; mode=display">\bra{\Psi}\Phi\rangle = \sum_P (-1)^P\bra{\psi_n}\phi_{P_n}\rangle = \det \bra{\psi_m}\phi_{n}\rangle,
+<script type="math/tex; mode=display">\bra{\Psi}\Phi\rangle = \sum_P (-1)^P\prod_{n=1}^N\bra{\psi_n}\phi_{P_n}\rangle = \det \bra{\psi_m}\phi_{n}\rangle,
 \label{A_det}</script>
 
 <p>which can be obtained using the RHS of \eqref{A_NPartAnti} if we demand</p>
@@ -698,26 +704,42 @@ This formula is not so easy to work out in the first quantized representation. T
 
 <script type="math/tex; mode=display">g(\br,\br') \equiv N \int d\br_{2}\cdots d\br_{N}\,\Psi^{*}(\br,\br_{2},\ldots,\br_{N})\Psi(\br',\br_{2},\ldots,\br_{N}).</script>
 
-<p>This can be written in terms of our field operators</p>
+<p class="message">
+Show that this can be written in terms of our field operators as
 
-<script type="math/tex; mode=display">\label{2nd_quant_SPDensity}
-	g(\br,\br')= \braket{\Psi}{\pdop(\br)\pop(\br')}{\Psi}</script>
+$$
+	\label{2nd_quant_SPDensity}
+	g(\br,\br')= \braket{\Psi}{\pdop(\br)\pop(\br')}{\Psi}
+$$
+
+</p>
 
 <p>Notice that $g(\br,\br)=\braket{\Psi}{\hat\rho(\br)}{\Psi}$. A slight generalization of the above calculation for the density gives for the state $\ket{\mathbf{N}}$</p>
 
 <script type="math/tex; mode=display">\label{2nd_quant_SPFock}
 	g(\br,\br') = \sum_{\alpha} N_{\alpha}\varphi_{\alpha}^{*}(\br)\varphi^{}_{\alpha}(\br').</script>
 
-<p>Let’s evaluate this for the ground state of noninteracting Fermi gas. Recall that in this case $N_{\bk}=1$ for $\abs{\bk}&lt;k_{F}$, and $0$ otherwise. Thus we have</p>
+<p>In <a href="/docs/lectures/ManyBodyWavefunctions/">Lecture 1</a> we evaluated $g(x,y)$ for the ground state of a 1D Fermi gas using the Slater determinant form of the wavefunction. For variety, let’s calculate it using our new method for the 3D Fermi gas. Recall that in this case $N_{\bk}=1$ for $\abs{\bk}&lt;k_{F}$, and $0$ otherwise. Thus the ground state can be written</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
+\ket{\text{Fermi sea}} = \prod_{|\bk|<k_F} \adop_\bk\ket{\text{VAC}} %]]></script>
+
+<p class="message">
+
+Show that
+
+$$
 \begin{align}
 	\label{2nd_quant_FermiDensityMatrix}
-	g(\br,\br')=\frac{1}{V}\sum_{|\bk|<k_{F}} e^{i\bk\cdot(\br'-\br)}&=\int_{|\bk|<k_{F}} \frac{d\bk}{(2\pi)^{3}}\,e^{i\bk\cdot(\br'-\br)}\nonumber\\
-	&=\frac{k_{F}^{3}}{2\pi^{2}}\left[\frac{\sin\left(k_{F}|\br'-\br|\right)}{(k_{F}|\br'-\br|)^{3}}-\frac{\cos\left(k_{F}|\br'-\br|\right)}{(k_{F}|\br'-\br|)^{2}}\right].
-\end{align} %]]></script>
+	g(\br,\br')=\frac{1}{V}\sum_{|\bk|&lt;k_{F}} e^{i\bk\cdot(\br'-\br)}&amp;=\int_{|\bk|&lt;k_{F}} \frac{d\bk}{(2\pi)^{3}}\,e^{i\bk\cdot(\br'-\br)}\nonumber\\
+	&amp;=\frac{k_{F}^{3}}{2\pi^{2}}\left[\frac{\sin\left(k_{F}|\br'-\br|\right)}{(k_{F}|\br'-\br|)^{3}}-\frac{\cos\left(k_{F}|\br'-\br|\right)}{(k_{F}|\br'-\br|)^{2}}\right].
+\end{align}
+$$
 
-<p>Note that $g(\br,\br)=\frac{k_{F}^{3}}{6\pi^{2}}=n$, as it should. Also, $g(\br,\br’)\to 0$ as $\abs{\br-\br’}\to\infty$.</p>
+Note that $g(\br,\br)=\frac{k_{F}^{3}}{6\pi^{2}}=n$, as it should. Also, $g(\br,\br')\to 0$ as $\abs{\br-\br'}\to\infty$.
+</p>
+
+<p>Contrast this calculation with the wavefunction version.</p>
 
 <p><a name="FermiDensity"></a>
 <img src="/docs/assets/FermiDensityMatrixCut.png" alt="" />
@@ -730,7 +752,7 @@ This formula is not so easy to work out in the first quantized representation. T
 <script type="math/tex; mode=display">% <![CDATA[
 \hat B = \sum_{j<k} B_{jk}. %]]></script>
 
-<p>Its action on a two particle product state $\ket{\varphi_{\alpha}}_1\ket{\varphi_{\beta}}_2$ can, as in the single particle case, be expressed in terms of the matrix elements</p>
+<p>(Note that $B_{jk}=B_{kj}$ for indistinguishable particles.) Similar to the single particle case, the action of $\hat B$ on a two particle product state $\ket{\varphi_{\alpha}}_1\ket{\varphi_{\beta}}_2$ can be expressed in terms of the matrix elements</p>
 
 <script type="math/tex; mode=display">B_{\alpha\beta,\gamma\delta} = \bra{\varphi_\alpha}_1\bra{\varphi_\beta}_2 B_{12} \ket{\varphi_\gamma}_1\ket{\varphi_\delta}_2.</script>
 
@@ -763,7 +785,7 @@ This formula is not so easy to work out in the first quantized representation. T
 Check that \eqref{A_VNotNormal} has a nonzero expectation value in a 1 particle state.
 </p>
 
-<p>As an example, let’s write the Lieb–Liniger Hamiltonian of <a href="/docs/lectures/LiebLinigerModel/">Lecture 2</a> in our new formalism.</p>
+<p>As an example, let’s write the Hamiltonian of interacting bosons that we met in <a href="/docs/lectures/ManyBodyWavefunctions/">Lecture 1</a> in our new formalism.</p>
 
 <script type="math/tex; mode=display">H = \int dx \left[\frac{1}{2}\partial_x\pdop(x)\partial_x\pop(x) + \frac{c}{2}\pdop(x)\pdop(x)\pop(x)\pop(x)\right],</script>
 

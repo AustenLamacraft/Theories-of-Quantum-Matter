@@ -190,7 +190,7 @@ c_{j,j-1} - \frac{1}{2}\left(c_{j+1,j-1}+c_{j,j-2}\right) &= \epsilon c_{j,j-1}
 \end{align}
 $$
 
-We can think of this as a lattice analog of the two particle Schrödinger equation discussed in [Lecture 2]({{ site.baseurl }}/lectures/LiebLinigerModel/). The modification when $j=k+1$ occurs because
+We can think of this as a lattice analog of the two particle Schrödinger equation. The modification when $j=k+1$ occurs because
 
 1. There are only two bonds where the spin changes, instead of 4 when $j>k+1$. Thus the 'on-site' term is -4 not -8. This plays the role of a nearest neighbour attractive interaction between magnons.
 
@@ -250,7 +250,7 @@ $$
 The total momentum of the state is $K=2u$, and evaluating the energy gives
 
 $$
-\epsilon_\text{bound}(K) = \omega(\eta_1) + \omega(\eta_2) = 2(1-\cos K),
+\epsilon_\text{bound}(K) = \omega(\eta_1) + \omega(\eta_2) = \frac{1}{2}(1-\cos K),
 $$
 
 
@@ -575,13 +575,35 @@ The breakdown of the spin wave treatment in 1D has a physical meaning: there is 
 
 ## A Numerical Experiment
 
-To make this a bit more concrete, let's look at the results of a brute force numerical computation of the spectrum
+To make this a bit more concrete, let's look at the results of a brute force numerical computation of the spectrum ([code](https://github.com/AustenLamacraft/Theories-of-Quantum-Matter/blob/master/notebooks/spin_chain_diagonalization.ipynb)). Recall that the dimension of the Hilbert space is $2^N$, so only relatively small chains are tractable. Here, we have $N=26$, corresponding to a whopping $2^26=67108864$ states! Expressed in the usual basis of $s^z_j$ eigenstates, we can write an arbitrary state as
+
+$$
+\ket{\Psi}=\sum_{\{s_j=\pm\}}c_{s_1\cdots s_N}\ket{s_1}_1\ket{s_2}_2\cdots \ket{s_N}_N.
+$$
+
+Often one can use symmetries of the model to reduce the dimension a bit. In this case, we have conservation of $S^z_\text{tot}$, $S_\text{tot}$, and momentum. Taking advantage of $S_\text{tot}$ conservation is not easy in the usual basis, but restricting to states with fixed $S^z_\text{tot}$ is straightforward. For example, $S^z_\text{tot}=0$ gives $\binom{26}{13}=10400600$ states.
+
+Momentum conservation is associated with translational invariance. Translation by one lattice site is a unitary operator that maps $T:c_{s_1 s_2\cdots s_{N-1}s_N}\to c_{s_N s_1 s_2\cdots s_{N-1}}$. $T$ has unimodular eigenvalues given by $e^{i\eta_n}$.
+
+<p class="message">
+Why?
+</p>
+
+Energy eigenstates are thus labelled by one of the $N$ $\eta_n$ values. We can construct a basis of definite momentum by projecting into subspaces of fixed $\eta_n$ using the operator
+
+$$
+P_\eta = \sum_{n} e^{i\eta_n} T^n.
+$$
+
+<p class="message">
+This reduces the matrix dimension by a factor $N$ if $N$ is prime, otherwise the reduction factor is smaller. Why?
+</p>
+
+The result of finding the ground state energy in each sector is shown below, relative to the lowest energy, which is at $\eta=\pi$. The agreement with the des Cloiseaux--Pearson dispersion (obtained in the $N\to\infty$ limit) is quite good.
 
 <a name="dCP"></a>
 ![]({{ site.baseurl }}/assets/Heisenberg_model_dispersion.png)
 _The ground state energy of the Heisenberg chain for $L=26$ as a function of $\eta$, compared with the des Cloiseaux--Pearson dispersion \eqref{spin_dCP}._
-
-Exact diagonalization of spin chains.
 
 
 References

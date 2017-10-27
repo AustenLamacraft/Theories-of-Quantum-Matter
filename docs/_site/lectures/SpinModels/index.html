@@ -9,13 +9,13 @@
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/SpinModels/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-27T09:14:36+01:00" />
+<meta property="article:published_time" content="2017-10-27T10:37:05+01:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Spin Models",
-    "datePublished": "2017-10-27T09:14:36+01:00",
+    "datePublished": "2017-10-27T10:37:05+01:00",
     "description": "In this lecture we introduce a simple quantum mechanical model of magnetism consisting of a lattice of coupled spins. As in the elastic chain, we identify the elementary excitations and their interaction.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/SpinModels/"
   }
@@ -152,13 +152,13 @@ $$
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/SpinModels/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-27T09:14:36+01:00" />
+<meta property="article:published_time" content="2017-10-27T10:37:05+01:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Spin Models",
-    "datePublished": "2017-10-27T09:14:36+01:00",
+    "datePublished": "2017-10-27T10:37:05+01:00",
     "description": "In this lecture we introduce a simple quantum mechanical model of magnetism consisting of a lattice of coupled spins. As in the elastic chain, we identify the elementary excitations and their interaction.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/SpinModels/"
   }
@@ -473,7 +473,7 @@ c_{j,j-1} - \frac{1}{2}\left(c_{j+1,j-1}+c_{j,j-2}\right) &= \epsilon c_{j,j-1}
 \label{spin_2Part}
 \end{align} %]]></script>
 
-<p>We can think of this as a lattice analog of the two particle Schrödinger equation discussed in <a href="/docs/lectures/LiebLinigerModel/">Lecture 2</a>. The modification when $j=k+1$ occurs because</p>
+<p>We can think of this as a lattice analog of the two particle Schrödinger equation. The modification when $j=k+1$ occurs because</p>
 
 <ol>
   <li>
@@ -523,7 +523,7 @@ c_{j,j-1} - \frac{1}{2}\left(c_{j+1,j-1}+c_{j,j-2}\right) &= \epsilon c_{j,j-1}
 
 <p>The total momentum of the state is $K=2u$, and evaluating the energy gives</p>
 
-<script type="math/tex; mode=display">\epsilon_\text{bound}(K) = \omega(\eta_1) + \omega(\eta_2) = 2(1-\cos K),</script>
+<script type="math/tex; mode=display">\epsilon_\text{bound}(K) = \omega(\eta_1) + \omega(\eta_2) = \frac{1}{2}(1-\cos K),</script>
 
 <p class="message">
 As a function of momentum, compare the bound state energy with the lowest energy of two free magnons.
@@ -792,13 +792,31 @@ Repeat the analysis on a 2D square lattice. You should find an integral over the
 
 <h2 id="a-numerical-experiment">A Numerical Experiment</h2>
 
-<p>To make this a bit more concrete, let’s look at the results of a brute force numerical computation of the spectrum</p>
+<p>To make this a bit more concrete, let’s look at the results of a brute force numerical computation of the spectrum (<a href="https://github.com/AustenLamacraft/Theories-of-Quantum-Matter/blob/master/notebooks/spin_chain_diagonalization.ipynb">code</a>). Recall that the dimension of the Hilbert space is $2^N$, so only relatively small chains are tractable. Here, we have $N=26$, corresponding to a whopping $2^26=67108864$ states! Expressed in the usual basis of $s^z_j$ eigenstates, we can write an arbitrary state as</p>
+
+<script type="math/tex; mode=display">\ket{\Psi}=\sum_{\{s_j=\pm\}}c_{s_1\cdots s_N}\ket{s_1}_1\ket{s_2}_2\cdots \ket{s_N}_N.</script>
+
+<p>Often one can use symmetries of the model to reduce the dimension a bit. In this case, we have conservation of $S^z_\text{tot}$, $S_\text{tot}$, and momentum. Taking advantage of $S_\text{tot}$ conservation is not easy in the usual basis, but restricting to states with fixed $S^z_\text{tot}$ is straightforward. For example, $S^z_\text{tot}=0$ gives $\binom{26}{13}=10400600$ states.</p>
+
+<p>Momentum conservation is associated with translational invariance. Translation by one lattice site is a unitary operator that maps $T:c_{s_1 s_2\cdots s_{N-1}s_N}\to c_{s_N s_1 s_2\cdots s_{N-1}}$. $T$ has unimodular eigenvalues given by $e^{i\eta_n}$.</p>
+
+<p class="message">
+Why?
+</p>
+
+<p>Energy eigenstates are thus labelled by one of the $N$ $\eta_n$ values. We can construct a basis of definite momentum by projecting into subspaces of fixed $\eta_n$ using the operator</p>
+
+<script type="math/tex; mode=display">P_\eta = \sum_{n} e^{i\eta_n} T^n.</script>
+
+<p class="message">
+This reduces the matrix dimension by a factor $N$ if $N$ is prime, otherwise the reduction factor is smaller. Why?
+</p>
+
+<p>The result of finding the ground state energy in each sector is shown below, relative to the lowest energy, which is at $\eta=\pi$. The agreement with the des Cloiseaux–Pearson dispersion (obtained in the $N\to\infty$ limit) is quite good.</p>
 
 <p><a name="dCP"></a>
 <img src="/docs/assets/Heisenberg_model_dispersion.png" alt="" />
 <em>The ground state energy of the Heisenberg chain for $L=26$ as a function of $\eta$, compared with the des Cloiseaux–Pearson dispersion \eqref{spin_dCP}.</em></p>
-
-<p>Exact diagonalization of spin chains.</p>
 
 <h2 id="references">References</h2>
 

@@ -53,7 +53,7 @@ $$
 The result is
 
 $$
-\bra{\Psi}\Phi\rangle = \sum_P \bra{\psi_n}\phi_{P_n}\rangle = \perm \bra{\psi_m}\phi_{n}\rangle,
+\bra{\Psi}\Phi\rangle = \sum_P \prod_{n=1}^N\bra{\psi_n}\phi_{P_n}\rangle = \perm \bra{\psi_m}\phi_{n}\rangle,
 \label{A_perm}
 $$
 
@@ -216,7 +216,13 @@ $$
 These operator-valued functions are called __quantum fields__. By introducing them, we have freed ourselves from many body wavefunctions. One should bear in mind that this is only a different _language_ for talking about the same system: sometimes one language is better suited to the problem at hand; sometimes another.
 
 <p class="message">
-If a state $\ket{\Psi}$ has wavefunction $\Psi(x_1,\ldots, x_N)$, what is the wavefunction of the state $\pop(X)\ket{\Psi}$?
+If a state $\ket{\Psi}$ has wavefunction $\Psi(x_1,\ldots, x_N)$, show that the wavefunction of the state $\pop(X)\ket{\Psi}$ is the $N-1$ particle wavefunction
+
+$$
+\sqrt{N}\Psi(X,x_1,\ldots, x_{N-1})
+$$
+
+Hint: Show that is is true for a product state first.
 </p>
 
 As an example, let our original basis be the eigenbasis of the free particle Hamiltonian $H=\frac{\bp^{2}}{2m}$ with periodic boundary conditions
@@ -256,7 +262,7 @@ $$
 We want a similar formalism for fermions, which is a bit trickier on account of those minus signs. We seek a representation of the product state
 
 $$
-\Psi^{\text{P}}(\br_1,\ldots,\br_N) = \frac{1}{\sqrt{N!}}\sum_P (-1)^P\psi_1(\mathbf{r}_{P_1})\psi_{2}(\mathbf{r}_{P_2})\cdots\psi_{N}(\mathbf{r}_{P_N}).
+\Psi^{\text{A}}(\br_1,\ldots,\br_N) = \frac{1}{\sqrt{N!}}\sum_P (-1)^P\psi_1(\mathbf{r}_{P_1})\psi_{2}(\mathbf{r}_{P_2})\cdots\psi_{N}(\mathbf{r}_{P_N}).
 \label{A_NProdAnti}
 $$
 
@@ -284,7 +290,7 @@ $$
 The form of $\left\\{\adop(\psi),\adop(\phi)\right\\}=0$ can be deduced from the inner product between product states
 
 $$
-\bra{\Psi}\Phi\rangle = \sum_P (-1)^P\bra{\psi_n}\phi_{P_n}\rangle = \det \bra{\psi_m}\phi_{n}\rangle,
+\bra{\Psi}\Phi\rangle = \sum_P (-1)^P\prod_{n=1}^N\bra{\psi_n}\phi_{P_n}\rangle = \det \bra{\psi_m}\phi_{n}\rangle,
 \label{A_det}
 $$
 
@@ -491,13 +497,15 @@ $$
 	g(\br,\br') \equiv N \int d\br_{2}\cdots d\br_{N}\,\Psi^{*}(\br,\br_{2},\ldots,\br_{N})\Psi(\br',\br_{2},\ldots,\br_{N}).
 $$
 
-This can be written in terms of our field operators
+<p class="message">
+Show that this can be written in terms of our field operators as
 
 $$
 	\label{2nd_quant_SPDensity}
 	g(\br,\br')= \braket{\Psi}{\pdop(\br)\pop(\br')}{\Psi}
 $$
 
+</p>
 
 Notice that $g(\br,\br)=\braket{\Psi}{\hat\rho(\br)}{\Psi}$. A slight generalization of the above calculation for the density gives for the state $\ket{\mathbf{N}}$
 
@@ -506,7 +514,15 @@ $$
 	g(\br,\br') = \sum_{\alpha} N_{\alpha}\varphi_{\alpha}^{*}(\br)\varphi^{}_{\alpha}(\br').
 $$
 
-Let's evaluate this for the ground state of noninteracting Fermi gas. Recall that in this case $N_{\bk}=1$ for $\abs{\bk}<k_{F}$, and $0$ otherwise. Thus we have
+In [Lecture 1]({{ site.baseurl }}/lectures/ManyBodyWavefunctions/) we evaluated $g(x,y)$ for the ground state of a 1D Fermi gas using the Slater determinant form of the wavefunction. For variety, let's calculate it using our new method for the 3D Fermi gas. Recall that in this case $N_{\bk}=1$ for $\abs{\bk}<k_{F}$, and $0$ otherwise. Thus the ground state can be written
+
+$$
+\ket{\text{Fermi sea}} = \prod_{|\bk|<k_F} \adop_\bk\ket{\text{VAC}}
+$$
+
+<p class="message">
+
+Show that
 
 $$
 \begin{align}
@@ -517,6 +533,9 @@ $$
 $$
 
 Note that $g(\br,\br)=\frac{k_{F}^{3}}{6\pi^{2}}=n$, as it should. Also, $g(\br,\br')\to 0$ as $\abs{\br-\br'}\to\infty$.
+</p>
+
+Contrast this calculation with the wavefunction version.
 
 <a name="FermiDensity"></a>
 ![]({{ site.baseurl }}/assets/FermiDensityMatrixCut.png)
@@ -530,7 +549,7 @@ $$
 \hat B = \sum_{j<k} B_{jk}.
 $$
 
-Its action on a two particle product state $\ket{\varphi\_{\alpha}}\_1\ket{\varphi\_{\beta}}\_2$ can, as in the single particle case, be expressed in terms of the matrix elements
+(Note that $B_{jk}=B_{kj}$ for indistinguishable particles.) Similar to the single particle case, the action of $\hat B$ on a two particle product state $\ket{\varphi\_{\alpha}}\_1\ket{\varphi\_{\beta}}\_2$ can be expressed in terms of the matrix elements
 
 $$
 B_{\alpha\beta,\gamma\delta} = \bra{\varphi_\alpha}_1\bra{\varphi_\beta}_2 B_{12} \ket{\varphi_\gamma}_1\ket{\varphi_\delta}_2.
@@ -575,7 +594,7 @@ The difference lies in the order of the operators, which prevents a particle fro
 Check that \eqref{A_VNotNormal} has a nonzero expectation value in a 1 particle state.
 </p>
 
-As an example, let's write the Lieb--Liniger Hamiltonian of [Lecture 2]({{ site.baseurl }}/lectures/LiebLinigerModel/) in our new formalism.
+As an example, let's write the Hamiltonian of interacting bosons that we met in [Lecture 1]({{ site.baseurl }}/lectures/ManyBodyWavefunctions/) in our new formalism.
 
 $$
 H = \int dx \left[\frac{1}{2}\partial_x\pdop(x)\partial_x\pop(x) + \frac{c}{2}\pdop(x)\pdop(x)\pop(x)\pop(x)\right],

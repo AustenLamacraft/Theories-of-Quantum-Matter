@@ -423,7 +423,7 @@ $$
 
 ### Impenetrable Bose Gas
 
-There's a bit more mileage in the 1D Fermi gas yet. Consider the following Hamiltonian, which we'll study in more detail in the next lecture
+There's a bit more mileage in the 1D Fermi gas yet. Consider the following Hamiltonian, which we'll study in more detail in [Lecture 15]({{ site.baseurl }}/lectures/LiebLinigerModel/)
 
 $$
 H = -\frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + c\sum_{j<k}\delta(x_j-x_k).

@@ -78,7 +78,7 @@ $$
 \Psi_\text{hole}(z_1,\ldots, z_N|Z) = \prod_j (Z-z_j)\Psi_{m=1}(z_1,\ldots, z_N).
 $$
 
-into a superposition of eigenstates of $V_\text{harm}$, describing the occupation numbers of these eigenstates.
+into a superposition of eigenstates of $V_\text{harm}$, describing the occupation numbers of these eigenstates. _[Try starting with two particles!]_
 
 
 ## Normal Modes in General
