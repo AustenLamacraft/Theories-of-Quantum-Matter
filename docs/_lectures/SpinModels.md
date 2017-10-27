@@ -347,10 +347,10 @@ $$
 
 with degeneracy $2S+1$. In the second case, reducing $S_A\to \cN/4 - 1$ means that $\Delta\mathbf{S}_A^2 = -\frac{\cN}{8}$. From \eqref{spin_HAB2} we see that this is going to cause the energy to increase by an amount of order $J$, while in the first case our excitations were of order $J/\cN$. The two kinds of excitations only have comparable energies when $S$ is $O(\sqrt{N})$.
 
-Let's describe these low energy states in more detail. The two spins of magnitude $S_A = S_B = \frac{\cN}{4}$ can be combined to make a total spin between $\cN/2$ and $-\cN/2$. We can thus decompose the Hilbert space of the two spins as
+Let's describe these low energy states in more detail. The two spins of magnitude $S_A = S_B = \frac{\cN}{4}$ can be combined to make a total spin between $\cN/2$ and $0$ (assuming $\cN$ even). We can thus decompose the Hilbert space of the two spins as
 
 $$
-\mathcal{H}_A\otimes \mathcal{H}_B = \mathcal{H}^{(-\cN/2)}\oplus\mathcal{H}^{(-\cN/2+1)}\oplus\cdots \mathcal{H}^{(\cN/2)},
+\mathcal{H}_A\otimes \mathcal{H}_B = \mathcal{H}^{(0)}\oplus\mathcal{H}^{(1)}\oplus\cdots \mathcal{H}^{(\cN/2)},
 $$
 
 where $\mathcal{H}^{(S)}$ is the Hilbert space of a spin $S$.
