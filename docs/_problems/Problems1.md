@@ -16,13 +16,13 @@ summary: Many body wavefunctions; Lieb-Liniger; Collective excitations; Spin cha
 
 ## Fermions and Bosons at Finite Temperature
 
-At finite temperature $T$ and chemical potential $\mu$ we can describe a system of free particles in terms of the density matrix
+At finite temperature $T$ and chemical potential $\mu$ we can describe a system of free particles in terms of the _$N$-particle density matrix_.
 
 $$
-\rho = \sum_{\{N_\alpha\}} \exp\left(-\frac{1}{k_\text{B}T}\sum_\alpha N_\alpha [E_\alpha -\mu]\right)\ket{\Psi^{S/A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\bra{\Psi^{S/A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}
+\rho = \frac{N}{\mathcal{Z}}\sum_{\{N_\alpha\}} \exp\left(-\frac{1}{k_\text{B}T}\sum_\alpha N_\alpha [E_\alpha -\mu]\right)\ket{\Psi^{S/A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\bra{\Psi^{S/A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}
 $$
 
-where the sum is over the occupation number of each state. Find the single particle density matrix $g(x,y)$ for bosons and fermions.
+where the sum is over the occupation number of each state, and $\mathcal{Z}$ is a normalization factor (the grand canonical partition function). Find the single particle density matrix $g(x,y)$ for bosons and fermions.
 
 ## Sutherland Model
 

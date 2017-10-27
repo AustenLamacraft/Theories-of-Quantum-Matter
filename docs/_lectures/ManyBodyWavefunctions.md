@@ -356,7 +356,7 @@ $$
 
 <p class="message">
 
-Find $g(x,y)$ for the ground state of the Fermi gas
+Starting from the Slater determinant \eqref{quantum_statistics_1ddet} (i.e. _not_ from the explicit form \eqref{quantum_statistics_1dFermiGS}), show that $g(x,y)$ for the ground state of the Fermi gas is
 
 $$
 g(x,y) = \frac{1}{L}\sum_{|k|<k_\text{F}} e^{ik(x-y)} = \int_{-k_\text{F}}^{k_\text{F}} \frac{dk}{2\pi} e^{ik(x-y)} = n \frac{\sin [k_\text{F}(x-y)]}{k_\text{F}(x-y)}

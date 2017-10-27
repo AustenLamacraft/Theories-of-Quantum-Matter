@@ -567,13 +567,19 @@ Why can we do this? Compare with the elastic chain.
 </p>
 
 <p class="message">
-Repeat the analysis on a 2D square lattice. You should find the same integrand but with an integral over the two-dimensional Brillouin zone. Do you find divergences?
+Repeat the analysis on a 2D square lattice. You should find an integral over the two-dimensional Brillouin zone. Do you find divergences?
 </p>
 
 The breakdown of the spin wave treatment in 1D has a physical meaning: there is no long range antiferromagnetic order, even at zero temperature. The situation is closely analogous to the elastic chain, where we saw that quantum fluctuations destroyed the Bragg peaks.
 
 
 ## A Numerical Experiment
+
+To make this a bit more concrete, let's look at the results of a brute force numerical computation of the spectrum
+
+<a name="dCP"></a>
+![]({{ site.baseurl }}/assets/Heisenberg_model_dispersion.png)
+_The ground state energy of the Heisenberg chain for $L=26$ as a function of $\eta$, compared with the des Cloiseaux--Pearson dispersion \eqref{spin_dCP}._
 
 Exact diagonalization of spin chains.
 
