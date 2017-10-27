@@ -575,7 +575,7 @@ The breakdown of the spin wave treatment in 1D has a physical meaning: there is 
 
 ## A Numerical Experiment
 
-To make this a bit more concrete, let's look at the results of a brute force numerical computation of the spectrum ([code](https://github.com/AustenLamacraft/Theories-of-Quantum-Matter/blob/master/notebooks/spin_chain_diagonalization.ipynb)). Recall that the dimension of the Hilbert space is $2^N$, so only relatively small chains are tractable. Here, we have $N=26$, corresponding to a whopping $2^26=67108864$ states! Expressed in the usual basis of $s^z_j$ eigenstates, we can write an arbitrary state as
+To make this a bit more concrete, let's look at the results of a brute force numerical computation of the spectrum ([code](https://github.com/AustenLamacraft/Theories-of-Quantum-Matter/blob/master/notebooks/spin_chain_diagonalization.ipynb)). Recall that the dimension of the Hilbert space is $2^N$, so only relatively small chains are tractable. Here, we have $N=26$, corresponding to a whopping $2^{26}=67108864$ states! Expressed in the usual basis of $s^z_j$ eigenstates, we can write an arbitrary state as
 
 $$
 \ket{\Psi}=\sum_{\{s_j=\pm\}}c_{s_1\cdots s_N}\ket{s_1}_1\ket{s_2}_2\cdots \ket{s_N}_N.
