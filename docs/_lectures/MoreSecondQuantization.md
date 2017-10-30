@@ -186,28 +186,39 @@ $$
 
 If the clouds begin to overlap, the last term in \eqref{dens_int} comes into play. Its origin is in quantum interference between the two coherent subsystems, showing that the _relative phase_ has a real physical effect.
 
-As an illustration, consider the evolution of two Gaussian wavepackets with width $R_0$ at $t=0$, separated by a distance $d\gg R_0$
+<p class="message">
+
+Consider a Gaussian wavefunction of width $R_0$ at time $t=0$. Show (by substitution into the Schrödinger equation is fine) that this function evolves as
 
 $$
-	\varphi_{L,R}(\br,t)=\frac{1}{\left(\pi R_t^{2}\right)^{3/4}}\exp\left[-\frac{\left(\br\pm\mathbf{d}/2\right)^2\left(1+i t/m
+	\varphi(\br,t)=\frac{1}{\left(\pi R_t^{2}\right)^{3/4}}\exp\left[-\frac{\br^2\left(1+i t/m
 	R_0^2)\right)}{2R_t^2}\right],
   \label{Gaussian}
 $$
 
-with
+where
 
 $$
 R_t^2=R_0^2+\left(\frac{ t}{mR_0}\right)^2.
 $$
 
+</p>
+
 \eqref{Gaussian} illustrates a very important point about the expansion of a gas. After a long period of expansion, the final density distribution is a reflection of the initial _momentum_ distribution. This is simply because faster moving atoms fly further, so after time $t$ an atom with velocity $\mathbf{v}$ will be at position $\mathbf{r}=\mathbf{v}t$ from the center of the trap, provided that this distance is large compared to $R_{0}$, the initial radius of the gas. The $t\to\infty$ limit of \eqref{Gaussian} gives
 
 $$
-		|\varphi_{L,R}(\br,t\to\infty)|^{2}\propto \exp\left[-\left(\frac{m R_{0}\left[\br\pm\mathbf{d}/2\right]}{ t}\right)^{2}\right],
+		|\varphi(\br,t\to\infty)|^{2}\propto \exp\left[-\left(\frac{m R_{0}\br}{ t}\right)^{2}\right],
 	\label{2nd_quant_TimeOfFlight}
 $$
 
-reflecting a Gaussian initial momentum distribution of width $R^{-1}{0}$. Imaging the density distribution after expansion is one of the most commonly used experimental techniques in ultracold physics, and yields information about the momentum distribution $n(\bp)\equiv  \adop_{\bp}\aop_{\bp}$ before expansion.
+reflecting a Gaussian initial momentum distribution of width $R_0^{-1}$. Imaging the density distribution after expansion is one of the most commonly used experimental techniques in ultracold physics, and yields information about the momentum distribution $n(\bp)\equiv  \adop_{\bp}\aop_{\bp}$ before expansion.
+
+Consider the evolution of two Gaussian wavepackets with width $R_0$ at $t=0$, separated by a distance $d\gg R_0$
+
+$$
+	\varphi_{L,R}(\br,t)=\frac{1}{\left(\pi R_t^{2}\right)^{3/4}}\exp\left[-\frac{\left(\br\pm\mathbf{d}/2\right)^2\left(1+i t/m
+	R_0^2)\right)}{2R_t^2}\right],
+$$
 
 The final term of \eqref{dens_int} is then
 
@@ -383,8 +394,9 @@ Polarizing the spins in a Fermi gas is not without cost (otherwise everything wo
 
 $$
 \begin{align}
-N &= \sum_{|\bk|<k_\text{F}}\longrightarrow L^3 \int_{|\bk|<k_\text{F}} \frac{d\bk}{(2\pi)^3} = \frac{k_\text{F}^3}{6\pi^2} \\
-E_\text{kin} &= \sum_{|\bk|<k_\text{F}} \frac{\bk^2}{2m} \longrightarrow L^3 \int_{|\bk|<k_\text{F}} \frac{d\bk}{(2\pi)^3} \frac{\bk^2}{2m} = \frac{k_\text{F}^5}{20\pi^2 m} = L^3 \frac{3}{10m}(6\pi^2)^{2/3} n^{5/3},
+N = \sum_{|\bk|<k_\text{F}}&\longrightarrow L^3 \int_{|\bk|<k_\text{F}} \frac{d\bk}{(2\pi)^3} = \frac{k_\text{F}^3}{6\pi^2} \\
+E_\text{kin} = \sum_{|\bk|<k_\text{F}} \frac{\bk^2}{2m} &\longrightarrow L^3 \int_{|\bk|<k_\text{F}} \frac{d\bk}{(2\pi)^3} \frac{\bk^2}{2m}\\
+ &= \frac{k_\text{F}^5}{20\pi^2 m} = L^3 \frac{3}{10m}(6\pi^2)^{2/3} n^{5/3},
 \end{align}
 $$
 
@@ -420,11 +432,18 @@ $$
 E_\text{HF}(P) = \frac{E_V}{2}(1-P^2).
 $$
 
-By minimizing the total energy $E(P) = E_\text{kin}(P) + E_\text{HF}(P)$ we find
+<p class="message">
 
-1. For $E_V/E_K<10/9$ the ground state is non-magnetic.
-2. As $E_V/E_K$ increases past $10/9$ the magnetization begins to increase.
-3. At $E_V/E_K>\frac{5}{6}2^{2/3}$ is the ground state is fully polarized.
+Minimize the total energy $E(P) = E_\text{kin}(P) + E_\text{HF}(P)$ to show
+
+<ol>
+  <li>For $E_V/E_K<10/9$ the ground state is non-magnetic.</li>
+  <li>As $E_V/E_K$ increases past $10/9$ the magnetization begins to increase.</li>
+  <li>At $E_V/E_K>\frac{5}{6}2^{2/3}$ is the ground state is fully polarized.</li>
+</ol>
+
+
+</p>
 
 One shouldn't take these numerical values too seriously given the simplicity of the model, but they illustrate the physical principles at work behind the appearance of ferromagnetism in metals.
 

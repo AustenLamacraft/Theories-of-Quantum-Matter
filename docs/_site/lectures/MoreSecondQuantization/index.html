@@ -9,13 +9,13 @@
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/MoreSecondQuantization/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-27T15:56:23+01:00" />
+<meta property="article:published_time" content="2017-10-30T07:57:47+00:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "B is for Bunching",
-    "datePublished": "2017-10-27T15:56:23+01:00",
+    "datePublished": "2017-10-30T07:57:47+00:00",
     "description": "Bose or Fermi statistics gives rise to correlations in the positions of particles in a many body system, even in product states. These correlations affect the energy of many particle states, and provide the basis of the simplest approximate theories.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/MoreSecondQuantization/"
   }
@@ -152,13 +152,13 @@ $$
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/MoreSecondQuantization/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-27T15:56:23+01:00" />
+<meta property="article:published_time" content="2017-10-30T07:57:47+00:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "B is for Bunching",
-    "datePublished": "2017-10-27T15:56:23+01:00",
+    "datePublished": "2017-10-30T07:57:47+00:00",
     "description": "Bose or Fermi statistics gives rise to correlations in the positions of particles in a many body system, even in product states. These correlations affect the energy of many particle states, and provide the basis of the simplest approximate theories.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/MoreSecondQuantization/"
   }
@@ -464,22 +464,35 @@ Bose or Fermi statistics gives rise to correlations in the positions of particle
 
 <p>If the clouds begin to overlap, the last term in \eqref{dens_int} comes into play. Its origin is in quantum interference between the two coherent subsystems, showing that the <em>relative phase</em> has a real physical effect.</p>
 
-<p>As an illustration, consider the evolution of two Gaussian wavepackets with width $R_0$ at $t=0$, separated by a distance $d\gg R_0$</p>
+<p class="message">
 
-<script type="math/tex; mode=display">\varphi_{L,R}(\br,t)=\frac{1}{\left(\pi R_t^{2}\right)^{3/4}}\exp\left[-\frac{\left(\br\pm\mathbf{d}/2\right)^2\left(1+i t/m
+Consider a Gaussian wavefunction of width $R_0$ at time $t=0$. Show (by substitution into the Schrödinger equation is fine) that this function evolves as
+
+$$
+	\varphi(\br,t)=\frac{1}{\left(\pi R_t^{2}\right)^{3/4}}\exp\left[-\frac{\br^2\left(1+i t/m
 	R_0^2)\right)}{2R_t^2}\right],
-  \label{Gaussian}</script>
+  \label{Gaussian}
+$$
 
-<p>with</p>
+where
 
-<script type="math/tex; mode=display">R_t^2=R_0^2+\left(\frac{ t}{mR_0}\right)^2.</script>
+$$
+R_t^2=R_0^2+\left(\frac{ t}{mR_0}\right)^2.
+$$
+
+</p>
 
 <p>\eqref{Gaussian} illustrates a very important point about the expansion of a gas. After a long period of expansion, the final density distribution is a reflection of the initial <em>momentum</em> distribution. This is simply because faster moving atoms fly further, so after time $t$ an atom with velocity $\mathbf{v}$ will be at position $\mathbf{r}=\mathbf{v}t$ from the center of the trap, provided that this distance is large compared to $R_{0}$, the initial radius of the gas. The $t\to\infty$ limit of \eqref{Gaussian} gives</p>
 
-<script type="math/tex; mode=display">|\varphi_{L,R}(\br,t\to\infty)|^{2}\propto \exp\left[-\left(\frac{m R_{0}\left[\br\pm\mathbf{d}/2\right]}{ t}\right)^{2}\right],
+<script type="math/tex; mode=display">|\varphi(\br,t\to\infty)|^{2}\propto \exp\left[-\left(\frac{m R_{0}\br}{ t}\right)^{2}\right],
 	\label{2nd_quant_TimeOfFlight}</script>
 
-<p>reflecting a Gaussian initial momentum distribution of width $R^{-1}{0}$. Imaging the density distribution after expansion is one of the most commonly used experimental techniques in ultracold physics, and yields information about the momentum distribution $n(\bp)\equiv  \adop_{\bp}\aop_{\bp}$ before expansion.</p>
+<p>reflecting a Gaussian initial momentum distribution of width $R_0^{-1}$. Imaging the density distribution after expansion is one of the most commonly used experimental techniques in ultracold physics, and yields information about the momentum distribution $n(\bp)\equiv  \adop_{\bp}\aop_{\bp}$ before expansion.</p>
+
+<p>Consider the evolution of two Gaussian wavepackets with width $R_0$ at $t=0$, separated by a distance $d\gg R_0$</p>
+
+<script type="math/tex; mode=display">\varphi_{L,R}(\br,t)=\frac{1}{\left(\pi R_t^{2}\right)^{3/4}}\exp\left[-\frac{\left(\br\pm\mathbf{d}/2\right)^2\left(1+i t/m
+	R_0^2)\right)}{2R_t^2}\right],</script>
 
 <p>The final term of \eqref{dens_int} is then</p>
 
@@ -626,8 +639,9 @@ $$
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
-N &= \sum_{|\bk|<k_\text{F}}\longrightarrow L^3 \int_{|\bk|<k_\text{F}} \frac{d\bk}{(2\pi)^3} = \frac{k_\text{F}^3}{6\pi^2} \\
-E_\text{kin} &= \sum_{|\bk|<k_\text{F}} \frac{\bk^2}{2m} \longrightarrow L^3 \int_{|\bk|<k_\text{F}} \frac{d\bk}{(2\pi)^3} \frac{\bk^2}{2m} = \frac{k_\text{F}^5}{20\pi^2 m} = L^3 \frac{3}{10m}(6\pi^2)^{2/3} n^{5/3},
+N = \sum_{|\bk|<k_\text{F}}&\longrightarrow L^3 \int_{|\bk|<k_\text{F}} \frac{d\bk}{(2\pi)^3} = \frac{k_\text{F}^3}{6\pi^2} \\
+E_\text{kin} = \sum_{|\bk|<k_\text{F}} \frac{\bk^2}{2m} &\longrightarrow L^3 \int_{|\bk|<k_\text{F}} \frac{d\bk}{(2\pi)^3} \frac{\bk^2}{2m}\\
+ &= \frac{k_\text{F}^5}{20\pi^2 m} = L^3 \frac{3}{10m}(6\pi^2)^{2/3} n^{5/3},
 \end{align} %]]></script>
 
 <p>(The assumption of a quadratic dispersion is not important here. More generally, we fill a band structure.) where $n = \frac{N}{L^3}$ is the mean density. Assuming a system of fermions with spin is now polarized in the $z$-direction, we have differing densities $n_{\uparrow,\downarrow}$ of spin up and spin down fermions. Their total energy is</p>
@@ -652,13 +666,18 @@ E_\text{kin} &= \sum_{|\bk|<k_\text{F}} \frac{\bk^2}{2m} \longrightarrow L^3 \in
 
 <script type="math/tex; mode=display">E_\text{HF}(P) = \frac{E_V}{2}(1-P^2).</script>
 
-<p>By minimizing the total energy $E(P) = E_\text{kin}(P) + E_\text{HF}(P)$ we find</p>
+<p class="message">
+
+Minimize the total energy $E(P) = E_\text{kin}(P) + E_\text{HF}(P)$ to show
 
 <ol>
   <li>For $E_V/E_K&lt;10/9$ the ground state is non-magnetic.</li>
   <li>As $E_V/E_K$ increases past $10/9$ the magnetization begins to increase.</li>
   <li>At $E_V/E_K&gt;\frac{5}{6}2^{2/3}$ is the ground state is fully polarized.</li>
 </ol>
+
+
+</p>
 
 <p>One shouldn’t take these numerical values too seriously given the simplicity of the model, but they illustrate the physical principles at work behind the appearance of ferromagnetism in metals.</p>
 
