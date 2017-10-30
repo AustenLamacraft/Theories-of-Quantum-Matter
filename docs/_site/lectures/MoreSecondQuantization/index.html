@@ -9,13 +9,13 @@
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/MoreSecondQuantization/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-30T07:57:47+00:00" />
+<meta property="article:published_time" content="2017-10-30T15:30:58+00:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "B is for Bunching",
-    "datePublished": "2017-10-30T07:57:47+00:00",
+    "datePublished": "2017-10-30T15:30:58+00:00",
     "description": "Bose or Fermi statistics gives rise to correlations in the positions of particles in a many body system, even in product states. These correlations affect the energy of many particle states, and provide the basis of the simplest approximate theories.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/MoreSecondQuantization/"
   }
@@ -152,13 +152,13 @@ $$
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/MoreSecondQuantization/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-30T07:57:47+00:00" />
+<meta property="article:published_time" content="2017-10-30T15:30:58+00:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "B is for Bunching",
-    "datePublished": "2017-10-30T07:57:47+00:00",
+    "datePublished": "2017-10-30T15:30:58+00:00",
     "description": "Bose or Fermi statistics gives rise to correlations in the positions of particles in a many body system, even in product states. These correlations affect the energy of many particle states, and provide the basis of the simplest approximate theories.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/MoreSecondQuantization/"
   }
@@ -565,8 +565,12 @@ coincides with that of a mixture of Fock states with binomial distribution of at
 
 <p>we can immediately write down the expectation value of the interaction energy in a product state</p>
 
-<script type="math/tex; mode=display">\label{2nd_quant_HartreeFock}
-	\langle \hat V\rangle = \overbrace{\frac{1}{2}\int d\br\, d\br'\, \rho_1(\br) U(\br-\br')\rho_1(\br')}^{\equiv E_\text{Hartree}} \overbrace{\pm \frac{1}{2}\int d\br\, d\br'\,  U(\br-\br')g(\br,\br')g(\br',\br)}^{\equiv E_\text{Fock}}.</script>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+	\label{2nd_quant_HartreeFock}
+	\langle \hat V\rangle &= \overbrace{\frac{1}{2}\int d\br\, d\br'\, \rho_1(\br) U(\br-\br')\rho_1(\br')}^{\equiv E_\text{Hartree}} \\
+	&\qquad\overbrace{\pm \frac{1}{2}\int d\br\, d\br'\,  U(\br-\br')g(\br,\br')g(\br',\br)}^{\equiv E_\text{Fock}}.
+\end{align} %]]></script>
 
 <p>The two terms are known as the <strong>Hartree</strong> and <strong>Fock</strong> (or <strong>exchange</strong>) contributions, respectively. This expression lies at the core of the variational <strong>Hartree–Fock method</strong> for many body systems, which approximates the ground state by a product state. The Hartree term looks completely reasonable, while the Fock potential doesn’t look like a potential at all, and reflects the non-classical correlations.</p>
 
@@ -594,8 +598,12 @@ coincides with that of a mixture of Fock states with binomial distribution of at
 
 <p>The Hartree–Fock energy is then</p>
 
-<script type="math/tex; mode=display">\langle \hat H_\text{int.}\rangle =\frac{1}{2}\int d\br\, d\br'\, \rho(\br) U(\br-\br')\rho(\br')- \frac{1}{2}\int d\br\, d\br'\,  U(\br-\br')\tr\left[g(\br,\br')g(\br',\br)\right].
-  \label{2nd_quant_HFSpin}</script>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+	\langle \hat H_\text{int.}\rangle &=\frac{1}{2}\int d\br\, d\br'\, \rho(\br) U(\br-\br')\rho(\br')\\
+	&- \frac{1}{2}\int d\br\, d\br'\,  U(\br-\br')\tr\left[g(\br,\br')g(\br',\br)\right].
+  \label{2nd_quant_HFSpin}
+\end{align} %]]></script>
 
 <p>The Fock term can be rewritten in a more useful way using the identity</p>
 
@@ -603,9 +611,10 @@ coincides with that of a mixture of Fock states with binomial distribution of at
 
 <p>which gives</p>
 
-<script type="math/tex; mode=display">\begin{align}
-E_{\text{Fock}} =-\frac{1}{4} \int d\br\, d\br'\,  U(\br-\br')\tr\left[g(\br,\br')\right]\tr\left[g(\br',\br)\right]\\-\frac{1}{4}\int d\br\, d\br'\,  U(\br-\br')\tr\left[\boldsymbol{\sigma}g(\br,\br')\right]\cdot\tr\left[\boldsymbol{\sigma}g(\br',\br)\right].
-\end{align}</script>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+E_{\text{Fock}} &=-\frac{1}{4} \int d\br\, d\br'\,  U(\br-\br')\tr\left[g(\br,\br')\right]\tr\left[g(\br',\br)\right]\\&-\frac{1}{4}\int d\br\, d\br'\,  U(\br-\br')\tr\left[\boldsymbol{\sigma}g(\br,\br')\right]\cdot\tr\left[\boldsymbol{\sigma}g(\br',\br)\right].
+\end{align} %]]></script>
 
 <p>Suppose we had a $\delta$-function interaction $U(\br)=U_0 \delta(\br)$. Then the Fock energy can be written</p>
 

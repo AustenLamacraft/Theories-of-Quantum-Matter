@@ -301,8 +301,11 @@ $$
 we can immediately write down the expectation value of the interaction energy in a product state
 
 $$
+\begin{align}
 	\label{2nd_quant_HartreeFock}
-	\langle \hat V\rangle = \overbrace{\frac{1}{2}\int d\br\, d\br'\, \rho_1(\br) U(\br-\br')\rho_1(\br')}^{\equiv E_\text{Hartree}} \overbrace{\pm \frac{1}{2}\int d\br\, d\br'\,  U(\br-\br')g(\br,\br')g(\br',\br)}^{\equiv E_\text{Fock}}.
+	\langle \hat V\rangle &= \overbrace{\frac{1}{2}\int d\br\, d\br'\, \rho_1(\br) U(\br-\br')\rho_1(\br')}^{\equiv E_\text{Hartree}} \\
+	&\qquad\overbrace{\pm \frac{1}{2}\int d\br\, d\br'\,  U(\br-\br')g(\br,\br')g(\br',\br)}^{\equiv E_\text{Fock}}.
+\end{align}
 $$
 
 The two terms are known as the __Hartree__ and __Fock__ (or __exchange__) contributions, respectively. This expression lies at the core of the variational __Hartree--Fock method__ for many body systems, which approximates the ground state by a product state. The Hartree term looks completely reasonable, while the Fock potential doesn't look like a potential at all, and reflects the non-classical correlations.
@@ -340,8 +343,11 @@ $$
 The Hartree--Fock energy is then
 
 $$
-	\langle \hat H_\text{int.}\rangle =\frac{1}{2}\int d\br\, d\br'\, \rho(\br) U(\br-\br')\rho(\br')- \frac{1}{2}\int d\br\, d\br'\,  U(\br-\br')\tr\left[g(\br,\br')g(\br',\br)\right].
+\begin{align}
+	\langle \hat H_\text{int.}\rangle &=\frac{1}{2}\int d\br\, d\br'\, \rho(\br) U(\br-\br')\rho(\br')\\
+	&- \frac{1}{2}\int d\br\, d\br'\,  U(\br-\br')\tr\left[g(\br,\br')g(\br',\br)\right].
   \label{2nd_quant_HFSpin}
+\end{align}
 $$
 
 The Fock term can be rewritten in a more useful way using the identity
@@ -354,7 +360,7 @@ which gives
 
 $$
 \begin{align}
-E_{\text{Fock}} =-\frac{1}{4} \int d\br\, d\br'\,  U(\br-\br')\tr\left[g(\br,\br')\right]\tr\left[g(\br',\br)\right]\\-\frac{1}{4}\int d\br\, d\br'\,  U(\br-\br')\tr\left[\boldsymbol{\sigma}g(\br,\br')\right]\cdot\tr\left[\boldsymbol{\sigma}g(\br',\br)\right].
+E_{\text{Fock}} &=-\frac{1}{4} \int d\br\, d\br'\,  U(\br-\br')\tr\left[g(\br,\br')\right]\tr\left[g(\br',\br)\right]\\&-\frac{1}{4}\int d\br\, d\br'\,  U(\br-\br')\tr\left[\boldsymbol{\sigma}g(\br,\br')\right]\cdot\tr\left[\boldsymbol{\sigma}g(\br',\br)\right].
 \end{align}
 $$
 
