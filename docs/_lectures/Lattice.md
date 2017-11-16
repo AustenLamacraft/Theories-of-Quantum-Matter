@@ -348,7 +348,7 @@ V^\dagger & H_\text{Not} \\
 \end{pmatrix}.
 $$
 
-We eliminate $\ket{\Psi}$ to obtain
+We eliminate $\ket{\Phi}$ to obtain
 
 $$
 \left[H_{\text{Mott}} -V^{}\left(H_\text{Not}-E\right)^{-1}V^\dagger\right]\ket{\Psi} = E\ket{\Psi}.

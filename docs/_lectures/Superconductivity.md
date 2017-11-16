@@ -157,7 +157,7 @@ momentum separately,  $\langle n^P_\bp\rangle$ is easily found to be $v_\bp^2$. 
 energy of this state is
 
 $$
-\braket{\text{BCS}}{H}{\text{BCS}}=2\sum_\bp \epsilon_{\bp}v_\bp^2+\frac{U_0}{V}\sum_{\bp,\bp'}u^*_\bp v_
+\braket{\text{BCS}}{H}{\text{BCS}}=2\sum_\bp \epsilon_{\bp}|v_\bp|^2+\frac{U_0}{V}\sum_{\bp,\bp'}u^*_\bp v_
 \bp u_{\bp'}v^*_{\bp'}.
 \label{bcs_en}
 $$
@@ -172,10 +172,10 @@ $$
 The probabilities $P_N$ are
 
 $$
-P_N=\sum_{\sum n^P_\bp=N/2}\prod_\bp \left[n^P_\bp v^2_\bp+\left(1-n^P_\bp\right)u^2_\bp \right],
+P_N=\sum_{\sum n^P_\bp=N/2}\prod_\bp \left[n^P_\bp |v_\bp|^2+\left(1-n^P_\bp\right)|u_\bp|^2 \right],
 $$
 
-which is strongly peaked around $\langle N \rangle=2\sum_\bp v^2\_\bp=2\sum_\bp \langle n^P\_\bp
+which is strongly peaked around $\langle N \rangle=2\sum_\bp |v_\bp|^2=2\sum_\bp \langle n^P\_\bp
 \rangle$, with a variance that is $O(N)$. Thus at large $N$
 
 $$
@@ -205,7 +205,7 @@ $$
 H_{\text{pair}}-\mu N=2\sum_\bp \xi({\bp})S_\bp^z+\frac{U_0}{V}\sum_{\bp,\bp'}S^+_\bp S^-_{\bp'},
 $$
 
-where we have included the chemical potential by defining $\xi_\bp\equiv\epsilon(\bp)-\mu$. If we parameterize $\left(u_\bp,v_\bp\right)$ as $(\cos(\theta/2)e^{i\varphi/2},\sin(\theta/2)e^{-i\varphi/2})$
+where we have included the chemical potential by defining $\xi_\bp\equiv\epsilon(\bp)-\mu$. If we parameterize $\left(u_\bp,v_\bp\right)$ as $(\cos(\theta/2)e^{-i\varphi/2},\sin(\theta/2)e^{i\varphi/2})$
 then the variational energy Equation (\ref{bcs_en}) has the form (except for a constant)
 
 $$
@@ -462,7 +462,7 @@ it's easy to see that the operators
 $$
 \begin{eqnarray}
 \alop_{\bp\uparrow}&=&u_\bp\aop_{\bp\uparrow}-v_\bp\adop_{-\bp\downarrow}\nonumber\\
-\alop_{\bp\downarrow}&=&u_\bp\aop_{\bp\downarrow}+v_\bp\adop_{-\bp\uparrow},
+\alop_{\bp\downarrow}&=&u_{-\bp}\aop_{\bp\downarrow}+v_{-\bp}\adop_{-\bp\uparrow},
 \end{eqnarray}
 $$
 
@@ -475,8 +475,8 @@ $$
 Consider the state
 
 $$
-\ket{\bp,s}=\aldop_{\bp,s}\ket{\text{BCS}}=\adop_{\bp,s}\prod_{\bp'\neq \bp} \left[v_\bp\adop_
-{\bp\uparrow}\adop_{-\bp\downarrow}+u_\bp\right]\ket{\text{VAC}},
+\ket{\bp,s}=\aldop_{\bp,s}\ket{\text{BCS}}=\adop_{\bp,s}\prod_{\bp'\neq \bp} \left[v_{\bp'}\adop_
+{\bp'\uparrow}\adop_{-\bp'\downarrow}+u_{\bp'}\right]\ket{\text{VAC}},
 $$
 
 corresponding to the momentum state $\bp$ certainly containing one particle with (pseudo-)spin $s$,
@@ -525,13 +525,23 @@ state to be occupied. Thus the probability of a  $(\bp,s;-\bp,-s)$ state being b
 
 
 $$
-\aldop_{\bp\uparrow}\aldop_{-\bp\downarrow}\ket{\text{BCS}}=\left[u_\bp\adop_{\bp\uparrow}
-\adop_{-\bp\downarrow}-v_\bp\right]\prod_{\bp'\neq \bp} \left[v_\bp\adop_{\bp\uparrow}\adop_{-\bp
+\aldop_{\bp\uparrow}\aldop_{-\bp\downarrow}\ket{\text{BCS}}=\left[u^*_\bp\adop_{\bp\uparrow}
+\adop_{-\bp\downarrow}-v^*_\bp\right]\prod_{\bp'\neq \bp} \left[v_\bp\adop_{\bp\uparrow}\adop_{-\bp
 \downarrow}+u_\bp\right]\ket{\text{VAC}},
 $$
 
-which is orthogonal to the BCS state. In the Anderson spin language this corresponds to a single flipped
-spin, and has energy given by twice the 'magnetic field' each pair experiences $2E(\bp)$, see \eqref{heff}. The spin interpretation allows us to see easily that this state contributes $-u_\bp v_\bp$ to the self consistent
+which is orthogonal to the BCS state. In the Anderson spin language this corresponds to reversing the direction of spin, as if
+
+$$
+\begin{align}
+ (u,v)&=(\cos(\theta/2)e^{-i\varphi/2},\sin(\theta/2)e^{i\varphi/2}),\qquad \text{then}\\
+(-v^*,u^*)&=i(\cos(\theta'/2)e^{-i\varphi'/2},\sin(\theta'/2)e^{i\varphi'/2}),
+\end{align}
+$$
+
+with $\theta' = \pi/2 - \theta$ and $\varphi' = \varphi + \pi$.
+
+The excitation energy of this state is twice the 'magnetic field' each pair experiences $2E(\bp)$, see \eqref{heff}. The spin interpretation allows us to see easily that this state contributes $-u_\bp v_\bp$ to the self consistent
 equation, and occurs with probability $n_{\uparrow}(\bp)n_{\downarrow}(-\bp)$. The overall result is thus
 
 $$

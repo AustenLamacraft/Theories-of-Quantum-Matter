@@ -9,13 +9,13 @@
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/problems/Problems4/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-30T15:30:58+00:00" />
+<meta property="article:published_time" content="2017-11-16T12:55:30+00:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Problem Set 4",
-    "datePublished": "2017-10-30T15:30:58+00:00",
+    "datePublished": "2017-11-16T12:55:30+00:00",
     "description": "Contents",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/problems/Problems4/"
   }
@@ -152,13 +152,13 @@ $$
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/problems/Problems4/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-30T15:30:58+00:00" />
+<meta property="article:published_time" content="2017-11-16T12:55:30+00:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Problem Set 4",
-    "datePublished": "2017-10-30T15:30:58+00:00",
+    "datePublished": "2017-11-16T12:55:30+00:00",
     "description": "Contents",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/problems/Problems4/"
   }
@@ -262,13 +262,13 @@ $$
     
       
         
-          <a class="sidebar-nav-item" href="/docs/lectures/KondoEffect/">The Kondo Effect</a>
+          <a class="sidebar-nav-item" href="/docs/lectures/JordanWigner/">Jordan-Wigner and Bosonization</a>
         
       
     
       
         
-          <a class="sidebar-nav-item" href="/docs/lectures/JordanWigner/">Jordan-Wigner and Bosonization</a>
+          <a class="sidebar-nav-item" href="/docs/lectures/KondoEffect/">The Kondo Effect</a>
         
       
     
@@ -310,17 +310,81 @@ $$
   <h2 class="no_toc" id="contents">Contents</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#anomalous-commutators-for-1d-fermions" id="markdown-toc-anomalous-commutators-for-1d-fermions">Anomalous Commutators for 1D Fermions</a></li>
+  <li><a href="#bosonized-form-of-the-fermion-operator" id="markdown-toc-bosonized-form-of-the-fermion-operator">Bosonized Form of the Fermion Operator</a></li>
   <li><a href="#from-the-anderson-model-to-the-kondo-model" id="markdown-toc-from-the-anderson-model-to-the-kondo-model">From the Anderson Model to the Kondo Model</a></li>
   <li><a href="#spin-flip-mediated-inelastic-scattering" id="markdown-toc-spin-flip-mediated-inelastic-scattering">Spin-Flip Mediated Inelastic Scattering</a></li>
   <li><a href="#kondo-effect-without-spin" id="markdown-toc-kondo-effect-without-spin">Kondo Effect Without Spin</a></li>
-  <li><a href="#anomalous-commutators-for-1d-fermions" id="markdown-toc-anomalous-commutators-for-1d-fermions">Anomalous Commutators for 1D Fermions</a></li>
-  <li><a href="#bosonized-form-of-the-fermion-operator" id="markdown-toc-bosonized-form-of-the-fermion-operator">Bosonized Form of the Fermion Operator</a></li>
   <li><a href="#ground-state-of-the-attractive-liebliniger-model" id="markdown-toc-ground-state-of-the-attractive-liebliniger-model">Ground State of the Attractive Lieb–Liniger Model</a></li>
   <li><a href="#density-correlations-in-liebliniger" id="markdown-toc-density-correlations-in-liebliniger">Density Correlations in Lieb–Liniger</a></li>
   <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ol>
 
 <hr />
+
+<h2 id="anomalous-commutators-for-1d-fermions">Anomalous Commutators for 1D Fermions</h2>
+
+<p>To describe the physics at low energies, it is convenient to write the fermion field operator in one dimension as</p>
+
+<script type="math/tex; mode=display">\pop(x) = e^{ik_\text{F}x}\pop_R(x)+e^{-ik_\text{F}x}\pop_L(x),</script>
+
+<p>where the modes contributing to $\pop_{L/R}(x)$ are restricted to a momentum shell $[-\Lambda,\Lambda]$ around the Fermi points, with $\Lambda\ll k_\text{F}$. Thus</p>
+
+<script type="math/tex; mode=display">\pop_R(x)=\sum_{k=-\Lambda}^\Lambda \aop_{k+k_\text{F}}e^{ikx}.</script>
+
+<p>In this way we hope to affect a clean separation of low energy excitations into right and left movers. This has some slightly surprising consequences, however.</p>
+
+<p>We define the density operators for right movers by</p>
+
+<script type="math/tex; mode=display">\rho^R_q = \sum_{p=-\Lambda+\abs{q}/2}^{\Lambda-\abs{q}/2}\adop_{p-q/2+k_\text{F}}\aop_{p+q/2+k_\text{F}},
+\label{rhodef}</script>
+
+<p>where we have chosen the labels so that the hermiticity condition $\left(\rho^R_q\right)^\dagger=\rho^R_{-q}$ is respected.</p>
+
+<ol>
+  <li>
+    <p>Show that as a result</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+\left[\rho^R_{q},\rho^R_{-q}\right] = \frac{qL}{2\pi},\quad \abs{q}<2\Lambda
+ \label{Anom} %]]></script>
+
+    <p>leading to the real space commutator</p>
+
+    <script type="math/tex; mode=display">\left[\rho_R(x),\rho_R(x')\right] =-\frac{i}{2\pi}\delta'(x-x').</script>
+  </li>
+  <li>
+    <p>Show that the left moving commutator has the opposite sign, so the total density $\rho^R(x)+\rho^L(x)$ still commutes at different points.</p>
+  </li>
+  <li>
+    <p>\eqref{Anom} tells us that $\rho^R_q$ can be written</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+ \rho^R_q &= \sqrt{\frac{qL}{2\pi}}r_q, \\
+ \rho^R_{-q} &= \sqrt{\frac{qL}{2\pi}}r^\dagger_q, \quad q>0,
+ \end{align} %]]></script>
+
+    <p>where $\left[r_q,r_{q’}^\dagger\right]=\delta_{q,q’}$. From the definition \eqref{rhodef} we see that $\rho_q^R$ annihilates the ground state, while $\rho^R_{-q}$ creates an excitation with momentum $q$.</p>
+  </li>
+  <li>
+    <p>Show that the structure factor of the density $\rho_q = \rho^R_q+\rho^L_q$ saturates the Onsager bound discussed in <a href="/docs/problems/Problems3/">Problem Set 3</a>.</p>
+  </li>
+</ol>
+
+<h2 id="bosonized-form-of-the-fermion-operator">Bosonized Form of the Fermion Operator</h2>
+
+<p>Using the density operator in the previous question, define</p>
+
+<script type="math/tex; mode=display">\begin{align}
+\phi^R(x) = 2\pi\int^x \rho^R(x')dx' = -i\sum_{q>0}\sqrt{\frac{2\pi}{qL}}\left[r_q e^{iqx}-r^\dagger_q e^{-iqx}\right].
+\end{align}</script>
+
+<p>Show that $e^{\pm i\phi^R(x)}$ <em>anticommute</em> at different positions, and further that</p>
+
+<script type="math/tex; mode=display">\left\{e^{i\phi^R(x)},e^{-i\phi^R(x')}\right\}\propto \delta(x-x').</script>
+
+<p>The overall normalization is cut-off dependent.</p>
 
 <h2 id="from-the-anderson-model-to-the-kondo-model">From the Anderson Model to the Kondo Model</h2>
 
@@ -427,70 +491,6 @@ H &= \sum_{\bk} \xi(\bk)\left[\adop_\bk\aop_\bk+\bdop_\bk\bop_\bk
   </li>
 </ol>
 
-<h2 id="anomalous-commutators-for-1d-fermions">Anomalous Commutators for 1D Fermions</h2>
-
-<p>To describe the physics at low energies, it is convenient to write the fermion field operator in one dimension as</p>
-
-<script type="math/tex; mode=display">\pop(x) = e^{ik_\text{F}x}\pop_R(x)+e^{-ik_\text{F}x}\pop_L(x),</script>
-
-<p>where the modes contributing to $\pop_{L/R}(x)$ are restricted to a momentum shell $[-\Lambda,\Lambda]$ around the Fermi points, with $\Lambda\ll k_\text{F}$. Thus</p>
-
-<script type="math/tex; mode=display">\pop_R(x)=\sum_{k=-\Lambda}^\Lambda \aop_{k+k_\text{F}}e^{ikx}.</script>
-
-<p>In this way we hope to affect a clean separation of low energy excitations into right and left movers. This has some slightly surprising consequences, however.</p>
-
-<p>We define the density operators for right movers by</p>
-
-<script type="math/tex; mode=display">\rho^R_q = \sum_{p=-\Lambda+\abs{q}/2}^{\Lambda-\abs{q}/2}\adop_{p-q/2+k_\text{F}}\aop_{p+q/2+k_\text{F}},
-\label{rhodef}</script>
-
-<p>where we have chosen the labels so that the hermiticity condition $\left(\rho^R_q\right)^\dagger=\rho^R_{-q}$ is respected.</p>
-
-<ol>
-  <li>
-    <p>Show that as a result</p>
-
-    <script type="math/tex; mode=display">% <![CDATA[
-\left[\rho^R_{q},\rho^R_{-q}\right] = \frac{qL}{2\pi},\quad \abs{q}<2\Lambda
- \label{Anom} %]]></script>
-
-    <p>leading to the real space commutator</p>
-
-    <script type="math/tex; mode=display">\left[\rho_R(x),\rho_R(x')\right] =-\frac{i}{2\pi}\delta'(x-x').</script>
-  </li>
-  <li>
-    <p>Show that the left moving commutator has the opposite sign, so the total density $\rho^R(x)+\rho^L(x)$ still commutes at different points.</p>
-  </li>
-  <li>
-    <p>\eqref{Anom} tells us that $\rho^R_q$ can be written</p>
-
-    <script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
- \rho^R_q &= \sqrt{\frac{qL}{2\pi}}r_q, \\
- \rho^R_{-q} &= \sqrt{\frac{qL}{2\pi}}r^\dagger_q, \quad q>0,
- \end{align} %]]></script>
-
-    <p>where $\left[r_q,r_{q’}^\dagger\right]=\delta_{q,q’}$. From the definition \eqref{rhodef} we see that $\rho_q^R$ annihilates the ground state, while $\rho^R_{-q}$ creates an excitation with momentum $q$.</p>
-  </li>
-  <li>
-    <p>Show that the structure factor of the density $\rho_q = \rho^R_q+\rho^L_q$ saturates the Onsager bound discussed in <a href="/docs/problems/Problems3/">Problem Set 3</a>.</p>
-  </li>
-</ol>
-
-<h2 id="bosonized-form-of-the-fermion-operator">Bosonized Form of the Fermion Operator</h2>
-
-<p>Using the density operator in the previous question, define</p>
-
-<script type="math/tex; mode=display">\begin{align}
-\phi^R(x) = 2\pi\int^x \rho^R(x')dx' = -i\sum_{q>0}\sqrt{\frac{2\pi}{qL}}\left[r_q e^{iqx}-r^\dagger_q e^{-iqx}\right].
-\end{align}</script>
-
-<p>Show that $e^{\pm i\phi^R(x)}$ <em>anticommute</em> at different positions, and further that</p>
-
-<script type="math/tex; mode=display">\left\{e^{i\phi^R(x)},e^{-i\phi^R(x')}\right\}\propto \delta(x-x').</script>
-
-<p>The overall normalization is cut-off dependent.</p>
-
 <h2 id="ground-state-of-the-attractive-liebliniger-model">Ground State of the Attractive Lieb–Liniger Model</h2>
 
 <p>For <em>attractive</em> interactions $c&lt;0$ the ground state of $N$ bosons on the infinite line is</p>
@@ -498,7 +498,7 @@ H &= \sum_{\bk} \xi(\bk)\left[\adop_\bk\aop_\bk+\bdop_\bk\bop_\bk
 <script type="math/tex; mode=display">% <![CDATA[
 \Psi(x_1,\ldots,x_N) = \prod_{j<k}\exp\left(-\frac{\abs{c}}{2}\abs{x_j-x_k}\right),\quad x_1<x_2<\cdots <x_N %]]></script>
 
-<p>Show that this is a Bethe state, find the Bethe roots, and calculate the energy.</p>
+<p>Show that this is a Bethe state, find the Bethe roots, and calculate the energy. Compare with the prediction of the Gross–Pitaevskii equation found in <a href="/docs/problems/Problems2/">Problem Set 2</a>.</p>
 
 <h2 id="density-correlations-in-liebliniger">Density Correlations in Lieb–Liniger</h2>
 

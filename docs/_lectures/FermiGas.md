@@ -335,7 +335,7 @@ $$
 If we write $\bk'=\cos\phi \bk + \sin\phi \bk_\perp$, with $\bk_\perp\cdot\bk=0$, this gives Landau's famous result
 
 $$
-\frac{1}{m} = \frac{1}{m_*} +\frac{1}{m} \int F(\phi) \cos\phi \frac{\sin\theta d\theta}{2}.
+\frac{1}{m} = \frac{1}{m_*} +\frac{1}{m} \int F(\phi) \cos\phi \frac{\sin\phi d\phi}{2}.
 $$
 
 For the $F(\phi)$ that we found in \eqref{fermi_ffinal} from second order perturbation theory, this gives the effective mass correction

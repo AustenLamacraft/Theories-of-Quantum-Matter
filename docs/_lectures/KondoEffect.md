@@ -2,7 +2,7 @@
 layout: page
 title: The Kondo Effect
 author: Austen Lamacraft
-chapter: 13
+chapter: 14
 summary: The Kondo model. Divergences at second order. Scaling theory.
 published: true
 ---

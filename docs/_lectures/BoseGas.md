@@ -238,7 +238,7 @@ $$
 \ket{\Psi_\text{GP}} = \frac{1}{\sqrt{N!}}\left(\adop_0\right)^N\ket{\text{VAC}}.
 $$
 
-When $H_\text{int}$ acts on this state, the only terms that contribute are those with $\aop_{\bk_3}=\aop_{\bk_4}=0$
+When $H_\text{int}$ acts on this state, the only terms that contribute are those with $\bk_3=\bk_4=0$
 
 $$
 H_\text{int}\ket{\Psi_\text{GP}} =  \frac{U_0}{2V}\sum_{\bk} \adop_{\bk}\adop_{-\bk}\aop_{0}\aop_{0}\ket{\Psi_\text{GP}}.

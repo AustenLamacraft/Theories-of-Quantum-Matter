@@ -2,7 +2,7 @@
 layout: page
 title: Jordan-Wigner and Bosonization
 author: Austen Lamacraft
-chapter: 14
+chapter: 13
 summary: Spin-1/2 XY model as a system of free fermions. Bosonization.
 published: true
 ---
@@ -289,7 +289,9 @@ $$
 \label{DensityPhase}
 $$
 
-In this way we can represent the fundamental commutator of a boson field
+<p class="message">
+
+Show that we can reproduce the fundamental commutator of a boson field
 
 $$
 [\pop(x),\pdop(y)]=\delta(x-y)
@@ -300,6 +302,12 @@ if we demand that
 $$
 \left[n(x),\theta(y)\right]=i\delta(x-y).
 $$
+
+<em>
+Hint: It's easier if you discretize space!
+</em>
+
+</p>
 
 The density $n(x)$ and phase $\theta(x)$ are then seen to be continuum conjugate variables, like the displacement and momentum density in the elastic chain.
 

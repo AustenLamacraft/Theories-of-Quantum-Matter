@@ -119,7 +119,7 @@ where $\Nop_j = \Nop_{j,\uparrow}+\Nop_{j,\downarrow}$. If we have a $\nu=1$ Mot
 	-\frac{1}{2m}\varphi'' - \mu \varphi - \frac{|c|}{2}\abs{\varphi}^2\varphi = 0.
 	$$
 
-	Look for a solution on the infinite line with $\varphi(x\to\pm\infty) =0$ describing a localized 'blob' (properly called a __bright soliton__) containing $N$ bosons. Find the energy of this state. Compare with the ground state energy of the attractive gas you found in [Problem Set 1]({{ site.baseurl }}/problems/Problems1/).
+	Look for a solution on the infinite line with $\varphi(x\to\pm\infty) =0$ describing a localized 'blob' (properly called a __bright soliton__) containing $N$ bosons. Find the energy of this state. 
 
 2. The ground state wavefunction is
 

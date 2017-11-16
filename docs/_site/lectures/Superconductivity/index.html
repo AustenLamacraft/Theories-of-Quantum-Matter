@@ -9,13 +9,13 @@
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/Superconductivity/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-30T15:30:58+00:00" />
+<meta property="article:published_time" content="2017-11-16T12:55:30+00:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Superconductivity",
-    "datePublished": "2017-10-30T15:30:58+00:00",
+    "datePublished": "2017-11-16T12:55:30+00:00",
     "description": "Our grand tour of many body theories continues with Bardeen, Cooper and Schrieffer&#39;s (BCS) theory of superconductivity, based on the idea that electrons in a superconductor bind to form  Cooper pairs that behave like bosons. The phenomena of superconductivity and superfluidity are then closely linked.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/Superconductivity/"
   }
@@ -152,13 +152,13 @@ $$
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/Superconductivity/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-30T15:30:58+00:00" />
+<meta property="article:published_time" content="2017-11-16T12:55:30+00:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Superconductivity",
-    "datePublished": "2017-10-30T15:30:58+00:00",
+    "datePublished": "2017-11-16T12:55:30+00:00",
     "description": "Our grand tour of many body theories continues with Bardeen, Cooper and Schrieffer&#39;s (BCS) theory of superconductivity, based on the idea that electrons in a superconductor bind to form  Cooper pairs that behave like bosons. The phenomena of superconductivity and superfluidity are then closely linked.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/Superconductivity/"
   }
@@ -262,13 +262,13 @@ $$
     
       
         
-          <a class="sidebar-nav-item" href="/docs/lectures/KondoEffect/">The Kondo Effect</a>
+          <a class="sidebar-nav-item" href="/docs/lectures/JordanWigner/">Jordan-Wigner and Bosonization</a>
         
       
     
       
         
-          <a class="sidebar-nav-item" href="/docs/lectures/JordanWigner/">Jordan-Wigner and Bosonization</a>
+          <a class="sidebar-nav-item" href="/docs/lectures/KondoEffect/">The Kondo Effect</a>
         
       
     
@@ -438,7 +438,7 @@ however, that the projection onto a fixed number $N$ of particles corresponds ex
 momentum separately,  $\langle n^P_\bp\rangle$ is easily found to be $v_\bp^2$. The total variational
 energy of this state is</p>
 
-<script type="math/tex; mode=display">\braket{\text{BCS}}{H}{\text{BCS}}=2\sum_\bp \epsilon_{\bp}v_\bp^2+\frac{U_0}{V}\sum_{\bp,\bp'}u^*_\bp v_
+<script type="math/tex; mode=display">\braket{\text{BCS}}{H}{\text{BCS}}=2\sum_\bp \epsilon_{\bp}|v_\bp|^2+\frac{U_0}{V}\sum_{\bp,\bp'}u^*_\bp v_
 \bp u_{\bp'}v^*_{\bp'}.
 \label{bcs_en}</script>
 
@@ -449,9 +449,9 @@ conserves the number of particles can evidently be written</p>
 
 <p>The probabilities $P_N$ are</p>
 
-<script type="math/tex; mode=display">P_N=\sum_{\sum n^P_\bp=N/2}\prod_\bp \left[n^P_\bp v^2_\bp+\left(1-n^P_\bp\right)u^2_\bp \right],</script>
+<script type="math/tex; mode=display">P_N=\sum_{\sum n^P_\bp=N/2}\prod_\bp \left[n^P_\bp |v_\bp|^2+\left(1-n^P_\bp\right)|u_\bp|^2 \right],</script>
 
-<p>which is strongly peaked around $\langle N \rangle=2\sum_\bp v^2_\bp=2\sum_\bp \langle n^P_\bp
+<p>which is strongly peaked around $\langle N \rangle=2\sum_\bp |v_\bp|^2=2\sum_\bp \langle n^P_\bp
 \rangle$, with a variance that is $O(N)$. Thus at large $N$</p>
 
 <script type="math/tex; mode=display">\braket{\text{BCS}}{\cO}{\text{BCS}}\to \braket{\langle N\rangle \text{ pair}}{\cO}{\langle N\rangle\text{ pair}}.</script>
@@ -473,7 +473,7 @@ as the components of a spin-$1/2$</p>
 
 <script type="math/tex; mode=display">H_{\text{pair}}-\mu N=2\sum_\bp \xi({\bp})S_\bp^z+\frac{U_0}{V}\sum_{\bp,\bp'}S^+_\bp S^-_{\bp'},</script>
 
-<p>where we have included the chemical potential by defining $\xi_\bp\equiv\epsilon(\bp)-\mu$. If we parameterize $\left(u_\bp,v_\bp\right)$ as $(\cos(\theta/2)e^{i\varphi/2},\sin(\theta/2)e^{-i\varphi/2})$
+<p>where we have included the chemical potential by defining $\xi_\bp\equiv\epsilon(\bp)-\mu$. If we parameterize $\left(u_\bp,v_\bp\right)$ as $(\cos(\theta/2)e^{-i\varphi/2},\sin(\theta/2)e^{i\varphi/2})$
 then the variational energy Equation (\ref{bcs_en}) has the form (except for a constant)</p>
 
 <script type="math/tex; mode=display">\braket{\text{BCS}}{H}{\text{BCS}}=-\sum_\bp \xi_\bp\cos\theta_\bp+\frac{U_0}{4V}\sum_{\bp,\bp'}\sin
@@ -680,7 +680,7 @@ the Bogoliubov-type excitations after the fact. Recalling the BCS state</p>
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{eqnarray}
 \alop_{\bp\uparrow}&=&u_\bp\aop_{\bp\uparrow}-v_\bp\adop_{-\bp\downarrow}\nonumber\\
-\alop_{\bp\downarrow}&=&u_\bp\aop_{\bp\downarrow}+v_\bp\adop_{-\bp\uparrow},
+\alop_{\bp\downarrow}&=&u_{-\bp}\aop_{\bp\downarrow}+v_{-\bp}\adop_{-\bp\uparrow},
 \end{eqnarray} %]]></script>
 
 <p>satisfy the canonical fermion anticommutation relations and annihilate the BCS state</p>
@@ -689,8 +689,8 @@ the Bogoliubov-type excitations after the fact. Recalling the BCS state</p>
 
 <p>Consider the state</p>
 
-<script type="math/tex; mode=display">\ket{\bp,s}=\aldop_{\bp,s}\ket{\text{BCS}}=\adop_{\bp,s}\prod_{\bp'\neq \bp} \left[v_\bp\adop_
-{\bp\uparrow}\adop_{-\bp\downarrow}+u_\bp\right]\ket{\text{VAC}},</script>
+<script type="math/tex; mode=display">\ket{\bp,s}=\aldop_{\bp,s}\ket{\text{BCS}}=\adop_{\bp,s}\prod_{\bp'\neq \bp} \left[v_{\bp'}\adop_
+{\bp'\uparrow}\adop_{-\bp'\downarrow}+u_{\bp'}\right]\ket{\text{VAC}},</script>
 
 <p>corresponding to the momentum state $\bp$ certainly containing one particle with (pseudo-)spin $s$,
 and the $\left(-\bp,-s\right)$ state certainly being empty. The result is an eigenstate of momentum and
@@ -731,12 +731,21 @@ state to be occupied. Thus the probability of a  $(\bp,s;-\bp,-s)$ state being b
 {-s}(-\bp)\right]+n_{-s}(-\bp)\left[1-n_{s}(\bp)\right]$. What if we have <em>both</em> a $(\bp,s)$ and a $(-
 \bp,-s)$ quasiparticle present?</p>
 
-<script type="math/tex; mode=display">\aldop_{\bp\uparrow}\aldop_{-\bp\downarrow}\ket{\text{BCS}}=\left[u_\bp\adop_{\bp\uparrow}
-\adop_{-\bp\downarrow}-v_\bp\right]\prod_{\bp'\neq \bp} \left[v_\bp\adop_{\bp\uparrow}\adop_{-\bp
+<script type="math/tex; mode=display">\aldop_{\bp\uparrow}\aldop_{-\bp\downarrow}\ket{\text{BCS}}=\left[u^*_\bp\adop_{\bp\uparrow}
+\adop_{-\bp\downarrow}-v^*_\bp\right]\prod_{\bp'\neq \bp} \left[v_\bp\adop_{\bp\uparrow}\adop_{-\bp
 \downarrow}+u_\bp\right]\ket{\text{VAC}},</script>
 
-<p>which is orthogonal to the BCS state. In the Anderson spin language this corresponds to a single flipped
-spin, and has energy given by twice the ‘magnetic field’ each pair experiences $2E(\bp)$, see \eqref{heff}. The spin interpretation allows us to see easily that this state contributes $-u_\bp v_\bp$ to the self consistent
+<p>which is orthogonal to the BCS state. In the Anderson spin language this corresponds to reversing the direction of spin, as if</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+ (u,v)&=(\cos(\theta/2)e^{-i\varphi/2},\sin(\theta/2)e^{i\varphi/2}),\qquad \text{then}\\
+(-v^*,u^*)&=i(\cos(\theta'/2)e^{-i\varphi'/2},\sin(\theta'/2)e^{i\varphi'/2}),
+\end{align} %]]></script>
+
+<p>with $\theta’ = \pi/2 - \theta$ and $\varphi’ = \varphi + \pi$.</p>
+
+<p>The excitation energy of this state is twice the ‘magnetic field’ each pair experiences $2E(\bp)$, see \eqref{heff}. The spin interpretation allows us to see easily that this state contributes $-u_\bp v_\bp$ to the self consistent
 equation, and occurs with probability $n_{\uparrow}(\bp)n_{\downarrow}(-\bp)$. The overall result is thus</p>
 
 <script type="math/tex; mode=display">% <![CDATA[

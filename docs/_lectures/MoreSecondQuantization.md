@@ -282,7 +282,7 @@ The interference of two independent condensates was observed in 1997 in {% cite 
 
 ## Hartree--Fock Theory
 
-We now apply these ideas to the approxiamate calculation of the energy of an interacting many body system.
+We now apply these ideas to the approximate calculation of the energy of an interacting many body system.
 
 ### The Hartree and Fock Potentials
 

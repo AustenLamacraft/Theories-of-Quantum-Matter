@@ -14,6 +14,76 @@ summary: Kondo Model; Jordan--Wigner; Bosonization.
 
 ---
 
+## Anomalous Commutators for 1D Fermions
+
+To describe the physics at low energies, it is convenient to write the fermion field operator in one dimension as
+
+$$
+\pop(x) = e^{ik_\text{F}x}\pop_R(x)+e^{-ik_\text{F}x}\pop_L(x),
+$$
+
+where the modes contributing to $\pop_{L/R}(x)$ are restricted to a momentum shell $[-\Lambda,\Lambda]$ around the Fermi points, with $\Lambda\ll k_\text{F}$. Thus
+
+$$
+\pop_R(x)=\sum_{k=-\Lambda}^\Lambda \aop_{k+k_\text{F}}e^{ikx}.
+$$
+
+In this way we hope to affect a clean separation of low energy excitations into right and left movers. This has some slightly surprising consequences, however.
+
+We define the density operators for right movers by
+
+$$
+\rho^R_q = \sum_{p=-\Lambda+\abs{q}/2}^{\Lambda-\abs{q}/2}\adop_{p-q/2+k_\text{F}}\aop_{p+q/2+k_\text{F}},
+\label{rhodef}
+$$
+
+where we have chosen the labels so that the hermiticity condition $\left(\rho^R_q\right)^\dagger=\rho^R_{-q}$ is respected.
+
+1. Show that as a result
+
+	$$
+	\left[\rho^R_{q},\rho^R_{-q}\right] = \frac{qL}{2\pi},\quad \abs{q}<2\Lambda
+	\label{Anom}
+	$$
+
+	leading to the real space commutator
+
+	$$
+	\left[\rho_R(x),\rho_R(x')\right] =-\frac{i}{2\pi}\delta'(x-x').
+	$$
+
+2. Show that the left moving commutator has the opposite sign, so the total density $\rho^R(x)+\rho^L(x)$ still commutes at different points.
+
+3. \eqref{Anom} tells us that $\rho^R_q$ can be written
+
+	$$
+	\begin{align}
+	\rho^R_q &= \sqrt{\frac{qL}{2\pi}}r_q, \\
+	\rho^R_{-q} &= \sqrt{\frac{qL}{2\pi}}r^\dagger_q, \quad q>0,
+	\end{align}
+	$$
+
+	where $\left[r_q,r_{q'}^\dagger\right]=\delta_{q,q'}$. From the definition \eqref{rhodef} we see that $\rho_q^R$ annihilates the ground state, while $\rho^R_{-q}$ creates an excitation with momentum $q$.
+
+4. Show that the structure factor of the density $\rho_q = \rho^R_q+\rho^L_q$ saturates the Onsager bound discussed in [Problem Set 3]({{ site.baseurl }}/problems/Problems3/).
+
+## Bosonized Form of the Fermion Operator
+
+Using the density operator in the previous question, define
+
+$$
+\begin{align}
+\phi^R(x) = 2\pi\int^x \rho^R(x')dx' = -i\sum_{q>0}\sqrt{\frac{2\pi}{qL}}\left[r_q e^{iqx}-r^\dagger_q e^{-iqx}\right].
+\end{align}
+$$
+
+Show that $e^{\pm i\phi^R(x)}$ _anticommute_ at different positions, and further that
+
+$$
+\left\{e^{i\phi^R(x)},e^{-i\phi^R(x')}\right\}\propto \delta(x-x').
+$$
+
+The overall normalization is cut-off dependent.
 
 ## From the Anderson Model to the Kondo Model
 
@@ -132,76 +202,7 @@ the ground state of the decoupled system ($t=0$) has $Q=0$.
 
 2. What has this got to do with the Kondo effect? Try to establish a dictionary between the two phenomena.
 
-## Anomalous Commutators for 1D Fermions
 
-To describe the physics at low energies, it is convenient to write the fermion field operator in one dimension as
-
-$$
-\pop(x) = e^{ik_\text{F}x}\pop_R(x)+e^{-ik_\text{F}x}\pop_L(x),
-$$
-
-where the modes contributing to $\pop_{L/R}(x)$ are restricted to a momentum shell $[-\Lambda,\Lambda]$ around the Fermi points, with $\Lambda\ll k_\text{F}$. Thus
-
-$$
-\pop_R(x)=\sum_{k=-\Lambda}^\Lambda \aop_{k+k_\text{F}}e^{ikx}.
-$$
-
-In this way we hope to affect a clean separation of low energy excitations into right and left movers. This has some slightly surprising consequences, however.
-
-We define the density operators for right movers by
-
-$$
-\rho^R_q = \sum_{p=-\Lambda+\abs{q}/2}^{\Lambda-\abs{q}/2}\adop_{p-q/2+k_\text{F}}\aop_{p+q/2+k_\text{F}},
-\label{rhodef}
-$$
-
-where we have chosen the labels so that the hermiticity condition $\left(\rho^R_q\right)^\dagger=\rho^R_{-q}$ is respected.
-
-1. Show that as a result
-
-	$$
-	\left[\rho^R_{q},\rho^R_{-q}\right] = \frac{qL}{2\pi},\quad \abs{q}<2\Lambda
-	\label{Anom}
-	$$
-
-	leading to the real space commutator
-
-	$$
-	\left[\rho_R(x),\rho_R(x')\right] =-\frac{i}{2\pi}\delta'(x-x').
-	$$
-
-2. Show that the left moving commutator has the opposite sign, so the total density $\rho^R(x)+\rho^L(x)$ still commutes at different points.
-
-3. \eqref{Anom} tells us that $\rho^R_q$ can be written
-
-	$$
-	\begin{align}
-	\rho^R_q &= \sqrt{\frac{qL}{2\pi}}r_q, \\
-	\rho^R_{-q} &= \sqrt{\frac{qL}{2\pi}}r^\dagger_q, \quad q>0,
-	\end{align}
-	$$
-
-	where $\left[r_q,r_{q'}^\dagger\right]=\delta_{q,q'}$. From the definition \eqref{rhodef} we see that $\rho_q^R$ annihilates the ground state, while $\rho^R_{-q}$ creates an excitation with momentum $q$.
-
-4. Show that the structure factor of the density $\rho_q = \rho^R_q+\rho^L_q$ saturates the Onsager bound discussed in [Problem Set 3]({{ site.baseurl }}/problems/Problems3/).
-
-## Bosonized Form of the Fermion Operator
-
-Using the density operator in the previous question, define
-
-$$
-\begin{align}
-\phi^R(x) = 2\pi\int^x \rho^R(x')dx' = -i\sum_{q>0}\sqrt{\frac{2\pi}{qL}}\left[r_q e^{iqx}-r^\dagger_q e^{-iqx}\right].
-\end{align}
-$$
-
-Show that $e^{\pm i\phi^R(x)}$ _anticommute_ at different positions, and further that
-
-$$
-\left\{e^{i\phi^R(x)},e^{-i\phi^R(x')}\right\}\propto \delta(x-x').
-$$
-
-The overall normalization is cut-off dependent.
 
 ## Ground State of the Attractive Lieb--Liniger Model
 
@@ -211,7 +212,7 @@ $$
 \Psi(x_1,\ldots,x_N) = \prod_{j<k}\exp\left(-\frac{\abs{c}}{2}\abs{x_j-x_k}\right),\quad x_1<x_2<\cdots <x_N
 $$
 
-Show that this is a Bethe state, find the Bethe roots, and calculate the energy.
+Show that this is a Bethe state, find the Bethe roots, and calculate the energy. Compare with the prediction of the Gross--Pitaevskii equation found in [Problem Set 2]({{ site.baseurl }}/problems/Problems2/).
 
 
 ## Density Correlations in Lieb--Liniger
