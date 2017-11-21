@@ -375,7 +375,7 @@ _Particle scatters, creating a particle-hole pair._
 Consider the state $\adop_{\bk,s}\ket{0}$, creating a particle in the _exact_ ground state of the problem. Since $\ket{0}$ includes the first kind of state (2 particle-hole pair states), $\adop_{\bk,s}\ket{0}$ is only missing the second kind. Therefore to first order, the single quasiparticle state is
 
 $$
-\ket{\bk,s} = \sqrt{\frac{z_k}{\braket{0}{\aop_{\bk,s}\adop_{\bk,s}}{0}}}\adop_{\bk,s}\ket{0} + \frac{U_0}{V}\sum_{\substack{\bk_1+\bk_2=\bk_3+\bk\\ s,s'}}\frac{\adop_{\bk_1,s}\adop_{\bk_2,s'}\aop_{\bk_3,s'}\ket{\text{FS}}}{\epsilon(\bk_1)+\epsilon(\bk_2)-\epsilon(\bk_3)-\epsilon(\bk)},
+\ket{\bk,s} = \sqrt{\frac{z_k}{\braket{0}{\aop_{\bk,s}\adop_{\bk,s}}{0}}}\adop_{\bk,s}\ket{\text{FS}} + \frac{U_0}{V}\sum_{\substack{\bk_1+\bk_2=\bk_3+\bk\\ s,s'}}\frac{\adop_{\bk_1,s}\adop_{\bk_2,s'}\aop_{\bk_3,s'}\ket{\text{FS}}}{\epsilon(\bk_1)+\epsilon(\bk_2)-\epsilon(\bk_3)-\epsilon(\bk)},
 \label{fermi_phpeturb}
 $$
 

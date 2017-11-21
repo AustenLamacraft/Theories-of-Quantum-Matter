@@ -151,7 +151,7 @@ For stability we must have $\omega\chi''(\omega)>0$ (and even).
 The real part is related to the shift in the _energy_ of the system in the presence of a driving force. Recalling that the applied force appears in the Hamiltonian as $-f(t)y(t)$, we find the time average
 
 $$
-E_\text{shift} = -\langle f(t) x(t)\rangle  = -\frac{1}{2}\chi'(\omega)f_0^2
+E_\text{shift} = -\langle f(t) y(t)\rangle  = -\frac{1}{2}\chi'(\omega)f_0^2
 $$
 
 For the damped oscillator, the sign of of $\chi'(\omega)$ changes at resonance. The drive lowers the energy beneath the resonance, and raises it above.
@@ -319,7 +319,7 @@ $$
 S(\omega)\neq S(-\omega).
 $$
 
-Many of the properties of this function are most easily understood from a __spectral representation__, which is obtained by inserting a complete set of energy eigenstates between $x(0)$ and $x(t)$ in \eqref{res_QNoise}. This gives
+Many of the properties of this function are most easily understood from a __spectral representation__, which is obtained by inserting a complete set of energy eigenstates between $y(0)$ and $y(t)$ in \eqref{res_QNoise}. This gives
 
 $$
 S(\omega) = 2\pi\sum_{m,n} \frac{e^{-\beta E_n}}{Z} \abs{\bra{n}y\ket{m}}^2 \delta(\omega-E_m+E_n).
