@@ -92,12 +92,13 @@ where $T_\tau$ is the operation of time ordering of the exponent, which is a sho
 
 $$
 \begin{align}
-T_\tau \exp\left(-\int_0^\beta H_\text{int}(\tau)d\tau\right) &= 1 - \int_0^\beta H_\text{int}(\tau_1)d\tau_1 + \int_0^\beta d\tau_2 \int_0^{\tau_2} d\tau_1 H_\text{int}(\tau_2)H_\text{int}(\tau_1) \\
-&- \int_0^\beta d\tau_3 \int_0^{\tau_3} d\tau_2 \int_0^{\tau_2} d\tau_1 H_\text{int}(\tau_3)H_\text{int}(\tau_2)H_\text{int}(\tau_1)+\cdots,
+&T_\tau \exp\left(-\int_0^\beta H_\text{int}(\tau)d\tau\right) = 1 - \int_0^\beta H_\text{int}(\tau_1)d\tau_1\nonumber \\
+\qquad &+ \int_0^\beta d\tau_2 \int_0^{\tau_2} d\tau_1 H_\text{int}(\tau_2)H_\text{int}(\tau_1)\nonumber \\
+&\qquad- \int_0^\beta d\tau_3 \int_0^{\tau_3} d\tau_2 \int_0^{\tau_2} d\tau_1 H_\text{int}(\tau_3)H_\text{int}(\tau_2)H_\text{int}(\tau_1)+\cdots,
 \end{align}
 $$
 
-with the times increasing from left to right. This gives our final expression for the partition function
+with the times increasing from right to left. This gives our final expression for the partition function
 
 $$
 Z = \tr\left[e^{-\beta H_0}T_\tau \exp\left(-\int_0^\beta H_\text{int}(\tau)d\tau\right)\right].
@@ -172,7 +173,7 @@ $$
 This is a function of $\tau_1-\tau_2$, again as a result of the cyclic property. Including the time dependence in \eqref{Hint_exp} is straightforward
 
 $$
-H_\text{int}  = \frac{1}{2V} \sum_{\bk_1+\bk_2=\bk_3+\bk_4} U_{\bk_1-\bk_4} :(\adop_{\bk_1}(\tau)\aop_{\bk_4}(\tau)-nV)(\adop_{\bk_2}(\tau)\aop_{\bk_3}(\tau)-nV):,
+H_\text{int}(\tau)  = \frac{1}{2V} \sum_{\bk_1+\bk_2=\bk_3+\bk_4} U_{\bk_1-\bk_4} :(\adop_{\bk_1}(\tau)\aop_{\bk_4}(\tau)-nV)(\adop_{\bk_2}(\tau)\aop_{\bk_3}(\tau)-nV):,
 \label{Hint_exp_TD}
 $$
 
@@ -206,7 +207,7 @@ To see why this is necessary, consider the expectation corresponding to the time
 
 $$
 \begin{align}
-&\pdop(\br_1,\tau_1)\pdop(\br_3,\tau_3)\pop(\br_2,\tau_2)\pop(\br_4,\tau_4)\rangle=\nonumber\\ &\qquad-\langle \pdop(\br_1,\tau_1)\pop(\br_2,\tau_2)\rangle\langle \pdop(\br_3,\tau_3)\pop(\br_4,\tau_4)\rangle\nonumber\\
+&\langle\pdop(\br_1,\tau_1)\pdop(\br_3,\tau_3)\pop(\br_2,\tau_2)\pop(\br_4,\tau_4)\rangle=\nonumber\\ &\qquad-\langle \pdop(\br_1,\tau_1)\pop(\br_2,\tau_2)\rangle\langle \pdop(\br_3,\tau_3)\pop(\br_4,\tau_4)\rangle\nonumber\\
 &\qquad\qquad+\langle \pdop(\br_1,\tau_1)\pop(\br_4,\tau_4)\rangle\langle \pdop(\br_3,\tau_3)\pop(\br_2,\tau_2)\rangle.
 \end{align}
 $$
@@ -243,7 +244,7 @@ $$
 Make sure you understand where those $\delta$-functions on the right hand side come from!
 </p>
 
-The name is slightly unfortunate, because $G(\br,\tau,\br',\tau')$ has a physical meaning in its own right, apart from being useful in perturbation calculation, and we can define it for an interacting system by taking expectations in \eqref{GF_def} with respect to the density matrix of the interacting system. In that case, however, $G(\br,\tau,\br',\tau')$ does not obey a differntial equation like \eqref{GF_eq}. So in general many body Green's functions are _not_ Green's functions in the sense of differential equations. Just to confuse you.
+The name is slightly unfortunate, because $G(\br,\tau,\br',\tau')$ has a physical meaning in its own right, apart from being useful in perturbation calculation, and we can define it for an interacting system by taking expectations in \eqref{GF_def} with respect to the density matrix of the interacting system. In that case, however, $G(\br,\tau,\br',\tau')$ does not obey a differential equation like \eqref{GF_eq}. So in general many body Green's functions are _not_ Green's functions in the sense of differential equations. Just to confuse you.
 
 For the noninteracting Green's functions that appear in our perturbation calculations \eqref{GF_eq} is very useful, allowing us to find $G(\br,\tau,\br',\tau')$ using Fourier analysis. The Green's function depends on $\tau-\tau'$ (by the cyclic property of the trace), and in a translationally invariant system it will depend on $\br-\br'$. What about boundary conditions? They are very simple
 
@@ -459,7 +460,7 @@ Although this is still a complicated looking function, there are a couple of sim
 
     where $\lambda_\text{TF}=\sqrt{4\pi e^2\nu(E_F)}$ is the __Thomas--Fermi screening length__. Our summation of an infinite series of diagrams that are increasingly singular due to the long ranged nature of the Coulomb force is ... a finite ranged potential!
 
-2. __High frequencies__. $\abs{\omega_n}\ll k_\text{F}\abs{\bq}/m$.
+2. __High frequencies__. $\abs{\omega_n}\gg k_\text{F}\abs{\bq}/m$.
 
     $$
     \pi_{\bq,\omega_n} \longrightarrow -\frac{n\bq^2}{m\omega_n^2}
