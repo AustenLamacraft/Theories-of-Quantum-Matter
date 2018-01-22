@@ -339,7 +339,7 @@ $$
 \kappa \equiv \frac{\text{tension}}{\text{strain}} = ka
 $$
 
-Then $k/m = \kappa/\rho$ and
+Then $k/m = \kappa/(\rho a^2)$ and
 
 $$
 \frac{E_0}{L} = \left(\frac{N}{L}\right)^2\frac{2}{\pi}\sqrt{\frac{\kappa}{\rho}}.
@@ -626,7 +626,7 @@ $$
 What happens to the higher Bragg peaks?
 </p>
 
-Thus quantum fluctuations replace the Bragg peaks, an indicator of crystalline order, with power law divergences. These remnants of order diminish as $\ell_\text{osc}/a$ increases, indicating larger quantum fluctuations. Again, things are different in higher dimensions: the Bragg peaks survive, albeit reduced in strength, at least for small fluctuations. It is possible, however, for quantum fluctuations to prevent crystallization in the ground state (i.e. at zero temperature). Such systems are called _quantum liquids_. Helium is the prototypical example: the low atomic mass and relatively weak interactions between atoms mean that quantum fluctuations are large. 
+Thus quantum fluctuations replace the Bragg peaks, an indicator of crystalline order, with power law divergences. These remnants of order diminish as $\ell_\text{osc}/a$ increases, indicating larger quantum fluctuations. Again, things are different in higher dimensions: the Bragg peaks survive, albeit reduced in strength, at least for small fluctuations. It is possible, however, for quantum fluctuations to prevent crystallization in the ground state (i.e. at zero temperature). Such systems are called _quantum liquids_. Helium is the prototypical example: the low atomic mass and relatively weak interactions between atoms mean that quantum fluctuations are large.
 
 
 
