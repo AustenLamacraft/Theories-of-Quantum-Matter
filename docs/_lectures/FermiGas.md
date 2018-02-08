@@ -117,7 +117,7 @@ To first order in the interaction we have the not-so-interesting result
 $$
 \begin{align}
 \varepsilon_s(\bk) &= \epsilon(\bk) + \frac{U_0 N_{\bar s}}{V}+\cdots\\
-f_{\pm} &= f_\mp = U_0+\cdots,\quad f_{++}=f_{--}=0+\cdots,
+f_{\uparrow\downarrow} &= f_{\downarrow\uparrow} = U_0+\cdots,\quad f_{\uparrow\uparrow}=f_{\downarrow\downarrow}=0+\cdots,
 \label{fermi_first}
 \end{align}
 $$
@@ -126,7 +126,7 @@ where the meaning of the $\bar s$ is $\bar\uparrow=\downarrow$, $\bar\downarrow=
 
 $$
 \begin{align}
-f_{++}(\bk,\bk') = -\frac{U_0^2}{V}\left[\sum_{\bk+\bk_3=\bk'+\bk_2} \frac{N_{\downarrow}(\bk_3)(1-N_{\downarrow}(\bk_2))}{\epsilon(\bk)+\epsilon(\bk_3)-\epsilon(\bk')-\epsilon(\bk_2)}\right.\nonumber\\
+f_{\uparrow\uparrow}(\bk,\bk') = -\frac{U_0^2}{V}\left[\sum_{\bk+\bk_3=\bk'+\bk_2} \frac{N_{\downarrow}(\bk_3)(1-N_{\downarrow}(\bk_2))}{\epsilon(\bk)+\epsilon(\bk_3)-\epsilon(\bk')-\epsilon(\bk_2)}\right.\nonumber\\
 \left.+\sum_{\bk'+\bk_3=\bk+\bk_2}\frac{N_{\downarrow}(\bk_3)(1-N_{\downarrow}(\bk_2))}{\epsilon(\bk')+\epsilon(\bk_3)-\epsilon(\bk)-\epsilon(\bk_2)}\right].
 \end{align}
 $$
@@ -135,18 +135,18 @@ We will be interested in the low temperature limit, in which $n_{s}(\bk)$ is non
 
 $$
 \begin{align}
-f_{++}(\bk,\bk') = -\frac{U_0^2}{V}\left[\sum_{\bk+\bk_3=\bk'+\bk_2} \frac{N(\bk_3)(1-N(\bk_2))}{\epsilon(\bk_3)-\epsilon(\bk_2)}
+f_{\uparrow\uparrow}(\bk,\bk') = -\frac{U_0^2}{V}\left[\sum_{\bk+\bk_3=\bk'+\bk_2} \frac{N(\bk_3)(1-N(\bk_2))}{\epsilon(\bk_3)-\epsilon(\bk_2)}
 +\sum_{\bk'+\bk_3=\bk+\bk_2}\frac{N(\bk_3)(1-N(\bk_2))}{\epsilon(\bk_3)-\epsilon(\bk_2)}\right].
 \end{align}
 $$
 
 In which we have assumed the state around which we expand is unpolarized, i.e. $N_{s}(\bk)$ is independent of $s$.
 
-The expression for $f_{\pm}(\bk,\bk')$ is more complicated
+The expression for $f_{\uparrow\downarrow}(\bk,\bk')$ is more complicated
 
 $$
 \begin{align}
-f_{+-}(\bk,\bk') = U_0 + f_{++}(\bk,\bk') +\frac{U_0^2}{V}\left[\sum_{\bk+\bk'=\bk_3+\bk_4}\frac{N(\bk_3)N(\bk_4)}{\epsilon(\bk_3)+\epsilon(\bk_4)-2E_\text{F}}\right.\nonumber\\
+f_{\uparrow\downarrow}(\bk,\bk') = U_0 + f_{\uparrow\uparrow}(\bk,\bk') +\frac{U_0^2}{V}\left[\sum_{\bk+\bk'=\bk_3+\bk_4}\frac{N(\bk_3)N(\bk_4)}{\epsilon(\bk_3)+\epsilon(\bk_4)-2E_\text{F}}\right.\nonumber\\
 \left.\sum_{\bk+\bk'=\bk_1+\bk_2}\frac{(1-N(\bk_1))(1-N(\bk_2))}{2E_\text{F}-\epsilon(\bk_1)-\epsilon(\bk_2)}\right].
 \end{align}
 $$
@@ -154,7 +154,7 @@ $$
 Evaluating these expressions is simpler than calculating \eqref{fermi_E2}, as we have only one independent momentum. The _new feature_ that comes at second order is a nontrivial dependence of $f_{s^{}s'}(\bk,\bk')$ on the angle between $\bk$ and $\bk'$.
 
 <p class="message">
-It's a bit fiddly to get at, but let's work it out for the simpler case of $f_{++}(\bk,\bk')$!
+It's a bit fiddly to get at, but let's work it out for the simpler case of $f_{\uparrow\uparrow}(\bk,\bk')$!
 </p>
 
 
@@ -162,7 +162,7 @@ The continuum limit is
 
 $$
 \begin{align}
-f_{++}(\bk,\bk') = \frac{U_0^2}{(2\pi)^3}\left[\int_{\substack{\abs{\bk_3}<k_\text{F},\abs{\bk_2}>k_\text{F}\\ \bk+\bk_3=\bk'+\bk_2 }} \frac{d\bk_3}{\epsilon(\bk_2)-\epsilon(\bk_3)}\right.\nonumber\\
+f_{\uparrow\uparrow}(\bk,\bk') = \frac{U_0^2}{(2\pi)^3}\left[\int_{\substack{\abs{\bk_3}<k_\text{F},\abs{\bk_2}>k_\text{F}\\ \bk+\bk_3=\bk'+\bk_2 }} \frac{d\bk_3}{\epsilon(\bk_2)-\epsilon(\bk_3)}\right.\nonumber\\
 \left.+\int_{\substack{\abs{\bk_3}<k_\text{F},\abs{\bk_2}>k_\text{F}\\ \bk'+\bk_3=\bk+\bk_2 }}\frac{d\bk_3}{\epsilon(\bk_2)-\epsilon(\bk_3)}\right].
 \label{fermi_fcont}
 \end{align}
@@ -188,7 +188,7 @@ $$
 
 <a name="FermiGeometry"></a>
 ![]({{ site.baseurl }}/assets/FermiGeometry.png)
-_Geometry of the integral for $f\_{++}(\bk,\bk')$._
+_Geometry of the integral for $f\_{\uparrow\uparrow}(\bk,\bk')$._
 
 the denominator becomes
 
@@ -224,7 +224,7 @@ The other integral in \eqref{fermi_fcont} is the same but in the interval $(\pi/
 
 $$
 \begin{align}
-f_{++}(\bk,\bk') &= \frac{U_0^2 m}{(2\pi)^2} \int_0^{\pi} d\theta \sin\theta \sqrt{k_\text{F}^2-q^2\sin^2\theta}\nonumber\\
+f_{\uparrow\uparrow}(\bk,\bk') &= \frac{U_0^2 m}{(2\pi)^2} \int_0^{\pi} d\theta \sin\theta \sqrt{k_\text{F}^2-q^2\sin^2\theta}\nonumber\\
 &=\frac{U_0^2 m k_\text{F}}{(2\pi)^2}\left[1 - \frac{\cos^2\phi/2}{2\sin\phi/2}\log\left(\frac{1-\sin\phi/2}{1+\sin\phi/2}\right)\right].
 \end{align}
 $$

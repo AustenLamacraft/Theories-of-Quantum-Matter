@@ -378,10 +378,10 @@ $$
 \delta_{ab}\delta_{cd} = \frac{1}{2}\left[\boldsymbol{\sigma}_{a d}\cdot \boldsymbol{\sigma}_{c b} + \delta_{ad}\delta_{cb}\right].
 $$
 
-Finally, we get
+Finally, in $d$ dimensions ($d=1$, chain; $d=2$ square lattice; $d=3$ cubic lattice) we get
 
 $$
-H_\text{eff} = -\frac{N_\text{sites}t^2}{2U}+J\sum_{\langle j\,k\rangle} \mathbf{s}_j\cdot \mathbf{s}_k
+H_\text{eff} = -\frac{dN_\text{sites}t^2}{2U}+J\sum_{\langle j\,k\rangle} \mathbf{s}_j\cdot \mathbf{s}_k
 $$
 
 with $J=\frac{2t^2}{U}$ and

@@ -8,6 +8,8 @@ Material for a Part III Physics course at the University of Cambridge, running i
 
 ## To Do
 
+1. Is there a factor of 2 in Eq. (40) of Lattice models?
+
 1. Background charge density in Jellium lecture handled correctly?
 
 1. Improve discussion of fractional statistics

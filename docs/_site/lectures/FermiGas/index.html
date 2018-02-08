@@ -9,13 +9,13 @@
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/FermiGas/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-01-22T07:55:55+00:00" />
+<meta property="article:published_time" content="2018-02-08T12:40:30+00:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Fermi Gas",
-    "datePublished": "2018-01-22T07:55:55+00:00",
+    "datePublished": "2018-02-08T12:40:30+00:00",
     "description": "A Fermi gas with weak interactions provides an example of one of the &#39;standard models&#39; of condensed matter physics: Landau&#39;s Fermi liquid theory.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/FermiGas/"
   }
@@ -152,13 +152,13 @@ $$
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/FermiGas/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-01-22T07:55:55+00:00" />
+<meta property="article:published_time" content="2018-02-08T12:40:30+00:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Fermi Gas",
-    "datePublished": "2018-01-22T07:55:55+00:00",
+    "datePublished": "2018-02-08T12:40:30+00:00",
     "description": "A Fermi gas with weak interactions provides an example of one of the &#39;standard models&#39; of condensed matter physics: Landau&#39;s Fermi liquid theory.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/FermiGas/"
   }
@@ -403,44 +403,44 @@ N'_{\downarrow}(\bk_3) = N_{\downarrow}(\bk_3) - 1, \quad N'_{\uparrow}(\bk_4) =
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
 \varepsilon_s(\bk) &= \epsilon(\bk) + \frac{U_0 N_{\bar s}}{V}+\cdots\\
-f_{\pm} &= f_\mp = U_0+\cdots,\quad f_{++}=f_{--}=0+\cdots,
+f_{\uparrow\downarrow} &= f_{\downarrow\uparrow} = U_0+\cdots,\quad f_{\uparrow\uparrow}=f_{\downarrow\downarrow}=0+\cdots,
 \label{fermi_first}
 \end{align} %]]></script>
 
 <p>where the meaning of the $\bar s$ is $\bar\uparrow=\downarrow$, $\bar\downarrow=\uparrow$. The second order contributions to the $f$-function are more interesting, however. For example</p>
 
 <script type="math/tex; mode=display">\begin{align}
-f_{++}(\bk,\bk') = -\frac{U_0^2}{V}\left[\sum_{\bk+\bk_3=\bk'+\bk_2} \frac{N_{\downarrow}(\bk_3)(1-N_{\downarrow}(\bk_2))}{\epsilon(\bk)+\epsilon(\bk_3)-\epsilon(\bk')-\epsilon(\bk_2)}\right.\nonumber\\
+f_{\uparrow\uparrow}(\bk,\bk') = -\frac{U_0^2}{V}\left[\sum_{\bk+\bk_3=\bk'+\bk_2} \frac{N_{\downarrow}(\bk_3)(1-N_{\downarrow}(\bk_2))}{\epsilon(\bk)+\epsilon(\bk_3)-\epsilon(\bk')-\epsilon(\bk_2)}\right.\nonumber\\
 \left.+\sum_{\bk'+\bk_3=\bk+\bk_2}\frac{N_{\downarrow}(\bk_3)(1-N_{\downarrow}(\bk_2))}{\epsilon(\bk')+\epsilon(\bk_3)-\epsilon(\bk)-\epsilon(\bk_2)}\right].
 \end{align}</script>
 
 <p>We will be interested in the low temperature limit, in which $n_{s}(\bk)$ is non-zero only in a very narrow region of size $k_\text{B} T$ around the Fermi surface. In this limit we can take the $\abs{\bk}=\abs{\bk’}=k_\text{F}$, so that</p>
 
 <script type="math/tex; mode=display">\begin{align}
-f_{++}(\bk,\bk') = -\frac{U_0^2}{V}\left[\sum_{\bk+\bk_3=\bk'+\bk_2} \frac{N(\bk_3)(1-N(\bk_2))}{\epsilon(\bk_3)-\epsilon(\bk_2)}
+f_{\uparrow\uparrow}(\bk,\bk') = -\frac{U_0^2}{V}\left[\sum_{\bk+\bk_3=\bk'+\bk_2} \frac{N(\bk_3)(1-N(\bk_2))}{\epsilon(\bk_3)-\epsilon(\bk_2)}
 +\sum_{\bk'+\bk_3=\bk+\bk_2}\frac{N(\bk_3)(1-N(\bk_2))}{\epsilon(\bk_3)-\epsilon(\bk_2)}\right].
 \end{align}</script>
 
 <p>In which we have assumed the state around which we expand is unpolarized, i.e. $N_{s}(\bk)$ is independent of $s$.</p>
 
-<p>The expression for $f_{\pm}(\bk,\bk’)$ is more complicated</p>
+<p>The expression for $f_{\uparrow\downarrow}(\bk,\bk’)$ is more complicated</p>
 
 <script type="math/tex; mode=display">\begin{align}
-f_{+-}(\bk,\bk') = U_0 + f_{++}(\bk,\bk') +\frac{U_0^2}{V}\left[\sum_{\bk+\bk'=\bk_3+\bk_4}\frac{N(\bk_3)N(\bk_4)}{\epsilon(\bk_3)+\epsilon(\bk_4)-2E_\text{F}}\right.\nonumber\\
+f_{\uparrow\downarrow}(\bk,\bk') = U_0 + f_{\uparrow\uparrow}(\bk,\bk') +\frac{U_0^2}{V}\left[\sum_{\bk+\bk'=\bk_3+\bk_4}\frac{N(\bk_3)N(\bk_4)}{\epsilon(\bk_3)+\epsilon(\bk_4)-2E_\text{F}}\right.\nonumber\\
 \left.\sum_{\bk+\bk'=\bk_1+\bk_2}\frac{(1-N(\bk_1))(1-N(\bk_2))}{2E_\text{F}-\epsilon(\bk_1)-\epsilon(\bk_2)}\right].
 \end{align}</script>
 
 <p>Evaluating these expressions is simpler than calculating \eqref{fermi_E2}, as we have only one independent momentum. The <em>new feature</em> that comes at second order is a nontrivial dependence of $f_{s^{}s’}(\bk,\bk’)$ on the angle between $\bk$ and $\bk’$.</p>
 
 <p class="message">
-It's a bit fiddly to get at, but let's work it out for the simpler case of $f_{++}(\bk,\bk')$!
+It's a bit fiddly to get at, but let's work it out for the simpler case of $f_{\uparrow\uparrow}(\bk,\bk')$!
 </p>
 
 <p>The continuum limit is</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
-f_{++}(\bk,\bk') = \frac{U_0^2}{(2\pi)^3}\left[\int_{\substack{\abs{\bk_3}<k_\text{F},\abs{\bk_2}>k_\text{F}\\ \bk+\bk_3=\bk'+\bk_2 }} \frac{d\bk_3}{\epsilon(\bk_2)-\epsilon(\bk_3)}\right.\nonumber\\
+f_{\uparrow\uparrow}(\bk,\bk') = \frac{U_0^2}{(2\pi)^3}\left[\int_{\substack{\abs{\bk_3}<k_\text{F},\abs{\bk_2}>k_\text{F}\\ \bk+\bk_3=\bk'+\bk_2 }} \frac{d\bk_3}{\epsilon(\bk_2)-\epsilon(\bk_3)}\right.\nonumber\\
 \left.+\int_{\substack{\abs{\bk_3}<k_\text{F},\abs{\bk_2}>k_\text{F}\\ \bk'+\bk_3=\bk+\bk_2 }}\frac{d\bk_3}{\epsilon(\bk_2)-\epsilon(\bk_3)}\right].
 \label{fermi_fcont}
 \end{align} %]]></script>
@@ -460,7 +460,7 @@ f_{++}(\bk,\bk') = \frac{U_0^2}{(2\pi)^3}\left[\int_{\substack{\abs{\bk_3}<k_\te
 
 <p><a name="FermiGeometry"></a>
 <img src="/docs/assets/FermiGeometry.png" alt="" />
-<em>Geometry of the integral for $f_{++}(\bk,\bk’)$.</em></p>
+<em>Geometry of the integral for $f_{\uparrow\uparrow}(\bk,\bk’)$.</em></p>
 
 <p>the denominator becomes</p>
 
@@ -490,7 +490,7 @@ f_{++}(\bk,\bk') = \frac{U_0^2}{(2\pi)^3}\left[\int_{\substack{\abs{\bk_3}<k_\te
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
-f_{++}(\bk,\bk') &= \frac{U_0^2 m}{(2\pi)^2} \int_0^{\pi} d\theta \sin\theta \sqrt{k_\text{F}^2-q^2\sin^2\theta}\nonumber\\
+f_{\uparrow\uparrow}(\bk,\bk') &= \frac{U_0^2 m}{(2\pi)^2} \int_0^{\pi} d\theta \sin\theta \sqrt{k_\text{F}^2-q^2\sin^2\theta}\nonumber\\
 &=\frac{U_0^2 m k_\text{F}}{(2\pi)^2}\left[1 - \frac{\cos^2\phi/2}{2\sin\phi/2}\log\left(\frac{1-\sin\phi/2}{1+\sin\phi/2}\right)\right].
 \end{align} %]]></script>
 
