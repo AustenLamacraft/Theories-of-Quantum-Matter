@@ -9,13 +9,13 @@
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/SpinModels/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-02-08T12:40:30+00:00" />
+<meta property="article:published_time" content="2018-10-03T11:39:46+01:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Spin Models",
-    "datePublished": "2018-02-08T12:40:30+00:00",
+    "datePublished": "2018-10-03T11:39:46+01:00",
     "description": "In this lecture we introduce a simple quantum mechanical model of magnetism consisting of a lattice of coupled spins. As in the elastic chain, we identify the elementary excitations and their interaction.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/SpinModels/"
   }
@@ -152,13 +152,13 @@ $$
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/SpinModels/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-02-08T12:40:30+00:00" />
+<meta property="article:published_time" content="2018-10-03T11:39:46+01:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Spin Models",
-    "datePublished": "2018-02-08T12:40:30+00:00",
+    "datePublished": "2018-10-03T11:39:46+01:00",
     "description": "In this lecture we introduce a simple quantum mechanical model of magnetism consisting of a lattice of coupled spins. As in the elastic chain, we identify the elementary excitations and their interaction.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/SpinModels/"
   }
@@ -318,7 +318,6 @@ In this lecture we introduce a simple quantum mechanical model of magnetism cons
   <li><a href="#the-heisenberg-ferromagnetic-chain" id="markdown-toc-the-heisenberg-ferromagnetic-chain">The Heisenberg Ferromagnetic Chain</a>    <ul>
       <li><a href="#ground-state" id="markdown-toc-ground-state">Ground State</a></li>
       <li><a href="#first-excited-states" id="markdown-toc-first-excited-states">First Excited States</a></li>
-      <li><a href="#two-magnon-states" id="markdown-toc-two-magnon-states">Two-Magnon states</a></li>
       <li><a href="#n-magnon-states" id="markdown-toc-n-magnon-states">$N$-Magnon States</a></li>
     </ul>
   </li>
@@ -333,6 +332,10 @@ In this lecture we introduce a simple quantum mechanical model of magnetism cons
     </ul>
   </li>
   <li><a href="#a-numerical-experiment" id="markdown-toc-a-numerical-experiment">A Numerical Experiment</a></li>
+  <li><a href="#appendix" id="markdown-toc-appendix">Appendix</a>    <ul>
+      <li><a href="#two-magnon-states" id="markdown-toc-two-magnon-states">Two-Magnon states</a></li>
+    </ul>
+  </li>
   <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
 
@@ -448,90 +451,9 @@ There is a general principle at work here: excitations that correspond at long w
 
 <p>If we are thinking of the down spin as a particle, then the eigenstates \eqref{spin_wave} are like plane wave states. These excitations are known as <strong>magnons</strong>.</p>
 
-<h3 id="two-magnon-states">Two-Magnon states</h3>
-
-<p>Any system at finite temperature has a finite energy density, or a total energy proportional to the system size. Since a magnon has a microscopic energy set by $J$, such a system will presumably have <em>many</em> magnons (many flipped spins). As we increase the number of flipped spins, we increase the size of the subspace in which $H$ acts – it has dimension $\binom{N}{n}$ for $n$ flipped spins i.e. $S^z = N/2-n$. Things are obviously going to get difficult quickly!</p>
-
-<p>In any case, let’s look at the $n=2$ case. The most general state with two magnons can be written</p>
-
-<script type="math/tex; mode=display">\sum_{j>k} c_{j,k}s_j^-s_k^-\ket{\text{FM}},
-\label{spin_2Mag}</script>
-
-<p>with some set of coefficients $c_{jk}$. Note that $j=k$ doesn’t contribute: we can’t lower the spin twice, so two magnons can’t be on the same site. Also, we don’t need to include $c_{j,k}=c_{k,j}$ – magnons are <em>bosons</em> – so we only include $j&gt;k$.</p>
-
-<p>Using our particle picture, we might suppose that if the magnons are separated from each other they can be described by plane waves. Thus we might expect something like</p>
-
-<script type="math/tex; mode=display">c_{j,k}\sim \exp(i\eta_1 j + i\eta_2 k)
-\label{spin_2Plane}</script>
-
-<p>to work. Acting on \eqref{spin_2Mag} with the Hamiltonian gives the eigenvalue equation for the energy $E = E_0 +\epsilon$</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-2c_{j,k} - \frac{1}{2}\left(c_{j+1,k}+c_{j-1,k}+c_{j,k+1}+c_{j,k-1}\right) &= \epsilon c_{j,k},\quad j>k+1 \nonumber\\
-c_{j,j-1} - \frac{1}{2}\left(c_{j+1,j-1}+c_{j,j-2}\right) &= \epsilon c_{j,j-1}
-\label{spin_2Part}
-\end{align} %]]></script>
-
-<p>We can think of this as a lattice analog of the two particle Schrödinger equation. The modification when $j=k+1$ occurs because</p>
-
-<ol>
-  <li>
-    <p>There are only two bonds where the spin changes, instead of 4 when $j&gt;k+1$. Thus the ‘on-site’ term is -4 not -8. This plays the role of a nearest neighbour attractive interaction between magnons.</p>
-  </li>
-  <li>
-    <p>Magnons can’t hop on top of each other.</p>
-  </li>
-</ol>
-
-<p>The first of \eqref{spin_2Part} is solved by</p>
-
-<script type="math/tex; mode=display">c_{j,k} = c_1  \exp(i\eta_1 j + i\eta_2 k) + c_2  \exp(i\eta_1 k + i\eta_2 j),\quad \text{ for } j>k+1
-\label{spin_2Wave}</script>
-
-<p>with</p>
-
-<script type="math/tex; mode=display">\epsilon = \omega(\eta_1)+\omega(\eta_2).</script>
-
-<p>The eigenvalue is thus fixed by $\eta_1$ and $\eta_2$. In turn, their possible values are determined by some quantization condition, as in the Lieb–Liniger model, but we leave this aside for the moment. First, we must use the $j=k+1$ equation to determine the relationship between $c_1$ and $c_2$.</p>
-
-<p>There’s a clever way to do this. First, even though we know $c_{j,j}=0$ is really zero, we extend the first of \eqref{spin_2Part} to $j=k+1$, and this equation then involves a ‘fake’ $c_{j,j}$. The advantage of this is that we can then extend the form \eqref{spin_2Wave} to $j=k+1$ and $j=k$. For this to work, the correct equation for $j=k+1$ – the second of \eqref{spin_2Part} – must be consistent with the first. This gives the condition</p>
-
-<script type="math/tex; mode=display">-c_{k+1,k} + \frac{1}{2}\left(c_{k,k} + c_{k+1,k+1}\right) = 0.</script>
-
-<p>Using the form \eqref{spin_2Wave} gives a relationship between $c_1$ and $c_2$</p>
-
-<script type="math/tex; mode=display">-2\left(c_1 e^{i\eta_1}+c_2 e^{i\eta_2}\right) + (c_1+c_2)(1+e^{i(\eta_1+\eta_2)}),</script>
-
-<p>with solution</p>
-
-<script type="math/tex; mode=display">\frac{c_1}{c_2} = -\frac{e^{i(\eta_2-\eta_1)/2}-\cos[(\eta_1+\eta_2)/2]}{e^{i(\eta_1-\eta_2)/2}-\cos[(\eta_1+\eta_2)/2]}\equiv e^{i\phi},
-\label{spin_cratio}</script>
-
-<p>where we have defined the scattering phase shift, just as in the Lieb–Liniger model. The physical picture is therefore that a pair of magnons scatter elastically off each other, their wavefunction acquiring a phase shift as they do.</p>
-
-<p>Returning to our particle analogy, the existence of an attractive potential for magnons suggests we should allow for the possibility of bound states. Doing so requires <em>complex</em> $\eta_{1,2}$</p>
-
-<script type="math/tex; mode=display">\begin{align}
-\eta_1 = u + i v,\quad
-\eta_2 = u - i v,\quad v>0.
-\end{align}</script>
-
-<p>We also require that $c_2=0$ in \eqref{spin_2Wave}, otherwise the eigenstate doesn’t decay. From \eqref{spin_cratio} we see that</p>
-
-<script type="math/tex; mode=display">e^{-v} = \cos u.</script>
-
-<p>The total momentum of the state is $K=2u$, and evaluating the energy gives</p>
-
-<script type="math/tex; mode=display">\epsilon_\text{bound}(K) = \omega(\eta_1) + \omega(\eta_2) = \frac{1}{2}(1-\cos K),</script>
-
-<p class="message">
-As a function of momentum, compare the bound state energy with the lowest energy of two free magnons.
-</p>
-
 <h3 id="n-magnon-states">$N$-Magnon States</h3>
 
-<p>We could continue to consider states with more magnons. It turns out that for the Heisenberg model we are lucky, and we know the form of a general energy eigenstate. It’s called <strong>Bethe’s ansatz</strong> and we’ll meet it in <a href="/docs/lectures/LiebLinigerModel/">Lecture 15</a>.</p>
+<p>Any system at finite temperature has a finite energy density, or a total energy proportional to the system size. Since a magnon has a microscopic energy set by $J$, such a system will presumably have <em>many</em> magnons (many flipped spins). As we increase the number of flipped spins, we increase the size of the subspace in which $H$ acts – it has dimension $\binom{N}{n}$ for $n$ flipped spins i.e. $S^z = N/2-n$. Things are obviously going to get difficult quickly! It turns out that for the Heisenberg model we are lucky, and we know the form of a general energy eigenstate. It’s called <strong>Bethe’s ansatz</strong> and we’ll meet it in <a href="/docs/lectures/LiebLinigerModel/">Lecture 15</a>.</p>
 
 <p>We started our discussion with the ground state of the ferromagnetic $J&lt;0$ Heisenberg model. What about $J&gt;0$? Can we guess the ground state in this case (of course, that’s equivalent to finding the <em>highest</em> excited state of the ferromagnet). Bethe’s ansatz tells us that it must be some complicated gas of magnons, all scattering off each other. Why are things so complicated?</p>
 
@@ -817,6 +739,87 @@ This reduces the matrix dimension by a factor $N$ if $N$ is prime, otherwise the
 <p><a name="dCP"></a>
 <img src="/docs/assets/Heisenberg_model_dispersion.png" alt="" />
 <em>The ground state energy of the Heisenberg chain for $L=26$ as a function of $\eta$, compared with the des Cloiseaux–Pearson dispersion \eqref{spin_dCP}.</em></p>
+
+<h2 id="appendix">Appendix</h2>
+
+<h3 id="two-magnon-states">Two-Magnon states</h3>
+
+<p>Let’s look at the $n=2$ case. The most general state with two magnons can be written</p>
+
+<script type="math/tex; mode=display">\sum_{j>k} c_{j,k}s_j^-s_k^-\ket{\text{FM}},
+\label{spin_2Mag}</script>
+
+<p>with some set of coefficients $c_{jk}$. Note that $j=k$ doesn’t contribute: we can’t lower the spin twice, so two magnons can’t be on the same site. Also, we don’t need to include $c_{j,k}=c_{k,j}$ – magnons are <em>bosons</em> – so we only include $j&gt;k$.</p>
+
+<p>Using our particle picture, we might suppose that if the magnons are separated from each other they can be described by plane waves. Thus we might expect something like</p>
+
+<script type="math/tex; mode=display">c_{j,k}\sim \exp(i\eta_1 j + i\eta_2 k)
+\label{spin_2Plane}</script>
+
+<p>to work. Acting on \eqref{spin_2Mag} with the Hamiltonian gives the eigenvalue equation for the energy $E = E_0 +\epsilon$</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+2c_{j,k} - \frac{1}{2}\left(c_{j+1,k}+c_{j-1,k}+c_{j,k+1}+c_{j,k-1}\right) &= \epsilon c_{j,k},\quad j>k+1 \nonumber\\
+c_{j,j-1} - \frac{1}{2}\left(c_{j+1,j-1}+c_{j,j-2}\right) &= \epsilon c_{j,j-1}
+\label{spin_2Part}
+\end{align} %]]></script>
+
+<p>We can think of this as a lattice analog of the two particle Schrödinger equation. The modification when $j=k+1$ occurs because</p>
+
+<ol>
+  <li>
+    <p>There are only two bonds where the spin changes, instead of 4 when $j&gt;k+1$. Thus the ‘on-site’ term is -4 not -8. This plays the role of a nearest neighbour attractive interaction between magnons.</p>
+  </li>
+  <li>
+    <p>Magnons can’t hop on top of each other.</p>
+  </li>
+</ol>
+
+<p>The first of \eqref{spin_2Part} is solved by</p>
+
+<script type="math/tex; mode=display">c_{j,k} = c_1  \exp(i\eta_1 j + i\eta_2 k) + c_2  \exp(i\eta_1 k + i\eta_2 j),\quad \text{ for } j>k+1
+\label{spin_2Wave}</script>
+
+<p>with</p>
+
+<script type="math/tex; mode=display">\epsilon = \omega(\eta_1)+\omega(\eta_2).</script>
+
+<p>The eigenvalue is thus fixed by $\eta_1$ and $\eta_2$. In turn, their possible values are determined by some quantization condition, as in the Lieb–Liniger model, but we leave this aside for the moment. First, we must use the $j=k+1$ equation to determine the relationship between $c_1$ and $c_2$.</p>
+
+<p>There’s a clever way to do this. First, even though we know $c_{j,j}=0$ is really zero, we extend the first of \eqref{spin_2Part} to $j=k+1$, and this equation then involves a ‘fake’ $c_{j,j}$. The advantage of this is that we can then extend the form \eqref{spin_2Wave} to $j=k+1$ and $j=k$. For this to work, the correct equation for $j=k+1$ – the second of \eqref{spin_2Part} – must be consistent with the first. This gives the condition</p>
+
+<script type="math/tex; mode=display">-c_{k+1,k} + \frac{1}{2}\left(c_{k,k} + c_{k+1,k+1}\right) = 0.</script>
+
+<p>Using the form \eqref{spin_2Wave} gives a relationship between $c_1$ and $c_2$</p>
+
+<script type="math/tex; mode=display">-2\left(c_1 e^{i\eta_1}+c_2 e^{i\eta_2}\right) + (c_1+c_2)(1+e^{i(\eta_1+\eta_2)}),</script>
+
+<p>with solution</p>
+
+<script type="math/tex; mode=display">\frac{c_1}{c_2} = -\frac{e^{i(\eta_2-\eta_1)/2}-\cos[(\eta_1+\eta_2)/2]}{e^{i(\eta_1-\eta_2)/2}-\cos[(\eta_1+\eta_2)/2]}\equiv e^{i\phi},
+\label{spin_cratio}</script>
+
+<p>where we have defined the scattering phase shift, just as in the Lieb–Liniger model. The physical picture is therefore that a pair of magnons scatter elastically off each other, their wavefunction acquiring a phase shift as they do.</p>
+
+<p>Returning to our particle analogy, the existence of an attractive potential for magnons suggests we should allow for the possibility of bound states. Doing so requires <em>complex</em> $\eta_{1,2}$</p>
+
+<script type="math/tex; mode=display">\begin{align}
+\eta_1 = u + i v,\quad
+\eta_2 = u - i v,\quad v>0.
+\end{align}</script>
+
+<p>We also require that $c_2=0$ in \eqref{spin_2Wave}, otherwise the eigenstate doesn’t decay. From \eqref{spin_cratio} we see that</p>
+
+<script type="math/tex; mode=display">e^{-v} = \cos u.</script>
+
+<p>The total momentum of the state is $K=2u$, and evaluating the energy gives</p>
+
+<script type="math/tex; mode=display">\epsilon_\text{bound}(K) = \omega(\eta_1) + \omega(\eta_2) = \frac{1}{2}(1-\cos K),</script>
+
+<p class="message">
+As a function of momentum, compare the bound state energy with the lowest energy of two free magnons.
+</p>
 
 <h2 id="references">References</h2>
 

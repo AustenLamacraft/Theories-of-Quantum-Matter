@@ -34,13 +34,13 @@ A good fraction of this course is devoted to exploring the ramifications of this
 The first question is: what _are_ indistinguishable particles? I'll give a theorist's answer. Indistinguishable particles are those described by Hamiltonians that are invariant under permuting the particle's labels. Thus the sum of single particle Hamiltonians
 
 $$
-H = \sum_{i=1}^{N} \left[-\frac{\hbar^{2}}{2m}\nabla_{i}^{2}+V(\mathbf{r_{i}})\right]
+H = \sum_{i=1}^{N} \left[-\frac{\nabla_{i}^{2}}{2m}+V(\mathbf{r_{i}})\right]
 $$
 
-describes indistinguishable partiles while
+_[did you remember that $\hbar=1$?]_ describes indistinguishable particles while
 
 $$
-H = \sum_{i=1}^{N} \left[-\frac{\hbar^{2}}{2m_i}\nabla_{i}^{2}+V(\mathbf{r_{i}})\right]
+H = \sum_{i=1}^{N} \left[-\frac{\nabla_{i}^{2}}{2m_i}+V(\mathbf{r_{i}})\right]
 $$
 
 does not, on account of the masses being all different. Any time we have a symmetry operation that commutes with the Hamiltonian, the eigenstates of that symmetry are preserved by time evolution with that Hamiltonian. Thus a symmetric potential $V(x)=V(-x)$ commutes with the parity operation $x\to -x$, so the eigenstates of this operation -- the even and odd wavefunctions -- are preserved by time evolution.

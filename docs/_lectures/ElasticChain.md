@@ -653,6 +653,16 @@ N & j = 0 \mod N.
 \end{cases}
 $$
 
+<p class="message">
+Perhaps the slickest way to to see this is to observe that
+
+$$
+z^N-1 = (z-1)(1 + z + z^2 +\cdots z^{N-1})
+$$
+
+Can you fill in the rest of the argument?
+</p>
+
 This gives
 
 $$

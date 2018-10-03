@@ -6,7 +6,7 @@ Material for a Part III Physics course at the University of Cambridge, running i
 
 2. `notebooks` contains some Jupyter notebooks used to produce some of the figures.
 
-## To Do
+## TODOs
 
 1. Is there a factor of 2 in Eq. (40) of Lattice models?
 
