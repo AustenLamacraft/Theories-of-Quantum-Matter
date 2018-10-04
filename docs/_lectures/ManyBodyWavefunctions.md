@@ -270,6 +270,14 @@ Let's take the opportunity to introduce some terminology. The wavevector of the 
 
 Having a many particle wave function is one thing, but what to _do_ with it? Bear in mind that \eqref{quantum_statistics_1dFermiGS} is just about the simplest fermion state you can imagine, but it's not immediately clear what it is telling us.
 
+$\left\|\Psi(x_1,\ldots,x_N)\right\|^2$ is the probability distribution of the positions of the particles. If we were able to take a photograph of the positions of the particles at an instant in time, this would correspond to taking a sample from the probability distribution. In terms of the complex variables $z_j$, it would look something like this:
+
+<a name="HOM"></a>
+![]({{ site.baseurl }}/assets/1d_fermions.png)
+![]({{ site.baseurl }}/assets/poisson_phases.png)
+
+_A sample from the probability distribution $\left\|\Psi(z_1,\ldots,z_N)\right\|^2$ for 50 particles (top) compared with a Poisson (uncorrelated) sample (bottom)._
+
 Since $\left\|\Psi(x_1,\ldots,x_N)\right\|^2$ is the probability distribution of the positions of the particles, we can use it to find the marginal probability distributions for any subset of the particles. Of course, since the particles are identical, it doesn't matter which ones we choose, just the number.
 
 The one particle distribution is related to the average density of particles, given by
