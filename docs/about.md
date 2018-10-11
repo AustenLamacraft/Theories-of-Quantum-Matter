@@ -18,8 +18,6 @@ The purpose of this course is to introduce <strong>simple models </strong> of ph
 
 ---
 
-
-
 ## Models of Matter
 
 It's important to realise that in general simple models are neither tractable, nor display simple behaviour! To take an example: all students of physics are familiar with the [Ising model](https://en.wikipedia.org/wiki/Ising_model) of magnetism, which caricatures a lattice of magnetic ions and their complex interactions. The Ising model is defined in terms of an energy function

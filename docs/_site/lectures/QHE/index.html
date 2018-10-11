@@ -9,13 +9,13 @@
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/QHE/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-10-04T09:22:28+01:00" />
+<meta property="article:published_time" content="2018-10-11T12:29:29+01:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Quantum Hall Effect",
-    "datePublished": "2018-10-04T09:22:28+01:00",
+    "datePublished": "2018-10-11T12:29:29+01:00",
     "description": "The Fractional Quantum Hall Effect is one of the most remarkable phenomena in all of condensed matter physics. In the presence of a strong magnetic field, charged particles confined to move in the plane can form a series of new states of matter with bizarre properties. Fortunately, our understanding of this menagerie is based almost entirely on many body wavefunctions of a rather simple form.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/QHE/"
   }
@@ -152,13 +152,13 @@ $$
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/QHE/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-10-04T09:22:28+01:00" />
+<meta property="article:published_time" content="2018-10-11T12:29:29+01:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Quantum Hall Effect",
-    "datePublished": "2018-10-04T09:22:28+01:00",
+    "datePublished": "2018-10-11T12:29:29+01:00",
     "description": "The Fractional Quantum Hall Effect is one of the most remarkable phenomena in all of condensed matter physics. In the presence of a strong magnetic field, charged particles confined to move in the plane can form a series of new states of matter with bizarre properties. Fortunately, our understanding of this menagerie is based almost entirely on many body wavefunctions of a rather simple form.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/QHE/"
   }
@@ -395,7 +395,7 @@ where $f(z)$ is an arbitrary analytic function.
 
 <p>Let’s imagine filling the LLL with fermions. As it stands, there’s no principle to suggest how we do this, as all the states are degenerate. We can lift that degeneracy by adding a rotationally symmetric harmonic potential</p>
 
-<script type="math/tex; mode=display">V_\text{harm}(x,y) = \frac{v}{2}\left(x^2+y^2\right) = \frac{v}{2}\omega^2\left|z\right|^2.
+<script type="math/tex; mode=display">V_\text{harm}(x,y) = \frac{v}{2}\left(x^2+y^2\right) = \frac{v}{2}\left|z\right|^2.
 \label{many_HarmonicRound}</script>
 
 <p>When this potential acts on a state in the LLL, the result is not a LLL state because of the appearance of $\bar z$ in $V$. Let’s suppose that the cyclotron energy $\omega_c$ that gives the spacing between Landau levels is the largest energy scale in the problem. Then we should consider only the action of $V$ in the LLL subspace.</p>
@@ -498,7 +498,7 @@ V(\br_1,\ldots,\br_N) = -\frac{q^2}{2\pi} \sum_{j<k}\log\left|\br_j-\br_k\right|
 <script type="math/tex; mode=display">\beta V[\rho] = -m\int d^2\br\, d^2\br'\, \rho(\br)\log\left|\br-\br'\right|\rho(\br') + \frac{1}{2}\int d^2\br\, \left|\br\right|^2\rho(\br).\</script>
 
 <p class="message">
-Show that minimizing the energy with respect to $\rho(\br)$ leads to the condition
+Show that minimizing the energy with respect to $\rho(\br)$ -- corresponding to finding the most likely configuration -- leads to the condition
 $$
 -2m\int d^2\br'\, \log\left|\br-\br'\right|\rho(\br') + \frac{1}{2}\left|\br\right|^2 = 0.
 $$
@@ -516,11 +516,15 @@ $$
 
 <p>Although we ignored the effect of summing over all configuration of the particles in the partition function (i.e. we ignored the contribution of entropy to the free energy), it turns out that this effect can be ignored in the large $N$ limit.</p>
 
+<p class="message">
+One odd thing about the above calculation is that if the charge density is uniform, how does the droplet know where to sit? The location of the origin is obviously dictated by the minimum of the quadratic term in the energy, but we could have located that anywhere in the plane and still had a uniform charge density. Cast your mind back to the old problem of a mass undergoing simple harmonic motion through a hole in the earth...
+</p>
+
 <h3 id="fractional-charge">Fractional Charge</h3>
 
 <p>Laughlin also suggested wavefunctions to describe excited states of the system, the simplest being the <strong>quasihole</strong> wavefunction</p>
 
-<script type="math/tex; mode=display">\Psi_\text{hole}(z_1,\ldots, z_N|Z) = \prod_j (Z-z_j)\Psi_m(z_1,\ldots, z_N).</script>
+<script type="math/tex; mode=display">\Psi_\text{hole}(z_1,\ldots, z_N|Z) = \left(\prod_j (Z-z_j)\right)\Psi_m(z_1,\ldots, z_N).</script>
 
 <p>In the case of the $m=2$ state with the interaction \eqref{many_delta} discussed above, it’s clear that this state still has zero interaction energy, although the harmonic potential \eqref{many_HarmonicProject} acts upon it non-trivially.</p>
 
@@ -542,7 +546,7 @@ V(\brN)=&-\frac{q^2}{2\pi m}\sum_j \log\left|\br_j-\mathbf{R}\right|-\frac{q^2}{
 
 <p>Consider the two quasihole wavefunction</p>
 
-<script type="math/tex; mode=display">\Psi_\text{2 hole}(z_1,\ldots, z_N|Z_1,Z_2) = \prod_j (Z_1-z_j)(Z_2-z_j)\Psi_m(z_1,\ldots, z_N).
+<script type="math/tex; mode=display">\Psi_\text{2 hole}(z_1,\ldots, z_N|Z_1,Z_2) = \left(\prod_j (Z_1-z_j)(Z_2-z_j)\right)\Psi_m(z_1,\ldots, z_N).
 \label{many_2hole}</script>
 
 <p>The probability distribution $\left|\Psi_\text{2 hole}(z_1,\ldots, z_N|Z_1,Z_2)\right|^2$ corresponds to a Coulomb plasma with two $1/m$ charges at the positions $\mathbf{R}_{1,2}$. There is no interaction term between these two fixed charges, but as we have argued, each is overwhelmingly likely to be surrounded by region of depleted density amounting to $-1/m$ of a particle. The normalization integral is then be given by the Boltzmann weight corresponding to the interaction of these two depleted regions</p>

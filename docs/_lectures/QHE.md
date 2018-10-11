@@ -104,7 +104,7 @@ $$
 Let's imagine filling the LLL with fermions. As it stands, there's no principle to suggest how we do this, as all the states are degenerate. We can lift that degeneracy by adding a rotationally symmetric harmonic potential
 
 $$
-V_\text{harm}(x,y) = \frac{v}{2}\left(x^2+y^2\right) = \frac{v}{2}\omega^2\left|z\right|^2.
+V_\text{harm}(x,y) = \frac{v}{2}\left(x^2+y^2\right) = \frac{v}{2}\left|z\right|^2.
 \label{many_HarmonicRound}
 $$
 
@@ -220,7 +220,7 @@ $$
 $$
 
 <p class="message">
-Show that minimizing the energy with respect to $\rho(\br)$ leads to the condition
+Show that minimizing the energy with respect to $\rho(\br)$ -- corresponding to finding the most likely configuration -- leads to the condition
 $$
 -2m\int d^2\br'\, \log\left|\br-\br'\right|\rho(\br') + \frac{1}{2}\left|\br\right|^2 = 0.
 $$
@@ -238,13 +238,16 @@ On the basis of this approximation, we conclude that the density is fixed at $1/
 
 Although we ignored the effect of summing over all configuration of the particles in the partition function (i.e. we ignored the contribution of entropy to the free energy), it turns out that this effect can be ignored in the large $N$ limit.
 
+<p class="message">
+One odd thing about the above calculation is that if the charge density is uniform, how does the droplet know where to sit? The location of the origin is obviously dictated by the minimum of the quadratic term in the energy, but we could have located that anywhere in the plane and still had a uniform charge density. Cast your mind back to the old problem of a mass undergoing simple harmonic motion through a hole in the earth...
+</p>
 
 ### Fractional Charge
 
 Laughlin also suggested wavefunctions to describe excited states of the system, the simplest being the __quasihole__ wavefunction
 
 $$
-\Psi_\text{hole}(z_1,\ldots, z_N|Z) = \prod_j (Z-z_j)\Psi_m(z_1,\ldots, z_N).
+\Psi_\text{hole}(z_1,\ldots, z_N|Z) = \left(\prod_j (Z-z_j)\right)\Psi_m(z_1,\ldots, z_N).
 $$
 
 In the case of the $m=2$ state with the interaction \eqref{many_delta} discussed above, it's clear that this state still has zero interaction energy, although the harmonic potential \eqref{many_HarmonicProject} acts upon it non-trivially.
@@ -271,7 +274,7 @@ $$
 Consider the two quasihole wavefunction
 
 $$
-\Psi_\text{2 hole}(z_1,\ldots, z_N|Z_1,Z_2) = \prod_j (Z_1-z_j)(Z_2-z_j)\Psi_m(z_1,\ldots, z_N).
+\Psi_\text{2 hole}(z_1,\ldots, z_N|Z_1,Z_2) = \left(\prod_j (Z_1-z_j)(Z_2-z_j)\right)\Psi_m(z_1,\ldots, z_N).
 \label{many_2hole}
 $$
 
