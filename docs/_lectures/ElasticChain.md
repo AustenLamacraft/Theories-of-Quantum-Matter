@@ -580,13 +580,16 @@ $$
 $$
 
 <p class="message">
-Prove the __Hadamard Lemma__
+Prove the Hadamard Lemma
 
 $$
-e^{A}B e^{-A} = 1 + \left[A,B\right] + \frac{1}{2!}\left[A,\left[A,B\right]\right]+\frac{1}{3!}\left[A,\left[A,\left[A,B\right]\right]\right]+\ldots \equiv e^{\left[B,\cdot\right]}A,
+\begin{split}
+e^{A}B e^{-A} &= 1 + \left[A,B\right] + \frac{1}{2!}\left[A,\left[A,B\right]\right]+\frac{1}{3!}\left[A,\left[A,\left[A,B\right]\right]\right]+\ldots \\
+&\equiv e^{\left[B,\cdot\right]}A,
+\end{split}
 $$
 
-_[Hint: Consider the differential equation in $x$ obeyed by $e^{xA}B e^{-xA}$]_
+[Hint: Consider the differential equation in $x$ obeyed by $e^{xA}B e^{-xA}$]
 </p>
 
 <p class="message">
