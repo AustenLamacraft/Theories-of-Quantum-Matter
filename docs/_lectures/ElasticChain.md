@@ -580,6 +580,16 @@ $$
 $$
 
 <p class="message">
+Prove the __Hadamard Lemma__
+
+$$
+e^{A}B e^{-A} = 1 + \left[A,B\right] + \frac{1}{2!}\left[A,\left[A,B\right]\right]+\frac{1}{3!}\left[A,\left[A,\left[A,B\right]\right]\right]+\ldots \equiv e^{\left[B,\cdot\right]}A,
+$$
+
+_[Hint: Consider the differential equation in $x$ obeyed by $e^{xA}B e^{-xA}$]_
+</p>
+
+<p class="message">
 
 Show that the exponent can be written in a form with all occurrences of $\adop$ to the left of all $\aop$ (this operation is called <strong>normal ordering</strong>; we will meet it again).
 

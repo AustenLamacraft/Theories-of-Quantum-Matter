@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Jellium - Theories of Quantum Matter</title>
+<meta property="og:title" content="Jellium" />
+<meta name="description" content="There are many situations in which an approach based on finite orders of perturbation theory either misses important physics, or leads to divergences (often both). In this lecture we develop many body perturbation theory in more detail by considering a formalism to calculate the partition function or free energy. We apply this approach to a toy model for electrons in a metal: a gas of fermions interacting via the Coulomb force in a neutralizing background of uniform charge density that plays the role of the ionic lattice. This is Jellium." />
+<meta property="og:description" content="There are many situations in which an approach based on finite orders of perturbation theory either misses important physics, or leads to divergences (often both). In this lecture we develop many body perturbation theory in more detail by considering a formalism to calculate the partition function or free energy. We apply this approach to a toy model for electrons in a metal: a gas of fermions interacting via the Coulomb force in a neutralizing background of uniform charge density that plays the role of the ionic lattice. This is Jellium." />
+<link rel="canonical" href="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/Jellium/" />
+<meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/Jellium/" />
+<meta property="og:site_name" content="Theories of Quantum Matter" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-10-11T14:51:35+01:00" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Jellium",
+    "datePublished": "2018-10-11T14:51:35+01:00",
+    "description": "There are many situations in which an approach based on finite orders of perturbation theory either misses important physics, or leads to divergences (often both). In this lecture we develop many body perturbation theory in more detail by considering a formalism to calculate the partition function or free energy. We apply this approach to a toy model for electrons in a metal: a gas of fermions interacting via the Coulomb force in a neutralizing background of uniform charge density that plays the role of the ionic lattice. This is Jellium.",
+    "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/Jellium/"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+  <head>
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="/docs/lectures/Jellium/"/>
+
+  <!-- Basic meta elements -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+
+  <!--   Dublin Core metadata for Zotero -->
+  <meta name="DC.title" content="Jellium" />
+  <meta name="DC.creator" content="Austen Lamacraft" />
+  <meta name="DC.contributor" content="" />
+  <meta name="DC.date" content="" />
+  <meta name="DC.rights" content="" />
+  <meta name="DC.source" content="Theories of Quantum Matter" />
+
+    <!-- Open Graph metadata -->
+
+    
+    <meta property="og:title" content="Jellium"/>
+    <meta property="og:description" content="An Ed edition">
+    <meta property="fb:admins" content="elotroalex"/>
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/Jellium/"/>
+    <meta property="fb:app_id" content="589495744558280"/>
+    <meta property="og:image" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/public/open-graph-logo.png"/>
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+
+  <title>
+    
+      Jellium
+    
+  </title>
+
+  <!-- CSS links -->
+  <link rel="stylesheet" href="/docs/public/css/syntax.css"/>
+  <link rel="stylesheet" href="/docs/public/css/tqm.css"/>
+
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/docs/public/apple-touch-icon-precomposed.png"/>
+  <link rel="shortcut icon" href="/docs/public/favicon.ico"/>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/docs/atom.xml"/>
+
+  <!-- MathJax -->
+
+ <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>
+
+ <!---<script type="text/javascript"
+   src="/docs/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>--->
+
+ <script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+   TeX: { equationNumbers: { autoNumber: "all" },
+          Macros: {
+          cP: '\\mathcal{P}',
+          cN: '\\mathcal{N}',
+          cE: '\\mathcal{E}',
+          cO: '\\mathcal{O}',
+          cH: '\\mathcal{H}',
+          cC: '\\mathcal{C}',
+          br: '\\mathbf{r}',
+          bx: '\\mathbf{x}',
+          bp: '\\mathbf{p}',
+          bq: '\\mathbf{q}',
+          bk: '\\mathbf{k}',
+          bv: '\\mathbf{v}',
+          bA: '\\mathbf{A}',
+          brN: '\\br_1, \\ldots, \\br_N',
+          bxN: 'x_1, \\ldots, x_N',
+          pop: '\\psi^{\\vphantom{\\dagger}}',
+          pdop: '\\psi^\\dagger',
+          Phop: '\\Phi^{\\vphantom{\\dagger}}',
+          Phdop: '\\Phi^\\dagger',
+          phop: '\\phi^{\\vphantom{\\dagger}}',
+          phdop: '\\phi^\\dagger',
+          aop: 'a^{\\vphantom{\\dagger}}',
+          adop: 'a^\\dagger',
+          alop: '\\alpha^{\\vphantom{\\dagger}}',
+          aldop: '\\alpha^\\dagger',
+          bop: 'b^{\\vphantom{\\dagger}}',
+          bdop: 'b^\\dagger',
+          cop: 'c^{\\vphantom{\\dagger}}',
+          cdop: 'c^\\dagger',
+          Nop:  '\\mathsf{N}^{\\vphantom{\\dagger}}',
+          tr: '\\operatorname{tr}\\nolimits',
+          det: '\\operatorname{det}\\nolimits',
+          perm: '\\operatorname{perm}\\nolimits',
+          sgn: '\\operatorname{sgn}',
+          E: '\\operatorname{\\mathbb{E}}',
+          Var: '\\operatorname{\\mathbb{Var}}',
+          Cov: '\\operatorname{\\mathbb{Cov}}',
+          Re: '\\operatorname{Re}}',
+          ket: ['\\lvert{#1}\\rangle',1],
+          bra: ['\\langle{#1}\\rvert',1],
+          inner: ['\\langle{#1}\\rvert #2 \\rangle',2],
+          braket: ['\\langle{#1}\\rvert #2 \\lvert #3 \\rangle',3],
+          abs: ['\\lvert{#1}\\rvert',1]
+    }
+  },
+   extensions: ["tex2jax.js"],
+   jax: ["input/TeX","output/HTML-CSS"],
+   tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+ });
+ </script>
+
+$$
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\nonumber
+$$
+
+<!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Jellium - Theories of Quantum Matter</title>
+<meta property="og:title" content="Jellium" />
+<meta name="description" content="There are many situations in which an approach based on finite orders of perturbation theory either misses important physics, or leads to divergences (often both). In this lecture we develop many body perturbation theory in more detail by considering a formalism to calculate the partition function or free energy. We apply this approach to a toy model for electrons in a metal: a gas of fermions interacting via the Coulomb force in a neutralizing background of uniform charge density that plays the role of the ionic lattice. This is Jellium." />
+<meta property="og:description" content="There are many situations in which an approach based on finite orders of perturbation theory either misses important physics, or leads to divergences (often both). In this lecture we develop many body perturbation theory in more detail by considering a formalism to calculate the partition function or free energy. We apply this approach to a toy model for electrons in a metal: a gas of fermions interacting via the Coulomb force in a neutralizing background of uniform charge density that plays the role of the ionic lattice. This is Jellium." />
+<link rel="canonical" href="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/Jellium/" />
+<meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/Jellium/" />
+<meta property="og:site_name" content="Theories of Quantum Matter" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-10-11T14:51:35+01:00" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Jellium",
+    "datePublished": "2018-10-11T14:51:35+01:00",
+    "description": "There are many situations in which an approach based on finite orders of perturbation theory either misses important physics, or leads to divergences (often both). In this lecture we develop many body perturbation theory in more detail by considering a formalism to calculate the partition function or free energy. We apply this approach to a toy model for electrons in a metal: a gas of fermions interacting via the Coulomb force in a neutralizing background of uniform charge density that plays the role of the ionic lattice. This is Jellium.",
+    "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/Jellium/"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+
+
+  <body>
+
+    <!-- This if statement decides which sidebar to use -->
+    
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>A Part III Physics Course at the University of Cambridge</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/docs/">Home</a>
+
+    
+
+    
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/ManyBodyWavefunctions/">Many Body Wavefunctions</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/QHE/">Quantum Hall Effect</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/ElasticChain/">The Elastic Chain</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/SpinModels/">Spin Models</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/SecondQuantization/">A is for Annihilation</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/MoreSecondQuantization/">B is for Bunching</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/Lattice/">Lattice Models and Strong Correlations</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/BoseGas/">Bose Gas</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/FermiGas/">Fermi Gas</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/Superconductivity/">Superconductivity</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/ResponseAndCorrelation/">Response and Correlation</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item active" href="/docs/lectures/Jellium/">Jellium</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/JordanWigner/">Jordan-Wigner and Bosonization</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/KondoEffect/">The Kondo Effect</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/LiebLinigerModel/">The Lieb-Liniger Model</a>
+        
+      
+    
+
+    <!-- The code below is used for manually entered links  -->
+
+    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/Jellium/">Annotate me</a>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>Distributed with an MIT license.</p>
+  </div>
+</div>
+
+    
+
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/docs/" title="Home">Theories of Quantum Matter</a>
+            <br><small>Quantum Mechanics of Many Body Systems</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content" id="main">
+        <div class="page">
+  <h1 class="page-title">Jellium</h1>
+  <p class="message">
+There are many situations in which an approach based on finite orders of perturbation theory either misses important physics, or leads to divergences (often both). In this lecture we develop many body perturbation theory in more detail by considering a formalism to calculate the partition function or free energy. We apply this approach to a toy model for electrons in a metal: a gas of fermions interacting via the Coulomb force in a neutralizing background of uniform charge density that plays the role of the ionic lattice. This is <strong>Jellium</strong>.
+</p>
+
+<h2 class="no_toc" id="contents">Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#dimensionless-parameters" id="markdown-toc-dimensionless-parameters">Dimensionless parameters</a></li>
+  <li><a href="#perturbation-series-for-the-partition-function" id="markdown-toc-perturbation-series-for-the-partition-function">Perturbation Series for the Partition Function</a>    <ul>
+      <li><a href="#wicks-theorem" id="markdown-toc-wicks-theorem">Wick’s Theorem</a></li>
+      <li><a href="#greens-functions" id="markdown-toc-greens-functions">Green’s functions</a></li>
+      <li><a href="#the-linked-cluster-expansion" id="markdown-toc-the-linked-cluster-expansion">The Linked Cluster Expansion</a></li>
+      <li><a href="#summing-the-singular-diagrams" id="markdown-toc-summing-the-singular-diagrams">Summing the Singular Diagrams</a></li>
+      <li><a href="#evaluating-the-polarization" id="markdown-toc-evaluating-the-polarization">Evaluating the Polarization</a></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="dimensionless-parameters">Dimensionless parameters</h2>
+
+<p>The Jellium Hamiltonian describing fermions interacting via the Coulomb interaction is (we ignore spin)</p>
+
+<script type="math/tex; mode=display">H = \int \frac{1}{2m}\nabla\pdop\cdot\nabla\pop + \overbrace{\frac{1}{2}\int d\br d\br' :\left[\rho(\br)-n
+\right]U(\br-\br')\left[\rho(\br')-n\right]:}^{\equiv H_\text{int}}.
+\label{jelliumH}</script>
+
+<p>Here, as usual, $\rho(\br)=\pdop(\br)\pop(\br)$ is the number density operator, $:(\cdots):$ denotes normal ordering, and $\rho(\br)-n$ is the deviation from the uniform background charge. The two body interaction is</p>
+
+<script type="math/tex; mode=display">U(\br) = \frac{e^2}{\abs{\br}}</script>
+
+<p>(in <a href="https://en.wikipedia.org/wiki/Electrostatic_units">Electrostatic units</a>). A basic question is: what is the relative magnitude of the kinetic and potential terms? For a free fermion gas in its ground state, the kinetic energy per particle is $\frac{3}{5}E_F$. Since $n = \frac{k_\text{F}^3}{6\pi^2}$ this scales with density as $n^{2/3}$. The scaling of the interaction energy is $n^{1/3}$, showing that (perhaps counterintuitively) low density corresponds to strong interactions, relatively speaking. An appropriate dimensionless parameter is the ratio of the <a href="https://en.wikipedia.org/wiki/Wigner–Seitz_radius">Wigner–Seitz radius</a> to the Bohr radius $r_\text{Bohr} = (me^2)^{-1}$ for our system. This gives</p>
+
+<script type="math/tex; mode=display">\frac{r_s}{r_\text{Bohr}} = \left(\frac{3}{4\pi n}\right)^{1/3} me^2.</script>
+
+<p>We have already encountered the following states in Fermi gases, roughly in order of increasing interaction strength:</p>
+
+<ol>
+  <li>
+    <p>The <a href="/docs/lectures/FermiGas/">Landau Fermi liquid</a>.</p>
+  </li>
+  <li>
+    <p><a href="/docs/lectures/MoreSecondQuantization/#stoner-criterion-for-ferromagnetism">Ferromagnetism</a>, when the Stoner criterion is reached. Although we discussed a microscopic calculation, the same criterion can easily be phrased in terms of the Landau function $G(\phi)$.</p>
+  </li>
+  <li>
+    <p><a href="/docs/lectures/Lattice/#fermi-hubbard-model">Mott states</a> that can occur in a lattice potential, giving insulating behaviour in systems band theory predicts to be metallic.</p>
+  </li>
+</ol>
+
+<p>For very strong interactions, corresponding $r_s$ values greater than 100, the system can form a <a href="https://en.wikipedia.org/wiki/Wigner_crystal">Wigner crystal</a>, breaking the continuous symmetry of spatial translations.</p>
+
+<p>Using perturbation theory to go beyond the Hartree–Fock approximation leads to divergences in the case of Coulomb interactions. As a result, certain contributions to the perturbation series have to be summed to all orders. Far from being a mere technical nuisance, this resummation is linked to real physical effects arising from the long-ranged interaction, namely <strong>screening</strong> and collective excitations corresponding to quantized <strong>plasma oscillations</strong>.</p>
+
+<h2 id="perturbation-series-for-the-partition-function">Perturbation Series for the Partition Function</h2>
+
+<p>We are going to begin in very general terms, and consider the calculation of the (grand canonical) partition function</p>
+
+<script type="math/tex; mode=display">Z = \tr\left[\exp\left(-\beta H\right)\right],</script>
+
+<p>where $H=H_0+H_\text{int}$, and $H_0$ is the free particle Hamiltonian including the chemical potential, which we can write</p>
+
+<script type="math/tex; mode=display">H_0 = \sum_\bk \xi(\bk)\adop_\bk \aop_\bk,</script>
+
+<p>where $\xi(\bk)=\epsilon(\bk)-\mu$. All thermodynamic quantities can be obtained from $Z$, and the formalism can be further extended to calculate correlation functions.</p>
+
+<p>The key to our approach is to exploit then analogy between the ‘Boltzmann operator’ $e^{-\beta H}$ and the unitary time evolution operator $U(t) = e^{-iHt}$. Calculating the partition function seems to involve evolution for imaginary time $-i\beta$! This suggests we can develop an interaction picture, just as in the real time case. We have the equation of motion</p>
+
+<script type="math/tex; mode=display">\frac{d}{d\tau}\exp(-\tau H) = -\left(H_0+H_\text{int}\right)\exp(-\tau H).</script>
+
+<p>Multiplying on the left by $e^{\tau H_0}$ gives an equation satisfied by $e^{\tau H_0}e^{-\tau H}$</p>
+
+<script type="math/tex; mode=display">\frac{d}{d\tau}\left[e^{\tau H_0}e^{-\tau H}\right] = -H_\text{int}(\tau)\left[e^{\tau H_0}e^{-\tau H}\right],
+\label{int_pic}</script>
+
+<p>where $H_\text{int}(\tau)\equiv e^{\tau H_0} H_\text{int}e^{-\tau H_0}$ corresponds to the perturbation in the interaction picture at time $t=-i\tau$. The formal solution to \eqref{int_pic} at $\tau=\beta$</p>
+
+<script type="math/tex; mode=display">e^{\beta H_0}e^{-\beta H} = T_\tau \exp\left(-\int_0^\beta H_\text{int}(\tau)d\tau\right),</script>
+
+<p>where $T_\tau$ is the operation of time ordering of the exponent, which is a shorthand for</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+&T_\tau \exp\left(-\int_0^\beta H_\text{int}(\tau)d\tau\right) = 1 - \int_0^\beta H_\text{int}(\tau_1)d\tau_1\nonumber \\
+\qquad &+ \int_0^\beta d\tau_2 \int_0^{\tau_2} d\tau_1 H_\text{int}(\tau_2)H_\text{int}(\tau_1)\nonumber \\
+&\qquad- \int_0^\beta d\tau_3 \int_0^{\tau_3} d\tau_2 \int_0^{\tau_2} d\tau_1 H_\text{int}(\tau_3)H_\text{int}(\tau_2)H_\text{int}(\tau_1)+\cdots,
+\end{align} %]]></script>
+
+<p>with the times increasing from right to left. This gives our final expression for the partition function</p>
+
+<script type="math/tex; mode=display">Z = \tr\left[e^{-\beta H_0}T_\tau \exp\left(-\int_0^\beta H_\text{int}(\tau)d\tau\right)\right].</script>
+
+<p>Perturbation theory then involves computing averages of a string of $H_\text{int}(\tau)$ operators with respect to the Boltzmann distribution of the free Hamiltonian.</p>
+
+<h3 id="wicks-theorem">Wick’s Theorem</h3>
+
+<p>Let’s see how this works by considering the lowest order term when $H_\text{int}$ is given by \eqref{jelliumH}. In this case we just have to compute the thermal average of $H_\text{int}$: the time dependence vanishes by virtue of the cyclic property of the trace. Writing out the perturbation in terms of the Fourier modes gives</p>
+
+<script type="math/tex; mode=display">H_\text{int}  = \frac{1}{2V} \sum_{\bk_1+\bk_2=\bk_3+\bk_4} U_{\bk_1-\bk_4} :(\adop_{\bk_1}\aop_{\bk_4}-nV\delta_{\bk_1,\bk_4})(\adop_{\bk_2}\aop_{\bk_3}-nV\delta_{\bk_2,\bk_3}):,
+\label{Hint_exp}</script>
+
+<p>where</p>
+
+<script type="math/tex; mode=display">U_\bq = \frac{4\pi e^2}{\abs{\bq}^2}</script>
+
+<p>is the Fourier transform of the Coulomb potential. We have already discussed the expectation value of $H_\text{int}$ in a product state in <a href="/docs/lectures/MoreSecondQuantization/#excited-state-energies">Lecture 6</a>. Recall that the Hartree and Fock terms arise from two different ‘pairings’ of creation operators with annihilation operators. This sum over different pairings is a feature of expectations in a product state. Since $e^{-\beta H_0}$ represents a statistical mixture of product states in which the occupation of each momentum state is independent</p>
+
+<script type="math/tex; mode=display">e^{-\beta H_0} =\prod_\bk e^{-\beta\xi(\bk)N_\bk},</script>
+
+<p>we just set $N_\bk\to \langle N_\bk\rangle$ in our earlier expression. We are now denoting the quantum and thermal expectation by single angular brackets to avoid clutter. Thus, for some operator $A$</p>
+
+<script type="math/tex; mode=display">\langle A\rangle \equiv \frac{\tr\left[e^{-\beta H_0} A\right]}{Z_0},\quad Z_0 = \tr e^{-\beta H_0}</script>
+
+<p>The importance of including the background charge density now becomes clear: the Hartree term vanishes (without the background charge it would be infinite!), leaving only the Fock term</p>
+
+<script type="math/tex; mode=display">\langle H_\text{int}\rangle =  - \frac{1}{2V} \sum_{\bk_1,\bk_2} U_{\bk_1-\bk_2} \langle N_{\bk_1}\rangle\langle N_{\bk_2}\rangle.</script>
+
+<p>Before considering a situation where the time dependence enters in an essential way, let’s look at a slightly more general example of an expectation value</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\langle \pdop(\br_1)\pop(\br_2)\pdop(\br_3)\pop(\br_4)\rangle &= \frac{1}{V^2}\sum_{\bk_1,\bk_2,\bk_3,\bk_4} e^{i(-\bk_1\cdot\br_1+\bk_2\cdot\br_2-\bk_3\cdot\br_3+\bk_4\cdot\br_4)} \langle \adop_{\bk_1}\aop_{\bk_2}\adop_{\bk_3}\aop_{\bk_4} \rangle\nonumber\\
+&= \frac{1}{V^2}\sum_{\bk_1,\bk_3} e^{i[\bk_1\cdot(\br_2-\br_1)+\bk_3\cdot(\br_4-\br_3)]} \langle \adop_{\bk_1}\aop_{\bk_1}\rangle\langle\adop_{\bk_3}\aop_{\bk_3} \rangle\nonumber\\
+&\quad+ \frac{1}{V^2}\sum_{\bk_1,\bk_2} e^{i[\bk_1\cdot(\br_4-\br_1)+\bk_2\cdot(\br_2-\br_3)]} \langle \adop_{\bk_1}\aop_{\bk_1}\rangle\langle\adop_{\bk_2}\aop_{\bk_2} \rangle +\cdots\nonumber\\
+&=\langle \pdop(\br_1)\pop(\br_2)\rangle\langle\pdop(\br_3)\pop(\br_4)\rangle \nonumber\\
+&\quad+\langle \pdop(\br_1)\pop(\br_4)\rangle\langle\pop(\br_2)\pdop(\br_3)\rangle .
+\label{Wick_Example}
+\end{align} %]]></script>
+
+<p>The dots in the second equality are the accounting errors that we argued in <a href="/docs/lectures/MoreSecondQuantization/#excited-state-energies">Lecture 6</a> can be ignored in the thermodynamic limit. There are no signs on account of the even number of transpositions to shift things into order in the second term. On the other hand</p>
+
+<script type="math/tex; mode=display">\begin{align}
+\langle \pdop(\br_1)\pdop(\br_2)\pop(\br_3)\pop(\br_4)\rangle =\langle \pdop(\br_1)\pop(\br_4)\rangle\langle\pdop(\br_2)\pop(\br_3)\rangle\nonumber\\
+\quad\pm\langle \pdop(\br_1)\pop(\br_3)\rangle\langle\pdop(\br_2)\pop(\br_4)\rangle,
+\end{align}</script>
+
+<p>with the plus sign for bosons and the minus sign for fermions. Hopefully the picture is clear: we sum over all possible pairings of creation with annihilation operators. For fermions we must in addition be careful to include a minus sign when, in moving paired creation and annihilation operators into position next to each other, we perform an odd number of transpositions.</p>
+
+<p>The second order contribution to the partition function depends on</p>
+
+<script type="math/tex; mode=display">\langle T_\tau H_\text{int}(\tau_2)H_\text{int}(\tau_1)\rangle.
+\label{2nd_Hint}</script>
+
+<p>This is a function of $\tau_1-\tau_2$, again as a result of the cyclic property. Including the time dependence in \eqref{Hint_exp} is straightforward</p>
+
+<script type="math/tex; mode=display">H_\text{int}(\tau)  = \frac{1}{2V} \sum_{\bk_1+\bk_2=\bk_3+\bk_4} U_{\bk_1-\bk_4} :(\adop_{\bk_1}(\tau)\aop_{\bk_4}(\tau)-nV)(\adop_{\bk_2}(\tau)\aop_{\bk_3}(\tau)-nV):,
+\label{Hint_exp_TD}</script>
+
+<p>where the time dependence of the Fourier components is</p>
+
+<script type="math/tex; mode=display">\aop_\bk(\tau) = e^{-\tau\xi(\bk)}\aop_\bk,\quad \adop_\bk(\tau) = e^{\tau\xi(\bk)}\adop_\bk.</script>
+
+<p>How to we evaluate expectations of time ordered products? It’s fairly clear that our example \eqref{Wick_Example} is also an identity in this case</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+&\langle T_\tau\pdop(\br_1,\tau_1)\pop(\br_2,\tau_2)\pdop(\br_3,\tau_3)\pop(\br_4,\tau_4)\rangle=\nonumber\\ &\qquad\langle T_\tau\pdop(\br_1,\tau_1)\pop(\br_2,\tau_2)\rangle\langle T_\tau\pdop(\br_3,\tau_3)\pop(\br_4,\tau_4)\rangle\nonumber\\
+&\qquad\qquad+\langle T_\tau\pdop(\br_1,\tau_1)\pop(\br_4,\tau_4)\rangle\langle T_\tau\pop(\br_2,\tau_2)\pdop(\br_3,\tau_3)\rangle,
+\label{Wick_ExampleT}
+\end{align} %]]></script>
+
+<p>because the operators appear in the right time order in the expectation values on both sides. In turns out that this works for fermions too, <em>provided</em> that we define time ordering to include a sign corresponding to the signature of the permutation involved in putting the operators in time order. In the simplest case:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\langle T_\tau \pdop(\br,\tau)\pop(\br',\tau') \rangle = \begin{cases}
+\langle \pdop(\br,\tau)\pop(\br',\tau') \rangle & \tau>\tau'\\
+-\langle \pop(\br',\tau')\pdop(\br,\tau) \rangle & \tau'>\tau.\
+\label{Fermi_Tdef}
+\end{cases} %]]></script>
+
+<p>To see why this is necessary, consider the expectation corresponding to the time ordering $\tau_1&gt;\tau_3&gt;\tau_2&gt;\tau_4$</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+&\langle\pdop(\br_1,\tau_1)\pdop(\br_3,\tau_3)\pop(\br_2,\tau_2)\pop(\br_4,\tau_4)\rangle=\nonumber\\ &\qquad-\langle \pdop(\br_1,\tau_1)\pop(\br_2,\tau_2)\rangle\langle \pdop(\br_3,\tau_3)\pop(\br_4,\tau_4)\rangle\nonumber\\
+&\qquad\qquad+\langle \pdop(\br_1,\tau_1)\pop(\br_4,\tau_4)\rangle\langle \pdop(\br_3,\tau_3)\pop(\br_2,\tau_2)\rangle.
+\end{align} %]]></script>
+
+<p>Since the first term on the right hand side contains time ordered products, this identity is only described correctly by \eqref{Wick_ExampleT} if we use the above convention.</p>
+
+<p>One further note about $T_\tau$-products: operators appearing in a $T_\tau$ product can be regarded as (anti-)commuting, because the actual order that they appear in depends on their $\tau$ labels. For instance $T_\tau A(\tau_1)B(\tau_2) = \pm T_\tau B(\tau_2)A(\tau_1)$, depending on whether the operators are bosonic or fermionic.</p>
+
+<p>To outcome of this discussion is <strong>Wick’s theorem</strong>:</p>
+
+<p class="message">
+An expectation of a $T_\tau$-product of operators with respect to a free Hamiltonian can be written as a sum of terms corresponding to all possible pairings of the operators. Each term consists of the product of $T_\tau$-product expectations for each pair. In the case of fermions, each term will have a sign corresponding to the signature of the permutation reordering the operators so that paired operators are adjacent.
+</p>
+
+<p>This is the basic result used for evaluating the time ordered products like \eqref{2nd_Hint}.</p>
+
+<h3 id="greens-functions">Green’s functions</h3>
+
+<p>In light of Wick’s theorem, we see that the basic quantity that appears in perturbation theory is</p>
+
+<script type="math/tex; mode=display">G(\br,\tau,\br',\tau')\equiv\langle T_\tau \pop(\br,\tau)\pdop(\br',\tau') \rangle.
+\label{GF_def}</script>
+
+<p>This is called a <strong>Green’s function</strong>, because it satisfies the equation</p>
+
+<script type="math/tex; mode=display">\left[\partial_\tau + H_0\right]G(\br,\tau,\br',\tau')=\delta(\tau-\tau')\delta(\br-\br').
+\label{GF_eq}</script>
+
+<p class="message">
+Make sure you understand where those $\delta$-functions on the right hand side come from!
+</p>
+
+<p>The name is slightly unfortunate, because $G(\br,\tau,\br’,\tau’)$ has a physical meaning in its own right, apart from being useful in perturbation calculation, and we can define it for an interacting system by taking expectations in \eqref{GF_def} with respect to the density matrix of the interacting system. In that case, however, $G(\br,\tau,\br’,\tau’)$ does not obey a differential equation like \eqref{GF_eq}. So in general many body Green’s functions are <em>not</em> Green’s functions in the sense of differential equations. Just to confuse you.</p>
+
+<p>For the noninteracting Green’s functions that appear in our perturbation calculations \eqref{GF_eq} is very useful, allowing us to find $G(\br,\tau,\br’,\tau’)$ using Fourier analysis. The Green’s function depends on $\tau-\tau’$ (by the cyclic property of the trace), and in a translationally invariant system it will depend on $\br-\br’$. What about boundary conditions? They are very simple</p>
+
+<script type="math/tex; mode=display">G(\br,\tau) = \pm G(\br,\tau+\beta).
+\label{GF_bc}</script>
+
+<p>The Green’s function is periodic in $\beta$ for bosons, and antiperiodic for fermions. This follows from carefully writing out the definition \eqref{GF_def} and using the cyclic property of the trace, not forgetting \eqref{Fermi_Tdef} in the case of fermions. As a result of \eqref{GF_bc}, we can expand $G(\br,\tau)$ in a Fourier series.</p>
+
+<script type="math/tex; mode=display">G(\br,\tau) = k_\text{B}T\sum_{n=-\infty}^\infty G_{\omega_n}(\br) e^{-i\omega_n \tau}.</script>
+
+<p>The frequencies $\omega_n$ are called <strong>Matsubara frequencies</strong>, and are</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\omega_n = \begin{cases}
+2\pi n k_\text{B}T & \text{bosons}\\
+2\pi \left(n+\frac{1}{2}\right) k_\text{B}T & \text{fermions}.\\
+\end{cases}
+\label{matsubaras} %]]></script>
+
+<p>By Fourier transforming, we find the Green’s function in momentum and frequency space to be</p>
+
+<script type="math/tex; mode=display">G_{\bk,\omega_n} = \frac{1}{-i\omega_n + \xi(\bk)}.</script>
+
+<h3 id="the-linked-cluster-expansion">The Linked Cluster Expansion</h3>
+
+<p>So far we have described how (in principle) we go about calculating</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+Z &= \tr\left[e^{-\beta H_0}T_\tau \exp\left(-\int_0^\beta H_\text{int}(\tau)d\tau\right)\right]\\
+&=Z_0\left(1 - \beta \langle H_\text{int}\rangle +\frac{1}{2} \int_0^\beta d\tau_2 \int_0^{\beta} d\tau_1 \langle T_\tau H_\text{int}(\tau_2)H_\text{int}(\tau_1)\rangle+\cdots \right)
+\label{Z_exp}
+\end{align} %]]></script>
+
+<p>When we discussed Hartree–Fock theory in <a href="/docs/lectures/MoreSecondQuantization/#excited-state-energies">Lecture 6</a>, we represented the Hartree and Fock terms by the diagrams</p>
+
+<p><a name="HFDiag"></a>
+<img src="/docs/assets/HFDiag.png" alt="" />
+<em>Graphical representation of the Hartree and Fock terms.</em></p>
+
+<p>corresponding to the different ways of pairing the operators. Some of the diagrams arising at the second term in \eqref{Z_exp} are shown below</p>
+
+<p><a name="HFDiag"></a>
+<img src="/docs/assets/2ndOrderDiagrams.png" alt="" />
+<em>Some of the diagrams contributing at second order. 1. is a pair of disconnected components, each corresponding to the Fock diagram at first order. 2. and 3. are connected diagrams.</em></p>
+
+<p>We see that some of these diagrams consist of a <em>single</em> connected component of interaction vertices joined by lines corresponding to pairing of creation and annihilation operators. The other diagrams consists of two disconnected copies of those that have already appeared at first order. The contribution from a diagram consisting of disconnected components factorizes, so there’s no difficulty including these repeated components as we will have already calculated them at a lower order in the series.</p>
+
+<p>Now, what we actually want to calculate is not the partition function, but its logarithm, or derivatives thereof. For example,</p>
+
+<script type="math/tex; mode=display">F = -k_\text{B}T \log Z</script>
+
+<p>is the free energy, while</p>
+
+<script type="math/tex; mode=display">U = -\frac{\partial}{\partial \beta}\log Z</script>
+
+<p>is the internal energy. Fortunately, we have the following amazing fact, known as the <strong>linked cluster theorem</strong>:</p>
+
+<p class="message">
+The expansion of $\log Z$ involves only those diagrams forming a <strong>single connected component </strong>.
+</p>
+
+<h3 id="summing-the-singular-diagrams">Summing the Singular Diagrams</h3>
+
+<p>Let’s see how this works by evaluating the second order contribution to the free energy. According to the linked cluster theorem, this involves the diagrams</p>
+
+<p><a name="HFDiag"></a>
+<img src="/docs/assets/2ndOrderConnectedDiagrams.png" alt="" />
+<em>Diagrams contributing to the logarithm of the partition function at second order.</em></p>
+
+<p>For Coulomb interactions, the first of these causes the biggest headache. To see what the problem is, let’s first write out the contribution of this diagram using Wick’s theorem.</p>
+
+<script type="math/tex; mode=display">\begin{align}
+\frac{1}{8} \int_0^\beta d\tau_2 \int_0^{\beta} d\tau_1 \int \prod_{i=1}^4 d\br_i U(\br_1-\br_2)U(\br_3-\br_4)\nonumber\\
+\times\pi(\br_4-\br_1,\tau_2-\tau_1)\pi(\br_2-\br_3,\tau_1-\tau_2),
+\label{2bubb}
+\end{align}</script>
+
+<p>where $\pi(\br,\tau)$ is the <strong>polarization</strong></p>
+
+<script type="math/tex; mode=display">\pi(\br,\tau) \equiv -\langle T_\tau \left(\rho(\br,\tau)-n\right)\left(\rho(0,0)-n\right)\rangle = G(\br,\tau)G(-\br,-\tau).</script>
+
+<p>Writing \eqref{2bubb} in terms of momentum and frequency gives</p>
+
+<script type="math/tex; mode=display">\begin{align}
+2\times \frac{1}{8}\sum_{\bq,\omega_n}  U_\bq^2\pi_{\bq,\omega_n}^2.
+\end{align}</script>
+
+<p>The factor of $2$ arises from the two ways in which one can pair the operators to get such a diagram.</p>
+
+<p>Since $U_\bq = \frac{4\pi e^2}{\abs{\bq}^2}$, we can see that – unless the behaviour of $\pi_{\bq,\omega_n}$ saves us – these integrands will contain infrared divergences. Furthermore, higher order ring diagrams have even worse divergences!</p>
+
+<p><a name="HFDiag"></a>
+<img src="/docs/assets/3rdOrderRing.png" alt="" />
+<em>Third order ring diagram.</em></p>
+
+<p>There’s no sense in which these higher order diagrams are negligible. Fortunately, there’s a simple way to sum all diagrams of this class. Pairing operators to get a ring of $p$ bubbles can be done in $2^{p-1}(p-1)!$ ways. To see this, fix one of the factors of $H_\text{int}$, and then choose one of the $(n-1)$ factors to pair with it. There are two ways to do it - depending on whether we pair with the top or bottom. Continuing this process gives the factor $2^{p-1}(p-1)!$.</p>
+
+<p>In this way we find the overall contribution to $\log Z$</p>
+
+<script type="math/tex; mode=display">\begin{align}
+\sum_{p=1}^\infty\sum_{\bq,\omega_n}\frac{ 2^{p-1}(p-1)!}{2^p p!} \left[U_\bq \pi_{\bq,\omega_n}\right]^p =-\frac{1}{2}\sum_{\bq,\omega_n}\log\left[1-U_\bq \pi_{\bq,\omega_n}\right].
+\end{align}</script>
+
+<p>In this calculation we have taken into account only the contribution of the simplest diagram at each order with the highest singularity. Higher order diagrams can be interpreted as giving rise to a corrected polarization.</p>
+
+<p>The physical meaning of this sum becomes clear if we consider the effect on the partition function of introducing some non-uniformity into the background charge density: $n\to n+\delta n(\br)$. At first order in the interaction we obtain a rather trivial contribution to the free energy, arising from the interaction of this charge distribution with itself</p>
+
+<script type="math/tex; mode=display">\frac{1}{2}\int d\br_1 d\br_2 \delta n(\br_1)U(\br_1-\br_2)\delta n(\br_2) = \frac{1}{2}\sum_\bq \delta n_\bq U_\bq \delta n_{-\bq}.
+\label{inhomog}</script>
+
+<p>The above argument shows, however, that we cannot neglect the effect of the bubble diagrams, which now form a chain:</p>
+
+<p><a name="BubbleChain"></a>
+<img src="/docs/assets/BubbleChain.png" alt="" />
+<em>Chain of bubbles giving the effective interaction.</em></p>
+
+<p>The combinatoric factor here is $2^p p!$ at $p^\text{th}$ order, showing that we now have a <em>geometric</em> series, rather than a logarithm. The overall effect is that at second order in $\delta n(\br)$, the change in the free energy is still given by \eqref{inhomog}, but now with the <strong>effective interaction</strong></p>
+
+<script type="math/tex; mode=display">U_{\text{eff},\bq} = \frac{U_\bq}{1-U_\bq \pi_{\bq,0}}.</script>
+
+<p>The denominator can be interpreted as a <strong>dielectric function</strong> that tells us how the fermions modify the interaction between charges.</p>
+
+<script type="math/tex; mode=display">\varepsilon(\bq,\omega_n) \equiv 1-U_\bq \pi_{\bq,\omega_n}.
+\label{dielectric}</script>
+
+<p>It remains to calculate the polarization.</p>
+
+<h3 id="evaluating-the-polarization">Evaluating the Polarization</h3>
+
+<p>In momentum and frequency space we have</p>
+
+<script type="math/tex; mode=display">\pi_{\bq,\omega_n} = \frac{1}{\beta V}\sum_{\bp,\epsilon_m} G_{\bp+\bq,\epsilon_m+\omega_n}G_{\bp,\epsilon_m}.
+\label{pol}</script>
+
+<p>Recall that $\epsilon_m = 2\pi\left(m+\frac{1}{2}\right) T$ for fermions, while $\omega_n$, being a sum of two fermionic Matsubara frequencies, is $\omega_n = 2\pi n T$.</p>
+
+<p>The sum in \eqref{pol} can be turned into an integral using the following neat formula</p>
+
+<script type="math/tex; mode=display">\sum_{\epsilon_n} f(i\epsilon_n)=-i\frac{\beta}{4\pi }\int_\cC \tanh\left(\frac{\beta\epsilon}{2}\right)f(\epsilon) d\epsilon,
+\label{MatsubaraSum}</script>
+
+<p>where the contour $\cC$ encircles anti-clockwise <em>only</em> the poles of $\tanh\left(\frac{\beta\epsilon}{2}\right)$, which lie at $i\epsilon_n$. The formula then follows from finding the residues.</p>
+
+<p><a name="Poles"></a>
+<img src="/docs/assets/Poles.png" alt="" />
+<em>Contour of integration for \eqref{MatsubaraSum}, showing the poles of $\tanh\left(\frac{\beta\epsilon}{2}\right)$ and the extra two poles when $f(\epsilon)=G_{\bp,-i\epsilon}G_{\bp+\bq,\omega_n-i\epsilon}$.</em></p>
+
+<p>After writing \eqref{pol} as an integral, we can take the contour $\cC$ to encircle <em>clockwise</em> the other poles of the integral, arising from the pair of Green’s functions, considered as functions of $\epsilon$</p>
+
+<script type="math/tex; mode=display">G_{\bp,-i\epsilon}G_{\bp+\bq,\omega_n-i\epsilon} = \frac{1}{\left[\xi(\bp)-\epsilon\right]\left[\xi(\bp+\bq)-\epsilon-i\omega_n\right]}.</script>
+
+<p>This then gives for the polarization</p>
+
+<script type="math/tex; mode=display">\pi_{\bq,\omega_n} = \frac{1}{V}\sum_\bp \frac{\tanh\left(\frac{\beta\xi(\bp)}{2}\right)-\tanh\left(\frac{\beta\xi(\bp+\bq)}{2}\right)}{\xi(\bp+\bq)-\xi(\bp)-i\omega_n}.</script>
+
+<p>Although this is still a complicated looking function, there are a couple of simple limits we can consider. We quote these, leaving their proof as an exercise</p>
+
+<ol>
+  <li>
+    <p><strong>Static limit</strong>. $\omega,\bk\to 0$, with $\abs{\omega_n}\ll k_\text{F}\abs{\bq}/m$.</p>
+
+    <script type="math/tex; mode=display">\pi_{\bq,\omega}\to -\nu(E_\text{F})</script>
+
+    <p>where $\nu(E_F)$ is the density of states at the Fermi surface. This gives the effective interaction.</p>
+
+    <script type="math/tex; mode=display">U_{\text{eff},\bq} = \frac{U_\bq}{1+U_\bq \nu(E_\text{F})},</script>
+
+    <p>which in real space has the formula</p>
+
+    <script type="math/tex; mode=display">U_\text{eff}(\br) = \frac{e^2}{\abs{\br}}\exp\left(-\abs{\br}/\lambda_\text{TF}\right),</script>
+
+    <p>where $\lambda_\text{TF}=\sqrt{4\pi e^2\nu(E_F)}$ is the <strong>Thomas–Fermi screening length</strong>. Our summation of an infinite series of diagrams that are increasingly singular due to the long ranged nature of the Coulomb force is … a finite ranged potential!</p>
+  </li>
+  <li>
+    <p><strong>High frequencies</strong>. $\abs{\omega_n}\gg k_\text{F}\abs{\bq}/m$.</p>
+
+    <script type="math/tex; mode=display">\pi_{\bq,\omega_n} \longrightarrow -\frac{n\bq^2}{m\omega_n^2}</script>
+
+    <p>If we continue to real frequencies $i\omega_n\to \omega + i0$, we find that in this limit the dielectric function in \eqref{dielectric} becomes</p>
+
+    <script type="math/tex; mode=display">\varepsilon(\bq,\omega) = 1-\frac{\omega_\text{p}^2}{\omega^2}</script>
+
+    <p>where $\omega_\text{p}= \frac{4\pi e^2n}{m}$ is the <strong>plasma frequency</strong>. Reproducing this piece of classical physics is only possible because of the infinite summation we have performed.</p>
+  </li>
+</ol>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+    <script>
+
+    // Highlight search Query
+    var url = window.location.href;
+      if (url.lastIndexOf("?q=") > 0) {
+        // get the index of the parameter, add three (to account for length)
+        var stringloc = url.lastIndexOf("?q=") + 3;
+        // get the substring (query) and decode
+        var searchquery = decodeURIComponent(url.substr(stringloc));
+        // regex matches at beginning of line, end of line or word boundary, useful for poetry
+        var regex = new RegExp("(?:^|\\b)(" + searchquery + ")(?:$|\\b)", "gim");
+        // get, add mark and then set content
+        var content = document.getElementById("main").innerHTML;
+        document.getElementById("main").innerHTML = content.replace(regex, "<mark>$1</mark>");
+      }
+
+    // Toggle sidebar
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+    <!-- Facebook SDK for JavaScript -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '589495744558280',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+  </body>
+</html>

@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Fermi Gas - Theories of Quantum Matter</title>
+<meta property="og:title" content="Fermi Gas" />
+<meta name="description" content="A Fermi gas with weak interactions provides an example of one of the &#39;standard models&#39; of condensed matter physics: Landau&#39;s Fermi liquid theory." />
+<meta property="og:description" content="A Fermi gas with weak interactions provides an example of one of the &#39;standard models&#39; of condensed matter physics: Landau&#39;s Fermi liquid theory." />
+<link rel="canonical" href="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/FermiGas/" />
+<meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/FermiGas/" />
+<meta property="og:site_name" content="Theories of Quantum Matter" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-10-11T14:51:35+01:00" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Fermi Gas",
+    "datePublished": "2018-10-11T14:51:35+01:00",
+    "description": "A Fermi gas with weak interactions provides an example of one of the &#39;standard models&#39; of condensed matter physics: Landau&#39;s Fermi liquid theory.",
+    "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/FermiGas/"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+  <head>
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="/docs/lectures/FermiGas/"/>
+
+  <!-- Basic meta elements -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+
+  <!--   Dublin Core metadata for Zotero -->
+  <meta name="DC.title" content="Fermi Gas" />
+  <meta name="DC.creator" content="Austen Lamacraft" />
+  <meta name="DC.contributor" content="" />
+  <meta name="DC.date" content="" />
+  <meta name="DC.rights" content="" />
+  <meta name="DC.source" content="Theories of Quantum Matter" />
+
+    <!-- Open Graph metadata -->
+
+    
+    <meta property="og:title" content="Fermi Gas"/>
+    <meta property="og:description" content="An Ed edition">
+    <meta property="fb:admins" content="elotroalex"/>
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/FermiGas/"/>
+    <meta property="fb:app_id" content="589495744558280"/>
+    <meta property="og:image" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/public/open-graph-logo.png"/>
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+
+  <title>
+    
+      Fermi Gas
+    
+  </title>
+
+  <!-- CSS links -->
+  <link rel="stylesheet" href="/docs/public/css/syntax.css"/>
+  <link rel="stylesheet" href="/docs/public/css/tqm.css"/>
+
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/docs/public/apple-touch-icon-precomposed.png"/>
+  <link rel="shortcut icon" href="/docs/public/favicon.ico"/>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/docs/atom.xml"/>
+
+  <!-- MathJax -->
+
+ <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>
+
+ <!---<script type="text/javascript"
+   src="/docs/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>--->
+
+ <script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+   TeX: { equationNumbers: { autoNumber: "all" },
+          Macros: {
+          cP: '\\mathcal{P}',
+          cN: '\\mathcal{N}',
+          cE: '\\mathcal{E}',
+          cO: '\\mathcal{O}',
+          cH: '\\mathcal{H}',
+          cC: '\\mathcal{C}',
+          br: '\\mathbf{r}',
+          bx: '\\mathbf{x}',
+          bp: '\\mathbf{p}',
+          bq: '\\mathbf{q}',
+          bk: '\\mathbf{k}',
+          bv: '\\mathbf{v}',
+          bA: '\\mathbf{A}',
+          brN: '\\br_1, \\ldots, \\br_N',
+          bxN: 'x_1, \\ldots, x_N',
+          pop: '\\psi^{\\vphantom{\\dagger}}',
+          pdop: '\\psi^\\dagger',
+          Phop: '\\Phi^{\\vphantom{\\dagger}}',
+          Phdop: '\\Phi^\\dagger',
+          phop: '\\phi^{\\vphantom{\\dagger}}',
+          phdop: '\\phi^\\dagger',
+          aop: 'a^{\\vphantom{\\dagger}}',
+          adop: 'a^\\dagger',
+          alop: '\\alpha^{\\vphantom{\\dagger}}',
+          aldop: '\\alpha^\\dagger',
+          bop: 'b^{\\vphantom{\\dagger}}',
+          bdop: 'b^\\dagger',
+          cop: 'c^{\\vphantom{\\dagger}}',
+          cdop: 'c^\\dagger',
+          Nop:  '\\mathsf{N}^{\\vphantom{\\dagger}}',
+          tr: '\\operatorname{tr}\\nolimits',
+          det: '\\operatorname{det}\\nolimits',
+          perm: '\\operatorname{perm}\\nolimits',
+          sgn: '\\operatorname{sgn}',
+          E: '\\operatorname{\\mathbb{E}}',
+          Var: '\\operatorname{\\mathbb{Var}}',
+          Cov: '\\operatorname{\\mathbb{Cov}}',
+          Re: '\\operatorname{Re}}',
+          ket: ['\\lvert{#1}\\rangle',1],
+          bra: ['\\langle{#1}\\rvert',1],
+          inner: ['\\langle{#1}\\rvert #2 \\rangle',2],
+          braket: ['\\langle{#1}\\rvert #2 \\lvert #3 \\rangle',3],
+          abs: ['\\lvert{#1}\\rvert',1]
+    }
+  },
+   extensions: ["tex2jax.js"],
+   jax: ["input/TeX","output/HTML-CSS"],
+   tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+ });
+ </script>
+
+$$
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\nonumber
+$$
+
+<!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Fermi Gas - Theories of Quantum Matter</title>
+<meta property="og:title" content="Fermi Gas" />
+<meta name="description" content="A Fermi gas with weak interactions provides an example of one of the &#39;standard models&#39; of condensed matter physics: Landau&#39;s Fermi liquid theory." />
+<meta property="og:description" content="A Fermi gas with weak interactions provides an example of one of the &#39;standard models&#39; of condensed matter physics: Landau&#39;s Fermi liquid theory." />
+<link rel="canonical" href="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/FermiGas/" />
+<meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/FermiGas/" />
+<meta property="og:site_name" content="Theories of Quantum Matter" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-10-11T14:51:35+01:00" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Fermi Gas",
+    "datePublished": "2018-10-11T14:51:35+01:00",
+    "description": "A Fermi gas with weak interactions provides an example of one of the &#39;standard models&#39; of condensed matter physics: Landau&#39;s Fermi liquid theory.",
+    "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/FermiGas/"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+
+
+  <body>
+
+    <!-- This if statement decides which sidebar to use -->
+    
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>A Part III Physics Course at the University of Cambridge</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/docs/">Home</a>
+
+    
+
+    
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/ManyBodyWavefunctions/">Many Body Wavefunctions</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/QHE/">Quantum Hall Effect</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/ElasticChain/">The Elastic Chain</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/SpinModels/">Spin Models</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/SecondQuantization/">A is for Annihilation</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/MoreSecondQuantization/">B is for Bunching</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/Lattice/">Lattice Models and Strong Correlations</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/BoseGas/">Bose Gas</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item active" href="/docs/lectures/FermiGas/">Fermi Gas</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/Superconductivity/">Superconductivity</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/ResponseAndCorrelation/">Response and Correlation</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/Jellium/">Jellium</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/JordanWigner/">Jordan-Wigner and Bosonization</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/KondoEffect/">The Kondo Effect</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/LiebLinigerModel/">The Lieb-Liniger Model</a>
+        
+      
+    
+
+    <!-- The code below is used for manually entered links  -->
+
+    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/FermiGas/">Annotate me</a>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>Distributed with an MIT license.</p>
+  </div>
+</div>
+
+    
+
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/docs/" title="Home">Theories of Quantum Matter</a>
+            <br><small>Quantum Mechanics of Many Body Systems</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content" id="main">
+        <div class="page">
+  <h1 class="page-title">Fermi Gas</h1>
+  <p class="message">
+A Fermi gas with weak interactions provides an example of one of the 'standard models' of condensed matter physics: Landau's <strong>Fermi liquid</strong> theory.
+</p>
+
+<h2 class="no_toc" id="contents">Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#weakly-interacting-fermi-gas" id="markdown-toc-weakly-interacting-fermi-gas">Weakly Interacting Fermi Gas</a>    <ul>
+      <li><a href="#perturbation-theory-to-second-order" id="markdown-toc-perturbation-theory-to-second-order">Perturbation Theory to Second Order</a></li>
+      <li><a href="#landau-f-function" id="markdown-toc-landau-f-function">Landau $f$ function</a></li>
+      <li><a href="#quasiparticle-energy-varepsilon_sbk" id="markdown-toc-quasiparticle-energy-varepsilon_sbk">Quasiparticle energy $\varepsilon_s(\bk)$</a></li>
+      <li><a href="#eigenstates-in-perturbation-theory-what-is-a-quasiparticle" id="markdown-toc-eigenstates-in-perturbation-theory-what-is-a-quasiparticle">Eigenstates in Perturbation Theory: What is a Quasiparticle?</a></li>
+      <li><a href="#collisions" id="markdown-toc-collisions">Collisions</a></li>
+    </ul>
+  </li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
+</ul>
+
+<p>Reading: <a href="#Landau:1980aa">(Landau, Lifshitz, &amp; Pitaevskii, 1980)</a>.</p>
+
+<hr />
+
+<h2 id="weakly-interacting-fermi-gas">Weakly Interacting Fermi Gas</h2>
+
+<p>We are going to study the following simple model of a Fermi gas with short-ranged interactions</p>
+
+<script type="math/tex; mode=display">H = \int d\br\left[ \sum_{s=\uparrow,\downarrow}\frac{1}{2m}\nabla\pdop_s\cdot\nabla\pop_s + U_0 \pdop_\uparrow\pdop_\downarrow\pop_\downarrow\pop_\uparrow\right].</script>
+
+<p>As with the Bose gas, it’s most convenient to work in momentum space</p>
+
+<script type="math/tex; mode=display">H =\sum_{\bk,s} \epsilon(\bk)\adop_{\bk,s}\aop_{\bk,s} + \overbrace{\frac{U_0}{V}\sum_{\bk_1+\bk_2=\bk_3+\bk_4} \adop_{\bk_1,\uparrow}\adop_{\bk_2,\downarrow}\aop_{\bk_3,\downarrow}\aop_{\bk_4,\uparrow}}^{\equiv H_\text{int}},</script>
+
+<p>with $\epsilon(\bk)=\bk^2/2m$, and $V$ the volume. At $U_0=0$ the eigenstates are of course the product states of singe particle momentum states specified by the occupancies $N_{s}(\bk) = 0,1$. The ground state is the Fermi sphere of radius $k_\text{F}$ in momentum space with $N_{s}(\bk) = \theta(k_F-\abs{\bk})$. Low energy excited states will have $N_{s}(\bk)=1$ for $\abs{\bk}\ll k_\text{F}$ and $N_{s}(\bk)=0$ for $\abs{\bk}\gg k_\text{F}$. In perturbation theory we may still <em>label</em> the eigenstates by these occupation numbers even though the eigenstates are no longer occupation number eigenstates. Instead, we say that these labels give the occupation numbers of <strong>quasiparticles</strong> with fermionic statistics. The energy of the eigenstates can then be expressed in terms of the quasiparticle distribution.</p>
+
+<p>Without interactions the energy of a state $\ket{\mathbf{N}}$ is</p>
+
+<script type="math/tex; mode=display">E^{(0)}(\mathbf{N}) = \sum_{\bk,s} \epsilon(\bk)N_{s}(\bk).</script>
+
+<p>In the presence of interactions this function is no longer linear in the occupation numbers. The second order expansion of the energy in terms of the deviation of the occupancies from the ground state values is the key ingredient of Landau’s theory.</p>
+
+<h3 id="perturbation-theory-to-second-order">Perturbation Theory to Second Order</h3>
+
+<p>The standard expressions for the perturbed energy to second order in the perturbation are of course</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+E^{(1)}(\mathbf{N}) &= \braket{\mathbf{N}}{H_\text{int}}{\mathbf{N}}\\
+E^{(2)}(\mathbf{N}) &= \sum_{\mathbf{N}'\neq \mathbf N}\frac{\abs{\braket{\mathbf{N'}}{H_\text{int}}{\mathbf{N}}}^2}{E^{(0)}(\mathbf{N})-E^{(0)}(\mathbf{N}')}.
+\label{fermi_2nd}
+\end{align} %]]></script>
+
+<p>The first order correction is easily found to be</p>
+
+<script type="math/tex; mode=display">E^{(1)}(\mathbf{N}) = \frac{U_0}{V} \sum_{\bk,\bk'} N_{\uparrow}(\bk)N_{\downarrow}(\bk') = \frac{U_0}{V}N_\uparrow N_\downarrow.</script>
+
+<p>This is just the energy we found when we discussed the Stoner criterion in <a href="/docs/lectures/MoreSecondQuantization/">Lecture 6</a>. For the second order correction we need the matrix element $\braket{\mathbf{N}’}{H_\text{int}}{\mathbf{N}}$, which is nonzero if</p>
+
+<script type="math/tex; mode=display">\begin{align}
+N'_{\bk_1,\uparrow} = N_{\uparrow}(\bk_1) + 1, \quad N'_{\downarrow}(\bk_2) = N_{\downarrow}(\bk_2) + 1\\
+N'_{\downarrow}(\bk_3) = N_{\downarrow}(\bk_3) - 1, \quad N'_{\uparrow}(\bk_4) = N_{\uparrow}(\bk_4) - 1,
+\end{align}</script>
+
+<p>for $\bk_i$ satisfying $\bk_1+\bk_2=\bk_3+\bk_4$. In this case</p>
+
+<script type="math/tex; mode=display">\braket{\mathbf{N}'}{H_\text{int}}{\mathbf{N}} = \frac{U_0}{V} \sqrt{\left(1-N_{\uparrow}(\bk_1)\right)\left(1-N_{\downarrow}(\bk_2)\right)N_{\downarrow}(\bk_3)N_{\uparrow}(\bk_4)}</script>
+
+<p>(ignoring any coinciding momenta). In this way we end up with the second order correction</p>
+
+<script type="math/tex; mode=display">E^{(2)}(\mathbf{N}) = \left(\frac{U_0}{V}\right)^2 \sum_{\bk_1+\bk_2=\bk_3+\bk_4}\frac{\left(1-N_{\uparrow}(\bk_1)\right)\left(1-N_{\downarrow}(\bk_2)\right)N_{\downarrow}(\bk_3)N_{\uparrow}(\bk_4)}{\epsilon(\bk_3)+\epsilon(\bk_4)-\epsilon(\bk_1)-\epsilon(\bk_2)}.
+\label{fermi_E2}</script>
+
+<h3 id="landau-f-function">Landau $f$ function</h3>
+
+<p>Evaluating \eqref{fermi_E2}, even for the ground state, is a bit arduous on account of the three independent momentum sums. Fortunately, we are more interested in how the <em>excitation energies</em> are affected by interactions. To the end, we expand the occupancies</p>
+
+<script type="math/tex; mode=display">N_{s}(\bk) = \theta(k_F-\abs{\bk}) + n_{s}(\bk)+\cdots.</script>
+
+<p>This might seem a bit odd given that $N_{s}(\bk)=\pm 1$. You should think of this expansion in terms of the continuum limit, where the $
+\bk$ values become finely spaced. In this limit $n_\bk$ represents the <em>mean</em> deviation from the Fermi sphere in that region of $\bk$-space.</p>
+
+<p><a name="FermiN"></a>
+<img src="/docs/assets/FermiN.png" alt="" />
+<em>$n_\bk$ as a smoothed deviation from the Fermi step.</em></p>
+
+<p>The excitation energy above the ground state of an eigenstate labelled by occupancies $N_\bk$ can then be expanded in $n_\bk$</p>
+
+<script type="math/tex; mode=display">\Delta E = \sum_{\bk,s} \varepsilon_s(\bk)n_{s}(\bk) + \frac{1}{2V}\sum_{\bk, s,\bk', s'} f_{s^{}s'}(\bk,\bk')n_{s}(\bk)n_{s'}(\bk').
+\label{fermi_fdef}</script>
+
+<p>This expansion is the key idea in the theory of the Fermi liquid. Although we will calculate the quasiparticle energy $\varepsilon_s(\bk)$ and interaction function $f_{s^{}s’}(\bk,\bk’)$ using perturbation theory, Landau’s idea was that <em>any</em> interacting Fermi system could be described in similar terms, as long as the ground state does not change abruptly as we increase the interaction from zero (normally a thought experiment!). An example of an abrupt change would be a transition from liquid to solid (crystallization).</p>
+
+<p>To first order in the interaction we have the not-so-interesting result</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\varepsilon_s(\bk) &= \epsilon(\bk) + \frac{U_0 N_{\bar s}}{V}+\cdots\\
+f_{\uparrow\downarrow} &= f_{\downarrow\uparrow} = U_0+\cdots,\quad f_{\uparrow\uparrow}=f_{\downarrow\downarrow}=0+\cdots,
+\label{fermi_first}
+\end{align} %]]></script>
+
+<p>where the meaning of the $\bar s$ is $\bar\uparrow=\downarrow$, $\bar\downarrow=\uparrow$. The second order contributions to the $f$-function are more interesting, however. For example</p>
+
+<script type="math/tex; mode=display">\begin{align}
+f_{\uparrow\uparrow}(\bk,\bk') = -\frac{U_0^2}{V}\left[\sum_{\bk+\bk_3=\bk'+\bk_2} \frac{N_{\downarrow}(\bk_3)(1-N_{\downarrow}(\bk_2))}{\epsilon(\bk)+\epsilon(\bk_3)-\epsilon(\bk')-\epsilon(\bk_2)}\right.\nonumber\\
+\left.+\sum_{\bk'+\bk_3=\bk+\bk_2}\frac{N_{\downarrow}(\bk_3)(1-N_{\downarrow}(\bk_2))}{\epsilon(\bk')+\epsilon(\bk_3)-\epsilon(\bk)-\epsilon(\bk_2)}\right].
+\end{align}</script>
+
+<p>We will be interested in the low temperature limit, in which $n_{s}(\bk)$ is non-zero only in a very narrow region of size $k_\text{B} T$ around the Fermi surface. In this limit we can take the $\abs{\bk}=\abs{\bk’}=k_\text{F}$, so that</p>
+
+<script type="math/tex; mode=display">\begin{align}
+f_{\uparrow\uparrow}(\bk,\bk') = -\frac{U_0^2}{V}\left[\sum_{\bk+\bk_3=\bk'+\bk_2} \frac{N(\bk_3)(1-N(\bk_2))}{\epsilon(\bk_3)-\epsilon(\bk_2)}
++\sum_{\bk'+\bk_3=\bk+\bk_2}\frac{N(\bk_3)(1-N(\bk_2))}{\epsilon(\bk_3)-\epsilon(\bk_2)}\right].
+\end{align}</script>
+
+<p>In which we have assumed the state around which we expand is unpolarized, i.e. $N_{s}(\bk)$ is independent of $s$.</p>
+
+<p>The expression for $f_{\uparrow\downarrow}(\bk,\bk’)$ is more complicated</p>
+
+<script type="math/tex; mode=display">\begin{align}
+f_{\uparrow\downarrow}(\bk,\bk') = U_0 + f_{\uparrow\uparrow}(\bk,\bk') +\frac{U_0^2}{V}\left[\sum_{\bk+\bk'=\bk_3+\bk_4}\frac{N(\bk_3)N(\bk_4)}{\epsilon(\bk_3)+\epsilon(\bk_4)-2E_\text{F}}\right.\nonumber\\
+\left.\sum_{\bk+\bk'=\bk_1+\bk_2}\frac{(1-N(\bk_1))(1-N(\bk_2))}{2E_\text{F}-\epsilon(\bk_1)-\epsilon(\bk_2)}\right].
+\end{align}</script>
+
+<p>Evaluating these expressions is simpler than calculating \eqref{fermi_E2}, as we have only one independent momentum. The <em>new feature</em> that comes at second order is a nontrivial dependence of $f_{s^{}s’}(\bk,\bk’)$ on the angle between $\bk$ and $\bk’$.</p>
+
+<p class="message">
+It's a bit fiddly to get at, but let's work it out for the simpler case of $f_{\uparrow\uparrow}(\bk,\bk')$!
+</p>
+
+<p>The continuum limit is</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+f_{\uparrow\uparrow}(\bk,\bk') = \frac{U_0^2}{(2\pi)^3}\left[\int_{\substack{\abs{\bk_3}<k_\text{F},\abs{\bk_2}>k_\text{F}\\ \bk+\bk_3=\bk'+\bk_2 }} \frac{d\bk_3}{\epsilon(\bk_2)-\epsilon(\bk_3)}\right.\nonumber\\
+\left.+\int_{\substack{\abs{\bk_3}<k_\text{F},\abs{\bk_2}>k_\text{F}\\ \bk'+\bk_3=\bk+\bk_2 }}\frac{d\bk_3}{\epsilon(\bk_2)-\epsilon(\bk_3)}\right].
+\label{fermi_fcont}
+\end{align} %]]></script>
+
+<p>So we need to find the integral</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\int_{\substack{\abs{\bk_3}<k_\text{F},\abs{\bk_2}>k_\text{F}\\ \bk+\bk_3=\bk'+\bk_2 }} \frac{d\bk_3}{\epsilon(\bk_2)-\epsilon(\bk_3)}. %]]></script>
+
+<p>Note that the denominator can be written</p>
+
+<script type="math/tex; mode=display">\epsilon(\bk_2)-\epsilon(\bk_3)= \frac{1}{2m}\left(\bk_2+\bk_3\right)\cdot\left(\bk_2-\bk_3\right) = \frac{1}{2m}\left(\bk_2+\bk_3\right)\cdot\left(\bk-\bk'\right),</script>
+
+<p>where $\bk-\bk’$ is fixed. Writing</p>
+
+<script type="math/tex; mode=display">\mathbf{K} = \frac{1}{2}\left(\bk_2+\bk_3\right),\quad \bq = \frac{1}{2}\left(\bk_2-\bk_3\right),</script>
+
+<p><a name="FermiGeometry"></a>
+<img src="/docs/assets/FermiGeometry.png" alt="" />
+<em>Geometry of the integral for $f_{\uparrow\uparrow}(\bk,\bk’)$.</em></p>
+
+<p>the denominator becomes</p>
+
+<script type="math/tex; mode=display">\epsilon(\bk_2)-\epsilon(\bk_3) = \frac{2}{m}\mathbf{K}\cdot\bq,</script>
+
+<p>for fixed $\bq$. Thus, only the angle $\theta$ between $\mathbf{K}$ and $\bq$ enters the integral. The conditions $\abs{\bk_2}&gt;k_\text{F}$ and $\abs{\bk_3}&lt;k_\text{F}$ become</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\left(\mathbf{K}+\bq\right)^2>k_\text{F}^2,\quad \left(\mathbf{K}-\bq\right)^2<k_\text{F}^2,
+\end{align} %]]></script>
+
+<p>which gives the range of $K_-(\theta)&lt;\abs{\mathbf{K}}&lt;K_+(\theta)$</p>
+
+<script type="math/tex; mode=display">K_{\pm}(\theta)=\pm q\abs{\cos\theta}+\sqrt{k_\text{F}^2-q^2\sin^2\theta},</script>
+
+<p>and we must have $\theta&lt;\pi/2$. In terms of these variables the integral becomes</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\int_{\substack{\abs{\bk_3}<k_\text{F},\abs{\bk_2}>k_\text{F}\\ \bk+\bk_3=\bk'+\bk_2 }} \frac{d\bk_3}{\epsilon(\bk_2)-\epsilon(\bk_3)}&=
+\pi m\int_0^{\pi/2} d\theta \int_{K_-(\theta)}^{K_+(\theta)} \frac{K\sin\theta}{q\cos\theta} dK\nonumber\\
+&=2\pi m\int_0^{\pi/2} d\theta \sin\theta \sqrt{k_\text{F}^2-q^2\sin^2\theta}.
+\end{align} %]]></script>
+
+<p>The other integral in \eqref{fermi_fcont} is the same but in the interval $(\pi/2,\pi)$. Thus we have Finally</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+f_{\uparrow\uparrow}(\bk,\bk') &= \frac{U_0^2 m}{(2\pi)^2} \int_0^{\pi} d\theta \sin\theta \sqrt{k_\text{F}^2-q^2\sin^2\theta}\nonumber\\
+&=\frac{U_0^2 m k_\text{F}}{(2\pi)^2}\left[1 - \frac{\cos^2\phi/2}{2\sin\phi/2}\log\left(\frac{1-\sin\phi/2}{1+\sin\phi/2}\right)\right].
+\end{align} %]]></script>
+
+<p>Here $\phi$ is the angle between $\bk$ and $\bk’$ i.e. $\abs{\bk-\bk’}=2q=2k_\text{F}\sin\phi/2$. We won’t go through the calculation of $f_{+-}(\bk,\bk’)$, but just record the final answer.</p>
+
+<p>The definition \eqref{fermi_fdef} implied a certain quantization axis for spin. To write things in an invariant way, we should think of the occupation number $N(\bk)$ as a $2\times 2$ matrix that can describe an arbitrary spin orientation, with elements</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\mathsf{N}(\bk)=\begin{pmatrix}
+N_{\uparrow\uparrow}(\bk) & N_{\uparrow\downarrow}(\bk) \\
+N_{\downarrow\uparrow}(\bk) & N_{\downarrow\downarrow}(\bk).
+\end{pmatrix} %]]></script>
+
+<p>The $f$-function then has <em>four</em> spin indices</p>
+
+<script type="math/tex; mode=display">\frac{1}{2V}\sum_{\bk, s_1,s_2,\bk', s_3,s_4} f_{s_1s_2,s_3s_4}(\bk,\bk')n_{s_1s_2}(\bk)n_{s_3s_4}(\bk'),</script>
+
+<p>with</p>
+
+<script type="math/tex; mode=display">\begin{align}
+f_{s_1s_2,s_3s_4}(\bk,\bk') = \frac{U_0}{2}\left[\left(1+ \frac{mU_0 k_\text{F}}{2\pi^2}\left[2+\frac{\cos\phi}{2\sin\phi/2}\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\delta_{s_1s_3}\delta_{s_2s_4}\right.\nonumber\\
+\left.\left(1+ \frac{mU_0 k_\text{F}}{2\pi^2}\left[1-\frac{1}{2}\sin\phi/2\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\boldsymbol{\sigma}_{s_1s_3}\cdot\boldsymbol{\sigma}_{s_2s_4}\right]
+\label{fermi_ffinal}
+\end{align}</script>
+
+<p class="message">
+The message to take away from this calculation is not the detailed functional form of \eqref{fermi_ffinal}, but the fact that the interaction between quasiparticles in an interacting Fermi gas is defined in terms of a pair of functions
+
+$$
+\nu(E_F)f_{s_1s_2,s_3s_4}(\bk,\bk') = F(\phi) \delta_{s_1s_3}\delta_{s_2s_4} + G(\phi)\boldsymbol{\sigma}_{s_1s_3}\cdot\boldsymbol{\sigma}_{s_2s_4}.
+\label{fermi_fgdef}
+$$
+
+The functions $F(\phi)$ and $G(\phi)$ have been made dimensionless by scaling by the density of states at the Fermi surface $\nu(E_F)\equiv k_{\text{F}}m/\pi^2$.
+
+</p>
+
+<h3 id="quasiparticle-energy-varepsilon_sbk">Quasiparticle energy $\varepsilon_s(\bk)$</h3>
+
+<p>So far we haven’t had much to say about the quasiparticle energy $\varepsilon_s(\bk)$ introduced in \eqref{fermi_fdef}. Evaluating the second order correction is going to be difficult, as it will involve two momentum integrations instead of one. What can we say on general grounds? We expect that</p>
+
+<script type="math/tex; mode=display">\varepsilon_s(\bk) - E_\text{F} = v_\text{F}(\abs{\bk}-k_\text{F}).
+\label{fermi_vfdef}</script>
+
+<p>The Fermi velocity $v_\text{F}$ defined by this expression may be altered by the interactions, allowing us to define an <strong>effective mass</strong></p>
+
+<script type="math/tex; mode=display">m_* = \frac{k_\text{F}}{v_\text{F}}.
+\label{fermi_mdef}</script>
+
+<p>Fortunately, we can get at this quantity using the results we already have, thanks to the following sneaky trick (due to Landau). If we increment the momentum of each quasiparticle by a small amount $\delta\bk$, we can compute the new energy using our energy functional \eqref{fermi_fdef}, along with a new distribution function</p>
+
+<p><a name="FermiShift"></a>
+<img src="/docs/assets/FermiShift.png" alt="" />
+<em>Shifting the Fermi sea to increase the momentum.</em></p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+N_s(\bk-\delta\bk) &=\theta(k_F-\abs{\bk-\delta\bk}) + n_{s}(\bk-\delta\bk)+\cdots\nonumber\\
+&=\theta(k_F-\abs{\bk}) + n_s(\bk) + \delta(k_F-\abs{\bk})\hat\bk\cdot\delta\bk -  \delta\bk \nabla_\bk n_{s}(\bk)+\cdots.
+\end{align} %]]></script>
+
+<p>Treating the last three terms as $n_s(\bk)$, our excitation energy changes to first order in $\delta\bk$ by an amount</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\Delta E &= \sum_{\bk,s} n_{s}(\bk)\delta\bk\cdot\nabla_\bk\varepsilon_s(\bk) \nonumber\\
+&+\frac{1}{V}\sum_{\bk, s,\bk', s'} f_{s^{}s'}(\bk,\bk')n_{s}(\bk)\left[\delta(k_F-\abs{\bk'})\hat\bk'\cdot\delta\bk - \nabla_{\bk'}n_{s'}(\bk')\right]\cdot\delta\bk.
+\end{align} %]]></script>
+
+<p>(In the first term I have integrated by parts.) On grounds of Galilean invariance, however, we also know that this is</p>
+
+<script type="math/tex; mode=display">\Delta E = \frac{\mathbf{P}}{m}\cdot\delta\bk,
+\label{fermi_gal}</script>
+
+<p>where the total momentum $\mathbf{P}$ can be written</p>
+
+<script type="math/tex; mode=display">\mathbf{P} = \sum_{\bk,s} \bk n_{s}(\bk).</script>
+
+<p>If \eqref{fermi_gal} holds for all $n_s(\bk)$ and $\delta\bk$, we have (ignoring second order in $n_s(\bk)$)</p>
+
+<script type="math/tex; mode=display">\frac{\bk}{m} = \nabla_\bk\varepsilon_s(\bk) +  \sum_{s'}\int  f_{s^{}s'}(\bk,\bk')\delta(k_F-\abs{\bk'})\hat\bk' \frac{d\bk'}{(2\pi)^3}.</script>
+
+<p>Restricting ourselves to momenta close to the Fermi surface, and using our definitions \eqref{fermi_fgdef}, \eqref{fermi_vfdef} and \eqref{fermi_mdef} gives the relation</p>
+
+<script type="math/tex; mode=display">\frac{\bk}{m} = \frac{\bk}{m_*} +\frac{1}{m} \int F(\phi) \bk' \frac{d\Omega_{\bk'}}{4\pi}.</script>
+
+<p>If we write $\bk’=\cos\phi \bk + \sin\phi \bk_\perp$, with $\bk_\perp\cdot\bk=0$, this gives Landau’s famous result</p>
+
+<script type="math/tex; mode=display">\frac{1}{m} = \frac{1}{m_*} +\frac{1}{m} \int F(\phi) \cos\phi \frac{\sin\phi d\phi}{2}.</script>
+
+<p>For the $F(\phi)$ that we found in \eqref{fermi_ffinal} from second order perturbation theory, this gives the effective mass correction</p>
+
+<script type="math/tex; mode=display">\frac{m_*}{m} = 1 + \frac{1}{30\pi^4}(7\log 2 - 1)\left(mU_0k_\text{F}\right)^2+\cdots.</script>
+
+<p>(Use the substitution $u=\sin\phi/2$ to do the integral.) Again, the point is not the value that we’ve obtained, but the argument we used to do so. In systems with strong interactions it’s possible for the effective mass to be very different from the bare mass: in the <a href="https://en.wikipedia.org/wiki/Heavy_fermion_material">heavy fermion materials</a> $m_*/m$ can approach 1000! Despite being so far from the noninteracting limit, Landau’s picture of fermionic quasiparticles still applies.</p>
+
+<h3 id="eigenstates-in-perturbation-theory-what-is-a-quasiparticle">Eigenstates in Perturbation Theory: What is a Quasiparticle?</h3>
+
+<p>So far we’ve focused on the energies of the excited states of the gas. But what do these quasiparticle states <em>look</em> like? In perturbation theory at least, we can see fairly explicitly. At first order we have</p>
+
+<script type="math/tex; mode=display">\ket{\mathbf{N}^{(1)}} = \sum_{\mathbf{N}'\neq \mathbf N}\frac{\braket{\mathbf{N'}}{H_\text{int}}{\mathbf{N}}}{E^{(0)}(\mathbf{N})-E^{(0)}(\mathbf{N}')}\ket{\mathbf{N}'}.</script>
+
+<p>Let’s consider the Fermi sea ground state \ket{\text{FS}}$. What states can appear in the above sum in this case? The only possibility is that the interaction creates two particle-hole pairs out of the Fermi sea, with total momentum zero.</p>
+
+<p><a name="2ph"></a>
+<img src="/docs/assets/2ph.png" alt="" />
+<em>Two particle-hole pairs created out of the Fermi sea.</em></p>
+
+<p>What about an excited state? If we consider the state</p>
+
+<script type="math/tex; mode=display">\adop_{\bk,s}\ket{\text{FS}},</script>
+
+<p>two kinds of states can contribute. Either we create a pair of particle-hole pairs, as before, or we create a single particle-hole pair and scatter the particle at $\bk$ somewhere else</p>
+
+<p><a name="phscatter"></a>
+<img src="/docs/assets/phscatter.png" alt="" />
+<em>Particle scatters, creating a particle-hole pair.</em></p>
+
+<p>Consider the state $\adop_{\bk,s}\ket{0}$, creating a particle in the <em>exact</em> ground state of the problem. Since $\ket{0}$ includes the first kind of state (2 particle-hole pair states), $\adop_{\bk,s}\ket{0}$ is only missing the second kind. Therefore to first order, the single quasiparticle state is</p>
+
+<script type="math/tex; mode=display">\ket{\bk,s} = \sqrt{\frac{z_k}{\braket{0}{\aop_{\bk,s}\adop_{\bk,s}}{0}}}\adop_{\bk,s}\ket{\text{FS}} + \frac{U_0}{V}\sum_{\substack{\bk_1+\bk_2=\bk_3+\bk\\ s,s'}}\frac{\adop_{\bk_1,s}\adop_{\bk_2,s'}\aop_{\bk_3,s'}\ket{\text{FS}}}{\epsilon(\bk_1)+\epsilon(\bk_2)-\epsilon(\bk_3)-\epsilon(\bk)},
+\label{fermi_phpeturb}</script>
+
+<p>where $\sqrt{z_k}$ is a normalization factor. As we go to successively higher orders of perturbation theory, the quasiparticle state is ‘dressed’ with more particle-hole pairs. The quasiparticle retains the conserved quantum numbers (momentum and spin in this case) of the fermions of the noninteracting theory.</p>
+
+<p>Normalizing \eqref{fermi_phpeturb} gives</p>
+
+<script type="math/tex; mode=display">z_\bk = 1 - \left(\frac{U_0}{V}\right)^2\sum_{\substack{\bk_1+\bk_2=\bk_3+\bk\\ s,s'}}\frac{1}{\left[\epsilon(\bk_1)+\epsilon(\bk_2)-\epsilon(\bk_3)-\epsilon(\bk)\right]^2}+\cdots.
+\label{fermi_z}</script>
+
+<p>This quantity can be interpreted in terms of the overlap of the single quasiparticle state $\ket{\bk,s}$ with $\adop_{s,\bk}\ket{0}$.</p>
+
+<script type="math/tex; mode=display">z_\bk = \frac{\abs{\braket{\bk,s}{\adop_{\bk,s}}{0}}^2}{\braket{0}{\aop_{\bk,s}\adop_{\bk,s}}{0}}</script>
+
+<p>A finite overlap – evaluated for quasiparticles at the Fermi surface – is a requirement for the Fermi liquid picture to hold. If it were to vanish, any resemblance of the quasiparticle to a free fermion would disappear with it!</p>
+
+<p>Obviously evaluating the integrals in \eqref{fermi_z} is a challenge involving a double integral over momentum, but I have it on good authority (see <a href="#Abrikosov:1975aa">(Abrikosov, Dzyaloshinskii, &amp; Gorkov, 1975)</a>, though they don’t give the details) that the answer is</p>
+
+<script type="math/tex; mode=display">z_{\abs{\bk}=k_\text{F}} = 1 - \frac{(mUk_\text{F})^2}{8\pi^4}\left[\log 2 + \frac{1}{3}\right]</script>
+
+<p class="message">
+This is also the occupation number of the original fermions $\braket{0}{\adop_{\bk,s}\aop_{\bk,s}}{0}$ (not the quasiparticles!) just below the Fermi surface in the ground state. There is a corresponding result just above. Even with interactions, there is a finite step in the distribution function at the Fermi surface.
+</p>
+
+<p><a name="FermiJump"></a>
+<img src="/docs/assets/FermiJump.png" alt="" />
+<em>Discontinutity in the ground state occupation number.</em></p>
+
+<h3 id="collisions">Collisions</h3>
+
+<p>The picture we have developed so far of eigenstates labelled by quasiparticle occupations is actually a bit of an oversimplification. When we apply the second order perturbation theory formula \eqref{fermi_2nd} we have to omit degenerate states. It isn’t really enough to insist that the occupancies differ $\mathbf{N}’\neq \mathbf N$, because many states with different occupancies have the same energy in the thermodynamic limit. From a time-dependent point of view, the interaction can cause transitions between these states, leading to the quasiparticle distribution changing over time. The rate of these transitions can be described by the Fermi golden rule.</p>
+
+<script type="math/tex; mode=display">\Gamma_{\mathbf{N}\to\mathbf{N'}} = 2\pi \abs{\braket{\mathbf{N'}}{H_\text{int}}{\mathbf{N}}}^2 \delta(E(\mathbf{N})-E(\mathbf{N}'))</script>
+
+<p>By considering the volume of phase space available for the scattering of a quasiparticle of energy $\Delta$ above the Fermi surface, you should be able to argue that the <em>total</em> rate, obtained by integrating over all possible final states, varies like $\Delta^2$. This means that at low energy (or temperature) such scattering is ineffective and the Landau picture holds.</p>
+
+<p><a name="Collision"></a>
+<img src="/docs/assets/Collision.png" alt="" />
+<em>Discontinutity in the ground state occupation number.</em></p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="Landau:1980aa">Landau, L. D., Lifshitz, E. M., &amp; Pitaevskii, L. P. (1980). Statistical Physics. Part 2, Theory of the Condensed State (Course of Theoretical Physics). Butterworth-Heineman, Oxford,</span></li>
+<li><span id="Abrikosov:1975aa">Abrikosov, A. A., Dzyaloshinskii, I., &amp; Gorkov, L. P. (1975). Methods of quantum field theory in statistical physics.</span></li></ol>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+    <script>
+
+    // Highlight search Query
+    var url = window.location.href;
+      if (url.lastIndexOf("?q=") > 0) {
+        // get the index of the parameter, add three (to account for length)
+        var stringloc = url.lastIndexOf("?q=") + 3;
+        // get the substring (query) and decode
+        var searchquery = decodeURIComponent(url.substr(stringloc));
+        // regex matches at beginning of line, end of line or word boundary, useful for poetry
+        var regex = new RegExp("(?:^|\\b)(" + searchquery + ")(?:$|\\b)", "gim");
+        // get, add mark and then set content
+        var content = document.getElementById("main").innerHTML;
+        document.getElementById("main").innerHTML = content.replace(regex, "<mark>$1</mark>");
+      }
+
+    // Toggle sidebar
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+    <!-- Facebook SDK for JavaScript -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '589495744558280',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+  </body>
+</html>

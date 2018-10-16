@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Lattice Models and Strong Correlations - Theories of Quantum Matter</title>
+<meta property="og:title" content="Lattice Models and Strong Correlations" />
+<meta name="description" content="Models defined on discrete sites -- so-called  tight binding models --  provide a conceptually simple way to think about the effects of strong interactions between particles. The phenomenology of these models is central to many current avenues of research in condensed matter, whether in solid state or atomic physics." />
+<meta property="og:description" content="Models defined on discrete sites -- so-called  tight binding models --  provide a conceptually simple way to think about the effects of strong interactions between particles. The phenomenology of these models is central to many current avenues of research in condensed matter, whether in solid state or atomic physics." />
+<link rel="canonical" href="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/Lattice/" />
+<meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/Lattice/" />
+<meta property="og:site_name" content="Theories of Quantum Matter" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-10-11T14:51:35+01:00" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Lattice Models and Strong Correlations",
+    "datePublished": "2018-10-11T14:51:35+01:00",
+    "description": "Models defined on discrete sites -- so-called  tight binding models --  provide a conceptually simple way to think about the effects of strong interactions between particles. The phenomenology of these models is central to many current avenues of research in condensed matter, whether in solid state or atomic physics.",
+    "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/Lattice/"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+  <head>
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="/docs/lectures/Lattice/"/>
+
+  <!-- Basic meta elements -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+
+  <!--   Dublin Core metadata for Zotero -->
+  <meta name="DC.title" content="Lattice Models and Strong Correlations" />
+  <meta name="DC.creator" content="Austen Lamacraft" />
+  <meta name="DC.contributor" content="" />
+  <meta name="DC.date" content="" />
+  <meta name="DC.rights" content="" />
+  <meta name="DC.source" content="Theories of Quantum Matter" />
+
+    <!-- Open Graph metadata -->
+
+    
+    <meta property="og:title" content="Lattice Models and Strong Correlations"/>
+    <meta property="og:description" content="An Ed edition">
+    <meta property="fb:admins" content="elotroalex"/>
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/Lattice/"/>
+    <meta property="fb:app_id" content="589495744558280"/>
+    <meta property="og:image" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/public/open-graph-logo.png"/>
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+
+  <title>
+    
+      Lattice Models and Strong Correlations
+    
+  </title>
+
+  <!-- CSS links -->
+  <link rel="stylesheet" href="/docs/public/css/syntax.css"/>
+  <link rel="stylesheet" href="/docs/public/css/tqm.css"/>
+
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/docs/public/apple-touch-icon-precomposed.png"/>
+  <link rel="shortcut icon" href="/docs/public/favicon.ico"/>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/docs/atom.xml"/>
+
+  <!-- MathJax -->
+
+ <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>
+
+ <!---<script type="text/javascript"
+   src="/docs/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>--->
+
+ <script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+   TeX: { equationNumbers: { autoNumber: "all" },
+          Macros: {
+          cP: '\\mathcal{P}',
+          cN: '\\mathcal{N}',
+          cE: '\\mathcal{E}',
+          cO: '\\mathcal{O}',
+          cH: '\\mathcal{H}',
+          cC: '\\mathcal{C}',
+          br: '\\mathbf{r}',
+          bx: '\\mathbf{x}',
+          bp: '\\mathbf{p}',
+          bq: '\\mathbf{q}',
+          bk: '\\mathbf{k}',
+          bv: '\\mathbf{v}',
+          bA: '\\mathbf{A}',
+          brN: '\\br_1, \\ldots, \\br_N',
+          bxN: 'x_1, \\ldots, x_N',
+          pop: '\\psi^{\\vphantom{\\dagger}}',
+          pdop: '\\psi^\\dagger',
+          Phop: '\\Phi^{\\vphantom{\\dagger}}',
+          Phdop: '\\Phi^\\dagger',
+          phop: '\\phi^{\\vphantom{\\dagger}}',
+          phdop: '\\phi^\\dagger',
+          aop: 'a^{\\vphantom{\\dagger}}',
+          adop: 'a^\\dagger',
+          alop: '\\alpha^{\\vphantom{\\dagger}}',
+          aldop: '\\alpha^\\dagger',
+          bop: 'b^{\\vphantom{\\dagger}}',
+          bdop: 'b^\\dagger',
+          cop: 'c^{\\vphantom{\\dagger}}',
+          cdop: 'c^\\dagger',
+          Nop:  '\\mathsf{N}^{\\vphantom{\\dagger}}',
+          tr: '\\operatorname{tr}\\nolimits',
+          det: '\\operatorname{det}\\nolimits',
+          perm: '\\operatorname{perm}\\nolimits',
+          sgn: '\\operatorname{sgn}',
+          E: '\\operatorname{\\mathbb{E}}',
+          Var: '\\operatorname{\\mathbb{Var}}',
+          Cov: '\\operatorname{\\mathbb{Cov}}',
+          Re: '\\operatorname{Re}}',
+          ket: ['\\lvert{#1}\\rangle',1],
+          bra: ['\\langle{#1}\\rvert',1],
+          inner: ['\\langle{#1}\\rvert #2 \\rangle',2],
+          braket: ['\\langle{#1}\\rvert #2 \\lvert #3 \\rangle',3],
+          abs: ['\\lvert{#1}\\rvert',1]
+    }
+  },
+   extensions: ["tex2jax.js"],
+   jax: ["input/TeX","output/HTML-CSS"],
+   tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+ });
+ </script>
+
+$$
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\nonumber
+$$
+
+<!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Lattice Models and Strong Correlations - Theories of Quantum Matter</title>
+<meta property="og:title" content="Lattice Models and Strong Correlations" />
+<meta name="description" content="Models defined on discrete sites -- so-called  tight binding models --  provide a conceptually simple way to think about the effects of strong interactions between particles. The phenomenology of these models is central to many current avenues of research in condensed matter, whether in solid state or atomic physics." />
+<meta property="og:description" content="Models defined on discrete sites -- so-called  tight binding models --  provide a conceptually simple way to think about the effects of strong interactions between particles. The phenomenology of these models is central to many current avenues of research in condensed matter, whether in solid state or atomic physics." />
+<link rel="canonical" href="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/Lattice/" />
+<meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/Lattice/" />
+<meta property="og:site_name" content="Theories of Quantum Matter" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-10-11T14:51:35+01:00" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Lattice Models and Strong Correlations",
+    "datePublished": "2018-10-11T14:51:35+01:00",
+    "description": "Models defined on discrete sites -- so-called  tight binding models --  provide a conceptually simple way to think about the effects of strong interactions between particles. The phenomenology of these models is central to many current avenues of research in condensed matter, whether in solid state or atomic physics.",
+    "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/Lattice/"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+
+
+  <body>
+
+    <!-- This if statement decides which sidebar to use -->
+    
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>A Part III Physics Course at the University of Cambridge</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/docs/">Home</a>
+
+    
+
+    
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/ManyBodyWavefunctions/">Many Body Wavefunctions</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/QHE/">Quantum Hall Effect</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/ElasticChain/">The Elastic Chain</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/SpinModels/">Spin Models</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/SecondQuantization/">A is for Annihilation</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/MoreSecondQuantization/">B is for Bunching</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item active" href="/docs/lectures/Lattice/">Lattice Models and Strong Correlations</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/BoseGas/">Bose Gas</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/FermiGas/">Fermi Gas</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/Superconductivity/">Superconductivity</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/ResponseAndCorrelation/">Response and Correlation</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/Jellium/">Jellium</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/JordanWigner/">Jordan-Wigner and Bosonization</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/KondoEffect/">The Kondo Effect</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/docs/lectures/LiebLinigerModel/">The Lieb-Liniger Model</a>
+        
+      
+    
+
+    <!-- The code below is used for manually entered links  -->
+
+    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/Lattice/">Annotate me</a>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>Distributed with an MIT license.</p>
+  </div>
+</div>
+
+    
+
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/docs/" title="Home">Theories of Quantum Matter</a>
+            <br><small>Quantum Mechanics of Many Body Systems</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content" id="main">
+        <div class="page">
+  <h1 class="page-title">Lattice Models and Strong Correlations</h1>
+  <p class="message">
+Models defined on discrete sites -- so-called <strong> tight binding models</strong> --  provide a conceptually simple way to think about the effects of strong interactions between particles. The phenomenology of these models is central to many current avenues of research in condensed matter, whether in solid state or atomic physics.
+</p>
+
+<h2 class="no_toc" id="contents">Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#tight-binding-models" id="markdown-toc-tight-binding-models">Tight Binding Models</a>    <ul>
+      <li><a href="#physical-motivation" id="markdown-toc-physical-motivation">Physical Motivation</a></li>
+    </ul>
+  </li>
+  <li><a href="#bose-hubbard-model" id="markdown-toc-bose-hubbard-model">Bose Hubbard Model</a>    <ul>
+      <li><a href="#the-mott-state" id="markdown-toc-the-mott-state">The Mott State</a></li>
+      <li><a href="#the-effect-of-hopping" id="markdown-toc-the-effect-of-hopping">The Effect of Hopping</a></li>
+    </ul>
+  </li>
+  <li><a href="#fermi-hubbard-model" id="markdown-toc-fermi-hubbard-model">Fermi Hubbard Model</a>    <ul>
+      <li><a href="#discussion-two-sites-large-ut" id="markdown-toc-discussion-two-sites-large-ut">Discussion: Two Sites, Large $U/t$</a></li>
+      <li><a href="#effective-hamiltonian" id="markdown-toc-effective-hamiltonian">Effective Hamiltonian</a></li>
+      <li><a href="#doping" id="markdown-toc-doping">Doping</a></li>
+    </ul>
+  </li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
+</ul>
+
+<p>Reading:</p>
+
+<hr />
+
+<h2 id="tight-binding-models">Tight Binding Models</h2>
+
+<p>A typical many body Hamiltonian consists of kinetic energy and interaction terms. We haven’t yet had much to say about the situation where the particles additionally feel a potential that could arise from the crystal lattice, or impurity atoms, or both. In this lecture we will be concerned with systems in periodic potentials, so that the noninteracting part of the Hamiltonian is (taking the 1D case for simplicity)</p>
+
+<script type="math/tex; mode=display">H = \sum_{j=1}^N \left[-\frac{1}{2m}\partial_i^2 +V(\br_i)\right] = \int \left[\frac{1}{2m}\partial_x\pdop\partial_x\pop + V(x)\pdop\pop\right] dx,</script>
+
+<p>with $V(x+a)=V(x)$. As you know, <a href="https://en.wikipedia.org/wiki/Bloch_wave">Bloch’s theorem</a> tells us that the eigenstates are labelled by a continuous index $k$ (<strong>crystal momentum</strong>) and discrete index $n$ (<strong>band index</strong>) and have the form</p>
+
+<script type="math/tex; mode=display">\psi_{k,n}(x) = e^{ikx} \varphi_{k,n}(x),
+\label{latt_bloch}</script>
+
+<p>where $\varphi_{k,n}$ is periodic. $k$ lies in the <strong>Brillouin zone</strong> $(-\pi/a,\pi/a]$. The eigenvalues $E_n(k)$ give the <strong>energy bands</strong>.</p>
+
+<p>We are going to be concerned with the case where the lattice potential is very strong, so that the wavefunctions – at least in the lowest bands that we assume are those occupied – are highly localized. The wavefunctions become very small between the minima of the potential. We will see that in this limit we can introduce operators $\adop_j$, $\aop_j$ describing particles in these localized states, and that the coupling between neighbouring sites can be captured by the <strong>tight binding Hamiltonian</strong></p>
+
+<script type="math/tex; mode=display">H_t = -t \sum_{j} \left[\adop_j\aop_{j+1}+\adop_{j+1}\aop_j\right],
+\label{latt_tb}</script>
+
+<p>which will play the role of kinetic energy in our models. In fact, we’ve already met such a description, when we described a magnon propagating in a spin chain in <a href="/docs/lectures/SpinModels/">Lecture 4</a>.</p>
+
+<h3 id="physical-motivation">Physical Motivation</h3>
+
+<p>This subsection is to shed some light on the origin of \eqref{latt_tb}. Feel free to jump to the conclusion.</p>
+
+<p>Let’s think about the form of the Bloch states in a deep 1D lattice in more detail. You know that in a stationary state, the current $j(x)$ is conserved</p>
+
+<script type="math/tex; mode=display">j = -\frac{i}{2m}\left[\psi^*(\partial_x\psi^{}) - (\partial_x\psi^*)\psi^{}\right].
+\label{latt_j}</script>
+
+<p>Representing $\psi(x)=\sqrt{\rho(x)}e^{i\theta(x)}$, this can be written</p>
+
+<script type="math/tex; mode=display">j = \frac{\rho\partial_x\theta}{m}.</script>
+
+<p>The Bloch states at non-zero $k$ carry a current. As we’ve said, away from the minima of the lattice potential, the amplitude of the wavefunction is very small. Thus if $j$ is constant, $\partial_x\theta$ must be large. Essentially all of the change in the phase of the wavefunction happens in these regions. Where the wavefunction is larger, its phase is barely changing.</p>
+
+<p>To describe this situation more quantitatively, we use the WKB approximation, which consists in writing the wavefunction in the form</p>
+
+<script type="math/tex; mode=display">\psi_\text{WKB}(x) = \frac{\alpha}{\sqrt{k(x)}}\exp\left(i\int^ x k(x')dx'\right)+ \frac{\beta}{\sqrt{k(x)}}\exp\left(-i\int^ x k(x')dx'\right),</script>
+
+<p>where $k(x) = \sqrt{2m(E-V(x))}$. In fact, we want to describe the part of the wavefunction with real exponents, where $k(x) = i\kappa(x)$ because $V(x)&gt;E$. Substitution into the current \eqref{latt_j} gives</p>
+
+<script type="math/tex; mode=display">j = \frac{1}{m}\Im \alpha^*\beta^{}.
+  \label{latt_jwkb}</script>
+
+<p><a name="WKB"></a>
+<img src="/docs/assets/WKB.png" alt="" />
+<em>The Bloch states in the WKB picture.</em></p>
+
+<p>$\alpha$ is the amplitude of the wavefunction in the well on the left, and $\beta$ is the amplitude on the right. By periodicity of the Bloch state, it is only their phase that differs. Call this phase change $\theta$. In terms of the Bloch states \eqref{latt_bloch} $\theta=ka$. Then \eqref{latt_jwkb} says</p>
+
+<script type="math/tex; mode=display">j = \frac{|\alpha|^2}{m}\sin\theta.
+\label{latt_jsin}</script>
+
+<p>Now the Bloch function $\varphi_k(x)$ satisfies the Schrödinger equation (we drop the band index)</p>
+
+<script type="math/tex; mode=display">\left[-\frac{1}{2m}\left(\partial_x + ik\right)^2 + V(x)\right]\varphi_k(x) = E_k \varphi_k(x),</script>
+
+<p>where a vector potential has arisen from the phase factor $e^{ikx}$. By considering a small change $\Delta k$ as a perturbation we can find</p>
+
+<script type="math/tex; mode=display">\frac{\partial E_k}{\partial k} = ja,</script>
+
+<p>or</p>
+
+<script type="math/tex; mode=display">\frac{\partial E_k}{\partial \theta} = j.</script>
+
+<p>Together with \eqref{latt_jsin} we conclude that the band has the form</p>
+
+<script type="math/tex; mode=display">E(k)-E(0) = 2t\left[1-\cos ka\right],</script>
+
+<p>with some characteristic energy $t$. Thus we have found</p>
+
+<ol>
+  <li>
+    <p>The Bloch states look like a superposition of localized states, with the phase changing abruptly between sites.</p>
+  </li>
+  <li>
+    <p>The lowest band is sinusoidal.</p>
+  </li>
+</ol>
+
+<p class="message">
+Confirm that both these features are captured by the tight binding model \eqref{latt_tb}.
+</p>
+
+<h2 id="bose-hubbard-model">Bose Hubbard Model</h2>
+
+<p>The simplest interacting tight binding model that we can write down is the celebrated <strong>Hubbard model</strong>.</p>
+
+<script type="math/tex; mode=display">H = H_t + H_U = -t \sum_{\langle j\,k\rangle}  \left[\adop_j\aop_{k}+\adop_{k}\aop_j\right] + \frac{U}{2}\sum_j \Nop_j(\Nop_j-1),</script>
+
+<p>where $\Nop_j=\adop_j\aop_j$ is the number operator for site $j$, and the sum in the first term is over all nearest neighbour pairs on some lattice (e.g. square or cubic). The on-site interaction term $\Nop_j(\Nop_j-1)$ is just what we have been writing as $\adop_j\adop_j\aop_j\aop_j$ previously. In 1D, you can think of this as the lattice version of the Lieb–Liniger model, in that in involves a kinetic term (sometimes called the <strong>hopping term</strong>) and a short-ranged interaction.</p>
+
+<p>The Hubbard model was first introduced to describe electrons in solids. In that case the particles are fermions, and we have to deal with their spin. We’ll come to this <strong>Fermi Hubbard model</strong> shortly. In this section we are going to discuss the more straightforward <strong>Bose Hubbard</strong> model introduced in <a href="#Fisher:1989aa">(Fisher, Weichman, Grinstein, &amp; Fisher, 1989)</a>. These authors had in mind applications to liquid He$^{4}$ on a substrate or granular superconductors in which the Cooper pairs (more on those later) approximate interacting bosons. However, ten years after its invention, the model found its natural home in the description of bosonic atoms confined to optical lattices.</p>
+
+<h3 id="the-mott-state">The Mott State</h3>
+
+<p>In analyzing a new model we always begin by asking what happens when each of the terms in the Hamiltonian dominate the others. This allows us to get the lie of the land, and think about how these different limits may fit together.</p>
+
+<p>For the Bose–Hubbard model, we start by taking $U/t\to\infty$ The eigenstates are then states of definite occupation number, with energy</p>
+
+<script type="math/tex; mode=display">E(\mathbf{N}) = \frac{U}{2} \sum_j N_j(N_j-1).</script>
+
+<p>To find the ground state at fixed particle number, we should try filling the $N_\text{sites}$ sites as uniformly as possible. This is easy if the filling $\nu \equiv N_{\text{particles}}/N_\text{sites}$ is integer. Otherwise, denote by $\lfloor \nu\rfloor$ the largest integer less than $\nu$, and $\lceil \nu\rceil$ the smallest integer larger than $\nu$. Then the number of sites with occupancy $\lceil \nu\rceil$ is $N_\text{sites}\left(\nu - \lfloor \nu\rfloor\right)$. The ground state energy has a piecewise linear dependence on $\nu$</p>
+
+<script type="math/tex; mode=display">\frac{E_0}{N_\text{sites}} = \left(\nu - \lfloor \nu\rfloor\right)e(\lceil \nu\rceil) + \left(\lceil \nu\rceil - \nu\right)e(\lfloor \nu\rfloor),</script>
+
+<p>where $e(N) = \frac{U}{2}N(N-1)$. As the result the chemical potential $\mu = \frac{\partial E_0}{\partial N_\text{particles}}$ is piecewise constant, with jumps occurring when $\nu$ is integer:</p>
+
+<script type="math/tex; mode=display">\mu = e(\lceil \nu\rceil) -e(\lfloor \nu\rfloor)=U\lfloor \nu\rfloor,</script>
+
+<p><a name="steps"></a>
+<img src="/docs/assets/steps.png" alt="" />
+<em>Energy and chemical potential vs. filling $\nu$.</em></p>
+
+<p>If we think about varying the chemical potential instead, all values between $UN$ and $U(N-1)$ correspond to integer filling $\nu=N$. The states of integer filling are named <strong>Mott states</strong>, after <a href="https://en.wikipedia.org/wiki/Nevill_Francis_Mott">Nevill Mott</a>. Mott’s realization was that when interactions dominate the hopping, the formation of such states can cause insulating behaviour, even when band theory implies a system should be a metal.</p>
+
+<h3 id="the-effect-of-hopping">The Effect of Hopping</h3>
+
+<p>For these states to be physically significant, they must survive when we turn $H_t$ back on. If the hopping is small, we can think of it as a perturbation. The unperturbed eigenstates of the model have a fixed occupation $N_j$ on site $j$</p>
+
+<script type="math/tex; mode=display">\ket{\mathbf{N}} = \bigotimes_j \ket{N_j}_j.</script>
+
+<p>Applying $H_t$ to such a state gives a superposition of states, each with one particle moved from one site to an adjacent site.</p>
+
+<p class="message">
+How is a Mott state (all sites with the same occupation) affected by $H_t$ in first order perturbation theory?
+</p>
+
+<p>Let’s now consider a Mott state of filling $\nu=N$ with one extra particle added. We now have $N_\text{sites}$ degenerate ground states when $t=0$, corresponding to placing the extra particle on each lattice site. $H_t$ mixes these states together: we have a problem of degenerate perturbation theory. All other states are separated from these lowest states by energies of order $U$.</p>
+
+<p>The states in the ground state multiplet are</p>
+
+<script type="math/tex; mode=display">\ket{i,+}\equiv \frac{\adop_i}{\sqrt{N+1}}\bigotimes_{j} \ket{N}_j.</script>
+
+<p>Evidently, only states corresponding to adjacent $j$ are coupled by $H_t$. These matrix elements are</p>
+
+<script type="math/tex; mode=display">\braket{j}{H_t}{k} = -t(N+1).</script>
+
+<p>Thus within the ground state multiplet $H_t$ corresponds to a tight binding model</p>
+
+<script type="math/tex; mode=display">H_t\rvert_{+} = -t(N+1) \sum_{\langle j\,k\rangle} \left[\ket{j,+}\bra{k,+}+\text{h.c.}\right].
+\label{latt_tbp}</script>
+
+<p>This is a very simple picture: the only many body effect is the factor of $N$ due to Bose statistics. The splitting of the degenerate states by $H_t$ is then given by the tight binding dispersion</p>
+
+<script type="math/tex; mode=display">\omega_+(\boldsymbol{\eta}) = -2t(N+1)\sum_{n=1}^d\cos\eta_n
+\label{latt_pband}</script>
+
+<p>(in $d$-dimensions). We could alternatively <em>remove</em> a particle from the Mott state</p>
+
+<script type="math/tex; mode=display">\ket{i,-}\equiv \sqrt{N}\aop_i\bigotimes_{j} \ket{N}_j.</script>
+
+<p>Within these states, $H_t$ takes the form</p>
+
+<script type="math/tex; mode=display">H_t\rvert_{-}=-tN \sum_{\langle j\,k\rangle} \left[\ket{j,-}\bra{k,-}+\text{h.c.}\right],
+\label{latt_tbh}</script>
+
+<p>with a spectrum</p>
+
+<script type="math/tex; mode=display">\omega_-(\boldsymbol{\eta}) = -2tN\sum_{n=1}^d\cos\eta_n.</script>
+
+<p>Let’s see how these considerations change the picture of the previous subsection. We introduce the grand canonical Hamiltonian</p>
+
+<script type="math/tex; mode=display">\cH_\mu = H - \mu N_\text{particles},</script>
+
+<p>and consider the ground state as a function of $\mu$. At $t=0$ the energies of the Mott states with filling $\nu=N$ are</p>
+
+<script type="math/tex; mode=display">\frac{\cE^{(N)}_\mu}{N_\text{sites}} = \frac{U}{2}N(N-1)-\mu N.</script>
+
+<p>$\cE^{(N)}_\mu$ and $\cE^{(N+1)}_\mu$ become degenerate when $\mu=UN$ for $t=0$. Let’s compare this with the ground state with one extra particle on top of the $N$ Mott state. This state corresponds to a particle at the bottom of the tight binding band. From \eqref{latt_pband}, we see that the ground state energy of the tight binding model is $-2td(N+1)$. Together with extra energy of interaction we have overall</p>
+
+<script type="math/tex; mode=display">\cE^{(N)}_\mu + UN - \mu -2dt(N+1).</script>
+
+<p>We see that for $t&gt;\frac{UN-\mu}{2d(N+1)}$ the state with an extra particle actually has a <em>lower</em> energy: the Mott states is not the ground state. Similarly, the energy of the ground state with one ‘hole’ in the $N+1$ Mott state is</p>
+
+<script type="math/tex; mode=display">\cE^{(N+1)}_\mu - UN + \mu -2dt(N+1).</script>
+
+<p>Introducing a hole is thus favoured for $t&gt;\frac{\mu-UN}{2d(N+1)}$.</p>
+
+<p><a name="MottPerturb"></a>
+<img src="/docs/assets/MottPerturb.png" alt="" />
+<em>Comparing the energies of the Mott states with single particle or hole states. At $t=0$ the red line is the absolute ground state. For nonzero $t$ the dashed blue line corresponds to non-integer filling.</em></p>
+
+<p>This analysis applies only at small $t/U$. What happens in the regions where the Mott states are not the ground states, and there are excess bosonic particles or holes that are free to move? If we let $t/U\to\infty$ we have a <strong>Bose condensate</strong>: all the particles can sit in the $\eta=0$ Bloch state. When interactions are finite but small, we will see in the next lecture that the result is a <strong>superfluid</strong>. The boundaries that we have have found can be connected (drawing freehand – see <a href="/docs/problems/Problems2/">Problem Set 2</a> for a variational approach) to give the following phase diagram for the ground state of the Bose–Hubbard model.</p>
+
+<p><a name="BHPhase"></a>
+<img src="/docs/assets/BHPhase.png" alt="" />
+<em>Ground state phase diagram of the Bose–Hubbard model.</em></p>
+
+<p>Note the diminishing size of the Mott lobes, a consequence of the enhanced hopping in the effective tight binding models \eqref{latt_tbp} and \eqref{latt_tbh} as we go to higher filling.</p>
+
+<p><a name="mott_cake"></a>
+<img src="/docs/assets/mott_state_cake.jpg" alt="" />
+<em>With a trap potential as well as a lattice, moving radially outwards corresponds to moving down a vertical slice through the phase diagram, producing this distinctive ‘wedding cake’ structure. Successive Mott states are separated by superfluid regions. Source: Cheng Chin, University of Chicago.</em></p>
+
+<h2 id="fermi-hubbard-model">Fermi Hubbard Model</h2>
+
+<p>Now we turn to the case of fermions, the context in which the Hubbard model was originally introduced. Allowing for spin, the model is usually written.</p>
+
+<script type="math/tex; mode=display">H=-t \sum_{\substack{\langle j\,k\rangle\\ s=\uparrow,\downarrow}}  \left[\adop_{j,s}\aop_{k,s}+\adop_{k,s}\aop_{j,s}\right] + U\sum_j N_\uparrow N_\downarrow,</script>
+
+<p>We could of course add spin to the Bose Hubbard model, but it’s still interesting without it. By contrast, we need spin here to have an interacting model. It’s hard to overstate the importance of this model in condensed matter physics because of the role that it has played in attempts to understand the high-temperature superconducting materials known as <strong>cuprates</strong>. The 2D model has long been argued to capture the physics of strong correlations in the CuO$_2$ layers that form the backbone of these materials. ‘Capture the physics’ would ideally mean that the ground state of the model is superconducting. This is still a controversial issue: some believe that the Hubbard model suffices, if only we could learn enough about its behaviour; others that it is missing some ingredient – other bands, coupling between layers, phonons – that is vital to superconductivity.</p>
+
+<p>Relatively little is known <em>for sure</em> about the Hubbard model, except in 1D, where it can be solved exactly using the Bethe ansatz. You may be wondering why it’s so much harder than the Bose case. Let’s find out…</p>
+
+<h3 id="discussion-two-sites-large-ut">Discussion: Two Sites, Large $U/t$</h3>
+
+<p>As in the Bose case, we start by thinking about $U/t\to\infty$. In the limit we get Mott states: only three this time, corresponding to 0, 1, or 2 particles per site. When we have two particles on a site, they must be in a spin singlet. But when we have only 1 per site (We call this <strong>half filling</strong>), we can have either spin. Thus the $\nu=1$ Mott state is <em>massively</em> degenerate, with a ground state multiplet consisting of $2^{N_\text{sites}}$ possible spin configurations. $U/t\to\infty$ is therefore a rather singular limit, and to understand the true ground state at large $U$ we’ll need to work bit harder.</p>
+
+<p>Start by thinking about two sites and two particles. There are 6 states altogether in the Hilbert space.</p>
+
+<script type="math/tex; mode=display">\begin{align}
+\adop_{1,\uparrow}\adop_{1,\downarrow} \ket{\text{VAC}},\quad\adop_{2,\uparrow}\adop_{2,\downarrow} \ket{\text{VAC}}\\
+\adop_{1,s}\adop_{2,s'} \ket{\text{VAC}},\quad s,s'=\uparrow,\downarrow.
+\end{align}</script>
+
+<p>The top two states have energy $U$ when $t=0$; the bottom 4 have energy 0.</p>
+
+<p class="message">
+[Try this before continuing!] How does the degeneracy of these states get lifted at finte $t$? Try writing down the Hamiltonian restricted to these states.
+</p>
+
+<h3 id="effective-hamiltonian">Effective Hamiltonian</h3>
+
+<p>As the number of sites increases, it becomes harder to say what happens to the ground state multiplet. We now modify our strategy by splitting the problem in two: we are going to find an <em>effective Hamiltonian</em> that acts only on the half filled Mott states and describes their splitting when $t/U$ is finite but small. Whether we can subsequently solve that Hamiltonian we leave until later.</p>
+
+<p>As I’m sure you realized when you thought about two sites, this is a qualitatively different degenerate perturbation problem than the one we solved when we added a single particle or hole to the bosonic Mott states. The reason is that $H_t$ has no matrix elements among the degenerate states: when acting on one of them it always takes us into a state with one site doubly occupied and the neighouring site empty. We have to think about <em>second order</em> degenerate perturbation theory to find out what happens. To handle this we divide the Hamiltonian into block form, according to whether its matrix elements act on the Mott state or not.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+H = \begin{pmatrix}
+H_{\text{Mott}} & V^{} \\
+V^\dagger & H_\text{Not} \\
+\end{pmatrix} %]]></script>
+
+<p>Denoting by $P_\text{Mott}$ the projection operator on to the $2^{N_\text{sites}}$ Mott states, and $P_\text{Not}\equiv 1-P_\text{Mott}$, we have</p>
+
+<script type="math/tex; mode=display">\begin{align}
+H_\text{Mott}= P_\text{Mott} H P_\text{Mott},\quad H_\text{Not}= P_\text{Not}H P_\text{Not}\\
+V^{} = P_\text{Mott} H P_\text{Not},\qquad V^\dagger = P_\text{Not} H P_\text{Mott}.
+\end{align}</script>
+
+<p>In the case of the Hubbard model, we have</p>
+
+<script type="math/tex; mode=display">\begin{align}
+H_\text{Mott}= P_\text{Mott} H_U P_\text{Mott},\quad H_\text{Not}= P_\text{Not}H_U P_\text{Not}\\
+V^{} = P_\text{Mott} H_t P_\text{Not},\qquad V^\dagger = P_\text{Not} H_t P_\text{Mott}.
+\end{align}</script>
+
+<p>We write the eigenvalue equation in block form</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{pmatrix}
+H_{\text{Mott}} & V^{} \\
+V^\dagger & H_\text{Not} \\
+\end{pmatrix}
+\begin{pmatrix}
+\ket{\Psi}\\
+\ket{\Phi}
+\end{pmatrix} = E
+\begin{pmatrix}
+\ket{\Psi}\\
+\ket{\Phi}
+\end{pmatrix}. %]]></script>
+
+<p>We eliminate $\ket{\Phi}$ to obtain</p>
+
+<script type="math/tex; mode=display">\left[H_{\text{Mott}} -V^{}\left(H_\text{Not}-E\right)^{-1}V^\dagger\right]\ket{\Psi} = E\ket{\Psi}.</script>
+
+<p>So far we have made no approximation. While this looks like an eigenvalue equation, we can’t yet interpret the operator in the square brackets as an effective Hamiltonian because it depends on the eigenvalue $E$. However, we now focus on energies much smaller than the eigenvalues of $H_\text{Not}$, which are $O(U)$. In this way we can neglect this energy dependence and arrive at the effective Hamiltonian acting only on the Mott state</p>
+
+<script type="math/tex; mode=display">H_\text{eff} = H_{\text{Mott}} -V^{} H^{-1}_\text{Not}V^\dagger.</script>
+
+<p>What form does $H_\text{eff}$ take? $H_{\text{Mott}}=0$, and $V^\dagger$ creates states with an adjacent hole and <strong>doublon</strong> (doubly occupied site). $H_\text{Not}$ acting on these states is just $U$, and $V$ has to remove the hole and doublon. Thus,</p>
+
+<script type="math/tex; mode=display">H_\text{eff} = -\frac{V^{}V^\dagger}{U} = -\frac{t^2}{U} \sum_{\substack{\langle j\,k\rangle\\s,s'}} \adop_{j,s}\aop_{k,s} \adop_{k,s'}\aop_{j,s'}.</script>
+
+<p>We can write this in a more familiar way by first reordering the operators (not forgetting the anticommutation relations!)</p>
+
+<script type="math/tex; mode=display">\adop_{j,s}\aop_{k,s} \adop_{k,s'}\aop_{j,s'} = -\adop_{j,s}\aop_{j,s'}\adop_{k,s'}\aop_{k,s} + \delta_{s^{}s'}\adop_{j,s}\aop_{j,s'},</script>
+
+<p>and then using the identity</p>
+
+<script type="math/tex; mode=display">\delta_{ab}\delta_{cd} = \frac{1}{2}\left[\boldsymbol{\sigma}_{a d}\cdot \boldsymbol{\sigma}_{c b} + \delta_{ad}\delta_{cb}\right].</script>
+
+<p>Finally, in $d$ dimensions ($d=1$, chain; $d=2$ square lattice; $d=3$ cubic lattice) we get</p>
+
+<script type="math/tex; mode=display">H_\text{eff} = -\frac{dN_\text{sites}t^2}{2U}+J\sum_{\langle j\,k\rangle} \mathbf{s}_j\cdot \mathbf{s}_k</script>
+
+<p>with $J=\frac{2t^2}{U}$ and</p>
+
+<script type="math/tex; mode=display">\mathbf{s}_j=\frac{1}{2}\sum_{s,s'}\adop_{j,s}\boldsymbol{\sigma}_{s^{}s'}\aop_{j,s'}.</script>
+
+<p>The effective Hamiltonian is nothing but the spin-1/2 antiferromagnetic Heisenberg model!</p>
+
+<p class="message">
+Note that there is something slightly sly about this derivation. We assumed that the energy scale $U$ was the largest scale in the problem, in order to arrive at the effective Hamiltonian. However, typical excited state energies of the Heisenberg Hamiltonian are $\frac{N_\text{sites}t^2}{U}$. Thus for $N_\text{sites}\gtrsim \left(\frac{t}{U}\right)^2$ there isn't actually a separation between these two energies. Not a very useful condition! Physically, it's enough to have a small <strong>density </strong> $n$ of doublons and holes, with overall energy $\sim nU$, when $t/U$ is small.
+</p>
+
+<h3 id="doping">Doping</h3>
+
+<p>Antiferromagnetism and the Mott phenomenon are seen to go hand in hand in fermion systems. This explains the common ocurrence of antiferromagnetism in transition metal compounds, especially oxides. The cuprate superconductors mentioned earlier are a famous example.</p>
+
+<p><a name="Cuphase"></a>
+<img src="/docs/assets/Cuphasediag.png" alt="" />
+<em>Schematic temperature vs. doping diagram for the cuprate materials <a href="https://en.wikipedia.org/wiki/High-temperature_superconductivity#Cuprates">[Source]</a>.</em></p>
+
+<p>At half filling, the cuprates are antiferromangetic Mott insulators. Superconductivity emerges when the materials are doped by changing their stoichiometry. This introduces electrons or holes into the CuO$_2$ planes that are modeled by the Hubbard Hamiltonian. Antiferromagnetic order is believed to be destroyed by freely moving holes – think how the Néel ordering is disrupted – and indeed superconductivity appears where antiferromagnetism dies. The precise relationship between the two phenomena is – like much of the physics of the cuprates – not clear.</p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="Fisher:1989aa">Fisher, M. P. A., Weichman, P. B., Grinstein, G., &amp; Fisher, D. S. (1989). Boson localization and the superfluid-insulator transition. <i>Physical Review B</i>, <i>40</i>(1), 546.</span></li></ol>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+    <script>
+
+    // Highlight search Query
+    var url = window.location.href;
+      if (url.lastIndexOf("?q=") > 0) {
+        // get the index of the parameter, add three (to account for length)
+        var stringloc = url.lastIndexOf("?q=") + 3;
+        // get the substring (query) and decode
+        var searchquery = decodeURIComponent(url.substr(stringloc));
+        // regex matches at beginning of line, end of line or word boundary, useful for poetry
+        var regex = new RegExp("(?:^|\\b)(" + searchquery + ")(?:$|\\b)", "gim");
+        // get, add mark and then set content
+        var content = document.getElementById("main").innerHTML;
+        document.getElementById("main").innerHTML = content.replace(regex, "<mark>$1</mark>");
+      }
+
+    // Toggle sidebar
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+    <!-- Facebook SDK for JavaScript -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '589495744558280',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+  </body>
+</html>
