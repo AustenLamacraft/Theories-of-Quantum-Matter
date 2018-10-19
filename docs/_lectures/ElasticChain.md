@@ -584,8 +584,8 @@ Prove the Hadamard Lemma
 
 $$
 \begin{split}
-e^{A}B e^{-A} &= 1 + \left[A,B\right] + \frac{1}{2!}\left[A,\left[A,B\right]\right]+\frac{1}{3!}\left[A,\left[A,\left[A,B\right]\right]\right]+\ldots \\
-&\equiv e^{\left[B,\cdot\right]}A,
+e^{A}B e^{-A} &= B + \left[A,B\right] + \frac{1}{2!}\left[A,\left[A,B\right]\right]+\frac{1}{3!}\left[A,\left[A,\left[A,B\right]\right]\right]+\ldots \\
+&\equiv e^{\left[A,\cdot\right]}B,
 \end{split}
 $$
 
