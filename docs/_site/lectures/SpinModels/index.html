@@ -9,13 +9,13 @@
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/SpinModels/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-10-16T14:22:07+01:00" />
+<meta property="article:published_time" content="2018-10-27T19:55:36+01:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Spin Models",
-    "datePublished": "2018-10-16T14:22:07+01:00",
+    "datePublished": "2018-10-27T19:55:36+01:00",
     "description": "In this lecture we introduce a simple quantum mechanical model of magnetism consisting of a lattice of coupled spins. As in the elastic chain, we identify the elementary excitations and their interaction.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/SpinModels/"
   }
@@ -152,13 +152,13 @@ $$
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/SpinModels/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-10-16T14:22:07+01:00" />
+<meta property="article:published_time" content="2018-10-27T19:55:36+01:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Spin Models",
-    "datePublished": "2018-10-16T14:22:07+01:00",
+    "datePublished": "2018-10-27T19:55:36+01:00",
     "description": "In this lecture we introduce a simple quantum mechanical model of magnetism consisting of a lattice of coupled spins. As in the elastic chain, we identify the elementary excitations and their interaction.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/SpinModels/"
   }
@@ -371,6 +371,10 @@ In this lecture we introduce a simple quantum mechanical model of magnetism cons
 
 <p>and as usual we take $\mathbf{s}_j=\mathbf{s}_{j+N}$ (periodic boundary conditions). Such a system is called a <strong>spin chain</strong>. Surprisingly enough, crystals do exist in which magnetic atoms are arranged in this way, with only weak coupling between neighbouring chains. So models of this type are a useful description, at least in some energy window, of real materials.</p>
 
+<p class="message">
+What is the dimension of the Hilbert in which the Hamiltonian acts?
+</p>
+
 <p>Since \eqref{spin_Hberg} is supposed to be a model for a magnet, we might try the state with all spins aligned</p>
 
 <script type="math/tex; mode=display">\ket{\text{FM}} \equiv \prod_{j=1}^N \ket{+}_j,</script>
@@ -580,7 +584,7 @@ S^- &= \sqrt{2s}\adop\sqrt{1-\frac{\adop\aop}{2s}} \\
 S_z &= \left(s - \adop \aop\right).
 \end{align} %]]></script>
 
-<p>I’m going to leave it up to you to confirm that $[\aop,\adop]=1$ reproduces the spin commutation relations, and <a href="/docs/problems/Problems1/">Problem Set 1</a> should demystify why this works to some extent. A rough understanding is as follows. $S^{\pm}$ and $\aop$, $\adop$ evidently have somethig in common in that they shift us up and down a ladder of states. That’s why the relation between $S^z$ and the number of quanta in the oscillator is so simple. The oscillator ground state corresponds to $\ket{s,s}$.</p>
+<p>I’m going to leave it up to you to confirm that $[\aop,\adop]=1$ reproduces the spin commutation relations, and <a href="/docs/problems/Problems1/">Problem Set 1</a> should demystify why this works to some extent. A rough understanding is as follows. $S^{\pm}$ and $\aop$, $\adop$ evidently have something in common in that they shift us up and down a ladder of states. That’s why the relation between $S^z$ and the number of quanta in the oscillator is so simple. The oscillator ground state corresponds to $\ket{s,s}$.</p>
 
 <p>The difference is that in the spin case the ladder is finite, while in the oscillator it is (semi-)infinte. Thus we can’t just have $S^+\propto \aop$. We must have something that stops us lowering beyond $S^z=-s$. That’s the function of the factor in the square root in $S^-$.</p>
 
@@ -676,31 +680,37 @@ Can you figure out why?
 <script type="math/tex; mode=display">\bra{0}\adop_j \aop_j\ket{0} = \bra{0}\frac{1}{N}\sum_{j=1}^N \adop_j \aop_j\ket{0}.
 \label{spin_deplete}</script>
 
-<p>The operator on the right hand side commutes with the harmonic Hamiltonian \eqref{spin_H2FM}. This is an exact statement not restricted to the harmonic approximation: the total number of Holstein–Primakoff bosons is conserved. The same is not true for the antiferromagnetic case \eqref{spin_H2FM}. If we had written it in terms of the bosons, we would have found terms involving $\adop_j\adop_{j+1}$ and $\aop_j\aop_{j+1}$ that create pairs of bosons (see <a href="/docs/problems/Problems1/">Problem Set 1</a>).</p>
-
-<p>Let’s evaluate \eqref{spin_deplete}</p>
+<p>Evaluating this in terms of the normal modes gives</p>
 
 <script type="math/tex; mode=display">\sum_{j=1}^N \adop_j \aop_j = \frac{1}{2} \sum_{j=1}^N \left(x_j^2 + p_j^2 - 1\right) = -\frac{N}{2} + \frac{1}{2}\sum_n \left(q_n q_{-n} + \pi_n\pi_{-n}\right).
 \label{spin_DepEval}</script>
 
-<p>Next we use the oscillator coordinates from <a href="/docs/lectures/ElasticChain/">Lecture 3</a>, adapted to \eqref{spin_H2AFM}</p>
+<p>It’s then clear that this commutes with the harmonic Hamiltonian \eqref{spin_H2FM}. In fact, this is an exact statement not restricted to the harmonic approximation: the total number of Holstein–Primakoff bosons is conserved. The same is not true for the antiferromagnetic case \eqref{spin_H2FM}. If we had written this Hamiltonian in terms of the operators $\adop_j$, $\aop_j$, we would have found terms involving $\adop_j\adop_{j+1}$ and $\aop_j\aop_{j+1}$ that create pairs of bosons (see <a href="/docs/problems/Problems1/">Problem Set 1</a>).</p>
+
+<p>Next we use the oscillator coordinates just as in <a href="/docs/lectures/ElasticChain/">Lecture 3</a>. Since we want to express \eqref{spin_H2AFM} in terms of ladder operators, we have to adapt our definition accordingly. For $\eta\neq 0, \pi$ the operators</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
-\aop_n &= \sqrt{\frac{\cot(\eta_n /2)}{2}}\left(q_n + \frac{i}{\cot(\eta_n /2)}\pi_{-n}\right)\nonumber\\
-\adop_n &= \sqrt{\frac{\cot(\eta_n /2)}{2}}\left(q_{-n} - \frac{i}{\cot(\eta_n /2)}\pi_{n}\right),\qquad n\neq 0.
+\aop_\eta &= \sqrt{\frac{|\cot(\eta /2)|}{2}}\left(q_n + \frac{i}{|\cot(\eta /2)|}\pi_{-n}\right)\nonumber\\
+\adop_\eta &= \sqrt{\frac{|\cot(\eta /2)|}{2}}\left(q_{-n} - \frac{i}{|\cot(\eta /2)|}\pi_{n}\right),\qquad \eta=2\pi n/N
 \label{spin_adef}
 \end{align} %]]></script>
 
-<p>Writing \eqref{spin_deplete} in terms of these gives</p>
+<p>satisfy</p>
+
+<script type="math/tex; mode=display">\sin^2(\eta/2)q_n q_{-n} + \cos^2(\eta/2)\pi_n\pi_{-n}=\frac{\omega(\eta)}{2}\left[\adop_\eta\aop_\eta+]\aop_\eta\adop_\eta\right].</script>
+
+<p>This puts the Hamiltonian \eqref{spin_H2AFM} in the desired form, so we know that the ground state satisfies $\aop_\eta\ket{\text{GS}}=0$</p>
+
+<p>To evaluate \eqref{spin_deplete}, we write it in terms of $\adop_\eta$, $a_\eta$ to give</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
-\Delta s = - \bra{0}\frac{1}{N}\sum_{j=1}^N \adop_j \aop_j\ket{0} &= \frac{1}{2}-\frac{1}{4N}\sum_n \left[\tan(\eta_n/2) + \cot(\eta_n/2)\right].\\
- &= \frac{1}{2}- \frac{1}{4}\int_{-\pi}^\pi \frac{d\eta}{2\pi} \left[\tan(\eta_n/2) + \cot(\eta_n/2)\right].
+\Delta s = - \bra{0}\frac{1}{N}\sum_{j=1}^N \adop_j \aop_j\ket{0} &= \frac{1}{2}-\frac{1}{4N}\sum_n \left[|\tan(\eta_n/2)| + |\cot(\eta_n/2)|\right].\\
+ &= \frac{1}{2}- \frac{1}{4}\int_{-\pi}^\pi \frac{d\eta}{2\pi} \left[|\tan(\eta_n/2)| + |\cot(\eta_n/2)|\right].
 \end{align} %]]></script>
 
-<p>This represents an $O(s^0)$ correction to $\langle s^z_j\rangle = (-1)^j\left(s - \Delta s\right)$. However, the integral diverges logarithmically at $\eta=0$ and $\eta=\pi$. This indicates that our approach breaks down in the $N\to\infty$ limit: at finite $N$ the sums are all finite if $n=0$ is excluded</p>
+<p>This represents an $O(s^0)$ correction to $\langle s^z_j\rangle = (-1)^j\left(s - \Delta s\right)$. However, the integral diverges logarithmically at $\eta=0$ and $\eta=\pi$. This indicates that our approach breaks down in the $N\to\infty$ limit: at finite $N$ the sums are all finite if $\eta=0, \pi$ are excluded.</p>
 
 <p class="message">
 Why can we do this? Compare with the elastic chain.

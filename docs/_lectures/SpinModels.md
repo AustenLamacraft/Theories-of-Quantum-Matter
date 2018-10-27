@@ -55,6 +55,10 @@ $$
 
 and as usual we take $\mathbf{s}\_j=\mathbf{s}_{j+N}$ (periodic boundary conditions). Such a system is called a __spin chain__. Surprisingly enough, crystals do exist in which magnetic atoms are arranged in this way, with only weak coupling between neighbouring chains. So models of this type are a useful description, at least in some energy window, of real materials.
 
+<p class="message">
+What is the dimension of the Hilbert in which the Hamiltonian acts?
+</p>
+
 Since \eqref{spin_Hberg} is supposed to be a model for a magnet, we might try the state with all spins aligned
 
 $$
@@ -315,7 +319,7 @@ S_z &= \left(s - \adop \aop\right).
 \end{align}
 $$
 
-I'm going to leave it up to you to confirm that $[\aop,\adop]=1$ reproduces the spin commutation relations, and [Problem Set 1]({{ site.baseurl }}/problems/Problems1/) should demystify why this works to some extent. A rough understanding is as follows. $S^{\pm}$ and $\aop$, $\adop$ evidently have somethig in common in that they shift us up and down a ladder of states. That's why the relation between $S^z$ and the number of quanta in the oscillator is so simple. The oscillator ground state corresponds to $\ket{s,s}$.
+I'm going to leave it up to you to confirm that $[\aop,\adop]=1$ reproduces the spin commutation relations, and [Problem Set 1]({{ site.baseurl }}/problems/Problems1/) should demystify why this works to some extent. A rough understanding is as follows. $S^{\pm}$ and $\aop$, $\adop$ evidently have something in common in that they shift us up and down a ladder of states. That's why the relation between $S^z$ and the number of quanta in the oscillator is so simple. The oscillator ground state corresponds to $\ket{s,s}$.
 
 The difference is that in the spin case the ladder is finite, while in the oscillator it is (semi-)infinte. Thus we can't just have $S^+\propto \aop$. We must have something that stops us lowering beyond $S^z=-s$. That's the function of the factor in the square root in $S^-$.
 
@@ -434,35 +438,43 @@ $$
 \label{spin_deplete}
 $$
 
-The operator on the right hand side commutes with the harmonic Hamiltonian \eqref{spin_H2FM}. This is an exact statement not restricted to the harmonic approximation: the total number of Holstein--Primakoff bosons is conserved. The same is not true for the antiferromagnetic case \eqref{spin_H2FM}. If we had written it in terms of the bosons, we would have found terms involving $\adop_j\adop_{j+1}$ and $\aop_j\aop_{j+1}$ that create pairs of bosons (see [Problem Set 1]({{ site.baseurl }}/problems/Problems1/)).
-
-Let's evaluate \eqref{spin_deplete}
+Evaluating this in terms of the normal modes gives
 
 $$
 \sum_{j=1}^N \adop_j \aop_j = \frac{1}{2} \sum_{j=1}^N \left(x_j^2 + p_j^2 - 1\right) = -\frac{N}{2} + \frac{1}{2}\sum_n \left(q_n q_{-n} + \pi_n\pi_{-n}\right).
 \label{spin_DepEval}
 $$
 
-Next we use the oscillator coordinates from [Lecture 3]({{ site.baseurl }}/lectures/ElasticChain/), adapted to \eqref{spin_H2AFM}
+It's then clear that this commutes with the harmonic Hamiltonian \eqref{spin_H2FM}. In fact, this is an exact statement not restricted to the harmonic approximation: the total number of Holstein--Primakoff bosons is conserved. The same is not true for the antiferromagnetic case \eqref{spin_H2FM}. If we had written this Hamiltonian in terms of the operators $\adop_j$, $\aop_j$, we would have found terms involving $\adop_j\adop_{j+1}$ and $\aop_j\aop_{j+1}$ that create pairs of bosons (see [Problem Set 1]({{ site.baseurl }}/problems/Problems1/)).
+
+Next we use the oscillator coordinates just as in [Lecture 3]({{ site.baseurl }}/lectures/ElasticChain/). Since we want to express \eqref{spin_H2AFM} in terms of ladder operators, we have to adapt our definition accordingly. For $\eta\neq 0, \pi$ the operators
 
 $$
 \begin{align}
-\aop_n &= \sqrt{\frac{\cot(\eta_n /2)}{2}}\left(q_n + \frac{i}{\cot(\eta_n /2)}\pi_{-n}\right)\nonumber\\
-\adop_n &= \sqrt{\frac{\cot(\eta_n /2)}{2}}\left(q_{-n} - \frac{i}{\cot(\eta_n /2)}\pi_{n}\right),\qquad n\neq 0.
+\aop_\eta &= \sqrt{\frac{|\cot(\eta /2)|}{2}}\left(q_n + \frac{i}{|\cot(\eta /2)|}\pi_{-n}\right)\nonumber\\
+\adop_\eta &= \sqrt{\frac{|\cot(\eta /2)|}{2}}\left(q_{-n} - \frac{i}{|\cot(\eta /2)|}\pi_{n}\right),\qquad \eta=2\pi n/N
 \label{spin_adef}
 \end{align}
 $$
 
-Writing \eqref{spin_deplete} in terms of these gives
+satisfy
+
+$$
+\sin^2(\eta/2)q_n q_{-n} + \cos^2(\eta/2)\pi_n\pi_{-n}=\frac{\omega(\eta)}{2}\left[\adop_\eta\aop_\eta+]\aop_\eta\adop_\eta\right].
+$$
+
+This puts the Hamiltonian \eqref{spin_H2AFM} in the desired form, so we know that the ground state satisfies $\aop_\eta\ket{\text{GS}}=0$
+
+To evaluate \eqref{spin_deplete}, we write it in terms of $\adop_\eta$, $a_\eta$ to give
 
 $$
 \begin{align}
-\Delta s = - \bra{0}\frac{1}{N}\sum_{j=1}^N \adop_j \aop_j\ket{0} &= \frac{1}{2}-\frac{1}{4N}\sum_n \left[\tan(\eta_n/2) + \cot(\eta_n/2)\right].\\
- &= \frac{1}{2}- \frac{1}{4}\int_{-\pi}^\pi \frac{d\eta}{2\pi} \left[\tan(\eta_n/2) + \cot(\eta_n/2)\right].
+\Delta s = - \bra{0}\frac{1}{N}\sum_{j=1}^N \adop_j \aop_j\ket{0} &= \frac{1}{2}-\frac{1}{4N}\sum_n \left[|\tan(\eta_n/2)| + |\cot(\eta_n/2)|\right].\\
+ &= \frac{1}{2}- \frac{1}{4}\int_{-\pi}^\pi \frac{d\eta}{2\pi} \left[|\tan(\eta_n/2)| + |\cot(\eta_n/2)|\right].
 \end{align}
 $$
 
-This represents an $O(s^0)$ correction to $\langle s^z_j\rangle = (-1)^j\left(s - \Delta s\right)$. However, the integral diverges logarithmically at $\eta=0$ and $\eta=\pi$. This indicates that our approach breaks down in the $N\to\infty$ limit: at finite $N$ the sums are all finite if $n=0$ is excluded
+This represents an $O(s^0)$ correction to $\langle s^z_j\rangle = (-1)^j\left(s - \Delta s\right)$. However, the integral diverges logarithmically at $\eta=0$ and $\eta=\pi$. This indicates that our approach breaks down in the $N\to\infty$ limit: at finite $N$ the sums are all finite if $\eta=0, \pi$ are excluded.
 
 <p class="message">
 Why can we do this? Compare with the elastic chain.
