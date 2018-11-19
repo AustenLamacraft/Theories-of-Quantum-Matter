@@ -297,7 +297,7 @@ $$
 The top two states have energy $U$ when $t=0$; the bottom 4 have energy 0.
 
 <p class="message">
-[Try this before continuing!] How does the degeneracy of these states get lifted at finte $t$? Try writing down the Hamiltonian restricted to these states.
+[Try this before continuing!] How does the degeneracy of these states get lifted at finite $t$? Try writing down the Hamiltonian restricted to these states.
 </p>
 
 ### Effective Hamiltonian

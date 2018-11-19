@@ -321,84 +321,17 @@ type rarely overlap. In this limit, any given momentum state has a low average o
 hardcore constraint \eqref{hardcore} does not play a significant role. Then \eqref{pair_h} can
 really be thought of as a Hamiltonian for isolated pairs, with the corresponding binding energy. The resulting wavefunction is then essentially a Gross-Pitaevskii state of molecules. This all suggests that the BCS state is smoothly connected to the Bose--Einstein condensate (BEC), though the __BCS-BEC crossover__.
 
-To see how this works in detail we first have to address the issue of regularizing \eqref{cont_sc}. The ultraviolet divergence that we encountered here, and in the Bose gas, is really a two body effect that arises from our model $\delta$-function potential. To see why this is so, consider the two particle Schrödinger equation
+To see how this works in detail we need to address the issue of regularizing \eqref{gap_eq}. The details are given in the Appendix, but the conclusion is very simple. The gap equation can be written in terms of the _scattering length_ $a$ (if you haven't met scattering theory before, the meaning of this quantity is explained in the Appendix too) of the two-particle potential instead of interaction strength $U_0$
 
 $$
--\frac{1}{2m}\left[\nabla_1^2+\nabla^2\right]\Psi(\br_1,\br_2) + U(\br_1-\br_2)\Psi(\br_1,\br_2)=E\Psi(\br_1,\br_2),
-$$
-
-now with a general two-body potential $U(\br_1-\br_2)$. In terms of the relative coordinate $\br=\br_1-\br_2$ this becomes
-
-$$
--\frac{\nabla^2}{m}\Psi(\br) + U(\br)\Psi(\br)=E\Psi(\br),
-$$
-
-corresponding to a reduced mass of $\mu = m/2$. In scattering problems we look for solutions of the form
-
-$$
-\Psi(\br) = \Psi_\text{free}(\br) + \Psi_\text{scatt}(\br),
-$$
-
-where $\Psi_\text{free}(\br)$ solves the free particle equation, giving the inhomogenous equation for $\Psi_\text{scatt}(\br)$
-
-$$
-\left[E-\frac{\nabla^2}{m}\right]\Psi_\text{scatt}(\br) + U(\br)\Psi_\text{scatt}(\br)=-U(\br)\Psi_\text{free}(\br).
-\label{inhomog}
-$$
-
-It is a standard result of scattering theory that the zero energy wavefunction as the form
-
-$$
-\Psi(\br)\xrightarrow{\abs{\br}\gg r_0} \overbrace{1}^{\Psi_\text{free}} - \overbrace{\frac{a}{\abs{\br}}}^{\Psi_\text{scatt}}
-$$
-
-where $a$ is the (s-wave) scattering length, and $r_0$ is the range of the potential. This corresponds to the behaviour in Fourier space
-
-$$
-\tilde\Psi_\text{scatt}(\bk)\xrightarrow{\abs{\bk}\ll r_0^{-1}} \frac{4\pi a}{\abs{\bk}^2}
-$$
-
-Returning to the BCS problem, it's not hard to see that with a general potential the gap parameter is now momentum dependent, leading to a gap equation
-
-$$
-\Delta_\bp=-\frac{1}{2}\int \frac{d\bp'}{(2\pi)^3}\tilde U(\bp-\bp')\frac{\Delta_{\bp'}}{E_{\bp'}}.
-\label{gen_gap_eq}
-$$
-
-The solution of \eqref{gen_gap_eq} is in general very difficult, but it can be greatly simplified if we
-assume that the range of the potential $U(\br)$ is the shortest length scale in the problem. With this assumption we can write \eqref{gen_gap_eq}
-
-$$
-\begin{align}
-\Delta_\bp+\frac{1}{V}\sum_{\bp'}U(\bp-\bp')\frac{\Delta_{\bp'}}{2\epsilon_{\bp'}}&=-\frac{1}{V}\sum_{\bp'} \left[U_0(\bp)\frac{\Delta_{\bp'}}{2E_{\bp'}}-U(\bp-\bp')\frac{\Delta_{\bp'}}{2\epsilon_
-{\bp'}}\right]\nonumber\\
-&=-\frac{U_0(\bp)}{V}\sum_{\bp'} \left[\frac{\Delta_{0}}{2E_{\bp'}}-\frac{\Delta_{0}}{2\epsilon_
-{\bp'}}\right].
-\label{super_GapReg}
-\end{align}
-$$
-
-We have added the same term to both sides. However, the integral on the right hand side
-converges on a scale set by the momentum corresponding to the larger of $\Delta_\bp$ or $\mu$, which
-by assumption is much less than the scale on which $U_0(\bp)$ varies, and justifies replacing $U_0(\bp-
-\bp')$ with $U_0(\bp)$, and $\Delta_{\bp'}$ with $\Delta_0$.
-
-By comparing the Fourier transform of \eqref{inhomog} at $E=0$ and \eqref{super_GapReg}, we can conclude
-
-$$
-\Delta_\bp=\frac{\Delta_0\abs{\bp}^2}{4\pi a} \tilde\Psi_\text{scatt}(\bp),
-$$
-
-so that
-
-$$
--\frac{m}{4\pi a}\Delta_0=\frac{1}{V}\sum_{\bp}\left[\frac{\Delta_{0}}{2E_{\bp'}}-\frac{\Delta_{0}}
+-\frac{m}{4\pi a}\Delta=\frac{1}{V}\sum_{\bp}\left[\frac{\Delta}{2E_{\bp'}}-\frac{\Delta}
 {2\epsilon_{\bp'}}\right].
 \label{sc_reg}
 $$
 
-In the weak-coupling limit, the gap $\Delta$ (we drop the subscript $0$ from now on, as we never need
-to discuss the high momentum behaviour of $\Delta_\bp$ again) is expected to be much smaller than
+The nice thing about this new equation is that, on account of the second term in the square brackets, the ultraviolet divergence has been eliminated.
+
+In the weak-coupling limit, the gap $\Delta$ is expected to be much smaller than
 the Fermi energy, and the chemical potential is just equal to the Fermi energy $E_F=k_\text{F}^2/2m$. The
 integral in \eqref{sc_reg} can then be done explicitly to give the gap
 
@@ -504,6 +437,90 @@ $$
 $$
 
 As $\mu$ turns from positive to negative as we pass from BCS to BEC (see the [above figure]({{ site.baseurl }}/lectures/Superconductivity/#BCS-BEC)), the density of states of the quasiparticle excitations turns from having a square root singularity $\nu(\epsilon)\sim \left(\epsilon-\Delta_s\right)^{-1/2}$ to vanishing like a square root $\nu(\epsilon)\sim \left(\epsilon-\Delta_s\right)^{1/2}$.
+
+
+
+Appendix
+--------
+
+### Regularizing the Gap Equation
+
+The gap equation \eqref{gap_eq} has an ultraviolet divergence -- which we also encountered in the Bose gas -- that is really a two body effect that arises from our model $\delta$-function potential. To see why this is so, consider the two particle Schrödinger equation
+
+$$
+-\frac{1}{2m}\left[\nabla_1^2+\nabla^2\right]\Psi(\br_1,\br_2) + U(\br_1-\br_2)\Psi(\br_1,\br_2)=E\Psi(\br_1,\br_2),
+$$
+
+now with a general two-body potential $U(\br_1-\br_2)$. In terms of the relative coordinate $\br=\br_1-\br_2$ this becomes
+
+$$
+-\frac{\nabla^2}{m}\Psi(\br) + U(\br)\Psi(\br)=E\Psi(\br),
+$$
+
+corresponding to a reduced mass of $\mu = m/2$. In scattering problems we look for solutions of the form
+
+$$
+\Psi(\br) = \Psi_\text{free}(\br) + \Psi_\text{scatt}(\br),
+$$
+
+where $\Psi_\text{free}(\br)$ solves the free particle equation, giving the inhomogenous equation for $\Psi_\text{scatt}(\br)$
+
+$$
+\left[E-\frac{\nabla^2}{m}\right]\Psi_\text{scatt}(\br) + U(\br)\Psi_\text{scatt}(\br)=-U(\br)\Psi_\text{free}(\br).
+\label{inhomog}
+$$
+
+It is a standard result of scattering theory that the zero energy wavefunction as the form
+
+$$
+\Psi(\br)\xrightarrow{\abs{\br}\gg r_0} \overbrace{1}^{\Psi_\text{free}} - \overbrace{\frac{a}{\abs{\br}}}^{\Psi_\text{scatt}}
+$$
+
+where $a$ is the (s-wave) scattering length, and $r_0$ is the range of the potential. This corresponds to the behaviour in Fourier space
+
+$$
+\tilde\Psi_\text{scatt}(\bk)\xrightarrow{\abs{\bk}\ll r_0^{-1}} \frac{4\pi a}{\abs{\bk}^2}
+$$
+
+Returning to the BCS problem, it's not hard to see that with a general potential the gap parameter is now momentum dependent, leading to a gap equation
+
+$$
+\Delta_\bp=-\frac{1}{2}\int \frac{d\bp'}{(2\pi)^3}\tilde U(\bp-\bp')\frac{\Delta_{\bp'}}{E_{\bp'}}.
+\label{gen_gap_eq}
+$$
+
+The solution of \eqref{gen_gap_eq} is in general very difficult, but it can be greatly simplified if we
+assume that the range of the potential $U(\br)$ is the shortest length scale in the problem. With this assumption we can write \eqref{gen_gap_eq}
+
+$$
+\begin{align}
+\Delta_\bp+\frac{1}{V}\sum_{\bp'}U(\bp-\bp')\frac{\Delta_{\bp'}}{2\epsilon_{\bp'}}&=-\frac{1}{V}\sum_{\bp'} \left[U_0(\bp)\frac{\Delta_{\bp'}}{2E_{\bp'}}-U(\bp-\bp')\frac{\Delta_{\bp'}}{2\epsilon_
+{\bp'}}\right]\nonumber\\
+&=-\frac{U_0(\bp)}{V}\sum_{\bp'} \left[\frac{\Delta_{0}}{2E_{\bp'}}-\frac{\Delta_{0}}{2\epsilon_
+{\bp'}}\right].
+\label{super_GapReg}
+\end{align}
+$$
+
+We have added the same term to both sides. However, the integral on the right hand side
+converges on a scale set by the momentum corresponding to the larger of $\Delta_\bp$ or $\mu$, which
+by assumption is much less than the scale on which $U_0(\bp)$ varies, and justifies replacing $U_0(\bp-
+\bp')$ with $U_0(\bp)$, and $\Delta_{\bp'}$ with $\Delta_0$.
+
+By comparing the Fourier transform of \eqref{inhomog} at $E=0$ and \eqref{super_GapReg}, we can conclude
+
+$$
+\Delta_\bp=\frac{\Delta_0\abs{\bp}^2}{4\pi a} \tilde\Psi_\text{scatt}(\bp),
+$$
+
+so that
+
+$$
+-\frac{m}{4\pi a}\Delta_0=\frac{1}{V}\sum_{\bp}\left[\frac{\Delta_{0}}{2E_{\bp'}}-\frac{\Delta_{0}}
+{2\epsilon_{\bp'}}\right].
+$$
+
+Which coincides with \eqref{sc_reg} (we drop the subscript $0$ from now on, as we never need to discuss the high momentum behaviour of $\Delta_\bp$ again).
 
 ### The Effect of Temperature
 

@@ -119,7 +119,7 @@ where $\Nop_j = \Nop_{j,\uparrow}+\Nop_{j,\downarrow}$. If we have a $\nu=1$ Mot
 	-\frac{1}{2m}\varphi'' - \mu \varphi - \frac{|c|}{2}\abs{\varphi}^2\varphi = 0.
 	$$
 
-	Look for a solution on the infinite line with $\varphi(x\to\pm\infty) =0$ describing a localized 'blob' (properly called a __bright soliton__) containing $N$ bosons. Find the energy of this state. 
+	Look for a solution on the infinite line with $\varphi(x\to\pm\infty) =0$ describing a localized 'blob' (properly called a __bright soliton__) containing $N$ bosons. Find the energy of this state.
 
 2. The ground state wavefunction is
 
@@ -169,7 +169,7 @@ where $a_l$ annihilates a particle in state $l$. By considering _only_ states $l
 
 $$
 \begin{align}
-H_{\text{rot}}=\omega_c\left[\adop_1\aop_1-\adop_0\aop_0\right]+V_0\left[\adop_0\aop_1+\mathrm{h.c.}\right]\nonumber\\
+H_{\text{rot}}=\text{const.}+\omega_c\left[\adop_1\aop_1-\adop_0\aop_0\right]+V_0\left[\adop_0\aop_1+\mathrm{h.c.}\right]\nonumber\\
 +\frac{U_0}{4\pi}\left[\adop_0\adop_0\aop_0\aop_0+\adop_1\adop_1\aop_1\aop_1+4\adop_1
 \adop_0\aop_0\aop_1\right]
 \end{align}
