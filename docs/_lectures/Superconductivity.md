@@ -82,13 +82,13 @@ $$
 $$
 
 where the numbers $n_{\bp}^P$ are either $0$ or $1$ (why?). Note that in writing \eqref{pair_fermi} the
-number of each species is assumed to be exactly $N/2$. Restricting outselves to states of this form means that
+number of each species is assumed to be exactly $N/2$. Restricting ourselves to states of this form means that
 
 $$
-\braket{\text{pair}}{H}{\text{pair}} = \braket{\text{pair}}{H_{\text{pair}}}{\text{pair}},
+\braket{\text{pair}}{H}{\text{pair}} = \frac{U_0}{V}N_\uparrow N_\downarrow+\braket{\text{pair}}{H_{\text{pair}}}{\text{pair}},
 $$
 
-where $H_{\text{pair}}$ is
+where the first term is the Hartree--Fock energy and $H_{\text{pair}}$ is
 
 $$
 H_{\text{pair}}=\sum_{\bp,s}\epsilon_{\bp}\adop_{\bp,s}\aop_{\bp, s}+\frac{U_0}{V}\sum_{\bp, \bp'}\adop_

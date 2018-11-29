@@ -9,13 +9,13 @@
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/BoseGas/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-11-19T12:58:39+00:00" />
+<meta property="article:published_time" content="2018-11-29T13:04:55+00:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Bose Gas",
-    "datePublished": "2018-11-19T12:58:39+00:00",
+    "datePublished": "2018-11-29T13:04:55+00:00",
     "description": "The Lieb--Liniger model is an example of a gas of interacting bosons in the continuum. In this lecture we study Bose gases more generally, in situations where exact solutions are not available. You know that noninteracting bosons form a Bose condensate: we will see how weak interactions alter this picture, and make a connection to the phenomenon of  superfluidity.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/BoseGas/"
   }
@@ -152,13 +152,13 @@ $$
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/BoseGas/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-11-19T12:58:39+00:00" />
+<meta property="article:published_time" content="2018-11-29T13:04:55+00:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Bose Gas",
-    "datePublished": "2018-11-19T12:58:39+00:00",
+    "datePublished": "2018-11-29T13:04:55+00:00",
     "description": "The Lieb--Liniger model is an example of a gas of interacting bosons in the continuum. In this lecture we study Bose gases more generally, in situations where exact solutions are not available. You know that noninteracting bosons form a Bose condensate: we will see how weak interactions alter this picture, and make a connection to the phenomenon of  superfluidity.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/BoseGas/"
   }
@@ -459,9 +459,15 @@ difficulty. The density and current density are</p>
 
 <p>We parameterize the solution as $\varphi(r,\theta) = \sqrt{n} f(r/\xi)e^{i\ell\theta}$, measuring distances in terms of the healing length. Substituting into the Gross–Pitaevskii equation gives an equation in $s\equiv r/\xi$.</p>
 
-<script type="math/tex; mode=display">-f'' -\frac{f'}{s} + \frac{\ell^2}{s^2} - f +f^3 =0.</script>
+<script type="math/tex; mode=display">-f'' -\frac{f'}{s} + \frac{\ell^2 f}{s^2} - f +f^3 =0.</script>
 
-<p>We take $\mu = U_0 n$ to get the behaviour \eqref{bose_vortex} at infinity. Without finding the solution explicitly, we can say that $f(s)\sim s^\ell$ for small $s$, and $f(s\to\infty) \to 1$. The region of suppressed density, of characteristic size $\xi$, is called the <strong>vortex core</strong>. In three dimensions, the vortex core is a line.</p>
+<p>We take $\mu = U_0 n$ to get the behaviour \eqref{bose_vortex} at infinity.</p>
+
+<p class="message">
+Without finding the solution explicitly, show that $f(s)\sim s^\ell$ for small $s$, and $f(s\to\infty) \to 1$.
+</p>
+
+<p>The region of suppressed density, of characteristic size $\xi$, is called the <strong>vortex core</strong>. In three dimensions, the vortex core is a line.</p>
 
 <p>We can find the energy of the vortex state by substituting the solution back into the energy functional \eqref{bose_energy} to find the energy excess relative to uniform state of density $n$</p>
 

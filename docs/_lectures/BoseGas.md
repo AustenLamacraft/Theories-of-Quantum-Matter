@@ -185,10 +185,16 @@ $$
 We parameterize the solution as $\varphi(r,\theta) = \sqrt{n} f(r/\xi)e^{i\ell\theta}$, measuring distances in terms of the healing length. Substituting into the Gross--Pitaevskii equation gives an equation in $s\equiv r/\xi$.
 
 $$
--f'' -\frac{f'}{s} + \frac{\ell^2}{s^2} - f +f^3 =0.
+-f'' -\frac{f'}{s} + \frac{\ell^2 f}{s^2} - f +f^3 =0.
 $$
 
-We take $\mu = U_0 n$ to get the behaviour \eqref{bose_vortex} at infinity. Without finding the solution explicitly, we can say that $f(s)\sim s^\ell$ for small $s$, and $f(s\to\infty) \to 1$. The region of suppressed density, of characteristic size $\xi$, is called the __vortex core__. In three dimensions, the vortex core is a line.
+We take $\mu = U_0 n$ to get the behaviour \eqref{bose_vortex} at infinity.
+
+<p class="message">
+Without finding the solution explicitly, show that $f(s)\sim s^\ell$ for small $s$, and $f(s\to\infty) \to 1$.
+</p>
+
+The region of suppressed density, of characteristic size $\xi$, is called the __vortex core__. In three dimensions, the vortex core is a line.
 
 We can find the energy of the vortex state by substituting the solution back into the energy functional \eqref{bose_energy} to find the energy excess relative to uniform state of density $n$
 

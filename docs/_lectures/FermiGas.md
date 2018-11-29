@@ -78,10 +78,10 @@ $$
 for $\bk_i$ satisfying $\bk_1+\bk_2=\bk_3+\bk_4$. In this case
 
 $$
-\braket{\mathbf{N}'}{H_\text{int}}{\mathbf{N}} = \frac{U_0}{V} \sqrt{\left(1-N_{\uparrow}(\bk_1)\right)\left(1-N_{\downarrow}(\bk_2)\right)N_{\downarrow}(\bk_3)N_{\uparrow}(\bk_4)}
+\braket{\mathbf{N}'}{H_\text{int}}{\mathbf{N}} = \frac{U_0}{V} \left(1-N_{\uparrow}(\bk_1)\right)\left(1-N_{\downarrow}(\bk_2)\right)N_{\downarrow}(\bk_3)N_{\uparrow}(\bk_4),
 $$
 
-(ignoring any coinciding momenta). In this way we end up with the second order correction
+(ignoring any coinciding momenta) where the occupancies are either zero or one. In this way we end up with the second order correction
 
 $$
 E^{(2)}(\mathbf{N}) = \left(\frac{U_0}{V}\right)^2 \sum_{\bk_1+\bk_2=\bk_3+\bk_4}\frac{\left(1-N_{\uparrow}(\bk_1)\right)\left(1-N_{\downarrow}(\bk_2)\right)N_{\downarrow}(\bk_3)N_{\uparrow}(\bk_4)}{\epsilon(\bk_3)+\epsilon(\bk_4)-\epsilon(\bk_1)-\epsilon(\bk_2)}.

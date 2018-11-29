@@ -326,7 +326,7 @@ S(\omega) = 2\pi\sum_{m,n} \frac{e^{-\beta E_n}}{Z} \abs{\bra{n}y\ket{m}}^2 \del
 \label{res_SSpectral}
 $$
 
-This expression is completely general, but already it is possible to see what is going on. The reason for the asymmetry in $S(\omega)$ is that the term with $\delta(\omega-E_m+E_n)$ is weighted by $e^{-\beta E_n}$, while the term with $\delta(\omega-E_n-E_m)$ has $e^{-\beta E_m}$. Thus we can say
+This expression is completely general, but already it is possible to see what is going on. The reason for the asymmetry in $S(\omega)$ is that the term with $\delta(\omega-E_m+E_n)$ is weighted by $e^{-\beta E_n}$, while the term with $\delta(\omega-E_n+E_m)$ has $e^{-\beta E_m}$. Thus we can say
 
 $$
 S(\omega) = S(-\omega) e^{\beta\omega}.
