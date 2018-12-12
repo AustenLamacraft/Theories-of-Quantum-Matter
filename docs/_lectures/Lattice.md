@@ -211,7 +211,7 @@ $$
 (in $d$-dimensions). We could alternatively _remove_ a particle from the Mott state
 
 $$
-\ket{i,-}\equiv \sqrt{N}\aop_i\bigotimes_{j} \ket{N}_j.
+\ket{i,-}\equiv \frac{\aop_i}{\sqrt{N}}\bigotimes_{j} \ket{N}_j.
 $$
 
 Within these states, $H_t$ takes the form
