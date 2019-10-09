@@ -10,7 +10,39 @@ published: true
 We begin our study of many body quantum mechanics by examining a number of systems where eigenstates and eigenvalues may be found explicitly for any number of particles. Be warned that these situations are <strong>highly atypical</strong> -- but are nevertheless very informative.
 </p>
 
+$$
+\nonumber 
+\newcommand{\br}{\mathbf{r}}​
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bk}{\mathbf{k}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\bv}{\mathbf{v}}
+
+\newcommand{\pop}{\psi^{\vphantom{\dagger}}}
+\newcommand{\pdop}{\psi^\dagger}
+\newcommand{\Pop}{\Psi^{\vphantom{\dagger}}}
+\newcommand{\Pdop}{\Psi^\dagger}
+\newcommand{\Phop}{\Phi^{\vphantom{\dagger}}}
+\newcommand{\Phdop}{\Phi^\dagger}
+\newcommand{\phop}{\phi^{\vphantom{\dagger}}}
+\newcommand{\phdop}{\phi^\dagger}
+\newcommand{\aop}{a^{\vphantom{\dagger}}}
+\newcommand{\adop}{a^\dagger}
+\newcommand{\bop}{b^{\vphantom{\dagger}}}
+\newcommand{\bdop}{b^\dagger}
+\newcommand{\cop}{c^{\vphantom{\dagger}}}
+\newcommand{\cdop}{c^\dagger}
+
+\newcommand{\ket}[1]{\lvert{#1}\rangle}
+\newcommand{\sgn}{\mathrm{sgn}}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator*{\E}{\mathbb{E}}
+$$
+
+
+
 ## Contents
+
 {:.no_toc}
 
 * Toc
@@ -46,7 +78,6 @@ $$
 does not, on account of the masses being all different. Any time we have a symmetry operation that commutes with the Hamiltonian, the eigenstates of that symmetry are preserved by time evolution with that Hamiltonian. Thus a symmetric potential $V(x)=V(-x)$ commutes with the parity operation $x\to -x$, so the eigenstates of this operation -- the even and odd wavefunctions -- are preserved by time evolution.
 
 The Hamiltonian of indistinguishable particles commutes with every operator of particle exchange, defined by
-
 $$
 P_{ij}\Psi(\br_1,\ldots, \br_i,\ldots, \br_j,\ldots \br_N) = \Psi(\br_1,\ldots, \br_j,\ldots, \br_i,\ldots \br_N).
 $$
@@ -63,17 +94,17 @@ These operators satisfy $P_{ij}^2=\mathbb{1}$, so their eigenvalues are $\pm 1$,
 
 ### Two Particles
 
-A pair of particles is described by a wavefunction $\Psi(\mathbf{x},\mathbf{y})$. If we are dealing with _distinguishable_ particles, the wavefunction of a pair of particles in states $\ket{\varphi_1}$ and $\ket{\varphi_2}$ would be
+A pair of particles is described by a wavefunction $\Psi(\mathbf{x},\mathbf{y})$​. If we are dealing with distinguishable particles, the wavefunction of a pair of particles in states $\ket{\varphi_1}$​ and $\ket{\varphi_2}$​ would be
 
 $$
- \label{quantum_statistics_ProductWavefunction}
- \Psi(\br_1,\br_2)=\varphi_1(\br_1)\varphi_2(\br_2).
+\Psi(\br_1,\br_2)=\varphi_1(\br_1)\varphi_2(\br_2).
+\label{quantum_statistics_ProductWavefunction}
 $$
 
 Accounting for indistinguishability, we have either
 
 $$
- \label{quantum_statistics_sym}
+\label{quantum_statistics_sym}
  \Psi(\br_1,\br_2)=\frac{1}{\sqrt{2}}[\varphi_1(\br_1)\varphi_2(\br_2)\pm \varphi_2(\br_1)\varphi_1(\br_2)].
 $$
 
@@ -82,11 +113,11 @@ with the upper sign for bosons and the lower for fermions (The $1/\sqrt{2}$ yiel
 Classically, if you had a function $P_{1}(\br_1)$ describing the probability density of finding particle $1$ at position $\br_1$, and the corresponding quantity for an independent particle $2$, you would have no hesitation in concluding that the joint distribution is
 
 $$
-   P_{12}(\br_1,\br_2)=P_1(\br_1)P_2(\br_2).
+P_{12}(\br_1,\br_2)=P_1(\br_1)P_2(\br_2).
 \label{eq:classicaljoint}
 $$
 
-This also follows from taking the square modulus of \eqref{quantum_statistics_ProductWavefunction}. The results implied by the wavefunction \eqref{quantum_statistics_sym} is
+This also follows from taking the square modulus of $\eqref{quantum_statistics_ProductWavefunction}$. The results implied by the wavefunction $\eqref{quantum_statistics_sym}$ is
 
 $$
 \begin{align}
@@ -102,9 +133,9 @@ _Four possible outcomes after the passage of two bosons through a beam splitter.
 
 One dramatic illustration of this deviation from our classical intuition is provided by the [Hong--Ou--Mandel effect](https://en.wikipedia.org/wiki/Hong–Ou–Mandel_effect) in quantum optics. In simplified terms, we imagine wavepackets describing two photons (bosons) approaching a 50:50 beam splitter from either side.  Because of the unitarity of scattering, the two photons end up in orthogonal states. For example,
 
- $$
-   \frac{1}{\sqrt{2}}\left(\ket{\text{Left}}\pm \ket{\text{Right}}\right).
- $$
+$$
+\frac{1}{\sqrt{2}}\left(\ket{\text{Left}}\pm \ket{\text{Right}}\right).
+$$
 
 <p class="message">
  Write down the bosonic two particle state with one particle in each of these states, and show that there is zero probability to have one photon at each output: they both go to the left or both to the right.
@@ -115,7 +146,7 @@ One dramatic illustration of this deviation from our classical intuition is prov
 The Hamiltonian of a system of $N$ identical noninteracting particles is a sum of $N$ identical __single particle__ Hamiltonians, that is, with each term acting on a different particle coordinate
 
 $$
- \label{quantum_statistics_SPHamiltonian}
+\label{quantum_statistics_SPHamiltonian}
  H = \sum_{i=1}^{N} \left[-\frac{\hbar^{2}}{2m}\nabla_{i}^{2}+V(\mathbf{r_{i}})\right]
 $$
 
@@ -126,7 +157,7 @@ $$
  \ket{\Psi_{\alpha_{1}\alpha_{2}\cdots \alpha_{N}}}=\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}})
 $$
 
-(We will frequently switch between the wavefunction $\varphi(\mathbf{x})$ and bra-ket notation $\ket{\varphi}$. In the latter notation the product wavefunction in \eqref{quantum_statistics_ProductWavefunction} is written $\ket{\varphi_{1}}\ket{\varphi_{2}}$)
+(We will frequently switch between the wavefunction $\varphi(\mathbf{x})$ and bra-ket notation $\ket{\varphi}$. In the latter notation the product wavefunction in $\eqref{quantum_statistics_ProductWavefunction}$ is written $\ket{\varphi_{1}}\ket{\varphi_{2}}$)
 
 Such states are called __product states__. A general state will be expressed as a superposition of product states: they are special states which provide a frequently convenient basis.
 
@@ -137,7 +168,7 @@ $$
    \mathcal{S}=\frac{1}{N!}\sum_{P} P, \qquad \mathcal{A}=\frac{1}{N!}\sum_{P} \sgn(P)P 	
 $$
 
-The sums are over all $N!$ permutations of $N$ objects, $P$ denotes the corresponding permutation operator, and $\sgn(P)$ is the __signature__ of the permutation, equal to $+1$ for permutations involving an even number of exchanges, and $-1$ for an odd number. This allows us to write the totally symmetric and totally antisymmetric versions of \eqref{quantum_statistics_disting} as
+The sums are over all $N!$ permutations of $N$ objects, $P$ denotes the corresponding permutation operator, and $\sgn(P)$ is the __signature__ of the permutation, equal to $+1$ for permutations involving an even number of exchanges, and $-1$ for an odd number. This allows us to write the totally symmetric and totally antisymmetric versions of $\eqref{quantum_statistics_disting}$ as
 
 $$
 \begin{align}
@@ -158,8 +189,6 @@ $$
 
 
 <p class="message"> Verify that the normalization factors in \eqref{quantum_statistics_norm} are correct. </p>
-
-
 A more formal way of putting things is as follows. We first consider the space spanned by states of the form \eqref{quantum_statistics_disting}. Then we introduce the operators $\mathcal{S}$ and $\mathcal{A}$, noting that $\mathcal{S}^{2}=\mathcal{S}$ and $\mathcal{A}^{2}=\mathcal{A}$. In other words, there's no point symmetrizing or antisymmetrizing more than once (we say that the operators are __idempotent__). Any eigenvalue of one of these operators is therefore either one or zero. The states with $\mathcal{S}=1$ are the symmetric states, and those with $\mathcal{A}=1$ are antisymmetric. You can easily convince yourself that if a state has one of $\mathcal{S}$ or $\mathcal{A}$ equal to one, the other is zero. This defines symmetric and antisymmetric subspaces, consisting of the admissible boson and fermion wavefunctions.
 
 Note that the fermion wavefunction takes the form of a __Slater determinant__ (though it appears first in {% cite dirac1926 %}).
@@ -234,7 +263,7 @@ The vanishing of the wavefunction when $x_{i}=x_{j}$ is consistent with the Paul
 
 \eqref{3particle} generalizes for any (odd) $N$ so that the ground state Slater determinant \eqref{quantum_statistics_1ddet} is proportional to
 
-$$  
+$$
 		\Psi_0(x_1,\ldots, x_N)\propto\prod_{i<j}^{N} \sin\left(\frac{\pi[x_{i}-x_{j}]}{L}\right). 	
     \label{quantum_statistics_1dFermiGS}
 $$
@@ -242,7 +271,7 @@ $$
 <div class="message">
 	Show this using the <strong>Vandermonde determinant</strong>
 
-  $$
+$$
 			\begin{vmatrix}
 			1 & 1 & \cdots & 1 \\
 			z_{1} &  z_{2} & \cdots & \cdots  \\
@@ -250,10 +279,10 @@ $$
 			 \cdots
 			z_{1}^{N-1} &  z_{2}^{N-1} & \cdots & z_{N}^{N-1}
 		\end{vmatrix}=\prod_{i<j}^{N}(z_{i}-z_{j})
-  $$
+$$
 
 	which can be proved in a variety of ways. Proving directly that \eqref{quantum_statistics_1dFermiGS} is an eigenstate of the Hamiltonian is not easy, but can be accomplished using the identity
-
+	
 	$$
 		\label{2nd_quant_cotident}
 	\cot(x-y)\cot(y-z)+\cot(y-z)\cot(z-x)+\cot(z-x)\cot(x-y)=1.	\nonumber

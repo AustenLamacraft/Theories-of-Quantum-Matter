@@ -9,13 +9,13 @@
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/ManyBodyWavefunctions/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-12-12T10:19:45+00:00" />
+<meta property="article:published_time" content="2019-10-02T16:17:47+01:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Many Body Wavefunctions",
-    "datePublished": "2018-12-12T10:19:45+00:00",
+    "datePublished": "2019-10-02T16:17:47+01:00",
     "description": "We begin our study of many body quantum mechanics by examining a number of systems where eigenstates and eigenvalues may be found explicitly for any number of particles. Be warned that these situations are highly atypical -- but are nevertheless very informative.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/ManyBodyWavefunctions/"
   }
@@ -152,13 +152,13 @@ $$
 <meta property="og:url" content="http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/ManyBodyWavefunctions/" />
 <meta property="og:site_name" content="Theories of Quantum Matter" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-12-12T10:19:45+00:00" />
+<meta property="article:published_time" content="2019-10-02T16:17:47+01:00" />
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Many Body Wavefunctions",
-    "datePublished": "2018-12-12T10:19:45+00:00",
+    "datePublished": "2019-10-02T16:17:47+01:00",
     "description": "We begin our study of many body quantum mechanics by examining a number of systems where eigenstates and eigenvalues may be found explicitly for any number of particles. Be warned that these situations are highly atypical -- but are nevertheless very informative.",
     "url": "http://tqm.usertest.mws3.csx.cam.ac.uk/docs/lectures/ManyBodyWavefunctions/"
   }
@@ -311,9 +311,37 @@ $$
 We begin our study of many body quantum mechanics by examining a number of systems where eigenstates and eigenvalues may be found explicitly for any number of particles. Be warned that these situations are <strong>highly atypical</strong> -- but are nevertheless very informative.
 </p>
 
-<h2 class="no_toc" id="contents">Contents</h2>
+<script type="math/tex; mode=display">\nonumber 
+\newcommand{\br}{\mathbf{r}}​
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bk}{\mathbf{k}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\bv}{\mathbf{v}}
 
-<ul id="markdown-toc">
+\newcommand{\pop}{\psi^{\vphantom{\dagger}}}
+\newcommand{\pdop}{\psi^\dagger}
+\newcommand{\Pop}{\Psi^{\vphantom{\dagger}}}
+\newcommand{\Pdop}{\Psi^\dagger}
+\newcommand{\Phop}{\Phi^{\vphantom{\dagger}}}
+\newcommand{\Phdop}{\Phi^\dagger}
+\newcommand{\phop}{\phi^{\vphantom{\dagger}}}
+\newcommand{\phdop}{\phi^\dagger}
+\newcommand{\aop}{a^{\vphantom{\dagger}}}
+\newcommand{\adop}{a^\dagger}
+\newcommand{\bop}{b^{\vphantom{\dagger}}}
+\newcommand{\bdop}{b^\dagger}
+\newcommand{\cop}{c^{\vphantom{\dagger}}}
+\newcommand{\cdop}{c^\dagger}
+
+\newcommand{\ket}[1]{\lvert{#1}\rangle}
+\newcommand{\sgn}{\mathrm{sgn}}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator*{\E}{\mathbb{E}}</script>
+
+<h2 id="contents">Contents</h2>
+
+<ul class="no_toc" id="markdown-toc">
+  <li><a href="#contents" id="markdown-toc-contents">Contents</a></li>
   <li><a href="#bosons-and-fermions" id="markdown-toc-bosons-and-fermions">Bosons and Fermions</a>    <ul>
       <li><a href="#two-particles" id="markdown-toc-two-particles">Two Particles</a></li>
       <li><a href="#product-states" id="markdown-toc-product-states">Product States</a></li>
@@ -354,9 +382,8 @@ We begin our study of many body quantum mechanics by examining a number of syste
 
 <p>does not, on account of the masses being all different. Any time we have a symmetry operation that commutes with the Hamiltonian, the eigenstates of that symmetry are preserved by time evolution with that Hamiltonian. Thus a symmetric potential $V(x)=V(-x)$ commutes with the parity operation $x\to -x$, so the eigenstates of this operation – the even and odd wavefunctions – are preserved by time evolution.</p>
 
-<p>The Hamiltonian of indistinguishable particles commutes with every operator of particle exchange, defined by</p>
-
-<script type="math/tex; mode=display">P_{ij}\Psi(\br_1,\ldots, \br_i,\ldots, \br_j,\ldots \br_N) = \Psi(\br_1,\ldots, \br_j,\ldots, \br_i,\ldots \br_N).</script>
+<p>The Hamiltonian of indistinguishable particles commutes with every operator of particle exchange, defined by
+<script type="math/tex">P_{ij}\Psi(\br_1,\ldots, \br_i,\ldots, \br_j,\ldots \br_N) = \Psi(\br_1,\ldots, \br_j,\ldots, \br_i,\ldots \br_N).</script></p>
 
 <p>These operators satisfy $P_{ij}^2=\mathbb{1}$, so their eigenvalues are $\pm 1$, corresponding to states that are either symmetric or antisymmetric under exchange. The only simultaneous eigenstates of all particle exchange operations (note that different exchanges don’t commute if they involve the same particle) are the totally symmetric and antisymmetric wavefunctions. Thus these properties are preserved by time evolution. It’s always been this way.</p>
 
@@ -370,10 +397,10 @@ We begin our study of many body quantum mechanics by examining a number of syste
 
 <h3 id="two-particles">Two Particles</h3>
 
-<p>A pair of particles is described by a wavefunction $\Psi(\mathbf{x},\mathbf{y})$. If we are dealing with <em>distinguishable</em> particles, the wavefunction of a pair of particles in states $\ket{\varphi_1}$ and $\ket{\varphi_2}$ would be</p>
+<p>A pair of particles is described by a wavefunction $\Psi(\mathbf{x},\mathbf{y})$​. If we are dealing with distinguishable particles, the wavefunction of a pair of particles in states $\ket{\varphi_1}$​ and $\ket{\varphi_2}$​ would be</p>
 
-<script type="math/tex; mode=display">\label{quantum_statistics_ProductWavefunction}
- \Psi(\br_1,\br_2)=\varphi_1(\br_1)\varphi_2(\br_2).</script>
+<script type="math/tex; mode=display">\Psi(\br_1,\br_2)=\varphi_1(\br_1)\varphi_2(\br_2).
+\label{quantum_statistics_ProductWavefunction}</script>
 
 <p>Accounting for indistinguishability, we have either</p>
 
@@ -387,7 +414,7 @@ We begin our study of many body quantum mechanics by examining a number of syste
 <script type="math/tex; mode=display">P_{12}(\br_1,\br_2)=P_1(\br_1)P_2(\br_2).
 \label{eq:classicaljoint}</script>
 
-<p>This also follows from taking the square modulus of \eqref{quantum_statistics_ProductWavefunction}. The results implied by the wavefunction \eqref{quantum_statistics_sym} is</p>
+<p>This also follows from taking the square modulus of $\eqref{quantum_statistics_ProductWavefunction}$. The results implied by the wavefunction $\eqref{quantum_statistics_sym}$ is</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
@@ -420,7 +447,7 @@ P_{12}(\br_1,\br_2) &= \frac{1}{2}\left[P_1(\br_1)P_2(\br_2)+P_1(\br_2)P_2(\br_1
 <script type="math/tex; mode=display">\label{quantum_statistics_disting}
  \ket{\Psi_{\alpha_{1}\alpha_{2}\cdots \alpha_{N}}}=\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}})</script>
 
-<p>(We will frequently switch between the wavefunction $\varphi(\mathbf{x})$ and bra-ket notation $\ket{\varphi}$. In the latter notation the product wavefunction in \eqref{quantum_statistics_ProductWavefunction} is written $\ket{\varphi_{1}}\ket{\varphi_{2}}$)</p>
+<p>(We will frequently switch between the wavefunction $\varphi(\mathbf{x})$ and bra-ket notation $\ket{\varphi}$. In the latter notation the product wavefunction in $\eqref{quantum_statistics_ProductWavefunction}$ is written $\ket{\varphi_{1}}\ket{\varphi_{2}}$)</p>
 
 <p>Such states are called <strong>product states</strong>. A general state will be expressed as a superposition of product states: they are special states which provide a frequently convenient basis.</p>
 
@@ -429,7 +456,7 @@ P_{12}(\br_1,\br_2) &= \frac{1}{2}\left[P_1(\br_1)P_2(\br_2)+P_1(\br_2)P_2(\br_1
 <script type="math/tex; mode=display">\label{quantum_statistics_SymAntisym}
    \mathcal{S}=\frac{1}{N!}\sum_{P} P, \qquad \mathcal{A}=\frac{1}{N!}\sum_{P} \sgn(P)P</script>
 
-<p>The sums are over all $N!$ permutations of $N$ objects, $P$ denotes the corresponding permutation operator, and $\sgn(P)$ is the <strong>signature</strong> of the permutation, equal to $+1$ for permutations involving an even number of exchanges, and $-1$ for an odd number. This allows us to write the totally symmetric and totally antisymmetric versions of \eqref{quantum_statistics_disting} as</p>
+<p>The sums are over all $N!$ permutations of $N$ objects, $P$ denotes the corresponding permutation operator, and $\sgn(P)$ is the <strong>signature</strong> of the permutation, equal to $+1$ for permutations involving an even number of exchanges, and $-1$ for an odd number. This allows us to write the totally symmetric and totally antisymmetric versions of $\eqref{quantum_statistics_disting}$ as</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
@@ -446,7 +473,6 @@ P_{12}(\br_1,\br_2) &= \frac{1}{2}\left[P_1(\br_1)P_2(\br_2)+P_1(\br_2)P_2(\br_1
  E=\sum_{i=1}^{N}E_{\alpha_{i}}=\sum_{\alpha}N_{\alpha} E_{\alpha}</script>
 
 <p class="message"> Verify that the normalization factors in \eqref{quantum_statistics_norm} are correct. </p>
-
 <p>A more formal way of putting things is as follows. We first consider the space spanned by states of the form \eqref{quantum_statistics_disting}. Then we introduce the operators $\mathcal{S}$ and $\mathcal{A}$, noting that $\mathcal{S}^{2}=\mathcal{S}$ and $\mathcal{A}^{2}=\mathcal{A}$. In other words, there’s no point symmetrizing or antisymmetrizing more than once (we say that the operators are <strong>idempotent</strong>). Any eigenvalue of one of these operators is therefore either one or zero. The states with $\mathcal{S}=1$ are the symmetric states, and those with $\mathcal{A}=1$ are antisymmetric. You can easily convince yourself that if a state has one of $\mathcal{S}$ or $\mathcal{A}$ equal to one, the other is zero. This defines symmetric and antisymmetric subspaces, consisting of the admissible boson and fermion wavefunctions.</p>
 
 <p>Note that the fermion wavefunction takes the form of a <strong>Slater determinant</strong> (though it appears first in <a href="#dirac1926">(Dirac, 1926)</a>).</p>
@@ -519,7 +545,7 @@ P_{12}(\br_1,\br_2) &= \frac{1}{2}\left[P_1(\br_1)P_2(\br_2)+P_1(\br_2)P_2(\br_1
 <div class="message">
 	Show this using the <strong>Vandermonde determinant</strong>
 
-  $$
+$$
 			\begin{vmatrix}
 			1 &amp; 1 &amp; \cdots &amp; 1 \\
 			z_{1} &amp;  z_{2} &amp; \cdots &amp; \cdots  \\
@@ -527,10 +553,10 @@ P_{12}(\br_1,\br_2) &= \frac{1}{2}\left[P_1(\br_1)P_2(\br_2)+P_1(\br_2)P_2(\br_1
 			 \cdots
 			z_{1}^{N-1} &amp;  z_{2}^{N-1} &amp; \cdots &amp; z_{N}^{N-1}
 		\end{vmatrix}=\prod_{i&lt;j}^{N}(z_{i}-z_{j})
-  $$
+$$
 
 	which can be proved in a variety of ways. Proving directly that \eqref{quantum_statistics_1dFermiGS} is an eigenstate of the Hamiltonian is not easy, but can be accomplished using the identity
-
+	
 	$$
 		\label{2nd_quant_cotident}
 	\cot(x-y)\cot(y-z)+\cot(y-z)\cot(z-x)+\cot(z-x)\cot(x-y)=1.	\nonumber
